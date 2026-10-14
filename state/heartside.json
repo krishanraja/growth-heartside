@@ -1,0 +1,190 @@
+{
+ "repo": "krishanraja/heartside",
+ "sha": "1028556df93f231e686f40816be2130843dc74c6",
+ "synced_at": "2026-10-14T20:44:33+00:00",
+ "previous_sha": null,
+ "canon_from_readme": true,
+ "canon": {
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md": "474f9a81124b17d6",
+  "docs/POSITIONING.md": "5cc3f584e60bf4e0",
+  "docs/HANDOFF.md": "20f0f196e73cc414",
+  "docs/SYNC.md": "61aa9d084ff6ddeb",
+  "README.md": "a16d4e802495d74f",
+  "design/BRAND-SYSTEM.md": "64e6ece1a0339a72",
+  "shopify/README.md": "a1ffe482e5b31d6a"
+ },
+ "rules": {
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ": "125afc11c43dbc1b",
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md ### 4.6 ": "f4a6bd4ab5ce2c91",
+  "docs/HANDOFF.md ## 2. ": "7aa03e172d93daa7",
+  "docs/POSITIONING.md ## 3. ": "c102e12c77cb178f"
+ },
+ "rules_ok": true,
+ "changed_since_last_sync": [],
+ "canon_added": [],
+ "canon_removed": [],
+ "commits": [
+  {
+   "sha": "1028556df9",
+   "date": "2026-10-14T13:25:56Z",
+   "subject": "v3: Cowork fixes, products wired, who-is-who AI rule, handover (#5)"
+  },
+  {
+   "sha": "998ac4c32d",
+   "date": "2026-10-14T09:42:49Z",
+   "subject": "Merge pull request #4 from krishanraja/claude/gracious-curie-ugu6b5"
+  },
+  {
+   "sha": "9fda51d628",
+   "date": "2026-10-14T09:42:34Z",
+   "subject": "v3 AI: replies before Done, and one call on the home question"
+  },
+  {
+   "sha": "dc0a2613db",
+   "date": "2026-10-14T09:26:18Z",
+   "subject": "Merge pull request #3 from krishanraja/claude/gracious-curie-ugu6b5"
+  },
+  {
+   "sha": "183255c7c9",
+   "date": "2026-10-14T09:26:00Z",
+   "subject": "v3 AI: warm-up ping, backup retry, call log, instant own-words ink"
+  },
+  {
+   "sha": "0490df90d7",
+   "date": "2026-10-13T20:17:07Z",
+   "subject": "docs: Cowork prompt for everything left before the v3 launch"
+  },
+  {
+   "sha": "cf2be90efe",
+   "date": "2026-10-13T19:56:34Z",
+   "subject": "Merge pull request #2 from krishanraja/claude/gracious-curie-ugu6b5"
+  },
+  {
+   "sha": "4a2a2e7b03",
+   "date": "2026-10-13T19:56:21Z",
+   "subject": "v3: webhook settings as text, so Shopify accepts the chat section"
+  },
+  {
+   "sha": "c03e41f1b8",
+   "date": "2026-10-13T19:54:39Z",
+   "subject": "Merge pull request #1 from krishanraja/claude/gracious-curie-ugu6b5"
+  },
+  {
+   "sha": "52caa44b45",
+   "date": "2026-10-13T19:54:16Z",
+   "subject": "v3: Biscuit's gift chat with live Gemini AI through n8n"
+  },
+  {
+   "sha": "a68f2a1f4c",
+   "date": "2026-10-13T19:12:00Z",
+   "subject": "docs: v3 AI runs through Krish's n8n Gemini credential; #1001 refunded"
+  },
+  {
+   "sha": "eb17a1c3fb",
+   "date": "2026-10-13T18:46:36Z",
+   "subject": "docs: v3 spec restores live AI in version one, as agreed"
+  },
+  {
+   "sha": "804fa6ebe4",
+   "date": "2026-10-13T18:42:48Z",
+   "subject": "docs: v3 spec records Krish's 13 Oct decisions; v1 ships with no AI server"
+  },
+  {
+   "sha": "2db064c8a5",
+   "date": "2026-10-13T15:59:24Z",
+   "subject": "design: add the approved v3 phone prototype source"
+  },
+  {
+   "sha": "da42070905",
+   "date": "2026-10-13T15:58:52Z",
+   "subject": "README: point to the v3 spec and prototype"
+  },
+  {
+   "sha": "5f25e34e03",
+   "date": "2026-10-13T15:58:20Z",
+   "subject": "docs: v3 gifts from your dog spec, pointers in HANDOFF and SYNC"
+  },
+  {
+   "sha": "b1932edbd5",
+   "date": "2026-10-12T22:28:03Z",
+   "subject": "README: point to SYNC.md (repo canonical, Drive mirrors)"
+  },
+  {
+   "sha": "fb562423ad",
+   "date": "2026-10-12T22:27:24Z",
+   "subject": "assets: add profile avatar and Facebook cover, index them"
+  },
+  {
+   "sha": "b24ae156a8",
+   "date": "2026-10-12T22:26:46Z",
+   "subject": "design: add BRAND-SYSTEM and CANVA-SOURCES (mirrored in Drive)"
+  },
+  {
+   "sha": "c3075e88ab",
+   "date": "2026-10-12T22:26:10Z",
+   "subject": "docs: sync with Drive, add SYNC.md, mark V2 positioning superseded"
+  },
+  {
+   "sha": "a88bcf502c",
+   "date": "2026-10-12T16:07:13Z",
+   "subject": "README: point new sessions to docs/POSITIONING.md first"
+  },
+  {
+   "sha": "35f00706ba",
+   "date": "2026-10-12T16:06:34Z",
+   "subject": "docs: add 12 Oct positioning and $10k social plan (Krish's decisions)"
+  }
+ ],
+ "open_pulls": [],
+ "store": [
+  {
+   "title": "Tiny Me, For The Tree",
+   "handle": "tiny-me-for-the-tree",
+   "type": "Ornament",
+   "prices": [
+    24.0
+   ],
+   "available": true,
+   "url": "https://heartside.io/products/tiny-me-for-the-tree"
+  },
+  {
+   "title": "The Body Double",
+   "handle": "the-body-double",
+   "type": "Pillow",
+   "prices": [
+    59.0
+   ],
+   "available": true,
+   "url": "https://heartside.io/products/the-body-double"
+  },
+  {
+   "title": "The Annual Review, Framed",
+   "handle": "the-annual-review-framed",
+   "type": "Poster",
+   "prices": [
+    89.0
+   ],
+   "available": true,
+   "url": "https://heartside.io/products/the-annual-review-framed"
+  },
+  {
+   "title": "The Annual Review",
+   "handle": "the-annual-review",
+   "type": "Poster",
+   "prices": [
+    39.0
+   ],
+   "available": true,
+   "url": "https://heartside.io/products/the-annual-review"
+  }
+ ],
+ "price_points": [
+  19.0,
+  24.0,
+  29.0,
+  39.0,
+  59.0,
+  89.0
+ ],
+ "notes": []
+}
