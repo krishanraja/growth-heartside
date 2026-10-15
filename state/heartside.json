@@ -1,14 +1,16 @@
 {
  "repo": "krishanraja/heartside",
  "sha": "1faf8e82b50e6565a8b3b467dd8267e49d53aedd",
- "synced_at": "2026-10-15T10:08:35+00:00",
- "previous_sha": "190cdd273ebefc4d2586f9191456de5a7ded5411",
+ "synced_at": "2026-10-15T10:10:49+00:00",
+ "previous_sha": "1faf8e82b50e6565a8b3b467dd8267e49d53aedd",
  "canon_from_readme": true,
+ "handover": "docs/COWORK-HANDOVER-2026-10-15.md",
  "canon": {
   "docs/V3-GIFTS-FROM-YOUR-DOG.md": "474f9a81124b17d6",
   "docs/POSITIONING.md": "5cc3f584e60bf4e0",
   "docs/HANDOFF.md": "20f0f196e73cc414",
   "docs/SYNC.md": "61aa9d084ff6ddeb",
+  "docs/COWORK-HANDOVER-2026-10-15.md": "a960ebb7f39f4ac7",
   "README.md": "07a3b929966f81ae",
   "design/BRAND-SYSTEM.md": "64e6ece1a0339a72",
   "shopify/README.md": "a1ffe482e5b31d6a"
@@ -21,9 +23,11 @@
  },
  "rules_ok": true,
  "changed_since_last_sync": [
-  "README.md"
+  "docs/COWORK-HANDOVER-2026-10-15.md"
  ],
- "canon_added": [],
+ "canon_added": [
+  "docs/COWORK-HANDOVER-2026-10-15.md"
+ ],
  "canon_removed": [],
  "commits": [
   {
