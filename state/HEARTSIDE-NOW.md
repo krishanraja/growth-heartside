@@ -1,6 +1,6 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `1028556df9` on 2026-10-14T20:44:33+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `190cdd273e` on 2026-10-15T10:00:06+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
 
 ## The canon, in heartside's order
@@ -24,28 +24,14 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 
 ## Recent commits on main
 
+- `190cdd273e` 2026-10-15 Delete breeds-corpus/e
+- `d793bf5ee1` 2026-10-15 Add files via upload
+- `02754c33db` 2026-10-15 Create e
 - `1028556df9` 2026-10-14 v3: Cowork fixes, products wired, who-is-who AI rule, handover (#5)
 - `998ac4c32d` 2026-10-14 Merge pull request #4 from krishanraja/claude/gracious-curie-ugu6b5
 - `9fda51d628` 2026-10-14 v3 AI: replies before Done, and one call on the home question
 - `dc0a2613db` 2026-10-14 Merge pull request #3 from krishanraja/claude/gracious-curie-ugu6b5
 - `183255c7c9` 2026-10-14 v3 AI: warm-up ping, backup retry, call log, instant own-words ink
-- `0490df90d7` 2026-10-13 docs: Cowork prompt for everything left before the v3 launch
-- `cf2be90efe` 2026-10-13 Merge pull request #2 from krishanraja/claude/gracious-curie-ugu6b5
-- `4a2a2e7b03` 2026-10-13 v3: webhook settings as text, so Shopify accepts the chat section
-- `c03e41f1b8` 2026-10-13 Merge pull request #1 from krishanraja/claude/gracious-curie-ugu6b5
-- `52caa44b45` 2026-10-13 v3: Biscuit's gift chat with live Gemini AI through n8n
-- `a68f2a1f4c` 2026-10-13 docs: v3 AI runs through Krish's n8n Gemini credential; #1001 refunded
-- `eb17a1c3fb` 2026-10-13 docs: v3 spec restores live AI in version one, as agreed
-- `804fa6ebe4` 2026-10-13 docs: v3 spec records Krish's 13 Oct decisions; v1 ships with no AI server
-- `2db064c8a5` 2026-10-13 design: add the approved v3 phone prototype source
-- `da42070905` 2026-10-13 README: point to the v3 spec and prototype
-- `5f25e34e03` 2026-10-13 docs: v3 gifts from your dog spec, pointers in HANDOFF and SYNC
-- `b1932edbd5` 2026-10-12 README: point to SYNC.md (repo canonical, Drive mirrors)
-- `fb562423ad` 2026-10-12 assets: add profile avatar and Facebook cover, index them
-- `b24ae156a8` 2026-10-12 design: add BRAND-SYSTEM and CANVA-SOURCES (mirrored in Drive)
-- `c3075e88ab` 2026-10-12 docs: sync with Drive, add SYNC.md, mark V2 positioning superseded
-- `a88bcf502c` 2026-10-12 README: point new sessions to docs/POSITIONING.md first
-- `35f00706ba` 2026-10-12 docs: add 12 Oct positioning and $10k social plan (Krish's decisions)
 
 ## Work in flight (open pull requests)
 

@@ -1,8 +1,8 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "1028556df93f231e686f40816be2130843dc74c6",
- "synced_at": "2026-10-14T20:44:33+00:00",
- "previous_sha": null,
+ "sha": "190cdd273ebefc4d2586f9191456de5a7ded5411",
+ "synced_at": "2026-10-15T10:00:06+00:00",
+ "previous_sha": "1028556df93f231e686f40816be2130843dc74c6",
  "canon_from_readme": true,
  "canon": {
   "docs/V3-GIFTS-FROM-YOUR-DOG.md": "474f9a81124b17d6",
@@ -24,6 +24,21 @@
  "canon_added": [],
  "canon_removed": [],
  "commits": [
+  {
+   "sha": "190cdd273e",
+   "date": "2026-10-15T06:27:43Z",
+   "subject": "Delete breeds-corpus/e"
+  },
+  {
+   "sha": "d793bf5ee1",
+   "date": "2026-10-15T06:27:25Z",
+   "subject": "Add files via upload"
+  },
+  {
+   "sha": "02754c33db",
+   "date": "2026-10-15T06:27:13Z",
+   "subject": "Create e"
+  },
   {
    "sha": "1028556df9",
    "date": "2026-10-14T13:25:56Z",
@@ -48,91 +63,6 @@
    "sha": "183255c7c9",
    "date": "2026-10-14T09:26:00Z",
    "subject": "v3 AI: warm-up ping, backup retry, call log, instant own-words ink"
-  },
-  {
-   "sha": "0490df90d7",
-   "date": "2026-10-13T20:17:07Z",
-   "subject": "docs: Cowork prompt for everything left before the v3 launch"
-  },
-  {
-   "sha": "cf2be90efe",
-   "date": "2026-10-13T19:56:34Z",
-   "subject": "Merge pull request #2 from krishanraja/claude/gracious-curie-ugu6b5"
-  },
-  {
-   "sha": "4a2a2e7b03",
-   "date": "2026-10-13T19:56:21Z",
-   "subject": "v3: webhook settings as text, so Shopify accepts the chat section"
-  },
-  {
-   "sha": "c03e41f1b8",
-   "date": "2026-10-13T19:54:39Z",
-   "subject": "Merge pull request #1 from krishanraja/claude/gracious-curie-ugu6b5"
-  },
-  {
-   "sha": "52caa44b45",
-   "date": "2026-10-13T19:54:16Z",
-   "subject": "v3: Biscuit's gift chat with live Gemini AI through n8n"
-  },
-  {
-   "sha": "a68f2a1f4c",
-   "date": "2026-10-13T19:12:00Z",
-   "subject": "docs: v3 AI runs through Krish's n8n Gemini credential; #1001 refunded"
-  },
-  {
-   "sha": "eb17a1c3fb",
-   "date": "2026-10-13T18:46:36Z",
-   "subject": "docs: v3 spec restores live AI in version one, as agreed"
-  },
-  {
-   "sha": "804fa6ebe4",
-   "date": "2026-10-13T18:42:48Z",
-   "subject": "docs: v3 spec records Krish's 13 Oct decisions; v1 ships with no AI server"
-  },
-  {
-   "sha": "2db064c8a5",
-   "date": "2026-10-13T15:59:24Z",
-   "subject": "design: add the approved v3 phone prototype source"
-  },
-  {
-   "sha": "da42070905",
-   "date": "2026-10-13T15:58:52Z",
-   "subject": "README: point to the v3 spec and prototype"
-  },
-  {
-   "sha": "5f25e34e03",
-   "date": "2026-10-13T15:58:20Z",
-   "subject": "docs: v3 gifts from your dog spec, pointers in HANDOFF and SYNC"
-  },
-  {
-   "sha": "b1932edbd5",
-   "date": "2026-10-12T22:28:03Z",
-   "subject": "README: point to SYNC.md (repo canonical, Drive mirrors)"
-  },
-  {
-   "sha": "fb562423ad",
-   "date": "2026-10-12T22:27:24Z",
-   "subject": "assets: add profile avatar and Facebook cover, index them"
-  },
-  {
-   "sha": "b24ae156a8",
-   "date": "2026-10-12T22:26:46Z",
-   "subject": "design: add BRAND-SYSTEM and CANVA-SOURCES (mirrored in Drive)"
-  },
-  {
-   "sha": "c3075e88ab",
-   "date": "2026-10-12T22:26:10Z",
-   "subject": "docs: sync with Drive, add SYNC.md, mark V2 positioning superseded"
-  },
-  {
-   "sha": "a88bcf502c",
-   "date": "2026-10-12T16:07:13Z",
-   "subject": "README: point new sessions to docs/POSITIONING.md first"
-  },
-  {
-   "sha": "35f00706ba",
-   "date": "2026-10-12T16:06:34Z",
-   "subject": "docs: add 12 Oct positioning and $10k social plan (Krish's decisions)"
   }
  ],
  "open_pulls": [],
