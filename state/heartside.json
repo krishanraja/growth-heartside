@@ -1,19 +1,19 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "1faf8e82b50e6565a8b3b467dd8267e49d53aedd",
- "synced_at": "2026-10-15T10:10:49+00:00",
+ "sha": "fdd656e297bb61bb047fba016cda024aa0b6e4c6",
+ "synced_at": "2026-10-15T15:05:32+00:00",
  "previous_sha": "1faf8e82b50e6565a8b3b467dd8267e49d53aedd",
  "canon_from_readme": true,
  "handover": "docs/COWORK-HANDOVER-2026-10-15.md",
  "canon": {
-  "docs/V3-GIFTS-FROM-YOUR-DOG.md": "474f9a81124b17d6",
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md": "deb487f0ab679455",
   "docs/POSITIONING.md": "5cc3f584e60bf4e0",
-  "docs/HANDOFF.md": "20f0f196e73cc414",
+  "docs/HANDOFF.md": "04989931a668f0ed",
   "docs/SYNC.md": "61aa9d084ff6ddeb",
-  "docs/COWORK-HANDOVER-2026-10-15.md": "a960ebb7f39f4ac7",
+  "docs/COWORK-HANDOVER-2026-10-15.md": "ede85eed3584ef50",
   "README.md": "07a3b929966f81ae",
   "design/BRAND-SYSTEM.md": "64e6ece1a0339a72",
-  "shopify/README.md": "a1ffe482e5b31d6a"
+  "shopify/README.md": "6683c6f83c43cdea"
  },
  "rules": {
   "docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ": "125afc11c43dbc1b",
@@ -23,13 +23,84 @@
  },
  "rules_ok": true,
  "changed_since_last_sync": [
-  "docs/COWORK-HANDOVER-2026-10-15.md"
+  "docs/COWORK-HANDOVER-2026-10-15.md",
+  "docs/HANDOFF.md",
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md",
+  "shopify/README.md"
  ],
- "canon_added": [
-  "docs/COWORK-HANDOVER-2026-10-15.md"
- ],
+ "canon_added": [],
  "canon_removed": [],
  "commits": [
+  {
+   "sha": "fdd656e297",
+   "date": "2026-10-15T13:32:57Z",
+   "subject": "Merge pull request #11 from krishanraja/claude/keen-albattani-bijgeg"
+  },
+  {
+   "sha": "bda2340a8c",
+   "date": "2026-10-15T13:32:44Z",
+   "subject": "Order QC is scheduled: twice daily, waiting on Shopify being connected"
+  },
+  {
+   "sha": "f045a2bfb8",
+   "date": "2026-10-15T13:29:49Z",
+   "subject": "Merge pull request #10 from krishanraja/claude/keen-albattani-bijgeg"
+  },
+  {
+   "sha": "ffe773f4d0",
+   "date": "2026-10-15T13:03:58Z",
+   "subject": "Order QC for the mug: check each order's real print file before it prints"
+  },
+  {
+   "sha": "77124f79bd",
+   "date": "2026-10-15T13:03:58Z",
+   "subject": "Chat mug drawn as the approved images are, held to Teeinblue's print files"
+  },
+  {
+   "sha": "17d5d34cac",
+   "date": "2026-10-15T11:54:23Z",
+   "subject": "Merge pull request #9 from krishanraja/claude/keen-albattani-bijgeg"
+  },
+  {
+   "sha": "a7aa67ac16",
+   "date": "2026-10-15T11:54:09Z",
+   "subject": "Handover: the 15 Oct work is merged and live on the theme"
+  },
+  {
+   "sha": "80f7fd946b",
+   "date": "2026-10-15T11:46:19Z",
+   "subject": "Merge pull request #8 from krishanraja/claude/keen-albattani-bijgeg"
+  },
+  {
+   "sha": "f4a5bc003b",
+   "date": "2026-10-15T11:44:24Z",
+   "subject": "Handover: next session prompt on main, Krish's evening ask, the one idea"
+  },
+  {
+   "sha": "9b85b23ecb",
+   "date": "2026-10-15T11:35:35Z",
+   "subject": "Handover section 5: items 3, 4 and 7 marked done, with commit links"
+  },
+  {
+   "sha": "d81697569a",
+   "date": "2026-10-15T11:35:35Z",
+   "subject": "US spelling in a comment and a test label (centered)"
+  },
+  {
+   "sha": "5cc02fed14",
+   "date": "2026-10-15T11:34:34Z",
+   "subject": "V3: five dated decisions in section 13; the mug's lines are in Fraunces"
+  },
+  {
+   "sha": "7f51d5329b",
+   "date": "2026-10-15T11:34:07Z",
+   "subject": "Mug reveal on the real mug, even line breaks, paws, chip-style typed lines"
+  },
+  {
+   "sha": "68c67d3786",
+   "date": "2026-10-15T11:33:57Z",
+   "subject": "Breed lookup the chat can call later"
+  },
   {
    "sha": "1faf8e82b5",
    "date": "2026-10-15T10:07:58Z",
@@ -86,7 +157,14 @@
    "subject": "Cowork evidence 14-15 Oct: round reports and the mug v3 spec"
   }
  ],
- "open_pulls": [],
+ "open_pulls": [
+  {
+   "number": 12,
+   "title": "Mug text curves as the photo does; the first screen shows the real-photo mug",
+   "branch": "claude/keen-albattani-bijgeg",
+   "updated": "2026-10-15T13:56:11Z"
+  }
+ ],
  "store": [
   {
    "title": "Tiny Me, For The Tree",
