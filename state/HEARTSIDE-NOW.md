@@ -1,6 +1,6 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `fdd656e297` on 2026-10-15T15:05:32+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `5618a99829` on 2026-10-15T19:12:54+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
 
 ## Canon changed since the last sync
@@ -8,8 +8,6 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 Read these again before drafting anything:
 
 - changed: `docs/COWORK-HANDOVER-2026-10-15.md`
-- changed: `docs/HANDOFF.md`
-- changed: `docs/V3-GIFTS-FROM-YOUR-DOG.md`
 - changed: `shopify/README.md`
 
 ## The canon, in heartside's order
@@ -34,6 +32,9 @@ Read these again before drafting anything:
 
 ## Recent commits on main
 
+- `5618a99829` 2026-10-15 Merge pull request #12 from krishanraja/claude/keen-albattani-bijgeg
+- `b3d5c23c2d` 2026-10-15 First screen: the real-photo mug replaces the drawn one; Cowork's next prompt
+- `25830340b8` 2026-10-15 Mug text curves as the photo does: more toward the base
 - `fdd656e297` 2026-10-15 Merge pull request #11 from krishanraja/claude/keen-albattani-bijgeg
 - `bda2340a8c` 2026-10-15 Order QC is scheduled: twice daily, waiting on Shopify being connected
 - `f045a2bfb8` 2026-10-15 Merge pull request #10 from krishanraja/claude/keen-albattani-bijgeg
@@ -62,7 +63,7 @@ Read these again before drafting anything:
 
 ## Work in flight (open pull requests)
 
-- #12 Mug text curves as the photo does; the first screen shows the real-photo mug (`claude/keen-albattani-bijgeg`, updated 2026-10-15)
+- none
 
 ## Latest decisions (`docs/V3-GIFTS-FROM-YOUR-DOG.md`, decision log)
 

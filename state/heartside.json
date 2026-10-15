@@ -1,8 +1,8 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "fdd656e297bb61bb047fba016cda024aa0b6e4c6",
- "synced_at": "2026-10-15T15:05:32+00:00",
- "previous_sha": "1faf8e82b50e6565a8b3b467dd8267e49d53aedd",
+ "sha": "5618a99829a0c9ef1291b73c20cda3d837c262de",
+ "synced_at": "2026-10-15T19:12:54+00:00",
+ "previous_sha": "fdd656e297bb61bb047fba016cda024aa0b6e4c6",
  "canon_from_readme": true,
  "handover": "docs/COWORK-HANDOVER-2026-10-15.md",
  "canon": {
@@ -10,10 +10,10 @@
   "docs/POSITIONING.md": "5cc3f584e60bf4e0",
   "docs/HANDOFF.md": "04989931a668f0ed",
   "docs/SYNC.md": "61aa9d084ff6ddeb",
-  "docs/COWORK-HANDOVER-2026-10-15.md": "ede85eed3584ef50",
+  "docs/COWORK-HANDOVER-2026-10-15.md": "5a37f967d84381bd",
   "README.md": "07a3b929966f81ae",
   "design/BRAND-SYSTEM.md": "64e6ece1a0339a72",
-  "shopify/README.md": "6683c6f83c43cdea"
+  "shopify/README.md": "b8a5a1fddf28135e"
  },
  "rules": {
   "docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ": "125afc11c43dbc1b",
@@ -24,13 +24,26 @@
  "rules_ok": true,
  "changed_since_last_sync": [
   "docs/COWORK-HANDOVER-2026-10-15.md",
-  "docs/HANDOFF.md",
-  "docs/V3-GIFTS-FROM-YOUR-DOG.md",
   "shopify/README.md"
  ],
  "canon_added": [],
  "canon_removed": [],
  "commits": [
+  {
+   "sha": "5618a99829",
+   "date": "2026-10-15T15:25:01Z",
+   "subject": "Merge pull request #12 from krishanraja/claude/keen-albattani-bijgeg"
+  },
+  {
+   "sha": "b3d5c23c2d",
+   "date": "2026-10-15T13:55:56Z",
+   "subject": "First screen: the real-photo mug replaces the drawn one; Cowork's next prompt"
+  },
+  {
+   "sha": "25830340b8",
+   "date": "2026-10-15T13:47:56Z",
+   "subject": "Mug text curves as the photo does: more toward the base"
+  },
   {
    "sha": "fdd656e297",
    "date": "2026-10-15T13:32:57Z",
@@ -157,14 +170,7 @@
    "subject": "Cowork evidence 14-15 Oct: round reports and the mug v3 spec"
   }
  ],
- "open_pulls": [
-  {
-   "number": 12,
-   "title": "Mug text curves as the photo does; the first screen shows the real-photo mug",
-   "branch": "claude/keen-albattani-bijgeg",
-   "updated": "2026-10-15T13:56:11Z"
-  }
- ],
+ "open_pulls": [],
  "store": [
   {
    "title": "Tiny Me, For The Tree",
