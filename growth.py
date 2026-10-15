@@ -366,7 +366,8 @@ def sync(publish=False, quiet=False):
     except (urllib.error.URLError, ValueError, KeyError) as e:
         products = None
         notes.append(f'the live store did not answer ({getattr(e, "code", e)})')
-    changed = sorted(p for p in canon if prev.get('canon', {}).get(p) != canon[p]) if prev.get('canon') else []
+    old = prev.get('canon') or {}
+    changed = sorted(p for p in canon if p in old and old[p] != canon[p])
     added = sorted(set(paths) - set(prev.get('canon', {}))) if prev.get('canon') else []
     removed = sorted(set(prev.get('canon', {})) - set(paths)) if prev.get('canon') else []
     state = {
