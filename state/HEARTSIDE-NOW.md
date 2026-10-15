@@ -1,7 +1,13 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `190cdd273e` on 2026-10-15T10:00:06+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `1faf8e82b5` on 2026-10-15T10:08:35+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
+
+## Canon changed since the last sync
+
+Read these again before drafting anything:
+
+- changed: `README.md`
 
 ## The canon, in heartside's order
 
@@ -24,14 +30,17 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 
 ## Recent commits on main
 
-- `190cdd273e` 2026-10-15 Delete breeds-corpus/e
-- `d793bf5ee1` 2026-10-15 Add files via upload
-- `02754c33db` 2026-10-15 Create e
-- `1028556df9` 2026-10-14 v3: Cowork fixes, products wired, who-is-who AI rule, handover (#5)
-- `998ac4c32d` 2026-10-14 Merge pull request #4 from krishanraja/claude/gracious-curie-ugu6b5
-- `9fda51d628` 2026-10-14 v3 AI: replies before Done, and one call on the home question
-- `dc0a2613db` 2026-10-14 Merge pull request #3 from krishanraja/claude/gracious-curie-ugu6b5
-- `183255c7c9` 2026-10-14 v3 AI: warm-up ping, backup retry, call log, instant own-words ink
+- `1faf8e82b5` 2026-10-15 Merge pull request #7 from krishanraja/claude/gracious-turing-kbsuss
+- `4b1165a1db` 2026-10-15 README: point to the growth engine and the canon line it reads
+- `c233185891` 2026-10-15 Merge pull request #6 from krishanraja/cowork-handover-2026-10-15
+- `34b3ec133b` 2026-10-15 Explored, not approved: mug directions, three-gift redesign, rejected letter direction
+- `bff5220396` 2026-10-15 Real-photo mug tools: cylinder wrap, mockup builder, print masks, Teeinblue simulator, Shopify image renders
+- `79a8d6e1e7` 2026-10-15 Fraunces fonts used by the mug v3 artwork and preview renders, with OFL license
+- `f248066be3` 2026-10-15 Mug v3 Teeinblue source assets: background, photo mask, sample, mockup bases, shades, print masks, geometry
+- `4f75310dce` 2026-10-15 Breed corpus audit, US lookup additions and US display names
+- `5bbeac50ea` 2026-10-15 Mug v3 evidence: real-photo renders, print files, Teeinblue previews, Shopify images
+- `328e9abd4a` 2026-10-15 Cowork handover for the next session (15 Oct)
+- `29aafaaa8c` 2026-10-15 Cowork evidence 14-15 Oct: round reports and the mug v3 spec
 
 ## Work in flight (open pull requests)
 

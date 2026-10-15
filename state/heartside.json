@@ -1,15 +1,15 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "190cdd273ebefc4d2586f9191456de5a7ded5411",
- "synced_at": "2026-10-15T10:00:06+00:00",
- "previous_sha": "1028556df93f231e686f40816be2130843dc74c6",
+ "sha": "1faf8e82b50e6565a8b3b467dd8267e49d53aedd",
+ "synced_at": "2026-10-15T10:08:35+00:00",
+ "previous_sha": "190cdd273ebefc4d2586f9191456de5a7ded5411",
  "canon_from_readme": true,
  "canon": {
   "docs/V3-GIFTS-FROM-YOUR-DOG.md": "474f9a81124b17d6",
   "docs/POSITIONING.md": "5cc3f584e60bf4e0",
   "docs/HANDOFF.md": "20f0f196e73cc414",
   "docs/SYNC.md": "61aa9d084ff6ddeb",
-  "README.md": "a16d4e802495d74f",
+  "README.md": "07a3b929966f81ae",
   "design/BRAND-SYSTEM.md": "64e6ece1a0339a72",
   "shopify/README.md": "a1ffe482e5b31d6a"
  },
@@ -20,49 +20,66 @@
   "docs/POSITIONING.md ## 3. ": "c102e12c77cb178f"
  },
  "rules_ok": true,
- "changed_since_last_sync": [],
+ "changed_since_last_sync": [
+  "README.md"
+ ],
  "canon_added": [],
  "canon_removed": [],
  "commits": [
   {
-   "sha": "190cdd273e",
-   "date": "2026-10-15T06:27:43Z",
-   "subject": "Delete breeds-corpus/e"
+   "sha": "1faf8e82b5",
+   "date": "2026-10-15T10:07:58Z",
+   "subject": "Merge pull request #7 from krishanraja/claude/gracious-turing-kbsuss"
   },
   {
-   "sha": "d793bf5ee1",
-   "date": "2026-10-15T06:27:25Z",
-   "subject": "Add files via upload"
+   "sha": "4b1165a1db",
+   "date": "2026-10-15T10:07:37Z",
+   "subject": "README: point to the growth engine and the canon line it reads"
   },
   {
-   "sha": "02754c33db",
-   "date": "2026-10-15T06:27:13Z",
-   "subject": "Create e"
+   "sha": "c233185891",
+   "date": "2026-10-15T10:03:09Z",
+   "subject": "Merge pull request #6 from krishanraja/cowork-handover-2026-10-15"
   },
   {
-   "sha": "1028556df9",
-   "date": "2026-10-14T13:25:56Z",
-   "subject": "v3: Cowork fixes, products wired, who-is-who AI rule, handover (#5)"
+   "sha": "34b3ec133b",
+   "date": "2026-10-15T07:17:38Z",
+   "subject": "Explored, not approved: mug directions, three-gift redesign, rejected letter direction"
   },
   {
-   "sha": "998ac4c32d",
-   "date": "2026-10-14T09:42:49Z",
-   "subject": "Merge pull request #4 from krishanraja/claude/gracious-curie-ugu6b5"
+   "sha": "bff5220396",
+   "date": "2026-10-15T07:16:26Z",
+   "subject": "Real-photo mug tools: cylinder wrap, mockup builder, print masks, Teeinblue simulator, Shopify image renders"
   },
   {
-   "sha": "9fda51d628",
-   "date": "2026-10-14T09:42:34Z",
-   "subject": "v3 AI: replies before Done, and one call on the home question"
+   "sha": "79a8d6e1e7",
+   "date": "2026-10-15T07:15:50Z",
+   "subject": "Fraunces fonts used by the mug v3 artwork and preview renders, with OFL license"
   },
   {
-   "sha": "dc0a2613db",
-   "date": "2026-10-14T09:26:18Z",
-   "subject": "Merge pull request #3 from krishanraja/claude/gracious-curie-ugu6b5"
+   "sha": "f248066be3",
+   "date": "2026-10-15T07:14:26Z",
+   "subject": "Mug v3 Teeinblue source assets: background, photo mask, sample, mockup bases, shades, print masks, geometry"
   },
   {
-   "sha": "183255c7c9",
-   "date": "2026-10-14T09:26:00Z",
-   "subject": "v3 AI: warm-up ping, backup retry, call log, instant own-words ink"
+   "sha": "4f75310dce",
+   "date": "2026-10-15T07:13:18Z",
+   "subject": "Breed corpus audit, US lookup additions and US display names"
+  },
+  {
+   "sha": "5bbeac50ea",
+   "date": "2026-10-15T07:10:06Z",
+   "subject": "Mug v3 evidence: real-photo renders, print files, Teeinblue previews, Shopify images"
+  },
+  {
+   "sha": "328e9abd4a",
+   "date": "2026-10-15T07:08:48Z",
+   "subject": "Cowork handover for the next session (15 Oct)"
+  },
+  {
+   "sha": "29aafaaa8c",
+   "date": "2026-10-15T07:08:04Z",
+   "subject": "Cowork evidence 14-15 Oct: round reports and the mug v3 spec"
   }
  ],
  "open_pulls": [],
