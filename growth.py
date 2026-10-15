@@ -90,10 +90,13 @@ PLATFORMS = ('instagram', 'facebook', 'tiktok', 'pinterest', 'youtube', 'google'
 
 # ---------------------------------------------------------------------------
 # What heartside says every session must read. The README's "Picking this up?"
-# line names the canon in order of authority; these two are always added.
+# line names the canon in order of authority. The newest dated handover in
+# docs/ (e.g. docs/COWORK-HANDOVER-2026-10-15.md) is added after it, because
+# sessions write those before the README catches up. These are always added.
 # ---------------------------------------------------------------------------
 ALWAYS_CANON = ('README.md', 'design/BRAND-SYSTEM.md', 'shopify/README.md')
 FALLBACK_CANON = ('docs/V3-GIFTS-FROM-YOUR-DOG.md', 'docs/POSITIONING.md', 'docs/HANDOFF.md', 'docs/SYNC.md')
+HANDOVER = re.compile(r'^(?:[A-Z0-9]+-)*HANDOVER-(\d{4}-\d{2}-\d{2})[\w-]*\.md$')
 
 # The sections of heartside's canon that the RULES below were written from,
 # with their fingerprint at heartside commit 1028556 (14 Oct 2026). If any
@@ -220,8 +223,22 @@ def raw(path, sha):
         raise
 
 
-def canon_paths(readme):
-    """The canon heartside's README names, in its order, then the always-read files."""
+def docs_listing(sha):
+    """The file names directly in heartside's docs/ at a commit, or None if GitHub did not answer."""
+    try:
+        return [x['name'] for x in http(f'{API}/contents/docs?ref={sha}') if x.get('type') == 'file']
+    except (urllib.error.URLError, ValueError, KeyError, TypeError):
+        return None
+
+
+def newest_handover(names):
+    """The newest dated handover among docs/ file names, as a path, or None."""
+    dated = [(m.group(1), n) for n in (names or []) for m in [HANDOVER.match(n)] if m]
+    return f'docs/{max(dated)[1]}' if dated else None
+
+
+def canon_paths(readme, handover=None):
+    """The canon heartside's README names, in its order, then the newest handover, then the always-read files."""
     paths = []
     para = next((p for p in (readme or '').split('\n\n') if 'Picking this up' in p), '')
     for p in re.findall(r'\]\(((?:docs|design|shopify)/[^)#\s]+\.md)\)', para):
@@ -230,6 +247,8 @@ def canon_paths(readme):
     found = bool(paths)
     if not found:
         paths = list(FALLBACK_CANON)
+    if handover and handover not in paths:
+        paths.append(handover)
     for p in ALWAYS_CANON:
         if p not in paths:
             paths.append(p)
@@ -313,7 +332,14 @@ def sync(publish=False, quiet=False):
     prev = load_state(published_only=publish) or {}
     sha = head_sha()
     readme = raw('README.md', sha)
-    paths, found = canon_paths(readme)
+    notes = []
+    listing = docs_listing(sha)
+    if listing is None:
+        handover = prev.get('handover')
+        notes.append('heartside\'s docs/ listing not read, so the newest handover is the one last seen; set GITHUB_TOKEN if GitHub is rate limiting')
+    else:
+        handover = newest_handover(listing)
+    paths, found = canon_paths(readme, handover)
     texts = {'README.md': readme}
     for p in paths:
         if p not in texts:
@@ -324,7 +350,7 @@ def sync(publish=False, quiet=False):
     canon = {p: digest(texts.get(p))[:16] for p in paths}
     prints = fingerprints(texts)
     rules_ok = prints == RULES_BASIS and all(p in paths for p, _ in RULES_SOURCES)
-    commits, pulls, notes = [], [], []
+    commits, pulls = [], []
     try:
         since = prev.get('synced_at') or (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=3)).isoformat()
         for c in http(f'{API}/commits?sha={BRANCH}&per_page=30&since={since}'):
@@ -345,7 +371,7 @@ def sync(publish=False, quiet=False):
     removed = sorted(set(prev.get('canon', {})) - set(paths)) if prev.get('canon') else []
     state = {
         'repo': REPO, 'sha': sha, 'synced_at': dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
-        'previous_sha': prev.get('sha'), 'canon_from_readme': found, 'canon': canon,
+        'previous_sha': prev.get('sha'), 'canon_from_readme': found, 'handover': handover, 'canon': canon,
         'rules': prints, 'rules_ok': rules_ok, 'changed_since_last_sync': changed,
         'canon_added': added, 'canon_removed': removed, 'commits': commits, 'open_pulls': pulls,
         'store': products, 'price_points': sorted(set(canon_prices(texts)) | {x for p in (products or []) for x in p['prices']}),
@@ -522,7 +548,7 @@ def check_pack(pack, price_points=()):
     return errs
 
 
-def freshness(pack, state, head_fn, fetch_fn):
+def freshness(pack, state, head_fn, fetch_fn, list_fn=lambda sha: None):
     """Was this pack written against today's heartside? A list of reasons it was not."""
     if not state:
         return ['no sync on this machine: run python3 growth.py sync first']
@@ -535,7 +561,8 @@ def freshness(pack, state, head_fn, fetch_fn):
     if now == state['sha']:
         return []
     readme = fetch_fn('README.md', now)
-    paths, _ = canon_paths(readme)
+    listing = list_fn(now)
+    paths, _ = canon_paths(readme, newest_handover(listing) if listing is not None else state.get('handover'))
     texts = {'README.md': readme}
     moved = []
     for p in paths:
@@ -742,6 +769,12 @@ def self_test():
     t('canon comes from the README, in its order', found and paths[:3] == ['docs/V3.md', 'docs/P.md', 'docs/SYNC.md'])
     t('canon always adds the brand system', 'design/BRAND-SYSTEM.md' in paths and 'docs/X.md' not in paths)
     t('no "Picking this up" line falls back', canon_paths('# nothing')[0][:1] == ['docs/V3-GIFTS-FROM-YOUR-DOG.md'])
+    t('the newest dated handover wins', newest_handover(['COWORK-HANDOVER-2026-10-15.md', 'HANDOVER-2026-10-20.md', 'HANDOFF.md',
+                                                         'COWORK-PROMPT-2026-10-14-V3.md']) == 'docs/HANDOVER-2026-10-20.md')
+    t('no handover is None', newest_handover(['HANDOFF.md', 'SYNC.md']) is None and newest_handover(None) is None)
+    hp, _ = canon_paths(readme, 'docs/COWORK-HANDOVER-2026-10-15.md')
+    t('the handover comes after the README\'s list and before the always-read files',
+      hp[:4] == ['docs/V3.md', 'docs/P.md', 'docs/SYNC.md', 'docs/COWORK-HANDOVER-2026-10-15.md'] and hp[4] == 'README.md')
     doc = '# T\n\n## 1. A\none\n\n## 2. Rules\nno em dashes\n### 2.1 sub\nmore\n\n## 3. Next\nthree'
     t('a section runs to the next heading of its level', section(doc, '## 2. ') == '## 2. Rules\nno em dashes\n### 2.1 sub\nmore')
     t('a missing section is None', section(doc, '## 9. ') is None)
@@ -762,6 +795,11 @@ def self_test():
         t('stale when the pack names another sync', any('last sync' in e for e in freshness({'heartside_sha': 'bbbbbbb'}, st, lambda: 'a' * 40, lambda p, s: same.get(p))))
         t('stopped when rules changed', any('rules changed' in e for e in freshness({'heartside_sha': 'aaaaaaa'}, {**st, 'rules_ok': False}, lambda: 'a' * 40, lambda p, s: same.get(p))))
         t('stopped with no sync', any('no sync' in e for e in freshness({'heartside_sha': 'aaaaaaa'}, None, lambda: 'a' * 40, lambda p, s: None)))
+        newer = {**same, 'docs/COWORK-HANDOVER-2026-10-20.md': 'new handover'}
+        t('stale when a newer handover appears', any('HANDOVER-2026-10-20' in e for e in freshness(
+            {'heartside_sha': 'aaaaaaa'}, st, lambda: 'b' * 40, lambda p, s: newer.get(p), lambda s: ['COWORK-HANDOVER-2026-10-20.md'])))
+        t('fresh when the docs listing is unavailable and nothing else moved', freshness(
+            {'heartside_sha': 'aaaaaaa'}, st, lambda: 'b' * 40, lambda p, s: same.get(p), lambda s: None) == [])
     finally:
         RULES_BASIS = saved
     t('RULES_BASIS is filled in', all(v != 'FILL' and len(v) == 16 for v in RULES_BASIS.values()))
@@ -835,7 +873,7 @@ def main():
         st = load_state()
         errs = check_pack(pack, (st or {}).get('price_points') or ())
         try:
-            errs += freshness(pack, st, head_sha, raw)
+            errs += freshness(pack, st, head_sha, raw, docs_listing)
         except (urllib.error.URLError, OSError) as e:
             errs.append(f'could not confirm heartside is unchanged since the sync ({e}); with no answer, nothing passes')
         if errs:

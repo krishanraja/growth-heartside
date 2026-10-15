@@ -36,9 +36,12 @@ its own copy of any of that.
 | Every hour | A GitHub Action (`.github/workflows/sync.yml`) rewrites `state/HEARTSIDE-NOW.md` here when heartside, its open pull requests or the store changed. If Heartside's rules changed, it commits a STOP notice and fails the run, so GitHub emails the owner. |
 
 **The contract with heartside:** the canon is whatever the "Picking this
-up?" line of heartside's `README.md` links, in its order, plus
-`design/BRAND-SYSTEM.md` and `shopify/README.md`. Change that line in
-heartside, and this engine follows it on its next sync.
+up?" line of heartside's `README.md` links, in its order. Then comes the
+newest dated handover in heartside's `docs/` (a file named like
+`COWORK-HANDOVER-2026-10-15.md`), because sessions write those before the
+README catches up. Then `README.md`, `design/BRAND-SYSTEM.md` and
+`shopify/README.md`. Change that line, or write a newer handover, and this
+engine follows it on its next sync.
 
 ## Setting it up (Krish, once)
 

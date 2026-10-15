@@ -3,6 +3,14 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-15: the canon also takes the newest dated handover in heartside's
+  `docs/`. On 15 Oct a Cowork session wrote `docs/COWORK-HANDOVER-2026-10-15.md`
+  (Krish's "10X personalized delight" direction, the approved mug redesign,
+  the four gifts in Draft) without adding it to heartside's README, so the
+  engine could not see it. This keeps Krish's 14 Oct instruction ("always
+  across what the main heartside repository is doing") true when the README
+  lags.
+
 - 2026-10-14: the engine is built from the two documents in `knowledge/`.
   Krish: "see attached for reference material that should train this corpus
   on how it can become a dominant force in what it does globally".

@@ -9,7 +9,8 @@ doing. Every other job starts with the same command.
    - the commit it read (`heartside_sha`);
    - commits since the last sync, and open pull requests (work in flight);
    - the canon, in the order heartside's README tells every session to read
-     it, and which canon files changed since the last sync;
+     it, plus the newest dated handover in heartside's `docs/`, and which
+     canon files changed or became canon since the last sync;
    - the latest lines of the top canon document's decision log;
    - what the live store sells right now, at what price;
    - whether the rules sections the checker was written from are unchanged.

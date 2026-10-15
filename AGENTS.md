@@ -59,7 +59,8 @@ address of Krish's in anything.
 2. **Heartside first, every run.** Your first command is always
    `python3 growth.py sync`. It reads the heartside repository as it is now:
    the commit, what changed, open pull requests, the canon its README tells
-   every session to read, and what the live store sells. Then read
+   every session to read plus the newest dated handover in its `docs/`, and
+   what the live store sells. Then read
    `local/state/HEARTSIDE-NOW.md`. If it lists canon that changed since the
    last sync, read those files before anything else (`python3 growth.py
    canon --full`). Heartside's canon beats this repository, the playbook and
