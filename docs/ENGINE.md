@@ -80,6 +80,11 @@ after restore.
 The GitHub workflow restores a validated checkpoint from its own previous
 trusted same-branch run. It checks the workflow path, source repository, regular
 file paths, size bounds, checksums and SQLite integrity before replacing state.
+Checkpoint version two stores identical bytes once, including assets reused
+across product commits; restore creates independent files after verifying every
+internal duplicate. Original version-one checkpoints remain readable. Both the
+engine and manual library export share one writer group and one authoritative
+ledger, so any exported campaign can receive a later publication/insight record.
 A missing/expired checkpoint after a previous successful run fails closed rather
 than silently starting a second campaign history. The latest three checkpoints
 and standalone review artifacts are kept with 90-day expiration. Hot media

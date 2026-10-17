@@ -18,6 +18,7 @@ from . import assets, ledger
 DIRECTORIES = {'state', 'assets', 'media', 'provider-assets', 'automation'}
 MAX_BYTES = 500 * 1024 * 1024
 MAX_FILES = 12000
+MAX_EXPANDED_BYTES = 2 * 1024 * 1024 * 1024
 
 
 def permitted(name):
@@ -52,17 +53,27 @@ def export(root, destination):
             with closing(ledger.connect(database)) as db:
                 ledger.backup(db, stage / 'engine.sqlite3')
             files['local/engine.sqlite3'] = stage / 'engine.sqlite3'
-        if len(files) > MAX_FILES or sum(p.stat().st_size for p in files.values()) > MAX_BYTES:
-            raise ValueError('checkpoint exceeds bounds; archive older runs before proceeding')
+        if len(files) > MAX_FILES:
+            raise ValueError('checkpoint exceeds the file count bound')
         manifest = {name: {'sha256': assets.sha256(path), 'size': path.stat().st_size} for name, path in files.items()}
+        unique = {entry['sha256']: entry['size'] for entry in manifest.values()}
+        if sum(unique.values()) > MAX_BYTES or sum(entry['size'] for entry in manifest.values()) > MAX_EXPANDED_BYTES:
+            raise ValueError('checkpoint exceeds its unique or expanded byte bound')
         temporary_archive = destination.with_name('.' + destination.name + '-' + uuid.uuid4().hex)
         try:
             with tarfile.open(temporary_archive, 'w:gz') as archive:
-                payload = json.dumps({'version': 1, 'files': manifest}, sort_keys=True).encode()
+                payload = json.dumps({'version': 2, 'files': manifest}, sort_keys=True).encode()
                 info = tarfile.TarInfo('checkpoint.json'); info.size = len(payload)
                 archive.addfile(info, io.BytesIO(payload))
+                seen = {}
                 for name, path in files.items():
-                    archive.add(path, arcname=name, recursive=False)
+                    checksum = manifest[name]['sha256']
+                    if checksum in seen:
+                        link = tarfile.TarInfo(name); link.type = tarfile.LNKTYPE; link.linkname = seen[checksum]
+                        archive.addfile(link)
+                    else:
+                        archive.add(path, arcname=name, recursive=False)
+                        seen[checksum] = name
             if temporary_archive.stat().st_size > 100 * 1024 * 1024:
                 raise ValueError('compressed checkpoint exceeds the 100 MB zero-spend storage policy; no new state artifact may be uploaded')
             temporary_archive.replace(destination)
@@ -85,19 +96,35 @@ def restore(root, source, replace=False):
             names = [m.name for m in members]
             if len(names) != len(set(names)) or 'checkpoint.json' not in names:
                 raise ValueError('checkpoint has duplicate entries or no manifest')
-            if any(not m.isfile() or (m.name != 'checkpoint.json' and not permitted(m.name)) for m in members):
+            if any(not (m.isfile() or m.islnk()) or (m.name != 'checkpoint.json' and not permitted(m.name)) for m in members):
                 raise ValueError('checkpoint contains an unsafe path or nonregular file')
+            header = archive.getmember('checkpoint.json')
+            if not header.isfile() or header.size > 4000000:
+                raise ValueError('checkpoint manifest is invalid or too large')
             manifest = json.load(archive.extractfile('checkpoint.json'))
-            if manifest.get('version') != 1 or set(manifest['files']) != set(names) - {'checkpoint.json'}:
+            if manifest.get('version') not in {1, 2} or set(manifest['files']) != set(names) - {'checkpoint.json'}:
                 raise ValueError('checkpoint manifest does not match its files')
+            sizes = [entry['size'] for entry in manifest['files'].values()]
+            if any(isinstance(n, bool) or not isinstance(n, int) or n < 0 for n in sizes) or sum(sizes) > MAX_EXPANDED_BYTES:
+                raise ValueError('checkpoint exceeds its expanded byte bound')
+            regular = set()
             for member in members:
                 if member.name == 'checkpoint.json':
                     continue
                 path = stage / member.name
                 path.parent.mkdir(parents=True, exist_ok=True)
-                with archive.extractfile(member) as stream, path.open('wb') as out:
-                    shutil.copyfileobj(stream, out)
                 entry = manifest['files'][member.name]
+                if member.islnk():
+                    if (manifest['version'] != 2 or member.linkname not in regular or not permitted(member.linkname)
+                            or manifest['files'][member.linkname] != entry):
+                        raise ValueError('checkpoint hardlink is not a verified internal duplicate')
+                    # Copy rather than linking restored files: editing one creative
+                    # must never change another file with identical original bytes.
+                    shutil.copyfile(stage / member.linkname, path)
+                else:
+                    with archive.extractfile(member) as stream, path.open('wb') as out:
+                        shutil.copyfileobj(stream, out)
+                    regular.add(member.name)
                 if entry['size'] != path.stat().st_size or entry['sha256'] != assets.sha256(path):
                     raise ValueError('checkpoint checksum mismatch')
         database = stage / 'local/engine.sqlite3'
