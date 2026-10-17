@@ -1,9 +1,9 @@
 {
-  "verified_at": "2026-10-17T11:10:26.356013+00:00",
-  "implementation_revision": "d5c515dec295557792bf80b4e09f614a15ff6757",
+  "verified_at": "2026-10-17T11:31:37.869839+00:00",
+  "implementation_revision": "a99c093a5f290f8ee87fd83414dd96098dff21c1",
   "product_revision": "5618a99829a0c9ef1291b73c20cda3d837c262de",
   "self_checks": 110,
-  "unit_and_integration_tests": 51,
+  "unit_and_integration_tests": 52,
   "campaign_packs": 7,
   "hook_experiments": 28,
   "native_media_files": 105,
@@ -77,9 +77,9 @@
       "conclusion": "success"
     },
     "implementation_ci": {
-      "id": 39027496024,
-      "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39027496024",
-      "head_sha": "d5c515dec295557792bf80b4e09f614a15ff6757",
+      "id": 39028701800,
+      "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39028701800",
+      "head_sha": "a99c093a5f290f8ee87fd83414dd96098dff21c1",
       "event": "push",
       "status": "completed",
       "conclusion": "success"
@@ -127,6 +127,31 @@
       "id": 39027495460,
       "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39027495460",
       "head_sha": "d5c515dec295557792bf80b4e09f614a15ff6757",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success",
+      "job_statuses": [
+        "already_completed",
+        "already_completed",
+        "already_completed",
+        "already_completed",
+        "already_completed",
+        "already_completed",
+        "already_completed"
+      ]
+    },
+    "conversion_capable_production": {
+      "id": 39028701698,
+      "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39028701698",
+      "head_sha": "a99c093a5f290f8ee87fd83414dd96098dff21c1",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "final_unchanged_input_replay": {
+      "id": 39028901853,
+      "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39028901853",
+      "head_sha": "a99c093a5f290f8ee87fd83414dd96098dff21c1",
       "event": "workflow_dispatch",
       "status": "completed",
       "conclusion": "success",

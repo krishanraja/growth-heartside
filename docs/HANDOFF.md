@@ -68,12 +68,14 @@ closed. Public-repository artifacts are not confidential media storage.
 - [Recovery replay](https://github.com/krishanraja/growth-heartside/actions/runs/39025077762): restored the failed run's valid checkpoint and skipped all seven completed jobs.
 - [Hosted operator evidence deployment](https://github.com/krishanraja/growth-heartside/actions/runs/39025502013): validated evidence input and all production steps succeeded without recording any fictional publication.
 - [Final hosted replay](https://github.com/krishanraja/growth-heartside/actions/runs/39025604815): validated the evidence-input step, restored the current production checkpoint and skipped all seven completed jobs.
-- [Implementation CI](https://github.com/krishanraja/growth-heartside/actions/runs/39027496024): 110 self-checks and 52 tests passed, including actual neural voice synthesis.
+- [Implementation CI](https://github.com/krishanraja/growth-heartside/actions/runs/39028701800): 110 self-checks and 52 tests passed, including actual neural voice synthesis.
 
 - [Full library export](https://github.com/krishanraja/growth-heartside/actions/runs/39027003626): all seven campaign packs were restored, verified, persisted in the hosted ledger and attached to the owner handoff.
 - [Expanded checkpoint restore](https://github.com/krishanraja/growth-heartside/actions/runs/39027175642): the scheduled engine restored the deduplicated library checkpoint, reused completed production and refreshed the progress report for the expanded ledger.
 
 - [Final expanded-state replay](https://github.com/krishanraja/growth-heartside/actions/runs/39027495460): all seven jobs were already complete after the portable-path and archive validation checks; no duplicate production occurred.
+
+- [Final conversion-capable production](https://github.com/krishanraja/growth-heartside/actions/runs/39028701698) and [unchanged-input replay](https://github.com/krishanraja/growth-heartside/actions/runs/39028901853): the final implementation ran successfully, then reused all seven completed jobs. Conversion rendering passed with a synthetic ready-catalog fixture; no real order was placed. The real store remained gated.
 
 The machine-readable [verification receipt](VERIFICATION-2026-10-17.json) records
 source revisions, actual run conclusions, campaign/library checksums and explicit
