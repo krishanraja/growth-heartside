@@ -3,6 +3,18 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-17, latest scope: Krish: "you are not to do any actual work in
+  control-center, only pass me a brief once you have completed your work."
+  Then: "Complete this all to 100% without coming back to me again. The next
+  reply should be confirmation of completion and handoff." Implementation,
+  checks, draft scheduling and the handoff stay in growth-heartside. Control
+  Centre delivery is disabled by default. No further changes to its existing
+  draft, code, database or deployments are authorized by this instruction.
+  Seven declared jobs now have a persistent GitHub Actions fallback. New
+  campaign layouts, native exports, original local sound, fictional AI scene,
+  provider reservations, insight decisions and recovery checkpoints are here.
+  Publishing, creator gifts and paid generation retain their existing limits.
+
 - 2026-10-17: Krish: "Put everything that's not related to the marketing and
   customer acquisition in the heartside repository so that one can pick
   this up: your recommendation up next and then leave everything else in
@@ -39,8 +51,9 @@ Newest first. Record his words with the date, then change the job file and
 Krish: "Control Centre is ultimately where the unified dashboard is going to
 be: where you report back on progress and recommendations to improve in the
 format that it requires." He also asked for missing access and UI to be made
-visible. This authorizes the interactive reporting bridge and Control Center
-handoff; scheduled runs retain their existing repository boundaries.
+visible. The latest scope correction above supersedes the earlier interpretation of
+implementation authorization. Only the reporting contract and final brief belong
+to this task; no further work in Control Centre is authorized.
 
 Added dashboard report generation from the aggregate ledger, with sources,
 timezones, coverage and prepared recommendations. Central reads are scoped

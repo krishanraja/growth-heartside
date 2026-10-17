@@ -21,7 +21,7 @@ class MediaTests(unittest.TestCase):
             root = Path(temporary)
             cache = root / 'local/assets/test'; cache.mkdir(parents=True)
             records = {}
-            for role in ('mug_dog', 'mug_note', 'biscuit', 'logo'):
+            for role in ('mug_dog', 'mug_note', 'biscuit', 'biscuit_entryway', 'logo'):
                 path = cache / (role + '.png')
                 Image.new('RGB', (700, 700), '#F0C0C0').save(path)
                 records[role] = {'path': str(path.relative_to(root)), 'sha256': assets.sha256(path)}
@@ -31,6 +31,7 @@ class MediaTests(unittest.TestCase):
                 records[role] = {'path': str(path.relative_to(root)), 'sha256': assets.sha256(path)}
             source = {'heartside_sha': 'a' * 40, 'assets': records}
             spec = json.loads((Path(growth.HERE) / 'campaigns/waits-at-the-door.json').read_text())
+            spec.pop('voiceover', None)
             for scene in spec['scenes']:
                 scene['seconds'] = 1
             state = {'sha': 'a' * 40, 'rules_ok': True}

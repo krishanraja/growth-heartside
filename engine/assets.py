@@ -55,6 +55,17 @@ def prepare(root, sha, checkout=None):
         records[role] = {'path': str(destination.relative_to(root)), 'sha256': sha256(destination),
                          'source': source, 'heartside_sha': sha,
                          'rights': 'Heartside approved example assets; see product canon and assets/README.md'}
+    # A generated fictional scene lives in this growth repository, never in the
+    # product asset catalog. Its provenance and visible disclosure remain explicit.
+    fictional = Path(root) / 'assets/fictional/biscuit-entryway.json'
+    if fictional.exists():
+        provenance = json.loads(fictional.read_text())
+        source_path = Path(root) / provenance['path']
+        if sha256(source_path) != provenance['sha256']:
+            raise ValueError('fictional source asset checksum changed')
+        destination = folder / 'biscuit_entryway.png'
+        destination.write_bytes(source_path.read_bytes())
+        records['biscuit_entryway'] = {**provenance, 'path': str(destination.relative_to(root)), 'heartside_sha': sha}
     manifest = {'heartside_sha': sha, 'assets': records}
     manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
     return manifest

@@ -61,10 +61,10 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
 5. Write the production spec under `local/specs/`, using
    `campaigns/waits-at-the-door.json` as the schema. A scheduled run never
    edits that tracked file. Keep the visible detail true to its approved
-   example product. Run `python3 growth.py render <spec>`. It currently
-   produces audience media with silent audio, without paid generation.
-   New motion and voice adapters are subsequent work. Paid generation
-   still requires permission.
+   example product. Run `python3 growth.py render <spec>`. It produces native audience films with restrained motion, an original local
+   score, cover, carousel, Stories, Pins and subtitles. Approved narration can
+   be attached with verified provenance. Connected provider jobs use the budget
+   and receipt contract in docs/PROVIDERS.md; no paid generation is automatic.
 6. Keep the renderer's production manifest and native creative IDs. Use
    its printed draft path for `growth.py check` and `post`. Incorporate
    additional checked briefs or comment items if needed. Missing or

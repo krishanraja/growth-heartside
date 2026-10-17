@@ -1,256 +1,184 @@
-# Running the growth engine
+# Running the Heartside growth engine
 
-The engine produces reviewable marketing media and keeps a record of what was
-made, posted and measured. Product, checkout, personalization and fulfillment
-work is handed to [heartside PR #13](https://github.com/krishanraja/heartside/pull/13).
-This repository reads product truth and never deploys the store. `STRATEGY.md`
-holds the acquisition experiment; `AGENTS.md` holds the operating permissions.
+Implementation lives here. Product, purchase and print work is already handed
+to [heartside PR #13](https://github.com/krishanraja/heartside/pull/13).
+Control Centre receives only the final [integration brief](CONTROL-CENTRE-BRIEF.md).
+No social publisher, customer-record reader or paid-generation scheduler exists.
 
-## What works now
-
-- Canon and live catalog sync, with product-specific readiness.
-- Checked audience media from approved real product photos, read at the
-  synced product commit: Reel, cover, three Stories, two Pins and subtitles.
-- Content-addressed media caching, file checksums and human review status.
-- Transactional SQLite creative revisions and publication evidence entered
-  by an operator. Recording a URL does not publish anything.
-- Importing aggregate connected-Shopify reports, including corrected reports,
-  without adding duplicate or overlapping windows.
-- Consistent portable ledger backups. Storage is local, not automatically
-  replicated to a cloud service.
-
-The first renderer makes an example audience pack with simple cuts and a
-silent audio track. It does not generate new AI scenes, voice, music or
-customer-specific artwork. Its manifests say which approved assets it used.
-Paid provider adapters, shared n8n state, platform-insight imports and automatic
-experiment selection are subsequent work. No social publisher is installed.
-
-## Start a run
+## Production
 
 ```sh
 python3 -m pip install -r requirements-media.txt
-# Install FFmpeg (including ffprobe) with the system package manager.
+# Install FFmpeg and ffprobe through the system package manager.
 python3 growth.py sync
 python3 growth.py readiness
 python3 growth.py render campaigns/waits-at-the-door.json
 ```
 
-Use `--heartside-dir /path/to/heartside` on `assets` or `render` for an
-existing checkout. Assets are read using `git show <synced-sha>:<path>`, so
-uncommitted edits and a different checkout branch cannot replace them.
-Without that option, the same paths are downloaded from raw GitHub at the
-full synced SHA. They are cached under `local/assets/` with source paths and
-SHA-256 checksums. Rendering never executes code from the other repository.
+Use the printed draft path with `growth.py check` and `growth.py post`. `post`
+means internal pack storage. Central delivery is disabled unless a later
+integration session explicitly sets `HEARTSIDE_ENABLE_CC_DELIVERY=1`.
+`growth.py bundle <pack-path> local/review/campaign.zip` creates a portable review
+artifact. Unzip and open `review.html`. No web account or second dashboard is needed.
 
-The campaign file is an editable production spec. It gives the concept,
-hook, pillar, variation, three scenes and native captions. `C90` is the
-starter example. Use a new concept number for a different mechanism, a new
-hook number for a different opening, and a new variation for a derivative.
-Review changed product canon before reusing any template or example photo.
+The seven checked concepts cover three reusable families: recognition, two-sided
+product proof and fictional Biscuit hosting. Each has native captions, hook
+metadata, a declared mechanism and an audience intent. Selection falls back to a
+stable seven-day rotation, never an invented trend. An eligible observed
+replication candidate gets a changed opening and hook ID, holding its mechanism
+constant. It is an exploratory test, not an automatically established winner.
 
-The renderer prints a draft path under `local/drafts/`. Then run:
+Every pack has a 1080x1920 Instagram film, distinct Facebook/TikTok opening
+editions, a cover, three Story frames, two 1000x1500 Pins, three 1080x1350 carousel
+slides, SRT subtitles and an original locally synthesized score. Restrained
+push-ins preserve the actual approved product imagery. Narration imports are
+supported with an approved transcript, exact source SHA, checksum and duration.
+See [the AI provider contract](PROVIDERS.md). The default films combine local Kokoro neural narration with the original
+score and captions. All narration remains a draft requiring human listening
+review; it uses no metered provider API. See [voice provenance](VOICE-LICENSES.md). Nothing is approved or published by rendering.
 
-```sh
-python3 growth.py check <printed-draft-path>
-python3 growth.py post <printed-draft-path>
-python3 growth.py creatives list
-```
+Approved product photos, logo and typefaces come from the full synced Heartside
+commit. `--heartside-dir /path/to/heartside` reads via `git show SHA:path` without
+executing its code. The separate fictional Biscuit entryway scene is generated
+brand material from this repository with visible AI disclosure, never a customer
+or product reconstruction. Each output has file checksums, native copy digests,
+product SHA and a content-addressed revision. Modified copy/files fail checking;
+failed renders preserve previous output. A new revision needs fresh human review.
 
-Replace the angle-bracket placeholder with the printed path. The media lives
-under `local/media/<creative-id>/<revision>/`. A daily pack needs a verified
-production manifest; a text-only brief cannot pass `check` or `post` as a
-finished daily pack. Every file is verified before storing. A media manifest
-must match the pack's creative, native copy and product commit. Changed files invalidate
-the check. Failed encodes build in a temporary directory and leave prior
-outputs intact. Repaired output returns to the rendered state for review.
+## Autonomous draft scheduling
 
-`post` means store the internal pack, not publish a social post. Previous
-versions of a stored pack are retained in `local/packs/history/`. Scratch
-drafts are outside the packs directory so weekly reads do not count them
-twice.
-
-## Offer checks
-
-`readiness` lists the canonical gifts, approved prices, current public
-products and the reason each gift is ready or blocked. It distinguishes a
-machine ready to work from a gift ready to sell. A public catalog containing
-four retired products does not make the new range ready.
-
-Public prices or purchase copy must name their offers in structured metadata:
-
-```json
-{"intent":"buy","offers":[{"id":"the-morning-mug","quantity":1,"unit_price":"29.00"}]}
-```
-
-This is a schema example; re-read current readiness before using a price.
-Gift IDs and prices come from the synced gift table. The amount must belong
-to that particular gift and an available live variant, and the tracked link
-must lead to that gift or a ready gifts landing page. A discounted bundle
-also needs current confirmation that the store applies it; the price table
-alone is not evidence of an active discount. The initial renderer emits
-audience packs without public prices or purchase links.
-
-## Aggregate Shopify reporting
-
-Use the connected Shopify reporting tool when available, after verifying
-that it is Heartside. Read reports, not orders or customer records. Discover
-current ShopifyQL metrics and syntax before constructing queries.
-
-The tested sales query selects `orders, net_sales` from `sales`. The tested
-funnel query selects `sessions, sessions_with_cart_additions,
-sessions_that_reached_checkout, sessions_that_completed_checkout,
-conversion_rate` from `sessions`. Use one ungrouped row per import.
-
-Write a local JSON envelope with these fields:
-
-| Field | Meaning |
-|---|---|
-| `platform` | `shopify` |
-| `scope` | `store`, meaning an unfiltered whole-store aggregate |
-| `currency` | `USD` |
-| `source` | The report/query and reporting surface |
-| `observed_at` | Actual retrieval time, ISO 8601 with UTC offset |
-| `period.start` | Inclusive calendar date |
-| `period.end` | Exclusive calendar date |
-| `period.timezone` | Store's verified IANA timezone, not a fixed abbreviation |
-| `result` | The tool's structured result containing `shopDomain`, `columns` and one `rows` entry |
-
-An inclusive ShopifyQL `UNTIL October 16` is recorded with exclusive end
-`October 17`. The API confirmed Heartside's timezone as `Europe/London` on
-17 October; read it again if configuration changes. New York job times do
-not turn store reporting days into New York days. Never relabel a London
-day as New York to make the numbers fit.
+The `Heartside draft engine` GitHub Actions workflow checks the seven canonical
+schedules in `automations.json` every 15 minutes. It is a single serialized writer
+per branch. All scheduling uses `America/New_York`, including daylight saving;
+GitHub can start late. The independent public product sync remains hourly.
 
 ```sh
-python3 growth.py metrics import local/metrics/<report>.json
-python3 growth.py metrics report --start 2026-10-01 --end 2026-11-01 --timezone Europe/London
+python3 growth.py run                 # only due jobs, idempotent per day/job
+python3 growth.py run --job all       # prove all declared job types now
+python3 growth.py run --job numbers   # a declared job, still idempotent
 ```
 
-Only allowlisted aggregates are accepted. Customer fields, grouped rows,
-wrong-store results, nonfinite numbers and invalid counts fail. Null means
-missing, not zero. A corrected observation replaces that source's window;
-an older observation cannot overwrite a newer one. A conflicting correction
-needs a later actual observation time.
+Every job syncs current product canon first. Failed jobs remain retryable, with
+at least 15 minutes between attempts. Independent jobs continue. A two-hour local
+writer lease recovers after a crash; the GitHub job timeout is one hour. Completed
+jobs do not regenerate the same day's creative. Run results and failure types
+are under `local/automation/`, with checked packs and review ZIPs under
+`local/automation/runs/YYYY-MM-DD/`. The runner never contacts Control Centre. A changed product/catalog fingerprint
+or corrected metrics refreshes affected completed jobs; unchanged inputs do not
+repeat production. `run --job NAME --force` is an explicit operator rebuild.
+Previous pack revisions remain in per-job history. The checkpoint excludes
+duplicate review ZIP bytes; the latest review is rebuilt from verified media
+after restore.
 
-Reporting chooses nonoverlapping complete windows separately for each
-additive metric. It prefers a broader complete aggregate to overlapping
-daily fragments, never sums rates, and shows covered days and source
-evidence. It does not prorate a broad window into smaller days. Partial
-coverage must be described as partial. Different timezone windows never mix.
-Orders can remain nonzero when a sale was refunded; net sales are the
-revenue ledger. There is no per-creative revenue attribution in this adapter
-yet, so an account total must not be credited to the latest Reel.
+The GitHub workflow restores a validated checkpoint from its own previous
+trusted same-branch run. It checks the workflow path, source repository, regular
+file paths, size bounds, checksums and SQLite integrity before replacing state.
+A missing/expired checkpoint after a previous successful run fails closed rather
+than silently starting a second campaign history. The latest three checkpoints
+and standalone review artifacts are kept with 90-day expiration. Hot media
+and per-run files retain seven days; permanent creative/evidence ledger
+metadata remains. Compressed checkpoints are capped at 100 MB. Save publication
+masters separately for longer retention; this is not unlimited storage. A workflow run after restore proves idempotency.
 
-## Review and record publication
+Download `heartside-state`, extract `state.tgz`, then restore to another checkout:
 
 ```sh
-python3 growth.py creatives mark <creative-id> <full-revision> approved
-python3 growth.py creatives mark <creative-id> <full-revision> published --url <real-platform-url>
+python3 growth.py snapshot restore /path/to/state.tgz --replace
 ```
 
-Run the second command only after Krish actually posts the approved asset.
-The URL must belong to the creative's platform. Revision history keeps the
-publication evidence; editing or repairing the same render requires review
-again. These commands only write the local ledger.
+Close engine processes first. Existing state is retained in a local recovery
+folder. `snapshot export local/backups/new-state.tgz` produces a consistent SQLite
+backup including committed WAL records. Lists, raw customer files, tokens and
+arbitrary local directories are excluded. Public-repository Actions artifacts are
+not confidential storage: they contain only approved marketing/example material
+and allowlisted aggregates. Never put customer or creator identities in them.
+Raw creator research stays under `local/lists/` and is not checkpointed.
+
+The runner has no private social browser or inherited connected-Shopify token.
+Its numbers job uses imported aggregate evidence and names its actual windows;
+its radar reads public search suggestions and labels them as suggestions, not
+volume or trends. Its creator job reports the research boundary and operating
+brief, without pretending it has sent gifts or verified profiles it cannot read.
+Connected authoring sessions can carry out the richer research in `jobs/`.
+This fallback runs unattended; fresh multi-provider generation and private
+analytics collection are not silently claimed as deployed capabilities.
+
+## Offer readiness
+
+`readiness` binds canonical gift IDs, approved prices, available public variants
+and landing-page readiness to a current catalog snapshot. The retired public
+range does not establish readiness for the new range. Initial campaigns are
+price-free audience materials. Purchase copy must name exact structured `offers`
+and match that gift's actual live price and destination. A bundle discount needs
+current confirmation that the store applies it, not merely a canon price table.
+No Christmas order-by deadline is promised without current confirmation.
+
+## Aggregate measurement
+
+Use connected Shopify analytics after verifying Heartside and its IANA timezone.
+Read reports, never order/customer records. Schema: `platform: shopify`,
+`scope: store`, `currency: USD`, `source`, offset `observed_at`, `period` with
+inclusive `start`, exclusive `end`, verified `timezone`, and the tool's `result`
+(`shopDomain`, `columns`, one ungrouped `rows` entry), or explicit allowlisted
+aggregate `values`. `bnf1em-ge.myshopify.com` is the verified store. The shop's
+IANA timezone was verified as `Europe/London`; a display abbreviation such as
+BST must not replace that zone. Source reporting days are independent of New
+York job times.
 
 ```sh
-python3 growth.py ledger backup local/backups/engine-20261017.sqlite3
+python3 growth.py metrics import local/metrics/report.json
+python3 growth.py metrics report --start 2026-10-01 --end 2026-10-17 --timezone Europe/London
+python3 growth.py dashboard --start 2026-10-01 --end 2026-10-17 --timezone Europe/London
 ```
 
-Choose a new filename each time. Backups include committed WAL records.
-When changing machines, copy the backup and the referenced `local/media/`
-and `local/assets/` directories. Close running jobs before restoring a copy
-to `local/engine.sqlite3`. A fresh cloud workspace has no previous local
-history unless those files are restored. A shared storage adapter is still
-required for unattended execution across different machines.
+Only finite allowlisted totals/rates are imported. Customer fields, grouped
+rows, wrong stores and invalid counts fail. Null stays missing. Corrected windows
+replace prior observations; rates and overlapping windows are never summed.
+Partial coverage remains explicit. Refunds can make net sales negative.
+Month-to-date corrections are needed even when daily imports already exist.
 
-## Next engineering work
+`dashboard` prepares numbers and progress packs in the existing central format,
+with source observations, timezone, coverage and prepared recommendations. It
+works without central credentials. Store totals are never allocated to the
+latest creative. The actual October 1–16 audit showed one order and zero net
+sales; it is not proof of current V3 conversion or organic attribution.
 
-1. Add a cost and capability contract for connected image, motion and voice
-   providers. Require a configured budget before a paid request, use
-   idempotent request IDs and bounded retries, and keep the deterministic
-   template usable when providers fail.
-2. Add native media templates and reusable approved motion. Maintain product
-   truth, exact typography, source provenance and platform safe zones.
-3. Add a shared-state adapter to existing n8n infrastructure if its limits
-   suit the workload; keep imports and backups portable.
-4. Import native platform insights and known attribution before implementing
-   automatic scale/hold/kill decisions. Keep low-volume results inconclusive.
-5. Feed the first-party sharing event contract back from the product repo.
-   `hs3_share_card` currently means a card render, and `hs3_add_to_cart`
-   means a handoff to product pages. Confirmed purchases come from Shopify.
+## Publication and creative insights
 
-Social publishing permissions and human print confirmation remain as stated
-in `AGENTS.md`. This implementation does not change them.
+```sh
+python3 growth.py creatives mark CREATIVE_ID FULL_REVISION approved
+python3 growth.py creatives mark CREATIVE_ID FULL_REVISION published --url REAL_PLATFORM_URL
+python3 growth.py insights import local/metrics/creative-observation.json
+python3 growth.py insights decisions
+```
 
-## Verification
+Only an operator may record a real publication after it happens. An insight
+requires that exact published revision, matching platform, an allowlisted HTTPS
+report surface, offset publication/retrieval timestamps, an attribution field
+and allowlisted aggregate values. See `examples/creative-observation.json` for
+the schema; it is illustrative data, never imported as evidence. Native attention
+cannot carry orders/net sales. Shopify attribution requires an explicit filter
+to the exact `utm_content` creative ID. Observations replace lifetime snapshots;
+they are not additive and do not change the whole-store revenue ledger.
+
+A pilot replication candidate needs current native evidence, at least 2,000
+reach, 48 hours, observed sends, two same-platform peers in the same 48-hour
+age band, at least 10 sends/1,000 reach and twice their median rate. These are
+experimental thresholds, not validated benchmarks or statistical significance.
+Sparse, stale or absent metrics stay inconclusive. No command scales spend or
+publishes. Unattributed sales and unknown costs remain unknown.
+
+## Recovery and verification
 
 ```sh
 python3 growth.py --self-test
 python3 -m unittest discover -s tests -v
+python3 growth.py ledger backup local/backups/new-ledger.sqlite3
 ```
 
-The tests cover price binding, unavailable variants, missing daily work,
-correction and overlap behavior, publication status, backups, real FFmpeg
-encoding, cache reuse, file tampering and failure preservation. CI installs
-the optional media dependencies. The core sync and copy checker remain
-standard-library Python.
-
-## Control Center reporting
-
-Control Center is the unified dashboard. The reviewed server change is in its
-`codex/heartside-growth-reporting` branch. Until its migration and application
-are deployed, Heartside reports remain local retry copies. The GitHub Actions
-reporting identity is verified: the existing repository secret authenticated
-to the live API with HTTP 200 on 17 October. The interactive process does not
-automatically receive the secret from Actions.
-
-Build the dashboard's two packs from aggregate evidence:
-
-```sh
-python3 growth.py dashboard --start 2026-10-01 --end 2026-10-17 --timezone Europe/London
-python3 growth.py check local/drafts/dashboard/2026-10-17-numbers.json
-python3 growth.py post local/drafts/dashboard/2026-10-17-numbers.json
-python3 growth.py check local/drafts/dashboard/2026-10-17-report.json
-python3 growth.py post local/drafts/dashboard/2026-10-17-report.json
-```
-
-Use the date printed by the command and the reporting period actually imported.
-The examples above describe an exclusive end, not a forecast. Each measure
-keeps its source, actual observation time, timezone and coverage. Missing data
-stays null, including missing revenue. The progress pack links prepared work
-from `recommendations.json` with a next action and a completion condition.
-These are recommendations, not automatic changes or another decision queue.
-
-The API must advertise Heartside in `ventures`; every engine write and report
-read names `venture=heartside`. Old publication callers remain scoped to
-makeyourmindup. Local copies and media provenance survive remote delivery and
-outages. Reads merge Control Center's marks with local production evidence;
-a failed central read explicitly says it is showing local evidence only.
-The renderer's paths do not make media remotely accessible. A private media
-adapter and reconciliation of dashboard marks with the creative ledger are
-still needed for a shared production review workflow.
-
-The 17 October access audit verified repository access, connected Shopify
-reports, Control Center's live database and all 18 Vercel team projects. The
-Production environment also contains the sensitive reporting-token binding.
-Control Center's
-06:00 UTC provider sweep reported its AI and n8n connections healthy. That
-is evidence of the server's checks, not proof this runner can call those
-providers or read private social insights. GitHub Actions authenticated through
-the existing secret in [run 39020889464](https://github.com/krishanraja/growth-heartside/actions/runs/39020889464).
-The result was `authenticated_legacy_api`, not a missing credential. The
-read-only workflow saves only controlled status fields as an artifact and job
-summary. It never copies the token or pack contents out of GitHub. There is
-still no verified signed-in social analytics session or persistent marketing
-scheduler. Keep those gaps visible; never present missing access as zero
-performance. Detailed integration and UI work belongs to Control Center's
-`docs/handoff/heartside-growth/README.md`, not a second dashboard here.
-
-Run `python3 growth.py reporting-access` to distinguish a missing credential
-in the current process, failed authentication and an authenticated API whose
-venture upgrade is not deployed. A GitHub secret does not need to be readable
-through the secrets-list API to be usable by Actions. The access workflow runs
-on trusted pushes changing its own definition or probe, and supports manual
-dispatch once installed on the default branch. Authentication success alone
-does not permit Heartside to use the legacy two-column pack key.
+Checks cover copy/offer gates, current source binding, real FFmpeg exports,
+cache/tamper/failure behavior, publication evidence, aggregate corrections,
+overlap, provider budgets and uncertain submissions, conservative insights,
+DST schedules, idempotent/retryable jobs, archive traversal and checkpoint
+recovery. CI installs the media runtime. No test calls a paid provider, social
+publisher or production database.

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "title": "The other side of the mug",
+  "concept": "C91",
+  "pillar": "PROOF",
+  "hook": "H01",
+  "variation": 1,
+  "intent": "audience",
+  "layout": "two-sides",
+  "mechanism": "A visible turn from the dog face to the real note tests whether product specificity earns saves.",
+  "scenes": [
+    {
+      "asset": "mug_dog",
+      "seconds": 3,
+      "headline": "One side is the face you know.",
+      "text": "A real example of Heartside's mug."
+    },
+    {
+      "asset": "mug_note",
+      "seconds": 4,
+      "headline": "The other side is the part you feel.",
+      "text": "A little note for their person."
+    },
+    {
+      "asset": "mug_dog",
+      "seconds": 3,
+      "headline": "One small part of every morning.",
+      "text": "Who would your dog give this to?"
+    }
+  ],
+  "native_hooks": {
+    "facebook": "One side is the face you know.",
+    "tiktok": "One side is the face you know."
+  },
+  "captions": {
+    "instagram": "Personalized dog gifts for the person who knows the little things. One side is the face you know. Who would your dog give this to? #PersonalizedDogGifts #GiftsFromTheDog",
+    "facebook": "One side is the face you know. A little note for their person. Who would your dog give this to?",
+    "tiktok": "Personalized dog gifts. One side is the face you know. Who would your dog give this to? #GiftsFromTheDog #DogPeople",
+    "pinterest": [
+      "Personalized dog gifts: the other side of the mug\nA little note for their person. Shown with Biscuit, Heartside's fictional AI dog. Save this gift idea.",
+      "A gift from the dog for their person\nOne side is the face you know. Who would your dog give this to? Example artwork features Biscuit, our fictional AI dog."
+    ]
+  },
+  "voiceover": "The face you know. The little things you know about them. A gift from the dog to their person."
+}

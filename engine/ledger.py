@@ -102,6 +102,9 @@ def mark(db, creative_id, revision, status, published_url=None):
 
 def normalize_report(document):
     """Only an ungrouped aggregate tool result or explicit aggregate values."""
+    allowed = {'platform', 'scope', 'currency', 'source', 'observed_at', 'period'}
+    if not isinstance(document, dict) or set(document) not in (allowed | {'result'}, allowed | {'values'}):
+        raise ValueError('import only the exact aggregate envelope; no extra fields or mixed raw payloads')
     period = document['period']
     start, end = dt.date.fromisoformat(period['start']), dt.date.fromisoformat(period['end'])
     if start >= end:

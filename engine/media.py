@@ -8,11 +8,16 @@ import tempfile
 import uuid
 from zoneinfo import ZoneInfo
 
-from . import assets, ledger
+from . import assets, ledger, sound
 
 
-VERSION = 3
-REQUIRED_ROLES = {'reel', 'cover', 'story_1', 'story_2', 'story_3', 'pin_1', 'pin_2', 'subtitles'}
+VERSION = 6
+REQUIRED_ROLES = {'reel', 'cover', 'story_1', 'story_2', 'story_3', 'pin_1', 'pin_2', 'subtitles', 'soundtrack', 'facebook_reel', 'tiktok_reel', 'carousel_1', 'carousel_2', 'carousel_3'}
+
+
+def renderer_fingerprint():
+    return ledger.digest({name: assets.sha256(Path(__file__).with_name(name))
+                          for name in ('media.py', 'assets.py', 'sound.py', 'voice.py')})
 
 
 def verify(root, production, pack=None):
@@ -78,7 +83,7 @@ def block(draw, text, box, font_path, size, minimum, color):
     raise ValueError('copy does not fit without making the text too small')
 
 
-def card(root, source_assets, scene, size):
+def card(root, source_assets, scene, size, layout='recognition'):
     from PIL import Image, ImageDraw, ImageOps
     width, height = size
     scale = width / 1080
@@ -91,6 +96,19 @@ def card(root, source_assets, scene, size):
     block(draw, scene['headline'], (int(width * .067), int(height * .15), int(width * .91), int(height * .31)),
           path('display_font'), int(82 * scale), int(52 * scale), '#121010')
     photo = Image.open(path(scene['asset'])).convert('RGB')
+    if layout == 'two-sides' and scene['asset'] == 'mug_dog':
+        first = Image.open(path('mug_dog')).convert('RGB')
+        second = Image.open(path('mug_note')).convert('RGB')
+        pair = Image.new('RGB', (1400, 700), '#FBF6F1')
+        for index, picture in enumerate((first, second)):
+            picture = ImageOps.contain(picture, (690, 690), Image.Resampling.LANCZOS)
+            pair.paste(picture, (index * 700 + (700 - picture.width) // 2, (700 - picture.height) // 2))
+        photo = pair
+    if layout == 'biscuit-desk':
+        # A clearly fictional host badge, never a simulated customer reaction.
+        badge = Image.open(path('biscuit')).convert('RGB')
+        badge = ImageOps.fit(badge, (int(100 * scale), int(100 * scale)))
+        out.paste(badge, (int(width * .80), int(height * .055)))
     box = (int(width * .067), int(height * .31), int(width * .91), int(height * .69))
     photo = ImageOps.contain(photo, (box[2] - box[0], box[3] - box[1]), Image.Resampling.LANCZOS)
     out.paste(photo, ((box[0] + box[2] - photo.width) // 2, (box[1] + box[3] - photo.height) // 2))
@@ -121,9 +139,12 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
     scenes = spec.get('scenes')
     if not isinstance(scenes, list) or len(scenes) != 3:
         raise ValueError('this template needs three scenes')
+    layout = spec.get('layout', 'recognition')
+    if layout not in {'recognition', 'two-sides', 'biscuit-desk'}:
+        raise ValueError('unknown approved media layout')
     duration = 0
     for scene in scenes:
-        if scene.get('asset') not in ('mug_dog', 'mug_note', 'biscuit'):
+        if scene.get('asset') not in ('mug_dog', 'mug_note', 'biscuit', 'biscuit_entryway'):
             raise ValueError('scene must use an approved product or Biscuit asset')
         seconds = scene.get('seconds')
         if isinstance(seconds, bool) or not isinstance(seconds, (int, float)) or not 1 <= seconds <= 10:
@@ -147,7 +168,33 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
     if errors:
         raise ValueError('; '.join(errors))
     source = assets.prepare(root, state['sha'], checkout)
-    revision = ledger.digest({'renderer': VERSION, 'spec': spec, 'day': day.isoformat(), 'assets': source})
+    narration = None
+    narration_file = spec.get('narration')
+    if spec.get('voiceover'):
+        if narration_file:
+            raise ValueError('choose one narration source')
+        voice_copy = {**pack, 'kind': 'radar', 'items': [{'platform': 'other', 'text': '\n'.join('Voiceover: ' + line for line in spec['voiceover'].splitlines())}]}
+        if check_copy(voice_copy, state.get('price_points', []), state=state):
+            raise ValueError('local narration transcript fails copy checks')
+        from . import voice
+        narration_file = str(voice.synthesize(root, spec['voiceover'], state['sha'], duration).relative_to(root))
+    if narration_file:
+        receipt = assets.local_path(root, narration_file)
+        narration = json.loads(receipt.read_text())
+        if (narration.get('role') != 'narration' or not (narration.get('status') == 'approved' or (narration.get('provider') == 'kokoro-local' and narration.get('status') == 'draft_local_synthesis'))
+                or narration.get('source_sha') != state['sha'] or not narration.get('transcript')):
+            raise ValueError('narration needs approved provenance bound to the current product SHA')
+        audio_path = assets.local_path(root, narration['path'])
+        if assets.sha256(audio_path) != narration['sha256']:
+            raise ValueError('narration checksum changed')
+        narration_copy = {**pack, 'kind': 'radar', 'items': [{'platform': 'other', 'text': '\n'.join('Voiceover: ' + line for line in narration['transcript'].splitlines())}]}
+        if check_copy(narration_copy, state.get('price_points', []), state=state):
+            raise ValueError('narration transcript fails copy checks')
+        audio_probe = json.loads(subprocess.run(['ffprobe', '-v', 'error', '-show_format', '-of', 'json', str(audio_path)], check=True, capture_output=True).stdout)
+        if float(audio_probe['format']['duration']) > duration:
+            raise ValueError('narration is longer than the film; adjust the scene timing, never cut off speech')
+        source['narration'] = narration
+    revision = ledger.digest({'renderer': VERSION, 'renderer_source': renderer_fingerprint(), 'spec': spec, 'day': day.isoformat(), 'assets': source})
     parent = assets.local_path(root, 'local/media/' + creative_id)
     target = parent / revision[:16]
     manifest_path = target / 'manifest.json'
@@ -165,7 +212,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
         files, subtitle_parts, elapsed = {}, [], 0
         for i, scene in enumerate(scenes, 1):
             filename = f'story-{i}.png'
-            card(root, source['assets'], scene, (1080, 1920)).save(work / filename)
+            card(root, source['assets'], scene, (1080, 1920), layout).save(work / filename)
             files[f'story_{i}'] = filename
             subtitle_parts.append(f'{i}\n{timestamp(elapsed)} --> {timestamp(elapsed + scene["seconds"])}\n{scene["headline"]}\n{scene["text"]}\n')
             elapsed += scene['seconds']
@@ -173,33 +220,69 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
         files['cover'] = 'cover.png'
         for i in (1, 2):
             filename = f'pin-{i}.png'
-            card(root, source['assets'], scenes[i - 1], (1000, 1500)).save(work / filename)
+            card(root, source['assets'], scenes[i - 1], (1000, 1500), layout).save(work / filename)
             files[f'pin_{i}'] = filename
+        if narration:
+            import textwrap
+            subtitle_parts = [f'1\n{timestamp(0)} --> {timestamp(duration)}\n' + '\n'.join(textwrap.wrap(narration['transcript'], 42)) + '\n']
         (work / 'subtitles.srt').write_text('\n'.join(subtitle_parts))
         files['subtitles'] = 'subtitles.srt'
-        # Simple cuts preserve the approved images and exact product typography.
-        sequence = []
+        # Animate the approved photograph/card without altering the print design.
+        # Text remains inside the common safe zone throughout the 2% push-in.
+        elapsed = 0
+        segments = []
         for i, scene in enumerate(scenes, 1):
-            sequence += [f"file 'story-{i}.png'", f'duration {scene["seconds"]}']
-        sequence.append("file 'story-3.png'")
-        (work / 'frames.txt').write_text('\n'.join(sequence) + '\n')
+            frames = round(scene['seconds'] * 30)
+            segment = f'segment-{i}.mp4'
+            subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', f'story-{i}.png',
+                            '-vf', f"zoompan=z='1+0.02*on/{frames}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d={frames}:s=1080x1920:fps=30,format=yuv420p",
+                            '-an', '-c:v', 'libx264', '-preset', 'fast', '-crf', '20', '-threads', '2', segment],
+                           cwd=work, check=True, capture_output=True)
+            segments.append(f"file '{segment}'")
+            elapsed += scene['seconds']
+        (work / 'segments.txt').write_text('\n'.join(segments) + '\n')
+        sound.score(work / 'score.wav', duration, [scenes[0]['seconds'], scenes[0]['seconds'] + scenes[1]['seconds']])
+        files['soundtrack'] = 'score.wav'
+        audio_args = ['-i', str(assets.local_path(root, narration['path']))] if narration else []
+        audio_filter = (['-filter_complex', '[1:a]volume=0.25[music];[2:a]apad[voice];[music][voice]amix=inputs=2:duration=first:normalize=0[a]', '-map', '0:v', '-map', '[a]']
+                        if narration else ['-map', '0:v', '-map', '1:a'])
         subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-f', 'concat', '-safe', '1',
-                        '-i', 'frames.txt', '-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo',
-                        '-t', str(duration), '-vf', 'fps=30,format=yuv420p', '-c:v', 'libx264',
-                        '-preset', 'fast', '-crf', '20', '-threads', '2', '-c:a', 'aac', '-b:a', '128k',
+                        '-i', 'segments.txt', '-i', 'score.wav', *audio_args, *audio_filter,
+                        '-t', str(duration), '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k',
                         '-movflags', '+faststart', 'reel.mp4'], cwd=work, check=True, capture_output=True)
+        # Each native film has its own opening card, not just a renamed caption.
+        for platform in ('facebook', 'tiktok'):
+            hook = spec.get('native_hooks', {}).get(platform, scenes[0]['headline'])
+            native_scene = {**scenes[0], 'headline': hook}
+            # Validate all visible native text through the same checker.
+            native_copy = {**pack, 'kind': 'radar', 'items': [{'platform': 'other', 'text': '\n'.join('Hook: ' + line for line in hook.splitlines())}]}
+            if check_copy(native_copy, state.get('price_points', []), state=state):
+                raise ValueError('native hook fails copy checks')
+            card(root, source['assets'], native_scene, (1080, 1920), layout).save(work / f'{platform}-opening.png')
+            subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', 'reel.mp4', '-i', f'{platform}-opening.png',
+                            '-filter_complex', f"[0:v][1:v]overlay=enable='lt(t,{scenes[0]['seconds']})'[v]",
+                            '-map', '[v]', '-map', '0:a', '-c:v', 'libx264', '-preset', 'fast', '-crf', '20', '-threads', '2',
+                            '-c:a', 'copy', '-movflags', '+faststart', f'{platform}.mp4'], cwd=work, check=True, capture_output=True)
+            files[platform + '_reel'] = platform + '.mp4'
+        for i, scene in enumerate(scenes, 1):
+            name = f'carousel-{i}.png'
+            card(root, source['assets'], scene, (1080, 1350), layout).save(work / name)
+            files[f'carousel_{i}'] = name
         probe = json.loads(subprocess.run(['ffprobe', '-v', 'error', '-show_streams', '-show_format',
                                           '-of', 'json', str(work / 'reel.mp4')], check=True, capture_output=True).stdout)
         video = next(s for s in probe['streams'] if s['codec_type'] == 'video')
         if (video['width'], video['height']) != (1080, 1920) or abs(float(probe['format']['duration']) - duration) > .2:
             raise ValueError('rendered video failed its dimensions or duration check')
         files['reel'] = 'reel.mp4'
-        manifest = {'version': VERSION, 'creative_id': creative_id, 'revision': revision,
+        manifest = {'version': VERSION, 'renderer_source': renderer_fingerprint(), 'creative_id': creative_id, 'revision': revision,
                     'heartside_sha': state['sha'], 'intent': 'audience', 'needs_human_review': True,
-                    'audio': 'silent stereo track; no generated voice or music', 'duration_seconds': duration,
+                    'audio': 'Original locally synthesized score' + (' with synthetic narration requiring human review' if narration else '; captions-first, no speech'), 'duration_seconds': duration,
                     'copy_sha256': {item['creative_id']: ledger.digest({k: item.get(k) for k in ('platform', 'text', 'intent')}) for item in items},
                     'sources': source, 'files': {role: {'path': str((target / name).relative_to(root)),
                                                        'sha256': assets.sha256(work / name)} for role, name in files.items()}}
+        for pattern in ('segment-*.mp4', '*-opening.png', 'segments.txt'):
+            for scratch in work.glob(pattern):
+                scratch.unlink()
         (work / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
         if target.exists():
             target.rename(parent / (target.name + '-previous-' + uuid.uuid4().hex[:8]))

@@ -9,7 +9,7 @@
   "mechanism": "Test whether a recognizable daily greeting and the real gift make someone send the film to their partner.",
   "scenes": [
     {
-      "asset": "mug_dog",
+      "asset": "biscuit_entryway",
       "seconds": 3,
       "headline": "For the person your dog waits for.",
       "text": "This year, the dog's buying."
@@ -35,5 +35,11 @@
       "Personalized dog gifts for your partner\nA gift from the dog, made from a photo and the everyday things you know about them. Save this idea for someone whose dog waits at the door.",
       "A Christmas gift from the dog\nThis year, the dog's buying. An example of the real mug with Biscuit, Heartside's fictional AI dog. Save this for the person your dog loves most."
     ]
-  }
+  },
+  "layout": "recognition",
+  "native_hooks": {
+    "facebook": "Who gets the biggest greeting?",
+    "tiktok": "The favorite person is home."
+  },
+  "voiceover": "For the person your dog waits for. A little thank-you for every ordinary day. Your dog loves you too."
 }

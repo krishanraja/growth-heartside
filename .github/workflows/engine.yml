@@ -1,0 +1,157 @@
+name: Heartside draft engine
+on:
+  schedule:
+    - cron: '8,23,38,53 * * * *'
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'Optional declared job, or all. Completed jobs remain idempotent.'
+        type: string
+        default: ''
+      aggregate_seed:
+        description: 'Optional JSON array of validated aggregate report envelopes. No customer data.'
+        type: string
+        default: '[]'
+  push:
+    branches: [codex/growth-engine-v3]
+    paths: ['.github/workflows/engine.yml']
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: heartside-engine-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read product truth first
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 growth.py sync --quiet
+      - name: Find the latest trusted checkpoint
+        uses: actions/github-script@v7
+        id: state
+        with:
+          script: |
+            const artifacts = await github.paginate(github.rest.actions.listArtifactsForRepo, {
+              ...context.repo, name: 'heartside-state', per_page: 100
+            });
+            let found;
+            for (const artifact of artifacts.sort((a,b) => b.id-a.id)) {
+              if (artifact.workflow_run?.head_branch !== context.ref.replace('refs/heads/', '')) continue;
+              const {data:run} = await github.rest.actions.getWorkflowRun({...context.repo, run_id:artifact.workflow_run.id});
+              if (run.path !== '.github/workflows/engine.yml' || run.head_repository?.full_name !== `${context.repo.owner}/${context.repo.repo}`) continue;
+              if (!artifact.expired) { found = artifact; break; }
+            }
+            if (found) core.setOutput('run-id', String(found.workflow_run.id));
+            else {
+              const {data} = await github.rest.actions.listWorkflowRuns({...context.repo,
+                workflow_id:'.github/workflows/engine.yml', branch:context.ref.replace('refs/heads/',''), status:'success', per_page:1});
+              if (data.total_count > 0) throw new Error('Previous engine state is missing or expired. Restore a verified checkpoint before running; refusing a silent reset.');
+              core.notice('First run on this branch: creating a new ledger.');
+            }
+      - uses: actions/download-artifact@v4
+        if: steps.state.outputs.run-id != ''
+        with:
+          name: heartside-state
+          path: local/incoming
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.state.outputs.run-id }}
+      - name: Restore checked state
+        if: steps.state.outputs.run-id != ''
+        run: python3 growth.py snapshot restore local/incoming/state.tgz --replace
+      - name: Install media tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python3 -m pip install -r requirements-media.txt
+      - name: Import optional aggregate observations
+        env:
+          AGGREGATE_SEED: ${{ inputs.aggregate_seed || '[]' }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from contextlib import closing
+          from engine import ledger
+          documents = json.loads(os.environ['AGGREGATE_SEED'])
+          if not isinstance(documents, list) or len(documents) > 30:
+              raise ValueError('Seed must be a bounded array of aggregate envelopes')
+          with closing(ledger.connect('local/engine.sqlite3')) as db:
+              for document in documents:
+                  ledger.import_report(db, document)
+          print('Validated aggregate observations imported:', len(documents))
+          PY
+      - name: Run due draft jobs
+        id: engine
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          REQUESTED_JOB: ${{ github.event_name == 'push' && 'all' || inputs.job }}
+        run: |
+          python3 - <<'PY'
+          import json, os, sys
+          import growth
+          from engine.runner import tick
+          result = tick(growth.HERE, growth, job=os.environ.get('REQUESTED_JOB') or None)
+          print(json.dumps(result, indent=2))
+          failed = [r for r in result['results'] if r['status'] == 'failed']
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
+              out.write('# Heartside draft engine\n\nNo social publishing, paid generation or Control Centre writes.\n\n')
+              for item in result['results']:
+                  out.write(f"- {item['job']}: {item['status']}\n")
+              out.write('\nDownload heartside-state, restore state.tgz, then open local/automation/runs/<date>/daily-pack/review.zip.\n')
+          sys.exit(1 if failed else 0)
+          PY
+      - name: Create a consistent recovery checkpoint
+        if: always() && (steps.engine.outcome == 'success' || steps.engine.outcome == 'failure')
+        run: python3 growth.py snapshot export local/checkpoint/state.tgz
+      - name: Save recovery state
+        uses: actions/upload-artifact@v4
+        if: always() && (steps.engine.outcome == 'success' || steps.engine.outcome == 'failure')
+        with:
+          name: heartside-state
+          path: local/checkpoint/state.tgz
+          if-no-files-found: error
+          retention-days: 90
+          compression-level: 0
+      - name: Prepare the latest standalone review bundle
+        if: success()
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil
+          paths = sorted(Path('local/automation/runs').glob('*/daily-pack/review.zip'))
+          if paths:
+              target = Path('local/review-export/heartside-review.zip')
+              target.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copyfile(paths[-1], target)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: heartside-review
+          path: local/review-export/heartside-review.zip
+          if-no-files-found: ignore
+          retention-days: 90
+          compression-level: 0
+      - name: Bound checkpoint storage to the latest three runs
+        uses: actions/github-script@v7
+        if: success()
+        with:
+          script: |
+            const artifacts = await github.paginate(github.rest.actions.listArtifactsForRepo, {...context.repo, per_page:100});
+            for (const name of ['heartside-state', 'heartside-review']) {
+            const ours = artifacts.filter(a => a.name === name && a.workflow_run?.head_branch === context.ref.replace('refs/heads/','')).sort((a,b) => b.id-a.id);
+            for (const artifact of ours.slice(3)) {
+              const {data:run} = await github.rest.actions.getWorkflowRun({...context.repo,run_id:artifact.workflow_run.id});
+              if (run.path === '.github/workflows/engine.yml' && run.head_repository?.full_name === `${context.repo.owner}/${context.repo.repo}`)
+                await github.rest.actions.deleteArtifact({...context.repo,artifact_id:artifact.id});
+            }
+            }

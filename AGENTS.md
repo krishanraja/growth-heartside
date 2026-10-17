@@ -147,13 +147,14 @@ commit. Creative revisions are kept in `local/engine.sqlite3`.
 2. `python3 growth.py check pack.json` until it says ready.
 3. `python3 growth.py post pack.json`.
 
-**Control Center.** Control Center keeps one pack per day and kind, with no
-venture, so a Heartside pack sent there today would replace makeyourmindup's
-pack for the same day. Until Control Center keeps a venture on each pack,
-`post` saves the pack in `local/packs/` and prints it in full. Your final
-message must contain the whole pack, so Krish can work it from the Codex or
-Cowork thread. `post` switches to Control Center by itself once Control
-Center says it keeps Heartside's packs apart (`README.md`, "Control Center").
+**Control Centre boundary, updated 17 October.** Krish: "you are not to do
+any actual work in control-center, only pass me a brief once you have completed
+your work." Implement only in this growth repository. Do not edit, merge,
+migrate or deploy Control Centre. Generate its compatible reports locally and
+hand Krish `docs/CONTROL-CENTRE-BRIEF.md` after finishing growth work. Central
+delivery is disabled by default, even if the secret is available. Do not enable
+`HEARTSIDE_ENABLE_CC_DELIVERY` without a later explicit instruction to integrate.
+The engine works independently of that dashboard.
 
 ## The schedule (New York time)
 
@@ -167,8 +168,10 @@ Center says it keeps Heartside's packs apart (`README.md`, "Control Center").
 | Saturday 07:00 | The store and search | `conversion` | `jobs/store.md` |
 | Sunday 07:00 | The weekly report | `report` | `jobs/report.md` |
 
-The daily pack lands at 09:00 New York, which is 14:00 in London, so Krish
-can post in the US morning and lunchtime. The report moves posting times once
+The daily pack is due at 09:00 America/New_York. Convert using IANA zones;
+London is usually five hours ahead, but the daylight-saving transition weeks
+differ. GitHub checks every 15 minutes and may start late. Krish can post in the
+US morning and lunchtime. The report moves posting times once
 the account's own numbers show better ones.
 
 Krish's time budget is about 20 minutes a day and 30 on Sunday. Keep every
@@ -241,13 +244,15 @@ the product handoff in heartside. The handoff is tracked there; the growth
 implementation and acquisition strategy stay here. Scheduled runs retain
 rule 9 and never edit heartside or the store.
 
-His later 17 October instruction makes Control Center the unified dashboard
-for progress and recommendations, and authorizes the interactive reporting
-bridge and Control Center handoff. Use `growth.py dashboard` to prepare the
-central format from the aggregate ledger. Report missing access and dashboard
-capabilities honestly. A scheduled run still changes only `local/`; it never
-deploys Control Center or changes credentials. Reporting recommendations does
-not approve them. Human decisions use Control Center's existing Home list.
+His latest 17 October instruction overrides the earlier reporting implementation
+interpretation: no actual work in Control Centre; brief only after growth work
+is complete. The earlier draft there is outside this task and remains untouched.
+
+`growth.py run` executes the same seven jobs on GitHub Actions, without a signed-in
+browser, social publishing or paid generation. It uses approved reusable assets,
+current public product truth and imported aggregate evidence. Missing private
+analytics and creator evidence stay missing. Its bounded fallback does not claim
+to replace the richer research possible in a connected authoring session.
 
 Krish keeps or kills a job from the Sunday report. Record his words with the
 date in `CHANGES.md`, then change the job file and `automations.json`

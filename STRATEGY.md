@@ -176,5 +176,7 @@ urgency for the first month.
 The first milestone is one real-product film, one verified tracked purchase
 journey, one real order and a report joining only what can be attributed.
 The code in this build delivers the film, offer checks and reporting
-foundation. Product purchase proof, provider generation and automatic
-experiment decisions remain distinct next steps.
+foundation. The build also delivers local neural narration, fictional AI scene reuse,
+native templates, persistent scheduled drafts and conservative evidence-based
+replication candidates. Product purchase proof, fresh private-source collection
+and authorized paid provider submissions remain explicit operating dependencies.

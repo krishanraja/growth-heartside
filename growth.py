@@ -659,6 +659,8 @@ def token():
 def control_center_takes_heartside():
     """True only when Control Center says it keeps packs per venture and knows heartside.
     Today it keeps one pack per (date, kind), so a Heartside pack would replace makeyourmindup's."""
+    if os.environ.get('HEARTSIDE_ENABLE_CC_DELIVERY') != '1':
+        return False, 'Control Centre delivery disabled by scope; handoff brief only'
     from engine.control_center import probe
     result = probe(BASE, token())
     if result['authenticated'] and result['venture_isolation']:

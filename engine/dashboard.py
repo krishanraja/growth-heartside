@@ -49,11 +49,11 @@ def build(db, state, start, end, timezone, pack_date, engine_revision, recommend
     report = {**common, 'kind': 'report', 'headline': 'Heartside growth: work completed, evidence and the next constraints', 'items': [
         {'platform': 'other', 'target_name': 'Growth engine implementation',
          'target_url': 'https://github.com/krishanraja/growth-heartside/pull/1',
-         'why': 'Reviewable build evidence; a draft PR is not a deployed engine.',
-         'text': f'Engine source {engine_revision}. Product source {state["sha"]}, synced {state.get("synced_at", "not shown")}. Latest recorded creative revisions: {statuses}. Media is still local to the runner; this dashboard cannot preview it yet.'},
+         'why': 'Source and implementation evidence; workflow run evidence establishes execution.',
+         'text': f'Engine source {engine_revision}. Product source {state["sha"]}, synced {state.get("synced_at", "not shown")}. Latest recorded creative revisions: {statuses}. Media and review bundles are in the runner checkpoint artifact; Control Centre media previews require the separate owner brief.'},
         {'platform': 'other', 'target_name': 'Read the acquisition strategy',
          'target_url': 'https://github.com/krishanraja/growth-heartside/pull/1/files',
-         'text': 'Goal: $10,000 of Shopify net sales in one calendar month. Store totals do not prove which creative caused a sale. No channel, customer, margin or sharing result is inferred from missing data. Platform insights, cross-machine storage and confirmed social publication remain separate evidence.'},
+         'text': 'Goal: $10,000 of Shopify net sales in one calendar month. Store totals do not prove which creative caused a sale. No channel, customer, margin or sharing result is inferred from missing data. Native insight imports, verified portable checkpoints and confirmed social publication remain separate evidence.'},
     ]}
     for item in recommendations:
         if not all(isinstance(item.get(k), str) and item[k].strip() for k in ('title', 'why', 'next_action', 'closes_when', 'target_url')):

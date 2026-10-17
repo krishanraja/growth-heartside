@@ -1,12 +1,8 @@
 name: verify Control Center access
 
-# A trusted same-repository push proves the existing GitHub secret can be
-# consumed without asking for its value or exporting it from GitHub.
+# Manual diagnostic only. The growth engine does not call or write Control
+# Centre under the current scope. An integration session may invoke this later.
 on:
-  push:
-    paths:
-      - '.github/workflows/reporting-access.yml'
-      - 'engine/control_center.py'
   workflow_dispatch:
 
 permissions:
