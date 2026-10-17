@@ -45,7 +45,7 @@ jobs:
               ...context.repo, name: 'heartside-state', per_page: 100
             });
             let found;
-            for (const artifact of artifacts.sort((a,b) => b.id-a.id)) {
+            for (const artifact of artifacts.sort((a,b) => b.created_at.localeCompare(a.created_at))) {
               if (artifact.workflow_run?.head_branch !== context.ref.replace('refs/heads/', '')) continue;
               const {data:run} = await github.rest.actions.getWorkflowRun({...context.repo, run_id:artifact.workflow_run.id});
               if (run.path !== '.github/workflows/engine.yml' || run.head_repository?.full_name !== `${context.repo.owner}/${context.repo.repo}`) continue;
@@ -149,7 +149,7 @@ jobs:
           script: |
             const artifacts = await github.paginate(github.rest.actions.listArtifactsForRepo, {...context.repo, per_page:100});
             for (const name of ['heartside-state', 'heartside-review']) {
-            const ours = artifacts.filter(a => a.name === name && a.workflow_run?.head_branch === context.ref.replace('refs/heads/','')).sort((a,b) => b.id-a.id);
+            const ours = artifacts.filter(a => a.name === name && a.workflow_run?.head_branch === context.ref.replace('refs/heads/','')).sort((a,b) => b.created_at.localeCompare(a.created_at));
             for (const artifact of ours.slice(3)) {
               const {data:run} = await github.rest.actions.getWorkflowRun({...context.repo,run_id:artifact.workflow_run.id});
               if (run.path === '.github/workflows/engine.yml' && run.head_repository?.full_name === `${context.repo.owner}/${context.repo.repo}`)
