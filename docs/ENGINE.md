@@ -21,7 +21,7 @@ integration session explicitly sets `HEARTSIDE_ENABLE_CC_DELIVERY=1`.
 `growth.py bundle <pack-path> local/review/campaign.zip` creates a portable review
 artifact. Unzip and open `review.html`. No web account or second dashboard is needed.
 
-The seven checked concepts cover three reusable families: recognition, two-sided
+The seven checked concepts with 28 prewritten hook experiments cover three reusable families: recognition, two-sided
 product proof and fictional Biscuit hosting. Each has native captions, hook
 metadata, a declared mechanism and an audience intent. Selection falls back to a
 stable seven-day rotation, never an invented trend. An eligible observed

@@ -82,6 +82,17 @@ def campaign(root, db, day):
     # A stable seven-concept rotation is a fallback, not invented trend research.
     offset = dt.date.fromisoformat(day).toordinal() % len(bank)
     spec = json.loads(bank[offset].read_text())
+    hooks = json.loads((Path(root) / 'config/hooks.json').read_text())['concepts'][spec['concept']]
+    variant = (dt.date.fromisoformat(day).toordinal() // len(bank)) % len(hooks)
+    original = spec['scenes'][0]['headline']
+    opening = hooks[variant]
+    spec['scenes'][0]['headline'] = opening
+    spec['hook'] = 'H' + str(variant + 1).zfill(2)
+    # Native caption lengths/tone remain in the source bank; replace only the
+    # specific opening. The whole output passes the same copy/render checks.
+    for platform in ('instagram', 'facebook', 'tiktok'):
+        spec['captions'][platform] = spec['captions'][platform].replace(original, opening)
+    spec['native_hooks'] = {'facebook': opening, 'tiktok': hooks[(variant + 1) % len(hooks)]}
     spec['mechanism'] += ' Scheduled campaign-bank hypothesis; no trend or performance claim.'
     return spec
 
@@ -194,7 +205,8 @@ def tick(root, growth, now=None, job=None, force=False):
         current = growth.sync(quiet=True) if growth else {}
         if growth and not current.get('rules_ok'):
             raise ValueError('STOP: current product rules changed; previous packs must not be reused')
-        base_fingerprint = ledger.digest({'runner': 2, 'renderer': media.VERSION, 'renderer_source': media.renderer_fingerprint(), 'sha': current.get('sha'),
+        bank_fingerprint = ledger.digest({str(p.relative_to(root)): assets.sha256(p) for p in sorted((Path(root) / 'campaigns').glob('*.json'))} | ({'hooks': assets.sha256(Path(root) / 'config/hooks.json')} if (Path(root) / 'config/hooks.json').exists() else {}))
+        base_fingerprint = ledger.digest({'runner': 3, 'campaign_bank': bank_fingerprint, 'renderer': media.VERSION, 'renderer_source': media.renderer_fingerprint(), 'sha': current.get('sha'),
                                           'store': current.get('store'), 'homepage_v3': current.get('homepage_v3')})
         history = json.loads(index.read_text()) if index.exists() else {}
         results = []

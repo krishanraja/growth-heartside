@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "description": "Four prewritten audience hooks per concept; every output remains a draft for human review. No trend or performance claim.",
+  "concepts": {
+    "C90": [
+      "For the person your dog waits for.",
+      "The favorite person is home.",
+      "Who gets the biggest greeting?",
+      "The little welcome that says everything."
+    ],
+    "C91": [
+      "One side is the face you know.",
+      "Turn it around.",
+      "A face. A note. Their person.",
+      "The little things are on the other side."
+    ],
+    "C92": [
+      "Biscuit has one question.",
+      "Who gets your dog's vote?",
+      "The dog has a favorite.",
+      "Who gets the first hello?"
+    ],
+    "C93": [
+      "For the one who gets up first.",
+      "Before the coffee.",
+      "Someone always gets up first.",
+      "For the first walk of the day."
+    ],
+    "C94": [
+      "The couch has a seating plan.",
+      "There is a favorite spot.",
+      "Who shares the warm spot?",
+      "One couch. One favorite person."
+    ],
+    "C95": [
+      "A face on one side.",
+      "A little part of every morning.",
+      "Same dog. A different kind of gift.",
+      "The gift is in the little things."
+    ],
+    "C96": [
+      "Some pockets have a purpose.",
+      "Your dog knows the treat pocket.",
+      "The dog's shortlist is ready.",
+      "Who gets the tail vote?"
+    ]
+  }
+}

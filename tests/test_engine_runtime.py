@@ -151,6 +151,19 @@ class RuntimeTests(unittest.TestCase):
         self.assertFalse(path.exists())
         self.assertEqual(self.db.execute('SELECT count(*) FROM creatives').fetchone()[0], 1)
 
+    def test_twenty_eight_days_have_distinct_checked_hook_experiments(self):
+        import growth
+        experiments = set()
+        first = dt.date(2026, 10, 17)
+        for offset in range(28):
+            spec = runner.campaign(ROOT, self.db, (first + dt.timedelta(days=offset)).isoformat())
+            experiments.add((spec['concept'], spec['hook']))
+            items = [{'platform': p, 'creative_id': f'{prefix}_{spec["pillar"]}_REEL_{spec["concept"]}_{spec["hook"]}_V1_20261017', 'text': spec['captions'][p]} for p,prefix in [('instagram','IG'),('facebook','FB'),('tiktok','TT')]]
+            items += [{'platform':'other', 'text':'Hook: '+hook} for hook in spec['native_hooks'].values()]
+            pack = {'venture':'heartside', 'kind':'radar', 'pack_date':'2026-10-17', 'heartside_sha':'a'*40, 'headline':'Hook experiment', 'items':items}
+            self.assertEqual(growth.check_pack(pack), [])
+        self.assertEqual(len(experiments), 28)
+
     def test_scheduling_uses_new_york_dst_and_seven_declared_jobs(self):
         config = json.loads((ROOT/'automations.json').read_text())
         before = runner.due_jobs(config, dt.datetime(2026,10,17,12,59,tzinfo=dt.timezone.utc))

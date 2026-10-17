@@ -8,7 +8,7 @@ untouched during this completion; central delivery defaults off.
 ## Delivered
 
 - Current product canon/catalog sync, full source SHA binding and exact offer gates.
-- Seven campaign concepts in three reusable families, with a newly generated,
+- Seven campaign concepts with 28 hook experiments in three reusable families, with a newly generated,
   disclosed fictional Biscuit scene kept separate from real approved product photos.
 - Native Instagram, Facebook and TikTok films with local neural narration,
   original score, restrained motion, cover, three Stories, three carousel slides,
@@ -51,7 +51,7 @@ source/copy/media binding, strict aggregate reporting and sparse/stale insights.
 All seven job types were run locally. The first hosted execution also
 completed all seven job types successfully in
 [run 39023911551](https://github.com/krishanraja/growth-heartside/actions/runs/39023911551).
-The test suite passes 110 self-checks and 44 unit/integration tests, including
+The test suite passes 110 self-checks and 45 unit/integration tests, including
 actual neural synthesis. Follow-up hosted runs verify checkpoint restore and
 idempotency against the final source revision.
 
