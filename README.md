@@ -100,22 +100,25 @@ Check the machine at any time with `python3 growth.py doctor`.
 
 ## Control Center
 
-Packs don't go to Control Center yet. Control Center's `growth_packs` table
-keeps one pack per `(pack_date, kind)`, with no venture. So a Heartside
-`daily` pack would replace makeyourmindup's `daily` pack for the same day.
-Until that changes, `post` saves each pack in `local/packs/` and prints it
-in full in the run's final message.
+Control Center is the unified dashboard for progress and recommendations.
+The live table still lacks venture isolation, so Heartside packs currently
+stay under `local/packs/`. The compatible change is prepared in Control
+Center's `codex/heartside-growth-reporting` branch; its migration and app
+must be deployed together. This runner also needs the existing reporting
+identity bound securely before it can deliver reports there.
 
-The change that lets Heartside in, for a Control Center session:
-- add `venture text not null default 'makeyourmindup'` to `growth_packs`;
-- make the unique key `(pack_date, venture, kind)`;
-- accept `venture` on POST and filter on it on GET (`?venture=`);
-- answer GET with `"ventures": ["makeyourmindup", "heartside"]`;
-- show the venture on Growth > Packs.
+`growth.py dashboard --start <date> --end <exclusive-date> --timezone <store-zone>`
+prepares numbers and progress packs with sources, coverage and prepared links.
+Check and post each printed draft. `post` checks for Heartside in the API's
+`ventures` capability, scopes every write to Heartside, and keeps a local
+retry copy and media provenance. `read` uses Heartside's central report when
+available and merges dashboard marks with local evidence. Existing publication
+callers remain isolated. See `docs/ENGINE.md` for commands and current limits.
 
-`post` checks for that `ventures` list before every send, and switches to
-Control Center by itself once it includes `heartside`. It uses the same
-`GROWTH_ENGINE_TOKEN` as the makeyourmindup engine.
+Control Center's media review, private downloads, shared runner state and
+Home-list routing of prepared decisions still need work. The detailed UI and
+access handoff lives in that repository at
+`docs/handoff/heartside-growth/README.md`. No second dashboard is built here.
 
 ## Layout
 

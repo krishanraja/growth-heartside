@@ -81,6 +81,7 @@ import re
 import subprocess
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 
 from engine import offers
@@ -662,12 +663,12 @@ def control_center_takes_heartside():
     if not t:
         return False, 'no Control Center key on this machine'
     try:
-        req = urllib.request.Request(BASE + '/api/growth/packs?days=1', headers={**UA, 'Authorization': f'Bearer {t}'})
+        req = urllib.request.Request(BASE + '/api/growth/packs?days=1&venture=heartside', headers={**UA, 'Authorization': f'Bearer {t}'})
         with urllib.request.urlopen(req, timeout=30) as r:
             body = json.loads(r.read() or b'{}')
     except (urllib.error.URLError, ValueError) as e:
         return False, f'Control Center did not answer ({getattr(e, "code", e)})'
-    if 'heartside' in (body.get('ventures') or []):
+    if isinstance(body, dict) and body.get('ok') is True and isinstance(body.get('ventures'), list) and 'heartside' in body['ventures']:
         return True, 'Control Center keeps Heartside packs apart'
     return False, 'Control Center does not keep packs per venture yet (README.md, "Control Center")'
 
@@ -689,40 +690,76 @@ def render_md(pack):
 
 
 def store_pack(pack):
-    takes, why = control_center_takes_heartside()
-    if takes:
-        req = urllib.request.Request(BASE + '/api/growth/packs', data=json.dumps({**pack, 'venture': 'heartside'}).encode(),
-                                     method='POST', headers={**UA, 'Authorization': f'Bearer {token()}', 'Content-Type': 'application/json'})
-        with urllib.request.urlopen(req, timeout=60) as r:
-            out = json.loads(r.read() or b'{}')
-        if out.get('ok') and (out.get('pack') or {}).get('venture') == 'heartside':
-            print(f'stored in Control Center: {pack["kind"]} {pack["pack_date"]} {BASE}/#/growth?section=packs')
-            return
-        why = 'Control Center answered without keeping the venture'
+    # Keep production manifests and a durable retry copy even when the API
+    # stores only its presentation fields or goes away during delivery.
     d = os.path.join(LOCAL, 'packs')
     os.makedirs(d, exist_ok=True)
     name = f'{pack["pack_date"]}-{pack["kind"]}'
     existing = os.path.join(d, name + '.json')
     if os.path.exists(existing):
-        old = open(existing).read()
+        with open(existing) as f:
+            old = f.read()
         history = os.path.join(d, 'history')
         os.makedirs(history, exist_ok=True)
-        open(os.path.join(history, name + '-' + digest(old)[:16] + '.json'), 'w').write(old)
-    json.dump(pack, open(os.path.join(d, name + '.json'), 'w'), indent=1)
-    open(os.path.join(d, name + '.md'), 'w').write(render_md(pack))
+        with open(os.path.join(history, name + '-' + digest(old)[:16] + '.json'), 'w') as f:
+            f.write(old)
+    with open(os.path.join(d, name + '.json'), 'w') as f:
+        json.dump(pack, f, indent=1)
+    with open(os.path.join(d, name + '.md'), 'w') as f:
+        f.write(render_md(pack))
+    takes, why = control_center_takes_heartside()
+    if takes:
+        try:
+            req = urllib.request.Request(BASE + '/api/growth/packs', data=json.dumps({**pack, 'venture': 'heartside', 'source_revision': pack['heartside_sha']}).encode(),
+                                         method='POST', headers={**UA, 'Authorization': f'Bearer {token()}', 'Content-Type': 'application/json'})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                out = json.loads(r.read() or b'{}')
+            saved = out.get('pack') or {}
+            if (out.get('ok') and saved.get('venture') == 'heartside'
+                    and saved.get('source_revision') == pack['heartside_sha']
+                    and saved.get('pack_date') == pack['pack_date'] and saved.get('kind') == pack['kind']):
+                print(f'stored in Control Center: {pack["kind"]} {pack["pack_date"]} {BASE}/#/growth?section=packs&venture=heartside (local copy retained)')
+                return
+            why = 'Control Center did not acknowledge the expected venture, date, kind and product SHA'
+        except (urllib.error.URLError, ValueError) as e:
+            why = f'Control Center delivery failed ({getattr(e, "code", type(e).__name__)}); local retry copy retained'
     print(f'stored on this machine: local/packs/{name}.md ({why}). The pack in full:\n')
     print(render_md(pack))
 
 
 def read_packs(days, kind):
     d = os.path.join(LOCAL, 'packs')
-    since = (dt.date.today() - dt.timedelta(days=days)).isoformat()
+    days = min(60, max(1, days))
+    since = (dt.date.today() - dt.timedelta(days=days - 1)).isoformat()
     out = []
     for f in sorted(os.listdir(d) if os.path.isdir(d) else [], reverse=True):
         if f.endswith('.json') and f[:10] >= since:
-            p = json.load(open(os.path.join(d, f)))
+            with open(os.path.join(d, f)) as source:
+                p = json.load(source)
             if not kind or p.get('kind') == kind:
                 out.append(p)
+    takes, why = control_center_takes_heartside()
+    if takes:
+        query = urllib.parse.urlencode({'days': days, 'venture': 'heartside', **({'kind': kind} if kind else {})})
+        try:
+            req = urllib.request.Request(BASE + '/api/growth/packs?' + query, headers={**UA, 'Authorization': f'Bearer {token()}'})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                body = json.loads(r.read() or b'{}')
+            if not isinstance(body, dict) or not body.get('ok') or not isinstance(body.get('packs'), list):
+                raise ValueError('report read refused')
+            merged = {(p['pack_date'], p['kind']): p for p in out}
+            for p in body.get('packs') or []:
+                if not isinstance(p, dict):
+                    continue
+                if p.get('venture') != 'heartside' or p.get('pack_date', '') < since or (kind and p.get('kind') != kind):
+                    continue
+                key = (p['pack_date'], p['kind'])
+                merged[key] = {**merged.get(key, {}), **p, 'heartside_sha': p.get('source_revision')}
+            return sorted(merged.values(), key=lambda p: (p['pack_date'], p['kind']), reverse=True)
+        except (urllib.error.URLError, ValueError, KeyError) as e:
+            print(f'Control Center read unavailable ({getattr(e, "code", type(e).__name__)}); showing local evidence only', file=sys.stderr)
+    else:
+        print(f'Control Center read unavailable ({why}); showing local evidence only', file=sys.stderr)
     return out
 
 

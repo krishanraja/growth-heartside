@@ -241,6 +241,14 @@ the product handoff in heartside. The handoff is tracked there; the growth
 implementation and acquisition strategy stay here. Scheduled runs retain
 rule 9 and never edit heartside or the store.
 
+His later 17 October instruction makes Control Center the unified dashboard
+for progress and recommendations, and authorizes the interactive reporting
+bridge and Control Center handoff. Use `growth.py dashboard` to prepare the
+central format from the aggregate ledger. Report missing access and dashboard
+capabilities honestly. A scheduled run still changes only `local/`; it never
+deploys Control Center or changes credentials. Reporting recommendations does
+not approve them. Human decisions use Control Center's existing Home list.
+
 Krish keeps or kills a job from the Sunday report. Record his words with the
 date in `CHANGES.md`, then change the job file and `automations.json`
 together. `python3 growth.py --self-test` checks that they still match.

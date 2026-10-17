@@ -6,10 +6,11 @@ from pathlib import Path
 from . import assets, ledger, offers
 
 
-COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger'}
+COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard'}
 
 
 def add_commands(sub):
+    dashboard = sub.add_parser('dashboard'); dashboard.add_argument('--start', required=True); dashboard.add_argument('--end', required=True); dashboard.add_argument('--timezone', required=True); dashboard.add_argument('--date')
     sub.add_parser('readiness')
     cache = sub.add_parser('assets'); cache.add_argument('--heartside-dir')
     render = sub.add_parser('render'); render.add_argument('file'); render.add_argument('--date'); render.add_argument('--heartside-dir')
@@ -26,7 +27,7 @@ def add_commands(sub):
 def run(args, growth):
     root = Path(growth.HERE)
     state = growth.load_state()
-    if args.cmd in ('assets', 'readiness', 'render') and not state:
+    if args.cmd in ('assets', 'readiness', 'render', 'dashboard') and not state:
         raise ValueError('run growth.py sync first')
     if args.cmd == 'readiness':
         print(json.dumps({'heartside_sha': state['sha'], 'store_snapshot_fresh': offers.fresh_store(state),
@@ -57,7 +58,12 @@ def run(args, growth):
         print('Check and store: python3 growth.py post ' + str(output.relative_to(root)))
         return
     with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
-        if args.cmd == 'metrics' and args.action == 'import':
+        if args.cmd == 'dashboard':
+            from . import dashboard
+            for path in dashboard.write(root, db, state, args.start, args.end, args.timezone, args.date):
+                print('Report draft: ' + str(path.relative_to(root)))
+            print('Run check and post on each draft. Reports are not social posts. Delivery requires Control Center venture support and runner authentication.')
+        elif args.cmd == 'metrics' and args.action == 'import':
             document = json.loads(Path(args.file).read_text())
             changed = ledger.import_report(db, document)
             print('aggregate report stored' if changed else 'aggregate report unchanged (not counted twice)')

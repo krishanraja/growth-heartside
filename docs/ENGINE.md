@@ -195,3 +195,46 @@ correction and overlap behavior, publication status, backups, real FFmpeg
 encoding, cache reuse, file tampering and failure preservation. CI installs
 the optional media dependencies. The core sync and copy checker remain
 standard-library Python.
+
+## Control Center reporting
+
+Control Center is the unified dashboard. The reviewed server change is in its
+`codex/heartside-growth-reporting` branch. Until its migration and application
+are deployed and the runner can authenticate, reports remain local retry
+copies. A repository checkout does not supply runtime credentials.
+
+Build the dashboard's two packs from aggregate evidence:
+
+```sh
+python3 growth.py dashboard --start 2026-10-01 --end 2026-10-17 --timezone Europe/London
+python3 growth.py check local/drafts/dashboard/2026-10-17-numbers.json
+python3 growth.py post local/drafts/dashboard/2026-10-17-numbers.json
+python3 growth.py check local/drafts/dashboard/2026-10-17-report.json
+python3 growth.py post local/drafts/dashboard/2026-10-17-report.json
+```
+
+Use the date printed by the command and the reporting period actually imported.
+The examples above describe an exclusive end, not a forecast. Each measure
+keeps its source, actual observation time, timezone and coverage. Missing data
+stays null, including missing revenue. The progress pack links prepared work
+from `recommendations.json` with a next action and a completion condition.
+These are recommendations, not automatic changes or another decision queue.
+
+The API must advertise Heartside in `ventures`; every engine write and report
+read names `venture=heartside`. Old publication callers remain scoped to
+makeyourmindup. Local copies and media provenance survive remote delivery and
+outages. Reads merge Control Center's marks with local production evidence;
+a failed central read explicitly says it is showing local evidence only.
+The renderer's paths do not make media remotely accessible. A private media
+adapter and reconciliation of dashboard marks with the creative ledger are
+still needed for a shared production review workflow.
+
+The 17 October access audit verified repository access, connected Shopify
+reports, Control Center's live database and Vercel project. Control Center's
+06:00 UTC provider sweep reported its AI and n8n connections healthy. That
+is evidence of the server's checks, not proof this runner can call those
+providers or read private social insights. This runner has no authenticated
+Control Center API session, signed-in social analytics or proven persistent
+scheduler. Keep those gaps visible; never present missing access as zero
+performance. Detailed integration and UI work belongs to Control Center's
+`docs/handoff/heartside-growth/README.md`, not a second dashboard here.

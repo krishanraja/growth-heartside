@@ -33,3 +33,19 @@ Newest first. Record his words with the date, then change the job file and
   from anywhere (codex or cowork), solely focused on getting this business
   to 10k a month with minimal paid CAC", and "I lean to the latter for
   focus" (a dedicated repository over the heartside repository).
+
+## 2026-10-17: Control Center is the reporting destination
+
+Krish: "Control Centre is ultimately where the unified dashboard is going to
+be: where you report back on progress and recommendations to improve in the
+format that it requires." He also asked for missing access and UI to be made
+visible. This authorizes the interactive reporting bridge and Control Center
+handoff; scheduled runs retain their existing repository boundaries.
+
+Added dashboard report generation from the aggregate ledger, with sources,
+timezones, coverage and prepared recommendations. Central reads are scoped
+to Heartside and keep dashboard marks. Every delivery retains a local retry
+copy and production manifest. Control Center's live API is not yet ready for
+Heartside and this runner has no reporting credential. The separate Control
+Center change provides venture isolation, commerce measures and read-only
+report cards, with migration and rollout checks. It is not deployed.

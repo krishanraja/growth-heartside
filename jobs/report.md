@@ -53,3 +53,11 @@ Kind `report`. Part 7 in `PLAYBOOK.md`. Time for Krish: about 15 minutes.
 7. End with one call and one counterpoint. Headline: the week in one plain
    line, for example "Week 2: 11 orders ($604), behind 15 by 1 Nov by 4; the
    partner reveal is the winner". Check, then post.
+
+Control Center is the unified reporting destination. `growth.py dashboard`
+prepares numbers and progress packs with reporting windows, coverage and
+prepared recommendation links. Use it as the evidence basis, then complete
+this job's analysis from sources actually read. Check and post both packs.
+If authentication or venture support is absent, state that they were stored
+locally and name the missing capability. Never say a report landed centrally
+until the API acknowledged the correct venture, date, kind and product SHA.
