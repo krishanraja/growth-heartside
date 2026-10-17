@@ -24,7 +24,8 @@ def build(db, state, start, end, timezone, pack_date, engine_revision, recommend
     summary = ledger.summary(db, start, end, timezone)
     common = {'pack_date': pack_date, 'venture': 'heartside', 'heartside_sha': state['sha'],
               'source_revision': state['sha']}
-    rows = []
+    row = {'platform': 'shopify'}
+    notes = []
     for metric in MEASURES:
         evidence = summary['evidence'].get(metric, [])
         note = (f'{metric}: {start} inclusive to {end} exclusive, {timezone}, USD. '
@@ -33,9 +34,13 @@ def build(db, state, start, end, timezone, pack_date, engine_revision, recommend
             note += 'Sources: ' + '; '.join(f'{e["source"]}, observed {e["observed_at"]}, [{e["start"]}, {e["end"]})' for e in evidence)
         else:
             note += 'Not shown. No matching aggregate report imported.'
-        rows.append({'platform': 'shopify', metric: summary['totals'].get(metric), 'note': note})
+        row[metric] = summary['totals'].get(metric)
+        notes.append(note)
+    row['note'] = '\n'.join(notes)
+    if len(row['note']) > 4000:
+        raise ValueError('report evidence exceeds the dashboard note limit; import a complete aggregate for this window or choose a narrower window')
     numbers = {**common, 'kind': 'numbers', 'headline': f'Heartside sales and funnel evidence: {start} to {end} (end exclusive)',
-               'items': [], 'numbers': rows}
+               'items': [], 'numbers': [row]}
 
     latest = db.execute('''SELECT status, count(*) AS n FROM (
       SELECT status, row_number() OVER (PARTITION BY creative_id ORDER BY updated_at DESC, rowid DESC) AS rank
