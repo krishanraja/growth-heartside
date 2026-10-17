@@ -6,10 +6,11 @@ from pathlib import Path
 from . import assets, ledger, offers
 
 
-COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events'}
+COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library'}
 
 
 def add_commands(sub):
+    library = sub.add_parser('library'); library.add_argument('--date'); library.add_argument('--heartside-dir')
     events = sub.add_parser('events'); events.add_argument('action', choices=['import']); events.add_argument('file')
     sub.add_parser('reporting-access')
     run = sub.add_parser('run'); run.add_argument('--job'); run.add_argument('--now'); run.add_argument('--force', action='store_true')
@@ -89,6 +90,18 @@ def run(args, growth):
     state = growth.load_state()
     if args.cmd in ('assets', 'readiness', 'render', 'dashboard') and not state:
         raise ValueError('run growth.py sync first')
+    if args.cmd == 'library':
+        from . import library
+        if not state:
+            raise ValueError('run growth.py sync first')
+        stale = growth.freshness({'heartside_sha': state['sha']}, state, growth.head_sha, growth.raw, growth.docs_listing)
+        if stale:
+            raise ValueError('; '.join(stale))
+        result = library.build(root, state, growth.check_pack, args.heartside_dir, args.date)
+        stale = growth.freshness({'heartside_sha': state['sha']}, state, growth.head_sha, growth.raw, growth.docs_listing)
+        if stale:
+            raise ValueError('; '.join(stale))
+        print(json.dumps(result, indent=2)); return
     if args.cmd == 'readiness':
         print(json.dumps({'heartside_sha': state['sha'], 'store_snapshot_fresh': offers.fresh_store(state),
                           'homepage_v3': state.get('homepage_v3'), 'gifts': offers.catalog(state)}, indent=2))

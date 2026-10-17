@@ -18,6 +18,11 @@ python3 growth.py render campaigns/waits-at-the-door.json
 Use the printed draft path with `growth.py check` and `growth.py post`. `post`
 means internal pack storage. Central delivery is disabled unless a later
 integration session explicitly sets `HEARTSIDE_ENABLE_CC_DELIVERY=1`.
+`growth.py library` builds the complete seven-concept library; the manual
+`handoff.yml` workflow attaches its verified output to the owner-only draft
+completion release. It uses the GitHub runner identity for binary uploads and
+does not change any autonomous schedule.
+
 `growth.py bundle <pack-path> local/review/campaign.zip` creates a portable review
 artifact. Unzip and open `review.html`. No web account or second dashboard is needed.
 

@@ -1,0 +1,67 @@
+name: Build the Heartside handoff library
+# Manual export only. The seven autonomous schedules remain in engine.yml.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: heartside-handoff-library
+  cancel-in-progress: false
+jobs:
+  library:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read product truth first
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 growth.py sync --quiet
+      - name: Install the production runtime
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python3 -m pip install -r requirements-media.txt
+      - name: Build seven checked campaign packs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 growth.py library > local/library-result.json
+      - name: Bind the handoff receipt to this archive
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess
+          from pathlib import Path
+          result = json.loads(Path('local/library-result.json').read_text())
+          assert result['campaigns'] == 7 and result['media_files'] == 105
+          release = json.loads(subprocess.check_output(['gh','api','repos/krishanraja/growth-heartside/releases/415745311'],text=True))
+          assert release['draft'] and release['tag_name'] == 'growth-engine-2026-10-17'
+          receipt = json.loads(Path('docs/VERIFICATION-2026-10-17.json').read_text())
+          receipt['workspace_library_sha256'] = receipt.pop('library_sha256', receipt.get('workspace_library_sha256'))
+          receipt['release_library_sha256'] = result['sha256']
+          receipt['release_library_product_revision'] = result['heartside_sha']
+          receipt['library_build_revision'] = os.environ['GITHUB_SHA']
+          receipt['library_build_run'] = os.environ['GITHUB_SERVER_URL']+'/'+os.environ['GITHUB_REPOSITORY']+'/actions/runs/'+os.environ['GITHUB_RUN_ID']
+          Path('local/handoff/verification.json').write_text(json.dumps(receipt,indent=2)+'\n')
+          PY
+      - name: Attach the complete library to the draft handoff
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload growth-engine-2026-10-17 local/handoff/heartside-campaign-library.zip docs/HANDOFF.md docs/CONTROL-CENTRE-BRIEF.md local/handoff/verification.json --clobber
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: heartside-complete-library
+          path: |
+            local/handoff/heartside-campaign-library.zip
+            local/handoff/verification.json
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 0
