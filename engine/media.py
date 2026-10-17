@@ -1,5 +1,6 @@
 """Render approved product photos into a reviewable pack. No AI calls or spend."""
 import datetime as dt
+from functools import lru_cache
 import json
 from pathlib import Path
 import shutil
@@ -11,8 +12,16 @@ from zoneinfo import ZoneInfo
 from . import assets, ledger, sound
 
 
-VERSION = 6
+VERSION = 7
 REQUIRED_ROLES = {'reel', 'cover', 'story_1', 'story_2', 'story_3', 'pin_1', 'pin_2', 'subtitles', 'soundtrack', 'facebook_reel', 'tiktok_reel', 'carousel_1', 'carousel_2', 'carousel_3'}
+
+
+@lru_cache(maxsize=1)
+def runtime_fingerprint():
+    import PIL
+    import zlib
+    version = subprocess.run(['ffmpeg', '-version'], capture_output=True, text=True, check=True).stdout.splitlines()[0]
+    return {'ffmpeg': version, 'pillow': PIL.__version__, 'zlib': zlib.ZLIB_VERSION}
 
 
 def renderer_fingerprint():
@@ -36,7 +45,7 @@ def verify(root, production, pack=None):
             ids = {item.get('creative_id') for item in pack.get('items', []) if isinstance(item, dict)}
             if manifest['creative_id'] not in ids:
                 return ['production belongs to a different creative']
-            copy = {item['creative_id']: ledger.digest({k: item.get(k) for k in ('platform', 'text', 'intent')})
+            copy = {item['creative_id']: ledger.digest({k: item.get(k) for k in ('platform', 'text', 'intent', 'alt_text')})
                     for item in pack['items'] if isinstance(item, dict) and item.get('creative_id')}
             if any(copy.get(cid) != value for cid, value in manifest['copy_sha256'].items()):
                 return ['native copy changed after rendering; change the spec and render a new revision']
@@ -162,9 +171,27 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
     items.append({'platform': 'instagram', 'creative_id': 'IG_' + stem.replace('_REEL_', '_STORY_'),
                   'intent': 'audience', 'why': spec['mechanism'],
                   'text': '\n'.join(s['headline'] + '\n' + s['text'] for s in scenes)})
+    descriptions = {
+        'mug_dog': "An approved example mug with Biscuit, Heartside's fictional AI dachshund.",
+        'mug_note': 'The real note side of the example mug, signed Love, Biscuit.',
+        'biscuit': "Biscuit, Heartside's fictional AI dachshund host.",
+        'biscuit_entryway': 'A generated fictional Biscuit scene at a front door beside sneakers.'}
+    scene_alt = []
+    for scene in scenes:
+        description = ('Two real photos showing both sides of the example mug.'
+                       if layout == 'two-sides' and scene['asset'] == 'mug_dog' else descriptions[scene['asset']])
+        scene_alt.append(description + ' Text: ' + scene['headline'] + ' ' + scene['text'])
+    pin_index = 0
+    for item in items:
+        item['alt_text'] = scene_alt[pin_index] if item['platform'] == 'pinterest' else ' '.join(scene_alt)
+        if item['platform'] == 'pinterest':
+            pin_index += 1
     pack = {'pack_date': day.isoformat(), 'kind': 'daily', 'venture': 'heartside', 'heartside_sha': state['sha'],
             'headline': spec['title'] + ': rendered audience pack, review before posting', 'items': items}
     errors = check_copy(pack, state.get('price_points', []), state=state)
+    for item in items:
+        alt_pack = {**pack, 'kind': 'radar', 'items': [{'platform': 'other', 'text': '\n'.join('Copy: ' + line for line in item['alt_text'].splitlines())}]}
+        errors += check_copy(alt_pack, state.get('price_points', []), state=state)
     if errors:
         raise ValueError('; '.join(errors))
     source = assets.prepare(root, state['sha'], checkout)
@@ -194,7 +221,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
         if float(audio_probe['format']['duration']) > duration:
             raise ValueError('narration is longer than the film; adjust the scene timing, never cut off speech')
         source['narration'] = narration
-    revision = ledger.digest({'renderer': VERSION, 'renderer_source': renderer_fingerprint(), 'spec': spec, 'day': day.isoformat(), 'assets': source})
+    revision = ledger.digest({'renderer': VERSION, 'renderer_source': renderer_fingerprint(), 'runtime': runtime_fingerprint(), 'spec': spec, 'day': day.isoformat(), 'assets': source})
     parent = assets.local_path(root, 'local/media/' + creative_id)
     target = parent / revision[:16]
     manifest_path = target / 'manifest.json'
@@ -274,10 +301,13 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
         if (video['width'], video['height']) != (1080, 1920) or abs(float(probe['format']['duration']) - duration) > .2:
             raise ValueError('rendered video failed its dimensions or duration check')
         files['reel'] = 'reel.mp4'
-        manifest = {'version': VERSION, 'renderer_source': renderer_fingerprint(), 'creative_id': creative_id, 'revision': revision,
+        if narration:
+            shutil.copyfile(assets.local_path(root, narration['path']), work / 'narration.wav')
+            files['narration'] = 'narration.wav'
+        manifest = {'version': VERSION, 'renderer_source': renderer_fingerprint(), 'runtime': runtime_fingerprint(), 'creative_id': creative_id, 'revision': revision,
                     'heartside_sha': state['sha'], 'intent': 'audience', 'needs_human_review': True,
                     'audio': 'Original locally synthesized score' + (' with synthetic narration requiring human review' if narration else '; captions-first, no speech'), 'duration_seconds': duration,
-                    'copy_sha256': {item['creative_id']: ledger.digest({k: item.get(k) for k in ('platform', 'text', 'intent')}) for item in items},
+                    'copy_sha256': {item['creative_id']: ledger.digest({k: item.get(k) for k in ('platform', 'text', 'intent', 'alt_text')}) for item in items},
                     'sources': source, 'files': {role: {'path': str((target / name).relative_to(root)),
                                                        'sha256': assets.sha256(work / name)} for role, name in files.items()}}
         for pattern in ('segment-*.mp4', '*-opening.png', 'segments.txt'):

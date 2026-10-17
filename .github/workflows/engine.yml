@@ -14,7 +14,7 @@ on:
         default: '[]'
   push:
     branches: [codex/growth-engine-v3]
-    paths: ['.github/workflows/engine.yml']
+    paths: ['.github/workflows/engine.yml', 'engine/**', 'campaigns/**', 'config/**', 'requirements-media.txt', 'growth.py']
 permissions:
   contents: read
   actions: write

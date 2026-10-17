@@ -32,7 +32,8 @@ def bundle(root, pack, destination):
         entries = []
         for item in pack['items']:
             text = html.escape(item['text'])
-            entries.append(f'<article><h2>{html.escape(item["creative_id"])}</h2><pre>{text}</pre></article>')
+            alt = html.escape(item.get('alt_text', ''))
+            entries.append(f'<article><h2>{html.escape(item["creative_id"])}</h2><pre>{text}</pre><details><summary>Alt text</summary><pre>{alt}</pre></details></article>')
         content = f'''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Heartside creative review</title><style>body{{font:17px/1.5 system-ui;margin:24px auto;max-width:900px;padding:0 16px;background:#fbf6f1;color:#211b18}}video{{width:100%;max-height:70vh}}pre{{white-space:pre-wrap;overflow-wrap:anywhere}}article{{border-top:1px solid #d8cfc7;margin:24px 0}}h2{{font-size:16px;overflow-wrap:anywhere}}a{{color:#6b3043}}</style>
 <h1>{html.escape(pack['headline'])}</h1><p>Draft only. Review product truth, legibility, spelling, audio and the AI example disclosure. Nothing is approved or published by generation.</p>

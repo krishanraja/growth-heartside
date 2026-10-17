@@ -1,3 +1,4 @@
+from unittest.mock import patch
 import io
 import json
 import unittest
@@ -54,6 +55,16 @@ class ReportingAccessTests(unittest.TestCase):
             self.assertEqual(result['outcome'], 'invalid_reporting_origin')
             self.assertNotIn('test-secret', json.dumps(result))
             opener.assert_not_called()
+
+
+class ScopeBoundaryTests(unittest.TestCase):
+    def test_reporting_token_does_not_enable_central_requests(self):
+        import os
+        import growth
+        with patch.dict(os.environ, {'GROWTH_ENGINE_TOKEN': 'test-only'}, clear=True), patch('engine.control_center.probe', side_effect=AssertionError('outside current scope')):
+            allowed, reason = growth.control_center_takes_heartside()
+            self.assertFalse(allowed)
+            self.assertIn('disabled', reason)
 
 
 if __name__ == '__main__':

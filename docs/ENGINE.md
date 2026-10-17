@@ -30,7 +30,7 @@ constant. It is an exploratory test, not an automatically established winner.
 
 Every pack has a 1080x1920 Instagram film, distinct Facebook/TikTok opening
 editions, a cover, three Story frames, two 1000x1500 Pins, three 1080x1350 carousel
-slides, SRT subtitles and an original locally synthesized score. Restrained
+slides, SRT subtitles, checked alt text, downloadable narration and an original locally synthesized score. Restrained
 push-ins preserve the actual approved product imagery. Narration imports are
 supported with an approved transcript, exact source SHA, checksum and duration.
 See [the AI provider contract](PROVIDERS.md). The default films combine local Kokoro neural narration with the original
@@ -43,7 +43,9 @@ executing its code. The separate fictional Biscuit entryway scene is generated
 brand material from this repository with visible AI disclosure, never a customer
 or product reconstruction. Each output has file checksums, native copy digests,
 product SHA and a content-addressed revision. Modified copy/files fail checking;
-failed renders preserve previous output. A new revision needs fresh human review.
+failed renders preserve previous output. Renderer source and FFmpeg/Pillow/zlib versions also participate in revision
+identity, so different production runtimes cannot silently share an approval.
+A new revision needs fresh human review.
 
 ## Autonomous draft scheduling
 

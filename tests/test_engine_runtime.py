@@ -73,13 +73,15 @@ class RuntimeTests(unittest.TestCase):
 
     def test_checkpoint_restores_wal_and_omits_lists_and_tokens(self):
         self.published()
-        for path in ('local/lists/creators.md', 'local/secrets/token', 'local/automation/runs/test/pack.json'):
+        for path in ('local/lists/creators.md', 'local/secrets/token', 'local/automation/runs/test/pack.json', 'local/automation/runner.lock', 'local/automation/runs/test/review.zip'):
             file = self.root / path; file.parent.mkdir(parents=True, exist_ok=True); file.write_text('sample')
         result = state_store.export(self.root, 'local/backups/state.tgz')
         destination = self.root / 'another-machine'; destination.mkdir()
         state_store.restore(destination, self.root / result['path'])
         self.assertFalse((destination / 'local/lists').exists())
         self.assertFalse((destination / 'local/secrets').exists())
+        self.assertFalse((destination / 'local/automation/runner.lock').exists())
+        self.assertFalse((destination / 'local/automation/runs/test/review.zip').exists())
         with closing(ledger.connect(destination / 'local/engine.sqlite3')) as db:
             self.assertEqual(db.execute('SELECT count(*) FROM creatives').fetchone()[0], 1)
         with self.assertRaises(ValueError):
@@ -125,6 +127,29 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(sum(d['decision'] == 'replicate_candidate' for d in result['decisions']), 1)
         stale = insights.decisions(self.db, dt.datetime(2026,10,25,tzinfo=dt.timezone.utc))
         self.assertTrue(all(d['decision'] == 'hold_missing' for d in stale['decisions']))
+
+    def test_changed_product_input_refreshes_completed_work(self):
+        from types import SimpleNamespace
+        (self.root / 'automations.json').write_text((ROOT/'automations.json').read_text())
+        state = {'sha': 'a'*40, 'rules_ok': True, 'store': []}
+        growth = SimpleNamespace(sync=lambda quiet: state)
+        time = dt.datetime(2026,10,17,13,0,tzinfo=dt.timezone.utc)
+        with patch('engine.runner.run_job', return_value={'pack':'checked'}) as work:
+            runner.tick(self.root, growth, time, 'daily-pack')
+            runner.tick(self.root, growth, time + dt.timedelta(minutes=16), 'daily-pack')
+            self.assertEqual(work.call_count, 1)
+            state['sha'] = 'b'*40
+            runner.tick(self.root, growth, time + dt.timedelta(minutes=32), 'daily-pack')
+            self.assertEqual(work.call_count, 2)
+
+    def test_hot_media_retention_preserves_ledger_metadata(self):
+        from engine import retention
+        path = self.root/'local/media/IG_EMO_REEL_C90_H01_V1_20260901/revision/reel.mp4'
+        path.parent.mkdir(parents=True); path.write_bytes(b'old render')
+        self.published()
+        retention.prune(self.root, '2026-10-17')
+        self.assertFalse(path.exists())
+        self.assertEqual(self.db.execute('SELECT count(*) FROM creatives').fetchone()[0], 1)
 
     def test_scheduling_uses_new_york_dst_and_seven_declared_jobs(self):
         config = json.loads((ROOT/'automations.json').read_text())

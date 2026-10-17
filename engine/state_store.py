@@ -42,7 +42,7 @@ def export(root, destination):
             for path in sorted(source.rglob('*')):
                 if path.is_symlink():
                     raise ValueError('checkpoint cannot contain symlinks')
-                if path.name == 'review.zip' and directory == 'automation':
+                if path.name in {'review.zip', 'runner.lock'} and directory == 'automation':
                     continue  # Derivable from checked media and pack JSON; avoid duplicate bytes.
                 if path.is_file() and not any(part.startswith('.build-') for part in path.parts):
                     name = path.relative_to(root).as_posix()

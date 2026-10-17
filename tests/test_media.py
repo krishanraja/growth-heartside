@@ -48,6 +48,8 @@ class MediaTests(unittest.TestCase):
                 self.assertTrue(media.verify(root, pack['production'], wrong))
                 wrong = copy.deepcopy(pack); wrong['items'][0]['text'] = 'A different claim.'
                 self.assertTrue(media.verify(root, pack['production'], wrong))
+                wrong = copy.deepcopy(pack); wrong['items'][0]['alt_text'] = 'A different description.'
+                self.assertTrue(media.verify(root, pack['production'], wrong))
                 output = assets.local_path(root, manifest['files']['cover']['path'])
                 original = output.read_bytes()
                 output.write_bytes(original + b'changed')

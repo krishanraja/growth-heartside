@@ -206,7 +206,14 @@ def tick(root, growth, now=None, job=None, force=False):
                 with closing(ledger.connect(Path(root) / 'local/engine.sqlite3')) as db:
                     rows = [dict(r) for r in db.execute('SELECT * FROM metrics ORDER BY platform,source,start,end,timezone')]
                 fingerprint = ledger.digest({'source': fingerprint, 'metrics': rows})
-            if not force and prior.get('status') == 'completed' and prior.get('input_fingerprint') == fingerprint:
+            completed = prior.get('status') == 'completed' and prior.get('input_fingerprint') == fingerprint
+            if completed and name == 'daily-pack' and prior.get('result', {}).get('creative_revision'):
+                try:
+                    previous = json.loads(assets.local_path(root, prior['result']['pack']).read_text())
+                    completed = not media.verify(root, previous.get('production'), previous)
+                except (OSError, ValueError, KeyError, TypeError):
+                    completed = False
+            if not force and completed:
                 results.append({'job': name, **prior, 'status': 'already_completed'})
                 continue
             # Persist the claim before work. A crash leaves it retryable after lease expiry.

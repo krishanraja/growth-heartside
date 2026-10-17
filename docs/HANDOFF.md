@@ -12,7 +12,7 @@ untouched during this completion; central delivery defaults off.
   disclosed fictional Biscuit scene kept separate from real approved product photos.
 - Native Instagram, Facebook and TikTok films with local neural narration,
   original score, restrained motion, cover, three Stories, three carousel slides,
-  two Pins, subtitles and platform captions. Downloadable HTML/media review ZIPs.
+  two Pins, subtitles, downloadable narration and platform captions/alt text. Downloadable HTML/media review ZIPs.
 - Stable creative revisions, cache/tamper checks, human review/publication records
   and real URL evidence. Generation never approves or publishes.
 - Serialized provider cost reservations, current quotes, recorded receipts,
@@ -48,7 +48,12 @@ Verification records are in `local/handoff/verification.json` and workflow runs.
 The checks exercise real FFmpeg exports and local neural synthesis, recovery to
 another workspace, failure preservation, retry/idempotency, provider budgets,
 source/copy/media binding, strict aggregate reporting and sparse/stale insights.
-All seven job types were run locally before hosted verification.
+All seven job types were run locally. The first hosted execution also
+completed all seven job types successfully in
+[run 39023911551](https://github.com/krishanraja/growth-heartside/actions/runs/39023911551).
+The test suite passes 110 self-checks and 44 unit/integration tests, including
+actual neural synthesis. Follow-up hosted runs verify checkpoint restore and
+idempotency against the final source revision.
 
 Shopify's verified October 1–16 aggregate showed one order and zero net sales,
 380 sessions, 40 cart sessions, 21 checkout sessions and one completed-checkout
