@@ -16,7 +16,7 @@
   {
     "title": "Add media review and evidence for recommendations",
     "why": "Local file paths cannot be opened from the dashboard on another device. Reports should not become another decision queue.",
-    "target_url": "https://github.com/krishanraja/control-center/blob/main/docs/app/growth/packs.md",
+    "target_url": "https://github.com/krishanraja/control-center/pull/472/files",
     "next_action": "Add private, persistent media delivery and previews to the existing Packs surface. Route prepared human decisions through the existing Home list with a real completion check.",
     "closes_when": "Krish can view and download the exact creative revision on his phone, act once on a prepared recommendation, and see its completion evidence without maintaining another list."
   }

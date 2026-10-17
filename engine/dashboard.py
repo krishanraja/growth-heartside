@@ -6,6 +6,7 @@ Reports remain evidence, with prepared recommendations linked to their owner.
 import datetime as dt
 import json
 from pathlib import Path
+import re
 import subprocess
 from zoneinfo import ZoneInfo
 
@@ -18,7 +19,7 @@ MEASURES = ('net_sales', 'orders', 'sessions', 'sessions_with_cart_additions',
 
 def build(db, state, start, end, timezone, pack_date, engine_revision, recommendations):
     dt.date.fromisoformat(pack_date)
-    if len(state.get('sha', '')) != 40 or not state.get('rules_ok'):
+    if not re.fullmatch(r'[a-f0-9]{40}', str(state.get('sha', ''))) or not state.get('rules_ok'):
         raise ValueError('report needs a valid, approved product sync')
     summary = ledger.summary(db, start, end, timezone)
     common = {'pack_date': pack_date, 'venture': 'heartside', 'heartside_sha': state['sha'],
@@ -46,7 +47,7 @@ def build(db, state, start, end, timezone, pack_date, engine_revision, recommend
          'why': 'Reviewable build evidence; a draft PR is not a deployed engine.',
          'text': f'Engine source {engine_revision}. Product source {state["sha"]}, synced {state.get("synced_at", "not shown")}. Latest recorded creative revisions: {statuses}. Media is still local to the runner; this dashboard cannot preview it yet.'},
         {'platform': 'other', 'target_name': 'Read the acquisition strategy',
-         'target_url': 'https://github.com/krishanraja/growth-heartside/blob/codex/growth-engine-v3/STRATEGY.md',
+         'target_url': 'https://github.com/krishanraja/growth-heartside/pull/1/files',
          'text': 'Goal: $10,000 of Shopify net sales in one calendar month. Store totals do not prove which creative caused a sale. No channel, customer, margin or sharing result is inferred from missing data. Platform insights, cross-machine storage and confirmed social publication remain separate evidence.'},
     ]}
     for item in recommendations:
@@ -62,7 +63,8 @@ def write(root, db, state, start, end, timezone, pack_date=None):
     day = pack_date or dt.datetime.now(ZoneInfo('America/New_York')).date().isoformat()
     result = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=root, capture_output=True, text=True, check=True)
     revision = result.stdout.strip()
-    dirty = subprocess.run(['git', 'diff', '--quiet'], cwd=root).returncode != 0
+    changes = subprocess.run(['git', 'status', '--porcelain'], cwd=root, capture_output=True, text=True, check=True)
+    dirty = bool(changes.stdout.strip())
     revision += ' (working tree has changes)' if dirty else ''
     recommendations = json.loads((root / 'recommendations.json').read_text())
     packs = build(db, state, start, end, timezone, day, revision, recommendations)
