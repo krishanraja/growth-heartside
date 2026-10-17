@@ -3,7 +3,8 @@
 repository and the live store, check every draft against Heartside's house
 rules, and leave a pack of drafts where Krish can work it.
 
-Standard library only. Runs anywhere Python 3.9+ and git run (a Codex
+Core commands use the standard library. Media also needs Pillow and FFmpeg.
+Runs anywhere Python 3.9+ and git run (a Codex
 session, a Cowork session, a Mac, a GitHub Action). Nothing here posts,
 sends, comments, follows, DMs, orders or spends. The only writes are this
 engine's own files under local/ (and state/ when a GitHub Action publishes
@@ -50,6 +51,12 @@ packs apart from makeyourmindup's (see `post` below).
 
     python3 growth.py --self-test
 
+    python3 growth.py readiness
+    python3 growth.py render campaigns/waits-at-the-door.json
+    python3 growth.py metrics import local/metrics/report.json
+    python3 growth.py creatives list
+        See docs/ENGINE.md for production, the local ledger and report windows.
+
 A pack file:
     {"pack_date": "2026-10-19", "kind": "daily", "venture": "heartside",
      "heartside_sha": "<the sha sync printed>",
@@ -67,12 +74,17 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import math
 import os
+from pathlib import Path
 import re
 import subprocess
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
+
+from engine import offers
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = 'krishanraja/heartside'
@@ -290,8 +302,9 @@ def store_products():
     out = []
     for p in data.get('products', []):
         prices = sorted({float(v['price']) for v in p.get('variants', [])})
-        out.append({'title': p['title'], 'handle': p['handle'], 'type': p.get('product_type') or '',
+        out.append({'id': p.get('id'), 'title': p['title'], 'handle': p['handle'], 'type': p.get('product_type') or '',
                     'prices': prices, 'available': any(v.get('available') for v in p.get('variants', [])),
+                    'variants': [{'id': v['id'], 'price': v['price'], 'available': v.get('available', False)} for v in p.get('variants', [])],
                     'url': f'{STORE}/products/{p["handle"]}'})
     return out
 
@@ -325,7 +338,7 @@ def load_state(published_only=False):
     return None
 
 
-MEANINGFUL = ('sha', 'canon', 'rules', 'rules_ok', 'store', 'open_pulls')
+MEANINGFUL = ('sha', 'canon', 'rules', 'rules_ok', 'store', 'open_pulls', 'offers', 'homepage_v3')
 
 
 def sync(publish=False, quiet=False):
@@ -366,6 +379,11 @@ def sync(publish=False, quiet=False):
     except (urllib.error.URLError, ValueError, KeyError) as e:
         products = None
         notes.append(f'the live store did not answer ({getattr(e, "code", e)})')
+    try:
+        homepage_v3 = 'data-hs3-config' in http(STORE + '/', accept_json=False)
+    except (urllib.error.URLError, ValueError):
+        homepage_v3 = None
+        notes.append('the public homepage could not be checked; its purchase links are not verified')
     old = prev.get('canon') or {}
     changed = sorted(p for p in canon if p in old and old[p] != canon[p])
     added = sorted(set(paths) - set(prev.get('canon', {}))) if prev.get('canon') else []
@@ -376,6 +394,7 @@ def sync(publish=False, quiet=False):
         'rules': prints, 'rules_ok': rules_ok, 'changed_since_last_sync': changed,
         'canon_added': added, 'canon_removed': removed, 'commits': commits, 'open_pulls': pulls,
         'store': products, 'price_points': sorted(set(canon_prices(texts)) | {x for p in (products or []) for x in p['prices']}),
+        'offers': offers.canonical_offers({p: texts.get(p) for p in paths}), 'homepage_v3': homepage_v3,
         'notes': notes,
     }
     d = state_dir(publish)
@@ -443,13 +462,18 @@ def problems(item, price_points=()):
     """Every house rule this one draft breaks, in plain words."""
     out = []
     text = item.get('text') or ''
-    platform = (item.get('platform') or '').lower()
+    if not isinstance(text, str):
+        return ['text must be a string']
+    platform = item.get('platform') or ''
+    if not isinstance(platform, str):
+        return ['platform must be a string']
+    platform = platform.lower()
     if not text.strip():
         return ['it has no text']
     if platform not in PLATFORMS:
         out.append(f'platform "{platform}" is not one of {", ".join(PLATFORMS)}')
     cid = item.get('creative_id')
-    if cid and not CREATIVE_ID.match(cid):
+    if cid and (not isinstance(cid, str) or not CREATIVE_ID.match(cid)):
         out.append(f'creative_id "{cid}" does not follow PLAYBOOK.md, "Creative ids"')
     if EM_DASH.search(text):
         out.append('it has an em dash (use a comma, a full stop or "and")')
@@ -512,37 +536,74 @@ def problems(item, price_points=()):
     return out
 
 
-def check_pack(pack, price_points=()):
+def check_pack(pack, price_points=(), state=None):
     errs = []
+    if not isinstance(pack, dict):
+        return ['pack must be a JSON object']
     if pack.get('kind') not in KINDS:
         errs.append(f'kind must be one of {", ".join(KINDS)}')
     if pack.get('venture', 'heartside') != 'heartside':
         errs.append('venture must be "heartside"')
     if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', str(pack.get('pack_date') or '')):
         errs.append('pack_date must be YYYY-MM-DD')
+    else:
+        try:
+            dt.date.fromisoformat(pack['pack_date'])
+        except ValueError:
+            errs.append('pack_date is not a real calendar date')
     if not re.fullmatch(r'[0-9a-f]{7,40}', str(pack.get('heartside_sha') or '')):
         errs.append('heartside_sha is missing: run python3 growth.py sync and copy the commit it read')
-    head = (pack.get('headline') or '').strip()
+    head = pack.get('headline') or ''
+    if not isinstance(head, str):
+        return errs + ['headline must be a string']
+    head = head.strip()
     if not head:
         errs.append('headline is empty')
     elif EM_DASH.search(head):
         errs.append('headline has an em dash')
     items = pack.get('items') or []
+    if not isinstance(items, list):
+        return ['items must be a list']
+    if pack.get('kind') == 'daily' and not items:
+        errs.append('a daily pack cannot be empty')
     if len(items) > 40:
         errs.append('more than 40 drafts in one pack')
+    seen = set()
     for i, item in enumerate(items, 1):
+        if not isinstance(item, dict):
+            errs.append(f'draft {i}: must be an object'); continue
+        cid = item.get('creative_id')
+        if item.get('platform') not in INTERNAL and not cid:
+            errs.append(f'draft {i}: creative_id is required')
+        if isinstance(cid, str):
+            if cid in seen:
+                errs.append(f'draft {i}: duplicate creative_id {cid}')
+            seen.add(cid)
+            match = CREATIVE_ID.match(cid)
+            if match:
+                if item.get('platform') not in INTERNAL and SOURCE[match.group(1)] != item.get('platform'):
+                    errs.append(f'draft {i}: creative_id names a different platform')
+                if match.groups()[-1] != str(pack.get('pack_date', '')).replace('-', ''):
+                    errs.append(f'draft {i}: creative_id date differs from pack_date')
         for p in problems(item, price_points):
             errs.append(f'draft {i} ({item.get("platform", "?")}): {p}')
+        if state is not None and isinstance(item.get('text'), str):
+            public = item['text']
+            if item.get('platform') in INTERNAL:
+                public = '\n'.join(l for l in public.splitlines() if PUBLIC_LINE.match(l))
+            errs += [f'draft {i}: {e}' for e in offers.validate_item(item, public, state)]
     if pack.get('kind') == 'numbers':
         rows = pack.get('numbers')
         if not isinstance(rows, list) or not rows:
             errs.append('a numbers pack needs "numbers": one row per place read')
         else:
             for r in rows:
+                if not isinstance(r, dict):
+                    errs.append('every numbers row must be an object'); continue
                 if not r.get('platform') or not r.get('note'):
                     errs.append('every numbers row needs a platform and a note saying where it was read')
                 for k, v in r.items():
-                    if k not in ('platform', 'note') and v is not None and not isinstance(v, (int, float)):
+                    if k not in ('platform', 'note') and v is not None and (isinstance(v, bool) or not isinstance(v, (int, float)) or isinstance(v, float) and not math.isfinite(v)):
                         errs.append(f'numbers row {r.get("platform")}: {k} must be a number read today, or null')
     elif pack.get('numbers'):
         errs.append('numbers belong on a pack of kind numbers only')
@@ -598,18 +659,17 @@ def token():
 def control_center_takes_heartside():
     """True only when Control Center says it keeps packs per venture and knows heartside.
     Today it keeps one pack per (date, kind), so a Heartside pack would replace makeyourmindup's."""
-    t = token()
-    if not t:
-        return False, 'no Control Center key on this machine'
-    try:
-        req = urllib.request.Request(BASE + '/api/growth/packs?days=1', headers={**UA, 'Authorization': f'Bearer {t}'})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            body = json.loads(r.read() or b'{}')
-    except (urllib.error.URLError, ValueError) as e:
-        return False, f'Control Center did not answer ({getattr(e, "code", e)})'
-    if 'heartside' in (body.get('ventures') or []):
+    if os.environ.get('HEARTSIDE_ENABLE_CC_DELIVERY') != '1':
+        return False, 'Control Centre delivery disabled by scope; handoff brief only'
+    from engine.control_center import probe
+    result = probe(BASE, token())
+    if result['authenticated'] and result['venture_isolation']:
         return True, 'Control Center keeps Heartside packs apart'
-    return False, 'Control Center does not keep packs per venture yet (README.md, "Control Center")'
+    if result['outcome'] == 'missing_runner_secret':
+        return False, 'no reporting token in this process; the GitHub Actions workflow can use the existing repository secret'
+    if result['authenticated']:
+        return False, 'Control Center authenticated the runner but does not keep packs per venture yet (Control Center PR 472)'
+    return False, f'Control Center access check: {result["outcome"]} (HTTP {result["http_status"] or "not received"})'
 
 
 def render_md(pack):
@@ -622,38 +682,83 @@ def render_md(pack):
         out += ['', '```text', it.get('text', ''), '```', '']
     if pack.get('numbers'):
         out += ['## Numbers', '', '```json', json.dumps(pack['numbers'], indent=1), '```', '']
+    if pack.get('production'):
+        out += ['## Media for review', '', pack['production']['manifest'], '',
+                'Open the manifest for the Reel, cover, Stories, Pins and subtitles. Nothing is published.', '']
     return '\n'.join(out)
 
 
 def store_pack(pack):
-    takes, why = control_center_takes_heartside()
-    if takes:
-        req = urllib.request.Request(BASE + '/api/growth/packs', data=json.dumps({**pack, 'venture': 'heartside'}).encode(),
-                                     method='POST', headers={**UA, 'Authorization': f'Bearer {token()}', 'Content-Type': 'application/json'})
-        with urllib.request.urlopen(req, timeout=60) as r:
-            out = json.loads(r.read() or b'{}')
-        if out.get('ok') and (out.get('pack') or {}).get('venture') == 'heartside':
-            print(f'stored in Control Center: {pack["kind"]} {pack["pack_date"]} {BASE}/#/growth?section=packs')
-            return
-        why = 'Control Center answered without keeping the venture'
+    # Keep production manifests and a durable retry copy even when the API
+    # stores only its presentation fields or goes away during delivery.
     d = os.path.join(LOCAL, 'packs')
     os.makedirs(d, exist_ok=True)
     name = f'{pack["pack_date"]}-{pack["kind"]}'
-    json.dump(pack, open(os.path.join(d, name + '.json'), 'w'), indent=1)
-    open(os.path.join(d, name + '.md'), 'w').write(render_md(pack))
+    existing = os.path.join(d, name + '.json')
+    if os.path.exists(existing):
+        with open(existing) as f:
+            old = f.read()
+        history = os.path.join(d, 'history')
+        os.makedirs(history, exist_ok=True)
+        with open(os.path.join(history, name + '-' + digest(old)[:16] + '.json'), 'w') as f:
+            f.write(old)
+    with open(os.path.join(d, name + '.json'), 'w') as f:
+        json.dump(pack, f, indent=1)
+    with open(os.path.join(d, name + '.md'), 'w') as f:
+        f.write(render_md(pack))
+    takes, why = control_center_takes_heartside()
+    if takes:
+        try:
+            req = urllib.request.Request(BASE + '/api/growth/packs', data=json.dumps({**pack, 'venture': 'heartside', 'source_revision': pack['heartside_sha']}).encode(),
+                                         method='POST', headers={**UA, 'Authorization': f'Bearer {token()}', 'Content-Type': 'application/json'})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                out = json.loads(r.read() or b'{}')
+            saved = out.get('pack') or {}
+            if (out.get('ok') and saved.get('venture') == 'heartside'
+                    and saved.get('source_revision') == pack['heartside_sha']
+                    and saved.get('pack_date') == pack['pack_date'] and saved.get('kind') == pack['kind']):
+                print(f'stored in Control Center: {pack["kind"]} {pack["pack_date"]} {BASE}/#/growth?section=packs&venture=heartside (local copy retained)')
+                return
+            why = 'Control Center did not acknowledge the expected venture, date, kind and product SHA'
+        except (urllib.error.URLError, ValueError) as e:
+            why = f'Control Center delivery failed ({getattr(e, "code", type(e).__name__)}); local retry copy retained'
     print(f'stored on this machine: local/packs/{name}.md ({why}). The pack in full:\n')
     print(render_md(pack))
 
 
 def read_packs(days, kind):
     d = os.path.join(LOCAL, 'packs')
-    since = (dt.date.today() - dt.timedelta(days=days)).isoformat()
+    days = min(60, max(1, days))
+    since = (dt.date.today() - dt.timedelta(days=days - 1)).isoformat()
     out = []
     for f in sorted(os.listdir(d) if os.path.isdir(d) else [], reverse=True):
         if f.endswith('.json') and f[:10] >= since:
-            p = json.load(open(os.path.join(d, f)))
+            with open(os.path.join(d, f)) as source:
+                p = json.load(source)
             if not kind or p.get('kind') == kind:
                 out.append(p)
+    takes, why = control_center_takes_heartside()
+    if takes:
+        query = urllib.parse.urlencode({'days': days, 'venture': 'heartside', **({'kind': kind} if kind else {})})
+        try:
+            req = urllib.request.Request(BASE + '/api/growth/packs?' + query, headers={**UA, 'Authorization': f'Bearer {token()}'})
+            with urllib.request.urlopen(req, timeout=30) as r:
+                body = json.loads(r.read() or b'{}')
+            if not isinstance(body, dict) or not body.get('ok') or not isinstance(body.get('packs'), list):
+                raise ValueError('report read refused')
+            merged = {(p['pack_date'], p['kind']): p for p in out}
+            for p in body.get('packs') or []:
+                if not isinstance(p, dict):
+                    continue
+                if p.get('venture') != 'heartside' or p.get('pack_date', '') < since or (kind and p.get('kind') != kind):
+                    continue
+                key = (p['pack_date'], p['kind'])
+                merged[key] = {**merged.get(key, {}), **p, 'heartside_sha': p.get('source_revision')}
+            return sorted(merged.values(), key=lambda p: (p['pack_date'], p['kind']), reverse=True)
+        except (urllib.error.URLError, ValueError, KeyError) as e:
+            print(f'Control Center read unavailable ({getattr(e, "code", type(e).__name__)}); showing local evidence only', file=sys.stderr)
+    else:
+        print(f'Control Center read unavailable ({why}); showing local evidence only', file=sys.stderr)
     return out
 
 
@@ -685,6 +790,8 @@ def doctor():
         line(age < dt.timedelta(hours=26), f'last sync {int(age.total_seconds() // 3600)} hours ago (heartside {s["sha"][:10]})', 'run python3 growth.py sync')
         line(s.get('rules_ok', False), 'Heartside\'s rules match what the checker was written for',
              'read the changed sections in local/state/HEARTSIDE-NOW.md, then update RULES and RULES_BASIS in growth.py')
+        ready_offers = offers.catalog(s)
+        print(f'note      purchase-ready gifts: {sum(o["ready"] for o in ready_offers)}/{len(ready_offers)}; run growth.py readiness for details')
     else:
         line(False, 'a sync on this machine', 'run python3 growth.py sync')
     autos = json.load(open(os.path.join(HERE, 'automations.json')))['automations']
@@ -697,7 +804,7 @@ def doctor():
         line(False, 'local/ is writable', str(e))
     _, why = control_center_takes_heartside()
     print(f'note      packs: {why}; until then they are saved in local/packs/ and printed in full')
-    print('\nready to run' if ok else '\nnot ready: fix the lines above, then run doctor again')
+    print('\nready to run; purchase copy is gated separately per gift' if ok else '\nnot ready: fix the lines above, then run doctor again')
     return 0 if ok else 1
 
 
@@ -840,9 +947,16 @@ def main():
     s = sub.add_parser('post'); s.add_argument('file')
     r = sub.add_parser('read'); r.add_argument('--days', type=int, default=7); r.add_argument('--kind')
     sub.add_parser('doctor')
+    from engine import cli
+    cli.add_commands(sub)
     a = ap.parse_args()
     if a.self_test:
         return self_test()
+    if a.cmd in cli.COMMANDS:
+        try:
+            return cli.run(a, sys.modules[__name__])
+        except (ValueError, KeyError, TypeError, ImportError, OSError, subprocess.CalledProcessError) as e:
+            sys.exit(f'Not ready: {e}')
     if a.cmd == 'sync':
         st = sync(publish=a.publish, quiet=a.quiet)
         print(f'heartside_sha: {st["sha"]}')
@@ -870,11 +984,36 @@ def main():
             sys.exit(str(e))
         return
     if a.cmd in ('check', 'post'):
-        pack = json.load(open(a.file))
-        st = load_state()
-        errs = check_pack(pack, (st or {}).get('price_points') or ())
         try:
-            errs += freshness(pack, st, head_sha, raw, docs_listing)
+            pack = json.load(open(a.file))
+        except (OSError, ValueError) as e:
+            sys.exit(f'Not ready: could not read pack JSON ({e})')
+        st = load_state()
+        purchase = False
+        if isinstance(pack, dict) and isinstance(pack.get('items'), list):
+            for item in pack['items']:
+                if not isinstance(item, dict) or not isinstance(item.get('text'), str):
+                    continue
+                public = item['text']
+                if item.get('platform') in INTERNAL:
+                    public = '\n'.join(line for line in public.splitlines() if PUBLIC_LINE.match(line))
+                purchase = purchase or item.get('intent') == 'buy' or bool(PRICE.search(public)) or bool(offers.BUY.search(public))
+        catalog_errors = []
+        if purchase and st:
+            try:
+                st = {**st, 'store': store_products(),
+                      'homepage_v3': 'data-hs3-config' in http(STORE + '/', accept_json=False),
+                      'synced_at': dt.datetime.now(dt.timezone.utc).isoformat()}
+            except (urllib.error.URLError, ValueError, KeyError) as e:
+                catalog_errors.append(f'purchase copy blocked: current public offers could not be confirmed ({e})')
+        errs = check_pack(pack, (st or {}).get('price_points') or (), state=st)
+        errs += catalog_errors
+        if isinstance(pack, dict) and (pack.get('kind') == 'daily' or pack.get('production')):
+            from engine.media import verify
+            errs += verify(Path(HERE), pack.get('production'), pack)
+        try:
+            if isinstance(pack, dict):
+                errs += freshness(pack, st, head_sha, raw, docs_listing)
         except (urllib.error.URLError, OSError) as e:
             errs.append(f'could not confirm heartside is unchanged since the sync ({e}); with no answer, nothing passes')
         if errs:

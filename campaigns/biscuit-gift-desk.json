@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "title": "Biscuit has a gift question",
+  "concept": "C92",
+  "pillar": "ENT",
+  "hook": "H01",
+  "variation": 1,
+  "intent": "audience",
+  "layout": "biscuit-desk",
+  "mechanism": "A fictional host asks one recognizable question; test meaningful replies without simulating customer reactions.",
+  "scenes": [
+    {
+      "asset": "biscuit",
+      "seconds": 3,
+      "headline": "Biscuit has one question.",
+      "text": "Who is your dog's favorite person?"
+    },
+    {
+      "asset": "mug_dog",
+      "seconds": 4,
+      "headline": "The early walker?",
+      "text": "The keeper of the warm spot?"
+    },
+    {
+      "asset": "mug_note",
+      "seconds": 3,
+      "headline": "The person on the other side.",
+      "text": "Tell us which one gets the biggest greeting."
+    }
+  ],
+  "native_hooks": {
+    "facebook": "Biscuit has one question.",
+    "tiktok": "Biscuit has one question."
+  },
+  "captions": {
+    "instagram": "Personalized dog gifts for the person who knows the little things. Biscuit has one question. Tell us which one gets the biggest greeting. #PersonalizedDogGifts #GiftsFromTheDog",
+    "facebook": "Biscuit has one question. The keeper of the warm spot? Tell us which one gets the biggest greeting.",
+    "tiktok": "Personalized dog gifts. Biscuit has one question. Tell us which one gets the biggest greeting. #GiftsFromTheDog #DogPeople",
+    "pinterest": [
+      "Personalized dog gifts: biscuit has a gift question\nThe keeper of the warm spot? Shown with Biscuit, Heartside's fictional AI dog. Save this gift idea.",
+      "A gift from the dog for their person\nBiscuit has one question. Tell us which one gets the biggest greeting. Example artwork features Biscuit, our fictional AI dog."
+    ]
+  },
+  "voiceover": "Who gets the biggest greeting? The early walker? The keeper of the warm spot? Your dog knows."
+}

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "title": "Biscuit checks the pockets",
+  "concept": "C96",
+  "pillar": "ENT",
+  "hook": "H01",
+  "variation": 1,
+  "intent": "audience",
+  "layout": "biscuit-desk",
+  "mechanism": "A playful fictional host and familiar treat-pocket cue test comments and sends.",
+  "scenes": [
+    {
+      "asset": "biscuit",
+      "seconds": 3,
+      "headline": "Some pockets have a purpose.",
+      "text": "Your dog knows which ones."
+    },
+    {
+      "asset": "mug_dog",
+      "seconds": 4,
+      "headline": "The person with the treats.",
+      "text": "The person with the warmest welcome."
+    },
+    {
+      "asset": "mug_note",
+      "seconds": 3,
+      "headline": "Your dog loves you too.",
+      "text": "Who gets your dog's vote?"
+    }
+  ],
+  "native_hooks": {
+    "facebook": "Some pockets have a purpose.",
+    "tiktok": "Some pockets have a purpose."
+  },
+  "captions": {
+    "instagram": "Personalized dog gifts for the person who knows the little things. Some pockets have a purpose. Who gets your dog's vote? #PersonalizedDogGifts #GiftsFromTheDog",
+    "facebook": "Some pockets have a purpose. The person with the warmest welcome. Who gets your dog's vote?",
+    "tiktok": "Personalized dog gifts. Some pockets have a purpose. Who gets your dog's vote? #GiftsFromTheDog #DogPeople",
+    "pinterest": [
+      "Personalized dog gifts: biscuit checks the pockets\nThe person with the warmest welcome. Shown with Biscuit, Heartside's fictional AI dog. Save this gift idea.",
+      "A gift from the dog for their person\nSome pockets have a purpose. Who gets your dog's vote? Example artwork features Biscuit, our fictional AI dog."
+    ]
+  },
+  "voiceover": "Some pockets have a purpose. Your dog knows which ones. Who gets your dog's vote?"
+}

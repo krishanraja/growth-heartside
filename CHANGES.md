@@ -3,6 +3,27 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-17, latest scope: Krish: "you are not to do any actual work in
+  control-center, only pass me a brief once you have completed your work."
+  Then: "Complete this all to 100% without coming back to me again. The next
+  reply should be confirmation of completion and handoff." Implementation,
+  checks, draft scheduling and the handoff stay in growth-heartside. Control
+  Centre delivery is disabled by default. No further changes to its existing
+  draft, code, database or deployments are authorized by this instruction.
+  Seven declared jobs now have a persistent GitHub Actions fallback. New
+  campaign layouts, native exports, original local sound, fictional AI scene,
+  provider reservations, insight decisions and recovery checkpoints are here.
+  Publishing, creator gifts and paid generation retain their existing limits.
+
+- 2026-10-17: Krish: "Put everything that's not related to the marketing and
+  customer acquisition in the heartside repository so that one can pick
+  this up: your recommendation up next and then leave everything else in
+  this repository and start building the engine for it." Product work is
+  handed to heartside PR #13. This engine adds named-offer checks, real
+  example-media rendering, creative revision history and aggregate report
+  imports. Daily and reporting jobs use those commands; the seven schedules
+  and publication restrictions remain in place.
+
 - 2026-10-15: the canon also takes the newest dated handover in heartside's
   `docs/`. On 15 Oct a Cowork session wrote `docs/COWORK-HANDOVER-2026-10-15.md`
   (Krish's "10X personalized delight" direction, the approved mug redesign,
@@ -24,3 +45,32 @@ Newest first. Record his words with the date, then change the job file and
   from anywhere (codex or cowork), solely focused on getting this business
   to 10k a month with minimal paid CAC", and "I lean to the latter for
   focus" (a dedicated repository over the heartside repository).
+
+## 2026-10-17: Control Center is the reporting destination
+
+Krish: "Control Centre is ultimately where the unified dashboard is going to
+be: where you report back on progress and recommendations to improve in the
+format that it requires." He also asked for missing access and UI to be made
+visible. The latest scope correction above supersedes the earlier interpretation of
+implementation authorization. Only the reporting contract and final brief belong
+to this task; no further work in Control Centre is authorized.
+
+Added dashboard report generation from the aggregate ledger, with sources,
+timezones, coverage and prepared recommendations. Central reads are scoped
+to Heartside and keep dashboard marks. Every delivery retains a local retry
+copy and production manifest. Control Center's live API is not yet ready for
+Heartside and this runner has no reporting credential. The separate Control
+Center change provides venture isolation, commerce measures and read-only
+report cards, with migration and rollout checks. It is not deployed.
+
+## 2026-10-17: verify the existing reporting secret in Actions
+
+Krish clarified that Vercel access covers his projects and that
+GROWTH_ENGINE_TOKEN is already in GitHub secrets. Verified all 18 Vercel team
+projects and the Production binding by metadata only. A read-only Actions
+probe used the existing repository secret and authenticated to live Control
+Center with HTTP 200 (run 39020889464, 09:22:45 UTC). The remaining delivery
+block is the deployed legacy API's missing venture isolation, not a missing
+credential. No token was read out of GitHub, copied into this machine or
+included in the probe artifact. Updated the runbook and recommendation to
+use the proven Actions execution path. Secret-list API access is unnecessary.

@@ -1,0 +1,4 @@
+Pillow>=10.4,<13
+# Local neural narration, no external API credentials or metered provider spend.
+kokoro-onnx==0.6.1
+soundfile>=0.13,<0.14

@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "title": "A gift that belongs in the morning",
+  "concept": "C95",
+  "pillar": "PROOF",
+  "hook": "H01",
+  "variation": 1,
+  "intent": "audience",
+  "layout": "two-sides",
+  "mechanism": "A two-sided product demonstration tests saves against the recognition-first family.",
+  "scenes": [
+    {
+      "asset": "mug_dog",
+      "seconds": 3,
+      "headline": "A face on one side.",
+      "text": "A note on the other."
+    },
+    {
+      "asset": "mug_note",
+      "seconds": 4,
+      "headline": "The little things are the whole idea.",
+      "text": "Shown here with Biscuit, our fictional AI dog."
+    },
+    {
+      "asset": "mug_dog",
+      "seconds": 3,
+      "headline": "This year, the dog's buying.",
+      "text": "Save this idea for your dog's person."
+    }
+  ],
+  "native_hooks": {
+    "facebook": "A face on one side.",
+    "tiktok": "A face on one side."
+  },
+  "captions": {
+    "instagram": "Personalized dog gifts for the person who knows the little things. A face on one side. Save this idea for your dog's person. #PersonalizedDogGifts #GiftsFromTheDog",
+    "facebook": "A face on one side. Shown here with Biscuit, our fictional AI dog. Save this idea for your dog's person.",
+    "tiktok": "Personalized dog gifts. A face on one side. Save this idea for your dog's person. #GiftsFromTheDog #DogPeople",
+    "pinterest": [
+      "Personalized dog gifts: a gift that belongs in the morning\nShown here with Biscuit, our fictional AI dog. Shown with Biscuit, Heartside's fictional AI dog. Save this gift idea.",
+      "A gift from the dog for their person\nA face on one side. Save this idea for your dog's person. Example artwork features Biscuit, our fictional AI dog."
+    ]
+  },
+  "voiceover": "A face on one side. A note on the other. A little gift from the dog to their person."
+}

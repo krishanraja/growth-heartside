@@ -1,11 +1,26 @@
 name: check
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
 jobs:
   self-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: '3.12' }
-      - run: python3 growth.py --self-test
-      - run: python3 -c "import json; json.load(open('automations.json'))"
+        with:
+          python-version: '3.12'
+      - name: Install the media runtime
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install -r requirements-media.txt
+      - name: Check copy, offers, reporting and media
+        env:
+          RUN_VOICE_INTEGRATION: 1
+        run: |
+          python growth.py --self-test
+          python -m unittest discover -s tests -v
+          python -c "import json; json.load(open('automations.json'))"

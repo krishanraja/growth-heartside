@@ -1,0 +1,50 @@
+name: verify Control Center access
+
+# Manual diagnostic only. The growth engine does not call or write Control
+# Centre under the current scope. An integration session may invoke this later.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reporting-access:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prove reporting identity with a read only
+        env:
+          GROWTH_ENGINE_TOKEN: ${{ secrets.GROWTH_ENGINE_TOKEN }}
+          CONTROL_CENTER_URL: https://controlcenter.krishraja.com
+        run: |
+          mkdir -p local/access
+          python3 growth.py reporting-access > local/access/control-center.json
+      - name: Record the non-secret result
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          path = Path('local/access/control-center.json')
+          if path.exists():
+              result = json.loads(path.read_text())
+              print(json.dumps(result, indent=2))
+              with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
+                  out.write('Control Center reporting access\n\n')
+                  for field in ('checked_at', 'credential_present', 'authenticated', 'http_status', 'venture_isolation', 'outcome'):
+                      out.write(f'- {field}: {result[field]}\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reporting-access
+          path: local/access/control-center.json
+          if-no-files-found: warn
+          retention-days: 7

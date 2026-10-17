@@ -1,105 +1,77 @@
 # growth-heartside
 
-The growth engine for [Heartside](https://heartside.io), gifts from your dog.
-It drafts what brings US buyers to the store with as little paid spend as
-possible: the day's Reel and its native editions, replies to comments,
-creator notes, store and search fixes, the numbers and a weekly decision. It
-runs as scheduled Codex or Cowork sessions. Krish reads each pack, posts and
-sends by hand, and keeps or kills jobs from the Sunday report.
+The organic acquisition engine for [Heartside](https://heartside.io), gifts from
+your dog. Goal: **$10,000 of Shopify net sales in a calendar month**, with low
+paid acquisition cost. This is an operating target, not a revenue guarantee or
+an unconfirmed Christmas delivery promise.
 
-**Goal:** $10,000 of net sales a month, starting with the Christmas window
-(about $10,000 by the 10 December order-by date). Then the category,
-worldwide. See `PLAYBOOK.md`.
+The engine syncs real product truth, produces native marketing media, packages
+reviewable drafts, keeps creative/evidence history and makes conservative
+experiment recommendations. It never publishes social posts, sends outreach,
+places gifts, confirms printing, changes the store or schedules paid AI requests.
 
-Nothing here posts, sends, comments, orders, confirms a Printful order,
-installs an app or spends. Nothing here changes the heartside repository or
-the store.
+**Start with [the completion handoff](docs/HANDOFF.md).**
 
-- How it works and the rules: `AGENTS.md` (every run reads it first).
-- The operating system, adapted to Heartside: `PLAYBOOK.md`.
-- Krish's source documents, and where Heartside changes them: `knowledge/`.
-- The jobs: `jobs/`. The one tool: `growth.py` (Python standard library,
-  plus git).
-- What heartside is doing right now: `state/HEARTSIDE-NOW.md`.
-- Krish's changes: `CHANGES.md`.
+- [Runbook and current capability limits](docs/ENGINE.md)
+- [Acquisition strategy and 30-day experiment](STRATEGY.md)
+- [AI production, provider budgets and provenance](docs/PROVIDERS.md)
+- [Control Centre brief for its owner](docs/CONTROL-CENTRE-BRIEF.md)
+- [Operating instructions](AGENTS.md), [playbook](PLAYBOOK.md), [browser boundary](BROWSER.md)
+- [Product handoff in heartside PR #13](https://github.com/krishanraja/heartside/pull/13)
 
-## How it stays across heartside
+## Produce and review
 
-The heartside repository (`krishanraja/heartside`) is the source of truth for
-the product, the prices, the words and the launch. This engine never keeps
-its own copy of any of that.
+```sh
+python3 -m pip install -r requirements-media.txt
+# Install FFmpeg and ffprobe through your system package manager.
+python3 growth.py sync
+python3 growth.py readiness
+python3 growth.py render campaigns/waits-at-the-door.json
+```
 
-| When | What happens |
+Use the printed draft path with `growth.py check`, then `growth.py bundle` to
+create a review ZIP. Unzip and open `review.html` for native videos, cover,
+carousel, Stories, Pins, captions, subtitles and source/revision evidence.
+`growth.py post` stores an internal pack; it does not publish a social post.
+Every revision needs human review. Purchase claims stay gated to the actual
+public gift range. The first campaigns are price-free audience materials.
+
+## Scheduled operation
+
+[Heartside draft engine](https://github.com/krishanraja/growth-heartside/actions/workflows/engine.yml)
+checks these seven canonical jobs every 15 minutes on GitHub Actions:
+
+| Job | Due in America/New_York |
 |---|---|
-| Every run, first | `python3 growth.py sync` reads heartside's main branch: the commit, the commits since the last sync, open pull requests, the canon its README names, and the live store's products and prices. It writes `local/state/HEARTSIDE-NOW.md`, and the job reads any canon that changed before drafting. |
-| Every pack | `check` refuses a pack whose `heartside_sha` is older than a canon change on heartside, or written while Heartside's rules differ from what the checker was written for. Prices in a draft must be prices in the live store or heartside's gift table. |
-| Every hour | A GitHub Action (`.github/workflows/sync.yml`) rewrites `state/HEARTSIDE-NOW.md` here when heartside, its open pull requests or the store changed. If Heartside's rules changed, it commits a STOP notice and fails the run, so GitHub emails the owner. |
+| Sync | Daily 05:45 |
+| Numbers | Daily 06:00 |
+| Radar | Daily 06:30 |
+| Daily media pack | Daily 09:00 |
+| Creators | Tuesday 07:00 |
+| Store and search | Saturday 07:00 |
+| Weekly report | Sunday 07:00 |
 
-**The contract with heartside:** the canon is whatever the "Picking this
-up?" line of heartside's `README.md` links, in its order. Then comes the
-newest dated handover in heartside's `docs/` (a file named like
-`COWORK-HANDOVER-2026-10-15.md`), because sessions write those before the
-README catches up. Then `README.md`, `design/BRAND-SYSTEM.md` and
-`shopify/README.md`. Change that line, or write a newer handover, and this
-engine follows it on its next sync.
+IANA timezone conversion handles daylight saving. GitHub may run late. Completed
+jobs are idempotent; failures remain retryable. Checkpoints restore verified
+state between machines and runs. The separate hourly product sync keeps the
+public `state/HEARTSIDE-NOW.md` current.
 
-## Setting it up (Krish, once)
+The fallback uses reusable approved assets, imported aggregate observations and
+public-source research. It has no signed-in social browser or inherited private
+Shopify connector. It does not pretend that missing analytics, creator evidence
+or paid provider access is available. Connected Codex/Cowork authoring sessions
+can follow the richer `jobs/` prompts and use their own connected AI tools.
 
-1. **Connect this repository** in Codex (cloud or the desktop app) or Cowork,
-   with network access on. Runs need to reach github.com,
-   raw.githubusercontent.com, heartside.io and the channels. Use the desktop
-   app and "run in this project" so every run shares `local/`.
-2. **Optional, for the dashboards:** a browser signed in to Shopify admin,
-   Meta Business Suite, TikTok and later Pinterest and Google Merchant
-   Center. The engine only reads (`BROWSER.md`).
-3. **Create the schedule.** Open a chat on this repository and type "create
-   the automations". It checks the machine, creates the seven tasks below and
-   runs one to prove it. To add them by hand instead, use these (New York
-   time):
+Download `heartside-review` from the latest successful engine run to inspect the
+current bundle. Download `heartside-state` to restore the whole hot workspace.
+Read the runbook for retention, privacy, recovery and exact commands. No customer
+data, named creator lists or credentials belong in public-repository artifacts.
 
-   | Name | When | Prompt |
-   |---|---|---|
-   | Heartside growth: sync | daily 05:45 | `Run jobs/sync.md as AGENTS.md says.` |
-   | Heartside growth: numbers | daily 06:00 | `Run jobs/numbers.md as AGENTS.md says.` |
-   | Heartside growth: radar | daily 06:30 | `Run jobs/radar.md as AGENTS.md says.` |
-   | Heartside growth: day pack | daily 09:00 | `Run jobs/daily-pack.md as AGENTS.md says.` |
-   | Heartside growth: creators | Tue 07:00 | `Run jobs/creators.md as AGENTS.md says.` |
-   | Heartside growth: store and search | Sat 07:00 | `Run jobs/store.md as AGENTS.md says.` |
-   | Heartside growth: report | Sun 07:00 | `Run jobs/report.md as AGENTS.md says.` |
+## Repository boundaries
 
-To run one job by hand from anywhere, open a chat on this repository and
-type, for example, "Run jobs/daily-pack.md as AGENTS.md says."
-
-Check the machine at any time with `python3 growth.py doctor`.
-
-## Control Center
-
-Packs don't go to Control Center yet. Control Center's `growth_packs` table
-keeps one pack per `(pack_date, kind)`, with no venture. So a Heartside
-`daily` pack would replace makeyourmindup's `daily` pack for the same day.
-Until that changes, `post` saves each pack in `local/packs/` and prints it
-in full in the run's final message.
-
-The change that lets Heartside in, for a Control Center session:
-- add `venture text not null default 'makeyourmindup'` to `growth_packs`;
-- make the unique key `(pack_date, venture, kind)`;
-- accept `venture` on POST and filter on it on GET (`?venture=`);
-- answer GET with `"ventures": ["makeyourmindup", "heartside"]`;
-- show the venture on Growth > Packs.
-
-`post` checks for that `ventures` list before every send, and switches to
-Control Center by itself once it includes `heartside`. It uses the same
-`GROWTH_ENGINE_TOKEN` as the makeyourmindup engine.
-
-## Layout
-
-```
-AGENTS.md         the brief every run reads first
-PLAYBOOK.md       the operating system, applied to Heartside
-BROWSER.md        read-only rules for the signed-in browser
-jobs/             one file per job; automations.json schedules them
-growth.py         sync, canon, store, link, check, post, read, doctor, self-test
-knowledge/        Krish's two source documents, and where Heartside changes them
-state/            the hourly reading of heartside (written by the Action)
-local/            on the running machine only, never committed: sync, packs, lists
-```
+Product and fulfillment recommendations live in the separate heartside handoff.
+This build makes no further changes there. **Control Centre receives a brief
+only:** no edits, merges, migrations or deployments in its repository. Delivery
+is disabled by default even when `GROWTH_ENGINE_TOKEN` exists. Reporting packs
+are prepared locally in the required format, so central UI work does not block
+creative production.

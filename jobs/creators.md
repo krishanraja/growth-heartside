@@ -14,7 +14,11 @@ creator.
    handle, platform, why they fit, the step, the date and notes. Steps:
    shortlisted, note drafted, sent (Krish), agreed, gift ordered (Krish),
    delivered, posted, not posting.
-3. **Shortlist** up to 5 new US dog creators a week, until 20 are agreed.
+3. **Shortlist** the approved pool of up to 20 US dog creators in the first
+   launch week so there is time for conversations, delivery and filming.
+   This changes research pace, not the cap or permission to contact or gift.
+   Keep each review pack within Krish's time budget; leave the rest in the
+   local list. Later refresh up to 5 prospects weekly within the same cap.
    Use public profiles only. Each must:
    - be in the US (stated on the profile, or obvious from the content);
    - post their own dog with a partner or family on camera;

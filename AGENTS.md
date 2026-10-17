@@ -9,7 +9,7 @@ change it.
 Read, in this order, before any job:
 1. this file, to the end;
 2. `local/state/HEARTSIDE-NOW.md`, written by the sync you run first (rule 2);
-3. `PLAYBOOK.md`: the operating system, applied to Heartside;
+3. `PLAYBOOK.md`: the operating system, applied to Heartside, then `docs/ENGINE.md` for production and reporting;
 4. `BROWSER.md`: what you may and may never do in Krish's signed-in browser;
 5. the job's own file in `jobs/`.
 
@@ -106,7 +106,11 @@ address of Krish's in anything.
 
 ## Where your work goes
 
-Every job ends with one **pack**: one draft per item, ready to copy.
+Every job ends with one **pack**: one draft per item, ready to review. A daily
+pack also has rendered media. Run `growth.py render` with a campaign spec;
+use its printed draft path for `check` and `post`. Those commands reject a
+daily pack whose production files are absent, changed or from another product
+commit. Creative revisions are kept in `local/engine.sqlite3`.
 
 1. Write the pack as JSON in a scratch file. The shape is in `growth.py`'s
    top comment:
@@ -122,6 +126,14 @@ Every job ends with one **pack**: one draft per item, ready to copy.
      - `target_name` (whose thread, for replies and creators);
      - `why` (one line: why this, why now);
      - `text` (the draft, ready to paste).
+     - `intent`: `audience` or `buy`. Purchase copy and public prices also
+       need `offers`: gift `id`, `quantity` and `unit_price`, bound to that
+       gift in the current public catalog. See `growth.py readiness`.
+
+   Keep the `production` object written by the renderer. Never type a fake
+   media checksum or substitute an unrelated creative's manifest. The
+   starter template supports audience packs, with no purchase links or
+   public prices; product readiness gates still apply to later sales copy.
 
    Platforms: instagram, facebook, tiktok, pinterest, youtube, google, email,
    store, reddit, creator, other. Every heartside.io link is tracked
@@ -135,13 +147,14 @@ Every job ends with one **pack**: one draft per item, ready to copy.
 2. `python3 growth.py check pack.json` until it says ready.
 3. `python3 growth.py post pack.json`.
 
-**Control Center.** Control Center keeps one pack per day and kind, with no
-venture, so a Heartside pack sent there today would replace makeyourmindup's
-pack for the same day. Until Control Center keeps a venture on each pack,
-`post` saves the pack in `local/packs/` and prints it in full. Your final
-message must contain the whole pack, so Krish can work it from the Codex or
-Cowork thread. `post` switches to Control Center by itself once Control
-Center says it keeps Heartside's packs apart (`README.md`, "Control Center").
+**Control Centre boundary, updated 17 October.** Krish: "you are not to do
+any actual work in control-center, only pass me a brief once you have completed
+your work." Implement only in this growth repository. Do not edit, merge,
+migrate or deploy Control Centre. Generate its compatible reports locally and
+hand Krish `docs/CONTROL-CENTRE-BRIEF.md` after finishing growth work. Central
+delivery is disabled by default, even if the secret is available. Do not enable
+`HEARTSIDE_ENABLE_CC_DELIVERY` without a later explicit instruction to integrate.
+The engine works independently of that dashboard.
 
 ## The schedule (New York time)
 
@@ -155,8 +168,10 @@ Center says it keeps Heartside's packs apart (`README.md`, "Control Center").
 | Saturday 07:00 | The store and search | `conversion` | `jobs/store.md` |
 | Sunday 07:00 | The weekly report | `report` | `jobs/report.md` |
 
-The daily pack lands at 09:00 New York, which is 14:00 in London, so Krish
-can post in the US morning and lunchtime. The report moves posting times once
+The daily pack is due at 09:00 America/New_York. Convert using IANA zones;
+London is usually five hours ahead, but the daylight-saving transition weeks
+differ. GitHub checks every 15 minutes and may start late. Krish can post in the
+US morning and lunchtime. The report moves posting times once
 the account's own numbers show better ones.
 
 Krish's time budget is about 20 minutes a day and 30 on Sunday. Keep every
@@ -212,6 +227,10 @@ All on the machine that runs it, under `local/`, never committed:
 | `local/state/` | The latest sync |
 | `local/packs/` | Every pack, as JSON and as readable text |
 | `local/creatives.csv` | The creative record (PLAYBOOK, "Measurement") |
+| `local/engine.sqlite3` | Creative revisions, operator-recorded status and aggregate reporting windows |
+| `local/media/` | Rendered files and their source and checksum manifests |
+| `local/assets/` | Approved product assets from the synced Heartside commit |
+| `local/metrics/` | Aggregate report envelopes, never customer records |
 | `local/lists/creators.md` | The creator shortlist and each creator's step |
 
 The repository's own `state/HEARTSIDE-NOW.md` is rewritten every hour by a
@@ -219,6 +238,21 @@ GitHub Action (`.github/workflows/sync.yml`). Anyone opening the repository
 sees what heartside is doing, without running anything.
 
 ## Changing the engine
+
+Krish's 17 October instruction authorizes the interactive engine build and
+the product handoff in heartside. The handoff is tracked there; the growth
+implementation and acquisition strategy stay here. Scheduled runs retain
+rule 9 and never edit heartside or the store.
+
+His latest 17 October instruction overrides the earlier reporting implementation
+interpretation: no actual work in Control Centre; brief only after growth work
+is complete. The earlier draft there is outside this task and remains untouched.
+
+`growth.py run` executes the same seven jobs on GitHub Actions, without a signed-in
+browser, social publishing or paid generation. It uses approved reusable assets,
+current public product truth and imported aggregate evidence. Missing private
+analytics and creator evidence stay missing. Its bounded fallback does not claim
+to replace the richer research possible in a connected authoring session.
 
 Krish keeps or kills a job from the Sunday report. Record his words with the
 date in `CHANGES.md`, then change the job file and `automations.json`

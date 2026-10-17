@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "title": "The person your dog waits for",
+  "concept": "C90",
+  "pillar": "EMO",
+  "hook": "H01",
+  "variation": 1,
+  "intent": "audience",
+  "mechanism": "Test whether a recognizable daily greeting and the real gift make someone send the film to their partner.",
+  "scenes": [
+    {
+      "asset": "biscuit_entryway",
+      "seconds": 3,
+      "headline": "For the person your dog waits for.",
+      "text": "This year, the dog's buying."
+    },
+    {
+      "asset": "mug_note",
+      "seconds": 4,
+      "headline": "Some things deserve a place in your day.",
+      "text": "A gift from your dog, made from the things you know."
+    },
+    {
+      "asset": "mug_dog",
+      "seconds": 3,
+      "headline": "Your dog loves you too.",
+      "text": "Send this to the person your dog waits for."
+    }
+  ],
+  "captions": {
+    "instagram": "Personalized dog gifts, from the one who waits at the door. A photo, a few things only you know, and a gift for their person. Send this to the person your dog waits for. #PersonalizedDogGifts #GiftsFromTheDog",
+    "facebook": "A gift from the dog to the person they wait for. The greetings, the shared spot on the couch, the everyday things you know about them. Who does your dog wait for?",
+    "tiktok": "Personalized dog gifts for the person they wait for. Send this to your dog's person. #PersonalizedDogGifts #GiftsFromTheDog",
+    "pinterest": [
+      "Personalized dog gifts for your partner\nA gift from the dog, made from a photo and the everyday things you know about them. Save this idea for someone whose dog waits at the door.",
+      "A Christmas gift from the dog\nThis year, the dog's buying. An example of the real mug with Biscuit, Heartside's fictional AI dog. Save this for the person your dog loves most."
+    ]
+  },
+  "layout": "recognition",
+  "native_hooks": {
+    "facebook": "Who gets the biggest greeting?",
+    "tiktok": "The favorite person is home."
+  },
+  "voiceover": "For the person your dog waits for. A little thank-you for every ordinary day. Your dog loves you too."
+}
