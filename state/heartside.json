@@ -1,8 +1,8 @@
 {
  "repo": "krishanraja/heartside",
  "sha": "5618a99829a0c9ef1291b73c20cda3d837c262de",
- "synced_at": "2026-10-15T19:12:54+00:00",
- "previous_sha": "fdd656e297bb61bb047fba016cda024aa0b6e4c6",
+ "synced_at": "2026-10-17T09:26:52+00:00",
+ "previous_sha": "5618a99829a0c9ef1291b73c20cda3d837c262de",
  "canon_from_readme": true,
  "handover": "docs/COWORK-HANDOVER-2026-10-15.md",
  "canon": {
@@ -22,10 +22,7 @@
   "docs/POSITIONING.md ## 3. ": "c102e12c77cb178f"
  },
  "rules_ok": true,
- "changed_since_last_sync": [
-  "docs/COWORK-HANDOVER-2026-10-15.md",
-  "shopify/README.md"
- ],
+ "changed_since_last_sync": [],
  "canon_added": [],
  "canon_removed": [],
  "commits": [
@@ -170,7 +167,14 @@
    "subject": "Cowork evidence 14-15 Oct: round reports and the mug v3 spec"
   }
  ],
- "open_pulls": [],
+ "open_pulls": [
+  {
+   "number": 13,
+   "title": "Document the next product milestone and growth handoff",
+   "branch": "codex/product-handoff-2026-10-17",
+   "updated": "2026-10-17T07:55:01Z"
+  }
+ ],
  "store": [
   {
    "title": "Tiny Me, For The Tree",

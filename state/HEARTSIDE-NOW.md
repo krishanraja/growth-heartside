@@ -1,14 +1,7 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `5618a99829` on 2026-10-15T19:12:54+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `5618a99829` on 2026-10-17T09:26:52+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
-
-## Canon changed since the last sync
-
-Read these again before drafting anything:
-
-- changed: `docs/COWORK-HANDOVER-2026-10-15.md`
-- changed: `shopify/README.md`
 
 ## The canon, in heartside's order
 
@@ -63,7 +56,7 @@ Read these again before drafting anything:
 
 ## Work in flight (open pull requests)
 
-- none
+- #13 Document the next product milestone and growth handoff (`codex/product-handoff-2026-10-17`, updated 2026-10-17)
 
 ## Latest decisions (`docs/V3-GIFTS-FROM-YOUR-DOG.md`, decision log)
 
