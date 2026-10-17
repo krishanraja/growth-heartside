@@ -6,10 +6,11 @@ from pathlib import Path
 from . import assets, ledger, offers
 
 
-COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle'}
+COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events'}
 
 
 def add_commands(sub):
+    events = sub.add_parser('events'); events.add_argument('action', choices=['import']); events.add_argument('file')
     sub.add_parser('reporting-access')
     run = sub.add_parser('run'); run.add_argument('--job'); run.add_argument('--now'); run.add_argument('--force', action='store_true')
     snap = sub.add_parser('snapshot'); commands = snap.add_subparsers(dest='action', required=True)
@@ -80,6 +81,11 @@ def run(args, growth):
             else:
                 result = str(providers.import_asset(root, db, args.request_id, args.file, args.role, json.loads(Path(args.provenance).read_text())))
             print(json.dumps(result, indent=2)); return
+    if args.cmd == 'events':
+        from . import operations
+        with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
+            print(json.dumps(operations.apply(root, db, json.loads(Path(args.file).read_text())), indent=2))
+        return
     state = growth.load_state()
     if args.cmd in ('assets', 'readiness', 'render', 'dashboard') and not state:
         raise ValueError('run growth.py sync first')
@@ -128,18 +134,8 @@ def run(args, growth):
             print(json.dumps([dict(row) for row in rows], indent=2))
         elif args.cmd == 'creatives':
             if args.status in {'approved', 'published'}:
-                from . import media
-                row = db.execute('SELECT manifest FROM creatives WHERE creative_id=? AND revision=?', (args.creative_id, args.revision)).fetchone()
-                if not row:
-                    raise ValueError('unknown creative revision')
-                manifest = json.loads(row['manifest'])
-                first = next(iter(manifest['files'].values()))
-                path = assets.local_path(root, str(Path(first['path']).parent / 'manifest.json'))
-                if ledger.canonical(json.loads(path.read_text())) != ledger.canonical(manifest):
-                    raise ValueError('creative manifest changed since generation')
-                errors = media.verify(root, {'manifest': str(path.relative_to(root)), 'sha256': assets.sha256(path)})
-                if errors:
-                    raise ValueError('; '.join(errors))
+                from . import operations
+                operations.validate_creative(root, db, args.creative_id, args.revision)
             ledger.mark(db, args.creative_id, args.revision, args.status, args.url)
             print('Recorded locally. This command never publishes.')
         else:

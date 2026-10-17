@@ -184,3 +184,34 @@ overlap, provider budgets and uncertain submissions, conservative insights,
 DST schedules, idempotent/retryable jobs, archive traversal and checkpoint
 recovery. CI installs the media runtime. No test calls a paid provider, social
 publisher or production database.
+
+## Feed human records back into hosted state
+
+The hosted ledger can accept bounded operator evidence without publishing
+anything or using Control Centre. Use the engine workflow's `operator_events`
+input with a JSON array, and choose the declared `report` job to refresh the
+progress/decision pack. The same array works locally with:
+
+```sh
+python3 growth.py events import local/operator-events.json
+```
+
+Local imports stay local. To update scheduled runs, supply the evidence to the
+GitHub workflow; do not assume another checkout automatically syncs its SQLite
+file. An eventual central UI can use this same typed contract.
+
+`creative_status` events contain exactly `event_id`, `type`, `creative_id`, full
+`revision`, `status` and `url` (null except a real publication permalink).
+`insight` events contain exactly `event_id`, `type`, `observation`, using the
+creative aggregate schema above. See `examples/operator-events.json`. Its
+placeholders are deliberately invalid; never import illustrative observations
+as real evidence. Approval/publication validates the exact stored media first.
+
+Event IDs are stable. A replay is a no-op; reusing an ID for changed evidence
+fails. Partial batches retain per-event receipts, so a retry skips the applied
+prefix. The workflow checkpoints even when a later event fails. Unknown fields,
+customer records, unsupported statuses and ambiguous or modified media fail.
+A status record asserts what the human actually did; it never posts, sends,
+orders or generates media on their behalf. Report fingerprints include creative
+status and insight observations, so importing evidence refreshes the learning
+report without replacing a completed day's creative.

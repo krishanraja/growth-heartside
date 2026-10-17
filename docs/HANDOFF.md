@@ -18,6 +18,9 @@ untouched during this completion; central delivery defaults off.
 - Serialized provider cost reservations, current quotes, recorded receipts,
   uncertain-submission recovery and role/provenance boundaries. Paid external
   generation remains disabled, with a zero default monthly budget.
+- A validated hosted operator-evidence input for real human review/publication
+  records and aggregate creative insights, with idempotent event receipts and
+  partial-batch recovery. It never publishes on behalf of the human.
 - Strict Shopify aggregate imports, corrections, overlap-safe reporting, private
   native/UTM insight imports and conservative exploratory replication decisions.
 - One persistent GitHub Actions runner executing the seven declared schedules,
@@ -51,7 +54,7 @@ source/copy/media binding, strict aggregate reporting and sparse/stale insights.
 All seven job types were run locally. The first hosted execution also
 completed all seven job types successfully in
 [run 39023911551](https://github.com/krishanraja/growth-heartside/actions/runs/39023911551).
-The test suite passes 110 self-checks and 45 unit/integration tests, including
+The test suite passes 110 self-checks and 48 unit/integration tests, including
 actual neural synthesis. Follow-up hosted runs verify checkpoint restore and
 idempotency against the final source revision.
 

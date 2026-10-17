@@ -104,6 +104,18 @@ reconcile with the engine ledger instead of approving a changed or older file.
 Generated assets always require human review. Do not give progress/report cards
 a misleading Posted action intended for a social creative.
 
+## Available operator evidence transport
+
+The growth workflow now accepts `operator_events`, a bounded JSON array of
+`creative_status` and aggregate `insight` events. It writes only the engine's
+hosted ledger, with stable event IDs, exact revision/file validation and replay
+receipts. It never publishes a post. Local `growth.py events import` uses the
+same contract. The owner may connect the existing central UI to this transport
+or implement an equivalent authenticated outbox; neither is implemented here.
+Unknown fields/customer data fail, and failed partial batches are checkpointed.
+Progress reports refresh when statuses or observations change. See ENGINE.md
+and `examples/operator-events.json` for the concrete current schema.
+
 ## Recommendations in the existing Home list
 
 The engine's `recommendations.json` provides title, why, next action, completion

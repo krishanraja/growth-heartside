@@ -12,6 +12,10 @@ on:
         description: 'Optional JSON array of validated aggregate report envelopes. No customer data.'
         type: string
         default: '[]'
+      operator_events:
+        description: 'Optional bounded JSON array of human status records and aggregate insights. No social publishing.'
+        type: string
+        default: '[]'
   push:
     branches: [codex/growth-engine-v3]
     paths: ['.github/workflows/engine.yml', 'engine/**', 'campaigns/**', 'config/**', 'requirements-media.txt', 'growth.py']
@@ -89,6 +93,19 @@ jobs:
                   ledger.import_report(db, document)
           print('Validated aggregate observations imported:', len(documents))
           PY
+      - name: Apply validated operator evidence
+        id: evidence
+        env:
+          OPERATOR_EVENTS: ${{ inputs.operator_events || '[]' }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from contextlib import closing
+          from engine import ledger, operations
+          with closing(ledger.connect('local/engine.sqlite3')) as db:
+              results = operations.apply('.', db, json.loads(os.environ['OPERATOR_EVENTS']))
+          print('Validated operator evidence:', len(results), 'events')
+          PY
       - name: Run due draft jobs
         id: engine
         env:
@@ -110,12 +127,12 @@ jobs:
           sys.exit(1 if failed else 0)
           PY
       - name: Create a consistent recovery checkpoint
-        if: always() && (steps.engine.outcome == 'success' || steps.engine.outcome == 'failure')
+        if: always() && (steps.engine.outcome == 'success' || steps.engine.outcome == 'failure' || steps.evidence.outcome == 'failure')
         run: python3 growth.py snapshot export local/checkpoint/state.tgz
       - name: Save recovery state
         id: checkpoint
         uses: actions/upload-artifact@v4
-        if: always() && (steps.engine.outcome == 'success' || steps.engine.outcome == 'failure')
+        if: always() && (steps.engine.outcome == 'success' || steps.engine.outcome == 'failure' || steps.evidence.outcome == 'failure')
         with:
           name: heartside-state
           path: local/checkpoint/state.tgz

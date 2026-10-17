@@ -1,0 +1,18 @@
+[
+  {
+    "event_id": "replace-with-stable-approval-id",
+    "type": "creative_status",
+    "creative_id": "IG_EMO_REEL_C90_H01_V1_20261017",
+    "revision": "REPLACE_WITH_ACTUAL_64_CHARACTER_REVISION",
+    "status": "approved",
+    "url": null
+  },
+  {
+    "event_id": "replace-with-stable-publication-id",
+    "type": "creative_status",
+    "creative_id": "IG_EMO_REEL_C90_H01_V1_20261017",
+    "revision": "REPLACE_WITH_ACTUAL_64_CHARACTER_REVISION",
+    "status": "published",
+    "url": "https://www.instagram.com/reel/REPLACE_AFTER_ACTUAL_PUBLICATION/"
+  }
+]

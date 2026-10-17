@@ -218,6 +218,12 @@ def tick(root, growth, now=None, job=None, force=False):
                 with closing(ledger.connect(Path(root) / 'local/engine.sqlite3')) as db:
                     rows = [dict(r) for r in db.execute('SELECT * FROM metrics ORDER BY platform,source,start,end,timezone')]
                 fingerprint = ledger.digest({'source': fingerprint, 'metrics': rows})
+                if name == 'report':
+                    with closing(ledger.connect(Path(root) / 'local/engine.sqlite3')) as db:
+                        insights.setup(db)
+                        creative_rows = [dict(r) for r in db.execute('SELECT creative_id,revision,status,updated_at,published_url FROM creatives ORDER BY creative_id,revision')]
+                        insight_rows = [dict(r) for r in db.execute('SELECT * FROM insights ORDER BY creative_id,revision,source')]
+                    fingerprint = ledger.digest({'source': fingerprint, 'creatives': creative_rows, 'insights': insight_rows})
             completed = prior.get('status') == 'completed' and prior.get('input_fingerprint') == fingerprint
             if completed and name == 'daily-pack' and prior.get('result', {}).get('creative_revision'):
                 try:
