@@ -1,13 +1,12 @@
 {
   "verified_at": "2026-10-17T10:40:51.584960+00:00",
-  "implementation_revision": "4c0ce3dd33b8577cbc34dd7c56e26adf48f63e46",
+  "implementation_revision": "9c74731027b9a50b4b90fd41b300547cf6ef635b",
   "product_revision": "5618a99829a0c9ef1291b73c20cda3d837c262de",
   "self_checks": 110,
-  "unit_and_integration_tests": 48,
+  "unit_and_integration_tests": 51,
   "campaign_packs": 7,
   "hook_experiments": 28,
   "native_media_files": 105,
-  "library_sha256": "15128acb55f033eb2eff5dc0b6fdef3765a8d9f80c0684af77dc9983220b3004",
   "workflow": "https://github.com/krishanraja/growth-heartside/actions/workflows/engine.yml",
   "capabilities": {
     "scheduled_draft_production": true,
@@ -78,9 +77,9 @@
       "conclusion": "success"
     },
     "implementation_ci": {
-      "id": 39025411882,
-      "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39025411882",
-      "head_sha": "4c0ce3dd33b8577cbc34dd7c56e26adf48f63e46",
+      "id": 39026601487,
+      "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39026601487",
+      "head_sha": "9c74731027b9a50b4b90fd41b300547cf6ef635b",
       "event": "push",
       "status": "completed",
       "conclusion": "success"
@@ -109,5 +108,6 @@
       ]
     }
   },
-  "draft_handoff_release": "https://github.com/krishanraja/growth-heartside/releases/tag/untagged-4ce3d42f51c5d1825042"
+  "draft_handoff_release": "https://github.com/krishanraja/growth-heartside/releases/tag/untagged-4ce3d42f51c5d1825042",
+  "workspace_library_sha256": "15128acb55f033eb2eff5dc0b6fdef3765a8d9f80c0684af77dc9983220b3004"
 }

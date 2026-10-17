@@ -36,6 +36,12 @@ library and handoff documents. It requires the repository owner or an authorized
 collaborator to sign in. Download `heartside-campaign-library.zip`, unzip it, and
 open `index.html`. Nothing in that draft release publishes a social post.
 
+The manual library export shares the authoritative hosted ledger and writer
+lock with scheduled jobs. Every exported creative revision is persisted before
+the download is attached, so the same validated operator-evidence input works
+for all seven campaign packs. Duplicate asset bytes are stored once per
+checkpoint; restored files remain independent.
+
 ## Where to operate
 
 Use [the engine workflow](https://github.com/krishanraja/growth-heartside/actions/workflows/engine.yml).
@@ -60,7 +66,7 @@ closed. Public-repository artifacts are not confidential media storage.
 - [Recovery replay](https://github.com/krishanraja/growth-heartside/actions/runs/39025077762): restored the failed run's valid checkpoint and skipped all seven completed jobs.
 - [Hosted operator evidence deployment](https://github.com/krishanraja/growth-heartside/actions/runs/39025502013): validated evidence input and all production steps succeeded without recording any fictional publication.
 - [Final hosted replay](https://github.com/krishanraja/growth-heartside/actions/runs/39025604815): validated the evidence-input step, restored the current production checkpoint and skipped all seven completed jobs.
-- [Implementation CI](https://github.com/krishanraja/growth-heartside/actions/runs/39025411882): 110 self-checks and 48 tests passed, including actual neural voice synthesis.
+- [Implementation CI](https://github.com/krishanraja/growth-heartside/actions/runs/39026601487): 110 self-checks and 51 tests passed, including actual neural voice synthesis.
 
 The machine-readable [verification receipt](VERIFICATION-2026-10-17.json) records
 source revisions, actual run conclusions, campaign/library checksums and explicit
@@ -76,7 +82,7 @@ source/copy/media binding, strict aggregate reporting and sparse/stale insights.
 All seven job types were run locally. The first hosted execution also
 completed all seven job types successfully in
 [run 39023911551](https://github.com/krishanraja/growth-heartside/actions/runs/39023911551).
-The test suite passes 110 self-checks and 48 unit/integration tests, including
+The test suite passes 110 self-checks and 51 unit/integration tests, including
 actual neural synthesis. Follow-up hosted runs verify checkpoint restore and
 idempotency against the final source revision.
 
