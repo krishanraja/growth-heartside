@@ -136,10 +136,10 @@ class RuntimeTests(unittest.TestCase):
         time = dt.datetime(2026,10,17,13,0,tzinfo=dt.timezone.utc)
         with patch('engine.runner.run_job', return_value={'pack':'checked'}) as work:
             runner.tick(self.root, growth, time, 'daily-pack')
-            runner.tick(self.root, growth, time + dt.timedelta(minutes=16), 'daily-pack')
+            runner.tick(self.root, growth, time + dt.timedelta(minutes=1), 'daily-pack')
             self.assertEqual(work.call_count, 1)
             state['sha'] = 'b'*40
-            runner.tick(self.root, growth, time + dt.timedelta(minutes=32), 'daily-pack')
+            runner.tick(self.root, growth, time + dt.timedelta(minutes=2), 'daily-pack')
             self.assertEqual(work.call_count, 2)
 
     def test_hot_media_retention_preserves_ledger_metadata(self):

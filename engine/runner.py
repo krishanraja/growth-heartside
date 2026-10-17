@@ -218,7 +218,7 @@ def tick(root, growth, now=None, job=None, force=False):
                 continue
             # Persist the claim before work. A crash leaves it retryable after lease expiry.
             attempt = int(prior.get('attempts', 0)) + 1
-            if not force and prior.get('last_attempt') and now - dt.datetime.fromisoformat(prior['last_attempt']) < dt.timedelta(minutes=15):
+            if not force and prior.get('status') in {'running', 'failed'} and prior.get('last_attempt') and now - dt.datetime.fromisoformat(prior['last_attempt']) < dt.timedelta(minutes=15):
                 results.append({'job': name, 'status': 'retry_deferred'})
                 continue
             history[key] = {'status': 'running', 'attempts': attempt, 'last_attempt': now.isoformat(), 'input_fingerprint': fingerprint}
