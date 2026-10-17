@@ -22,6 +22,7 @@ places gifts, confirms printing, changes the store or schedules paid AI requests
 ## Produce and review
 
 ```sh
+# Use Python 3.12 for the full media runtime.
 python3 -m pip install -r requirements-media.txt
 # Install FFmpeg and ffprobe through your system package manager.
 python3 growth.py sync

@@ -1,6 +1,6 @@
 {
-  "verified_at": "2026-10-17T10:40:51.584960+00:00",
-  "implementation_revision": "9c74731027b9a50b4b90fd41b300547cf6ef635b",
+  "verified_at": "2026-10-17T11:10:26.356013+00:00",
+  "implementation_revision": "d5c515dec295557792bf80b4e09f614a15ff6757",
   "product_revision": "5618a99829a0c9ef1291b73c20cda3d837c262de",
   "self_checks": 110,
   "unit_and_integration_tests": 51,
@@ -77,9 +77,9 @@
       "conclusion": "success"
     },
     "implementation_ci": {
-      "id": 39026601487,
-      "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39026601487",
-      "head_sha": "9c74731027b9a50b4b90fd41b300547cf6ef635b",
+      "id": 39027496024,
+      "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39027496024",
+      "head_sha": "d5c515dec295557792bf80b4e09f614a15ff6757",
       "event": "push",
       "status": "completed",
       "conclusion": "success"
@@ -106,9 +106,49 @@
       "operator_events_counts": [
         "0"
       ]
+    },
+    "complete_library_export": {
+      "id": 39027003626,
+      "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39027003626",
+      "head_sha": "860aca4b647738e14dc7e588e1171efdb3ce955d",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "expanded_checkpoint_restore": {
+      "id": 39027175642,
+      "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39027175642",
+      "head_sha": "860aca4b647738e14dc7e588e1171efdb3ce955d",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "final_expanded_state_replay": {
+      "id": 39027495460,
+      "html_url": "https://github.com/krishanraja/growth-heartside/actions/runs/39027495460",
+      "head_sha": "d5c515dec295557792bf80b4e09f614a15ff6757",
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "conclusion": "success",
+      "job_statuses": [
+        "already_completed",
+        "already_completed",
+        "already_completed",
+        "already_completed",
+        "already_completed",
+        "already_completed",
+        "already_completed"
+      ]
     }
   },
   "draft_handoff_release": "https://github.com/krishanraja/growth-heartside/releases",
   "workspace_library_sha256": "15128acb55f033eb2eff5dc0b6fdef3765a8d9f80c0684af77dc9983220b3004",
-  "draft_handoff_release_id": 415745311
+  "draft_handoff_release_id": 415745311,
+  "checkpoint_format": {
+    "version": 2,
+    "duplicate_bytes_stored_once": true,
+    "independent_restored_files": true,
+    "legacy_v1_readable": true,
+    "portable_paths_validated": true
+  }
 }
