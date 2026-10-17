@@ -52,7 +52,7 @@ jobs:
             for (const artifact of artifacts.sort((a,b) => b.created_at.localeCompare(a.created_at))) {
               if (artifact.workflow_run?.head_branch !== context.ref.replace('refs/heads/', '')) continue;
               const {data:run} = await github.rest.actions.getWorkflowRun({...context.repo, run_id:artifact.workflow_run.id});
-              if (run.path !== '.github/workflows/engine.yml' || run.head_repository?.full_name !== `${context.repo.owner}/${context.repo.repo}`) continue;
+              if (!['.github/workflows/engine.yml','.github/workflows/handoff.yml'].includes(run.path) || run.head_repository?.full_name !== `${context.repo.owner}/${context.repo.repo}`) continue;
               if (!artifact.expired) { found = artifact; break; }
             }
             if (found) core.setOutput('run-id', String(found.workflow_run.id));
@@ -169,7 +169,7 @@ jobs:
             const ours = artifacts.filter(a => a.name === name && a.workflow_run?.head_branch === context.ref.replace('refs/heads/','')).sort((a,b) => b.created_at.localeCompare(a.created_at));
             for (const artifact of ours.slice(3)) {
               const {data:run} = await github.rest.actions.getWorkflowRun({...context.repo,run_id:artifact.workflow_run.id});
-              if (run.path === '.github/workflows/engine.yml' && run.head_repository?.full_name === `${context.repo.owner}/${context.repo.repo}`)
+              if (['.github/workflows/engine.yml','.github/workflows/handoff.yml'].includes(run.path) && run.head_repository?.full_name === `${context.repo.owner}/${context.repo.repo}`)
                 await github.rest.actions.deleteArtifact({...context.repo,artifact_id:artifact.id});
             }
             }

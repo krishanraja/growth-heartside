@@ -4,8 +4,9 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  actions: write
 concurrency:
-  group: heartside-handoff-library
+  group: heartside-engine-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   library:
@@ -22,6 +23,28 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python3 growth.py sync --quiet
+      - name: Find the current hosted ledger
+        uses: actions/github-script@v7
+        id: state
+        with:
+          script: |
+            const artifacts = await github.paginate(github.rest.actions.listArtifactsForRepo, {...context.repo,name:'heartside-state',per_page:100});
+            for (const artifact of artifacts.sort((a,b) => b.created_at.localeCompare(a.created_at))) {
+              if (artifact.expired || artifact.workflow_run?.head_branch !== context.ref.replace('refs/heads/','')) continue;
+              const {data:run} = await github.rest.actions.getWorkflowRun({...context.repo,run_id:artifact.workflow_run.id});
+              if (!['.github/workflows/engine.yml','.github/workflows/handoff.yml'].includes(run.path) || run.head_repository?.full_name !== `${context.repo.owner}/${context.repo.repo}`) continue;
+              core.setOutput('run-id',String(run.id)); break;
+            }
+      - uses: actions/download-artifact@v4
+        if: steps.state.outputs.run-id != ''
+        with:
+          name: heartside-state
+          path: local/incoming
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.state.outputs.run-id }}
+      - name: Restore the current hosted ledger
+        if: steps.state.outputs.run-id != ''
+        run: python3 growth.py snapshot restore local/incoming/state.tgz --replace
       - name: Install the production runtime
         run: |
           sudo apt-get update -qq
@@ -30,7 +53,9 @@ jobs:
       - name: Build seven checked campaign packs
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: python3 growth.py library > local/library-result.json
+        run: |
+          python3 growth.py sync --quiet
+          python3 growth.py library > local/library-result.json
       - name: Bind the handoff receipt to this archive
         env:
           GH_TOKEN: ${{ github.token }}
@@ -50,6 +75,15 @@ jobs:
           receipt['library_build_run'] = os.environ['GITHUB_SERVER_URL']+'/'+os.environ['GITHUB_REPOSITORY']+'/actions/runs/'+os.environ['GITHUB_RUN_ID']
           Path('local/handoff/verification.json').write_text(json.dumps(receipt,indent=2)+'\n')
           PY
+      - name: Persist every library revision for later publication records
+        run: python3 growth.py snapshot export local/checkpoint/state.tgz
+      - uses: actions/upload-artifact@v4
+        with:
+          name: heartside-state
+          path: local/checkpoint/state.tgz
+          if-no-files-found: error
+          retention-days: 90
+          compression-level: 0
       - name: Attach the complete library to the draft handoff
         env:
           GH_TOKEN: ${{ github.token }}
@@ -65,3 +99,17 @@ jobs:
           if-no-files-found: warn
           retention-days: 7
           compression-level: 0
+      - name: Bound recovery and library artifact storage
+        uses: actions/github-script@v7
+        if: always()
+        with:
+          script: |
+            const artifacts = await github.paginate(github.rest.actions.listArtifactsForRepo,{...context.repo,per_page:100});
+            for (const [name,keep] of [['heartside-state',3],['heartside-review',3],['heartside-complete-library',1]]) {
+              const ours = artifacts.filter(a => a.name===name && a.workflow_run?.head_branch===context.ref.replace('refs/heads/','')).sort((a,b)=>b.created_at.localeCompare(a.created_at));
+              for (const artifact of ours.slice(keep)) {
+                const {data:run} = await github.rest.actions.getWorkflowRun({...context.repo,run_id:artifact.workflow_run.id});
+                if (['.github/workflows/engine.yml','.github/workflows/handoff.yml'].includes(run.path) && run.head_repository?.full_name===`${context.repo.owner}/${context.repo.repo}`)
+                  await github.rest.actions.deleteArtifact({...context.repo,artifact_id:artifact.id});
+              }
+            }
