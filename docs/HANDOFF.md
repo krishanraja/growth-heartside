@@ -1,6 +1,6 @@
 # Heartside growth engine handoff
 
-Implementation and acquisition work live in this repository. Product and print
+The engine is merged and active on main. Implementation and acquisition work live in this repository. Product and print
 work was handed to heartside PR #13. Control Centre gets only
 [its completed owner brief](CONTROL-CENTRE-BRIEF.md). Its existing draft was left
 untouched during this completion; central delivery defaults off.
@@ -29,6 +29,13 @@ untouched during this completion; central delivery defaults off.
 - A 30-day acquisition strategy, creator operating brief and central integration
   brief with concrete UI gaps and acceptance checks.
 
+## Download the complete library
+
+The [draft completion release](https://github.com/krishanraja/growth-heartside/releases/tag/untagged-4ce3d42f51c5d1825042) holds the full seven-campaign
+library and handoff documents. It requires the repository owner or an authorized
+collaborator to sign in. Download `heartside-campaign-library.zip`, unzip it, and
+open `index.html`. Nothing in that draft release publishes a social post.
+
 ## Where to operate
 
 Use [the engine workflow](https://github.com/krishanraja/growth-heartside/actions/workflows/engine.yml).
@@ -44,6 +51,21 @@ masters need separate long-term storage beyond the seven-day hot workspace.
 The latest three checkpoints/review artifacts are retained with 90-day expiry;
 compressed checkpoint size is capped at 100 MB. Missing recovery state fails
 closed. Public-repository artifacts are not confidential media storage.
+
+## Verified production and recovery
+
+- [Production bootstrap](https://github.com/krishanraja/growth-heartside/actions/runs/39024960655): all seven jobs completed; two verified Shopify aggregate envelopes imported.
+- [Production replay](https://github.com/krishanraja/growth-heartside/actions/runs/39025075980): restored that checkpoint and skipped all seven completed jobs.
+- [Controlled invalid-job test](https://github.com/krishanraja/growth-heartside/actions/runs/39024993241): failed as intended on the test branch; checkpoint upload and storage cleanup succeeded.
+- [Recovery replay](https://github.com/krishanraja/growth-heartside/actions/runs/39025077762): restored the failed run's valid checkpoint and skipped all seven completed jobs.
+- [Hosted operator evidence deployment](https://github.com/krishanraja/growth-heartside/actions/runs/39025502013): validated evidence input and all production steps succeeded without recording any fictional publication.
+- [Final hosted replay](https://github.com/krishanraja/growth-heartside/actions/runs/39025604815): validated the evidence-input step, restored the current production checkpoint and skipped all seven completed jobs.
+- [Implementation CI](https://github.com/krishanraja/growth-heartside/actions/runs/39025411882): 110 self-checks and 48 tests passed, including actual neural voice synthesis.
+
+The machine-readable [verification receipt](VERIFICATION-2026-10-17.json) records
+source revisions, actual run conclusions, campaign/library checksums and explicit
+capability limits. The invalid-job test is expected failure evidence, not an
+unresolved production incident.
 
 ## Evidence and limits
 
