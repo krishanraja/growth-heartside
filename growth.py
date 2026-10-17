@@ -659,18 +659,15 @@ def token():
 def control_center_takes_heartside():
     """True only when Control Center says it keeps packs per venture and knows heartside.
     Today it keeps one pack per (date, kind), so a Heartside pack would replace makeyourmindup's."""
-    t = token()
-    if not t:
-        return False, 'no Control Center key on this machine'
-    try:
-        req = urllib.request.Request(BASE + '/api/growth/packs?days=1&venture=heartside', headers={**UA, 'Authorization': f'Bearer {t}'})
-        with urllib.request.urlopen(req, timeout=30) as r:
-            body = json.loads(r.read() or b'{}')
-    except (urllib.error.URLError, ValueError) as e:
-        return False, f'Control Center did not answer ({getattr(e, "code", e)})'
-    if isinstance(body, dict) and body.get('ok') is True and isinstance(body.get('ventures'), list) and 'heartside' in body['ventures']:
+    from engine.control_center import probe
+    result = probe(BASE, token())
+    if result['authenticated'] and result['venture_isolation']:
         return True, 'Control Center keeps Heartside packs apart'
-    return False, 'Control Center does not keep packs per venture yet (README.md, "Control Center")'
+    if result['outcome'] == 'missing_runner_secret':
+        return False, 'no reporting token in this process; the GitHub Actions workflow can use the existing repository secret'
+    if result['authenticated']:
+        return False, 'Control Center authenticated the runner but does not keep packs per venture yet (Control Center PR 472)'
+    return False, f'Control Center access check: {result["outcome"]} (HTTP {result["http_status"] or "not received"})'
 
 
 def render_md(pack):

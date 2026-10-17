@@ -49,3 +49,15 @@ copy and production manifest. Control Center's live API is not yet ready for
 Heartside and this runner has no reporting credential. The separate Control
 Center change provides venture isolation, commerce measures and read-only
 report cards, with migration and rollout checks. It is not deployed.
+
+## 2026-10-17: verify the existing reporting secret in Actions
+
+Krish clarified that Vercel access covers his projects and that
+GROWTH_ENGINE_TOKEN is already in GitHub secrets. Verified all 18 Vercel team
+projects and the Production binding by metadata only. A read-only Actions
+probe used the existing repository secret and authenticated to live Control
+Center with HTTP 200 (run 39020889464, 09:22:45 UTC). The remaining delivery
+block is the deployed legacy API's missing venture isolation, not a missing
+credential. No token was read out of GitHub, copied into this machine or
+included in the probe artifact. Updated the runbook and recommendation to
+use the proven Actions execution path. Secret-list API access is unnecessary.

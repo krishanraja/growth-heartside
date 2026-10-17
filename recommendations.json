@@ -8,9 +8,9 @@
   },
   {
     "title": "Make the central report usable for Heartside",
-    "why": "Control Center currently keys packs without a venture, and this runner has no reporting API credential.",
+    "why": "The existing GitHub Actions reporting identity authenticates successfully. The deployed Control Center API still keys packs without a venture.",
     "target_url": "https://github.com/krishanraja/control-center/pull/472",
-    "next_action": "Apply and deploy the reviewed venture-isolation change, bind the existing growth reporting identity to this runner, and read back one Heartside report through the API.",
+    "next_action": "Apply and deploy the reviewed venture-isolation change, use the existing GitHub Actions secret for delivery, and read back one Heartside report through the API.",
     "closes_when": "A Heartside report appears in Growth > Packs and a Make Your Mind Up pack for the same date and kind remains intact."
   },
   {

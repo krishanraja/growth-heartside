@@ -104,8 +104,16 @@ Control Center is the unified dashboard for progress and recommendations.
 The live table still lacks venture isolation, so Heartside packs currently
 stay under `local/packs/`. The compatible change is prepared in Control
 Center's `codex/heartside-growth-reporting` branch; its migration and app
-must be deployed together. This runner also needs the existing reporting
-identity bound securely before it can deliver reports there.
+must be deployed together. The existing GitHub Actions secret is available
+and authenticated to the live reporting API with HTTP 200 on 17 October.
+The interactive shell does not receive Actions secrets automatically.
+
+`.github/workflows/reporting-access.yml` uses that secret inside GitHub and
+records only a read-only capability result. The verified run is
+[39020889464](https://github.com/krishanraja/growth-heartside/actions/runs/39020889464).
+It confirmed authentication and correctly detected the live API's missing
+venture support. `python3 growth.py reporting-access` runs the same check
+where the credential is bound. Never export the secret to logs or artifacts.
 
 `growth.py dashboard --start <date> --end <exclusive-date> --timezone <store-zone>`
 prepares numbers and progress packs with sources, coverage and prepared links.

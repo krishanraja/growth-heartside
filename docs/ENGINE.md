@@ -200,8 +200,10 @@ standard-library Python.
 
 Control Center is the unified dashboard. The reviewed server change is in its
 `codex/heartside-growth-reporting` branch. Until its migration and application
-are deployed and the runner can authenticate, reports remain local retry
-copies. A repository checkout does not supply runtime credentials.
+are deployed, Heartside reports remain local retry copies. The GitHub Actions
+reporting identity is verified: the existing repository secret authenticated
+to the live API with HTTP 200 on 17 October. The interactive process does not
+automatically receive the secret from Actions.
 
 Build the dashboard's two packs from aggregate evidence:
 
@@ -230,11 +232,25 @@ adapter and reconciliation of dashboard marks with the creative ledger are
 still needed for a shared production review workflow.
 
 The 17 October access audit verified repository access, connected Shopify
-reports, Control Center's live database and Vercel project. Control Center's
+reports, Control Center's live database and all 18 Vercel team projects. The
+Production environment also contains the sensitive reporting-token binding.
+Control Center's
 06:00 UTC provider sweep reported its AI and n8n connections healthy. That
 is evidence of the server's checks, not proof this runner can call those
-providers or read private social insights. This runner has no authenticated
-Control Center API session, signed-in social analytics or proven persistent
+providers or read private social insights. GitHub Actions authenticated through
+the existing secret in [run 39020889464](https://github.com/krishanraja/growth-heartside/actions/runs/39020889464).
+The result was `authenticated_legacy_api`, not a missing credential. The
+read-only workflow saves only controlled status fields as an artifact and job
+summary. It never copies the token or pack contents out of GitHub. There is
+still no verified signed-in social analytics session or persistent marketing
 scheduler. Keep those gaps visible; never present missing access as zero
 performance. Detailed integration and UI work belongs to Control Center's
 `docs/handoff/heartside-growth/README.md`, not a second dashboard here.
+
+Run `python3 growth.py reporting-access` to distinguish a missing credential
+in the current process, failed authentication and an authenticated API whose
+venture upgrade is not deployed. A GitHub secret does not need to be readable
+through the secrets-list API to be usable by Actions. The access workflow runs
+on trusted pushes changing its own definition or probe, and supports manual
+dispatch once installed on the default branch. Authentication success alone
+does not permit Heartside to use the legacy two-column pack key.
