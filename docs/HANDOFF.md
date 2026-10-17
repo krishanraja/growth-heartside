@@ -31,7 +31,7 @@ untouched during this completion; central delivery defaults off.
 
 ## Download the complete library
 
-The [draft completion release](https://github.com/krishanraja/growth-heartside/releases/tag/untagged-4ce3d42f51c5d1825042) holds the full seven-campaign
+The [draft completion release](https://github.com/krishanraja/growth-heartside/releases) holds the full seven-campaign
 library and handoff documents. It requires the repository owner or an authorized
 collaborator to sign in. Download `heartside-campaign-library.zip`, unzip it, and
 open `index.html`. Nothing in that draft release publishes a social post.

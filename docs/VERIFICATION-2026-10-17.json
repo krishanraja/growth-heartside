@@ -108,6 +108,7 @@
       ]
     }
   },
-  "draft_handoff_release": "https://github.com/krishanraja/growth-heartside/releases/tag/untagged-4ce3d42f51c5d1825042",
-  "workspace_library_sha256": "15128acb55f033eb2eff5dc0b6fdef3765a8d9f80c0684af77dc9983220b3004"
+  "draft_handoff_release": "https://github.com/krishanraja/growth-heartside/releases",
+  "workspace_library_sha256": "15128acb55f033eb2eff5dc0b6fdef3765a8d9f80c0684af77dc9983220b3004",
+  "draft_handoff_release_id": 415745311
 }
