@@ -5,9 +5,11 @@ Kind `report`. Part 7 in `PLAYBOOK.md`. Time for Krish: about 15 minutes.
 1. `python3 growth.py sync`. Use the `heartside_sha` it prints. Note every
    canon change this week, from the commits list in
    `local/state/HEARTSIDE-NOW.md`.
-2. Read the week: `python3 growth.py read --days 8` (every pack, the daily
-   numbers) and `local/creatives.csv` (what Krish posted, and each
-   creative's numbers).
+2. Read `python3 growth.py read --days 8`, `growth.py creatives list`,
+   and `growth.py metrics report` with explicit dates and timezone.
+   Check coverage before calling anything a full-period total. The ledger
+   distinguishes rendered, approved and actually published. Reconcile any
+   legacy `local/creatives.csv` evidence without counting it twice.
 3. Work out, from real numbers only:
    - orders, net sales, the average order value and the multi-gift share,
      against last week, the month's $10,000 and the canon's checkpoints;
@@ -43,6 +45,11 @@ Kind `report`. Part 7 in `PLAYBOOK.md`. Time for Krish: about 15 minutes.
        Krish's call;
      - the stage in PLAYBOOK, "Becoming the category leader", and what the
        next gate needs.
-6. End with one call and one counterpoint. Headline: the week in one plain
+6. The current Shopify adapter supplies store totals, not per-creative
+   revenue. Keep attribution unavailable until a real source links it.
+   A shared bio link cannot identify which Reel caused a visit. Keep
+   low-volume results inconclusive. First-party event and purchase-flow
+   fixes go back to the Heartside product handoff as evidence and a brief.
+7. End with one call and one counterpoint. Headline: the week in one plain
    line, for example "Week 2: 11 orders ($604), behind 15 by 1 Nov by 4; the
    partner reveal is the winner". Check, then post.

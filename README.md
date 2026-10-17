@@ -1,7 +1,7 @@
 # growth-heartside
 
 The growth engine for [Heartside](https://heartside.io), gifts from your dog.
-It drafts what brings US buyers to the store with as little paid spend as
+It produces media and drafts that bring US buyers to the store with as little paid spend as
 possible: the day's Reel and its native editions, replies to comments,
 creator notes, store and search fixes, the numbers and a weekly decision. It
 runs as scheduled Codex or Cowork sessions. Krish reads each pack, posts and
@@ -18,10 +18,36 @@ the store.
 - How it works and the rules: `AGENTS.md` (every run reads it first).
 - The operating system, adapted to Heartside: `PLAYBOOK.md`.
 - Krish's source documents, and where Heartside changes them: `knowledge/`.
-- The jobs: `jobs/`. The one tool: `growth.py` (Python standard library,
-  plus git).
+- The jobs: `jobs/`. The entrypoint: `growth.py` (standard-library core;
+  Pillow and FFmpeg for media).
 - What heartside is doing right now: `state/HEARTSIDE-NOW.md`.
 - Krish's changes: `CHANGES.md`.
+- The build, commands, aggregate reporting format and current limits: [`docs/ENGINE.md`](docs/ENGINE.md).
+- Acquisition strategy and the 30-day experiment: [`STRATEGY.md`](STRATEGY.md).
+- Product, purchase-flow and fulfillment work now belongs in [heartside's product handover](https://github.com/krishanraja/heartside/blob/codex/product-handoff-2026-10-17/docs/HANDOVER-2026-10-17.md) ([PR #13](https://github.com/krishanraja/heartside/pull/13)).
+
+## Produce the first media pack
+
+```sh
+python3 -m pip install -r requirements-media.txt
+# Install FFmpeg using your operating system's package manager.
+python3 growth.py sync
+python3 growth.py readiness
+python3 growth.py render campaigns/waits-at-the-door.json
+```
+
+The render command prints the exact draft pack path. `growth.py check <path>`
+verifies its copy, product commit and media checksums. `growth.py post <path>`
+stores it for review; it does not publish to any social platform. The starter
+produces a ten-second 1080x1920 example film, cover, three Story frames, two
+Pins and subtitles from the approved real mug images. It has silent audio.
+No paid AI generation runs. Use `--heartside-dir /path/to/heartside` to read
+the pinned assets from a local checkout instead of downloading them.
+
+The local SQLite ledger keeps creative revisions and aggregate reports across
+runs. A machine move needs a consistent backup (`growth.py ledger backup
+local/backups/engine.sqlite3`) or a future shared-state adapter. It is not
+automatically replicated to n8n or Control Center.
 
 ## How it stays across heartside
 
@@ -99,6 +125,10 @@ PLAYBOOK.md       the operating system, applied to Heartside
 BROWSER.md        read-only rules for the signed-in browser
 jobs/             one file per job; automations.json schedules them
 growth.py         sync, canon, store, link, check, post, read, doctor, self-test
+engine/           offer checks, pinned asset cache, media renderer and local ledger
+campaigns/        editable production templates; scheduled copies go under local/
+docs/ENGINE.md    runtime commands, report format and implementation limits
+STRATEGY.md       acquisition experiment and revenue scenarios
 knowledge/        Krish's two source documents, and where Heartside changes them
 state/            the hourly reading of heartside (written by the Action)
 local/            on the running machine only, never committed: sync, packs, lists

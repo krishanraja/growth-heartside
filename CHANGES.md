@@ -3,6 +3,15 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-17: Krish: "Put everything that's not related to the marketing and
+  customer acquisition in the heartside repository so that one can pick
+  this up: your recommendation up next and then leave everything else in
+  this repository and start building the engine for it." Product work is
+  handed to heartside PR #13. This engine adds named-offer checks, real
+  example-media rendering, creative revision history and aggregate report
+  imports. Daily and reporting jobs use those commands; the seven schedules
+  and publication restrictions remain in place.
+
 - 2026-10-15: the canon also takes the newest dated handover in heartside's
   `docs/`. On 15 Oct a Cowork session wrote `docs/COWORK-HANDOVER-2026-10-15.md`
   (Krish's "10X personalized delight" direction, the approved mug redesign,

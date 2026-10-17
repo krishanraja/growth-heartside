@@ -1,5 +1,5 @@
 {
- "_about": "The seven scheduled tasks this engine runs as, in one place. A Codex or Cowork session asked to \"create the automations\" builds them from this file (AGENTS.md, \"When Krish says: create the automations\"); the README table is the same list for reading. Times are New York (America/New_York).",
+ "_about": "The seven scheduled tasks this engine runs as, in one place. Updated 17 October: daily jobs produce checked media; numbers import aggregate reports into the local ledger. Schedules and prompts are unchanged. A session asked to create the automations builds them from this file (AGENTS.md); times are New York (America/New_York).",
  "timezone": "America/New_York",
  "run_in": "this local project (not a new worktree), so every run shares local/ (the sync, the packs, the creative record and the creator list)",
  "access": "network on (github.com, raw.githubusercontent.com, heartside.io and the channels); the signed-in browser when available",

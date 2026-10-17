@@ -227,9 +227,11 @@ action: "Try it. Link in bio."
 **Production truth.** The product on screen is always the real design
 (HANDOFF rule 4). Composite the real print files onto mockups. AI may make
 rooms and dogs, never the product, and never "customers" holding or
-reviewing it. Biscuit is openly an AI-made character. heartside's video
-builder (`tools/content/reel.py`) still renders the retired poster, so the
-engine writes briefs, not render specs, until a v3 builder exists.
+reviewing it. Biscuit is openly an AI-made character. `growth.py render`
+now produces an example audience film, cover, Stories, Pins and subtitles
+from approved v3 mug photos, with silent audio (`docs/ENGINE.md`). The old
+product-repo renderer (`tools/content/reel.py`) still targets the retired
+poster. New motion and voice adapters are subsequent work.
 Higgsfield credits are Krish's; any generation that spends them needs his yes.
 
 ## Measurement
@@ -258,8 +260,9 @@ number across platforms.
 Shopify's marketing reports group sessions, orders and sales by these tags.
 The checker refuses an untracked heartside.io link.
 
-**The creative record** (kept in `local/creatives.csv` on the machine that
-runs the engine, never committed): creative_id, concept, pillar, format,
+**The creative record** is now `local/engine.sqlite3`, kept across runs on
+the same machine with portable backups (`docs/ENGINE.md`). The old
+`local/creatives.csv`, if present, is legacy history. Record: creative_id, concept, pillar, format,
 hook, promise, proof, call to action, search phrase, source assets, rights,
 landing url, approval (posted or skipped), published url, and the 24-hour,
 72-hour and 7-day reach, sends, saves, profile visits, link taps, sessions,

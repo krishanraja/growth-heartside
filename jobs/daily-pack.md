@@ -1,7 +1,7 @@
 # Job: the day's pack (every day)
 
-Kind `daily`. Parts 3 and 6 in `PLAYBOOK.md`. Time for Krish: about 10
-minutes to read, then the time to make and post one Reel.
+Kind `daily`. Parts 3 and 6 in `PLAYBOOK.md`. Deliver finished media for
+Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
 
 1. `python3 growth.py sync`. Use the `heartside_sha` it prints. Run `python3
    growth.py store`. If the v3 gifts are not on sale yet, today's pack builds
@@ -54,9 +54,27 @@ minutes to read, then the time to make and post one Reel.
      phrase, and the tracked link to the most specific page.
    - **Comment prompt** (`instagram`, POST), if the format invites it:
      "Comment your dog's name", with Biscuit's reply pattern for the radar.
-4. For the A/B test the canon runs (judged by sends per reach), say which
-   angle today's concept tests in the brief's `why`.
-5. Headline: the day, the concept and its test, for example "Monday, C04
+4. State the test in the brief's `why`. Test current recognition stories
+   and gift proof. V3 rejected the HR builder, so the older roast-versus-
+   love-letter instruction must not revive it. Judge sends per reach
+   alongside useful visits and purchases when observed.
+5. Write the production spec under `local/specs/`, using
+   `campaigns/waits-at-the-door.json` as the schema. A scheduled run never
+   edits that tracked file. Keep the visible detail true to its approved
+   example product. Run `python3 growth.py render <spec>`. It currently
+   produces audience media with silent audio, without paid generation.
+   New motion and voice adapters are subsequent work. Paid generation
+   still requires permission.
+6. Keep the renderer's production manifest and native creative IDs. Use
+   its printed draft path for `growth.py check` and `post`. Incorporate
+   additional checked briefs or comment items if needed. Missing or
+   changed media makes the daily pack incomplete; report the exact
+   failure rather than calling a text brief ready. Revisions are saved
+   in `local/engine.sqlite3` automatically.
+7. Headline: the day, the concept and its test, for example "Monday, C04
    'My dog got me a gift' (partner): Reel, Story, FB, TikTok, 2 Pins". Check,
-   then post. Add the new creative ids to `local/creatives.csv`, one row
-   each, with approval left blank for Krish.
+   then store with `growth.py post <printed-draft-path>`. Include the media
+   paths and whole pack in the final message. Record actual publication
+   afterward with `growth.py creatives mark`. A generated file is not
+   published. `local/creatives.csv` is legacy history, not evidence that
+   these new files were posted.

@@ -9,7 +9,7 @@ change it.
 Read, in this order, before any job:
 1. this file, to the end;
 2. `local/state/HEARTSIDE-NOW.md`, written by the sync you run first (rule 2);
-3. `PLAYBOOK.md`: the operating system, applied to Heartside;
+3. `PLAYBOOK.md`: the operating system, applied to Heartside, then `docs/ENGINE.md` for production and reporting;
 4. `BROWSER.md`: what you may and may never do in Krish's signed-in browser;
 5. the job's own file in `jobs/`.
 
@@ -106,7 +106,11 @@ address of Krish's in anything.
 
 ## Where your work goes
 
-Every job ends with one **pack**: one draft per item, ready to copy.
+Every job ends with one **pack**: one draft per item, ready to review. A daily
+pack also has rendered media. Run `growth.py render` with a campaign spec;
+use its printed draft path for `check` and `post`. Those commands reject a
+daily pack whose production files are absent, changed or from another product
+commit. Creative revisions are kept in `local/engine.sqlite3`.
 
 1. Write the pack as JSON in a scratch file. The shape is in `growth.py`'s
    top comment:
@@ -122,6 +126,14 @@ Every job ends with one **pack**: one draft per item, ready to copy.
      - `target_name` (whose thread, for replies and creators);
      - `why` (one line: why this, why now);
      - `text` (the draft, ready to paste).
+     - `intent`: `audience` or `buy`. Purchase copy and public prices also
+       need `offers`: gift `id`, `quantity` and `unit_price`, bound to that
+       gift in the current public catalog. See `growth.py readiness`.
+
+   Keep the `production` object written by the renderer. Never type a fake
+   media checksum or substitute an unrelated creative's manifest. The
+   starter template supports audience packs, with no purchase links or
+   public prices; product readiness gates still apply to later sales copy.
 
    Platforms: instagram, facebook, tiktok, pinterest, youtube, google, email,
    store, reddit, creator, other. Every heartside.io link is tracked
@@ -212,6 +224,10 @@ All on the machine that runs it, under `local/`, never committed:
 | `local/state/` | The latest sync |
 | `local/packs/` | Every pack, as JSON and as readable text |
 | `local/creatives.csv` | The creative record (PLAYBOOK, "Measurement") |
+| `local/engine.sqlite3` | Creative revisions, operator-recorded status and aggregate reporting windows |
+| `local/media/` | Rendered files and their source and checksum manifests |
+| `local/assets/` | Approved product assets from the synced Heartside commit |
+| `local/metrics/` | Aggregate report envelopes, never customer records |
 | `local/lists/creators.md` | The creator shortlist and each creator's step |
 
 The repository's own `state/HEARTSIDE-NOW.md` is rewritten every hour by a
@@ -219,6 +235,11 @@ GitHub Action (`.github/workflows/sync.yml`). Anyone opening the repository
 sees what heartside is doing, without running anything.
 
 ## Changing the engine
+
+Krish's 17 October instruction authorizes the interactive engine build and
+the product handoff in heartside. The handoff is tracked there; the growth
+implementation and acquisition strategy stay here. Scheduled runs retain
+rule 9 and never edit heartside or the store.
 
 Krish keeps or kills a job from the Sunday report. Record his words with the
 date in `CHANGES.md`, then change the job file and `automations.json`
