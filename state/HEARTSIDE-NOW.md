@@ -1,6 +1,6 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `5618a99829` on 2026-10-17T09:26:52+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `5618a99829` on 2026-10-17T13:47:06+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
 
 ## The canon, in heartside's order
@@ -25,34 +25,7 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 
 ## Recent commits on main
 
-- `5618a99829` 2026-10-15 Merge pull request #12 from krishanraja/claude/keen-albattani-bijgeg
-- `b3d5c23c2d` 2026-10-15 First screen: the real-photo mug replaces the drawn one; Cowork's next prompt
-- `25830340b8` 2026-10-15 Mug text curves as the photo does: more toward the base
-- `fdd656e297` 2026-10-15 Merge pull request #11 from krishanraja/claude/keen-albattani-bijgeg
-- `bda2340a8c` 2026-10-15 Order QC is scheduled: twice daily, waiting on Shopify being connected
-- `f045a2bfb8` 2026-10-15 Merge pull request #10 from krishanraja/claude/keen-albattani-bijgeg
-- `ffe773f4d0` 2026-10-15 Order QC for the mug: check each order's real print file before it prints
-- `77124f79bd` 2026-10-15 Chat mug drawn as the approved images are, held to Teeinblue's print files
-- `17d5d34cac` 2026-10-15 Merge pull request #9 from krishanraja/claude/keen-albattani-bijgeg
-- `a7aa67ac16` 2026-10-15 Handover: the 15 Oct work is merged and live on the theme
-- `80f7fd946b` 2026-10-15 Merge pull request #8 from krishanraja/claude/keen-albattani-bijgeg
-- `f4a5bc003b` 2026-10-15 Handover: next session prompt on main, Krish's evening ask, the one idea
-- `9b85b23ecb` 2026-10-15 Handover section 5: items 3, 4 and 7 marked done, with commit links
-- `d81697569a` 2026-10-15 US spelling in a comment and a test label (centered)
-- `5cc02fed14` 2026-10-15 V3: five dated decisions in section 13; the mug's lines are in Fraunces
-- `7f51d5329b` 2026-10-15 Mug reveal on the real mug, even line breaks, paws, chip-style typed lines
-- `68c67d3786` 2026-10-15 Breed lookup the chat can call later
-- `1faf8e82b5` 2026-10-15 Merge pull request #7 from krishanraja/claude/gracious-turing-kbsuss
-- `4b1165a1db` 2026-10-15 README: point to the growth engine and the canon line it reads
-- `c233185891` 2026-10-15 Merge pull request #6 from krishanraja/cowork-handover-2026-10-15
-- `34b3ec133b` 2026-10-15 Explored, not approved: mug directions, three-gift redesign, rejected letter direction
-- `bff5220396` 2026-10-15 Real-photo mug tools: cylinder wrap, mockup builder, print masks, Teeinblue simulator, Shopify image renders
-- `79a8d6e1e7` 2026-10-15 Fraunces fonts used by the mug v3 artwork and preview renders, with OFL license
-- `f248066be3` 2026-10-15 Mug v3 Teeinblue source assets: background, photo mask, sample, mockup bases, shades, print masks, geometry
-- `4f75310dce` 2026-10-15 Breed corpus audit, US lookup additions and US display names
-- `5bbeac50ea` 2026-10-15 Mug v3 evidence: real-photo renders, print files, Teeinblue previews, Shopify images
-- `328e9abd4a` 2026-10-15 Cowork handover for the next session (15 Oct)
-- `29aafaaa8c` 2026-10-15 Cowork evidence 14-15 Oct: round reports and the mug v3 spec
+- none since the last sync
 
 ## Work in flight (open pull requests)
 

@@ -1,7 +1,7 @@
 {
  "repo": "krishanraja/heartside",
  "sha": "5618a99829a0c9ef1291b73c20cda3d837c262de",
- "synced_at": "2026-10-17T09:26:52+00:00",
+ "synced_at": "2026-10-17T13:47:06+00:00",
  "previous_sha": "5618a99829a0c9ef1291b73c20cda3d837c262de",
  "canon_from_readme": true,
  "handover": "docs/COWORK-HANDOVER-2026-10-15.md",
@@ -25,148 +25,7 @@
  "changed_since_last_sync": [],
  "canon_added": [],
  "canon_removed": [],
- "commits": [
-  {
-   "sha": "5618a99829",
-   "date": "2026-10-15T15:25:01Z",
-   "subject": "Merge pull request #12 from krishanraja/claude/keen-albattani-bijgeg"
-  },
-  {
-   "sha": "b3d5c23c2d",
-   "date": "2026-10-15T13:55:56Z",
-   "subject": "First screen: the real-photo mug replaces the drawn one; Cowork's next prompt"
-  },
-  {
-   "sha": "25830340b8",
-   "date": "2026-10-15T13:47:56Z",
-   "subject": "Mug text curves as the photo does: more toward the base"
-  },
-  {
-   "sha": "fdd656e297",
-   "date": "2026-10-15T13:32:57Z",
-   "subject": "Merge pull request #11 from krishanraja/claude/keen-albattani-bijgeg"
-  },
-  {
-   "sha": "bda2340a8c",
-   "date": "2026-10-15T13:32:44Z",
-   "subject": "Order QC is scheduled: twice daily, waiting on Shopify being connected"
-  },
-  {
-   "sha": "f045a2bfb8",
-   "date": "2026-10-15T13:29:49Z",
-   "subject": "Merge pull request #10 from krishanraja/claude/keen-albattani-bijgeg"
-  },
-  {
-   "sha": "ffe773f4d0",
-   "date": "2026-10-15T13:03:58Z",
-   "subject": "Order QC for the mug: check each order's real print file before it prints"
-  },
-  {
-   "sha": "77124f79bd",
-   "date": "2026-10-15T13:03:58Z",
-   "subject": "Chat mug drawn as the approved images are, held to Teeinblue's print files"
-  },
-  {
-   "sha": "17d5d34cac",
-   "date": "2026-10-15T11:54:23Z",
-   "subject": "Merge pull request #9 from krishanraja/claude/keen-albattani-bijgeg"
-  },
-  {
-   "sha": "a7aa67ac16",
-   "date": "2026-10-15T11:54:09Z",
-   "subject": "Handover: the 15 Oct work is merged and live on the theme"
-  },
-  {
-   "sha": "80f7fd946b",
-   "date": "2026-10-15T11:46:19Z",
-   "subject": "Merge pull request #8 from krishanraja/claude/keen-albattani-bijgeg"
-  },
-  {
-   "sha": "f4a5bc003b",
-   "date": "2026-10-15T11:44:24Z",
-   "subject": "Handover: next session prompt on main, Krish's evening ask, the one idea"
-  },
-  {
-   "sha": "9b85b23ecb",
-   "date": "2026-10-15T11:35:35Z",
-   "subject": "Handover section 5: items 3, 4 and 7 marked done, with commit links"
-  },
-  {
-   "sha": "d81697569a",
-   "date": "2026-10-15T11:35:35Z",
-   "subject": "US spelling in a comment and a test label (centered)"
-  },
-  {
-   "sha": "5cc02fed14",
-   "date": "2026-10-15T11:34:34Z",
-   "subject": "V3: five dated decisions in section 13; the mug's lines are in Fraunces"
-  },
-  {
-   "sha": "7f51d5329b",
-   "date": "2026-10-15T11:34:07Z",
-   "subject": "Mug reveal on the real mug, even line breaks, paws, chip-style typed lines"
-  },
-  {
-   "sha": "68c67d3786",
-   "date": "2026-10-15T11:33:57Z",
-   "subject": "Breed lookup the chat can call later"
-  },
-  {
-   "sha": "1faf8e82b5",
-   "date": "2026-10-15T10:07:58Z",
-   "subject": "Merge pull request #7 from krishanraja/claude/gracious-turing-kbsuss"
-  },
-  {
-   "sha": "4b1165a1db",
-   "date": "2026-10-15T10:07:37Z",
-   "subject": "README: point to the growth engine and the canon line it reads"
-  },
-  {
-   "sha": "c233185891",
-   "date": "2026-10-15T10:03:09Z",
-   "subject": "Merge pull request #6 from krishanraja/cowork-handover-2026-10-15"
-  },
-  {
-   "sha": "34b3ec133b",
-   "date": "2026-10-15T07:17:38Z",
-   "subject": "Explored, not approved: mug directions, three-gift redesign, rejected letter direction"
-  },
-  {
-   "sha": "bff5220396",
-   "date": "2026-10-15T07:16:26Z",
-   "subject": "Real-photo mug tools: cylinder wrap, mockup builder, print masks, Teeinblue simulator, Shopify image renders"
-  },
-  {
-   "sha": "79a8d6e1e7",
-   "date": "2026-10-15T07:15:50Z",
-   "subject": "Fraunces fonts used by the mug v3 artwork and preview renders, with OFL license"
-  },
-  {
-   "sha": "f248066be3",
-   "date": "2026-10-15T07:14:26Z",
-   "subject": "Mug v3 Teeinblue source assets: background, photo mask, sample, mockup bases, shades, print masks, geometry"
-  },
-  {
-   "sha": "4f75310dce",
-   "date": "2026-10-15T07:13:18Z",
-   "subject": "Breed corpus audit, US lookup additions and US display names"
-  },
-  {
-   "sha": "5bbeac50ea",
-   "date": "2026-10-15T07:10:06Z",
-   "subject": "Mug v3 evidence: real-photo renders, print files, Teeinblue previews, Shopify images"
-  },
-  {
-   "sha": "328e9abd4a",
-   "date": "2026-10-15T07:08:48Z",
-   "subject": "Cowork handover for the next session (15 Oct)"
-  },
-  {
-   "sha": "29aafaaa8c",
-   "date": "2026-10-15T07:08:04Z",
-   "subject": "Cowork evidence 14-15 Oct: round reports and the mug v3 spec"
-  }
- ],
+ "commits": [],
  "open_pulls": [
   {
    "number": 13,
@@ -177,6 +36,7 @@
  ],
  "store": [
   {
+   "id": 16115386876286,
    "title": "Tiny Me, For The Tree",
    "handle": "tiny-me-for-the-tree",
    "type": "Ornament",
@@ -184,9 +44,17 @@
     24.0
    ],
    "available": true,
+   "variants": [
+    {
+     "id": 58153001353598,
+     "price": "24.00",
+     "available": true
+    }
+   ],
    "url": "https://heartside.io/products/tiny-me-for-the-tree"
   },
   {
+   "id": 16115384746366,
    "title": "The Body Double",
    "handle": "the-body-double",
    "type": "Pillow",
@@ -194,9 +62,17 @@
     59.0
    ],
    "available": true,
+   "variants": [
+    {
+     "id": 58152995127678,
+     "price": "59.00",
+     "available": true
+    }
+   ],
    "url": "https://heartside.io/products/the-body-double"
   },
   {
+   "id": 16115081773438,
    "title": "The Annual Review, Framed",
    "handle": "the-annual-review-framed",
    "type": "Poster",
@@ -204,9 +80,27 @@
     89.0
    ],
    "available": true,
+   "variants": [
+    {
+     "id": 58152515797374,
+     "price": "89.00",
+     "available": true
+    },
+    {
+     "id": 58152515830142,
+     "price": "89.00",
+     "available": true
+    },
+    {
+     "id": 58152515862910,
+     "price": "89.00",
+     "available": true
+    }
+   ],
    "url": "https://heartside.io/products/the-annual-review-framed"
   },
   {
+   "id": 16115061457278,
    "title": "The Annual Review",
    "handle": "the-annual-review",
    "type": "Poster",
@@ -214,6 +108,13 @@
     39.0
    ],
    "available": true,
+   "variants": [
+    {
+     "id": 58152473002366,
+     "price": "39.00",
+     "available": true
+    }
+   ],
    "url": "https://heartside.io/products/the-annual-review"
   }
  ],
@@ -225,5 +126,36 @@
   59.0,
   89.0
  ],
+ "offers": [
+  {
+   "id": "the-morning-mug",
+   "name": "The Morning Mug",
+   "price_cents": 2900,
+   "bundle_price_cents": null,
+   "source": "docs/V3-GIFTS-FROM-YOUR-DOG.md#3-the-gift-range-launch"
+  },
+  {
+   "id": "the-couch-blanket",
+   "name": "The Couch Blanket",
+   "price_cents": 8900,
+   "bundle_price_cents": null,
+   "source": "docs/V3-GIFTS-FROM-YOUR-DOG.md#3-the-gift-range-launch"
+  },
+  {
+   "id": "the-framed-print",
+   "name": "The Framed Print",
+   "price_cents": 8900,
+   "bundle_price_cents": null,
+   "source": "docs/V3-GIFTS-FROM-YOUR-DOG.md#3-the-gift-range-launch"
+  },
+  {
+   "id": "the-tree-ornament",
+   "name": "The Tree Ornament",
+   "price_cents": 2400,
+   "bundle_price_cents": 1900,
+   "source": "docs/V3-GIFTS-FROM-YOUR-DOG.md#3-the-gift-range-launch"
+  }
+ ],
+ "homepage_v3": false,
  "notes": []
 }
