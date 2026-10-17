@@ -22,7 +22,11 @@ MAX_EXPANDED_BYTES = 2 * 1024 * 1024 * 1024
 
 
 def permitted(name):
+    if not name or not all(c.isascii() and (c.isalnum() or c in '._-/') for c in name):
+        return False
     path = PurePosixPath(name)
+    if path.as_posix() != name or any(part.endswith('.') for part in path.parts):
+        return False
     return (not path.is_absolute() and '..' not in path.parts and len(path.parts) >= 2
             and path.parts[0] == 'local' and (path.parts[1] in DIRECTORIES or name == 'local/engine.sqlite3'))
 
@@ -47,12 +51,16 @@ def export(root, destination):
                     continue  # Derivable from checked media and pack JSON; avoid duplicate bytes.
                 if path.is_file() and not any(part.startswith('.build-') for part in path.parts):
                     name = path.relative_to(root).as_posix()
+                    if not permitted(name):
+                        raise ValueError('checkpoint paths must use the portable engine layout')
                     files[name] = path
         database = root / 'local/engine.sqlite3'
         if database.exists():
             with closing(ledger.connect(database)) as db:
                 ledger.backup(db, stage / 'engine.sqlite3')
             files['local/engine.sqlite3'] = stage / 'engine.sqlite3'
+        if len({name.casefold() for name in files}) != len(files):
+            raise ValueError('checkpoint paths collide on a case-insensitive filesystem')
         if len(files) > MAX_FILES:
             raise ValueError('checkpoint exceeds the file count bound')
         manifest = {name: {'sha256': assets.sha256(path), 'size': path.stat().st_size} for name, path in files.items()}
@@ -94,7 +102,7 @@ def restore(root, source, replace=False):
             if len(members) > MAX_FILES + 1 or sum(m.size for m in members) > MAX_BYTES + 4000000:
                 raise ValueError('checkpoint exceeds extraction bounds')
             names = [m.name for m in members]
-            if len(names) != len(set(names)) or 'checkpoint.json' not in names:
+            if len(names) != len({name.casefold() for name in names}) or 'checkpoint.json' not in names:
                 raise ValueError('checkpoint has duplicate entries or no manifest')
             if any(not (m.isfile() or m.islnk()) or (m.name != 'checkpoint.json' and not permitted(m.name)) for m in members):
                 raise ValueError('checkpoint contains an unsafe path or nonregular file')

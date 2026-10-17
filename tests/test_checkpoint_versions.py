@@ -18,6 +18,9 @@ class CheckpointVersionTests(unittest.TestCase):
             state_store.export(root,'local/backups/state.tgz')
             with tarfile.open(root/'local/backups/state.tgz') as archive:
                 self.assertEqual(sum(m.islnk() for m in archive.getmembers()),1)
+            (folder/'A.bin').write_bytes(b'case collision')
+            with self.assertRaises(ValueError):state_store.export(root,'local/backups/collision.tgz')
+            (folder/'A.bin').unlink()
             target=root/'another-machine';target.mkdir()
             state_store.restore(target,root/'local/backups/state.tgz')
             (target/'local/assets/a.bin').write_bytes(b'edited')
@@ -41,6 +44,8 @@ class CheckpointVersionTests(unittest.TestCase):
             self.assertEqual((root/'local/assets/a.bin').read_bytes(),b'verified old state')
 
     def test_external_hardlink_is_rejected_before_existing_state_changes(self):
+        for name in ('local/assets/..\\..\\escape', 'local/assets/./a.bin', 'local//assets/a.bin', 'local/assets/a.bin:stream', 'local/assets/a.bin.'):
+            self.assertFalse(state_store.permitted(name))
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);self.archive(root/'bad.tgz',2,True)
             marker=root/'local/assets/keep';marker.parent.mkdir(parents=True);marker.write_text('keep')
