@@ -6,10 +6,11 @@ from pathlib import Path
 from . import assets, ledger, offers
 
 
-COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard'}
+COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access'}
 
 
 def add_commands(sub):
+    sub.add_parser('reporting-access')
     dashboard = sub.add_parser('dashboard'); dashboard.add_argument('--start', required=True); dashboard.add_argument('--end', required=True); dashboard.add_argument('--timezone', required=True); dashboard.add_argument('--date')
     sub.add_parser('readiness')
     cache = sub.add_parser('assets'); cache.add_argument('--heartside-dir')
@@ -26,6 +27,11 @@ def add_commands(sub):
 
 def run(args, growth):
     root = Path(growth.HERE)
+    if args.cmd == 'reporting-access':
+        from . import control_center
+        result = control_center.probe(growth.BASE, growth.token())
+        print(json.dumps(result, indent=2))
+        raise SystemExit(0 if result['authenticated'] else 1)
     state = growth.load_state()
     if args.cmd in ('assets', 'readiness', 'render', 'dashboard') and not state:
         raise ValueError('run growth.py sync first')
