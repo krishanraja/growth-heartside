@@ -132,8 +132,9 @@ commit. Creative revisions are kept in `local/engine.sqlite3`.
 
    Keep the `production` object written by the renderer. Never type a fake
    media checksum or substitute an unrelated creative's manifest. The
-   starter template supports audience packs, with no purchase links or
-   public prices; product readiness gates still apply to later sales copy.
+   starter library is audience material. Verified Morning Mug purchase specs
+   can declare one live offer and use native tracked links; other gift media
+   needs approved photography first. Read docs/ENGINE.md before conversion work.
 
    Platforms: instagram, facebook, tiktok, pinterest, youtube, google, email,
    store, reddit, creator, other. Every heartside.io link is tracked

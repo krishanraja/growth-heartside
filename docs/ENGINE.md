@@ -225,3 +225,24 @@ A status record asserts what the human actually did; it never posts, sends,
 orders or generates media on their behalf. Report fingerprints include creative
 status and insight observations, so importing evidence refreshes the learning
 report without replacing a completed day's creative.
+
+## Verified conversion media
+
+The renderer also accepts `intent: buy`, one declared Morning Mug unit, the
+exact live product `destination`, and current gift `offers`. Only this gift has
+the required approved real photography in the present renderer. The same copy,
+price, availability, source, subtitle, narration and media checks apply. Put
+`{link}` in native captions; rendering supplies a separate tracked destination
+for every creative ID. Structured offers are included in purchase-copy digests.
+A different gift, wrong price, unavailable product or missing link fails before
+production. No discount, delivery deadline or checkout result is invented.
+
+When the Morning Mug and V3 homepage are public and the catalog is current,
+the scheduled fallback tests a conversion edition every third day. It reads the
+actual canonical price and live destination; the remaining days keep recognition
+and sharing hypotheses. Until then, it continues audience production. The
+current library remains audience material because the public gift range is not
+ready. An authoring session can prepare its own verified purchase spec using
+these same boundaries. For Instagram/TikTok, place the prepared URL in the
+appropriate link surface by hand; a shared bio link does not establish which
+Reel caused an order. Direct Story/Pin links provide more specific evidence.

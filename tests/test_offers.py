@@ -15,6 +15,21 @@ def state():
 
 
 class OfferTests(unittest.TestCase):
+    def test_conversion_drafts_require_current_live_mug_and_homepage(self):
+        from pathlib import Path
+        import json
+        spec=json.loads((Path(growth.HERE)/'campaigns/waits-at-the-door.json').read_text())
+        ready=state()
+        self.assertIsNone(offers.purchase_campaign(spec,ready))
+        ready['homepage_v3']=True
+        draft=offers.purchase_campaign(spec,ready)
+        self.assertEqual(draft['offers'],[{'id':'the-morning-mug','quantity':1,'unit_price':'29.00'}])
+        self.assertEqual(draft['destination'],'https://heartside.io/products/mug')
+        self.assertIn('{link}',draft['captions']['pinterest'][0])
+        self.assertEqual(spec['intent'],'audience')
+        ready['store']=[]
+        self.assertIsNone(offers.purchase_campaign(spec,ready))
+
     def test_price_is_read_from_canonical_gift_table(self):
         text = '## 3. The gift range (launch)\n| **The Morning Mug** | #403 | $29 | costs |\n## 4. Next\n'
         self.assertEqual(offers.canonical_offers({'v3': text})[0]['price_cents'], 2900)

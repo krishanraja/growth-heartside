@@ -130,3 +130,28 @@ def validate_item(item, public_text, state):
             if not (direct or landing):
                 errors.append('purchase link does not lead to its declared gift or a ready gifts landing page')
     return errors
+
+
+def purchase_campaign(spec, state):
+    """A ready single-mug conversion draft; other gifts await approved photos."""
+    if not state or not state.get('homepage_v3') or not fresh_store(state):
+        return None
+    mug = next((o for o in catalog(state) if o['id'] == 'the-morning-mug' and o['ready']), None)
+    if not mug:
+        return None
+    import copy
+    spec = copy.deepcopy(spec)
+    name, price = mug['name'], f"{mug['price_cents'] / 100:.2f}"
+    spec['variation'] = spec.get('variation', 1) + 1
+    spec.update(intent='buy', destination=mug['product']['url'],
+                offers=[{'id':mug['id'], 'quantity':1, 'unit_price':price}])
+    opening = spec['scenes'][0]['headline']
+    spec['scenes'][-1]['text'] = 'Meet ' + name + '.'
+    spec['captions'] = {
+        'instagram': f'Personalized dog gifts for their person. {opening} {name}, ${price}. Explore the gift: {{link}} #PersonalizedDogGifts #GiftsFromTheDog',
+        'facebook': f'{opening} A little gift from the dog to their person. {name}, ${price}. Gift details: {{link}}',
+        'tiktok': f'Personalized dog gifts. {opening} {name}, ${price}. Gift details: {{link}} #GiftsFromTheDog',
+        'pinterest': [f'Personalized dog gifts: {name}\nA gift from the dog to their person. ${price}. {{link}}',
+                      f'A gift from the dog\n{name}, ${price}. Shown with Biscuit, our fictional AI dog. {{link}}']}
+    spec['mechanism'] += ' Conversion hypothesis: a verified single-gift price and tracked product link improve qualified visits. No discount or delivery deadline is claimed.'
+    return spec

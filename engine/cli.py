@@ -97,7 +97,7 @@ def run(args, growth):
         stale = growth.freshness({'heartside_sha': state['sha']}, state, growth.head_sha, growth.raw, growth.docs_listing)
         if stale:
             raise ValueError('; '.join(stale))
-        result = library.build(root, state, growth.check_pack, args.heartside_dir, args.date)
+        result = library.build(root, state, growth.check_pack, args.heartside_dir, args.date, link_builder=growth.tracked)
         stale = growth.freshness({'heartside_sha': state['sha']}, state, growth.head_sha, growth.raw, growth.docs_listing)
         if stale:
             raise ValueError('; '.join(stale))
@@ -116,7 +116,7 @@ def run(args, growth):
         stale = growth.freshness({'heartside_sha': state['sha']}, state, growth.head_sha, growth.raw, growth.docs_listing)
         if stale:
             raise ValueError('; '.join(stale))
-        pack, manifest = media.render(root, spec, state, growth.check_pack, args.heartside_dir, args.date)
+        pack, manifest = media.render(root, spec, state, growth.check_pack, args.heartside_dir, args.date, link_builder=growth.tracked)
         errors = media.verify(root, pack['production'], pack)
         if errors:
             raise ValueError('; '.join(errors))

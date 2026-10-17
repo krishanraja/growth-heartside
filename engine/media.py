@@ -9,7 +9,7 @@ import tempfile
 import uuid
 from zoneinfo import ZoneInfo
 
-from . import assets, ledger, sound
+from . import assets, ledger, sound, offers
 
 
 VERSION = 7
@@ -29,6 +29,13 @@ def renderer_fingerprint():
                           for name in ('media.py', 'assets.py', 'sound.py', 'voice.py')})
 
 
+def copy_digest(item):
+    data = {k: item.get(k) for k in ('platform', 'text', 'intent', 'alt_text')}
+    if item.get('intent') == 'buy':
+        data['offers'] = item.get('offers')
+    return ledger.digest(data)
+
+
 def verify(root, production, pack=None):
     if not isinstance(production, dict):
         return ['a daily pack needs rendered production files (growth.py render)']
@@ -45,7 +52,7 @@ def verify(root, production, pack=None):
             ids = {item.get('creative_id') for item in pack.get('items', []) if isinstance(item, dict)}
             if manifest['creative_id'] not in ids:
                 return ['production belongs to a different creative']
-            copy = {item['creative_id']: ledger.digest({k: item.get(k) for k in ('platform', 'text', 'intent', 'alt_text')})
+            copy = {item['creative_id']: copy_digest(item)
                     for item in pack['items'] if isinstance(item, dict) and item.get('creative_id')}
             if any(copy.get(cid) != value for cid, value in manifest['copy_sha256'].items()):
                 return ['native copy changed after rendering; change the spec and render a new revision']
@@ -134,13 +141,22 @@ def timestamp(seconds):
     return f'{milliseconds // 3600000:02}:{milliseconds // 60000 % 60:02}:{milliseconds // 1000 % 60:02},{milliseconds % 1000:03}'
 
 
-def render(root, spec, state, check_copy, checkout=None, day=None):
+def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=None):
     if not state or not state.get('rules_ok'):
         raise ValueError('sync Heartside and resolve any STOP before producing media')
     if not shutil.which('ffmpeg') or not shutil.which('ffprobe'):
         raise ValueError('install FFmpeg (ffmpeg and ffprobe) before rendering')
-    if spec.get('version') != 1 or spec.get('intent') != 'audience':
-        raise ValueError('the first renderer supports audience example packs only; purchase copy stays gated')
+    intent = spec.get('intent')
+    if spec.get('version') != 1 or intent not in {'audience', 'buy'}:
+        raise ValueError('the renderer requires an audience or verified purchase campaign')
+    if intent == 'buy':
+        declared = spec.get('offers')
+        mug = next((o for o in offers.catalog(state) if o['id'] == 'the-morning-mug' and o['ready']), None)
+        if (not offers.fresh_store(state) or not mug or not isinstance(declared, list) or len(declared) != 1
+                or not isinstance(declared[0], dict) or set(declared[0]) - {'id', 'quantity', 'unit_price'}
+                or declared[0].get('id') != mug['id'] or declared[0].get('quantity', 1) != 1
+                or spec.get('destination') != mug['product']['url'] or not link_builder):
+            raise ValueError('purchase media requires the current live Morning Mug, its exact destination, one declared unit and tracked links; other gift photos are not yet approved')
     day = dt.date.fromisoformat(day) if day else dt.datetime.now(ZoneInfo('America/New_York')).date()
     # The same concept keeps its number in each native edition.
     stem = f'{spec["pillar"]}_REEL_{spec["concept"]}_{spec["hook"]}_V{spec["variation"]}_{day:%Y%m%d}'
@@ -163,14 +179,27 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
         raise ValueError('the example film must be at most 20 seconds')
     items = []
     for platform, prefix in [('instagram', 'IG'), ('facebook', 'FB'), ('tiktok', 'TT')]:
-        items.append({'platform': platform, 'creative_id': prefix + '_' + stem, 'intent': 'audience',
+        items.append({'platform': platform, 'creative_id': prefix + '_' + stem, 'intent': intent,
                       'why': spec['mechanism'], 'text': spec['captions'][platform]})
     for i in range(2):
         items.append({'platform': 'pinterest', 'creative_id': f'PIN_{spec["pillar"]}_PIN_{spec["concept"]}_{spec["hook"]}_V{spec["variation"] + i}_{day:%Y%m%d}',
-                      'intent': 'audience', 'why': spec['mechanism'], 'text': spec['captions']['pinterest'][i]})
+                      'intent': intent, 'why': spec['mechanism'], 'text': spec['captions']['pinterest'][i]})
     items.append({'platform': 'instagram', 'creative_id': 'IG_' + stem.replace('_REEL_', '_STORY_'),
-                  'intent': 'audience', 'why': spec['mechanism'],
+                  'intent': intent, 'why': spec['mechanism'],
                   'text': '\n'.join(s['headline'] + '\n' + s['text'] for s in scenes)})
+    if intent == 'buy':
+        for item in items:
+            item['offers'] = spec['offers']
+            link = link_builder(spec['destination'], item['creative_id'])
+            item['text'] = item['text'].replace('{link}', link)
+            if link not in item['text']:
+                item['text'] += '\n' + link
+    def public_item(text):
+        item = {'platform': 'other', 'text': text}
+        if intent == 'buy':
+            item['offers'] = spec['offers']
+            item['text'] += '\nCopy: ' + link_builder(spec['destination'], creative_id)
+        return item
     descriptions = {
         'mug_dog': "An approved example mug with Biscuit, Heartside's fictional AI dachshund.",
         'mug_note': 'The real note side of the example mug, signed Love, Biscuit.',
@@ -187,10 +216,10 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
         if item['platform'] == 'pinterest':
             pin_index += 1
     pack = {'pack_date': day.isoformat(), 'kind': 'daily', 'venture': 'heartside', 'heartside_sha': state['sha'],
-            'headline': spec['title'] + ': rendered audience pack, review before posting', 'items': items}
+            'headline': spec['title'] + ': rendered ' + intent + ' pack, review before posting', 'items': items}
     errors = check_copy(pack, state.get('price_points', []), state=state)
     for item in items:
-        alt_pack = {**pack, 'kind': 'radar', 'items': [{'platform': 'other', 'text': '\n'.join('Copy: ' + line for line in item['alt_text'].splitlines())}]}
+        alt_pack = {**pack, 'kind': 'radar', 'items': [public_item('\n'.join('Copy: ' + line for line in item['alt_text'].splitlines()))]}
         errors += check_copy(alt_pack, state.get('price_points', []), state=state)
     if errors:
         raise ValueError('; '.join(errors))
@@ -200,7 +229,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
     if spec.get('voiceover'):
         if narration_file:
             raise ValueError('choose one narration source')
-        voice_copy = {**pack, 'kind': 'radar', 'items': [{'platform': 'other', 'text': '\n'.join('Voiceover: ' + line for line in spec['voiceover'].splitlines())}]}
+        voice_copy = {**pack, 'kind': 'radar', 'items': [public_item('\n'.join('Voiceover: ' + line for line in spec['voiceover'].splitlines()))]}
         if check_copy(voice_copy, state.get('price_points', []), state=state):
             raise ValueError('local narration transcript fails copy checks')
         from . import voice
@@ -214,7 +243,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
         audio_path = assets.local_path(root, narration['path'])
         if assets.sha256(audio_path) != narration['sha256']:
             raise ValueError('narration checksum changed')
-        narration_copy = {**pack, 'kind': 'radar', 'items': [{'platform': 'other', 'text': '\n'.join('Voiceover: ' + line for line in narration['transcript'].splitlines())}]}
+        narration_copy = {**pack, 'kind': 'radar', 'items': [public_item('\n'.join('Voiceover: ' + line for line in narration['transcript'].splitlines()))]}
         if check_copy(narration_copy, state.get('price_points', []), state=state):
             raise ValueError('narration transcript fails copy checks')
         audio_probe = json.loads(subprocess.run(['ffprobe', '-v', 'error', '-show_format', '-of', 'json', str(audio_path)], check=True, capture_output=True).stdout)
@@ -282,7 +311,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
             hook = spec.get('native_hooks', {}).get(platform, scenes[0]['headline'])
             native_scene = {**scenes[0], 'headline': hook}
             # Validate all visible native text through the same checker.
-            native_copy = {**pack, 'kind': 'radar', 'items': [{'platform': 'other', 'text': '\n'.join('Hook: ' + line for line in hook.splitlines())}]}
+            native_copy = {**pack, 'kind': 'radar', 'items': [public_item('\n'.join('Hook: ' + line for line in hook.splitlines()))]}
             if check_copy(native_copy, state.get('price_points', []), state=state):
                 raise ValueError('native hook fails copy checks')
             card(root, source['assets'], native_scene, (1080, 1920), layout).save(work / f'{platform}-opening.png')
@@ -305,9 +334,9 @@ def render(root, spec, state, check_copy, checkout=None, day=None):
             shutil.copyfile(assets.local_path(root, narration['path']), work / 'narration.wav')
             files['narration'] = 'narration.wav'
         manifest = {'version': VERSION, 'renderer_source': renderer_fingerprint(), 'runtime': runtime_fingerprint(), 'creative_id': creative_id, 'revision': revision,
-                    'heartside_sha': state['sha'], 'intent': 'audience', 'needs_human_review': True,
+                    'heartside_sha': state['sha'], 'intent': intent, 'needs_human_review': True,
                     'audio': 'Original locally synthesized score' + (' with synthetic narration requiring human review' if narration else '; captions-first, no speech'), 'duration_seconds': duration,
-                    'copy_sha256': {item['creative_id']: ledger.digest({k: item.get(k) for k in ('platform', 'text', 'intent', 'alt_text')}) for item in items},
+                    'copy_sha256': {item['creative_id']: copy_digest(item) for item in items},
                     'sources': source, 'files': {role: {'path': str((target / name).relative_to(root)),
                                                        'sha256': assets.sha256(work / name)} for role, name in files.items()}}
         for pattern in ('segment-*.mp4', '*-opening.png', 'segments.txt'):

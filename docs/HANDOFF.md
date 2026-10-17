@@ -8,6 +8,8 @@ untouched during this completion; central delivery defaults off.
 ## Delivered
 
 - Current product canon/catalog sync, full source SHA binding and exact offer gates.
+  Verified Morning Mug conversion editions activate only when the public gift
+  and V3 homepage are ready; otherwise production remains audience-led.
 - Seven campaign concepts with 28 hook experiments in three reusable families, with a newly generated,
   disclosed fictional Biscuit scene kept separate from real approved product photos.
 - Native Instagram, Facebook and TikTok films with local neural narration,
@@ -66,7 +68,7 @@ closed. Public-repository artifacts are not confidential media storage.
 - [Recovery replay](https://github.com/krishanraja/growth-heartside/actions/runs/39025077762): restored the failed run's valid checkpoint and skipped all seven completed jobs.
 - [Hosted operator evidence deployment](https://github.com/krishanraja/growth-heartside/actions/runs/39025502013): validated evidence input and all production steps succeeded without recording any fictional publication.
 - [Final hosted replay](https://github.com/krishanraja/growth-heartside/actions/runs/39025604815): validated the evidence-input step, restored the current production checkpoint and skipped all seven completed jobs.
-- [Implementation CI](https://github.com/krishanraja/growth-heartside/actions/runs/39027496024): 110 self-checks and 51 tests passed, including actual neural voice synthesis.
+- [Implementation CI](https://github.com/krishanraja/growth-heartside/actions/runs/39027496024): 110 self-checks and 52 tests passed, including actual neural voice synthesis.
 
 - [Full library export](https://github.com/krishanraja/growth-heartside/actions/runs/39027003626): all seven campaign packs were restored, verified, persisted in the hosted ledger and attached to the owner handoff.
 - [Expanded checkpoint restore](https://github.com/krishanraja/growth-heartside/actions/runs/39027175642): the scheduled engine restored the deduplicated library checkpoint, reused completed production and refreshed the progress report for the expanded ledger.
@@ -87,7 +89,7 @@ source/copy/media binding, strict aggregate reporting and sparse/stale insights.
 All seven job types were run locally. The first hosted execution also
 completed all seven job types successfully in
 [run 39023911551](https://github.com/krishanraja/growth-heartside/actions/runs/39023911551).
-The test suite passes 110 self-checks and 51 unit/integration tests, including
+The test suite passes 110 self-checks and 52 unit/integration tests, including
 actual neural synthesis. Hosted runs verified checkpoint restore, failure recovery and idempotency
 against the final implementation source revision.
 

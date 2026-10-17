@@ -9,7 +9,7 @@ import zipfile
 from . import assets, ledger, media, review
 
 
-def build(root, state, checker, checkout=None, day=None):
+def build(root, state, checker, checkout=None, day=None, link_builder=None):
     root = Path(root).resolve()
     out = assets.local_path(root, 'local/handoff'); out.mkdir(parents=True, exist_ok=True)
     records = []
@@ -19,7 +19,7 @@ def build(root, state, checker, checkout=None, day=None):
     with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
         for path in bank:
             spec = json.loads(path.read_text())
-            pack, manifest = media.render(root, spec, state, checker, checkout, day)
+            pack, manifest = media.render(root, spec, state, checker, checkout, day, link_builder=link_builder)
             errors = media.verify(root, pack['production'], pack)
             if errors:
                 raise ValueError('; '.join(errors))

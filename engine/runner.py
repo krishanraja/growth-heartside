@@ -63,7 +63,7 @@ def lease(root, now):
         path.unlink(missing_ok=True)
 
 
-def campaign(root, db, day):
+def campaign(root, db, day, state=None):
     bank = sorted((Path(root) / 'campaigns').glob('*.json'))
     if not bank:
         raise ValueError('campaign bank is empty')
@@ -78,7 +78,8 @@ def campaign(root, db, day):
         spec['native_hooks'] = {platform: first['headline'] for platform in ('facebook', 'tiktok')}
         # Keep a declared experiment rather than inventing a causal winner.
         spec['mechanism'] += ' Exploratory replication after observed native evidence; hold the mechanism constant.'
-        return spec
+        if spec.get('intent') != 'buy' or offers.purchase_campaign(spec, state):
+            return offers.purchase_campaign(spec, state) if spec.get('intent') == 'buy' else spec
     # A stable seven-concept rotation is a fallback, not invented trend research.
     offset = dt.date.fromisoformat(day).toordinal() % len(bank)
     spec = json.loads(bank[offset].read_text())
@@ -94,6 +95,8 @@ def campaign(root, db, day):
         spec['captions'][platform] = spec['captions'][platform].replace(original, opening)
     spec['native_hooks'] = {'facebook': opening, 'tiktok': hooks[(variant + 1) % len(hooks)]}
     spec['mechanism'] += ' Scheduled campaign-bank hypothesis; no trend or performance claim.'
+    if dt.date.fromisoformat(day).toordinal() % 3 == 0:
+        return offers.purchase_campaign(spec, state) or spec
     return spec
 
 
@@ -130,9 +133,9 @@ def run_job(root, growth, job, day):
             write_json(out / 'sync.json', result)
             return result
         if job == 'daily-pack':
-            spec = campaign(root, db, day)
+            spec = campaign(root, db, day, state)
             write_json(out / 'spec.json', spec)
-            pack, manifest = media.render(root, spec, state, growth.check_pack, day=day)
+            pack, manifest = media.render(root, spec, state, growth.check_pack, day=day, link_builder=growth.tracked)
             for item in pack['items']:
                 ledger.record_render(db, item['creative_id'], manifest['revision'], spec, manifest)
             result = review.bundle(root, pack, str((out / 'review.zip').relative_to(root)))

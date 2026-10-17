@@ -61,7 +61,10 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
 5. Write the production spec under `local/specs/`, using
    `campaigns/waits-at-the-door.json` as the schema. A scheduled run never
    edits that tracked file. Keep the visible detail true to its approved
-   example product. Run `python3 growth.py render <spec>`. It produces native audience films with restrained motion, an original local
+   example product. Once the Morning Mug is purchase-ready, a verified buy spec
+   can declare its current single-unit offer and exact product destination;
+   use {link} in captions for per-creative tracking. Other gifts still need
+   approved real photography. Run `python3 growth.py render <spec>`. It produces native audience films with restrained motion, an original local
    score, cover, carousel, Stories, Pins and subtitles. Approved narration can
    be attached with verified provenance. Connected provider jobs use the budget
    and receipt contract in docs/PROVIDERS.md; no paid generation is automatic.

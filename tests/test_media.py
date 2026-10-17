@@ -44,6 +44,25 @@ class MediaTests(unittest.TestCase):
                     again, cached = media.render(root, spec, state, growth.check_pack, day='2026-10-17')
                 self.assertEqual(pack, again)
                 self.assertEqual(manifest, cached)
+                from tests.test_offers import state as ready_state
+                sale = copy.deepcopy(spec); sale['intent'] = 'buy'; sale['variation'] = 3
+                sale['offers'] = [{'id':'the-morning-mug','quantity':1,'unit_price':'29.00'}]
+                sale['destination'] = 'https://heartside.io/products/mug'
+                for platform in ('instagram','facebook','tiktok'):
+                    sale['captions'][platform] = 'The Morning Mug, $29.00. {link}'
+                state_ready = ready_state()
+                bought, bought_manifest = media.render(root, sale, state_ready, growth.check_pack, day='2026-10-17', link_builder=growth.tracked)
+                self.assertEqual(media.verify(root, bought['production'], bought), [])
+                self.assertTrue(all(item['intent']=='buy' and item['offers']==sale['offers'] for item in bought['items']))
+                self.assertTrue(all('utm_content='+item['creative_id'] in item['text'] for item in bought['items']))
+                changed_offer = copy.deepcopy(bought); changed_offer['items'][0]['offers'][0]['quantity'] = 2
+                self.assertTrue(media.verify(root, changed_offer['production'], changed_offer))
+                blocked = ready_state(); blocked['store'] = []
+                with self.assertRaises(ValueError):
+                    media.render(root, sale, blocked, growth.check_pack, day='2026-10-17', link_builder=growth.tracked)
+                wrong_sale = copy.deepcopy(sale); wrong_sale['offers'][0]['unit_price']='89.00'
+                with self.assertRaises(ValueError):
+                    media.render(root, wrong_sale, state_ready, growth.check_pack, day='2026-10-17', link_builder=growth.tracked)
                 wrong = {**pack, 'heartside_sha': 'b' * 40}
                 self.assertTrue(media.verify(root, pack['production'], wrong))
                 wrong = copy.deepcopy(pack); wrong['items'][0]['text'] = 'A different claim.'
