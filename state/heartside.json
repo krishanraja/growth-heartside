@@ -1,17 +1,18 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "5618a99829a0c9ef1291b73c20cda3d837c262de",
- "synced_at": "2026-10-17T13:47:06+00:00",
+ "sha": "32cc8fa5840909b5ff4b70d9be26bdaa16494ae6",
+ "synced_at": "2026-10-18T14:40:35+00:00",
  "previous_sha": "5618a99829a0c9ef1291b73c20cda3d837c262de",
  "canon_from_readme": true,
- "handover": "docs/COWORK-HANDOVER-2026-10-15.md",
+ "handover": "docs/HANDOVER-2026-10-17.md",
  "canon": {
   "docs/V3-GIFTS-FROM-YOUR-DOG.md": "deb487f0ab679455",
   "docs/POSITIONING.md": "5cc3f584e60bf4e0",
   "docs/HANDOFF.md": "04989931a668f0ed",
-  "docs/SYNC.md": "61aa9d084ff6ddeb",
   "docs/COWORK-HANDOVER-2026-10-15.md": "5a37f967d84381bd",
-  "README.md": "07a3b929966f81ae",
+  "docs/HANDOVER-2026-10-17.md": "e472111839c5ee3f",
+  "docs/SYNC.md": "61aa9d084ff6ddeb",
+  "README.md": "c6c60fae85c30b09",
   "design/BRAND-SYSTEM.md": "64e6ece1a0339a72",
   "shopify/README.md": "b8a5a1fddf28135e"
  },
@@ -22,18 +23,36 @@
   "docs/POSITIONING.md ## 3. ": "c102e12c77cb178f"
  },
  "rules_ok": true,
- "changed_since_last_sync": [],
- "canon_added": [],
+ "changed_since_last_sync": [
+  "README.md"
+ ],
+ "canon_added": [
+  "docs/HANDOVER-2026-10-17.md"
+ ],
  "canon_removed": [],
- "commits": [],
- "open_pulls": [
+ "commits": [
   {
-   "number": 13,
-   "title": "Document the next product milestone and growth handoff",
-   "branch": "codex/product-handoff-2026-10-17",
-   "updated": "2026-10-17T07:55:01Z"
+   "sha": "32cc8fa584",
+   "date": "2026-10-18T14:20:22Z",
+   "subject": "Merge pull request #13 from krishanraja/codex/product-handoff-2026-10-17"
+  },
+  {
+   "sha": "5ecbbe3f0a",
+   "date": "2026-10-18T13:51:42Z",
+   "subject": "docs: set North Star dates to agent speed"
+  },
+  {
+   "sha": "dfafcf0190",
+   "date": "2026-10-18T11:30:15Z",
+   "subject": "docs: add the North Star and anchor every session to it"
+  },
+  {
+   "sha": "0a59dd3c8c",
+   "date": "2026-10-17T07:54:40Z",
+   "subject": "Document next product work and separate growth ownership"
   }
  ],
+ "open_pulls": [],
  "store": [
   {
    "id": 16115386876286,

@@ -1,18 +1,26 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `5618a99829` on 2026-10-17T13:47:06+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `32cc8fa584` on 2026-10-18T14:40:35+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
+
+## Canon changed since the last sync
+
+Read these again before drafting anything:
+
+- changed: `README.md`
+- newly canon: `docs/HANDOVER-2026-10-17.md`
 
 ## The canon, in heartside's order
 
 1. `docs/V3-GIFTS-FROM-YOUR-DOG.md`
 2. `docs/POSITIONING.md`
 3. `docs/HANDOFF.md`
-4. `docs/SYNC.md`
-5. `docs/COWORK-HANDOVER-2026-10-15.md`
-6. `README.md`
-7. `design/BRAND-SYSTEM.md`
-8. `shopify/README.md`
+4. `docs/COWORK-HANDOVER-2026-10-15.md`
+5. `docs/HANDOVER-2026-10-17.md`
+6. `docs/SYNC.md`
+7. `README.md`
+8. `design/BRAND-SYSTEM.md`
+9. `shopify/README.md`
 
 ## On sale at heartside.io now
 
@@ -25,11 +33,14 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 
 ## Recent commits on main
 
-- none since the last sync
+- `32cc8fa584` 2026-10-18 Merge pull request #13 from krishanraja/codex/product-handoff-2026-10-17
+- `5ecbbe3f0a` 2026-10-18 docs: set North Star dates to agent speed
+- `dfafcf0190` 2026-10-18 docs: add the North Star and anchor every session to it
+- `0a59dd3c8c` 2026-10-17 Document next product work and separate growth ownership
 
 ## Work in flight (open pull requests)
 
-- #13 Document the next product milestone and growth handoff (`codex/product-handoff-2026-10-17`, updated 2026-10-17)
+- none
 
 ## Latest decisions (`docs/V3-GIFTS-FROM-YOUR-DOG.md`, decision log)
 
