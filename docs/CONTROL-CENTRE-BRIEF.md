@@ -1,3 +1,5 @@
+> **Superseded on 2026-10-18** by [`docs/CONTROL-CENTER-BRIEF.md`](CONTROL-CENTER-BRIEF.md): Control Center now runs one protocol for every growth engine. Kept for its history.
+
 # Heartside growth: brief for the Control Centre owner
 
 This is a handoff, not authorization for this task to implement anything in
