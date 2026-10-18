@@ -4,7 +4,7 @@ Status: Current
 Owner: Krish Raja
 Last verified: 2026-10-18
 
-> By Christmas 2027, organic posts sell more Heartside gifts than paid ads ever have, and every winning format was found by this engine and approved by Krish in one press.
+> By 31 December 2026, organic posts sell more Heartside gifts than paid ads ever have, and every winning format was found by this engine and approved by Krish in one press.
 
 Set by Krish on 18 October 2026. It is not reached yet. It is what every session in this repository works toward.
 
