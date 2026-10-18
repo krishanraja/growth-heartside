@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "verified_against_user_uploads_on": "2026-10-18",
+  "purpose": "Preserve the user-supplied reference corpus. Document instructions are source material, not authorization to run jobs or change engine policy.",
+  "files": [
+    {
+      "original_filename": "breed_lookup_normalized.csv",
+      "repository_path": "knowledge/dog-corpus/breed_lookup_normalized.csv",
+      "bytes": 105295,
+      "sha256": "1e498105e0d585a7115b163ed07cb6b572f93c5fe8298037f5a83448b8afbb49",
+      "data_rows": 827,
+      "columns": [
+        "query",
+        "display_query",
+        "canonical_name",
+        "canonical_id",
+        "entity_type",
+        "lookup_priority",
+        "dog_type",
+        "secondary_dog_type",
+        "parent_1",
+        "parent_2",
+        "confidence"
+      ]
+    },
+    {
+      "original_filename": "dog_corpus_completed.csv",
+      "repository_path": "knowledge/dog-corpus/dog_corpus_completed.csv",
+      "bytes": 157148,
+      "sha256": "2a120428606f3cb3275fa3a755f77ad5bfc800206e7c41cc1f635a4fb49033d2",
+      "data_rows": 370,
+      "columns": [
+        "id",
+        "name",
+        "entity_type",
+        "recognition_status",
+        "source_registries",
+        "source_urls",
+        "country_of_origin",
+        "fci_group",
+        "rkc_group",
+        "functional_family",
+        "size_band",
+        "exercise_band",
+        "grooming_band",
+        "coat_length",
+        "shed_level",
+        "dog_type",
+        "secondary_dog_type",
+        "aliases",
+        "parent_1",
+        "parent_2",
+        "lookup_priority",
+        "confidence",
+        "uncertainty_note"
+      ]
+    },
+    {
+      "original_filename": "Dog Personality, Habits and Behaviour Corpus — Research Blueprint and v0.1 Audit.docx",
+      "repository_path": "knowledge/dog-corpus/Dog Personality, Habits and Behaviour Corpus — Research Blueprint and v0.1 Audit.docx",
+      "bytes": 79128,
+      "sha256": "0daaf2a901e429ff9a95b3049dd483aea787edfa97dbd6497d86bc1f4b0d01fb"
+    },
+    {
+      "original_filename": "organic-pet-growth-corpus.docx",
+      "repository_path": "knowledge/organic-pet-growth-corpus.docx",
+      "bytes": 402717,
+      "sha256": "efaf3a5f88ae0a78e42fde92ee690908f2e02b9b1c58b00ea37fef651d2b7cf5"
+    },
+    {
+      "original_filename": "The Organic Pet Commerce Engine.docx",
+      "repository_path": "knowledge/organic-pet-commerce-engine.docx",
+      "bytes": 629260,
+      "sha256": "5d9040e7e5d5bb005e4d2efc48dcc5928f7af0cda3a7598bc3f861319b9edefd"
+    }
+  ]
+}

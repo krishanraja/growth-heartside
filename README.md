@@ -15,6 +15,7 @@ places gifts, confirms printing, changes the store or schedules paid AI requests
 - [Runbook and current capability limits](docs/ENGINE.md)
 - [Acquisition strategy and 30-day experiment](STRATEGY.md)
 - [AI production, provider budgets and provenance](docs/PROVIDERS.md)
+- [Reference corpus: dog datasets and organic growth research](knowledge/README.md)
 - [Control Centre brief for its owner](docs/CONTROL-CENTRE-BRIEF.md)
 - [Operating instructions](AGENTS.md), [playbook](PLAYBOOK.md), [browser boundary](BROWSER.md)
 - [Product handoff in heartside PR #13](https://github.com/krishanraja/heartside/pull/13)

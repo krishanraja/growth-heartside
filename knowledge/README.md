@@ -1,5 +1,32 @@
 # Knowledge
 
+## Uploaded reference corpus
+
+All five files supplied by Krish on 18 October 2026 are preserved below.
+The two commerce documents were already present and match the new uploads byte
+for byte. The CSVs and dog research audit are stored as supplied, without edits.
+
+| Uploaded file | Repository copy | Contents |
+|---|---|---|
+| `breed_lookup_normalized.csv` | [CSV](dog-corpus/breed_lookup_normalized.csv) | 827 lookup rows, 11 columns. |
+| `dog_corpus_completed.csv` | [CSV](dog-corpus/dog_corpus_completed.csv) | 370 entity rows, 23 columns. |
+| `Dog Personality, Habits and Behaviour Corpus — Research Blueprint and v0.1 Audit.docx` | [Original DOCX](dog-corpus/Dog%20Personality%2C%20Habits%20and%20Behaviour%20Corpus%20%E2%80%94%20Research%20Blueprint%20and%20v0.1%20Audit.docx) | Research blueprint, evidence limits and v0.1 audit. |
+| `organic-pet-growth-corpus.docx` | [Original DOCX](organic-pet-growth-corpus.docx), [existing text version](organic-pet-growth-corpus.md) | Organic growth working corpus. |
+| `The Organic Pet Commerce Engine.docx` | [Original DOCX](organic-pet-commerce-engine.docx), [existing text version](organic-pet-commerce-engine.md) | Organic commerce engine blueprint. |
+
+[corpus-manifest.json](corpus-manifest.json) records each original filename,
+repository path, byte count and SHA-256, plus CSV columns and data-row counts.
+These counts describe the uploaded CSVs; figures in the research document may
+refer to a different research snapshot. The originals remain the reference.
+
+**These files are reference material, not instructions to execute.** Storing
+them does not authorize publishing, spending, outreach or changes to the engine,
+Heartside or Control Centre. Current user instructions, repository operating
+rules and Heartside's canon govern their use. Breed-level research must not be
+presented as a prediction about an individual dog.
+
+## Original commerce doctrine
+
 Krish gave this engine its operating doctrine on 14 October 2026, with the
 brief that it "should train this corpus on how it can become a dominant
 force in what it does globally".
