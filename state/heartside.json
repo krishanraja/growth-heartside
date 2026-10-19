@@ -1,7 +1,7 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "32cc8fa5840909b5ff4b70d9be26bdaa16494ae6",
- "synced_at": "2026-10-19T04:48:33+00:00",
+ "sha": "ca02b1f26207ee03574b179dbd0ae75525ed0ed4",
+ "synced_at": "2026-10-19T10:50:34+00:00",
  "previous_sha": "32cc8fa5840909b5ff4b70d9be26bdaa16494ae6",
  "canon_from_readme": true,
  "handover": "docs/HANDOVER-2026-10-17.md",
@@ -11,10 +11,10 @@
   "docs/HANDOFF.md": "04989931a668f0ed",
   "docs/COWORK-HANDOVER-2026-10-15.md": "5a37f967d84381bd",
   "docs/HANDOVER-2026-10-17.md": "e472111839c5ee3f",
-  "docs/SYNC.md": "61aa9d084ff6ddeb",
+  "docs/SYNC.md": "56180eab6911b4c5",
   "README.md": "c6c60fae85c30b09",
   "design/BRAND-SYSTEM.md": "64e6ece1a0339a72",
-  "shopify/README.md": "b8a5a1fddf28135e"
+  "shopify/README.md": "95ed40e266f2c488"
  },
  "rules": {
   "docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ": "125afc11c43dbc1b",
@@ -23,24 +23,102 @@
   "docs/POSITIONING.md ## 3. ": "c102e12c77cb178f"
  },
  "rules_ok": true,
- "changed_since_last_sync": [],
+ "changed_since_last_sync": [
+  "docs/SYNC.md",
+  "shopify/README.md"
+ ],
  "canon_added": [],
  "canon_removed": [],
  "commits": [
   {
-   "sha": "32cc8fa584",
-   "date": "2026-10-18T14:20:22Z",
-   "subject": "Merge pull request #13 from krishanraja/codex/product-handoff-2026-10-17"
+   "sha": "ca02b1f262",
+   "date": "2026-10-19T09:26:04Z",
+   "subject": "Merge pull request #23 from krishanraja/claude/adoring-cerf-ybph82"
   },
   {
-   "sha": "5ecbbe3f0a",
-   "date": "2026-10-18T13:51:42Z",
-   "subject": "docs: set North Star dates to agent speed"
+   "sha": "8abfa7df33",
+   "date": "2026-10-19T09:14:28Z",
+   "subject": "Desktop layout for the homepage chat; header padding capped"
   },
   {
-   "sha": "dfafcf0190",
-   "date": "2026-10-18T11:30:15Z",
-   "subject": "docs: add the North Star and anchor every session to it"
+   "sha": "8c3c288640",
+   "date": "2026-10-19T08:32:45Z",
+   "subject": "Merge pull request #22 from krishanraja/claude/adoring-cerf-ybph82"
+  },
+  {
+   "sha": "56fc7c3ac1",
+   "date": "2026-10-19T08:32:38Z",
+   "subject": "Report: dry run 3 and real run 4 green; schedule on"
+  },
+  {
+   "sha": "5075902bb8",
+   "date": "2026-10-19T08:31:24Z",
+   "subject": "Order QC: switch the schedule on (07:56 and 16:56 London)"
+  },
+  {
+   "sha": "f75f7f08a8",
+   "date": "2026-10-19T08:30:38Z",
+   "subject": "Merge pull request #21 from krishanraja/claude/adoring-cerf-ybph82"
+  },
+  {
+   "sha": "ad8b5e6607",
+   "date": "2026-10-19T08:26:47Z",
+   "subject": "Report: second dry run green"
+  },
+  {
+   "sha": "399dd88840",
+   "date": "2026-10-19T08:25:04Z",
+   "subject": "Order QC: find mugs by line item title, not product (read_orders only)"
+  },
+  {
+   "sha": "34a56af502",
+   "date": "2026-10-19T08:22:05Z",
+   "subject": "Merge pull request #20 from krishanraja/claude/adoring-cerf-ybph82"
+  },
+  {
+   "sha": "306a626a15",
+   "date": "2026-10-19T08:03:33Z",
+   "subject": "Order QC signs in with the Dev Dashboard app's client credentials"
+  },
+  {
+   "sha": "c5a15bdf5f",
+   "date": "2026-10-19T07:52:36Z",
+   "subject": "Merge pull request #19 from krishanraja/cowork/2026-10-19-launch-checks"
+  },
+  {
+   "sha": "df9de3cde5",
+   "date": "2026-10-19T07:50:04Z",
+   "subject": "Cowork 19 Oct: Part A checks on what went live, order QC status"
+  },
+  {
+   "sha": "be54fe7098",
+   "date": "2026-10-19T07:36:29Z",
+   "subject": "Merge pull request #18 from krishanraja/claude/adoring-cerf-ybph82"
+  },
+  {
+   "sha": "00073c2573",
+   "date": "2026-10-19T07:35:35Z",
+   "subject": "Report: theme deploy run 50 and the mug image swap, with live checks"
+  },
+  {
+   "sha": "64369c4f19",
+   "date": "2026-10-19T07:30:02Z",
+   "subject": "Order QC on GitHub Actions (schedule off), Krish's setup steps, report"
+  },
+  {
+   "sha": "9884e0cdad",
+   "date": "2026-10-19T07:25:30Z",
+   "subject": "Mug images re-rendered with the new curve; their inputs rebuilt and committed"
+  },
+  {
+   "sha": "ce23712daf",
+   "date": "2026-10-19T07:21:17Z",
+   "subject": "Gift pages open on the buyer's preview after the chat; company note in the footer; blanket cutoff TODO"
+  },
+  {
+   "sha": "0b21896d0b",
+   "date": "2026-10-19T07:14:13Z",
+   "subject": "Breed lookup: \"pit\" shows Pit Bull (Krish rules yes)"
   }
  ],
  "open_pulls": [],
@@ -126,96 +204,12 @@
     }
    ],
    "url": "https://heartside.io/products/the-morning-mug"
-  },
-  {
-   "id": 16115386876286,
-   "title": "Tiny Me, For The Tree",
-   "handle": "tiny-me-for-the-tree",
-   "type": "Ornament",
-   "prices": [
-    24.0
-   ],
-   "available": true,
-   "variants": [
-    {
-     "id": 58153001353598,
-     "price": "24.00",
-     "available": true
-    }
-   ],
-   "url": "https://heartside.io/products/tiny-me-for-the-tree"
-  },
-  {
-   "id": 16115384746366,
-   "title": "The Body Double",
-   "handle": "the-body-double",
-   "type": "Pillow",
-   "prices": [
-    59.0
-   ],
-   "available": true,
-   "variants": [
-    {
-     "id": 58152995127678,
-     "price": "59.00",
-     "available": true
-    }
-   ],
-   "url": "https://heartside.io/products/the-body-double"
-  },
-  {
-   "id": 16115081773438,
-   "title": "The Annual Review, Framed",
-   "handle": "the-annual-review-framed",
-   "type": "Poster",
-   "prices": [
-    89.0
-   ],
-   "available": true,
-   "variants": [
-    {
-     "id": 58152515797374,
-     "price": "89.00",
-     "available": true
-    },
-    {
-     "id": 58152515830142,
-     "price": "89.00",
-     "available": true
-    },
-    {
-     "id": 58152515862910,
-     "price": "89.00",
-     "available": true
-    }
-   ],
-   "url": "https://heartside.io/products/the-annual-review-framed"
-  },
-  {
-   "id": 16115061457278,
-   "title": "The Annual Review",
-   "handle": "the-annual-review",
-   "type": "Poster",
-   "prices": [
-    39.0
-   ],
-   "available": true,
-   "variants": [
-    {
-     "id": 58152473002366,
-     "price": "39.00",
-     "available": true
-    }
-   ],
-   "url": "https://heartside.io/products/the-annual-review"
   }
  ],
  "price_points": [
   19.0,
   24.0,
   29.0,
-  39.0,
-  59.0,
   89.0
  ],
  "offers": [
@@ -248,6 +242,6 @@
    "source": "docs/V3-GIFTS-FROM-YOUR-DOG.md#3-the-gift-range-launch"
   }
  ],
- "homepage_v3": false,
+ "homepage_v3": true,
  "notes": []
 }

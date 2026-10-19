@@ -1,7 +1,14 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `32cc8fa584` on 2026-10-19T04:48:33+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `ca02b1f262` on 2026-10-19T10:50:34+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
+
+## Canon changed since the last sync
+
+Read these again before drafting anything:
+
+- changed: `docs/SYNC.md`
+- changed: `shopify/README.md`
 
 ## The canon, in heartside's order
 
@@ -23,16 +30,27 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 | [The Framed Print](https://heartside.io/products/the-framed-print) | $89 | yes |
 | [The Couch Blanket](https://heartside.io/products/the-couch-blanket) | $89 | yes |
 | [The Morning Mug](https://heartside.io/products/the-morning-mug) | $29 | yes |
-| [Tiny Me, For The Tree](https://heartside.io/products/tiny-me-for-the-tree) | $24 | yes |
-| [The Body Double](https://heartside.io/products/the-body-double) | $59 | yes |
-| [The Annual Review, Framed](https://heartside.io/products/the-annual-review-framed) | $89 | yes |
-| [The Annual Review](https://heartside.io/products/the-annual-review) | $39 | yes |
 
 ## Recent commits on main
 
-- `32cc8fa584` 2026-10-18 Merge pull request #13 from krishanraja/codex/product-handoff-2026-10-17
-- `5ecbbe3f0a` 2026-10-18 docs: set North Star dates to agent speed
-- `dfafcf0190` 2026-10-18 docs: add the North Star and anchor every session to it
+- `ca02b1f262` 2026-10-19 Merge pull request #23 from krishanraja/claude/adoring-cerf-ybph82
+- `8abfa7df33` 2026-10-19 Desktop layout for the homepage chat; header padding capped
+- `8c3c288640` 2026-10-19 Merge pull request #22 from krishanraja/claude/adoring-cerf-ybph82
+- `56fc7c3ac1` 2026-10-19 Report: dry run 3 and real run 4 green; schedule on
+- `5075902bb8` 2026-10-19 Order QC: switch the schedule on (07:56 and 16:56 London)
+- `f75f7f08a8` 2026-10-19 Merge pull request #21 from krishanraja/claude/adoring-cerf-ybph82
+- `ad8b5e6607` 2026-10-19 Report: second dry run green
+- `399dd88840` 2026-10-19 Order QC: find mugs by line item title, not product (read_orders only)
+- `34a56af502` 2026-10-19 Merge pull request #20 from krishanraja/claude/adoring-cerf-ybph82
+- `306a626a15` 2026-10-19 Order QC signs in with the Dev Dashboard app's client credentials
+- `c5a15bdf5f` 2026-10-19 Merge pull request #19 from krishanraja/cowork/2026-10-19-launch-checks
+- `df9de3cde5` 2026-10-19 Cowork 19 Oct: Part A checks on what went live, order QC status
+- `be54fe7098` 2026-10-19 Merge pull request #18 from krishanraja/claude/adoring-cerf-ybph82
+- `00073c2573` 2026-10-19 Report: theme deploy run 50 and the mug image swap, with live checks
+- `64369c4f19` 2026-10-19 Order QC on GitHub Actions (schedule off), Krish's setup steps, report
+- `9884e0cdad` 2026-10-19 Mug images re-rendered with the new curve; their inputs rebuilt and committed
+- `ce23712daf` 2026-10-19 Gift pages open on the buyer's preview after the chat; company note in the footer; blanket cutoff TODO
+- `0b21896d0b` 2026-10-19 Breed lookup: "pit" shows Pit Bull (Krish rules yes)
 
 ## Work in flight (open pull requests)
 
