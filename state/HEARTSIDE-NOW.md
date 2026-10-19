@@ -1,14 +1,7 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `ca02b1f262` on 2026-10-19T10:50:34+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `0a75c79140` on 2026-10-19T17:31:33+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
-
-## Canon changed since the last sync
-
-Read these again before drafting anything:
-
-- changed: `docs/SYNC.md`
-- changed: `shopify/README.md`
 
 ## The canon, in heartside's order
 
@@ -33,6 +26,17 @@ Read these again before drafting anything:
 
 ## Recent commits on main
 
+- `0a75c79140` 2026-10-19 Merge pull request #28 from krishanraja/claude/adoring-cerf-ybph82
+- `c886af9084` 2026-10-19 Mug colors: recolored bases, per-color images, swatches in the chat and on the product page
+- `90232f4739` 2026-10-19 Merge pull request #27 from krishanraja/claude/adoring-cerf-ybph82
+- `6b205f3207` 2026-10-19 Mug colors: a first-look board of the five proposed colors on the approved render
+- `b191fd3938` 2026-10-19 Order QC checks the mug color; plan for the mug in five colors
+- `9a89140655` 2026-10-19 Merge pull request #26 from krishanraja/claude/adoring-cerf-ybph82
+- `b2c28b95f9` 2026-10-19 Desktop: reveal and choose in two columns; phone top bar on two clean lines
+- `a1b371ef4a` 2026-10-19 Merge pull request #25 from krishanraja/claude/adoring-cerf-ybph82
+- `4fb50d33bd` 2026-10-19 Desktop: one page, not a window in a window
+- `e66a67689a` 2026-10-19 Merge pull request #24 from krishanraja/cowork/2026-10-19-desktop-check
+- `15153ce015` 2026-10-19 Cowork 19 Oct: desktop check on the live site, Order QC task paused
 - `ca02b1f262` 2026-10-19 Merge pull request #23 from krishanraja/claude/adoring-cerf-ybph82
 - `8abfa7df33` 2026-10-19 Desktop layout for the homepage chat; header padding capped
 - `8c3c288640` 2026-10-19 Merge pull request #22 from krishanraja/claude/adoring-cerf-ybph82
