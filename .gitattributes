@@ -1,0 +1,7 @@
+# Preserved originals listed in knowledge/corpus-manifest.json. Git must never
+# convert their line endings: `growth.py --self-test` checks their exact bytes
+# and SHA-256.
+knowledge/copywriting-offers-demand-corpus.md -text
+knowledge/copywriting-offers-demand-corpus-summary.md -text
+knowledge/dog-corpus/** -text
+knowledge/*.docx -text

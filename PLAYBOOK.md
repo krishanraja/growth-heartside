@@ -5,13 +5,18 @@ Source: the two documents Krish gave this engine on 14 October 2026, kept in
 Growth Corpus"). They were written for a generic UK pet-accessories store.
 This file is how the engine applies them to Heartside. `knowledge/README.md`
 lists every place where Heartside's canon or Krish's rules change them.
+How copy and offers are written and reviewed comes from a third source, the
+Copywriting, Offers and Demand Corpus (19 October 2026), applied in
+`knowledge/COPY-DOCTRINE.md`.
 
 **Order of authority, highest first:**
 1. The heartside repository's canon, as `python3 growth.py sync` reads it
    today.
 2. Krish's words in `CHANGES.md`.
 3. This playbook.
-4. The documents in `knowledge/`.
+4. `knowledge/COPY-DOCTRINE.md`, for how copy and offers are drafted and
+   reviewed.
+5. The documents in `knowledge/`.
 
 If this file disagrees with heartside's canon, the canon wins. Say so in the
 pack's headline so the playbook gets fixed.
@@ -195,6 +200,14 @@ comment prompt, a series and a source of buyers' own words:
 Never: "written by your dog", "your dog has notes" (undecided as a sign-off;
 ask), invented reactions, reviews, counts or scarcity.
 
+**Copy doctrine.** Before drafting, name the surface's awareness level and
+pick the lead type that fits it (`knowledge/COPY-DOCTRINE.md`, sections 1 and
+9): cold Reels open with a Story or Proclamation, search with a Promise or
+Problem-Solution, followers and the store with the offer. Before `check`, run
+edit passes A to E and score the rubric there; put `Rubric: total/48,
+weakest link: <link>` as a note line in the brief. Every test is logged in
+its test record shape (section 8).
+
 **Calls to action** (one per post, matched to the viewer):
 
 | Intent | Call to action |
@@ -280,7 +293,9 @@ add-to-carts and orders, then the learning and the next action.
 
 A video with 5,000 views and five orders beats one with 500,000 views and none.
 
-**Funnel diagnosis** (the documents' table, on Heartside's journey):
+**Funnel diagnosis** (the documents' table, on Heartside's journey). Name
+the weakest link in the persuasion chain for each row before proposing a fix
+(`knowledge/COPY-DOCTRINE.md`, section 7):
 
 | What the numbers show | Likely cause | Next test |
 |---|---|---|

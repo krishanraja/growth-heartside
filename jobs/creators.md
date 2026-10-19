@@ -28,7 +28,11 @@ creator.
 
    Never guess an audience size: write the follower count shown on the
    profile today.
-4. **Draft one note each** (`platform: creator`):
+4. **Draft one note each** (`platform: creator`). Follow the corpus's
+   direct outreach structure as `knowledge/COPY-DOCTRINE.md` limits it
+   (sections 5 and 10): the real video you watched, why their dog and
+   partner fit, the gift and its disclosure, one easy next step, and an easy
+   no. Run edit passes A to E before `check`.
    - `target_name`: the handle;
    - `target_url`: the profile;
    - `why`: one line on the specific video that made them a fit;

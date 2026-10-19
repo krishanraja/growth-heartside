@@ -1,5 +1,26 @@
 # Knowledge
 
+## Copywriting, offers and demand
+
+Krish gave this corpus to every growth engine on 19 October 2026: "all of
+these growth engines need to be imbued with this knowledge". It synthesizes
+fourteen copywriting books and Alex Hormozi's `$100M` trilogy. Both uploads
+are preserved byte for byte, with their sizes and SHA-256 in
+[corpus-manifest.json](corpus-manifest.json).
+
+| Uploaded file | Repository copy | Contents |
+|---|---|---|
+| `copywriting-offer-corpus.md` | [Original](copywriting-offers-demand-corpus.md) | The full corpus: persuasion chain, awareness, leads, offers, proof, tests, rubric. |
+| `The_Copywriting_Offers_and_Demand_Corpus.md` | [Original](copywriting-offers-demand-corpus-summary.md) | A short summary of the same corpus. |
+
+**[COPY-DOCTRINE.md](COPY-DOCTRINE.md) is how this engine applies it to
+Heartside**: awareness and lead type by surface, the proposition, feature,
+benefit and proof for the four gifts, the Value Equation, Core Four, proof,
+tests and the pre-draft and pre-handoff checklists. Its section 10 lists every
+place where Heartside's canon and Krish's rules change the corpus. The
+originals keep their UK spelling and em dashes as supplied; nothing from them
+is pasted into copy.
+
 ## Uploaded reference corpus
 
 All five files supplied by Krish on 18 October 2026 are preserved below.

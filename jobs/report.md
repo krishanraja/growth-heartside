@@ -34,7 +34,9 @@ Kind `report`. Part 7 in `PLAYBOOK.md`. Time for Krish: about 15 minutes.
        conversion, trust, economics or fulfillment?
 5. Then:
    - **Scale, iterate, hold or kill**, for each creative family, channel and
-     job, with the evidence.
+     job, with the evidence. Write each test as a test record and name each
+     family's weakest persuasion link (`knowledge/COPY-DOCTRINE.md`,
+     sections 7 and 8).
    - **The assumption ledger** (PLAYBOOK): update each row's confidence and
      say which one moved.
    - **Next week**: the targets, the one concept family to lead with, and any
@@ -43,6 +45,9 @@ Kind `report`. Part 7 in `PLAYBOOK.md`. Time for Krish: about 15 minutes.
      - what the engine is not doing (paid retargeting, more platforms, a new
        market), with the evidence for each in a sentence, and that it is
        Krish's call;
+     - any offer or money model proposal (Value Equation, basket,
+       next occasion, referral), with its evidence, for Krish to decide
+       (`knowledge/COPY-DOCTRINE.md`, section 4);
      - the stage in PLAYBOOK, "Becoming the category leader", and what the
        next gate needs.
 6. The current Shopify adapter supplies store totals, not per-creative

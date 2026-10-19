@@ -22,6 +22,11 @@ heartside repository.
    - whether the order-by date, free US shipping, "a real person checks
      every order" and krish@heartside.io are visible before checkout;
    - whether the utm tags survive to the cart.
+
+   Diagnose each page with the persuasion chain
+   (`knowledge/COPY-DOCTRINE.md`, section 7) and name its weakest link.
+   Store visitors are solution- or product-aware: a Promise lead, proof next
+   to it, then the offer (section 1).
 3. **The readiness gates** (PLAYBOOK, "Readiness gates"): mark each pass,
    fail or not checkable, with what you saw.
 4. **Search and listings** (read only):
@@ -49,6 +54,9 @@ heartside repository.
      `Headline:` or `Title:`, so `check` holds it to the copy rules.
 
    Lines and headlines stay the canon's. Offer a variant only as an option,
-   never as a replacement.
+   never as a replacement. Price, bundle, guarantee and offer ideas from the
+   Value Equation go to the report as proposals, never as store copy
+   (`knowledge/COPY-DOCTRINE.md`, section 4). Run edit passes A to E on new
+   copy before `check`.
 8. Headline: for example "Store: 5 fixes, worst is shipping cost shown only
    at checkout; 6 of 8 gates pass". Check, then post.

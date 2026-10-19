@@ -931,8 +931,16 @@ def self_test():
         t(f'automation "{au["name"]}" has a schedule rule', au['schedule'].startswith('RRULE:FREQ='))
         t(f'automation "{au["name"]}" never asks to post', not re.search(r'\b(post|publish|send)\b', au['prompt'], re.I))
     t('every job file has an automation', {a['job'] for a in autos} == {f'jobs/{f}' for f in os.listdir(os.path.join(HERE, 'jobs'))})
-    for f in ('PLAYBOOK.md', 'BROWSER.md', 'knowledge/README.md', 'knowledge/organic-pet-commerce-engine.md', 'knowledge/organic-pet-growth-corpus.md'):
+    for f in ('PLAYBOOK.md', 'BROWSER.md', 'knowledge/README.md', 'knowledge/organic-pet-commerce-engine.md', 'knowledge/organic-pet-growth-corpus.md',
+              'knowledge/COPY-DOCTRINE.md'):
         t(f'{f} exists', os.path.exists(os.path.join(HERE, f)))
+    # Preserved originals keep their exact bytes; the manifest is the record.
+    for entry in json.load(open(os.path.join(HERE, 'knowledge/corpus-manifest.json')))['files']:
+        path = os.path.join(HERE, entry['repository_path'])
+        data = open(path, 'rb').read() if os.path.isfile(path) else None
+        t(f'{entry["repository_path"]} matches its manifest bytes and SHA-256',
+          data is not None and len(data) == entry['bytes'] and hashlib.sha256(data).hexdigest() == entry['sha256'])
+    t('knowledge/COPY-DOCTRINE.md has no em dash', '\u2014' not in open(os.path.join(HERE, 'knowledge/COPY-DOCTRINE.md'), encoding='utf-8').read())
     ignored = open(os.path.join(HERE, '.gitignore')).read()
     t('local/ is never committed (the repository is public)', re.search(r'^/?local/?$', ignored, re.M) is not None)
     from engine.control_center import report_digest
