@@ -2,7 +2,9 @@
 
 Implementation lives here. Product, purchase and print work is already handed
 to [heartside PR #13](https://github.com/krishanraja/heartside/pull/13).
-Control Centre receives only the final [integration brief](CONTROL-CENTRE-BRIEF.md).
+Progress reaches Control Center through the growth engine protocol
+([brief](CONTROL-CENTER-BRIEF.md), [loop](#control-center-protocol-loop)); packs stay
+for media and copy review.
 No social publisher, customer-record reader or paid-generation scheduler exists.
 
 ## Production
@@ -225,6 +227,55 @@ A status record asserts what the human actually did; it never posts, sends,
 orders or generates media on their behalf. Report fingerprints include creative
 status and insight observations, so importing evidence refreshes the learning
 report without replacing a completed day's creative.
+
+## Control Center protocol loop
+
+Control Center wakes this repository once a day, at about 06:10 London, with a
+`repository_dispatch` of type `cc-growth-directive`. The
+[Control Center directive](../.github/workflows/control-center.yml) workflow
+then runs the protocol in
+[docs/control-center/ENGINE-PROTOCOL.md](control-center/ENGINE-PROTOCOL.md).
+A manual run from the Actions tab does the same, as `live` or `synthetic`.
+
+1. `growth.py cc start` records the attempt as `started` before any source is read.
+2. The workflow restores the engine's latest trusted checkpoint, read only. This
+   loop never writes a checkpoint, so `engine.yml` stays the only writer of engine state.
+3. `growth.py cc run` reads today's directive, syncs product truth, reads the
+   ledger, builds the report, sends it with `Idempotency-Key: <run_id>`, reads it
+   back and compares `payload_sha256`, reads Krish's decisions from the last
+   seven days and closes the attempt as `succeeded`, `failed` with a lower_snake
+   code, or `unknown` when a write's outcome cannot be read back.
+4. If a step between them fails, `growth.py cc finish` closes the attempt as
+   failed with `checkpoint_restore_failed`.
+
+It renders no media and calls no paid provider. It never posts, sends,
+publishes or spends.
+
+| Part of the report | What the engine sends |
+|---|---|
+| `net_sales_usd` | Imported Shopify net sales for the London month to date (on the 1st, the month that closed). `measured` only when imported windows cover every day, `stale` when they stop earlier (the window says where), `missing` with a reason otherwise. Overlapping windows are never added together |
+| `organic_orders` | Always `missing` for now, with the reason: store totals do not show which post caused an order, and creative UTM observations are lifetime snapshots, not weekly windows |
+| `proposals` | Each recommendation in `recommendations.json` (its `id` is the stable `proposal_id`, `close_event` its close), and each approved creative whose media and caption still match its render manifest as `wall: post`. The caption is `exact_payload`, the platform is `channel`, and `payload_sha256` is the SHA-256 of canonical `{caption, channel, creative_id, revision}`. It expires when the hot media is pruned. No `spend` proposal: the budget is $0 and the engine recommends no boost |
+| `events` | `creative_published` with the permalink, for each publication recorded in the last 14 days |
+| `holds` | The product constraint from heartside PR 13, read from current product truth: purchase claims while the catalog differs from the canon, then conversion editions until the V3 homepage is public. Also approved creatives that could not be verified |
+| `status` | `degraded` when product sync failed or no checkpoint was available, otherwise `held` when anything is held, otherwise `ready` |
+
+The run id is `heartside:<London date>:directive` for the daily dispatch,
+`manual-<run id>` for a manual run, with `-a<n>` on a rerun and `synthetic-`
+in front in synthetic mode, so a rerun never collides with the day's report.
+A 409 is read back, never retried. A decision binds to its `payload_sha256`:
+a declined payload is not proposed again, a changed payload goes back to Krish,
+and an approved post still waits for him to post it by hand and record the
+permalink through the engine workflow's `operator_events`, after which the next
+report carries the `creative_published` event.
+
+The bearer is the `CONTROL_CENTER_ENGINE_TOKEN` secret, given only to the
+three `growth.py cc` steps; `CONTROL_CENTER_URL` is a repository variable. The
+client uses HTTPS only, follows no redirect and times out after 20 seconds. It
+never prints, logs or stores the token; failures are codes. With no secret the
+step fails with "CONTROL_CENTER_ENGINE_TOKEN is not set" and makes no request.
+`python3 -m unittest tests.test_protocol` proves the loop against an in-process
+stand-in; the CLI's default `--mode synthetic` never touches Krish's numbers or list.
 
 ## Verified conversion media
 

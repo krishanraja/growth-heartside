@@ -1,3 +1,5 @@
+> **Adopted on 2026-10-19.** The loop runs in `.github/workflows/control-center.yml` through `growth.py cc` (docs/ENGINE.md, "Control Center protocol loop").
+
 # Control Center brief: growth-heartside
 
 Written 2026-10-18 by Control Center. This brief **supersedes `docs/CONTROL-CENTRE-BRIEF.md`** as the reporting contract. Krish ruled that every growth engine reports through one protocol (ADR-038 in Control Center). Packs stay for media and copy review, now kept apart per venture (PR 472, merged 2026-10-18), so `HEARTSIDE_ENABLE_CC_DELIVERY` and the `ventures` probe gate your media delivery only. Progress goes through the protocol.

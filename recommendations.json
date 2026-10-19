@@ -1,23 +1,22 @@
 [
   {
+    "id": "heartside:rec:product-readiness",
     "title": "Verify the product before a sales campaign",
     "why": "The approved gift range differs from the public catalog. Product work is already handed over.",
     "target_url": "https://github.com/krishanraja/heartside/pull/13",
     "next_action": "The product owner completes the public gift range and real purchase and print proof, then the engine refreshes readiness. Growth continues with audience materials meanwhile.",
-    "closes_when": "The canonical gifts, prices, purchase flow and print proof agree with the public store. Product evidence stays in heartside."
+    "closes_when": "The canonical gifts, prices, purchase flow and print proof agree with the public store. Product evidence stays in heartside.",
+    "close_event": "catalog_ready",
+    "objective_key": "net_sales_usd"
   },
   {
+    "id": "heartside:rec:measurement",
     "title": "Keep measurement evidence current",
     "why": "Connected analytics in an authoring session do not grant the scheduled runner the same private access. No performance winner can be declared before real publications and observations.",
     "target_url": "https://github.com/krishanraja/growth-heartside/blob/main/docs/ENGINE.md",
     "next_action": "Import current verified aggregate Shopify reports and native creative observations through the documented schemas. Configure a licensed provider budget separately before enabling paid generation.",
-    "closes_when": "Current reporting windows and exact published creative revisions have source-backed observations, with missing attribution still explicit."
-  },
-  {
-    "title": "Control Centre integration brief for its owner",
-    "why": "The engine is independent of Control Centre. The user requested a brief only, after growth work is complete.",
-    "target_url": "https://github.com/krishanraja/growth-heartside/blob/main/docs/CONTROL-CENTRE-BRIEF.md",
-    "next_action": "Pass the completed API, media and recommendation UI brief to the Control Centre owner. Do no implementation there in this task.",
-    "closes_when": "The owner has the brief, payload examples, acceptance checks and explicit UI gaps. Deployment is a separate task."
+    "closes_when": "Current reporting windows and exact published creative revisions have source-backed observations, with missing attribution still explicit.",
+    "close_event": "measurement_current",
+    "objective_key": "organic_orders"
   }
 ]

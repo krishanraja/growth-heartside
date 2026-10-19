@@ -55,6 +55,7 @@ packs apart from makeyourmindup's (see `post` below).
     python3 growth.py render campaigns/waits-at-the-door.json
     python3 growth.py metrics import local/metrics/report.json
     python3 growth.py creatives list
+    python3 growth.py cc run [--mode live]
         See docs/ENGINE.md for production, the local ledger and report windows.
 
 A pack file:
@@ -68,7 +69,9 @@ A pack file:
 Kinds: daily, radar, numbers, partners, conversion, report.
 Environment: GITHUB_TOKEN (optional, raises GitHub's read limit),
 GROWTH_ENGINE_TOKEN (only once Control Center takes Heartside packs),
-CONTROL_CENTER_URL (default https://controlcenter.krishraja.com).
+CONTROL_CENTER_ENGINE_TOKEN (the growth engine protocol bearer, used only by
+`growth.py cc`; see docs/ENGINE.md), CONTROL_CENTER_URL (default
+https://controlcenter.krishraja.com).
 """
 import argparse
 import datetime as dt
@@ -932,6 +935,14 @@ def self_test():
         t(f'{f} exists', os.path.exists(os.path.join(HERE, f)))
     ignored = open(os.path.join(HERE, '.gitignore')).read()
     t('local/ is never committed (the repository is public)', re.search(r'^/?local/?$', ignored, re.M) is not None)
+    from engine.control_center import report_digest
+    example = json.load(open(os.path.join(HERE, 'docs/control-center/engine-report.example.json')))
+    t('the Control Center report digest reproduces the protocol worked example',
+      report_digest(example) == example['payload_sha256'] == 'f4351324e84aa1baf6afd1bc4d2ffadb3039ab6399b2309c2717b89a26a0a517')
+    recs = json.load(open(os.path.join(HERE, 'recommendations.json')))
+    t('every recommendation has a stable proposal id and close event',
+      all(re.fullmatch(r'heartside:rec:[a-z0-9-]+', r.get('id', '')) and re.fullmatch(r'[a-z][a-z0-9_]*', r.get('close_event', '')) for r in recs)
+      and len({r['id'] for r in recs}) == len(recs))
     print(f'growth-heartside self-test passed: {n} checks')
 
 

@@ -1,0 +1,82 @@
+name: Control Center directive
+
+# The one Control Center protocol loop (docs/ENGINE.md, "Control Center
+# protocol loop"). Control Center wakes it every morning with a
+# cc-growth-directive dispatch. It reads the engine's latest checkpoint and
+# never writes one, so engine.yml stays the only writer of engine state. It
+# renders no media, calls no paid provider and never posts, sends or spends.
+on:
+  repository_dispatch:
+    types: [cc-growth-directive]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'live reports to Control Center; synthetic proves the client without touching live progress'
+        type: choice
+        options: [live, synthetic]
+        default: live
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: heartside-control-center-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  directive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CC_MODE: ${{ inputs.mode || 'live' }}
+      CC_DIRECTIVE_ID: ${{ github.event.client_payload.directive_id }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Journal the attempt before reading any source
+        env:
+          CONTROL_CENTER_ENGINE_TOKEN: ${{ secrets.CONTROL_CENTER_ENGINE_TOKEN }}
+          CONTROL_CENTER_URL: ${{ vars.CONTROL_CENTER_URL }}
+        run: python3 growth.py cc start --mode "$CC_MODE"
+      - name: Find the latest trusted checkpoint (read only)
+        uses: actions/github-script@v7
+        id: state
+        with:
+          script: |
+            const branch = context.ref.replace('refs/heads/', '');
+            const artifacts = await github.paginate(github.rest.actions.listArtifactsForRepo, {
+              ...context.repo, name: 'heartside-state', per_page: 100
+            });
+            for (const artifact of artifacts.sort((a, b) => b.created_at.localeCompare(a.created_at))) {
+              if (artifact.expired || artifact.workflow_run?.head_branch !== branch) continue;
+              const {data: run} = await github.rest.actions.getWorkflowRun({...context.repo, run_id: artifact.workflow_run.id});
+              if (!['.github/workflows/engine.yml', '.github/workflows/handoff.yml'].includes(run.path)
+                  || run.head_repository?.full_name !== `${context.repo.owner}/${context.repo.repo}`) continue;
+              core.setOutput('run-id', String(artifact.workflow_run.id));
+              return;
+            }
+            core.notice('No engine checkpoint found; the report will say the ledger could not be read.');
+      - uses: actions/download-artifact@v4
+        if: steps.state.outputs.run-id != ''
+        with:
+          name: heartside-state
+          path: local/incoming
+          github-token: ${{ github.token }}
+          run-id: ${{ steps.state.outputs.run-id }}
+      - name: Restore checked state
+        if: steps.state.outputs.run-id != ''
+        run: python3 growth.py snapshot restore local/incoming/state.tgz --replace
+      - name: Directive, report, readback, decisions
+        env:
+          CONTROL_CENTER_ENGINE_TOKEN: ${{ secrets.CONTROL_CENTER_ENGINE_TOKEN }}
+          CONTROL_CENTER_URL: ${{ vars.CONTROL_CENTER_URL }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 growth.py cc run --mode "$CC_MODE"
+      - name: Close an attempt that never reached the loop
+        if: failure()
+        env:
+          CONTROL_CENTER_ENGINE_TOKEN: ${{ secrets.CONTROL_CENTER_ENGINE_TOKEN }}
+          CONTROL_CENTER_URL: ${{ vars.CONTROL_CENTER_URL }}
+        run: python3 growth.py cc finish --mode "$CC_MODE" --code checkpoint_restore_failed

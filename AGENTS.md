@@ -168,6 +168,15 @@ delivery is disabled by default, even if the secret is available. Do not enable
 `HEARTSIDE_ENABLE_CC_DELIVERY` without a later explicit instruction to integrate.
 The engine works independently of that dashboard.
 
+**Control Center protocol, 19 October.** Krish: "make each engine adopt its
+brief now". Progress now goes through the growth engine protocol in
+`docs/CONTROL-CENTER-BRIEF.md`. `.github/workflows/control-center.yml` runs
+`python3 growth.py cc` when Control Center's daily `cc-growth-directive`
+dispatch arrives: it reports objectives, proposals and holds from the latest
+checkpoint and product truth, and never posts, sends, spends or writes engine
+state. Pack delivery above is unchanged. A post proposal Krish approves is still
+posted by him, by hand (rule 1).
+
 ## The schedule (New York time)
 
 | When | Job | Kind | File |
