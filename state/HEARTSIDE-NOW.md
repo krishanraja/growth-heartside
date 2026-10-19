@@ -1,14 +1,7 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `32cc8fa584` on 2026-10-18T14:40:35+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `32cc8fa584` on 2026-10-19T04:48:33+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
-
-## Canon changed since the last sync
-
-Read these again before drafting anything:
-
-- changed: `README.md`
-- newly canon: `docs/HANDOVER-2026-10-17.md`
 
 ## The canon, in heartside's order
 
@@ -26,6 +19,10 @@ Read these again before drafting anything:
 
 | Product | Price | Available |
 |---|---|---|
+| [The Tree Ornament](https://heartside.io/products/the-tree-ornament) | $24 | yes |
+| [The Framed Print](https://heartside.io/products/the-framed-print) | $89 | yes |
+| [The Couch Blanket](https://heartside.io/products/the-couch-blanket) | $89 | yes |
+| [The Morning Mug](https://heartside.io/products/the-morning-mug) | $29 | yes |
 | [Tiny Me, For The Tree](https://heartside.io/products/tiny-me-for-the-tree) | $24 | yes |
 | [The Body Double](https://heartside.io/products/the-body-double) | $59 | yes |
 | [The Annual Review, Framed](https://heartside.io/products/the-annual-review-framed) | $89 | yes |
@@ -36,7 +33,6 @@ Read these again before drafting anything:
 - `32cc8fa584` 2026-10-18 Merge pull request #13 from krishanraja/codex/product-handoff-2026-10-17
 - `5ecbbe3f0a` 2026-10-18 docs: set North Star dates to agent speed
 - `dfafcf0190` 2026-10-18 docs: add the North Star and anchor every session to it
-- `0a59dd3c8c` 2026-10-17 Document next product work and separate growth ownership
 
 ## Work in flight (open pull requests)
 

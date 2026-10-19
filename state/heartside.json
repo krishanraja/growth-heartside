@@ -1,8 +1,8 @@
 {
  "repo": "krishanraja/heartside",
  "sha": "32cc8fa5840909b5ff4b70d9be26bdaa16494ae6",
- "synced_at": "2026-10-18T14:40:35+00:00",
- "previous_sha": "5618a99829a0c9ef1291b73c20cda3d837c262de",
+ "synced_at": "2026-10-19T04:48:33+00:00",
+ "previous_sha": "32cc8fa5840909b5ff4b70d9be26bdaa16494ae6",
  "canon_from_readme": true,
  "handover": "docs/HANDOVER-2026-10-17.md",
  "canon": {
@@ -23,12 +23,8 @@
   "docs/POSITIONING.md ## 3. ": "c102e12c77cb178f"
  },
  "rules_ok": true,
- "changed_since_last_sync": [
-  "README.md"
- ],
- "canon_added": [
-  "docs/HANDOVER-2026-10-17.md"
- ],
+ "changed_since_last_sync": [],
+ "canon_added": [],
  "canon_removed": [],
  "commits": [
   {
@@ -45,15 +41,92 @@
    "sha": "dfafcf0190",
    "date": "2026-10-18T11:30:15Z",
    "subject": "docs: add the North Star and anchor every session to it"
-  },
-  {
-   "sha": "0a59dd3c8c",
-   "date": "2026-10-17T07:54:40Z",
-   "subject": "Document next product work and separate growth ownership"
   }
  ],
  "open_pulls": [],
  "store": [
+  {
+   "id": 16132989059454,
+   "title": "The Tree Ornament",
+   "handle": "the-tree-ornament",
+   "type": "Ornament",
+   "prices": [
+    24.0
+   ],
+   "available": true,
+   "variants": [
+    {
+     "id": 58216879817086,
+     "price": "24.00",
+     "available": true
+    }
+   ],
+   "url": "https://heartside.io/products/the-tree-ornament"
+  },
+  {
+   "id": 16132988535166,
+   "title": "The Framed Print",
+   "handle": "the-framed-print",
+   "type": "Framed Print",
+   "prices": [
+    89.0
+   ],
+   "available": true,
+   "variants": [
+    {
+     "id": 58216878768510,
+     "price": "89.00",
+     "available": true
+    },
+    {
+     "id": 58216878801278,
+     "price": "89.00",
+     "available": true
+    },
+    {
+     "id": 58216878834046,
+     "price": "89.00",
+     "available": true
+    }
+   ],
+   "url": "https://heartside.io/products/the-framed-print"
+  },
+  {
+   "id": 16132987552126,
+   "title": "The Couch Blanket",
+   "handle": "the-couch-blanket",
+   "type": "Blanket",
+   "prices": [
+    89.0
+   ],
+   "available": true,
+   "variants": [
+    {
+     "id": 58216876736894,
+     "price": "89.00",
+     "available": true
+    }
+   ],
+   "url": "https://heartside.io/products/the-couch-blanket"
+  },
+  {
+   "id": 16132766630270,
+   "title": "The Morning Mug",
+   "handle": "the-morning-mug",
+   "type": "Mug",
+   "prices": [
+    29.0
+   ],
+   "available": true,
+   "variants": [
+    {
+     "id": 58215128727934,
+     "price": "29.00",
+     "available": true
+    }
+   ],
+   "url": "https://heartside.io/products/the-morning-mug"
+  },
   {
    "id": 16115386876286,
    "title": "Tiny Me, For The Tree",
