@@ -72,6 +72,18 @@
       "repository_path": "knowledge/organic-pet-commerce-engine.docx",
       "bytes": 629260,
       "sha256": "5d9040e7e5d5bb005e4d2efc48dcc5928f7af0cda3a7598bc3f861319b9edefd"
+    },
+    {
+      "original_filename": "copywriting-offer-corpus.md",
+      "repository_path": "knowledge/copywriting-offers-demand-corpus.md",
+      "bytes": 68132,
+      "sha256": "04fddb23da2cb210470f60b57a6d78b56d37c3f84316217e0e493caa6b9856d9"
+    },
+    {
+      "original_filename": "The_Copywriting_Offers_and_Demand_Corpus.md",
+      "repository_path": "knowledge/copywriting-offers-demand-corpus-summary.md",
+      "bytes": 476,
+      "sha256": "2de846209031c79c7d635509da1d64516cfd055f6dad5b60274ef3cdcf926e87"
     }
   ]
 }

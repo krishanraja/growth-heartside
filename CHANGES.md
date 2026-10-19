@@ -3,6 +3,18 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-19: Krish, giving "The Copywriting, Offers and Demand Corpus":
+  "all of these growth engines need to be imbued with this knowledge". Both
+  uploads are preserved byte for byte in `knowledge/` and in
+  `corpus-manifest.json`, and the self-test now checks every manifest file's
+  bytes and SHA-256. `knowledge/COPY-DOCTRINE.md` applies the corpus to
+  Heartside, with the list of where the canon and Krish's rules change it.
+  `PLAYBOOK.md` and the daily-pack, creators, store, report and radar jobs
+  now diagnose awareness and choose a lead before drafting, run edit passes A
+  to E and the rubric before `check`, and log tests in the corpus's test
+  record shape. Schedules, `automations.json` prompts, `check` and the Control
+  Center protocol are unchanged.
+
 - 2026-10-19: Krish: "make each engine adopt its brief now". The engine
   reports through Control Center's growth engine protocol. A new workflow
   answers the daily `cc-growth-directive` dispatch with `growth.py cc`:

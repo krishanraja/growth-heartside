@@ -19,7 +19,10 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
    - the one-sentence mechanism ("a partner reading the lines aloud makes
      people send it to their own partner");
    - the buyer (partner, mom, dad, friend);
-   - the one signal it should move (sends, link taps, orders).
+   - the one signal it should move (sends, link taps, orders);
+   - the copy diagnosis (`knowledge/COPY-DOCTRINE.md`, section 9, "Before
+     drafting"): each edition's awareness level and lead type, the one
+     promise and scene, and the proof with its fact source.
 3. Draft, one item each, each with its own creative id (PLAYBOOK, "Creative
    ids"). Every heartside.io link is tracked (`python3 growth.py link`). Keep
    the idea the same in every edition. Change the opening frame, hook
@@ -54,7 +57,9 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
      phrase, and the tracked link to the most specific page.
    - **Comment prompt** (`instagram`, POST), if the format invites it:
      "Comment your dog's name", with Biscuit's reply pattern for the radar.
-4. State the test in the brief's `why`. Test current recognition stories
+4. State the test in the brief's `why`, in the test record shape
+   (`knowledge/COPY-DOCTRINE.md`, section 8): question, mechanism, control,
+   the one changed variable and the signal. Test current recognition stories
    and gift proof. V3 rejected the HR builder, so the older roast-versus-
    love-letter instruction must not revive it. Judge sends per reach
    alongside useful visits and purchases when observed.
@@ -68,7 +73,11 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
    score, cover, carousel, Stories, Pins and subtitles. Approved narration can
    be attached with verified provenance. Connected provider jobs use the budget
    and receipt contract in docs/PROVIDERS.md; no paid generation is automatic.
-6. Keep the renderer's production manifest and native creative IDs. Use
+6. Before `check`, run edit passes A to E and score the rubric
+   (`knowledge/COPY-DOCTRINE.md`, section 9). Rewrite or drop any edition
+   under 28 of 48. Add `Rubric: total/48, weakest link: <link>` as a note
+   line in the brief.
+   Keep the renderer's production manifest and native creative IDs. Use
    its printed draft path for `growth.py check` and `post`. Incorporate
    additional checked briefs or comment items if needed. Missing or
    changed media makes the daily pack incomplete; report the exact

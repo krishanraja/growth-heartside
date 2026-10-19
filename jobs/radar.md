@@ -18,7 +18,9 @@ Krish: about 5 minutes.
    - `platform`: where the comment is;
    - `target_url`: the post;
    - `target_name`: the commenter's public handle;
-   - `text`: the reply, in Heartside's voice.
+   - `text`: the reply, in Heartside's voice. Answer the question the
+     commenter asked, in their terms (`knowledge/COPY-DOCTRINE.md`, section
+     1, comment replies).
 
    A "Comment your dog's name" reply may use Biscuit ("Biscuit: Kuku! My tail
    is going.") and points to the bio link. Escalate price, policy, complaint
@@ -34,9 +36,11 @@ Krish: about 5 minutes.
 
    For up to 5 opportunities, write an item with `platform: other`:
    - `text`: the exact phrase or question, where you saw it (url), the date,
-     the buyer (partner, mom, dad, friend, self), the content gap, a
-     suggested format from the PLAYBOOK bank, and your confidence (high,
-     medium or low);
+     the buyer (partner, mom, dad, friend, self), the awareness level and
+     lead type it suggests (`knowledge/COPY-DOCTRINE.md`, section 1), any
+     competing promise seen on that page, the content gap, a suggested
+     format from the PLAYBOOK bank, and your confidence (high, medium or
+     low);
    - `why`: one line.
 
    Never claim a search volume or a trend you did not read.
