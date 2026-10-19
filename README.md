@@ -16,7 +16,7 @@ places gifts, confirms printing, changes the store or schedules paid AI requests
 - [Acquisition strategy and 30-day experiment](STRATEGY.md)
 - [AI production, provider budgets and provenance](docs/PROVIDERS.md)
 - [Reference corpus: dog datasets and organic growth research](knowledge/README.md)
-- [Control Centre brief for its owner](docs/CONTROL-CENTRE-BRIEF.md)
+- [Control Center brief: the growth engine protocol](docs/CONTROL-CENTER-BRIEF.md)
 - [Operating instructions](AGENTS.md), [playbook](PLAYBOOK.md), [browser boundary](BROWSER.md)
 - [Product handoff in heartside PR #13](https://github.com/krishanraja/heartside/pull/13)
 
@@ -72,8 +72,9 @@ data, named creator lists or credentials belong in public-repository artifacts.
 ## Repository boundaries
 
 Product and fulfillment recommendations live in the separate heartside handoff.
-This build makes no further changes there. **Control Centre receives a brief
-only:** no edits, merges, migrations or deployments in its repository. Delivery
-is disabled by default even when `GROWTH_ENGINE_TOKEN` exists. Reporting packs
-are prepared locally in the required format, so central UI work does not block
-creative production.
+This build makes no further changes there. Nothing here edits, merges, migrates or
+deploys Control Center. Progress reaches it through the growth engine protocol:
+the [Control Center directive](https://github.com/krishanraja/growth-heartside/actions/workflows/control-center.yml)
+workflow answers its daily dispatch with one report (see the runbook). Pack
+delivery stays disabled by default even when `GROWTH_ENGINE_TOKEN` exists, so
+central UI work does not block creative production.

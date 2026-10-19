@@ -6,13 +6,16 @@ from pathlib import Path
 from . import assets, ledger, offers
 
 
-COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library'}
+COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library', 'cc'}
 
 
 def add_commands(sub):
     library = sub.add_parser('library'); library.add_argument('--date'); library.add_argument('--heartside-dir')
     events = sub.add_parser('events'); events.add_argument('action', choices=['import']); events.add_argument('file')
     sub.add_parser('reporting-access')
+    cc = sub.add_parser('cc', help='Control Center protocol loop: start, run, finish (docs/ENGINE.md)')
+    cc.add_argument('action', choices=['start', 'run', 'finish']); cc.add_argument('--mode', choices=['live', 'synthetic'], default='synthetic')
+    cc.add_argument('--code', help='lower_snake failure code for finish')
     run = sub.add_parser('run'); run.add_argument('--job'); run.add_argument('--now'); run.add_argument('--force', action='store_true')
     snap = sub.add_parser('snapshot'); commands = snap.add_subparsers(dest='action', required=True)
     exp = commands.add_parser('export'); exp.add_argument('file')
@@ -47,6 +50,9 @@ def run(args, growth):
         result = control_center.probe(growth.BASE, growth.token())
         print(json.dumps(result, indent=2))
         raise SystemExit(0 if result['authenticated'] else 1)
+    if args.cmd == 'cc':
+        from . import protocol
+        raise SystemExit(protocol.main(root, growth, args.action, args.mode, args.code))
     if args.cmd == 'run':
         from . import runner
         import datetime as dt

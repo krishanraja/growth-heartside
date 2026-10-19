@@ -3,6 +3,15 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-19: Krish: "make each engine adopt its brief now". The engine
+  reports through Control Center's growth engine protocol. A new workflow
+  answers the daily `cc-growth-directive` dispatch with `growth.py cc`:
+  attempt, directive, report with readback, decisions. It reads the latest
+  checkpoint without writing one, renders nothing and never posts, sends or
+  spends. The seven scheduled jobs and pack delivery are unchanged. The
+  recommendation to pass the old brief to Control Center's owner is closed
+  and removed.
+
 - 2026-10-17, latest scope: Krish: "you are not to do any actual work in
   control-center, only pass me a brief once you have completed your work."
   Then: "Complete this all to 100% without coming back to me again. The next
