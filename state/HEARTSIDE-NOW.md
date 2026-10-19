@@ -1,6 +1,6 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `0a75c79140` on 2026-10-19T17:31:33+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `0ddd2289c5` on 2026-10-19T22:25:03+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
 
 ## The canon, in heartside's order
@@ -26,6 +26,9 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 
 ## Recent commits on main
 
+- `0ddd2289c5` 2026-10-19 Merge pull request #29 from krishanraja/claude/adoring-cerf-ybph82
+- `da52861684` 2026-10-19 Mug colors live: variants, images and checks
+- `a5a76c2515` 2026-10-19 Cowork prompt for the mug colors in Teeinblue
 - `0a75c79140` 2026-10-19 Merge pull request #28 from krishanraja/claude/adoring-cerf-ybph82
 - `c886af9084` 2026-10-19 Mug colors: recolored bases, per-color images, swatches in the chat and on the product page
 - `90232f4739` 2026-10-19 Merge pull request #27 from krishanraja/claude/adoring-cerf-ybph82
@@ -53,8 +56,6 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 - `00073c2573` 2026-10-19 Report: theme deploy run 50 and the mug image swap, with live checks
 - `64369c4f19` 2026-10-19 Order QC on GitHub Actions (schedule off), Krish's setup steps, report
 - `9884e0cdad` 2026-10-19 Mug images re-rendered with the new curve; their inputs rebuilt and committed
-- `ce23712daf` 2026-10-19 Gift pages open on the buyer's preview after the chat; company note in the footer; blanket cutoff TODO
-- `0b21896d0b` 2026-10-19 Breed lookup: "pit" shows Pit Bull (Krish rules yes)
 
 ## Work in flight (open pull requests)
 

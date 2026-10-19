@@ -1,8 +1,8 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "0a75c79140455cd647f762ba60eea1f464994662",
- "synced_at": "2026-10-19T17:31:33+00:00",
- "previous_sha": "ca02b1f26207ee03574b179dbd0ae75525ed0ed4",
+ "sha": "0ddd2289c51a7a8df9a2045400d1c13d735f8316",
+ "synced_at": "2026-10-19T22:25:03+00:00",
+ "previous_sha": "0a75c79140455cd647f762ba60eea1f464994662",
  "canon_from_readme": true,
  "handover": "docs/HANDOVER-2026-10-17.md",
  "canon": {
@@ -27,6 +27,21 @@
  "canon_added": [],
  "canon_removed": [],
  "commits": [
+  {
+   "sha": "0ddd2289c5",
+   "date": "2026-10-19T21:16:18Z",
+   "subject": "Merge pull request #29 from krishanraja/claude/adoring-cerf-ybph82"
+  },
+  {
+   "sha": "da52861684",
+   "date": "2026-10-19T20:42:56Z",
+   "subject": "Mug colors live: variants, images and checks"
+  },
+  {
+   "sha": "a5a76c2515",
+   "date": "2026-10-19T15:47:33Z",
+   "subject": "Cowork prompt for the mug colors in Teeinblue"
+  },
   {
    "sha": "0a75c79140",
    "date": "2026-10-19T15:26:21Z",
@@ -161,16 +176,6 @@
    "sha": "9884e0cdad",
    "date": "2026-10-19T07:25:30Z",
    "subject": "Mug images re-rendered with the new curve; their inputs rebuilt and committed"
-  },
-  {
-   "sha": "ce23712daf",
-   "date": "2026-10-19T07:21:17Z",
-   "subject": "Gift pages open on the buyer's preview after the chat; company note in the footer; blanket cutoff TODO"
-  },
-  {
-   "sha": "0b21896d0b",
-   "date": "2026-10-19T07:14:13Z",
-   "subject": "Breed lookup: \"pit\" shows Pit Bull (Krish rules yes)"
   }
  ],
  "open_pulls": [],
@@ -250,7 +255,27 @@
    "available": true,
    "variants": [
     {
+     "id": 58264192418174,
+     "price": "29.00",
+     "available": true
+    },
+    {
+     "id": 58264192450942,
+     "price": "29.00",
+     "available": true
+    },
+    {
+     "id": 58264192483710,
+     "price": "29.00",
+     "available": true
+    },
+    {
      "id": 58215128727934,
+     "price": "29.00",
+     "available": true
+    },
+    {
+     "id": 58264192516478,
      "price": "29.00",
      "available": true
     }
