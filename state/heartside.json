@@ -1,12 +1,12 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "218e20f4bad116d5693059377c5402e8f343454c",
- "synced_at": "2026-10-20T01:52:26+00:00",
- "previous_sha": "0ddd2289c51a7a8df9a2045400d1c13d735f8316",
+ "sha": "46273f66552ac04ed3f3c0cf7f279e5e6523a234",
+ "synced_at": "2026-10-20T13:36:08+00:00",
+ "previous_sha": "218e20f4bad116d5693059377c5402e8f343454c",
  "canon_from_readme": true,
  "handover": "docs/HANDOVER-2026-10-17.md",
  "canon": {
-  "docs/V3-GIFTS-FROM-YOUR-DOG.md": "deb487f0ab679455",
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md": "7f045306a1dc0e2c",
   "docs/POSITIONING.md": "5cc3f584e60bf4e0",
   "docs/HANDOFF.md": "04989931a668f0ed",
   "docs/COWORK-HANDOVER-2026-10-15.md": "5a37f967d84381bd",
@@ -17,165 +17,57 @@
   "shopify/README.md": "95ed40e266f2c488"
  },
  "rules": {
-  "docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ": "125afc11c43dbc1b",
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ": "e9207867e2acd138",
   "docs/V3-GIFTS-FROM-YOUR-DOG.md ### 4.6 ": "f4a6bd4ab5ce2c91",
   "docs/HANDOFF.md ## 2. ": "7aa03e172d93daa7",
   "docs/POSITIONING.md ## 3. ": "c102e12c77cb178f"
  },
- "rules_ok": true,
- "changed_since_last_sync": [],
+ "rules_ok": false,
+ "changed_since_last_sync": [
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md"
+ ],
  "canon_added": [],
  "canon_removed": [],
  "commits": [
   {
-   "sha": "218e20f4ba",
-   "date": "2026-10-19T23:17:40Z",
-   "subject": "Merge pull request #30 from krishanraja/claude/adoring-cerf-ybph82"
+   "sha": "46273f6655",
+   "date": "2026-10-20T12:12:51Z",
+   "subject": "Merge pull request #33 from krishanraja/claude/festive-feynman-i7lvff"
   },
   {
-   "sha": "5cb47240d8",
-   "date": "2026-10-19T23:17:25Z",
-   "subject": "Mug page: chosen color's photos only, whole mug in the cart, Your Words says when the headshot is in"
+   "sha": "6321b02d2e",
+   "date": "2026-10-20T12:05:17Z",
+   "subject": "Cowork prompt: dog-voice lines live, checklist before the mock order"
   },
   {
-   "sha": "0ddd2289c5",
-   "date": "2026-10-19T21:16:18Z",
-   "subject": "Merge pull request #29 from krishanraja/claude/adoring-cerf-ybph82"
+   "sha": "9fc1c8bac4",
+   "date": "2026-10-20T11:50:39Z",
+   "subject": "n8n dog-voice workflows published and checked live"
   },
   {
-   "sha": "da52861684",
-   "date": "2026-10-19T20:42:56Z",
-   "subject": "Mug colors live: variants, images and checks"
+   "sha": "ea11384039",
+   "date": "2026-10-20T11:40:07Z",
+   "subject": "Merge pull request #32 from krishanraja/claude/festive-feynman-i7lvff"
   },
   {
-   "sha": "a5a76c2515",
-   "date": "2026-10-19T15:47:33Z",
-   "subject": "Cowork prompt for the mug colors in Teeinblue"
+   "sha": "6a9bb77c16",
+   "date": "2026-10-20T11:39:39Z",
+   "subject": "Live mug check: images, gallery, cart fine; Teeinblue preview still per-color and flat"
   },
   {
-   "sha": "0a75c79140",
-   "date": "2026-10-19T15:26:21Z",
-   "subject": "Merge pull request #28 from krishanraja/claude/adoring-cerf-ybph82"
+   "sha": "468e372196",
+   "date": "2026-10-20T11:02:16Z",
+   "subject": "Cowork update: dog-voice gift lines, theme live, n8n pending"
   },
   {
-   "sha": "c886af9084",
-   "date": "2026-10-19T15:25:55Z",
-   "subject": "Mug colors: recolored bases, per-color images, swatches in the chat and on the product page"
+   "sha": "58ce658fa8",
+   "date": "2026-10-20T11:00:13Z",
+   "subject": "Merge pull request #31 from krishanraja/claude/festive-feynman-i7lvff"
   },
   {
-   "sha": "90232f4739",
-   "date": "2026-10-19T14:50:21Z",
-   "subject": "Merge pull request #27 from krishanraja/claude/adoring-cerf-ybph82"
-  },
-  {
-   "sha": "6b205f3207",
-   "date": "2026-10-19T14:50:02Z",
-   "subject": "Mug colors: a first-look board of the five proposed colors on the approved render"
-  },
-  {
-   "sha": "b191fd3938",
-   "date": "2026-10-19T14:49:06Z",
-   "subject": "Order QC checks the mug color; plan for the mug in five colors"
-  },
-  {
-   "sha": "9a89140655",
-   "date": "2026-10-19T13:33:04Z",
-   "subject": "Merge pull request #26 from krishanraja/claude/adoring-cerf-ybph82"
-  },
-  {
-   "sha": "b2c28b95f9",
-   "date": "2026-10-19T13:32:47Z",
-   "subject": "Desktop: reveal and choose in two columns; phone top bar on two clean lines"
-  },
-  {
-   "sha": "a1b371ef4a",
-   "date": "2026-10-19T13:19:09Z",
-   "subject": "Merge pull request #25 from krishanraja/claude/adoring-cerf-ybph82"
-  },
-  {
-   "sha": "4fb50d33bd",
-   "date": "2026-10-19T13:18:56Z",
-   "subject": "Desktop: one page, not a window in a window"
-  },
-  {
-   "sha": "e66a67689a",
-   "date": "2026-10-19T13:07:54Z",
-   "subject": "Merge pull request #24 from krishanraja/cowork/2026-10-19-desktop-check"
-  },
-  {
-   "sha": "15153ce015",
-   "date": "2026-10-19T12:59:41Z",
-   "subject": "Cowork 19 Oct: desktop check on the live site, Order QC task paused"
-  },
-  {
-   "sha": "ca02b1f262",
-   "date": "2026-10-19T09:26:04Z",
-   "subject": "Merge pull request #23 from krishanraja/claude/adoring-cerf-ybph82"
-  },
-  {
-   "sha": "8abfa7df33",
-   "date": "2026-10-19T09:14:28Z",
-   "subject": "Desktop layout for the homepage chat; header padding capped"
-  },
-  {
-   "sha": "8c3c288640",
-   "date": "2026-10-19T08:32:45Z",
-   "subject": "Merge pull request #22 from krishanraja/claude/adoring-cerf-ybph82"
-  },
-  {
-   "sha": "56fc7c3ac1",
-   "date": "2026-10-19T08:32:38Z",
-   "subject": "Report: dry run 3 and real run 4 green; schedule on"
-  },
-  {
-   "sha": "5075902bb8",
-   "date": "2026-10-19T08:31:24Z",
-   "subject": "Order QC: switch the schedule on (07:56 and 16:56 London)"
-  },
-  {
-   "sha": "f75f7f08a8",
-   "date": "2026-10-19T08:30:38Z",
-   "subject": "Merge pull request #21 from krishanraja/claude/adoring-cerf-ybph82"
-  },
-  {
-   "sha": "ad8b5e6607",
-   "date": "2026-10-19T08:26:47Z",
-   "subject": "Report: second dry run green"
-  },
-  {
-   "sha": "399dd88840",
-   "date": "2026-10-19T08:25:04Z",
-   "subject": "Order QC: find mugs by line item title, not product (read_orders only)"
-  },
-  {
-   "sha": "34a56af502",
-   "date": "2026-10-19T08:22:05Z",
-   "subject": "Merge pull request #20 from krishanraja/claude/adoring-cerf-ybph82"
-  },
-  {
-   "sha": "306a626a15",
-   "date": "2026-10-19T08:03:33Z",
-   "subject": "Order QC signs in with the Dev Dashboard app's client credentials"
-  },
-  {
-   "sha": "c5a15bdf5f",
-   "date": "2026-10-19T07:52:36Z",
-   "subject": "Merge pull request #19 from krishanraja/cowork/2026-10-19-launch-checks"
-  },
-  {
-   "sha": "df9de3cde5",
-   "date": "2026-10-19T07:50:04Z",
-   "subject": "Cowork 19 Oct: Part A checks on what went live, order QC status"
-  },
-  {
-   "sha": "be54fe7098",
-   "date": "2026-10-19T07:36:29Z",
-   "subject": "Merge pull request #18 from krishanraja/claude/adoring-cerf-ybph82"
-  },
-  {
-   "sha": "00073c2573",
-   "date": "2026-10-19T07:35:35Z",
-   "subject": "Report: theme deploy run 50 and the mug image swap, with live checks"
+   "sha": "da6ecb8bdc",
+   "date": "2026-10-20T10:58:45Z",
+   "subject": "Gift lines become a message from the dog, in its own voice"
   }
  ],
  "open_pulls": [],

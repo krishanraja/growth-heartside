@@ -1,7 +1,22 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `218e20f4ba` on 2026-10-20T01:52:26+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `46273f6655` on 2026-10-20T13:36:08+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
+
+## STOP: Heartside's rules changed
+
+A rules section this engine checks against has changed or is no longer canon. No pack passes until
+a person reads the new words and updates RULES and RULES_BASIS in growth.py (AGENTS.md, rule 2).
+
+| Section | Now | Engine was written for |
+|---|---|---|
+| `docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ` | e9207867e2acd138 | 125afc11c43dbc1b |
+
+## Canon changed since the last sync
+
+Read these again before drafting anything:
+
+- changed: `docs/V3-GIFTS-FROM-YOUR-DOG.md`
 
 ## The canon, in heartside's order
 
@@ -26,36 +41,14 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 
 ## Recent commits on main
 
-- `218e20f4ba` 2026-10-19 Merge pull request #30 from krishanraja/claude/adoring-cerf-ybph82
-- `5cb47240d8` 2026-10-19 Mug page: chosen color's photos only, whole mug in the cart, Your Words says when the headshot is in
-- `0ddd2289c5` 2026-10-19 Merge pull request #29 from krishanraja/claude/adoring-cerf-ybph82
-- `da52861684` 2026-10-19 Mug colors live: variants, images and checks
-- `a5a76c2515` 2026-10-19 Cowork prompt for the mug colors in Teeinblue
-- `0a75c79140` 2026-10-19 Merge pull request #28 from krishanraja/claude/adoring-cerf-ybph82
-- `c886af9084` 2026-10-19 Mug colors: recolored bases, per-color images, swatches in the chat and on the product page
-- `90232f4739` 2026-10-19 Merge pull request #27 from krishanraja/claude/adoring-cerf-ybph82
-- `6b205f3207` 2026-10-19 Mug colors: a first-look board of the five proposed colors on the approved render
-- `b191fd3938` 2026-10-19 Order QC checks the mug color; plan for the mug in five colors
-- `9a89140655` 2026-10-19 Merge pull request #26 from krishanraja/claude/adoring-cerf-ybph82
-- `b2c28b95f9` 2026-10-19 Desktop: reveal and choose in two columns; phone top bar on two clean lines
-- `a1b371ef4a` 2026-10-19 Merge pull request #25 from krishanraja/claude/adoring-cerf-ybph82
-- `4fb50d33bd` 2026-10-19 Desktop: one page, not a window in a window
-- `e66a67689a` 2026-10-19 Merge pull request #24 from krishanraja/cowork/2026-10-19-desktop-check
-- `15153ce015` 2026-10-19 Cowork 19 Oct: desktop check on the live site, Order QC task paused
-- `ca02b1f262` 2026-10-19 Merge pull request #23 from krishanraja/claude/adoring-cerf-ybph82
-- `8abfa7df33` 2026-10-19 Desktop layout for the homepage chat; header padding capped
-- `8c3c288640` 2026-10-19 Merge pull request #22 from krishanraja/claude/adoring-cerf-ybph82
-- `56fc7c3ac1` 2026-10-19 Report: dry run 3 and real run 4 green; schedule on
-- `5075902bb8` 2026-10-19 Order QC: switch the schedule on (07:56 and 16:56 London)
-- `f75f7f08a8` 2026-10-19 Merge pull request #21 from krishanraja/claude/adoring-cerf-ybph82
-- `ad8b5e6607` 2026-10-19 Report: second dry run green
-- `399dd88840` 2026-10-19 Order QC: find mugs by line item title, not product (read_orders only)
-- `34a56af502` 2026-10-19 Merge pull request #20 from krishanraja/claude/adoring-cerf-ybph82
-- `306a626a15` 2026-10-19 Order QC signs in with the Dev Dashboard app's client credentials
-- `c5a15bdf5f` 2026-10-19 Merge pull request #19 from krishanraja/cowork/2026-10-19-launch-checks
-- `df9de3cde5` 2026-10-19 Cowork 19 Oct: Part A checks on what went live, order QC status
-- `be54fe7098` 2026-10-19 Merge pull request #18 from krishanraja/claude/adoring-cerf-ybph82
-- `00073c2573` 2026-10-19 Report: theme deploy run 50 and the mug image swap, with live checks
+- `46273f6655` 2026-10-20 Merge pull request #33 from krishanraja/claude/festive-feynman-i7lvff
+- `6321b02d2e` 2026-10-20 Cowork prompt: dog-voice lines live, checklist before the mock order
+- `9fc1c8bac4` 2026-10-20 n8n dog-voice workflows published and checked live
+- `ea11384039` 2026-10-20 Merge pull request #32 from krishanraja/claude/festive-feynman-i7lvff
+- `6a9bb77c16` 2026-10-20 Live mug check: images, gallery, cart fine; Teeinblue preview still per-color and flat
+- `468e372196` 2026-10-20 Cowork update: dog-voice gift lines, theme live, n8n pending
+- `58ce658fa8` 2026-10-20 Merge pull request #31 from krishanraja/claude/festive-feynman-i7lvff
+- `da6ecb8bdc` 2026-10-20 Gift lines become a message from the dog, in its own voice
 
 ## Work in flight (open pull requests)
 
@@ -63,7 +56,6 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 
 ## Latest decisions (`docs/V3-GIFTS-FROM-YOUR-DOG.md`, decision log)
 
-- 2026-10-13: Krish approved the prices, hiding the HR poster, framed poster and pillow, and the twice-daily order check. Live AI stays in version one, as agreed, using Gemini with Krish's key. Krish: "This is a Shopify business": no new outside project. Where the key sits is his call (5.4).
 - 2026-10-13: The Gemini key is in Krish's n8n as "Google Gemini(PaLM) - Heartside"; the AI runs through n8n webhooks. Sample order #1001 (the old HR-ring ornament) refunded by Krish; he reorders once the v3 page and products are live.
 - 2026-10-13: Krish: "Build the two n8n webhooks and the site against section 11, switch everything on and merge everything to main." Built: the two webhooks are live in n8n (`n8n/README.md`), and the chat is in the theme as `hs3-chat` on hidden templates `?view=gifts` and `?view=landing` (`shopify/README.md`, v3). The live homepage is unchanged: the four gift products don't exist in Shopify yet, and section 7 keeps publishing for Sunday.
 - 2026-10-14: Mug direction A chosen ("A"): the dog as a large cut-out on the outward face, the note on the drinker's face in Fraunces at 16pt or larger, and every preview on real product photos.
@@ -71,3 +63,4 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 - 2026-10-15: Cut-out and Fraunces redesign of the other three gifts judged "okay, pretty standard"; not built.
 - 2026-10-15: Every-gift-as-a-letter rejected ("sounds shit").
 - 2026-10-15: Krish asked for "10X personalized delight" from the first moment, using the AI edge and the breed corpus. Open.
+- 2026-10-20: Krish, on a cart showing "Understands every word. Pretends he doesn't.": "It should be a message from your dog in their personality style... capture their demeanour, cross reference the corpus, and create literally a humanized warm message from the dog to the person with some humour and dog anthropomorphisms. Make sure all products create a warm message." So, on every gift: I, me and my are the dog, you is the person, never he, she or the dog's name, never the person's name, no exclamation marks, no "Dear" (the 15 Oct letter stays rejected; "Love, [dog]" is the only sign-off). Every scripted chip line was rewritten in that voice ("I took your side of the bed. Not sorry."). Compose now runs for every buyer, not only after a typed answer, so the AI writes all four lines as one message; the scripted lines show first and are the fallback. The chat has an optional "Breed, if you know it" field on step 1 (no new step); an exact corpus match sends its archetype to the AI as a light tone signal, never shown. This replaces the 13 Oct "no I" rule and the 15 Oct "no breed question yet".
