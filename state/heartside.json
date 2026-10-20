@@ -1,8 +1,8 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "0ddd2289c51a7a8df9a2045400d1c13d735f8316",
- "synced_at": "2026-10-19T22:25:03+00:00",
- "previous_sha": "0a75c79140455cd647f762ba60eea1f464994662",
+ "sha": "218e20f4bad116d5693059377c5402e8f343454c",
+ "synced_at": "2026-10-20T01:52:26+00:00",
+ "previous_sha": "0ddd2289c51a7a8df9a2045400d1c13d735f8316",
  "canon_from_readme": true,
  "handover": "docs/HANDOVER-2026-10-17.md",
  "canon": {
@@ -27,6 +27,16 @@
  "canon_added": [],
  "canon_removed": [],
  "commits": [
+  {
+   "sha": "218e20f4ba",
+   "date": "2026-10-19T23:17:40Z",
+   "subject": "Merge pull request #30 from krishanraja/claude/adoring-cerf-ybph82"
+  },
+  {
+   "sha": "5cb47240d8",
+   "date": "2026-10-19T23:17:25Z",
+   "subject": "Mug page: chosen color's photos only, whole mug in the cart, Your Words says when the headshot is in"
+  },
   {
    "sha": "0ddd2289c5",
    "date": "2026-10-19T21:16:18Z",
@@ -166,16 +176,6 @@
    "sha": "00073c2573",
    "date": "2026-10-19T07:35:35Z",
    "subject": "Report: theme deploy run 50 and the mug image swap, with live checks"
-  },
-  {
-   "sha": "64369c4f19",
-   "date": "2026-10-19T07:30:02Z",
-   "subject": "Order QC on GitHub Actions (schedule off), Krish's setup steps, report"
-  },
-  {
-   "sha": "9884e0cdad",
-   "date": "2026-10-19T07:25:30Z",
-   "subject": "Mug images re-rendered with the new curve; their inputs rebuilt and committed"
   }
  ],
  "open_pulls": [],

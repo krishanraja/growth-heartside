@@ -1,6 +1,6 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `0ddd2289c5` on 2026-10-19T22:25:03+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `218e20f4ba` on 2026-10-20T01:52:26+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
 
 ## The canon, in heartside's order
@@ -26,6 +26,8 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 
 ## Recent commits on main
 
+- `218e20f4ba` 2026-10-19 Merge pull request #30 from krishanraja/claude/adoring-cerf-ybph82
+- `5cb47240d8` 2026-10-19 Mug page: chosen color's photos only, whole mug in the cart, Your Words says when the headshot is in
 - `0ddd2289c5` 2026-10-19 Merge pull request #29 from krishanraja/claude/adoring-cerf-ybph82
 - `da52861684` 2026-10-19 Mug colors live: variants, images and checks
 - `a5a76c2515` 2026-10-19 Cowork prompt for the mug colors in Teeinblue
@@ -54,8 +56,6 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 - `df9de3cde5` 2026-10-19 Cowork 19 Oct: Part A checks on what went live, order QC status
 - `be54fe7098` 2026-10-19 Merge pull request #18 from krishanraja/claude/adoring-cerf-ybph82
 - `00073c2573` 2026-10-19 Report: theme deploy run 50 and the mug image swap, with live checks
-- `64369c4f19` 2026-10-19 Order QC on GitHub Actions (schedule off), Krish's setup steps, report
-- `9884e0cdad` 2026-10-19 Mug images re-rendered with the new curve; their inputs rebuilt and committed
 
 ## Work in flight (open pull requests)
 
