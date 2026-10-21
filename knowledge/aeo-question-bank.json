@@ -1,0 +1,261 @@
+{
+  "_about": "The Answers library's question bank (docs/GEO-AEO.md section 4). jobs/answers.md takes the two highest-priority todo questions each week. Status: todo, drafted (with pack date), published (with url and date), refresh. Seeds are for public search suggestions only, never volumes.",
+  "updated": "2026-10-21",
+  "questions": [
+    {
+      "id": "q01",
+      "tier": 1,
+      "priority": 1,
+      "question": "What can I get my partner from the dog?",
+      "seed": "gift from the dog to partner",
+      "leads_to": "any",
+      "status": "drafted",
+      "pack": "docs/answers/2026-10-21-batch-1.md"
+    },
+    {
+      "id": "q02",
+      "tier": 1,
+      "priority": 2,
+      "question": "How do you sign a gift from the dog?",
+      "seed": "how to sign a card from the dog",
+      "leads_to": "any",
+      "status": "drafted",
+      "pack": "docs/answers/2026-10-21-batch-1.md"
+    },
+    {
+      "id": "q03",
+      "tier": 1,
+      "priority": 3,
+      "question": "What can I get my husband from the dog?",
+      "seed": "gift for husband from the dog",
+      "leads_to": "mug",
+      "status": "todo"
+    },
+    {
+      "id": "q04",
+      "tier": 1,
+      "priority": 4,
+      "question": "What can I get my wife from the dog?",
+      "seed": "gift for wife from the dog",
+      "leads_to": "blanket",
+      "status": "todo"
+    },
+    {
+      "id": "q05",
+      "tier": 1,
+      "priority": 5,
+      "question": "What is a good gift from the dog to mom?",
+      "seed": "gift from the dog to mom",
+      "leads_to": "print",
+      "status": "todo"
+    },
+    {
+      "id": "q06",
+      "tier": 1,
+      "priority": 6,
+      "question": "What is a good gift from the dog to dad?",
+      "seed": "gift from the dog to dad",
+      "leads_to": "mug",
+      "status": "todo"
+    },
+    {
+      "id": "q07",
+      "tier": 1,
+      "priority": 7,
+      "question": "What does a gift from the dog say?",
+      "seed": "what to write from the dog",
+      "leads_to": "any",
+      "status": "todo"
+    },
+    {
+      "id": "q08",
+      "tier": 1,
+      "priority": 8,
+      "question": "What can a dog give a kid as a gift?",
+      "seed": "gift from the dog to kids",
+      "leads_to": "ornament",
+      "status": "todo"
+    },
+    {
+      "id": "q09",
+      "tier": 2,
+      "priority": 9,
+      "question": "What is a good Christmas gift from the dog?",
+      "seed": "christmas gift from the dog",
+      "leads_to": "ornament",
+      "status": "drafted",
+      "pack": "docs/answers/2026-10-21-batch-1.md"
+    },
+    {
+      "id": "q10",
+      "tier": 2,
+      "priority": 10,
+      "question": "What is a good birthday gift from the dog?",
+      "seed": "birthday gift from the dog",
+      "leads_to": "mug",
+      "status": "todo"
+    },
+    {
+      "id": "q11",
+      "tier": 2,
+      "priority": 11,
+      "question": "What can I give for Mother's Day from the dog?",
+      "seed": "mothers day gift from the dog",
+      "leads_to": "print",
+      "status": "todo"
+    },
+    {
+      "id": "q12",
+      "tier": 2,
+      "priority": 12,
+      "question": "What can I give for Father's Day from the dog?",
+      "seed": "fathers day gift from dog",
+      "leads_to": "mug",
+      "status": "todo"
+    },
+    {
+      "id": "q13",
+      "tier": 2,
+      "priority": 13,
+      "question": "What is a good anniversary gift from the dog?",
+      "seed": "anniversary gift from the dog",
+      "leads_to": "blanket",
+      "status": "todo"
+    },
+    {
+      "id": "q14",
+      "tier": 2,
+      "priority": 14,
+      "question": "What is a good Valentine's gift from the dog?",
+      "seed": "valentines gift from the dog",
+      "leads_to": "mug",
+      "status": "todo"
+    },
+    {
+      "id": "q15",
+      "tier": 2,
+      "priority": 15,
+      "question": "What can the dog give a new baby or new parents?",
+      "seed": "gift from the dog to new baby",
+      "leads_to": "ornament",
+      "status": "todo"
+    },
+    {
+      "id": "q16",
+      "tier": 2,
+      "priority": 16,
+      "question": "When should I order a personalized Christmas gift so it arrives in time?",
+      "seed": "personalized christmas gift order deadline",
+      "leads_to": "any",
+      "status": "todo"
+    },
+    {
+      "id": "q17",
+      "tier": 3,
+      "priority": 17,
+      "question": "What would my dog say to me if it could talk?",
+      "seed": "what would my dog say to me",
+      "leads_to": "any",
+      "status": "todo"
+    },
+    {
+      "id": "q18",
+      "tier": 3,
+      "priority": 18,
+      "question": "What are funny things a dog would write in a card?",
+      "seed": "funny things a dog would say in a card",
+      "leads_to": "any",
+      "status": "todo"
+    },
+    {
+      "id": "q19",
+      "tier": 3,
+      "priority": 19,
+      "question": "How do I write a message from my dog?",
+      "seed": "message from my dog",
+      "leads_to": "any",
+      "status": "todo"
+    },
+    {
+      "id": "q20",
+      "tier": 3,
+      "priority": 20,
+      "question": "What would a shy or quiet dog say?",
+      "seed": "quiet dog personality",
+      "leads_to": "any",
+      "status": "todo"
+    },
+    {
+      "id": "q21",
+      "tier": 4,
+      "priority": 21,
+      "question": "What are good personalized gifts for dog lovers?",
+      "seed": "personalized gifts for dog lovers",
+      "leads_to": "any",
+      "status": "todo"
+    },
+    {
+      "id": "q22",
+      "tier": 4,
+      "priority": 22,
+      "question": "Is a personalized dog mug a good gift?",
+      "seed": "personalized dog mug",
+      "leads_to": "mug",
+      "status": "todo"
+    },
+    {
+      "id": "q23",
+      "tier": 4,
+      "priority": 23,
+      "question": "What is a good blanket with a dog's photo on it?",
+      "seed": "personalized dog photo blanket",
+      "leads_to": "blanket",
+      "status": "todo"
+    },
+    {
+      "id": "q24",
+      "tier": 4,
+      "priority": 24,
+      "question": "What is a good personalized dog ornament?",
+      "seed": "personalized dog ornament",
+      "leads_to": "ornament",
+      "status": "todo"
+    },
+    {
+      "id": "q25",
+      "tier": 4,
+      "priority": 25,
+      "question": "What is a good framed print of my dog?",
+      "seed": "custom dog portrait print framed",
+      "leads_to": "print",
+      "status": "todo"
+    },
+    {
+      "id": "q26",
+      "tier": 4,
+      "priority": 26,
+      "question": "What do you get a dog mom who has everything?",
+      "seed": "gift for dog mom who has everything",
+      "leads_to": "any",
+      "status": "todo"
+    },
+    {
+      "id": "q27",
+      "tier": 4,
+      "priority": 27,
+      "question": "What do you get a dog dad?",
+      "seed": "gifts for dog dads",
+      "leads_to": "mug",
+      "status": "todo"
+    },
+    {
+      "id": "q28",
+      "tier": 4,
+      "priority": 28,
+      "question": "What photo of my dog works best on a personalized gift?",
+      "seed": "best photo for custom dog gift",
+      "leads_to": "any",
+      "status": "todo"
+    }
+  ]
+}

@@ -3,6 +3,19 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-21: Krish: "add a nice site favicon, social media cards, 11/10 GEO
+  and AEO strategy, allow AI crawlers", then "create a recurring AEO blog
+  strategy that is invisible to humans but very visible to Google and AI.
+  These need to be discoverable."
+  - `docs/GEO-AEO.md` is the strategy. Its blog is the Answers library:
+    unlisted from the store's menu and gift journey, but public, the same for
+    people and crawlers, and in the sitemap and `/llms.txt`. Hidden text and
+    cloaking break Google's spam policies, so they're out.
+  - A new eighth job, `jobs/answers.md` (Wednesday 07:30, kind `answers`),
+    drafts two answers a week from `knowledge/aeo-question-bank.json`. The
+    hosted runner builds the brief; publishing stays Krish's approval.
+  - Batch 1 is in `docs/answers/2026-10-21-batch-1.md`.
+
 - 2026-10-21, later: Krish: "rewrite those two docs as well, we need
   consistency" (heartside's `POSITIONING.md` and `HANDOFF.md`, rewritten for
   v3 at heartside 87c60af). `RULES_BASIS` holds their sections as re-read.
