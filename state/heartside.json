@@ -1,36 +1,47 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "0f345a77b259fe8214b662a7e81ab613c45231e6",
- "synced_at": "2026-10-21T10:21:07+00:00",
- "previous_sha": "46273f66552ac04ed3f3c0cf7f279e5e6523a234",
+ "sha": "87c60af2c8620afad9cace80ac3593b817364089",
+ "synced_at": "2026-10-21T10:26:55+00:00",
+ "previous_sha": "0f345a77b259fe8214b662a7e81ab613c45231e6",
  "canon_from_readme": true,
  "handover": "docs/HANDOVER-2026-10-17.md",
  "canon": {
   "docs/V3-GIFTS-FROM-YOUR-DOG.md": "e9e13b93b82de3c7",
-  "docs/POSITIONING.md": "5cc3f584e60bf4e0",
-  "docs/HANDOFF.md": "04989931a668f0ed",
+  "docs/POSITIONING.md": "c4f06f3931bc06c8",
+  "docs/HANDOFF.md": "94d0942679edc343",
   "docs/COWORK-HANDOVER-2026-10-15.md": "5a37f967d84381bd",
   "docs/HANDOVER-2026-10-17.md": "e472111839c5ee3f",
-  "docs/SYNC.md": "56180eab6911b4c5",
-  "README.md": "7d4b7ee0998f67aa",
+  "docs/SYNC.md": "704f3c2d78e1ba5d",
+  "README.md": "46798f215b5ac3bc",
   "design/BRAND-SYSTEM.md": "8f1841f20350755e",
   "shopify/README.md": "95ed40e266f2c488"
  },
  "rules": {
   "docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ": "e9207867e2acd138",
   "docs/V3-GIFTS-FROM-YOUR-DOG.md ### 4.6 ": "f4a6bd4ab5ce2c91",
-  "docs/HANDOFF.md ## 2. ": "7aa03e172d93daa7",
-  "docs/POSITIONING.md ## 3. ": "c102e12c77cb178f"
+  "docs/HANDOFF.md ## 2. ": "da2c887c9b21a96a",
+  "docs/POSITIONING.md ## 3. ": "889e30e22d4cb248"
  },
  "rules_ok": true,
  "changed_since_last_sync": [
   "README.md",
-  "design/BRAND-SYSTEM.md",
-  "docs/V3-GIFTS-FROM-YOUR-DOG.md"
+  "docs/HANDOFF.md",
+  "docs/POSITIONING.md",
+  "docs/SYNC.md"
  ],
  "canon_added": [],
  "canon_removed": [],
  "commits": [
+  {
+   "sha": "87c60af2c8",
+   "date": "2026-10-21T10:25:10Z",
+   "subject": "Merge pull request #35 from krishanraja/claude/festive-feynman-i7lvff"
+  },
+  {
+   "sha": "e822b23172",
+   "date": "2026-10-21T10:24:54Z",
+   "subject": "Rewrite POSITIONING and HANDOFF for v3 and the dog's own voice"
+  },
   {
    "sha": "0f345a77b2",
    "date": "2026-10-21T10:18:06Z",
@@ -40,46 +51,6 @@
    "sha": "8cf2ba06f6",
    "date": "2026-10-21T10:17:53Z",
    "subject": "Docs: the dog's own voice in V3 4.2, 5.2, 5.3, README and brand system"
-  },
-  {
-   "sha": "46273f6655",
-   "date": "2026-10-20T12:12:51Z",
-   "subject": "Merge pull request #33 from krishanraja/claude/festive-feynman-i7lvff"
-  },
-  {
-   "sha": "6321b02d2e",
-   "date": "2026-10-20T12:05:17Z",
-   "subject": "Cowork prompt: dog-voice lines live, checklist before the mock order"
-  },
-  {
-   "sha": "9fc1c8bac4",
-   "date": "2026-10-20T11:50:39Z",
-   "subject": "n8n dog-voice workflows published and checked live"
-  },
-  {
-   "sha": "ea11384039",
-   "date": "2026-10-20T11:40:07Z",
-   "subject": "Merge pull request #32 from krishanraja/claude/festive-feynman-i7lvff"
-  },
-  {
-   "sha": "6a9bb77c16",
-   "date": "2026-10-20T11:39:39Z",
-   "subject": "Live mug check: images, gallery, cart fine; Teeinblue preview still per-color and flat"
-  },
-  {
-   "sha": "468e372196",
-   "date": "2026-10-20T11:02:16Z",
-   "subject": "Cowork update: dog-voice gift lines, theme live, n8n pending"
-  },
-  {
-   "sha": "58ce658fa8",
-   "date": "2026-10-20T11:00:13Z",
-   "subject": "Merge pull request #31 from krishanraja/claude/festive-feynman-i7lvff"
-  },
-  {
-   "sha": "da6ecb8bdc",
-   "date": "2026-10-20T10:58:45Z",
-   "subject": "Gift lines become a message from the dog, in its own voice"
   }
  ],
  "open_pulls": [],

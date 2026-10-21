@@ -1,6 +1,6 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `0f345a77b2` on 2026-10-21T10:21:07+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `87c60af2c8` on 2026-10-21T10:26:55+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
 
 ## Canon changed since the last sync
@@ -8,8 +8,9 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 Read these again before drafting anything:
 
 - changed: `README.md`
-- changed: `design/BRAND-SYSTEM.md`
-- changed: `docs/V3-GIFTS-FROM-YOUR-DOG.md`
+- changed: `docs/HANDOFF.md`
+- changed: `docs/POSITIONING.md`
+- changed: `docs/SYNC.md`
 
 ## The canon, in heartside's order
 
@@ -34,16 +35,10 @@ Read these again before drafting anything:
 
 ## Recent commits on main
 
+- `87c60af2c8` 2026-10-21 Merge pull request #35 from krishanraja/claude/festive-feynman-i7lvff
+- `e822b23172` 2026-10-21 Rewrite POSITIONING and HANDOFF for v3 and the dog's own voice
 - `0f345a77b2` 2026-10-21 Merge pull request #34 from krishanraja/claude/festive-feynman-i7lvff
 - `8cf2ba06f6` 2026-10-21 Docs: the dog's own voice in V3 4.2, 5.2, 5.3, README and brand system
-- `46273f6655` 2026-10-20 Merge pull request #33 from krishanraja/claude/festive-feynman-i7lvff
-- `6321b02d2e` 2026-10-20 Cowork prompt: dog-voice lines live, checklist before the mock order
-- `9fc1c8bac4` 2026-10-20 n8n dog-voice workflows published and checked live
-- `ea11384039` 2026-10-20 Merge pull request #32 from krishanraja/claude/festive-feynman-i7lvff
-- `6a9bb77c16` 2026-10-20 Live mug check: images, gallery, cart fine; Teeinblue preview still per-color and flat
-- `468e372196` 2026-10-20 Cowork update: dog-voice gift lines, theme live, n8n pending
-- `58ce658fa8` 2026-10-20 Merge pull request #31 from krishanraja/claude/festive-feynman-i7lvff
-- `da6ecb8bdc` 2026-10-20 Gift lines become a message from the dog, in its own voice
 
 ## Work in flight (open pull requests)
 
