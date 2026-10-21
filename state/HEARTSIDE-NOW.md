@@ -1,21 +1,14 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `46273f6655` on 2026-10-20T13:36:08+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `0f345a77b2` on 2026-10-21T10:21:07+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
-
-## STOP: Heartside's rules changed
-
-A rules section this engine checks against has changed or is no longer canon. No pack passes until
-a person reads the new words and updates RULES and RULES_BASIS in growth.py (AGENTS.md, rule 2).
-
-| Section | Now | Engine was written for |
-|---|---|---|
-| `docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ` | e9207867e2acd138 | 125afc11c43dbc1b |
 
 ## Canon changed since the last sync
 
 Read these again before drafting anything:
 
+- changed: `README.md`
+- changed: `design/BRAND-SYSTEM.md`
 - changed: `docs/V3-GIFTS-FROM-YOUR-DOG.md`
 
 ## The canon, in heartside's order
@@ -41,6 +34,8 @@ Read these again before drafting anything:
 
 ## Recent commits on main
 
+- `0f345a77b2` 2026-10-21 Merge pull request #34 from krishanraja/claude/festive-feynman-i7lvff
+- `8cf2ba06f6` 2026-10-21 Docs: the dog's own voice in V3 4.2, 5.2, 5.3, README and brand system
 - `46273f6655` 2026-10-20 Merge pull request #33 from krishanraja/claude/festive-feynman-i7lvff
 - `6321b02d2e` 2026-10-20 Cowork prompt: dog-voice lines live, checklist before the mock order
 - `9fc1c8bac4` 2026-10-20 n8n dog-voice workflows published and checked live
