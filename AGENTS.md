@@ -58,8 +58,8 @@ doing at any point in time".
 ## What you are growing
 
 Heartside sells gifts from your dog. In a 90-second chat, Biscuit (the
-brand's dachshund host) helps a buyer find words about their dog and the
-person it loves. Those words go on a mug, a sherpa blanket, a framed print or
+brand's dachshund host) turns the buyer's answers into a short message from
+the dog, in its own voice, to the person it loves. Those words go on a mug, a sherpa blanket, a framed print or
 a tree ornament, signed "Love, [dog]" with a paw. Printful makes each one to
 order for US buyers, and a person checks every order before it prints.
 
@@ -116,8 +116,12 @@ address of Krish's in anything.
    none of the banned words, none of the retired lines ("written by your
    dog", "Now it's in writing"), no "it's not X, it's Y". No jokes about a
    dog dying, ageing, illness or abandonment, and none that mock the buyer.
-   Business headlines stay plain, warm and true. Gift lines never use "I" in
-   the dog's voice. `python3 growth.py check` enforces what code can.
+   Business headlines stay plain, warm and true. Gift lines are the dog
+   talking to the person it loves (Krish, 20 Oct): I is the dog, you is the
+   person, warm first and funny second, signed "Love, [dog]"; never he, she,
+   the dog's name or the person's name, no exclamation marks, no "Dear".
+   Biscuit's voice is unchanged. `python3 growth.py check` enforces what code
+   can, including refusing the retired third-person lines.
 6. **No customer's details, anywhere.** This repository is public. Never copy
    anything from an order, a checkout, a customer record or the chat into a
    file or a pack. That covers names, emails, addresses, dogs' names, photos

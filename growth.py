@@ -114,7 +114,8 @@ FALLBACK_CANON = ('docs/V3-GIFTS-FROM-YOUR-DOG.md', 'docs/POSITIONING.md', 'docs
 HANDOVER = re.compile(r'^(?:[A-Z0-9]+-)*HANDOVER-(\d{4}-\d{2}-\d{2})[\w-]*\.md$')
 
 # The sections of heartside's canon that the RULES below were written from,
-# with their fingerprint at heartside commit 1028556 (14 Oct 2026). If any
+# with their fingerprint at heartside commit 1028556 (14 Oct 2026); V3 2 re-read
+# at 0f345a7 (21 Oct 2026, the dog's own voice on the gifts). If any
 # section changes, or stops being canon, no pack passes until a person reads
 # the new words and updates RULES and RULES_BASIS in an interactive session.
 RULES_SOURCES = (
@@ -124,7 +125,7 @@ RULES_SOURCES = (
     ('docs/POSITIONING.md', '## 3. '),               # retire from headlines
 )
 RULES_BASIS = {
-    'docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ': '125afc11c43dbc1b',
+    'docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ': 'e9207867e2acd138',
     'docs/V3-GIFTS-FROM-YOUR-DOG.md ### 4.6 ': 'f4a6bd4ab5ce2c91',
     'docs/HANDOFF.md ## 2. ': '7aa03e172d93daa7',
     'docs/POSITIONING.md ## 3. ': 'c102e12c77cb178f',
@@ -146,6 +147,10 @@ RETIRED = [  # POSITIONING 3 and V3 2, 3
     (re.compile(r"now it'?s in writing", re.I), '"Now it\'s in writing" is retired'),
     (re.compile(r'your dog has notes(?!\w)', re.I), '"Your dog has notes" is retired as a headline and undecided as a sign-off: ask Krish (the handle @yourdoghasnotes is fine)'),
     (re.compile(r'annual review|performance review|body double|areas? for improvement', re.I), 'names a product or the HR joke retired at the v3 launch'),
+    # V3 2 and 13 (20 Oct): gift lines are the dog talking (I is the dog, you is the person); the
+    # third-person lines no longer print, so showing them as a gift's words misstates the product
+    (re.compile(r"waits at the door for you|steals your side of the bed|lives for our morning walks|your shadow, always|always happy to see you|likes any time with you best", re.I),
+     'quotes a retired third-person gift line: gifts now speak as the dog ("I took your side of the bed. Not sorry.")'),
 ]
 FAKE_PROOF = [  # HANDOFF 2.3, V3 2
     (re.compile(r'sold out|only \d+ left|selling fast|hurry|last chance|limited time|ends (?:tonight|soon|today)|while (?:supplies|stocks?) last|countdown', re.I),
@@ -838,6 +843,8 @@ def self_test():
     t('"must-have" is refused', bad('The must-have gift', 'bans'))
     t('the not-X-but-Y turn is refused', bad("It's not a mug, it's a love letter", "it's not X"))
     t('"written by your dog" is refused', bad('Gifts written by your dog', 'retired'))
+    t('a retired third-person gift line is refused', bad('On the mug: "Steals your side of the bed."', 'third-person'))
+    t("the dog's own voice passes", not bad('On the mug: "I took your side of the bed. Not sorry." Love, Kuku', 'third-person'))
     t('"Your dog has notes" asks Krish', bad('Your dog has notes.', 'ask Krish'))
     t('the handle is fine', not bad('Follow @yourdoghasnotes', 'ask Krish'))
     t('the retired poster is refused', bad('The Annual Review is back', 'retired'))
