@@ -96,16 +96,21 @@ What follows from it:
 
 ## Where the documents meet Heartside
 
+"The 12 Oct plan" is the $10k social plan Krish approved on 12 Oct 2026. It
+was section 6 of heartside's `docs/POSITIONING.md` until that file was
+rewritten on 21 Oct; heartside now points here for the plan, and its git
+history keeps the original wording.
+
 | The documents assume | Heartside is | So the engine |
 |---|---|---|
-| UK first, UK spelling | US buyers only; Krish posts from London (POSITIONING 6) | Writes US English. Never targets the UK unless Krish opens it (see "Becoming the category leader") |
+| UK first, UK spelling | US buyers only; Krish posts from London (the 12 Oct plan) | Writes US English. Never targets the UK unless Krish opens it (see "Becoming the category leader") |
 | A personalized collar, one hero product | Four gifts with the same words, and Biscuit's pick (V3 3) | Treats "a gift from the dog" as the hero. The Morning Mug is the hero object, because V3 8's hero film is the mug. The other three ride along ("same words, four gifts") |
 | Film the making, engraving and packing | Printful prints and ships; nobody at Heartside touches the product | Proof comes from the chat on a phone screen, the words inking in, the real print files on real mockups, and the promise that a person checks every order. Real product photos only once Krish's samples arrive |
-| Real pets and real customers on camera | No customers yet; AI may make dogs and rooms, never the product, never "customers" (HANDOFF 4, POSITIONING 6) | Labels Biscuit as an openly fictional, AI-made character. Shows people only through disclosed creators or permissioned buyers |
-| Three master videos a day on five platforms | One Reel a day on Instagram and Facebook, copied to TikTok (POSITIONING 6), and Krish approves everything in about 20 minutes a day | Drafts one daily concept with native editions. Adds more only when the report shows a winner worth multiplying and Krish's time allows |
-| TikTok is the fastest test bed | TikTok shows a London account's posts mostly to the UK (POSITIONING 6) | Puts Meta first; TikTok gets copies with low expectations |
-| Paid creator seeding is out of a zero-spend plan | 20 gifted US creators are approved (POSITIONING 6, V3 8) | Shortlists and drafts each note; Krish approves every gift and sends every message |
-| Memorial products as a separate lane | "A dog I miss" is out of version one (V3 9); no sad-dog content (HANDOFF 6, V3 4.6) | Never makes memorial or grief content (the checker refuses it) |
+| Real pets and real customers on camera | No customers yet; AI may make dogs and rooms, never the product, never "customers" (HANDOFF 2.4, the 12 Oct plan) | Labels Biscuit as an openly fictional, AI-made character. Shows people only through disclosed creators or permissioned buyers |
+| Three master videos a day on five platforms | One Reel a day on Instagram and Facebook, copied to TikTok (the 12 Oct plan), and Krish approves everything in about 20 minutes a day | Drafts one daily concept with native editions. Adds more only when the report shows a winner worth multiplying and Krish's time allows |
+| TikTok is the fastest test bed | TikTok shows a London account's posts mostly to the UK (the 12 Oct plan) | Puts Meta first; TikTok gets copies with low expectations |
+| Paid creator seeding is out of a zero-spend plan | 20 gifted US creators are approved (the 12 Oct plan, V3 8) | Shortlists and drafts each note; Krish approves every gift and sends every message |
+| Memorial products as a separate lane | "A dog I miss" is out of version one (V3 9); no sad-dog content (HANDOFF 2.6, V3 4.6) | Never makes memorial or grief content (the checker refuses it) |
 | Cats and dogs | Dogs | Dogs only |
 | Personalization error control | The chat, "Change a word", a person checks every order, misprints remade free (V3 4.3, 4.4) | Uses these as proof in content and FAQ answers |
 
@@ -126,12 +131,12 @@ What follows from it:
 | Channel | Job | What the engine drafts | Where the link goes |
 |---|---|---|---|
 | Instagram | Sends and trust. Sends per reach decides the A/B test (POSITIONING 4, V3 8) | The Reel caption with the search phrase in the first line, a 3-to-6-word cover, a Story sequence (question poll, the chat on a phone, the words inking in, the order-by date if confirmed, link sticker), a weekly carousel | Bio link and Story link sticker, tracked |
-| Facebook | The gift buyer aged 30 to 49 (POSITIONING 6: Facebook reaches 80 in 100 US adults that age) | A native Reel caption, a weekly photo post, replies to comments | The Page's button and post links, tracked |
+| Facebook | The gift buyer aged 30 to 49 (the 12 Oct plan: Facebook reaches 80 in 100 US adults that age) | A native Reel caption, a weekly photo post, replies to comments | The Page's button and post links, tracked |
 | TikTok | Copies, low expectations, until audience country says otherwise | Caption with the search phrase first, 2 to 5 specific hashtags, an on-screen hook of 3 to 7 words | Bio says heartside.io; a clickable link comes at 1,000 followers (POSITIONING 5) |
 | Pinterest | Gift planning and catalog search; slower but lasting | Pins from each Reel's stills: product pins, gift-idea pins and seasonal pins. Each pin changes the picture, the promise and the search intent | Each pin links to the most specific page, tracked |
 | Google free listings | Buyers already searching | Merchant Center fixes: titles in buyers' words, the custom-product setting, shipping and returns matching the store | Product pages (the feed carries its own tracking) |
 | YouTube Shorts | Lasting video search | A searchable title per Short, once Krish adds the channel | Description link, tracked |
-| Email | The deadline push (POSITIONING 6) | The sign-up offer, welcome, browse, cart and checkout recovery, the Black Friday and 10 December pushes | Tracked links |
+| Email | The deadline push (the 12 Oct plan) | The sign-up offer, welcome, browse, cart and checkout recovery, the Black Friday and 10 December pushes | Tracked links |
 | Reddit | Listening only | Nothing to post. The radar reads what dog owners say about gifts | None |
 
 Installing an app (Google and YouTube, Pinterest, Shopify Forms) needs
@@ -150,7 +155,7 @@ comment prompt, a series and a source of buyers' own words:
 
 | Chat question | Series and comment prompt |
 |---|---|
-| "Who's your dog?" | "Comment your dog's name" (the comment loop, POSITIONING 6) |
+| "Who's your dog?" | "Comment your dog's name" (the comment loop, the 12 Oct plan) |
 | "Who does [dog] love most?" | "Send this to the person your dog loves most" |
 | "What does [dog] do when [person] comes home?" | "What does your dog do when you come home?" |
 | "Where's [dog]'s spot when [person]'s around?" | "Whose side of the bed is it now?" |
@@ -382,7 +387,7 @@ terms, being the leader means four things:
 |---|---|---|
 | 1. Prove one repeatable content-to-order path in the US | Now to 10 Dec | At least one creative family brings orders again and again, attributed in Shopify |
 | 2. $10,000 a month from occasions and evergreen search | Jan to May 2027 | Two calendar months at $10,000 with positive contribution |
-| 3. New markets | After stage 2 | Evidence of demand from outside the US (Instagram's audience by country, buyers asking for shipping, search demand), and Printful printing locally in that market. Printful has a facility in Birmingham for the UK (POSITIONING 6); check any other market in Printful before proposing it. **Changing markets is Krish's decision** (HANDOFF rule 2) |
+| 3. New markets | After stage 2 | Evidence of demand from outside the US (Instagram's audience by country, buyers asking for shipping, search demand), and Printful printing locally in that market. Printful has a facility in Birmingham for the UK (the 12 Oct plan); check any other market in Printful before proposing it. **Changing markets is Krish's decision** (HANDOFF rule 2) |
 
 **The moat to test: the share loop.** If each order brings visitors who also
 order (through the share card, the recipient and sends), growth compounds
@@ -395,11 +400,11 @@ path for it to a heartside build session.
 
 | Belief | Confidence | Evidence | What changes it |
 |---|---|---|---|
-| Instagram and Facebook reach US viewers from a London account | Medium | POSITIONING 6 | After 10 Reels, Instagram's top audience country. If the UK is more than half, the report puts the choice to Krish |
-| Gifted creators post | Low | POSITIONING 6: surveys say under half do | Pass mark: 8 of 20 post within two weeks of delivery |
+| Instagram and Facebook reach US viewers from a London account | Medium | the 12 Oct plan | After 10 Reels, Instagram's top audience country. If the UK is more than half, the report puts the choice to Krish |
+| Gifted creators post | Low | the 12 Oct plan: surveys say under half do | Pass mark: 8 of 20 post within two weeks of delivery |
 | The chat converts inside the Instagram app | Unknown until launch | V3 11 | Chat starts to carts over the first 200 chat starts |
 | Several gifts per order lift the basket | Unknown | V3 4.4 | The multi-gift rate over the first 30 orders |
-| $10,000 by 10 Dec is reachable with little paid | Low to medium | POSITIONING 6 checkpoints | Missing 15 orders by 1 Nov: the canon says put money behind the best creator post, with Krish's yes |
+| $10,000 by 10 Dec is reachable with little paid | Low to medium | the 12 Oct plan checkpoints | Missing 15 orders by 1 Nov: the canon says put money behind the best creator post, with Krish's yes |
 | The human check keeps up | Unknown | HANDOFF rule 9 | Orders waiting to print, and Krish's time per order, once orders pass 5 a day |
 
 The Sunday report updates this table with what the week showed.

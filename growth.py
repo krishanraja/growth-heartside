@@ -115,7 +115,8 @@ HANDOVER = re.compile(r'^(?:[A-Z0-9]+-)*HANDOVER-(\d{4}-\d{2}-\d{2})[\w-]*\.md$'
 
 # The sections of heartside's canon that the RULES below were written from,
 # with their fingerprint at heartside commit 1028556 (14 Oct 2026); V3 2 re-read
-# at 0f345a7 (21 Oct 2026, the dog's own voice on the gifts). If any
+# at 0f345a7 (21 Oct 2026, the dog's own voice on the gifts); HANDOFF 2 and
+# POSITIONING 3 re-read at 87c60af (21 Oct 2026, both docs rewritten for v3). If any
 # section changes, or stops being canon, no pack passes until a person reads
 # the new words and updates RULES and RULES_BASIS in an interactive session.
 RULES_SOURCES = (
@@ -127,8 +128,8 @@ RULES_SOURCES = (
 RULES_BASIS = {
     'docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ': 'e9207867e2acd138',
     'docs/V3-GIFTS-FROM-YOUR-DOG.md ### 4.6 ': 'f4a6bd4ab5ce2c91',
-    'docs/HANDOFF.md ## 2. ': '7aa03e172d93daa7',
-    'docs/POSITIONING.md ## 3. ': 'c102e12c77cb178f',
+    'docs/HANDOFF.md ## 2. ': 'da2c887c9b21a96a',
+    'docs/POSITIONING.md ## 3. ': '889e30e22d4cb248',
 }
 
 # ---------------------------------------------------------------------------
@@ -151,6 +152,8 @@ RETIRED = [  # POSITIONING 3 and V3 2, 3
     # third-person lines no longer print, so showing them as a gift's words misstates the product
     (re.compile(r"waits at the door for you|steals your side of the bed|lives for our morning walks|your shadow, always|always happy to see you|likes any time with you best", re.I),
      'quotes a retired third-person gift line: gifts now speak as the dog ("I took your side of the bed. Not sorry.")'),
+    # POSITIONING 3 (21 Oct): the one-line offer for the retired v2 range
+    (re.compile(r'posters?, ornaments? (?:and|&) pillows?', re.I), 'the retired one-line offer: Heartside now sells a mug, a blanket, a framed print and an ornament from the dog'),
 ]
 FAKE_PROOF = [  # HANDOFF 2.3, V3 2
     (re.compile(r'sold out|only \d+ left|selling fast|hurry|last chance|limited time|ends (?:tonight|soon|today)|while (?:supplies|stocks?) last|countdown', re.I),
@@ -844,6 +847,7 @@ def self_test():
     t('the not-X-but-Y turn is refused', bad("It's not a mug, it's a love letter", "it's not X"))
     t('"written by your dog" is refused', bad('Gifts written by your dog', 'retired'))
     t('a retired third-person gift line is refused', bad('On the mug: "Steals your side of the bed."', 'third-person'))
+    t('the retired one-line offer is refused', bad('Personalized posters, ornaments and pillows made from their photo', 'one-line offer'))
     t("the dog's own voice passes", not bad('On the mug: "I took your side of the bed. Not sorry." Love, Kuku', 'third-person'))
     t('"Your dog has notes" asks Krish', bad('Your dog has notes.', 'ask Krish'))
     t('the handle is fine', not bad('Follow @yourdoghasnotes', 'ask Krish'))

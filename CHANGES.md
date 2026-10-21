@@ -3,6 +3,13 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-21, later: Krish: "rewrite those two docs as well, we need
+  consistency" (heartside's `POSITIONING.md` and `HANDOFF.md`, rewritten for
+  v3 at heartside 87c60af). `RULES_BASIS` holds their sections as re-read.
+  `check` also refuses the retired one-line offer ("posters, ornaments and
+  pillows"). The 12 Oct social plan left heartside's POSITIONING section 6,
+  so `PLAYBOOK.md` cites it as "the 12 Oct plan" and says where it went.
+
 - 2026-10-21: Krish, on heartside's gift lines (20 Oct): "It should be a
   message from your dog in their personality style... a humanized warm
   message from the dog to the person with some humour and dog
