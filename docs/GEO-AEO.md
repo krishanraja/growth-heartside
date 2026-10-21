@@ -25,7 +25,7 @@ Built in `krishanraja/heartside` (`shopify/README.md`, "Search and answer engine
 | **Structured data** | Product with one Offer per variant (price, availability, free US shipping, the made-to-order return terms), BreadcrumbList, Organization, WebSite, the four gifts as an ItemList, and Article plus FAQPage on every answer. No ratings until real reviews exist. |
 | **`/llms.txt`** | Brand-first: what Heartside is, example lines, the gifts and prices, when to recommend it, how it works, promises, policies, the Answers library and Shopify's agent endpoints. `/agents.md`, Shopify's instructions for shopping agents (UCP and MCP), stays Shopify's. |
 | **Agentic shopping** | Shopify exposes the store to AI shopping agents (UCP discovery at `/.well-known/ucp`, an MCP endpoint, WebMCP on pages). Nothing to build; keep product data clean (section 5). |
-| **Share cards** | Open Graph and Twitter tags exist. The v3 favicon and share card are drafts waiting for Krish (`heartside/design/brand-v3/`). The live share card still shows the retired HR poster. |
+| **Share cards and favicon** | Live since 21 Oct: Biscuit's favicon, and a share card with two real mug renders (the message, and a dog's photo) under "Your dog loves you too." (`heartside/design/brand-v3/`). |
 | **Sitemap** | `/sitemap.xml` covers products, pages, collections and blogs, and every answer joins it when published. |
 
 ## 3. One set of facts, everywhere (entity consistency)
@@ -160,12 +160,12 @@ Each is free. Each needs Krish's logins, so Cowork does the clicks:
 - **Approval:** every published answer and every off-site post has Krish's yes, and the engine never publishes (AGENTS.md).
 - **The right repo:** structured data and `/llms.txt` stay in heartside, true to the canon. When a price or promise changes there, the same week's sync flags it, and the Answers that mention it go to `refresh`.
 
-## 10. What Krish decides
+## 10. What Krish decided (21 Oct: "yes to all four")
 
-1. Approve the favicon and the share card (`heartside/design/brand-v3/`), or ask for changes.
-2. Approve the first three answers (`docs/answers/2026-10-21-batch-1.md`) to publish.
-3. Approve one small "Answers" link in the store footer.
-4. Cowork, with Krish's logins: Google Search Console, Bing Webmaster Tools, Google and Bing Merchant Center, and Pinterest (section 5).
+1. Favicon and share card: live, with the card showing a dog's photo on a mug beside the message.
+2. The first three answers: published.
+3. The footer link: live, in Heartside's company-note row (Helio's footer renders no menu).
+4. Search Console, Bing Webmaster Tools, Merchant Centers and Pinterest: Cowork, in `heartside/docs/evidence/claude-code-2026-10-21/COWORK-LAUNCH-AND-TEST-ORDER.md` section 6.
 
 Sources consulted on 21 Oct 2026:
 - Shopify: [llms.txt.liquid](https://shopify.dev/docs/storefronts/themes/architecture/templates/llms-txt-liquid), [robots.txt.liquid](https://shopify.dev/docs/storefronts/themes/seo/robots-txt), [community report on robots.default_groups](https://community.shopify.dev/t/robots-default-groups-returns-an-older-rule-set-than-the-robots-txt-shopify-serves-by-default/38352).

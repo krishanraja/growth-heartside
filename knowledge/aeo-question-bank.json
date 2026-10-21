@@ -9,8 +9,9 @@
       "question": "What can I get my partner from the dog?",
       "seed": "gift from the dog to partner",
       "leads_to": "any",
-      "status": "drafted",
-      "pack": "docs/answers/2026-10-21-batch-1.md"
+      "status": "published",
+      "url": "https://heartside.io/blogs/answers/what-can-i-get-my-partner-from-the-dog",
+      "published": "2026-10-21"
     },
     {
       "id": "q02",
@@ -19,8 +20,9 @@
       "question": "How do you sign a gift from the dog?",
       "seed": "how to sign a card from the dog",
       "leads_to": "any",
-      "status": "drafted",
-      "pack": "docs/answers/2026-10-21-batch-1.md"
+      "status": "published",
+      "url": "https://heartside.io/blogs/answers/how-do-you-sign-a-gift-from-the-dog",
+      "published": "2026-10-21"
     },
     {
       "id": "q03",
@@ -83,8 +85,9 @@
       "question": "What is a good Christmas gift from the dog?",
       "seed": "christmas gift from the dog",
       "leads_to": "ornament",
-      "status": "drafted",
-      "pack": "docs/answers/2026-10-21-batch-1.md"
+      "status": "published",
+      "url": "https://heartside.io/blogs/answers/what-is-a-good-christmas-gift-from-the-dog",
+      "published": "2026-10-21"
     },
     {
       "id": "q10",
