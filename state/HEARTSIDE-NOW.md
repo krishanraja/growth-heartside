@@ -1,6 +1,6 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `eda5b2accf` on 2026-10-21T13:52:21+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `64cc3f5a5d` on 2026-10-21T18:41:59+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
 
 ## Canon changed since the last sync
@@ -8,8 +8,6 @@ Rewritten when a sync finds heartside, its open pull requests or the store chang
 Read these again before drafting anything:
 
 - changed: `docs/HANDOFF.md`
-- changed: `docs/POSITIONING.md`
-- changed: `docs/V3-GIFTS-FROM-YOUR-DOG.md`
 - changed: `shopify/README.md`
 
 ## The canon, in heartside's order
@@ -35,6 +33,15 @@ Read these again before drafting anything:
 
 ## Recent commits on main
 
+- `64cc3f5a5d` 2026-10-21 Merge pull request #43 from krishanraja/claude/jolly-planck-5mf1bi
+- `39698070d7` 2026-10-21 Cowork prompt for the first mock order; HANDOFF points to it
+- `3add64a2bd` 2026-10-21 Merge pull request #42 from krishanraja/claude/jolly-planck-5mf1bi
+- `b343580e55` 2026-10-21 HANDOFF: one-screen homepage and gift page, hidden answers on orders, deploy from main
+- `ba42117031` 2026-10-21 Merge pull request #41 from krishanraja/claude/jolly-planck-5mf1bi
+- `dee0513833` 2026-10-21 Merge remote-tracking branch 'origin/main' into claude/jolly-planck-5mf1bi
+- `5440649eb9` 2026-10-21 Hidden chat answers reach the order again
+- `895bcdf343` 2026-10-21 Gift product page: one screen, no scroll, radical simplicity
+- `74f8e90f1b` 2026-10-21 Homepage fits one screen with no scroll on every device; footer signup can be switched off
 - `eda5b2accf` 2026-10-21 Merge pull request #40 from krishanraja/claude/festive-feynman-i7lvff
 - `99f1c8cc7d` 2026-10-21 Cowork launch prompt: today's live site work, share-card cache refresh, search listings in the job and report
 - `b9787b664f` 2026-10-21 Merge pull request #39 from krishanraja/claude/festive-feynman-i7lvff
