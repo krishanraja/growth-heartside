@@ -3,6 +3,18 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-21: Krish, on heartside's gift lines (20 Oct): "It should be a
+  message from your dog in their personality style... a humanized warm
+  message from the dog to the person with some humour and dog
+  anthropomorphisms." Then, asked whether this repo knew: "yes, do both and
+  merge to main". Heartside's V3 section 2 changed, which stopped every pack.
+  `RULES_BASIS` now holds V3 2 as read at heartside 0f345a7. `check` refuses
+  the retired third-person gift lines ("Steals your side of the bed.") in any
+  public copy, with two new self-tests. AGENTS.md rule 5, the proposition in
+  `knowledge/COPY-DOCTRINE.md` and the Biscuit's-interview script in
+  `PLAYBOOK.md` now use the dog's own voice. Schedules, `automations.json`
+  and the jobs are unchanged.
+
 - 2026-10-19: Krish, giving "The Copywriting, Offers and Demand Corpus":
   "all of these growth engines need to be imbued with this knowledge". Both
   uploads are preserved byte for byte in `knowledge/` and in
