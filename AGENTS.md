@@ -214,6 +214,7 @@ does by hand (rule 1).
 | Every day 06:30 | Radar | `radar` | `jobs/radar.md` |
 | Every day 09:00 | The day's pack | `daily` | `jobs/daily-pack.md` |
 | Tuesday 07:00 | Creators | `partners` | `jobs/creators.md` |
+| Wednesday 07:30 | The Answers library (two drafts for Krish, `docs/GEO-AEO.md`) | `answers` | `jobs/answers.md` |
 | Saturday 07:00 | The store and search | `conversion` | `jobs/store.md` |
 | Sunday 07:00 | The weekly report | `report` | `jobs/report.md` |
 

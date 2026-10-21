@@ -99,7 +99,7 @@ BASE = os.environ.get('CONTROL_CENTER_URL', 'https://controlcenter.krishraja.com
 UA = {'User-Agent': 'growth-heartside (+https://github.com/krishanraja/growth-heartside)'}
 LOCAL = os.path.join(HERE, 'local')
 
-KINDS = ('daily', 'radar', 'numbers', 'partners', 'conversion', 'report')
+KINDS = ('daily', 'radar', 'numbers', 'partners', 'conversion', 'report', 'answers')
 PLATFORMS = ('instagram', 'facebook', 'tiktok', 'pinterest', 'youtube', 'google', 'email', 'store',
              'reddit', 'creator', 'other')
 

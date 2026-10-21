@@ -1,5 +1,5 @@
 {
-  "_about": "Seven canonical jobs, New York time. GitHub Actions executes a persistent draft-only fallback every 15 minutes and honors these schedules with DST. Connected authoring sessions can follow the richer job prompts. No social publishing, paid generation or Control Centre integration is enabled.",
+  "_about": "Eight canonical jobs, New York time. GitHub Actions executes a persistent draft-only fallback every 15 minutes and honors these schedules with DST. Connected authoring sessions can follow the richer job prompts. No social publishing, paid generation or Control Centre integration is enabled.",
   "timezone": "America/New_York",
   "run_in": "this local project (not a new worktree), so every run shares local/ (the sync, the packs, the creative record and the creator list)",
   "access": "network on (github.com, raw.githubusercontent.com, heartside.io and the channels); the signed-in browser when available",
@@ -46,6 +46,12 @@
       "schedule": "RRULE:FREQ=WEEKLY;BYDAY=SU;BYHOUR=7;BYMINUTE=0",
       "job": "jobs/report.md",
       "prompt": "Run jobs/report.md as AGENTS.md says."
+    },
+    {
+      "name": "Heartside growth: answers",
+      "schedule": "RRULE:FREQ=WEEKLY;BYDAY=WE;BYHOUR=7;BYMINUTE=30",
+      "job": "jobs/answers.md",
+      "prompt": "Run jobs/answers.md as AGENTS.md says."
     }
   ]
 }

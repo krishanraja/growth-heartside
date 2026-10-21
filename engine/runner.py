@@ -8,6 +8,7 @@ from contextlib import contextmanager, closing
 import datetime as dt
 import html
 import json
+import re
 import os
 from pathlib import Path
 import urllib.parse
@@ -105,8 +106,7 @@ def evidence_pack(state, day, kind, headline, items):
             'heartside_sha': state['sha'], 'headline': headline, 'items': items}
 
 
-def demand():
-    query = 'personalized dog gifts'
+def demand(query='personalized dog gifts'):
     url = 'https://suggestqueries.google.com/complete/search?' + urllib.parse.urlencode({'client': 'firefox', 'q': query})
     try:
         request = urllib.request.Request(url, headers={'User-Agent': 'HeartsideGrowth/1.0'})
@@ -161,6 +161,16 @@ def run_job(root, growth, job, day):
                 {'platform': 'other', 'target_name': 'Product readiness', 'target_url': 'https://github.com/krishanraja/heartside/pull/13',
                  'text': json.dumps(ready, indent=2) + '\nProduct fixes belong in heartside. No store setting was changed.'}])
             result = {'ready_gifts': sum(bool(o['ready']) for o in ready), 'canonical_gifts': len(ready)}
+        elif job == 'answers':
+            # The hosted runner has no writer: it briefs the next two questions; an authoring session drafts them.
+            bank = json.loads((Path(root) / 'knowledge/aeo-question-bank.json').read_text())
+            nxt = sorted((q for q in bank['questions'] if q.get('status') in ('todo', 'refresh')), key=lambda q: (q['status'] != 'refresh', q['priority']))[:2]
+            items = [{'platform': 'store', 'target_name': 'Answers library: ' + q['id'],
+                      'target_url': 'https://heartside.io/blogs/answers/' + re.sub(r'[^a-z0-9]+', '-', q['question'].lower()).strip('-'),
+                      'why': 'Next ' + q['status'] + ' question in tier ' + str(q['tier']) + ' (docs/GEO-AEO.md section 4).',
+                      'text': 'Title: ' + q['question'] + '\nBrief: draft to docs/GEO-AEO.md section 4, leading to ' + q['leads_to'] + '.\n' + demand(q['seed'])} for q in nxt]
+            pack = evidence_pack(state, day, 'answers', 'Answers library: the next two questions to draft', items)
+            result = {'questions': [q['id'] for q in nxt], 'published': 0}
         elif job == 'creators':
             pack = evidence_pack(state, day, 'partners', 'Creator research handoff, no automated outreach', [
                 {'platform': 'other', 'target_name': 'Creator evidence boundary',

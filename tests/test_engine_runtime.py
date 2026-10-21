@@ -164,7 +164,7 @@ class RuntimeTests(unittest.TestCase):
             self.assertEqual(growth.check_pack(pack), [])
         self.assertEqual(len(experiments), 28)
 
-    def test_scheduling_uses_new_york_dst_and_seven_declared_jobs(self):
+    def test_scheduling_uses_new_york_dst_and_eight_declared_jobs(self):
         config = json.loads((ROOT/'automations.json').read_text())
         before = runner.due_jobs(config, dt.datetime(2026,10,17,12,59,tzinfo=dt.timezone.utc))
         after = runner.due_jobs(config, dt.datetime(2026,10,17,13,0,tzinfo=dt.timezone.utc))
@@ -173,7 +173,7 @@ class RuntimeTests(unittest.TestCase):
         winter = runner.due_jobs(config, dt.datetime(2026,11,3,14,0,tzinfo=dt.timezone.utc))
         self.assertIn(('daily-pack','2026-11-03'), winter)
         self.assertIn(('creators','2026-11-03'), winter)
-        self.assertEqual(len(config['automations']), 7)
+        self.assertEqual(len(config['automations']), 8)
 
     def test_run_failure_is_retryable_and_completed_jobs_do_not_repeat(self):
         (self.root / 'automations.json').write_text((ROOT/'automations.json').read_text())
