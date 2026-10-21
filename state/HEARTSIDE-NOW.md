@@ -1,16 +1,16 @@
 # Heartside now
 
-Read from `krishanraja/heartside` at commit `87c60af2c8` on 2026-10-21T10:26:55+00:00 UTC by `python3 growth.py sync`.
+Read from `krishanraja/heartside` at commit `eda5b2accf` on 2026-10-21T13:52:21+00:00 UTC by `python3 growth.py sync`.
 Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside's repository is the source of truth; this is a reading of it.
 
 ## Canon changed since the last sync
 
 Read these again before drafting anything:
 
-- changed: `README.md`
 - changed: `docs/HANDOFF.md`
 - changed: `docs/POSITIONING.md`
-- changed: `docs/SYNC.md`
+- changed: `docs/V3-GIFTS-FROM-YOUR-DOG.md`
+- changed: `shopify/README.md`
 
 ## The canon, in heartside's order
 
@@ -35,6 +35,19 @@ Read these again before drafting anything:
 
 ## Recent commits on main
 
+- `eda5b2accf` 2026-10-21 Merge pull request #40 from krishanraja/claude/festive-feynman-i7lvff
+- `99f1c8cc7d` 2026-10-21 Cowork launch prompt: today's live site work, share-card cache refresh, search listings in the job and report
+- `b9787b664f` 2026-10-21 Merge pull request #39 from krishanraja/claude/festive-feynman-i7lvff
+- `b96c44d212` 2026-10-21 Footer Answers link in the company-note row; Cowork search-listing steps
+- `a814b1b5eb` 2026-10-21 Merge pull request #38 from krishanraja/claude/festive-feynman-i7lvff
+- `e5a0af212d` 2026-10-21 Favicon and v3 share card go live: theme push gains a favicon option
+- `3c3f346dbf` 2026-10-21 Merge pull request #37 from krishanraja/claude/festive-feynman-i7lvff
+- `126c6ce352` 2026-10-21 Answers button uses the growth engine's tracking params
+- `89519a8a36` 2026-10-21 Search and answer engines: structured data, brand-first llms.txt, Answers template; favicon and share-card drafts
+- `684a74835b` 2026-10-21 Merge pull request #36 from krishanraja/claude/festive-feynman-i7lvff
+- `745adfff36` 2026-10-21 HANDOFF: renumber work left and open questions
+- `1333330b7b` 2026-10-21 Cowork launch-and-test-order handoff; docs record the new product images
+- `cef09ae41c` 2026-10-21 Product images in the dog's own voice: mug note faces and the other three gifts
 - `87c60af2c8` 2026-10-21 Merge pull request #35 from krishanraja/claude/festive-feynman-i7lvff
 - `e822b23172` 2026-10-21 Rewrite POSITIONING and HANDOFF for v3 and the dog's own voice
 - `0f345a77b2` 2026-10-21 Merge pull request #34 from krishanraja/claude/festive-feynman-i7lvff
@@ -46,7 +59,6 @@ Read these again before drafting anything:
 
 ## Latest decisions (`docs/V3-GIFTS-FROM-YOUR-DOG.md`, decision log)
 
-- 2026-10-13: The Gemini key is in Krish's n8n as "Google Gemini(PaLM) - Heartside"; the AI runs through n8n webhooks. Sample order #1001 (the old HR-ring ornament) refunded by Krish; he reorders once the v3 page and products are live.
 - 2026-10-13: Krish: "Build the two n8n webhooks and the site against section 11, switch everything on and merge everything to main." Built: the two webhooks are live in n8n (`n8n/README.md`), and the chat is in the theme as `hs3-chat` on hidden templates `?view=gifts` and `?view=landing` (`shopify/README.md`, v3). The live homepage is unchanged: the four gift products don't exist in Shopify yet, and section 7 keeps publishing for Sunday.
 - 2026-10-14: Mug direction A chosen ("A"): the dog as a large cut-out on the outward face, the note on the drinker's face in Fraunces at 16pt or larger, and every preview on real product photos.
 - 2026-10-15: Mug v3 approved; Shopify mug images replaced with two real-photo images ("yes to both").
@@ -54,3 +66,4 @@ Read these again before drafting anything:
 - 2026-10-15: Every-gift-as-a-letter rejected ("sounds shit").
 - 2026-10-15: Krish asked for "10X personalized delight" from the first moment, using the AI edge and the breed corpus. Open.
 - 2026-10-20: Krish, on a cart showing "Understands every word. Pretends he doesn't.": "It should be a message from your dog in their personality style... capture their demeanour, cross reference the corpus, and create literally a humanized warm message from the dog to the person with some humour and dog anthropomorphisms. Make sure all products create a warm message." So, on every gift: I, me and my are the dog, you is the person, never he, she or the dog's name, never the person's name, no exclamation marks, no "Dear" (the 15 Oct letter stays rejected; "Love, [dog]" is the only sign-off). Every scripted chip line was rewritten in that voice ("I took your side of the bed. Not sorry."). Compose now runs for every buyer, not only after a typed answer, so the AI writes all four lines as one message; the scripted lines show first and are the fallback. The chat has an optional "Breed, if you know it" field on step 1 (no new step); an exact corpus match sends its archetype to the AI as a light tone signal, never shown. This replaces the 13 Oct "no I" rule and the 15 Oct "no breed question yet".
+- 2026-10-21: Krish: "yes, re-render the product images in the dog's voice". Done the same day:

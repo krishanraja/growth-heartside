@@ -1,20 +1,20 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "87c60af2c8620afad9cace80ac3593b817364089",
- "synced_at": "2026-10-21T10:26:55+00:00",
- "previous_sha": "0f345a77b259fe8214b662a7e81ab613c45231e6",
+ "sha": "eda5b2accf2803ded94bad88d7e99d43e06c64c8",
+ "synced_at": "2026-10-21T13:52:21+00:00",
+ "previous_sha": "87c60af2c8620afad9cace80ac3593b817364089",
  "canon_from_readme": true,
  "handover": "docs/HANDOVER-2026-10-17.md",
  "canon": {
-  "docs/V3-GIFTS-FROM-YOUR-DOG.md": "e9e13b93b82de3c7",
-  "docs/POSITIONING.md": "c4f06f3931bc06c8",
-  "docs/HANDOFF.md": "94d0942679edc343",
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md": "bc436e43d3e6ebd8",
+  "docs/POSITIONING.md": "29265d86e142088b",
+  "docs/HANDOFF.md": "21fa3748d356a6c4",
   "docs/COWORK-HANDOVER-2026-10-15.md": "5a37f967d84381bd",
   "docs/HANDOVER-2026-10-17.md": "e472111839c5ee3f",
   "docs/SYNC.md": "704f3c2d78e1ba5d",
   "README.md": "46798f215b5ac3bc",
   "design/BRAND-SYSTEM.md": "8f1841f20350755e",
-  "shopify/README.md": "95ed40e266f2c488"
+  "shopify/README.md": "b0ddff2b2ae279eb"
  },
  "rules": {
   "docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ": "e9207867e2acd138",
@@ -24,14 +24,79 @@
  },
  "rules_ok": true,
  "changed_since_last_sync": [
-  "README.md",
   "docs/HANDOFF.md",
   "docs/POSITIONING.md",
-  "docs/SYNC.md"
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md",
+  "shopify/README.md"
  ],
  "canon_added": [],
  "canon_removed": [],
  "commits": [
+  {
+   "sha": "eda5b2accf",
+   "date": "2026-10-21T13:24:38Z",
+   "subject": "Merge pull request #40 from krishanraja/claude/festive-feynman-i7lvff"
+  },
+  {
+   "sha": "99f1c8cc7d",
+   "date": "2026-10-21T13:24:22Z",
+   "subject": "Cowork launch prompt: today's live site work, share-card cache refresh, search listings in the job and report"
+  },
+  {
+   "sha": "b9787b664f",
+   "date": "2026-10-21T13:17:09Z",
+   "subject": "Merge pull request #39 from krishanraja/claude/festive-feynman-i7lvff"
+  },
+  {
+   "sha": "b96c44d212",
+   "date": "2026-10-21T13:16:47Z",
+   "subject": "Footer Answers link in the company-note row; Cowork search-listing steps"
+  },
+  {
+   "sha": "a814b1b5eb",
+   "date": "2026-10-21T13:12:34Z",
+   "subject": "Merge pull request #38 from krishanraja/claude/festive-feynman-i7lvff"
+  },
+  {
+   "sha": "e5a0af212d",
+   "date": "2026-10-21T13:12:17Z",
+   "subject": "Favicon and v3 share card go live: theme push gains a favicon option"
+  },
+  {
+   "sha": "3c3f346dbf",
+   "date": "2026-10-21T12:57:41Z",
+   "subject": "Merge pull request #37 from krishanraja/claude/festive-feynman-i7lvff"
+  },
+  {
+   "sha": "126c6ce352",
+   "date": "2026-10-21T12:57:11Z",
+   "subject": "Answers button uses the growth engine's tracking params"
+  },
+  {
+   "sha": "89519a8a36",
+   "date": "2026-10-21T12:52:34Z",
+   "subject": "Search and answer engines: structured data, brand-first llms.txt, Answers template; favicon and share-card drafts"
+  },
+  {
+   "sha": "684a74835b",
+   "date": "2026-10-21T10:40:00Z",
+   "subject": "Merge pull request #36 from krishanraja/claude/festive-feynman-i7lvff"
+  },
+  {
+   "sha": "745adfff36",
+   "date": "2026-10-21T10:39:43Z",
+   "subject": "HANDOFF: renumber work left and open questions"
+  },
+  {
+   "sha": "1333330b7b",
+   "date": "2026-10-21T10:39:33Z",
+   "subject": "Cowork launch-and-test-order handoff; docs record the new product images"
+  },
+  {
+   "sha": "cef09ae41c",
+   "date": "2026-10-21T10:36:48Z",
+   "subject": "Product images in the dog's own voice: mug note faces and the other three gifts"
+  },
   {
    "sha": "87c60af2c8",
    "date": "2026-10-21T10:25:10Z",
