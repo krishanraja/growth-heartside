@@ -11,8 +11,8 @@ doing. Every other job starts with the same command.
    - the commit it read (`heartside_sha`);
    - commits since the last sync, and open pull requests (work in flight);
    - heartside's own `NOW.md`, read live, printed when it is fresh (no
-     commit other than a `docs(steward):` one after the latest commit that
-     touched it). Unreadable or stale prints "status: unknown" with the
+     product commit, automation and merges aside, after the latest commit
+     that touched it). Unreadable or stale prints "status: unknown" with the
      reason;
    - the canon, in the order heartside's README tells every session to read
      it, plus the newest dated handover in heartside's `docs/`, and which

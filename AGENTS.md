@@ -96,8 +96,9 @@ address of Krish's in anything.
    the commit, what changed, open pull requests, the canon its README tells
    every session to read plus the newest dated handover in its `docs/`, and
    what the live store sells. It also reads heartside's own `NOW.md` live
-   and prints it when it is fresh: no commit other than a `docs(steward):`
-   one landed on heartside's `main` after the latest commit that touched it.
+   and prints it when it is fresh: no product commit (automation such as
+   `docs(steward):` and merges do not count) landed on heartside's `main`
+   after the latest commit that touched it.
    Unreadable or stale means heartside's status is unknown: say so, and
    never fill the gap from an older reading (`python3 growth.py now` reads
    it again). Read what the sync printed. If it lists canon that changed

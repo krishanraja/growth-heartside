@@ -23,8 +23,9 @@ packs apart from makeyourmindup's (see `post` below).
 
     python3 growth.py now
         Heartside's NOW.md, read live from main, when it is fresh. Unknown
-        when it cannot be read, or when a commit other than a
-        `docs(steward):` one landed after the latest commit that touched it.
+        when it cannot be read, or when a product commit (not automation such as
+        docs(steward) or a heartbeat, and not a merge) landed after the latest
+        commit that touched it.
 
     python3 growth.py canon [--full]
         The canon documents at the synced commit, in the order heartside's
@@ -345,7 +346,9 @@ STATE_DIR = os.path.join(LOCAL, 'state')
 # goes stale, so a sync removes any it finds (Ruling, Krish, 2026-10-22).
 RETIRED_COPY = 'HEARTSIDE-NOW.md'
 NOW_FILE = 'NOW.md'
-STEWARD = 'docs(steward):'
+# Automation never makes NOW.md stale; merge commits do not count either. The same
+# rule as ai-harness scripts/steward/validate.mjs and scripts/closeout/check.mjs.
+AUTOMATION = re.compile(r'^(docs\((steward|harness|canon)\)|chore\((heartbeat|brain)\)):')
 
 
 def load_state():
@@ -359,14 +362,15 @@ def load_state():
 
 def now_verdict(commits, now_commit):
     """Is heartside's NOW.md fresh? `commits` is main's history, newest first, as {'sha', 'message'}.
-    Fresh when no commit other than a docs(steward): one landed after the latest commit that touched
-    NOW.md. Returns (status, later): status is fresh, stale or unknown (the NOW.md commit is not in
-    the history read and nothing in it proves staleness); later is the non-steward commits after it."""
+    Fresh when no product commit landed after the latest commit that touched NOW.md: automation
+    commits and merge commits do not count. Returns (status, later): status is fresh, stale or
+    unknown (the NOW.md commit is not in the history read and nothing in it proves staleness);
+    later is the product commits after it."""
     later = []
     for c in commits:
         if c['sha'] == now_commit:
             return ('stale' if later else 'fresh'), later
-        if not (c.get('message') or '').startswith(STEWARD):
+        if not AUTOMATION.match(c.get('message') or '') and c.get('parents', 1) < 2:
             later.append(c)
     return ('stale' if later else 'unknown'), later
 
@@ -390,7 +394,7 @@ def heartside_now(sha=None):
         history = []
         for page in (1, 2, 3):
             batch = http(f'{API}/commits?sha={sha}&per_page=100&page={page}')
-            history += [{'sha': c['sha'], 'message': c['commit']['message']} for c in batch]
+            history += [{'sha': c['sha'], 'message': c['commit']['message'], 'parents': len(c.get('parents') or [1])} for c in batch]
             if len(batch) < 100 or any(c['sha'] == out['now_commit'] for c in batch):
                 break
         status, later = now_verdict(history, out['now_commit'])
@@ -399,7 +403,7 @@ def heartside_now(sha=None):
         if status == 'fresh':
             out['text'] = text
         elif status == 'stale':
-            out['reason'] = f'{len(later)} commit(s) other than docs(steward): landed on main after {NOW_FILE} was last written'
+            out['reason'] = f'{len(later)} product commit(s) landed on main after {NOW_FILE} was last written'
         else:
             out['reason'] = f'the commit that last wrote {NOW_FILE} is not in the history read'
     except Exception as e:  # noqa: BLE001 - network, rate limits or a malformed answer all mean unknown
@@ -1003,6 +1007,7 @@ def self_test():
     t('NOW.md is fresh when only steward commits follow it', now_verdict([{'sha': 'x', 'message': 'docs(steward): log'}, steward], 'n') == ('fresh', []))
     t('NOW.md is stale when other work follows it', now_verdict([{'sha': 'x', 'message': 'Fix the mug'}, steward], 'n')[0] == 'stale')
     t('NOW.md is unknown when its commit is out of reach', now_verdict([{'sha': 'x', 'message': 'docs(steward): log'}], 'n')[0] == 'unknown')
+    t('Automation and merges never make NOW.md stale', now_verdict([{'sha': 'h', 'message': 'chore(heartbeat): record'}, {'sha': 'p', 'message': 'docs(harness): maintain repository administration'}, {'sha': 'm', 'message': 'Merge pull request #9', 'parents': 2}, steward], 'n') == ('fresh', []))
     gift = '## 3. The gift range (launch)\n\n| Gift | P | Price | x |\n|---|---|---|---|\n| **The Morning Mug** | #403 | $29 | $8 |\n| **The Tree Ornament** | #900 | $24, or $19 with another gift | $7 |'
     t('gift prices come from the canon table', canon_prices({'docs/V3.md': gift}) == [19.0, 24.0, 29.0])
     agents = open(os.path.join(HERE, 'AGENTS.md')).read()
