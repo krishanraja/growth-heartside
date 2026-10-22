@@ -234,8 +234,8 @@ your dog loves most."
 
 *Biscuit's interview.* 0:00 phone screen: "Hi! I'm Biscuit." 0:02 chips
 tapped fast: "Waits at the door". 0:05 Biscuit's follow-up: "Every day? Even
-weekends?" 0:07 the note at the top inks the dog's line ("I wait by the door.
-Weekends too. Obviously."). 0:10 the four gifts. Call
+weekends?" 0:07 the note at the top inks the dog's line ("I wait by the door for
+you, weekends too."). 0:10 the four gifts. Call
 to action: "Tell Biscuit about your dog. Link in bio."
 
 *The objection.* 0:00 on-screen question: "What if I don't know what to
