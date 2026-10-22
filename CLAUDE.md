@@ -11,5 +11,4 @@ This repository's North Star is [`docs/NORTH_STAR.md`](docs/NORTH_STAR.md): an a
 - Only Krish changes it.
 <!-- north-star:end -->
 
-Read `AGENTS.md` and follow it: it is the whole brief for this repository,
-for any agent (Codex, Claude Code or Cowork).
+@AGENTS.md
