@@ -60,6 +60,34 @@ class RuntimeTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             providers.reserve(self.db, self.request('new asset'), '1')
 
+    def prepaid(self, brief='Fictional dog at the door', credits='2.75'):
+        request = self.request(brief)
+        request.update({'provider': 'higgsfield', 'maximum_usd': '0', 'prepaid_credits': credits,
+                        'allocation': 'weekly-2026-10-22 approved by Krish'})
+        return request
+
+    def test_prepaid_credits_spend_no_new_money_and_stop_at_the_allocation(self):
+        # Ruling (Krish, 2026-10-22): prepaid credits inside an approved allocation are authorized.
+        with self.assertRaises(ValueError):
+            providers.reserve(self.db, self.prepaid())  # no allowance named
+        row = providers.reserve(self.db, self.prepaid(credits='210'), credit_allowance='212')
+        self.assertEqual((row['maximum'], row['credits_maximum']), ('0', '210'))
+        with self.assertRaises(ValueError):
+            providers.reserve(self.db, self.prepaid('A second clip', credits='210'), credit_allowance='212')
+        top_up = self.prepaid('A top-up'); top_up['maximum_usd'] = '5'
+        with self.assertRaises(ValueError):
+            providers.reserve(self.db, top_up, credit_allowance='1000')
+        with self.assertRaises(ValueError):
+            providers.reserve(self.db, {**self.prepaid('No allocation'), 'allocation': ' '}, credit_allowance='1000')
+        providers.transition(self.db, row['request_id'], 'submitted')
+        with self.assertRaises(ValueError):
+            providers.transition(self.db, row['request_id'], 'completed', {'job_id': 'j1', 'actual_usd': '0', 'observed_at': ledger.now()})
+        providers.transition(self.db, row['request_id'], 'completed', {'job_id': 'j1', 'actual_usd': '0', 'actual_credits': '2', 'observed_at': ledger.now()})
+        # The measured credits free the rest of the allocation; the USD path is untouched.
+        providers.reserve(self.db, self.prepaid('A still', credits='2.75'), credit_allowance='212')
+        with self.assertRaises(ValueError):
+            providers.reserve(self.db, self.request('Paid room'))
+
     def test_generated_media_cannot_replace_a_product_photo(self):
         row = providers.reserve(self.db, self.request(), '1')
         providers.transition(self.db, row['request_id'], 'submitted')
