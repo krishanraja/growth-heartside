@@ -1,14 +1,14 @@
 {
  "repo": "krishanraja/heartside",
- "sha": "64cc3f5a5d2c16140c004ddd143ac3c4103376a1",
- "synced_at": "2026-10-21T18:41:59+00:00",
- "previous_sha": "eda5b2accf2803ded94bad88d7e99d43e06c64c8",
+ "sha": "67101254a23e06a85361f978b12ab4e7ad34ae48",
+ "synced_at": "2026-10-22T18:35:07+00:00",
+ "previous_sha": "64cc3f5a5d2c16140c004ddd143ac3c4103376a1",
  "canon_from_readme": true,
  "handover": "docs/HANDOVER-2026-10-17.md",
  "canon": {
-  "docs/V3-GIFTS-FROM-YOUR-DOG.md": "bc436e43d3e6ebd8",
-  "docs/POSITIONING.md": "29265d86e142088b",
-  "docs/HANDOFF.md": "8a8ecc67a69c8d94",
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md": "474e40c330052a4e",
+  "docs/POSITIONING.md": "8fc88a96fbcc6e0f",
+  "docs/HANDOFF.md": "c07525c851013f21",
   "docs/COWORK-HANDOVER-2026-10-15.md": "5a37f967d84381bd",
   "docs/HANDOVER-2026-10-17.md": "e472111839c5ee3f",
   "docs/SYNC.md": "704f3c2d78e1ba5d",
@@ -25,11 +25,67 @@
  "rules_ok": true,
  "changed_since_last_sync": [
   "docs/HANDOFF.md",
-  "shopify/README.md"
+  "docs/POSITIONING.md",
+  "docs/V3-GIFTS-FROM-YOUR-DOG.md"
  ],
  "canon_added": [],
  "canon_removed": [],
  "commits": [
+  {
+   "sha": "67101254a2",
+   "date": "2026-10-22T14:32:48Z",
+   "subject": "Gift lines that sound like each dog: breed voices, 60-character lines, Claude Sonnet (#44)"
+  },
+  {
+   "sha": "66928e6e9b",
+   "date": "2026-10-22T14:26:00Z",
+   "subject": "Cowork report 2: mug at 58 px live; blanket and print print 60 characters on one row; storefront still 45 on three gifts"
+  },
+  {
+   "sha": "261e5c2e97",
+   "date": "2026-10-22T12:49:07Z",
+   "subject": "Live-ready n8n drafts: Claude reads the shared instructions; meaning line gets two backups; typed budget 5 s"
+  },
+  {
+   "sha": "17a800cd1e",
+   "date": "2026-10-22T12:41:13Z",
+   "subject": "60-character lines, Claude Sonnet for the note, mug at 58 px"
+  },
+  {
+   "sha": "ea79f117d8",
+   "date": "2026-10-22T12:31:26Z",
+   "subject": "Cowork report: 60-character lines (Line fields at 61 on all four campaigns; mug and ornament options)"
+  },
+  {
+   "sha": "7a5ebe1226",
+   "date": "2026-10-22T11:06:36Z",
+   "subject": "Cowork brief: 60-character gift lines on all four Teeinblue gifts"
+  },
+  {
+   "sha": "b2c0b128b2",
+   "date": "2026-10-22T11:01:14Z",
+   "subject": "Gift lines: one line per note may be pure personality; lab can try a longer line limit"
+  },
+  {
+   "sha": "9aa8f98c67",
+   "date": "2026-10-22T10:58:42Z",
+   "subject": "Gift lines: speech habits per corpus archetype, a voice decided first, scripted lines rewritten"
+  },
+  {
+   "sha": "fd00399475",
+   "date": "2026-10-22T10:55:57Z",
+   "subject": "Gift lines: breed-corpus voices and real sentences, not stacked fragments"
+  },
+  {
+   "sha": "14cbf98107",
+   "date": "2026-10-22T10:35:42Z",
+   "subject": "Voice lab: blind test across Gemini, OpenAI and Claude on held-out dogs"
+  },
+  {
+   "sha": "5fa90fb1eb",
+   "date": "2026-10-22T10:26:06Z",
+   "subject": "Dog-voice gift lines: craft prompt, candidate lines, clause-aware fallback, voice lab"
+  },
   {
    "sha": "64cc3f5a5d",
    "date": "2026-10-21T15:16:35Z",
@@ -124,44 +180,16 @@
    "sha": "684a74835b",
    "date": "2026-10-21T10:40:00Z",
    "subject": "Merge pull request #36 from krishanraja/claude/festive-feynman-i7lvff"
-  },
-  {
-   "sha": "745adfff36",
-   "date": "2026-10-21T10:39:43Z",
-   "subject": "HANDOFF: renumber work left and open questions"
-  },
-  {
-   "sha": "1333330b7b",
-   "date": "2026-10-21T10:39:33Z",
-   "subject": "Cowork launch-and-test-order handoff; docs record the new product images"
-  },
-  {
-   "sha": "cef09ae41c",
-   "date": "2026-10-21T10:36:48Z",
-   "subject": "Product images in the dog's own voice: mug note faces and the other three gifts"
-  },
-  {
-   "sha": "87c60af2c8",
-   "date": "2026-10-21T10:25:10Z",
-   "subject": "Merge pull request #35 from krishanraja/claude/festive-feynman-i7lvff"
-  },
-  {
-   "sha": "e822b23172",
-   "date": "2026-10-21T10:24:54Z",
-   "subject": "Rewrite POSITIONING and HANDOFF for v3 and the dog's own voice"
-  },
-  {
-   "sha": "0f345a77b2",
-   "date": "2026-10-21T10:18:06Z",
-   "subject": "Merge pull request #34 from krishanraja/claude/festive-feynman-i7lvff"
-  },
-  {
-   "sha": "8cf2ba06f6",
-   "date": "2026-10-21T10:17:53Z",
-   "subject": "Docs: the dog's own voice in V3 4.2, 5.2, 5.3, README and brand system"
   }
  ],
- "open_pulls": [],
+ "open_pulls": [
+  {
+   "number": 45,
+   "title": "Enrol in the docs steward so NOW.md keeps Heartside's status current",
+   "branch": "claude/compassionate-archimedes-c4tun1",
+   "updated": "2026-10-22T17:32:45Z"
+  }
+ ],
  "store": [
   {
    "id": 16132989059454,
