@@ -317,3 +317,9 @@ to replace the richer research possible in a connected authoring session.
 Krish keeps or kills a job from the Sunday report. Record his words with the
 date in `CHANGES.md`, then change the job file and `automations.json`
 together. `python3 growth.py --self-test` checks that they still match.
+
+<!-- krish-repo-admin:start brain=4ca70efce153 sha=0cc207a2c492 -->
+## Administer this repository
+
+Use `docs/HARNESS_CONTEXT.md` for the owning workflow, source of truth and checks. Preserve the goal and accepted decisions when a revision changes one part; explain material trade-offs. Verify the downstream result. Record corrections and observed outcomes through the existing capture path. Experimental results retain their conditions; inferred requirements remain proposals.
+<!-- krish-repo-admin:end -->
