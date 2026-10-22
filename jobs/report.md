@@ -3,8 +3,10 @@
 Kind `report`. Part 7 in `PLAYBOOK.md`. Time for Krish: about 15 minutes.
 
 1. `python3 growth.py sync`. Use the `heartside_sha` it prints. Note every
-   canon change this week, from the commits list in
-   `local/state/HEARTSIDE-NOW.md`.
+   canon change this week, read live from heartside's history
+   (https://github.com/krishanraja/heartside/commits/main), and what
+   heartside's own `NOW.md` says, from the sync's reading or
+   `python3 growth.py now`. If that status is unknown, the report says so.
 2. Read `python3 growth.py read --days 8`, `growth.py creatives list`,
    and `growth.py metrics report` with explicit dates and timezone.
    Check coverage before calling anything a full-period total. The ledger

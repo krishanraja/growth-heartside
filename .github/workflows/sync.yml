@@ -1,18 +1,18 @@
-# Keeps state/HEARTSIDE-NOW.md current with krishanraja/heartside, so anyone
-# opening this repository (Krish, Codex, Cowork) sees what heartside is doing
-# without running anything. It reads heartside and the live store, and
-# commits state/ only when the heartside commit, the canon, the rules, the
-# store or the open pull requests changed. It never touches heartside.
+# Watches krishanraja/heartside every hour. It reads heartside and the live
+# store as they are now and commits nothing: heartside's own repository is
+# the only reference for its status and plan, and any job that needs them
+# reads heartside's NOW.md live (Ruling, Krish, 2026-10-22). It never
+# touches heartside.
 #
-# If Heartside's rules changed, the run still commits the STOP notice, then
-# fails, so GitHub's failed-run email reaches the repository owner.
+# If Heartside's rules changed, or the read failed, the run fails, so
+# GitHub's failed-run email reaches the repository owner.
 name: sync with heartside
 on:
   schedule:
     - cron: '17 * * * *'
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 concurrency:
   group: sync
   cancel-in-progress: false
@@ -21,29 +21,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
-      - name: Read heartside and the store
-        id: sync
+      - name: Read heartside and the store, and check its rules
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set +e
-          python3 growth.py sync --publish --quiet
-          echo "code=$?" >> "$GITHUB_OUTPUT"
-      - name: Commit the reading if it changed
-        run: |
-          if [ -n "$(git status --porcelain state/)" ]; then
-            git config user.name "growth-heartside sync"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add state/
-            git commit -m "sync: heartside $(python3 -c "import json; print(json.load(open('state/heartside.json'))['sha'][:10])")"
-            git push
-          else
-            echo "no change"
-          fi
-      - name: Fail if Heartside's rules changed
-        if: steps.sync.outputs.code != '0'
-        run: |
-          echo "Heartside's rules changed, or the sync failed. Read state/HEARTSIDE-NOW.md."
-          exit 1
+          python3 growth.py sync --quiet || {
+            echo "Heartside's rules changed, or the sync failed. Run python3 growth.py sync and read its STOP section."
+            exit 1
+          }

@@ -3,6 +3,23 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-22: Ruling (Krish, 2026-10-22): each venture's own repository is
+  the only reference for its status and plan; nowhere else holds a copy.
+  - The engine no longer keeps a copy of heartside's state. `growth.py sync`
+    stops writing `state/HEARTSIDE-NOW.md`, `state/heartside.json` and
+    `local/state/HEARTSIDE-NOW.md` (and removes a leftover local one). It
+    prints its reading and reads heartside's own `NOW.md` live; `growth.py
+    now` reads it on its own. `NOW.md` is fresh when no commit other than a
+    `docs(steward):` one landed on heartside's `main` after the latest
+    commit that touched it. Unreadable or stale is unknown.
+  - `local/state/heartside.json` keeps only the engine's input data: the
+    commit, canon and rules fingerprints, the store and offers, which
+    `check`, `readiness`, `render` and the Control Center report need. It no
+    longer stores commits or pull requests.
+  - The hourly `sync.yml` reads and fails on a rules change, as before, but
+    commits nothing and needs only read access. The last copy is archived in
+    `docs/history/2026-10-22-HEARTSIDE-NOW.md`.
+
 - 2026-10-22: Krish approved the first weekly tool allocation and "approve"
   to letting the engine record prepaid credits as no new money (Ruling, Krish,
   2026-10-22: generation within prepaid credits, inside a weekly allocation he
@@ -101,7 +118,8 @@ Newest first. Record his words with the date, then change the job file and
   "Ensure the growth engine is always across what the main heartside
   repository is doing at any point in time". Every job starts with
   `python3 growth.py sync`. `check` refuses a pack written before a canon
-  change, and a GitHub Action rewrites `state/HEARTSIDE-NOW.md` every hour.
+  change, and a GitHub Action rewrote `state/HEARTSIDE-NOW.md` every hour
+  (retired 2026-10-22: heartside's `NOW.md` is read live instead).
 - 2026-10-14: a dedicated repository, run from Codex or Cowork. Krish: "I
   want to build an autonomous browser based growth engine that can be run
   from anywhere (codex or cowork), solely focused on getting this business

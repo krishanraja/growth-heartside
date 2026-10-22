@@ -40,7 +40,8 @@ change it.
 
 Read, in this order, before any job:
 1. this file, to the end;
-2. `local/state/HEARTSIDE-NOW.md`, written by the sync you run first (rule 2);
+2. what the sync you run first printed (rule 2), including heartside's own
+   `NOW.md`, read live;
 3. `PLAYBOOK.md`: the operating system, applied to Heartside, then `docs/ENGINE.md` for production and reporting;
 4. `BROWSER.md`: what you may and may never do in Krish's signed-in browser;
 5. the job's own file in `jobs/`.
@@ -94,9 +95,13 @@ address of Krish's in anything.
    `python3 growth.py sync`. It reads the heartside repository as it is now:
    the commit, what changed, open pull requests, the canon its README tells
    every session to read plus the newest dated handover in its `docs/`, and
-   what the live store sells. Then read
-   `local/state/HEARTSIDE-NOW.md`. If it lists canon that changed since the
-   last sync, read those files before anything else (`python3 growth.py
+   what the live store sells. It also reads heartside's own `NOW.md` live
+   and prints it when it is fresh: no commit other than a `docs(steward):`
+   one landed on heartside's `main` after the latest commit that touched it.
+   Unreadable or stale means heartside's status is unknown: say so, and
+   never fill the gap from an older reading (`python3 growth.py now` reads
+   it again). Read what the sync printed. If it lists canon that changed
+   since the last sync, read those files before anything else (`python3 growth.py
    canon --full`). Heartside's canon beats this repository, the playbook and
    the knowledge documents. Put the `heartside_sha` the sync printed on your
    pack. `check` refuses a pack if heartside's canon changed after your sync.
@@ -274,7 +279,7 @@ All on the machine that runs it, under `local/`, never committed:
 
 | Path | What it holds |
 |---|---|
-| `local/state/` | The latest sync |
+| `local/state/` | The latest sync's input data: the heartside commit, canon and rules fingerprints, the store and offers. Never heartside's status |
 | `local/packs/` | Every pack, as JSON and as readable text |
 | `local/creatives.csv` | The creative record (PLAYBOOK, "Measurement") |
 | `local/engine.sqlite3` | Creative revisions, operator-recorded status and aggregate reporting windows |
@@ -283,9 +288,13 @@ All on the machine that runs it, under `local/`, never committed:
 | `local/metrics/` | Aggregate report envelopes, never customer records |
 | `local/lists/creators.md` | The creator shortlist and each creator's step |
 
-The repository's own `state/HEARTSIDE-NOW.md` is rewritten every hour by a
-GitHub Action (`.github/workflows/sync.yml`). Anyone opening the repository
-sees what heartside is doing, without running anything.
+Nothing here holds a copy of heartside's status or plan (Ruling, Krish,
+2026-10-22: each venture's own repository is the only reference for its
+status and plan). To see what heartside is doing, read its `NOW.md` on
+GitHub, or run `python3 growth.py now`. The hourly GitHub Action
+(`.github/workflows/sync.yml`) only reads heartside and fails when its rules
+change; it commits nothing. The copy kept here until 2026-10-22 is in
+`docs/history/2026-10-22-HEARTSIDE-NOW.md`.
 
 ## Changing the engine
 
