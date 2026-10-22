@@ -50,7 +50,7 @@ Internal working line, not copy:
 
 > For someone whose dog is family, Heartside is a gift from the dog: a short
 > message in the dog's own voice to the person it loves ("I took your side of
-> the bed. Not sorry."), drawn from the buyer's own answers in a 90-second
+> the bed to keep it warm."), in that dog's own personality,, drawn from the buyer's own answers in a 90-second
 > chat with Biscuit, signed "Love, [dog]" with a paw, and checked by a person
 > before it prints.
 
