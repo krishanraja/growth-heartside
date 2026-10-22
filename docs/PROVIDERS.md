@@ -53,6 +53,37 @@ python3 growth.py provider reserve local/requests/voice.json --monthly-budget 0
 python3 growth.py provider status
 ```
 
+### Prepaid credits inside an approved allocation
+
+Ruling (Krish, 2026-10-22): generation within prepaid credits, inside a weekly
+allocation he approved, counts as authorized; publication, ad spend, top-ups
+and plan changes still need their own approval. Such a request adds two fields
+and keeps `maximum_usd` at `"0"`, because it spends no new money:
+
+```json
+{
+  "provider": "higgsfield",
+  "capability": "image",
+  "brief": "Before the door opens: a dog waiting at a front door, dog and room only",
+  "source_sha": "<synced full product SHA>",
+  "maximum_usd": "0",
+  "quote_source": "Higgsfield transactions: GPT Image 2.5 Flare at 2.75 credits",
+  "quote_observed_at": "2026-10-22T13:00:00+00:00",
+  "prepaid_credits": "2.75",
+  "allocation": "weekly-2026-10-22 approved by Krish"
+}
+```
+
+```sh
+python3 growth.py provider reserve local/requests/still.json --credit-allowance 110
+```
+
+`--credit-allowance` is the credits the allocation approved for that provider.
+Every reservation under the same allocation counts against it, using actual
+credits once a receipt records them. A prepaid receipt adds `actual_credits`.
+A request with any `maximum_usd` above zero is new money and goes through the
+USD budget as before; the prepaid path never widens it.
+
 Reservations serialize in SQLite and include all providers in the same monthly
 budget. Stable identity uses month, provider, capability, brief and source SHA;
 refreshing a quote cannot silently create a second request. Put the creative ID

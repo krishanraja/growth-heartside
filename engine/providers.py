@@ -24,6 +24,13 @@ def setup(db):
       maximum TEXT NOT NULL, actual TEXT, status TEXT NOT NULL,
       created_at TEXT NOT NULL, receipt TEXT);
     ''')
+    # Prepaid credits (Ruling, Krish, 2026-10-22): generation inside a weekly
+    # allocation he approved spends credits he already paid for, so it carries
+    # no new money but is still bounded, by that allocation's credit limit.
+    columns = {row[1] for row in db.execute('PRAGMA table_info(provider_requests)')}
+    for column in ('allocation', 'credits_maximum', 'credits_actual'):
+        if column not in columns:
+            db.execute(f'ALTER TABLE provider_requests ADD COLUMN {column} TEXT')
 
 
 def money(value):
@@ -38,10 +45,20 @@ def money(value):
     return number
 
 
-def reserve(db, request, monthly_budget='0', day=None):
+def reserve(db, request, monthly_budget='0', day=None, credit_allowance=None):
+    """Reserve one request against the USD budget, or against an approved prepaid allocation.
+
+    A prepaid request adds `prepaid_credits` and `allocation` (the approved allocation it
+    belongs to). It must carry `maximum_usd` 0: a top-up or plan change is new money and
+    goes through the USD budget instead. `credit_allowance` is the credits that allocation
+    approved for this provider; every reservation under the same allocation counts.
+    """
     setup(db)
     allowed = {'provider', 'capability', 'brief', 'source_sha', 'maximum_usd', 'quote_source', 'quote_observed_at'}
-    if set(request) != allowed or request['capability'] not in PROVIDERS.get(request['provider'], set()):
+    prepaid = {'prepaid_credits', 'allocation'}
+    keys = set(request)
+    is_prepaid = keys == allowed | prepaid
+    if (keys != allowed and not is_prepaid) or request['capability'] not in PROVIDERS.get(request['provider'], set()):
         raise ValueError('use an allowlisted provider/capability and the exact request schema')
     if not re.fullmatch(r'[a-f0-9]{40}', str(request['source_sha'])):
         raise ValueError('provider request needs the synced full product SHA')
@@ -54,6 +71,19 @@ def reserve(db, request, monthly_budget='0', day=None):
     if not str(request['quote_source']).strip():
         raise ValueError('quote source is required')
     maximum, budget = money(request['maximum_usd']), money(monthly_budget)
+    credits = allocation = None
+    if is_prepaid:
+        if maximum != 0:
+            raise ValueError('a prepaid request spends no new money; put top-ups and plan changes through the USD budget')
+        allocation = request['allocation']
+        if not isinstance(allocation, str) or not allocation.strip() or len(allocation) > 500:
+            raise ValueError('a prepaid request names the approved allocation it belongs to')
+        credits = money(request['prepaid_credits'])
+        if credits == 0:
+            raise ValueError('a prepaid request states the credits it will spend')
+        if credit_allowance is None:
+            raise ValueError('a prepaid request needs the credit allowance of its approved allocation')
+        allowance = money(credit_allowance)
     day = dt.date.fromisoformat(day) if day else stamp.date()
     month = day.strftime('%Y-%m')
     fingerprint = ledger.digest({k: request[k] for k in ('provider', 'capability', 'brief', 'source_sha')})
@@ -67,11 +97,19 @@ def reserve(db, request, monthly_budget='0', day=None):
             return dict(existing)
         rows = db.execute("SELECT maximum,actual FROM provider_requests WHERE month=? AND status!='cancelled'", (month,))
         committed = sum((money(row['actual'] if row['actual'] is not None else row['maximum']) for row in rows), Decimal(0))
-        if committed + maximum > budget:
+        # A prepaid request adds no new money, so only a USD request can exceed the USD budget.
+        if not is_prepaid and committed + maximum > budget:
             raise ValueError('configured monthly generation budget would be exceeded; no request submitted')
-        db.execute('INSERT INTO provider_requests VALUES(?,?,?,?,?,?,?,?,?,?,?,NULL)',
+        if is_prepaid:
+            spent = db.execute("SELECT credits_maximum,credits_actual FROM provider_requests WHERE allocation=? AND provider=? AND status!='cancelled'",
+                               (allocation, request['provider']))
+            used = sum((money(r['credits_actual'] if r['credits_actual'] is not None else r['credits_maximum']) for r in spent), Decimal(0))
+            if used + credits > allowance:
+                raise ValueError('the approved allocation\'s credits for this provider would be exceeded; no request submitted')
+        db.execute('INSERT INTO provider_requests(request_id,provider,capability,fingerprint,source_sha,month,currency,maximum,actual,status,created_at,receipt,allocation,credits_maximum,credits_actual) '
+                   'VALUES(?,?,?,?,?,?,?,?,?,?,?,NULL,?,?,NULL)',
                    (request_id, request['provider'], request['capability'], fingerprint, request['source_sha'], month, 'USD',
-                    str(maximum), None, 'reserved', ledger.now(),))
+                    str(maximum), None, 'reserved', ledger.now(), allocation, str(credits) if is_prepaid else None))
         db.commit()
     except BaseException:
         db.rollback()
@@ -91,15 +129,17 @@ def transition(db, request_id, status, receipt=None):
             raise ValueError('invalid transition; submitted/unknown requests must not be submitted again')
         actual = None
         if status in {'completed', 'failed'}:
-            if not isinstance(receipt, dict) or set(receipt) != {'job_id', 'actual_usd', 'observed_at'}:
-                raise ValueError('terminal receipt needs job_id, actual_usd and observed_at')
+            expected = {'job_id', 'actual_usd', 'observed_at'} | ({'actual_credits'} if row['allocation'] else set())
+            if not isinstance(receipt, dict) or set(receipt) != expected:
+                raise ValueError('terminal receipt needs job_id, actual_usd and observed_at, plus actual_credits for a prepaid request')
             observed = dt.datetime.fromisoformat(receipt['observed_at'].replace('Z', '+00:00'))
             if not observed.tzinfo or not str(receipt['job_id']).strip():
                 raise ValueError('receipt needs a real job ID and offset timestamp')
             actual = str(money(receipt['actual_usd']))
             # Record overruns honestly; a higher actual blocks subsequent reservations.
-        changed = db.execute('UPDATE provider_requests SET status=?,actual=?,receipt=? WHERE request_id=? AND status=?',
-                   (status, actual, ledger.canonical(receipt) if receipt else None, request_id, row['status']))
+        credits_actual = str(money(receipt['actual_credits'])) if actual is not None and row['allocation'] else None
+        changed = db.execute('UPDATE provider_requests SET status=?,actual=?,receipt=?,credits_actual=? WHERE request_id=? AND status=?',
+                   (status, actual, ledger.canonical(receipt) if receipt else None, credits_actual, request_id, row['status']))
         if changed.rowcount != 1:
             raise ValueError('provider request changed concurrently; no duplicate submission is permitted')
 

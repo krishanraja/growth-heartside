@@ -25,7 +25,7 @@ def add_commands(sub):
     commands.add_parser('decisions')
     provider = sub.add_parser('provider'); commands = provider.add_subparsers(dest='action', required=True)
     commands.add_parser('status')
-    reserve = commands.add_parser('reserve'); reserve.add_argument('file'); reserve.add_argument('--monthly-budget', default='0')
+    reserve = commands.add_parser('reserve'); reserve.add_argument('file'); reserve.add_argument('--monthly-budget', default='0'); reserve.add_argument('--credit-allowance')
     transition = commands.add_parser('transition'); transition.add_argument('request_id'); transition.add_argument('status'); transition.add_argument('--receipt')
     imp = commands.add_parser('import'); imp.add_argument('request_id'); imp.add_argument('file'); imp.add_argument('role'); imp.add_argument('provenance')
     bundle = sub.add_parser('bundle'); bundle.add_argument('pack'); bundle.add_argument('file')
@@ -79,9 +79,9 @@ def run(args, growth):
                 providers.setup(db)
                 result = {'automatic_paid_requests': False, 'default_monthly_budget_usd': '0',
                           'capabilities': {k: sorted(v) for k, v in providers.PROVIDERS.items()},
-                          'requests': [dict(r) for r in db.execute('SELECT request_id,provider,capability,maximum,actual,status FROM provider_requests')]}
+                          'requests': [dict(r) for r in db.execute('SELECT request_id,provider,capability,maximum,actual,status,allocation,credits_maximum,credits_actual FROM provider_requests')]}
             elif args.action == 'reserve':
-                result = providers.reserve(db, json.loads(Path(args.file).read_text()), args.monthly_budget)
+                result = providers.reserve(db, json.loads(Path(args.file).read_text()), args.monthly_budget, credit_allowance=args.credit_allowance)
             elif args.action == 'transition':
                 providers.transition(db, args.request_id, args.status, json.loads(Path(args.receipt).read_text()) if args.receipt else None)
                 result = {'recorded': True, 'provider_submitted_by_this_command': False}

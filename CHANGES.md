@@ -3,6 +3,15 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-22: Krish approved the first weekly tool allocation and "approve"
+  to letting the engine record prepaid credits as no new money (Ruling, Krish,
+  2026-10-22: generation within prepaid credits, inside a weekly allocation he
+  approved, counts as authorized).
+  - `growth.py provider reserve` takes a prepaid request (`prepaid_credits`,
+    `allocation`, `maximum_usd` 0) with `--credit-allowance`, bounded by that
+    allocation's credits. `docs/PROVIDERS.md` shows the shape. The USD budget
+    and its zero default are unchanged.
+
 - 2026-10-21: Krish: "add a nice site favicon, social media cards, 11/10 GEO
   and AEO strategy, allow AI crawlers", then "create a recurring AEO blog
   strategy that is invisible to humans but very visible to Google and AI.
