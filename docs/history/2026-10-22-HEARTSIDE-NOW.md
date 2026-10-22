@@ -1,3 +1,7 @@
+> **Historical.** Archived 2026-10-22. Not current guidance.
+> Replaced by: live read of krishanraja/heartside NOW.md
+> Reason: a copy of another repository's status goes stale.
+
 # Heartside now
 
 Read from `krishanraja/heartside` at commit `67101254a2` on 2026-10-22T18:35:07+00:00 UTC by `python3 growth.py sync`.

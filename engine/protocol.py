@@ -397,14 +397,14 @@ def finish(root, client, local, status, code, phase, now):
 
 
 def capture(growth):
-    """Product truth first; a failed sync falls back to the last published snapshot and says so."""
+    """Product truth first; a failed sync falls back to the last checkpoint reading and says so."""
     try:
         return growth.sync(quiet=True), []
     except Exception as error:  # network or GitHub limits; never echo a response body
         state = growth.load_state()
         if not state or not state.get('sha') or not state.get('synced_at'):
             raise ProtocolError('product_state_missing') from None
-        return state, [f'Product sync failed ({type(error).__name__}); used the last published snapshot instead.']
+        return state, [f'Product sync failed ({type(error).__name__}); used the last checkpoint reading instead.']
 
 
 def run(root, growth, client, mode, env, recommendations, now=None, clock=None):

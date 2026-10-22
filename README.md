@@ -55,8 +55,10 @@ checks these seven canonical jobs every 15 minutes on GitHub Actions:
 
 IANA timezone conversion handles daylight saving. GitHub may run late. Completed
 jobs are idempotent; failures remain retryable. Checkpoints restore verified
-state between machines and runs. The separate hourly product sync keeps the
-public `state/HEARTSIDE-NOW.md` current.
+state between machines and runs. The separate hourly product sync reads
+heartside and fails when its rules change; it commits nothing. Heartside's
+status is read live from its own `NOW.md` (`python3 growth.py now`), never
+copied here.
 
 The fallback uses reusable approved assets, imported aggregate observations and
 public-source research. It has no signed-in social browser or inherited private

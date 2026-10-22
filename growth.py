@@ -7,18 +7,25 @@ Core commands use the standard library. Media also needs Pillow and FFmpeg.
 Runs anywhere Python 3.9+ and git run (a Codex
 session, a Cowork session, a Mac, a GitHub Action). Nothing here posts,
 sends, comments, follows, DMs, orders or spends. The only writes are this
-engine's own files under local/ (and state/ when a GitHub Action publishes
-it), plus a pack to Control Center once Control Center can keep Heartside's
+engine's own files under local/, plus a pack to Control Center once Control Center can keep Heartside's
 packs apart from makeyourmindup's (see `post` below).
 
-    python3 growth.py sync [--publish]
+    python3 growth.py sync
         Read krishanraja/heartside as it is right now: the commit on main,
         what changed since the last sync, open pull requests, the canon
-        documents its README tells every session to read, and what is on
-        sale in the live store. Writes local/state/heartside.json and
-        local/state/HEARTSIDE-NOW.md (--publish writes state/ instead, for
-        the GitHub Action that keeps the repository's copy current). Every
-        job starts here.
+        documents its README tells every session to read, heartside's own
+        NOW.md (read live, and fresh or unknown), and what is on sale in the
+        live store. Prints that reading and keeps only the engine's input
+        data (commit, canon and rules fingerprints, store, offers) in
+        local/state/heartside.json. Heartside's status and plan are never
+        stored anywhere here: its repository is the only reference for them
+        (Ruling, Krish, 2026-10-22). Every job starts here.
+
+    python3 growth.py now
+        Heartside's NOW.md, read live from main, when it is fresh. Unknown
+        when it cannot be read, or when a product commit (not automation such as
+        docs(steward) or a heartbeat, and not a merge) landed after the latest
+        commit that touched it.
 
     python3 growth.py canon [--full]
         The canon documents at the synced commit, in the order heartside's
@@ -334,26 +341,78 @@ def canon_prices(texts):
     return sorted(out)
 
 
-def state_dir(publish):
-    return os.path.join(HERE, 'state') if publish else os.path.join(LOCAL, 'state')
+STATE_DIR = os.path.join(LOCAL, 'state')
+# Written by syncs before 2026-10-22. A copy of another repository's status
+# goes stale, so a sync removes any it finds (Ruling, Krish, 2026-10-22).
+RETIRED_COPY = 'HEARTSIDE-NOW.md'
+NOW_FILE = 'NOW.md'
+# Automation never makes NOW.md stale; merge commits do not count either. The same
+# rule as ai-harness scripts/steward/validate.mjs and scripts/closeout/check.mjs.
+AUTOMATION = re.compile(r'^(docs\((steward|harness|canon)\)|chore\((heartbeat|brain)\)):')
 
 
-def load_state(published_only=False):
-    """The latest reading: this machine's own first, then the repository's copy.
-    A publish compares only with the repository's copy."""
-    dirs = [os.path.join(HERE, 'state')] if published_only else [os.path.join(LOCAL, 'state'), os.path.join(HERE, 'state')]
-    for d in dirs:
-        f = os.path.join(d, 'heartside.json')
-        if os.path.exists(f):
-            return json.load(open(f))
-    return None
+def load_state():
+    """The latest reading on this machine: the engine's input data, never heartside's status."""
+    f = os.path.join(STATE_DIR, 'heartside.json')
+    if not os.path.exists(f):
+        return None
+    with open(f) as fh:
+        return json.load(fh)
 
 
-MEANINGFUL = ('sha', 'canon', 'rules', 'rules_ok', 'store', 'open_pulls', 'offers', 'homepage_v3')
+def now_verdict(commits, now_commit):
+    """Is heartside's NOW.md fresh? `commits` is main's history, newest first, as {'sha', 'message'}.
+    Fresh when no product commit landed after the latest commit that touched NOW.md: automation
+    commits and merge commits do not count. Returns (status, later): status is fresh, stale or
+    unknown (the NOW.md commit is not in the history read and nothing in it proves staleness);
+    later is the product commits after it."""
+    later = []
+    for c in commits:
+        if c['sha'] == now_commit:
+            return ('stale' if later else 'fresh'), later
+        if not AUTOMATION.match(c.get('message') or '') and c.get('parents', 1) < 2:
+            later.append(c)
+    return ('stale' if later else 'unknown'), later
 
 
-def sync(publish=False, quiet=False):
-    prev = load_state(published_only=publish) or {}
+def heartside_now(sha=None):
+    """Heartside's own NOW.md, read live at main's head. Never stored.
+    {'status': fresh | stale | unknown, 'text': the file when fresh else None, 'now_commit', 'later', 'reason'}.
+    Anything but fresh is unknown to every job: unreadable and stale say nothing current."""
+    out = {'status': 'unknown', 'text': None, 'now_commit': None, 'later': [], 'reason': ''}
+    try:
+        sha = sha or head_sha()
+        text = raw(NOW_FILE, sha)
+        if text is None:
+            out['reason'] = f'heartside has no {NOW_FILE} at {sha[:10]}'
+            return out
+        touched = http(f'{API}/commits?sha={sha}&path={NOW_FILE}&per_page=1')
+        if not touched:
+            out['reason'] = f'no commit on main touched {NOW_FILE}'
+            return out
+        out['now_commit'] = touched[0]['sha']
+        history = []
+        for page in (1, 2, 3):
+            batch = http(f'{API}/commits?sha={sha}&per_page=100&page={page}')
+            history += [{'sha': c['sha'], 'message': c['commit']['message'], 'parents': len(c.get('parents') or [1])} for c in batch]
+            if len(batch) < 100 or any(c['sha'] == out['now_commit'] for c in batch):
+                break
+        status, later = now_verdict(history, out['now_commit'])
+        out['later'] = [{'sha': c['sha'][:10], 'subject': c['message'].splitlines()[0][:140] if c['message'] else ''} for c in later]
+        out['status'] = status
+        if status == 'fresh':
+            out['text'] = text
+        elif status == 'stale':
+            out['reason'] = f'{len(later)} product commit(s) landed on main after {NOW_FILE} was last written'
+        else:
+            out['reason'] = f'the commit that last wrote {NOW_FILE} is not in the history read'
+    except Exception as e:  # noqa: BLE001 - network, rate limits or a malformed answer all mean unknown
+        out.update(status='unknown', text=None, reason=f'{NOW_FILE} not read ({getattr(e, "code", type(e).__name__)}); set GITHUB_TOKEN if GitHub is rate limiting')
+    return out
+
+
+def sync(quiet=False):
+    prev = load_state() or {}
     sha = head_sha()
     readme = raw('README.md', sha)
     notes = []
@@ -385,6 +444,9 @@ def sync(publish=False, quiet=False):
                           'updated': p['updated_at']})
     except (urllib.error.URLError, KeyError, ValueError) as e:
         notes.append(f'commit list and pull requests not read ({getattr(e, "code", e)}); set GITHUB_TOKEN if GitHub is rate limiting')
+    live = heartside_now(sha)
+    if live['status'] != 'fresh':
+        notes.append(f'heartside\'s status is unknown: {live["reason"]}')
     try:
         products = store_products()
     except (urllib.error.URLError, ValueError, KeyError) as e:
@@ -399,38 +461,50 @@ def sync(publish=False, quiet=False):
     changed = sorted(p for p in canon if p in old and old[p] != canon[p])
     added = sorted(set(paths) - set(prev.get('canon', {}))) if prev.get('canon') else []
     removed = sorted(set(prev.get('canon', {})) - set(paths)) if prev.get('canon') else []
+    # Only the engine's input data is kept: the commit it read, canon and rules
+    # fingerprints, the store and the offers. Commits, pull requests and NOW.md
+    # are heartside's status: read live, printed, never stored.
     state = {
         'repo': REPO, 'sha': sha, 'synced_at': dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat(),
         'previous_sha': prev.get('sha'), 'canon_from_readme': found, 'handover': handover, 'canon': canon,
         'rules': prints, 'rules_ok': rules_ok, 'changed_since_last_sync': changed,
-        'canon_added': added, 'canon_removed': removed, 'commits': commits, 'open_pulls': pulls,
+        'canon_added': added, 'canon_removed': removed,
         'store': products, 'price_points': sorted(set(canon_prices(texts)) | {x for p in (products or []) for x in p['prices']}),
         'offers': offers.canonical_offers({p: texts.get(p) for p in paths}), 'homepage_v3': homepage_v3,
+        'heartside_status': live['status'],
         'notes': notes,
     }
-    d = state_dir(publish)
-    if publish and prev and all(prev.get(k) == state[k] for k in MEANINGFUL):
-        # The repository's copy changes only when heartside or the store did,
-        # so the hourly Action makes no commit for nothing.
-        if not quiet:
-            print(f'no change since {prev.get("synced_at")} (heartside {sha[:10]})')
-        return prev
-    os.makedirs(d, exist_ok=True)
-    json.dump(state, open(os.path.join(d, 'heartside.json'), 'w'), indent=1)
-    open(os.path.join(d, 'HEARTSIDE-NOW.md'), 'w').write(now_md(state, texts))
+    os.makedirs(STATE_DIR, exist_ok=True)
+    with open(os.path.join(STATE_DIR, 'heartside.json'), 'w') as f:
+        json.dump(state, f, indent=1)
+    retired = os.path.join(STATE_DIR, RETIRED_COPY)
+    if os.path.exists(retired):
+        os.remove(retired)
     if not quiet:
-        print(now_md(state, texts))
+        print(reading(state, texts, commits, pulls, live))
     return state
 
 
-def now_md(s, texts):
+def now_section(live):
+    """Heartside's NOW.md as read live, or why its status is unknown."""
+    if live['status'] == 'fresh':
+        return [f'## Heartside\'s own status (`{NOW_FILE}`, read live, fresh)', '', live['text'].rstrip(), '']
+    lines = ['## Heartside\'s own status: unknown', '',
+             f'{live["reason"] or "not read"}. Assume nothing about heartside\'s plan or work in flight beyond its',
+             'canon, commits and store, read live. Do not use an older reading in its place.', '']
+    lines += [f'- `{c["sha"]}` {c["subject"]}' for c in live['later'][:10]]
+    return lines + ([''] if live['later'] else [])
+
+
+def reading(s, texts, commits, pulls, live):
+    """What the sync read, for the session that ran it. Printed, never written to a file."""
     top = next(iter(s['canon']), '')
     log = section(texts.get(top), '## 13. ') or ''
     log_lines = [l for l in log.splitlines() if l.startswith('- ')][-8:]
     lines = [
         '# Heartside now', '',
-        f'Read from `{s["repo"]}` at commit `{s["sha"][:10]}` on {s["synced_at"]} UTC by `python3 growth.py sync`.',
-        'Rewritten when a sync finds heartside, its open pull requests or the store changed. Heartside\'s repository is the source of truth; this is a reading of it.', '',
+        f'Read live from `{s["repo"]}` at commit `{s["sha"][:10]}` on {s["synced_at"]} UTC by `python3 growth.py sync`.',
+        'Heartside\'s repository is the only reference for its status and plan. This reading is printed, never stored.', '',
     ]
     if not s['rules_ok']:
         lines += ['## STOP: Heartside\'s rules changed', '',
@@ -456,11 +530,12 @@ def now_md(s, texts):
         lines += ['| Product | Price | Available |', '|---|---|---|']
         lines += [f'| [{p["title"]}]({p["url"]}) | {", ".join(f"${x:g}" for x in p["prices"])} | {"yes" if p["available"] else "no"} |' for p in s['store']]
     lines += ['', '## Recent commits on main', '']
-    lines += [f'- `{c["sha"]}` {c["date"][:10]} {c["subject"]}' for c in s['commits']] or ['- none since the last sync']
+    lines += [f'- `{c["sha"]}` {c["date"][:10]} {c["subject"]}' for c in commits] or ['- none since the last sync']
     lines += ['', '## Work in flight (open pull requests)', '']
-    lines += [f'- #{p["number"]} {p["title"]} (`{p["branch"]}`, updated {p["updated"][:10]})' for p in s['open_pulls']] or ['- none']
+    lines += [f'- #{p["number"]} {p["title"]} (`{p["branch"]}`, updated {p["updated"][:10]})' for p in pulls] or ['- none']
+    lines += [''] + now_section(live)
     if log_lines:
-        lines += ['', f'## Latest decisions (`{top}`, decision log)', ''] + log_lines
+        lines += [f'## Latest decisions (`{top}`, decision log)', ''] + log_lines
     if s['notes']:
         lines += ['', '## Not read this time', ''] + [f'- {n}' for n in s['notes']]
     return '\n'.join(lines) + '\n'
@@ -629,7 +704,7 @@ def freshness(pack, state, head_fn, fetch_fn, list_fn=lambda sha: None):
     if not sha or not state['sha'].startswith(sha):
         return [f'the pack names heartside {sha or "(none)"} but the last sync read {state["sha"][:10]}: sync, re-read, redraft']
     if not state.get('rules_ok', False):
-        return ['Heartside\'s rules changed (local/state/HEARTSIDE-NOW.md, "STOP"): a person must update growth.py first']
+        return ['Heartside\'s rules changed (the "STOP" that python3 growth.py sync prints): a person must update growth.py first']
     now = head_fn()
     if now == state['sha']:
         return []
@@ -800,7 +875,7 @@ def doctor():
         age = dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(s['synced_at'])
         line(age < dt.timedelta(hours=26), f'last sync {int(age.total_seconds() // 3600)} hours ago (heartside {s["sha"][:10]})', 'run python3 growth.py sync')
         line(s.get('rules_ok', False), 'Heartside\'s rules match what the checker was written for',
-             'read the changed sections in local/state/HEARTSIDE-NOW.md, then update RULES and RULES_BASIS in growth.py')
+             'read the changed sections python3 growth.py sync prints under "STOP", then update RULES and RULES_BASIS in growth.py')
         ready_offers = offers.catalog(s)
         print(f'note      purchase-ready gifts: {sum(o["ready"] for o in ready_offers)}/{len(ready_offers)}; run growth.py readiness for details')
     else:
@@ -926,7 +1001,13 @@ def self_test():
         RULES_BASIS = saved
     t('RULES_BASIS is filled in', all(v != 'FILL' and len(v) == 16 for v in RULES_BASIS.values()))
     import inspect
-    t('a publish compares only with the published copy', 'load_state(published_only=publish)' in inspect.getsource(sync))
+    t('sync stores no copy of heartside\'s status', 'publish' not in inspect.signature(sync).parameters
+      and not os.path.exists(os.path.join(HERE, 'state', RETIRED_COPY)))
+    steward = {'sha': 'n', 'message': 'docs(steward): refresh NOW.md'}
+    t('NOW.md is fresh when only steward commits follow it', now_verdict([{'sha': 'x', 'message': 'docs(steward): log'}, steward], 'n') == ('fresh', []))
+    t('NOW.md is stale when other work follows it', now_verdict([{'sha': 'x', 'message': 'Fix the mug'}, steward], 'n')[0] == 'stale')
+    t('NOW.md is unknown when its commit is out of reach', now_verdict([{'sha': 'x', 'message': 'docs(steward): log'}], 'n')[0] == 'unknown')
+    t('Automation and merges never make NOW.md stale', now_verdict([{'sha': 'h', 'message': 'chore(heartbeat): record'}, {'sha': 'p', 'message': 'docs(harness): maintain repository administration'}, {'sha': 'm', 'message': 'Merge pull request #9', 'parents': 2}, steward], 'n') == ('fresh', []))
     gift = '## 3. The gift range (launch)\n\n| Gift | P | Price | x |\n|---|---|---|---|\n| **The Morning Mug** | #403 | $29 | $8 |\n| **The Tree Ornament** | #900 | $24, or $19 with another gift | $7 |'
     t('gift prices come from the canon table', canon_prices({'docs/V3.md': gift}) == [19.0, 24.0, 29.0])
     agents = open(os.path.join(HERE, 'AGENTS.md')).read()
@@ -969,7 +1050,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--self-test', action='store_true')
     sub = ap.add_subparsers(dest='cmd')
-    sy = sub.add_parser('sync'); sy.add_argument('--publish', action='store_true'); sy.add_argument('--quiet', action='store_true')
+    sy = sub.add_parser('sync'); sy.add_argument('--quiet', action='store_true')
+    sub.add_parser('now')
     cn = sub.add_parser('canon'); cn.add_argument('--full', action='store_true')
     sub.add_parser('store')
     lk = sub.add_parser('link'); lk.add_argument('url'); lk.add_argument('creative_id')
@@ -988,11 +1070,15 @@ def main():
         except (ValueError, KeyError, TypeError, ImportError, OSError, subprocess.CalledProcessError) as e:
             sys.exit(f'Not ready: {e}')
     if a.cmd == 'sync':
-        st = sync(publish=a.publish, quiet=a.quiet)
+        st = sync(quiet=a.quiet)
         print(f'heartside_sha: {st["sha"]}')
         if not st['rules_ok']:
             print('STOP: Heartside\'s rules changed. No pack can pass until growth.py is updated (AGENTS.md, rule 2).')
             sys.exit(2)
+        return
+    if a.cmd == 'now':
+        live = heartside_now()
+        print('\n'.join(now_section(live)).rstrip())
         return
     if a.cmd == 'canon':
         st = load_state()
