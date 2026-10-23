@@ -1,4 +1,4 @@
-> **Adopted on 2026-10-19.** The loop runs in `.github/workflows/control-center.yml` through `growth.py cc` (docs/ENGINE.md, "Control Center protocol loop").
+> **Live since 2026-10-19.** The first Control Center loop completed its directive, report readback and decision read on 19 October. The scheduled workflow still ran successfully on 23 October ([run 39904322191](https://github.com/krishanraja/growth-heartside/actions/runs/39904322191)). This is the original setup brief; use `docs/control-center/ENGINE-PROTOCOL.md` for the current protocol.
 
 # Control Center brief: growth-heartside
 
@@ -20,7 +20,7 @@ Written 2026-10-18 by Control Center. This brief **supersedes `docs/CONTROL-CENT
 | Aim | Organic posts sell more Heartside gifts than paid ads ever have, and every winning format was found by this engine and approved by Krish in one press. By 2026-12-31 |
 | Objectives | `net_sales_usd`: target 10,000 USD per month (Europe/London, Shopify net sales); `organic_orders`: no target set yet |
 | Cadence | daily |
-| State | Switched on 2026-10-18, with dispatch on. Your bearer arrives in this repository's secrets as `CONTROL_CENTER_ENGINE_TOKEN`, with `CONTROL_CENTER_URL` as a variable. Until then, build against `mode: synthetic` |
+| State | Live loop enabled. The first run completed on 2026-10-19; the scheduled 2026-10-23 run succeeded. Use the current protocol and repository workflow for operating details |
 
 ## The protocol, in short
 

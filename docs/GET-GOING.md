@@ -50,7 +50,7 @@ Today's live report (2026-10-19) was `held`:
 
 ## The build
 
-- [ ] **Step 0.** Correct the status line at the top of docs/CONTROL-CENTER-BRIEF.md: the first live run on 2026-10-19 succeeded, so it is no longer only tested against a local stand-in.
+- [x] **Step 0.** Corrected the status line and registry state in `docs/CONTROL-CENTER-BRIEF.md` against the completed 19 October first run and the successful 23 October scheduled run. This documentation correction does not change the live report's numbers.
 - [ ] **Step 0.5 (time-bound, added 2026-10-22).** Pick up docs/briefs/2026-10-22-media-credits.md: propose the Higgsfield and Runway allocation for Heartside as a `stage: "plan"` behind `spend` on Krish's list, stills before motion. It runs ahead of Step 1 because the Christmas cut-off will not wait. Generate nothing before his yes.
 - [ ] **Step 1.** The autonomy loop above (plan, go-live, the go-live step, check-ins) on protocol 1.1.0, proved against the stand-in: an approved plan never goes live, an approved go-live goes live once with exactly its payload, an amended one goes live in his words, a declined check-in stops its plan. Then the creative review every go-live passes: the doctrine it was checked against, at least two alternatives made, and why this one wins, in its evidence. Krish has a low tolerance for poor creative output, so a weak go-live is held, not proposed.
 - [ ] **Step 2.** Keep sales fresh: make the Shopify report import run daily through `engine.yml`, so the next report measures `net_sales_usd` through yesterday. If the runner lacks a credential for it, report a hold naming the exact secret Krish must add, not a stale zero.
