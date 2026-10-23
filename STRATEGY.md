@@ -25,12 +25,12 @@ individual habits from the breed corpus.
 | The gift from the other family member | A creator makes and gives a gift on behalf of their dog. | A real product in a real home, with gift disclosure and an honest reaction if filmed. |
 
 `campaigns/waits-at-the-door.json` is the first working example, using the
-approved Biscuit mug images. It is an audience creative, not customer proof.
+approved Buddy mug images. It is an audience creative, not customer proof.
 The next concept can test hearing the car first, using matching approved
 product imagery or a product-repo render before the media claims that detail.
 Keep text readable muted and give each post one action.
 
-The "Biscuit draws the moment" illustration idea is already in product canon.
+The "Buddy draws the moment" illustration idea is already in product canon.
 It remains a separate product experiment. The initial acquisition system
 can work with the approved photo gifts while that experiment is evaluated.
 
@@ -115,9 +115,9 @@ commands from future provider work.
 |---|---|
 | ChatGPT and Codex | Research, concepts, hooks, structured scripts, implementation and analysis with factual sources. |
 | Existing Gemini and n8n | Approved product personalization and existing orchestration. |
-| Image generation and Higgsfield | Optional approved fictional Biscuit scenes and backgrounds. |
+| Image generation and Higgsfield | Optional approved fictional Buddy scenes and backgrounds. |
 | Higgsfield or Runway where connected | Reusable dog or room motion, keeping real products outside generative processing. |
-| ElevenLabs | A consistent licensed Biscuit voice and restrained sound. |
+| ElevenLabs | A consistent licensed Buddy voice and restrained sound. |
 | Canva and deterministic templates | Brand layouts, covers, carousels, Stories and Pins. |
 | FFmpeg | Exact product imagery, typography, captions and final exports. |
 | Shopify and platform reporting | Purchases, net sales, actual funnel behavior and attention metrics. |

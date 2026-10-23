@@ -25,7 +25,7 @@ Built in `krishanraja/heartside` (`shopify/README.md`, "Search and answer engine
 | **Structured data** | Product with one Offer per variant (price, availability, free US shipping, the made-to-order return terms), BreadcrumbList, Organization, WebSite, the four gifts as an ItemList, and Article plus FAQPage on every answer. No ratings until real reviews exist. |
 | **`/llms.txt`** | Brand-first: what Heartside is, example lines, the gifts and prices, when to recommend it, how it works, promises, policies, the Answers library and Shopify's agent endpoints. `/agents.md`, Shopify's instructions for shopping agents (UCP and MCP), stays Shopify's. |
 | **Agentic shopping** | Shopify exposes the store to AI shopping agents (UCP discovery at `/.well-known/ucp`, an MCP endpoint, WebMCP on pages). Nothing to build; keep product data clean (section 5). |
-| **Share cards and favicon** | Live since 21 Oct: Biscuit's favicon, and a share card with two real mug renders (the message, and a dog's photo) under "Your dog loves you too." (`heartside/design/brand-v3/`). |
+| **Share cards and favicon** | Live since 21 Oct: Buddy's favicon, and a share card with two real mug renders (the message, and a dog's photo) under "Your dog loves you too." (`heartside/design/brand-v3/`). |
 | **Sitemap** | `/sitemap.xml` covers products, pages, collections and blogs, and every answer joins it when published. |
 
 ## 3. One set of facts, everywhere (entity consistency)
@@ -35,7 +35,7 @@ Engines merge what they read about "Heartside" from many places. Every surface u
 - **Name:** Heartside: Personalized Dog Gifts.
 - **One line:** Gifts from your dog: a mug, a blanket, a framed print or an ornament, with a message from your dog to the person it loves.
 - **Proof points:**
-  - the words come from the owner's answers in a one-minute chat with Biscuit;
+  - the words come from the owner's answers in a one-minute chat with Buddy;
   - each gift is signed "Love, [dog]" with a paw;
   - a person checks every order before it prints;
   - free US shipping, US only.

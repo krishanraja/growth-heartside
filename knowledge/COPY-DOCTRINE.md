@@ -27,7 +27,7 @@ writing a word. Use the most direct lead the viewer can accept.
 | Pinterest and Google search | Problem- or solution-aware (searching for a gift) | Problem-Solution, Promise | Gift guides by person; "a gift from the dog" pins that answer the search phrase |
 | Creator posts (borrowed reach) | Unaware, with the creator's trust | Story | A partner opens a gift from their dog, disclosed |
 | Comment replies (radar) | Whatever the comment shows | Answer the question asked (Collier: enter the conversation already happening) | Shipping, "what if I don't know what to write", a dog's name |
-| Store pages and the chat entry | Solution- or product-aware | Promise, then proof, then the offer | "Tell Biscuit about your dog." The chat on a phone, the human check |
+| Store pages and the chat entry | Solution- or product-aware | Promise, then proof, then the offer | "Tell Buddy about your dog." The chat on a phone, the human check |
 | Stories to followers, email to subscribers, returning buyers | Product- or most aware | Offer | The gift range, the ornament with another gift, free US shipping, an order-by date only once Krish confirms it |
 
 Never show an Offer lead to cold viewers who do not yet know what a gift
@@ -51,7 +51,7 @@ Internal working line, not copy:
 > For someone whose dog is family, Heartside is a gift from the dog: a short
 > message in the dog's own voice to the person it loves ("I took your side of
 > the bed to keep it warm."), in that dog's own personality,, drawn from the buyer's own answers in a 90-second
-> chat with Biscuit, signed "Love, [dog]" with a paw, and checked by a person
+> chat with Buddy, signed "Love, [dog]" with a paw, and checked by a person
 > before it prints.
 
 - **Proposition:** the person feels the dog chose this for them.
@@ -129,7 +129,7 @@ Use the highest rung that exists, next to the claim it supports:
 6. Testimonials, ratings, reviews, counts: none until real and permissioned.
    Never invented; `check` refuses invented proof.
 
-Biscuit, openly AI-made, is never a testimonial, authority or customer. Use
+Buddy, openly AI-made, is never a testimonial, authority or customer. Use
 one influence principle per asset (Cialdini), the one that resolves the doubt.
 
 ## 7. Diagnose a weak post or page (Part I, "The persuasion chain")
@@ -224,10 +224,10 @@ recorded so no session "fixes" it back:
    life. Problem-Solution leads name gift-giving friction only. No memorial
    lane.
 7. **No AI-drawn product and no AI customers.** Demonstration uses the real
-   design. Biscuit is openly AI-made and never proof.
+   design. Buddy is openly AI-made and never proof.
 8. **Heartside's words.** US English and the canon's voice rules: no em
    dashes, no "it's not X, it's Y", no exclamation marks in body copy
-   (Biscuit may use one per line), no banned or retired lines, no "I" in the
+   (Buddy may use one per line), no banned or retired lines, no "I" in the
    dog's voice on a gift. The corpus's UK spelling, em dashes, contrarian and
    curiosity headline families must pass these first.
 9. **Nothing in bulk.** The corpus's outreach and email sequences shrink to

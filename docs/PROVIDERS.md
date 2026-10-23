@@ -34,7 +34,7 @@ Use a local request file with exactly these fields:
 {
   "provider": "elevenlabs",
   "capability": "voice",
-  "brief": "Campaign C90 H02: approved fictional Biscuit narration, exact checked script only",
+  "brief": "Campaign C90 H02: approved fictional Buddy narration, exact checked script only",
   "source_sha": "5618a99829a0c9ef1291b73c20cda3d837c262de",
   "maximum_usd": "0.00",
   "quote_source": "Current connected-provider estimate; replace with actual evidence",

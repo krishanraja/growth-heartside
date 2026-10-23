@@ -31,14 +31,14 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
    - **The brief** (`platform: other`). It includes:
      - the hook (first frame, works muted);
      - a beat sheet with times, and a shot list;
-     - on-screen text, any voiceover and any Biscuit lines;
+     - on-screen text, any voiceover and any Buddy lines;
      - the source assets from heartside's library;
      - how the real print files appear;
      - what must not appear: AI customers, the product drawn by AI,
        invented reactions.
 
      9:16, with text inside the safe zone. Start every line the public will
-     see or hear with `Hook:`, `On screen:`, `Voiceover:`, `Biscuit:`,
+     see or hear with `Hook:`, `On screen:`, `Voiceover:`, `Buddy:`,
      `Cover:` or `Caption:`. `check` holds those lines to the copy rules and
      reads the rest as notes for Krish.
    - **Instagram Reel** (`instagram`, REEL): the caption, with the search
@@ -56,7 +56,7 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
      title under 100 characters, a description under 500 with the search
      phrase, and the tracked link to the most specific page.
    - **Comment prompt** (`instagram`, POST), if the format invites it:
-     "Comment your dog's name", with Biscuit's reply pattern for the radar.
+     "Comment your dog's name", with Buddy's reply pattern for the radar.
 4. State the test in the brief's `why`, in the test record shape
    (`knowledge/COPY-DOCTRINE.md`, section 8): question, mechanism, control,
    the one changed variable and the signal. Test current recognition stories

@@ -23,7 +23,7 @@ TOKEN = 'gen1_' + 'synthetic-test-bearer-' + 'z' * 30
 NOW = dt.datetime(2026, 10, 19, 8, 0, tzinfo=dt.timezone.utc)
 CID = 'IG_EMO_REEL_C01_H03_V1_20261019'
 REVISION = 'c' * 64
-CAPTION = 'Your dog loves you too. The note on the back is signed Love, Biscuit.'
+CAPTION = 'Your dog loves you too. The note on the back is signed Love, Buddy.'
 STATE = {'sha': 'a' * 40, 'rules_ok': True, 'synced_at': '2026-10-19T07:55:00+00:00',
          'offers': [{'id': 'the-morning-mug', 'name': 'The Morning Mug', 'price_cents': 2900}],
          'store': [{'title': 'An older mug', 'available': True, 'prices': [24.0]}]}

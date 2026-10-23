@@ -29,7 +29,7 @@ does not change any autonomous schedule.
 artifact. Unzip and open `review.html`. No web account or second dashboard is needed.
 
 The seven checked concepts with 28 prewritten hook experiments cover three reusable families: recognition, two-sided
-product proof and fictional Biscuit hosting. Each has native captions, hook
+product proof and fictional Buddy hosting. Each has native captions, hook
 metadata, a declared mechanism and an audience intent. Selection falls back to a
 stable seven-day rotation, never an invented trend. An eligible observed
 replication candidate gets a changed opening and hook ID, holding its mechanism
@@ -46,7 +46,7 @@ review; it uses no metered provider API. See [voice provenance](VOICE-LICENSES.m
 
 Approved product photos, logo and typefaces come from the full synced Heartside
 commit. `--heartside-dir /path/to/heartside` reads via `git show SHA:path` without
-executing its code. The separate fictional Biscuit entryway scene is generated
+executing its code. The separate fictional Buddy entryway scene is generated
 brand material from this repository with visible AI disclosure, never a customer
 or product reconstruction. Each output has file checksums, native copy digests,
 product SHA and a content-addressed revision. Modified copy/files fail checking;

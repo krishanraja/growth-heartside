@@ -49,7 +49,7 @@ it does globally".
 ## The one idea
 
 **"This year, the dog's buying."** (V3 section 8.) A dog gets the person it
-loves a gift. A 90-second chat with Biscuit turns what the buyer knows about
+loves a gift. A 90-second chat with Buddy turns what the buyer knows about
 the two of them into words. Those words go on a mug, a blanket, a print or an
 ornament, signed "Love, [dog]" with a paw. Nobody else in the category can
 show words that came from the buyer's own answers. Every piece of content
@@ -104,9 +104,9 @@ history keeps the original wording.
 | The documents assume | Heartside is | So the engine |
 |---|---|---|
 | UK first, UK spelling | US buyers only; Krish posts from London (the 12 Oct plan) | Writes US English. Never targets the UK unless Krish opens it (see "Becoming the category leader") |
-| A personalized collar, one hero product | Four gifts with the same words, and Biscuit's pick (V3 3) | Treats "a gift from the dog" as the hero. The Morning Mug is the hero object, because V3 8's hero film is the mug. The other three ride along ("same words, four gifts") |
+| A personalized collar, one hero product | Four gifts with the same words, and Buddy's pick (V3 3) | Treats "a gift from the dog" as the hero. The Morning Mug is the hero object, because V3 8's hero film is the mug. The other three ride along ("same words, four gifts") |
 | Film the making, engraving and packing | Printful prints and ships; nobody at Heartside touches the product | Proof comes from the chat on a phone screen, the words inking in, the real print files on real mockups, and the promise that a person checks every order. Real product photos only once Krish's samples arrive |
-| Real pets and real customers on camera | No customers yet; AI may make dogs and rooms, never the product, never "customers" (HANDOFF 2.4, the 12 Oct plan) | Labels Biscuit as an openly fictional, AI-made character. Shows people only through disclosed creators or permissioned buyers |
+| Real pets and real customers on camera | No customers yet; AI may make dogs and rooms, never the product, never "customers" (HANDOFF 2.4, the 12 Oct plan) | Labels Buddy as an openly fictional, AI-made character. Shows people only through disclosed creators or permissioned buyers |
 | Three master videos a day on five platforms | One Reel a day on Instagram and Facebook, copied to TikTok (the 12 Oct plan), and Krish approves everything in about 20 minutes a day | Drafts one daily concept with native editions. Adds more only when the report shows a winner worth multiplying and Krish's time allows |
 | TikTok is the fastest test bed | TikTok shows a London account's posts mostly to the UK (the 12 Oct plan) | Puts Meta first; TikTok gets copies with low expectations |
 | Paid creator seeding is out of a zero-spend plan | 20 gifted US creators are approved (the 12 Oct plan, V3 8) | Shortlists and drafts each note; Krish approves every gift and sends every message |
@@ -150,7 +150,7 @@ the bed, the morning walk, the couch. It should be worth watching even for
 someone who never buys. Business headlines stay plain, warm and true (V3 2).
 The lead line is "Your dog loves you too."
 
-**The chat is the content.** Each of Biscuit's questions (V3 4.2) is a
+**The chat is the content.** Each of Buddy's questions (V3 4.2) is a
 comment prompt, a series and a source of buyers' own words:
 
 | Chat question | Series and comment prompt |
@@ -167,27 +167,27 @@ comment prompt, a series and a source of buyers' own words:
 | Pillar | Share | Here |
 |---|---|---|
 | Emotion and identity | 30 in 100 | The reveal, the words inking in, "my dog got me a gift" |
-| Entertainment | 20 in 100 | Biscuit's interview, dog habits every owner knows |
+| Entertainment | 20 in 100 | Buddy's interview, dog habits every owner knows |
 | Utility and search | 20 in 100 | Gift guides by person (partner, mom, dad), "what to get the person who has everything", order-by dates |
 | Proof and process | 20 in 100 | The chat on a real phone, same words on four gifts, a person checks every order, misprints remade free |
 | Offer | 10 in 100 | The gift range, the ornament with another gift, free US shipping, a real deadline |
 
 **The formats bank** (recurring shows; the first three are V3 8's launch Reels):
 1. "My dog got me a gift": a partner unwraps the gift and reads the lines aloud.
-2. Biscuit's interview: the chat screen-recorded on a phone, sped up, the lines inking in.
-3. "Which gift would your dog pick?": the four gifts with Biscuit's reasons.
+2. Buddy's interview: the chat screen-recorded on a phone, sped up, the lines inking in.
+3. "Which gift would your dog pick?": the four gifts with Buddy's reasons.
 4. "What does your dog do when you come home?": comment answers become the next video.
 5. Same words, four gifts: one set of lines on the mug, blanket, print and ornament.
 6. The words inking in: a close-up of pencil turning to ink.
 7. The share card: "Kuku got Sam something."
 8. For the person who signs the dog's name on the card.
 9. The gift for the person who says they want nothing.
-10. Biscuit answers one question: shipping, timing, "what if I spell it wrong", "what if I don't know what to write" (chips for everything, and "Not sure" still makes a warm gift).
+10. Buddy answers one question: shipping, timing, "what if I spell it wrong", "what if I don't know what to write" (chips for everything, and "Not sure" still makes a warm gift).
 11. A real person checks every order.
 12. The order-by date, only once confirmed per product in Printful.
 13. Creators: a partner opens a gift from their dog (disclosed).
 14. Gift guides by person: partner, mom, dad, a friend.
-15. "Comment your dog's name": Biscuit replies with the line it would start with (drafted, Krish posts).
+15. "Comment your dog's name": Buddy replies with the line it would start with (drafted, Krish posts).
 
 **Hooks** (US spelling, nothing invented; the first frame works muted):
 - "This year, the dog's buying."
@@ -220,7 +220,7 @@ its test record shape (section 8).
 | Comment | "Comment your dog's name." |
 | Send | "Send this to the person your dog loves most." |
 | Save | "Save this for December." |
-| Visit | "Tell Biscuit about your dog. Link in bio." |
+| Visit | "Tell Buddy about your dog. Link in bio." |
 | Buy | "Order by Dec 10 for Christmas." (only once confirmed) |
 | Proof | "A real person checks every order before it prints." |
 
@@ -232,11 +232,11 @@ buying." 0:02 the mug comes out. 0:04 the lines ink in one by one. 0:09
 permissioned, otherwise the dog. Call to action: "Send this to the person
 your dog loves most."
 
-*Biscuit's interview.* 0:00 phone screen: "Hi! I'm Biscuit." 0:02 chips
-tapped fast: "Waits at the door". 0:05 Biscuit's follow-up: "Every day? Even
+*Buddy's interview.* 0:00 phone screen: "Hi! I'm Buddy." 0:02 chips
+tapped fast: "Waits at the door". 0:05 Buddy's follow-up: "Every day? Even
 weekends?" 0:07 the note at the top inks the dog's line ("I wait by the door for
 you, weekends too."). 0:10 the four gifts. Call
-to action: "Tell Biscuit about your dog. Link in bio."
+to action: "Tell Buddy about your dog. Link in bio."
 
 *The objection.* 0:00 on-screen question: "What if I don't know what to
 write?" 0:02 the chips, then "Not sure". 0:06 a warm line still appears.
@@ -246,7 +246,7 @@ action: "Try it. Link in bio."
 **Production truth.** The product on screen is always the real design
 (HANDOFF rule 4). Composite the real print files onto mockups. AI may make
 rooms and dogs, never the product, and never "customers" holding or
-reviewing it. Biscuit is openly an AI-made character. `growth.py render`
+reviewing it. Buddy is openly an AI-made character. `growth.py render`
 now produces an example audience film, cover, Stories, Pins and subtitles
 from approved v3 mug photos, with silent audio (`docs/ENGINE.md`). The old
 product-repo renderer (`tools/content/reel.py`) still targets the retired

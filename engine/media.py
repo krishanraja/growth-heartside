@@ -130,7 +130,7 @@ def card(root, source_assets, scene, size, layout='recognition'):
     out.paste(photo, ((box[0] + box[2] - photo.width) // 2, (box[1] + box[3] - photo.height) // 2))
     block(draw, scene['text'], (int(width * .067), int(height * .735), int(width * .91), int(height * .79)),
           path('body_font'), int(42 * scale), int(30 * scale), '#121010')
-    block(draw, 'EXAMPLE · Biscuit is an AI character',
+    block(draw, 'EXAMPLE · Buddy is an AI character',
           (int(width * .067), int(height * .705), int(width * .92), int(height * .73)),
           path('body_font'), int(28 * scale), int(24 * scale), '#5A4A44')
     return out
@@ -170,7 +170,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
     duration = 0
     for scene in scenes:
         if scene.get('asset') not in ('mug_dog', 'mug_note', 'biscuit', 'biscuit_entryway'):
-            raise ValueError('scene must use an approved product or Biscuit asset')
+            raise ValueError('scene must use an approved product or Buddy asset')
         seconds = scene.get('seconds')
         if isinstance(seconds, bool) or not isinstance(seconds, (int, float)) or not 1 <= seconds <= 10:
             raise ValueError('each scene must last between 1 and 10 seconds')
@@ -201,10 +201,10 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
             item['text'] += '\nCopy: ' + link_builder(spec['destination'], creative_id)
         return item
     descriptions = {
-        'mug_dog': "An approved example mug with Biscuit, Heartside's fictional AI dachshund.",
-        'mug_note': 'The real note side of the example mug, signed Love, Biscuit.',
-        'biscuit': "Biscuit, Heartside's fictional AI dachshund host.",
-        'biscuit_entryway': 'A generated fictional Biscuit scene at a front door beside sneakers.'}
+        'mug_dog': "An approved example mug with Buddy, Heartside's fictional AI dachshund.",
+        'mug_note': 'The real note side of an existing example mug.',
+        'biscuit': "Buddy, Heartside's fictional AI dachshund host.",
+        'biscuit_entryway': 'A generated fictional Buddy scene at a front door beside sneakers.'}
     scene_alt = []
     for scene in scenes:
         description = ('Two real photos showing both sides of the example mug.'

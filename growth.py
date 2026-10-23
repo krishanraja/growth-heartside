@@ -128,7 +128,7 @@ HANDOVER = re.compile(r'^(?:[A-Z0-9]+-)*HANDOVER-(\d{4}-\d{2}-\d{2})[\w-]*\.md$'
 # the new words and updates RULES and RULES_BASIS in an interactive session.
 RULES_SOURCES = (
     ('docs/V3-GIFTS-FROM-YOUR-DOG.md', '## 2. '),    # what Krish rejected, and the rules that follow
-    ('docs/V3-GIFTS-FROM-YOUR-DOG.md', '### 4.6 '),  # Biscuit's voice
+    ('docs/V3-GIFTS-FROM-YOUR-DOG.md', '### 4.6 '),  # Buddy's voice
     ('docs/HANDOFF.md', '## 2. '),                   # hard rules
     ('docs/POSITIONING.md', '## 3. '),               # retire from headlines
 )
@@ -174,7 +174,7 @@ SAD = re.compile(r'rainbow bridge|passed away|crossed the bridge|in (?:loving )?
 # words the public will see. In those, only lines marked as public get the
 # copy rules; every line still gets the em dash and link rules.
 INTERNAL = ('other', 'store')
-PUBLIC_LINE = re.compile(r'^\s*(?:on[- ]screen|voiceover|vo|biscuit|caption|cover|copy|headline|title|hook|cta)\s*:', re.I)
+PUBLIC_LINE = re.compile(r'^\s*(?:on[- ]screen|voiceover|vo|buddy|biscuit|caption|cover|copy|headline|title|hook|cta)\s*:', re.I)
 UK = [(re.compile(r'personalis', re.I), 'personaliz'), (re.compile(r'\bcolour', re.I), 'color'),
       (re.compile(r'\bfavourite', re.I), 'favorite'), (re.compile(r'\bcentre\b', re.I), 'center'),
       (re.compile(r'\bcatalogue', re.I), 'catalog'), (re.compile(r'\borganis', re.I), 'organiz'),
@@ -567,6 +567,8 @@ def problems(item, price_points=()):
     if platform in INTERNAL:
         text = '\n'.join(line for line in full.splitlines() if PUBLIC_LINE.match(line))
     low = text.lower()
+    if re.search(r"(?im)^\s*biscuit\s*:|\b(?:tell|ask|meet)\s+biscuit\b|\b(?:I'm|I am)\s+Biscuit\b", text):
+        out.append('the retired host name appears; Heartside\'s host is Buddy')
     for w in BANNED:
         if re.search(r'(?<!\w)' + re.escape(w) + r'(?!\w)', low):
             out.append(f'it says "{w}", which Heartside bans (V3 section 2)')
@@ -588,13 +590,13 @@ def problems(item, price_points=()):
         if addr.lower() != CONTACT:
             out.append(f'the address {addr} (the only customer-facing address is {CONTACT})')
     for line in text.splitlines():
-        if line.strip().lower().startswith('biscuit:'):
+        if line.strip().lower().startswith('buddy:'):
             if line.count('!') > 1:
-                out.append('a Biscuit line with more than one exclamation mark')
+                out.append('a Buddy line with more than one exclamation mark')
             if EMOJI.search(line):
-                out.append('a Biscuit line with an emoji (Biscuit uses none)')
+                out.append('a Buddy line with an emoji (Buddy uses none)')
         elif '!' in line:
-            out.append('an exclamation mark outside a "Biscuit:" line (none in body copy)')
+            out.append('an exclamation mark outside a "Buddy:" line (none in body copy)')
     tags = HASHTAG.findall(text)
     if len(tags) > 5:
         out.append(f'{len(tags)} hashtags (2 to 5 specific ones at most)')
@@ -936,9 +938,9 @@ def self_test():
     t('another email address is refused', bad('Write to hello@krishraja.com', 'customer-facing'))
     t('the store address passes', not bad('Write to krish@heartside.io', 'customer-facing'))
     t('an exclamation in body copy is refused', bad('So cute!', 'exclamation'))
-    t('Biscuit may have one', not bad('Biscuit: My tail is going!', 'exclamation'))
-    t('Biscuit may not have two', bad('Biscuit: Wow! Wow!', 'more than one'))
-    t('Biscuit uses no emoji', bad('Biscuit: Good dog \U0001F436', 'emoji'))
+    t('Buddy may have one', not bad('Buddy: My tail is going!', 'exclamation'))
+    t('Buddy may not have two', bad('Buddy: Wow! Wow!', 'more than one'))
+    t('Buddy uses no emoji', bad('Buddy: Good dog \U0001F436', 'emoji'))
     t('a hashtag wall is refused', bad('#a #b #c #d #e #f', 'hashtags'))
     t('an untracked store link is refused', bad('Make yours at https://heartside.io/', 'not tracked'))
     t('a mismatched creative id is refused', any('tracked as' in e for e in check_pack(
@@ -951,7 +953,7 @@ def self_test():
     t('a report can state revenue', not bad('Net sales $604 this week, 11 orders', 'price', 'other'))
     t('a brief may say what must not appear', not bad('Must not appear: memorial content, a countdown, AI customers', 'memorial', 'other'))
     t('a brief\'s on-screen line gets the copy rules', bad('Shot 1: the box\nOn screen: Only 3 left', 'urgency', 'other'))
-    t('a brief\'s Biscuit line gets the copy rules', bad('Biscuit: Our bestseller', 'proof', 'other'))
+    t('a brief\'s Buddy line gets the copy rules', bad('Buddy: Our bestseller', 'proof', 'other'))
     t('a store fix may name the abandoned checkout email', not bad('Turn on the abandoned checkout email in Shopify Messaging', 'death', 'store'))
     t('a store fix\'s copy line gets the copy rules', bad('Copy: Personalised gifts from your dog', 'UK spelling', 'store'))
     t('a brief\'s link is still tracked', bad('Landing: https://heartside.io/', 'not tracked', 'other'))
