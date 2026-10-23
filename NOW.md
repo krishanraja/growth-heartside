@@ -44,7 +44,7 @@ Live:
 
 Waiting or not measured:
 
-- On 23 Oct, a local Windows read of Heartside's public `/products.json` returned HTTP 429. That local `growth.py sync` stored `store: null` even though signed-in Shopify and Teeinblue showed the four gifts available. Draft PR #19 makes readiness label that snapshot unverified and keep purchase copy gated; it does not establish whether the scheduled GitHub runner has the same access issue.
+- On 23 Oct, a local Windows read of Heartside's public `/products.json` returned HTTP 429. That local `growth.py sync` stored `store: null` even though signed-in Shopify and Teeinblue showed the four gifts available. The scheduled GitHub runner's saved 11:31 UTC snapshot was independently read and contained all four active gifts, so this is a local access issue, not a verified production hold. Draft PR #19 makes local readiness label the snapshot unverified and keep purchase copy gated until a real response is read.
 - The last live report in the repo (19 Oct) was held: `net_sales_usd` was stale because imported Shopify reports stop at 16 Oct, `organic_orders` is not measured, and conversion editions waited for the V3 homepage (`docs/GET-GOING.md`, "This engine"). Heartside's chat homepage went public on 19 Oct (heartside `9ea7e34`); whether the hold has released is not recorded here.
 - None of the build steps in `docs/GET-GOING.md` is ticked.
 - Merged on 22 Oct (PR #15, `89e1ec9`): the engine keeps no copy of heartside's status and reads heartside's `NOW.md` live instead (`90429c8`). The hourly sync commits nothing, and the docs steward runs nightly on this repository.
@@ -64,7 +64,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- **Next action:** review draft PR #19 and inspect the scheduled runner's latest verified product snapshot. Restore catalog access if it is also blocked; otherwise keep the local diagnostic fix and resume the first unticked step in `docs/GET-GOING.md`.
+- **Next action:** resume the first unticked step in `docs/GET-GOING.md`, Step 0, after reviewing draft PR #19's local catalog diagnostic fix. The scheduled runner already reads all four gifts.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
 - North Star check (2026-10-23): holds.
