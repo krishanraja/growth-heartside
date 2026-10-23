@@ -33,6 +33,8 @@ Objection it answers: "An AI marketing engine will spam and invent." Here it dra
 
 ## Where it is right now (as of 2026-10-23)
 
+<!-- north-star-state {"week_of": "2026-10-26", "week_target": 200, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (attribution not wired)"} --> **North Star number: U4, far behind.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: not measured yet (attribution not wired), against $200 this week, on the way to $25,000 by 28 December 2026. A bold swing every day; work that does not move the number waits.
+
 Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), and its scheduled workflows ran green on 22 Oct: the draft engine, the hourly sync with heartside, the Control Center directive at 05:10 UTC and `check` (GitHub Actions readback, 22 Oct).
 
 Live:
@@ -50,6 +52,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-10-23 **The North Star now has a number, a weekly ladder and an urgency rating, so every session knows how far behind it is and how hard to push.** Ruling (Krish, 2026-10-23): every repository chases one aggressive number on a weekly ladder, and urgency U1 to U5 sets its intensity. The number and ladder are in `docs/NORTH_STAR.md`; where it stands is the first line under "Where it is right now". Contract: ai-harness `contract/north-star-metric.md`.
 - **2026-10-22: no copy of heartside's status kept here** (`90429c8`, merged in PR #15 as `89e1ec9`). A copy of another repository's status goes stale, so `growth.py sync` stops writing one and reads heartside's own `NOW.md` live; unreadable or stale reads as "unknown" and the text is withheld. The last copy is archived at `docs/history/2026-10-22-HEARTSIDE-NOW.md`. Ruling recorded in the commit.
 - **2026-10-22: a media-credit brief for Higgsfield and Runway** (`dfcc815`): a plan for Krish's list, stills before motion, generating nothing before his yes. It runs ahead of the main build because the Christmas cut-off will not wait (`docs/GET-GOING.md`, Step 0.5).
 - **2026-10-22: prepaid credits inside an approved allocation pass the provider budget** (`0303ffb`). Krish ruled that such generation counts as authorised; publication, ad spend, top-ups and plan changes still need their own approval.
@@ -66,7 +69,7 @@ Waiting or not measured:
 - **Next action:** "Get going" on `docs/GET-GOING.md`: its first unticked step, Step 0, corrects the status line of `docs/CONTROL-CENTER-BRIEF.md`; Step 0.5, the media-credit plan proposed as `stage: "plan"` behind `spend`, follows in the same run if Step 0 takes under an hour (`docs/GET-GOING.md`, "What Get going does", rule 3).
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
-- North Star check (2026-10-22): holds.
+- North Star check (2026-10-23): holds.
 
 ## Read next
 
