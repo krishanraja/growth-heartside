@@ -1,8 +1,8 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-10-22
-head: 16de7ea
+as_of: 2026-10-23
+head: 89e1ec9
 lifecycle: live
 production_url: none
 state_doc: docs/HANDOFF.md
@@ -31,7 +31,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-10-22)
+## Where it is right now (as of 2026-10-23)
 
 Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), and its scheduled workflows ran green on 22 Oct: the draft engine, the hourly sync with heartside, the Control Center directive at 05:10 UTC and `check` (GitHub Actions readback, 22 Oct).
 
@@ -46,11 +46,11 @@ Waiting or not measured:
 
 - The last live report in the repo (19 Oct) was held: `net_sales_usd` was stale because imported Shopify reports stop at 16 Oct, `organic_orders` is not measured, and conversion editions waited for the V3 homepage (`docs/GET-GOING.md`, "This engine"). Heartside's chat homepage went public on 19 Oct (heartside `9ea7e34`); whether the hold has released is not recorded here.
 - None of the build steps in `docs/GET-GOING.md` is ticked.
-- On this branch, not merged (PR #15): the engine stops keeping a copy of heartside's status and reads heartside's `NOW.md` live instead (`90429c8`).
+- Merged on 22 Oct (PR #15, `89e1ec9`): the engine keeps no copy of heartside's status and reads heartside's `NOW.md` live instead (`90429c8`). The hourly sync commits nothing, and the docs steward runs nightly on this repository.
 
 ## What changed recently
 
-- **2026-10-22: no copy of heartside's status kept here** (`90429c8`, on PR #15). A copy of another repository's status goes stale, so `growth.py sync` stops writing one and reads heartside's own `NOW.md` live; unreadable or stale reads as "unknown" and the text is withheld. The last copy is archived at `docs/history/2026-10-22-HEARTSIDE-NOW.md`. Ruling recorded in the commit.
+- **2026-10-22: no copy of heartside's status kept here** (`90429c8`, merged in PR #15 as `89e1ec9`). A copy of another repository's status goes stale, so `growth.py sync` stops writing one and reads heartside's own `NOW.md` live; unreadable or stale reads as "unknown" and the text is withheld. The last copy is archived at `docs/history/2026-10-22-HEARTSIDE-NOW.md`. Ruling recorded in the commit.
 - **2026-10-22: a media-credit brief for Higgsfield and Runway** (`dfcc815`): a plan for Krish's list, stills before motion, generating nothing before his yes. It runs ahead of the main build because the Christmas cut-off will not wait (`docs/GET-GOING.md`, Step 0.5).
 - **2026-10-22: prepaid credits inside an approved allocation pass the provider budget** (`0303ffb`). Krish ruled that such generation counts as authorised; publication, ad spend, top-ups and plan changes still need their own approval.
 - **2026-10-22: gift-line examples in the new voice** (`68940b1`). Krish: "update the Answers article". The three published Answers articles now quote real sentences in each dog's own personality, following heartside PR #44.
@@ -65,7 +65,6 @@ Waiting or not measured:
 
 - **Next action:** "Get going" on `docs/GET-GOING.md`: its first unticked step, Step 0, corrects the status line of `docs/CONTROL-CENTER-BRIEF.md`; Step 0.5, the media-credit plan proposed as `stage: "plan"` behind `spend`, follows in the same run if Step 0 takes under an hour (`docs/GET-GOING.md`, "What Get going does", rule 3).
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
-- Merge PR #15 so the engine reads heartside's status live.
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
 - North Star check (2026-10-22): holds.
 
