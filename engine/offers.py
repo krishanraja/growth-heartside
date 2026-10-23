@@ -155,6 +155,6 @@ def purchase_campaign(spec, state):
         'facebook': f'{opening} A little gift from the dog to their person. {name}, ${price}. Gift details: {{link}}',
         'tiktok': f'Personalized dog gifts. {opening} {name}, ${price}. Gift details: {{link}} #GiftsFromTheDog',
         'pinterest': [f'Personalized dog gifts: {name}\nA gift from the dog to their person. ${price}. {{link}}',
-                      f'A gift from the dog\n{name}, ${price}. Shown with Biscuit, our fictional AI dog. {{link}}']}
+                      f'A gift from the dog\n{name}, ${price}. Shown with Buddy, our fictional AI dog. {{link}}']}
     spec['mechanism'] += ' Conversion hypothesis: a verified single-gift price and tracked product link improve qualified visits. No discount or delivery deadline is claimed.'
     return spec

@@ -95,7 +95,7 @@ recorded here so no session "fixes" it back:
    Heartside's plan gifts 20 US creators, disclosed, with every gift and
    message approved by Krish.
 7. **No memorial lane, no sad dogs.** Out of version one
-   (`docs/V3-GIFTS-FROM-YOUR-DOG.md`, section 9), and Biscuit never mentions
+   (`docs/V3-GIFTS-FROM-YOUR-DOG.md`, section 9), and Buddy never mentions
    death, illness or age (section 4.6).
 8. **Agents draft and Krish acts.** The documents' Publisher agent schedules
    posts. Here nothing is scheduled, posted or sent by an agent. Every

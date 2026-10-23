@@ -11,7 +11,7 @@ untouched during this completion; central delivery defaults off.
   Verified Morning Mug conversion editions activate only when the public gift
   and V3 homepage are ready; otherwise production remains audience-led.
 - Seven campaign concepts with 28 hook experiments in three reusable families, with a newly generated,
-  disclosed fictional Biscuit scene kept separate from real approved product photos.
+  disclosed fictional Buddy scene kept separate from real approved product photos.
 - Native Instagram, Facebook and TikTok films with local neural narration,
   original score, restrained motion, cover, three Stories, three carousel slides,
   two Pins, subtitles, downloadable narration and platform captions/alt text. Downloadable HTML/media review ZIPs.

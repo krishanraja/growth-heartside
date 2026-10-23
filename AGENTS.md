@@ -59,7 +59,7 @@ doing at any point in time".
 
 ## What you are growing
 
-Heartside sells gifts from your dog. In a 90-second chat, Biscuit (the
+Heartside sells gifts from your dog. In a 90-second chat, Buddy (the
 brand's dachshund host) turns the buyer's answers into a short message from
 the dog, in its own voice, to the person it loves. Those words go on a mug, a sherpa blanket, a framed print or
 a tree ornament, signed "Love, [dog]" with a paw. Printful makes each one to
@@ -117,9 +117,9 @@ address of Krish's in anything.
    date appears only once Krish has confirmed it for that product.
 4. **The product on screen is always the real design.** AI may make dogs and
    rooms. It never draws the product and never shows AI "customers" holding
-   or reviewing it. Biscuit is an openly fictional, AI-made character.
+   or reviewing it. Buddy is an openly fictional, AI-made character.
 5. **Heartside's words.** Follow the canon's voice rules: US spelling, no em
-   dashes, no exclamation marks in body copy (Biscuit may use one per line),
+   dashes, no exclamation marks in body copy (Buddy may use one per line),
    none of the banned words, none of the retired lines ("written by your
    dog", "Now it's in writing"), no "it's not X, it's Y". No jokes about a
    dog dying, ageing, illness or abandonment, and none that mock the buyer.
@@ -127,7 +127,7 @@ address of Krish's in anything.
    talking to the person it loves (Krish, 20 Oct): I is the dog, you is the
    person, warm first and funny second, signed "Love, [dog]"; never he, she,
    the dog's name or the person's name, no exclamation marks, no "Dear".
-   Biscuit's voice is unchanged. `python3 growth.py check` enforces what code
+   Buddy's voice is unchanged. `python3 growth.py check` enforces what code
    can, including refusing the retired third-person lines.
 6. **No customer's details, anywhere.** This repository is public. Never copy
    anything from an order, a checkout, a customer record or the chat into a
@@ -187,7 +187,7 @@ commit. Creative revisions are kept in `local/engine.sqlite3`.
 
    Items for `other` and `store` mix notes for Krish with public words. In
    those, start each line the public will see with `Hook:`, `On screen:`,
-   `Voiceover:`, `Biscuit:`, `Cover:`, `Caption:`, `Copy:`, `Headline:` or
+   `Voiceover:`, `Buddy:`, `Cover:`, `Caption:`, `Copy:`, `Headline:` or
    `Title:`. The copy rules apply to those lines. The em dash and link
    rules apply to every line.
 2. `python3 growth.py check pack.json` until it says ready.
@@ -385,3 +385,7 @@ authoritative for reading; the repository is authoritative for what is correct.
 
 **This repository's own rules:** `AGENTS.md`, `PLAYBOOK.md`
 <!-- krish-canon:end -->
+
+## Host and mockup ruling, 23 October 2026
+
+Krish: "I also want to change Biscuit to Buddy everywhere". The host is Buddy; character and voice stay the same. Use Buddy in new public copy. A customer dog may still be named Biscuit. Legacy asset paths remain compatible. Krish also asked to improve site mockups after all products are upgraded. Physical sample order is last.

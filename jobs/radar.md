@@ -22,7 +22,7 @@ Krish: about 5 minutes.
      commenter asked, in their terms (`knowledge/COPY-DOCTRINE.md`, section
      1, comment replies).
 
-   A "Comment your dog's name" reply may use Biscuit ("Biscuit: Kuku! My tail
+   A "Comment your dog's name" reply may use Buddy ("Buddy: Kuku! My tail
    is going.") and points to the bio link. Escalate price, policy, complaint
    and anything sad to Krish as an item with `platform: other`, `why`
    "escalate", and no drafted reply.
