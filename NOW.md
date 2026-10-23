@@ -44,6 +44,7 @@ Live:
 
 Waiting or not measured:
 
+- On 23 Oct, this runner's read of Heartside's public `/products.json` returned HTTP 429. `growth.py sync` therefore stored `store: null` even though signed-in Shopify and Teeinblue showed the four gifts available. Draft PR #19 makes readiness label that snapshot unverified and keep purchase copy gated; it does not restore the public catalog read or prove a product is absent.
 - The last live report in the repo (19 Oct) was held: `net_sales_usd` was stale because imported Shopify reports stop at 16 Oct, `organic_orders` is not measured, and conversion editions waited for the V3 homepage (`docs/GET-GOING.md`, "This engine"). Heartside's chat homepage went public on 19 Oct (heartside `9ea7e34`); whether the hold has released is not recorded here.
 - None of the build steps in `docs/GET-GOING.md` is ticked.
 - Merged on 22 Oct (PR #15, `89e1ec9`): the engine keeps no copy of heartside's status and reads heartside's `NOW.md` live instead (`90429c8`). The hourly sync commits nothing, and the docs steward runs nightly on this repository.
@@ -63,10 +64,10 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- **Next action:** "Get going" on `docs/GET-GOING.md`: its first unticked step, Step 0, corrects the status line of `docs/CONTROL-CENTER-BRIEF.md`; Step 0.5, the media-credit plan proposed as `stage: "plan"` behind `spend`, follows in the same run if Step 0 takes under an hour (`docs/GET-GOING.md`, "What Get going does", rule 3).
+- **Next action:** review draft PR #19, then restore a verified current catalog read for the growth runner so purchase packs can be checked against real Heartside offers. Until that read succeeds, the purchase-copy gate stays closed. Resume the first unticked step in `docs/GET-GOING.md` after this Heartside launch blocker is resolved.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
-- North Star check (2026-10-22): holds.
+- North Star check (2026-10-23): holds.
 
 ## Read next
 
