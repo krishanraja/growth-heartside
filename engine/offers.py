@@ -50,7 +50,8 @@ def catalog(state):
         live_prices = ([v['price'] for v in product['variants'] if v.get('available')]
                        if product and 'variants' in product else (product or {}).get('prices', []))
         price_matches = bool(product and offer['price_cents'] in {cents(p) for p in live_prices})
-        reason = ('not in the public catalog' if not product else
+        reason = ('public catalog could not be checked' if state.get('store') is None else
+                  'not in the public catalog' if not product else
                   'not available' if not product.get('available') else
                   'public price differs from the canon' if not price_matches else 'available at the approved price')
         result.append({**offer, 'ready': bool(product and product.get('available') and price_matches),
@@ -60,6 +61,8 @@ def catalog(state):
 
 def fresh_store(state, now=None):
     now = now or dt.datetime.now(dt.timezone.utc)
+    if not isinstance(state.get('store'), list):
+        return False
     try:
         stamp = dt.datetime.fromisoformat(state['synced_at'])
         age = now - stamp

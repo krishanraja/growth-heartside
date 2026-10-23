@@ -70,6 +70,15 @@ class OfferTests(unittest.TestCase):
         s['synced_at'] = (dt.datetime.now(dt.timezone.utc) + dt.timedelta(days=2)).isoformat()
         self.assertFalse(offers.fresh_store(s))
 
+    def test_unreachable_catalog_is_not_a_fresh_empty_catalog(self):
+        s = state()
+        s['store'] = None
+        self.assertFalse(offers.fresh_store(s))
+        self.assertEqual(offers.catalog(s)[0]['reason'], 'public catalog could not be checked')
+        s['store'] = []
+        self.assertTrue(offers.fresh_store(s))
+        self.assertEqual(offers.catalog(s)[0]['reason'], 'not in the public catalog')
+
     def test_empty_and_duplicate_daily_items_fail(self):
         pack = {'kind': 'daily', 'pack_date': '2026-10-17', 'heartside_sha': 'a' * 40, 'headline': 'Pack', 'items': []}
         self.assertTrue(growth.check_pack(pack))
