@@ -325,10 +325,10 @@ together. `python3 growth.py --self-test` checks that they still match.
 Use `docs/HARNESS_CONTEXT.md` for the owning workflow, source of truth and checks. Preserve the goal and accepted decisions when a revision changes one part; explain material trade-offs. Verify the downstream result. Record corrections and observed outcomes through the existing capture path. Experimental results retain their conditions; inferred requirements remain proposals.
 <!-- krish-repo-admin:end -->
 
-<!-- krish-canon:start release=v2026.10.22.1 sha=72c55d36e65f rendered=2026-10-23 -->
+<!-- krish-canon:start release=v2026.10.24.1 sha=a80815dd4a95 rendered=2026-10-24 -->
 ## Krish canon
 
-Rendered from `krishanraja/ai-harness` at release v2026.10.22.1. Nothing inside these
+Rendered from `krishanraja/ai-harness` at release v2026.10.24.1. Nothing inside these
 markers is hand-maintained: an edit here is detected and proposed back to the canon,
 never silently overwritten, and never lost. This sync preserves all other text.
 Separately approved repository administration owns only its declared regions and context file.
