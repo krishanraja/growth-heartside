@@ -1,3 +1,5 @@
+> **Superseded on 27 Oct 2026** by `2026-10-27-cowork-canva-design-system.md`. Do not paste this version: its receipt goes into heartside's mirror folder.
+
 # Cowork prompt: build the Heartside Brand Kit in Canva
 
 Written 27 October 2026 for Krish's Cowork session on his PC, with computer use. Krish asked for it in this form: the engine's Canva lane needs one brand kit, and the assets are on his H: drive under Ventures.
