@@ -2,6 +2,8 @@
 
 **Status.** Proposed on 27 Oct 2026 for Krish's approval. Nothing in it is built.
 
+> **Read with `2026-10-27-heartside-revamp-impact.md`.** Heartside relaunched later on 27 Oct, and these facts in this plan are now out of date: the store lock (lifted); the products and prices (now mug $45, blanket $129, portrait $59 or $119; the ornament is on hold); the host (Buddy; Biscuit is retired); the canon files (moved to heartside's history); and the economics (30% net floor). That note lists the plan changes those facts trigger.
+
 **How it was checked:**
 - **v1** went through a six-lens adversarial review: 82 agents. Of 91 findings, 84 survived a skeptic and 7 were refuted. A completeness critic added 21 (K00 to K20).
 - **v2** answered all of them. A second pass over v2 (6 agents) then found 126 gaps, 9 of them blocking. Most came from mechanisms v2 itself had added:

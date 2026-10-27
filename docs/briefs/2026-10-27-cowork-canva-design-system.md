@@ -1,6 +1,8 @@
 # Cowork prompt: build the Heartside design system in Canva
 
-Canonical version (v3), 27 Oct 2026. It supersedes `2026-10-27-cowork-canva-brand-kit.md`.
+> **Hold: do not run this version.** A Heartside brand kit now exists in Canva, and heartside's Brand Book (27 Oct) says no Buddy avatar or social template may be improvised. A v4 follows the Brand Book and `01_Identity/CANVA-BRAND-KIT-GUIDE.md` (see `2026-10-27-heartside-revamp-impact.md`).
+
+Version v3, 27 Oct 2026. It supersedes `2026-10-27-cowork-canva-brand-kit.md`.
 
 Run it after phase 0 has created `Heartside/Growth` (`2026-10-27-architecture.md`, phase 0 step 8). Before pasting, sign in to Canva and open `H:\...\Active Ventures\Heartside\00_Brand-Assets`.
 
