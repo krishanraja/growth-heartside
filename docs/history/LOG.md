@@ -4,6 +4,10 @@ Newest first. Entries are written by the docs steward (see the steward link in
 NOW.md) and by humans doing the same job by hand. Nothing in this file
 describes current behaviour; NOW.md and the state doc do.
 
+## 2026-10-28
+
+- stamped at `80d7402`: canon sync `93c4c52` and repository administration `80d7402` are automation and move no head. Fixed the audit's `next_step` finding: the next action now starts with "- Next".
+
 ## 2026-10-23
 
 - stamped at `89e1ec9`: PR #15 merged, so NOW.md no longer calls the live read of heartside's `NOW.md` unmerged. `534ea6b` (docs(harness), repository administration) is automation and moves no head.

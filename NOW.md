@@ -1,8 +1,8 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-10-23
-head: 300239c
+as_of: 2026-10-28
+head: 80d7402
 lifecycle: live
 production_url: none
 state_doc: docs/HANDOFF.md
@@ -31,7 +31,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-10-23)
+## Where it is right now (as of 2026-10-28)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": 200, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (attribution not wired)"} --> **North Star number: U4, far behind.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: not measured yet (attribution not wired), against $200 this week, on the way to $25,000 by 28 December 2026. A bold swing every day; work that does not move the number waits.
 
@@ -68,7 +68,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- **Next action:** resolve the V2 performance-review direction in the media-credit brief against Heartside's current V3 gift canon, then prepare Step 0.5 of `docs/GET-GOING.md` as a reviewable Control Center plan. Do not generate or spend before the plan decision.
+- Next: resolve the V2 performance-review direction in the media-credit brief against Heartside's current V3 gift canon, then prepare Step 0.5 of `docs/GET-GOING.md` as a reviewable Control Center plan. Do not generate or spend before the plan decision.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
 - North Star check (2026-10-23): holds.
