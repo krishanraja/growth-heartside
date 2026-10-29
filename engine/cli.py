@@ -58,7 +58,8 @@ def run(args, growth):
             print(f"{name} {reading['start']} to {reading['end']} ({reading['timezone']}): organic {reading['organic']['orders']} orders, "
                   f"${reading['organic']['net_sales']:,.2f} of store ${reading['store']['net_sales']:,.2f} "
                   f"({reading['store']['orders']} orders); pending {reading['tiers']['pending']['orders']}, "
-                  f"paid {reading['tiers']['paid']['orders']}")
+                  f"paid {reading['tiers']['paid']['orders']}; fully refunded {reading['fully_refunded_orders']}")
+            print('  by group: ' + ', '.join(f"{t} {v['orders']}" for t, v in reading['tiers'].items()))
         print('stored')
         return
     if args.cmd == 'reporting-access':

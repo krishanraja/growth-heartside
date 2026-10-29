@@ -14,9 +14,10 @@ def visit(content=None, campaign='hs_growth_202610', medium='organic_video', ref
             'utmParameters': {'source': 'instagram', 'medium': medium, 'campaign': campaign, 'content': content} if content or medium else None}
 
 
-def order(last=None, first=None, amount='129.00', created='2026-10-20T15:00:00Z', ready=True, **kw):
+def order(last=None, first=None, amount='129.00', created='2026-10-20T15:00:00Z', ready=True, refunded='0.00', **kw):
     return {'createdAt': created, 'test': False, 'cancelledAt': None, 'tags': [], 'discountCodes': [],
-            'currentSubtotalPriceSet': {'shopMoney': {'amount': amount, 'currencyCode': 'USD'}},
+            'subtotalPriceSet': {'shopMoney': {'amount': amount, 'currencyCode': 'USD'}},
+            'totalRefundedSet': {'shopMoney': {'amount': refunded, 'currencyCode': 'USD'}},
             'customerJourneySummary': {'ready': ready, 'lastVisit': last, 'firstVisit': first}, **kw}
 
 
@@ -51,6 +52,13 @@ class AttributionTests(unittest.TestCase):
         self.assertEqual(reading['organic'], {'orders': 1, 'net_sales': 129.0})
         self.assertEqual(reading['families'], {'IG_EMO_C90': {'orders': 1, 'net_sales': 129.0}})
 
+    def test_refunds_come_off_and_a_fully_refunded_order_is_not_a_sale(self):
+        orders = [order(visit(CID), amount='24.00', refunded='24.00'), order(visit(CID), amount='129.00', refunded='29.00'),
+                  order(visit(CID), amount='45.00', refunded='52.50')]
+        reading = attribution.aggregate(orders, dt.date(2026, 10, 1), dt.date(2026, 10, 29))
+        self.assertEqual(reading['organic'], {'orders': 1, 'net_sales': 100.0})
+        self.assertEqual(reading['fully_refunded_orders'], 2)
+
     def test_london_day_decides_the_window(self):
         late = order(visit(CID), created='2026-10-28T23:30:00Z')  # 29 Oct in London? No: GMT from 25 Oct, so 28 Oct
         early = order(visit(CID), created='2026-10-24T23:30:00Z')  # BST: already 25 Oct in London
@@ -69,7 +77,7 @@ class AttributionTests(unittest.TestCase):
         body = attribution.QUERY.split('{', 1)[1]
         words = set(re.findall(r'(?<![$\w])([A-Za-z_]\w*)', re.sub(r'\([^)]*\)', '', body)))
         self.assertEqual(words, {'orders', 'pageInfo', 'hasNextPage', 'endCursor', 'nodes', 'createdAt', 'test', 'cancelledAt',
-                                 'tags', 'discountCodes', 'currentSubtotalPriceSet', 'shopMoney', 'amount', 'currencyCode',
+                                 'tags', 'discountCodes', 'subtotalPriceSet', 'totalRefundedSet', 'shopMoney', 'amount', 'currencyCode',
                                  'customerJourneySummary', 'ready', 'firstVisit', 'lastVisit', 'landingPage', 'referrerUrl',
                                  'source', 'utmParameters', 'medium', 'campaign', 'content'})
 

@@ -43,6 +43,9 @@ SEARCH = ('google.', 'bing.com', 'duckduckgo.com', 'yahoo.com', 'ecosia.org', 'p
 PAID_MEDIUM = {'cpc', 'ppc', 'paid', 'paid_social', 'paidsocial', 'paid-social', 'ads', 'ad', 'display', 'cpm', 'affiliate'}
 AD_CLICK = {'gclid', 'gbraid', 'wbraid', 'msclkid', 'ttclid', 'dclid', 'twclid', 'li_fat_id'}
 INTERNAL_TAG = 'hs-internal'
+DEFINITION = ('Net sales are each order\'s subtotal after discounts, less everything refunded, never below zero, '
+              'by the London day the order was created. Fully refunded orders are not counted. '
+              'Organic posts = engine-tagged plus organic social.')
 
 # Exactly the fields this module reads. A test holds the query to this list.
 QUERY = '''query Orders($first: Int!, $after: String, $query: String) {
@@ -50,7 +53,8 @@ QUERY = '''query Orders($first: Int!, $after: String, $query: String) {
     pageInfo { hasNextPage endCursor }
     nodes {
       createdAt test cancelledAt tags discountCodes
-      currentSubtotalPriceSet { shopMoney { amount currencyCode } }
+      subtotalPriceSet { shopMoney { amount currencyCode } }
+      totalRefundedSet { shopMoney { amount currencyCode } }
       customerJourneySummary {
         ready
         firstVisit { landingPage referrerUrl source utmParameters { source medium campaign content } }
@@ -112,11 +116,17 @@ def counted(order):
     return not order.get('test') and not order.get('cancelledAt') and INTERNAL_TAG not in tags
 
 
-def amount(order):
-    money = ((order.get('currentSubtotalPriceSet') or {}).get('shopMoney') or {})
-    if money.get('currencyCode', 'USD') != 'USD':
+def money(order, field):
+    value = ((order.get(field) or {}).get('shopMoney') or {})
+    if value.get('currencyCode', 'USD') != 'USD':
         raise ValueError('attribution expects USD orders')
-    return Decimal(str(money.get('amount') or '0'))
+    return Decimal(str(value.get('amount') or '0'))
+
+
+def amount(order):
+    """Net sales for one order: its subtotal after discounts, less everything refunded, never below zero.
+    Refunds include any refunded shipping or tax, so this can only understate, never overstate."""
+    return max(Decimal(0), money(order, 'subtotalPriceSet') - money(order, 'totalRefundedSet'))
 
 
 def windows(today):
@@ -129,15 +139,18 @@ def aggregate(orders, start, end):
     """Counts and net sales per tier, and per engine family, for orders created in [start, end) London time."""
     zone = ZoneInfo(TIMEZONE)
     tiers = {t: {'orders': 0, 'net_sales': Decimal(0)} for t in TIERS}
-    families = {}
+    families, refunded = {}, 0
     for order in orders:
         if not counted(order):
             continue
         day = dt.datetime.fromisoformat(order['createdAt'].replace('Z', '+00:00')).astimezone(zone).date()
         if not start <= day < end:
             continue
-        tier, family = classify(order)
         value = amount(order)
+        if value <= 0:  # a fully refunded order is not a sale
+            refunded += 1
+            continue
+        tier, family = classify(order)
         tiers[tier]['orders'] += 1
         tiers[tier]['net_sales'] += value
         if family:
@@ -150,13 +163,12 @@ def aggregate(orders, start, end):
              'net_sales': sum((t['net_sales'] for t in tiers.values()), Decimal(0))}
     if organic['net_sales'] > store['net_sales'] or organic['orders'] > store['orders']:
         raise ValueError('organic cannot exceed the store total')
-    money = lambda row: {'orders': row['orders'], 'net_sales': float(row['net_sales'])}
+    pair = lambda row: {'orders': row['orders'], 'net_sales': float(row['net_sales'])}
     return {'start': start.isoformat(), 'end': end.isoformat(), 'timezone': TIMEZONE,
-            'store': money(store), 'organic': money(organic),
-            'tiers': {t: money(v) for t, v in tiers.items()},
-            'families': {f: money(v) for f, v in sorted(families.items())},
-            'definition': 'Net sales are each order\'s current subtotal after discounts and refunds, before shipping and tax, '
-                          'by the London day the order was created. Organic posts = engine-tagged plus organic social.'}
+            'store': pair(store), 'organic': pair(organic), 'fully_refunded_orders': refunded,
+            'tiers': {t: pair(v) for t, v in tiers.items()},
+            'families': {f: pair(v) for f, v in sorted(families.items())},
+            'definition': DEFINITION}
 
 
 def setup(db):
@@ -249,7 +261,7 @@ def run(db, today=None):
     if not shop.endswith('.myshopify.com'):
         return {'status': 'hold', 'reason': 'HEARTSIDE_SHOP_DOMAIN must be the store\'s .myshopify.com address'}
     previous = latest(db)
-    if previous and dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(
+    if previous and previous.get('definition') == DEFINITION and dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(
             previous['observed_at'].replace('Z', '+00:00')) < dt.timedelta(hours=6) and today is None:
         return {'status': 'current', 'reason': f'read at {previous["observed_at"]}; the next read is due six hours later'}
     today = today or dt.datetime.now(ZoneInfo(TIMEZONE)).date()
