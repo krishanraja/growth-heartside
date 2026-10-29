@@ -4508,5 +4508,210 @@
     ],
     "scene": "hand",
     "ratio": "9x16"
+  },
+  {
+    "file": "paintings/shepherd-over_the_top-mug.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/shepherd-over_the_top-mug.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/shepherd-over_the_top-mug-1x1.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/shepherd-over_the_top-mug-4x5.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/shepherd-over_the_top-mug-9x16.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/shepherd-over_the_top-mug/studio-1x1.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/shepherd-over_the_top-mug/studio-4x5.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/shepherd-over_the_top-mug/studio-9x16.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/shepherd-over_the_top-mug/home-1x1.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/shepherd-over_the_top-mug/home-4x5.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/shepherd-over_the_top-mug/home-9x16.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/shepherd-over_the_top-mug/hand-1x1.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/shepherd-over_the_top-mug/hand-4x5.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/shepherd-over_the_top-mug/hand-9x16.png",
+    "job": "shepherd-over_the_top-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Over the top",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "9x16"
   }
 ]
