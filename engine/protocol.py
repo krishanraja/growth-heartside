@@ -15,7 +15,7 @@ import re
 import sqlite3
 from zoneinfo import ZoneInfo
 
-from . import attribution, ledger, offers
+from . import attribution, credits, ledger, offers
 from .control_center import CODE, Client, ProtocolError, report_digest, sha256
 
 ENGINE_ID, PRODUCT_SLUG, SLUG, COMMAND = 'growth-heartside', 'heartside', 'heartside', 'directive'
@@ -231,8 +231,13 @@ def latest_decisions(decisions):
     return latest
 
 
-def build_report(*, root, state, db, now, run_id, mode, directive, recommendations, degraded=()):
-    """The report envelope, exactly engine-report.schema.json, sealed with its digest."""
+def build_report(*, root, state, db, now, run_id, mode, directive, recommendations, degraded=(), credits_spent=()):
+    """The report envelope, exactly engine-report.schema.json, sealed with its digest.
+
+    `credits_spent` is what this run itself spent of the prepaid share (engine/credits.py); the
+    daily credits session records its own spend through Control Center and never here.
+    """
+    spent = credits.spent(credits_spent)
     activity, holds = [], []
     body = (directive or {}).get('directive') or {}
     action = body.get('next_action') or {}
@@ -244,6 +249,8 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
     else:
         activity.append('No directive was available for today; the run reported what the engine already has.')
     activity.append(f'Read Heartside product truth at {state["sha"][:10]}, synced {state.get("synced_at", "at an unknown time")}.')
+    if body:
+        activity += credits.lines(credits.read(body))
     activity += list(degraded)
 
     proposals, events = [], []
@@ -283,14 +290,20 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
     if posts_count := sum(1 for p in proposals if p['wall'] == 'post'):
         activity.append(f'Proposed {posts_count} approved creative(s) for posting, each bound to its creative, revision and caption.')
     activity.append('Proposed no paid boost: the budget is $0 and the engine recommends no spend.')
-    activity.append('Nothing was rendered, posted, sent, published or spent by this run.')
+    if spent:
+        activity.append(f'Spent {len(spent)} prepaid credit generation(s) inside the share; nothing was posted, sent or published.')
+    else:
+        activity.append('Nothing was rendered, posted, sent, published or spent by this run.')
 
     status = 'degraded' if degraded or db is None else 'held' if holds else 'ready'
-    report = {'schema_version': '1.0.0', 'engine_id': ENGINE_ID, 'product_slug': PRODUCT_SLUG, 'run_id': run_id, 'mode': mode,
+    # Raised only for the field that needs it: 1.16.0 when this run spent credits.
+    report = {'schema_version': credits.VERSION if spent else '1.0.0', 'engine_id': ENGINE_ID, 'product_slug': PRODUCT_SLUG, 'run_id': run_id, 'mode': mode,
               'observed_at': stamp(now), 'source': {'revision': state['sha'], 'captured_at': stamp(dt.datetime.fromisoformat(state['synced_at'].replace('Z', '+00:00')))},
               'status': status, 'objectives': [net_sales(db, now), organic_orders(db, now)],
               'activity': [{'line': fit(line, 500), 'evidence_url': None} for line in activity][:40],
               'proposals': proposals, 'events': events, 'holds': holds[:40]}
+    if spent:
+        report['credits_spent'] = spent
     report['payload_sha256'] = report_digest(report)
     return report
 

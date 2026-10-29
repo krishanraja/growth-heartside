@@ -14,7 +14,7 @@ from . import assets, ledger
 
 PROVIDERS = {'openai': {'copy', 'image'}, 'gemini': {'copy', 'image'},
              'higgsfield': {'image', 'motion', 'voice'}, 'elevenlabs': {'voice', 'music', 'sound'},
-             'heygen': {'motion', 'voice'}, 'imagegen': {'image'}}
+             'heygen': {'motion', 'voice'}, 'imagegen': {'image'}, 'runway': {'image', 'motion'}}
 
 
 def setup(db):
