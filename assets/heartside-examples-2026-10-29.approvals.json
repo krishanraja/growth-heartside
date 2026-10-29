@@ -184,9 +184,9 @@
       "file": "local/stage1v10/out/dachshund-sentimental-blanket.png",
       "sha256": "4c660f6680ec089e6a08659fa8ba906150f86923e0c3ff27c8a9d820bebfcaec",
       "prompt": "heartside ef76390 prompts/dachshund-sentimental-blanket.txt",
-      "status": "approved",
+      "status": "held",
       "decided": "Krish, 2026-10-29",
-      "reason": "coherent sleeping set in plain sweaters"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
     },
     {
       "job": "shepherd-warm-blanket",
@@ -194,9 +194,9 @@
       "file": "local/review/shepherd-v1.png",
       "sha256": "f056862df138f4e6859f34ce592867aff23981764f54e2374bb28c3a3769cd77",
       "prompt": "stage1-v7 prompt",
-      "status": "approved",
+      "status": "held",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
     },
     {
       "job": "shepherd-warm-blanket",
@@ -244,9 +244,9 @@
       "file": "local/stage2/out/lab-sentimental-blanket.png",
       "sha256": "e70c2de26c9c31202e9ae1a808b1a3049483db39ffb18383abafa5032e45af08",
       "prompt": "heartside ef76390 prompts/lab-sentimental-blanket.txt",
-      "status": "approved",
+      "status": "held",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
     },
     {
       "job": "lab-hilarious-mug",
@@ -284,9 +284,9 @@
       "file": "local/stage2/out/frenchie-warm-blanket.png",
       "sha256": "ec15c25b9ff13ec0f48fe69b3212d68a8b52eabc864e8f5ae095ab356099389d",
       "prompt": "heartside ef76390 prompts/frenchie-warm-blanket.txt",
-      "status": "approved",
+      "status": "held",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
     },
     {
       "job": "frenchie-over_the_top-mug",
@@ -394,9 +394,9 @@
       "file": "local/v11/out/golden-hilarious-blanket.png",
       "sha256": "5288888e3070c27988fedc179c287005c5480949f3c738498986cc5ba0fe2810",
       "prompt": "heartside 1b9a775 prompts/golden-hilarious-blanket.txt",
-      "status": "approved",
+      "status": "held",
       "decided": "Krish, 2026-10-29",
-      "reason": "v11 passes the bar"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
     },
     {
       "job": "lab-hilarious-mug",
@@ -414,9 +414,9 @@
       "file": "local/v11/out/lab-over_the_top-blanket.png",
       "sha256": "a1e3ee8dc003f204ead8303bfca5133abb0b3e7fddb4af6e302bfed6ed024e3a",
       "prompt": "heartside 1b9a775 prompts/lab-over_the_top-blanket.txt",
-      "status": "approved",
+      "status": "held",
       "decided": "Krish, 2026-10-29",
-      "reason": "v11 passes the bar"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
     },
     {
       "job": "doodle-hilarious-blanket",
@@ -424,9 +424,9 @@
       "file": "local/v11/out/doodle-hilarious-blanket.png",
       "sha256": "26112fb327b099bcd3dea794e5f4093877a555cdf8835a2909fd322f4dc2678f",
       "prompt": "heartside 1b9a775 prompts/doodle-hilarious-blanket.txt",
-      "status": "approved",
+      "status": "held",
       "decided": "Krish, 2026-10-29",
-      "reason": "v11 passes the bar"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
     },
     {
       "job": "dachshund-hilarious-mug",
@@ -444,9 +444,9 @@
       "file": "local/v11/out/dachshund-over_the_top-blanket.png",
       "sha256": "bdb44ff99f438bbfc65c0574893d0d096e3b60a3f39736e1a5bdf48018fd555f",
       "prompt": "heartside 1b9a775 prompts/dachshund-over_the_top-blanket.txt",
-      "status": "approved",
+      "status": "held",
       "decided": "Krish, 2026-10-29",
-      "reason": "v11 passes the bar"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
     },
     {
       "job": "shepherd-hilarious-portrait",
@@ -557,6 +557,23 @@
       "status": "rejected",
       "decided": "Krish, 2026-10-29",
       "reason": "below the bar for a $119 product: a bare torn sheet of paper fills the note corner, and the joke reads as pride, not humour"
+    },
+    {
+      "job": "shepherd-hilarious-portrait",
+      "candidate": "store-v14",
+      "file": "local/v14/out/shepherd-hilarious-portrait.png",
+      "sha256": "ec18f46730bf956242ba334a9f882851cb010984ea0e328b0418234a9c170a36",
+      "prompt": "heartside 7ed61c3 prompts/shepherd-hilarious-portrait.txt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "fifth try: a dog walking with a paw up, not funny"
+    }
+  ],
+  "dropped_jobs": [
+    {
+      "job": "shepherd-hilarious-portrait",
+      "decided": "Krish, 2026-10-29",
+      "reason": "five tries (v11 to v14) never made the walk joke funny; the set launches with 23, and Hilarious is shown by the other five dogs"
     }
   ]
 }
