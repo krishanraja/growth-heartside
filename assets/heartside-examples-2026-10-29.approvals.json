@@ -214,9 +214,9 @@
       "file": "local/stage2/out/golden-warm-mug.png",
       "sha256": "b5252c01ad348b963a10793622cf75f18b75ce034926ed9b37247d4d1680135e",
       "prompt": "heartside ef76390 prompts/golden-warm-mug.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
     },
     {
       "job": "golden-hilarious-blanket",
@@ -224,9 +224,9 @@
       "file": "local/stage2/out/golden-hilarious-blanket.png",
       "sha256": "7e86336198249a946e53e2ce67d9925a20365fa6cb7707424fc38699aea38257",
       "prompt": "heartside ef76390 prompts/golden-hilarious-blanket.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "the velvet-cushion-and-spotlight gag repeated across Hilarious and Over the top; repaint once heartside updates the store prompt"
     },
     {
       "job": "golden-over_the_top-portrait",
@@ -234,9 +234,9 @@
       "file": "local/stage2/out/golden-over_the_top-portrait.png",
       "sha256": "857c14167b36118c2db9f2c76a916a76107928cdb6b3367d77b9bd3670374cd5",
       "prompt": "heartside ef76390 prompts/golden-over_the_top-portrait.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
     },
     {
       "job": "lab-sentimental-blanket",
@@ -244,9 +244,9 @@
       "file": "local/stage2/out/lab-sentimental-blanket.png",
       "sha256": "e70c2de26c9c31202e9ae1a808b1a3049483db39ffb18383abafa5032e45af08",
       "prompt": "heartside ef76390 prompts/lab-sentimental-blanket.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
     },
     {
       "job": "lab-hilarious-mug",
@@ -254,9 +254,9 @@
       "file": "local/stage2/out/lab-hilarious-mug.png",
       "sha256": "b33816572ef7764c34d0b5de809083105e130cf249485deb9da34a0546660e76",
       "prompt": "heartside ef76390 prompts/lab-hilarious-mug.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "the velvet-cushion-and-spotlight gag repeated across Hilarious and Over the top; repaint once heartside updates the store prompt"
     },
     {
       "job": "lab-over_the_top-blanket",
@@ -264,9 +264,9 @@
       "file": "local/stage2/out/lab-over_the_top-blanket.png",
       "sha256": "ec239061a37c155d108a3a376248c05c6fc9feea6a47c37898b1f9a8645accbb",
       "prompt": "heartside ef76390 prompts/lab-over_the_top-blanket.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "the velvet-cushion-and-spotlight gag repeated across Hilarious and Over the top; repaint once heartside updates the store prompt"
     },
     {
       "job": "frenchie-sentimental-mug",
@@ -274,9 +274,9 @@
       "file": "local/stage2/out/frenchie-sentimental-mug.png",
       "sha256": "27e2e6059219389db799227352208669aeac5933663ab17fcee0bfafec52f044",
       "prompt": "heartside ef76390 prompts/frenchie-sentimental-mug.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
     },
     {
       "job": "frenchie-warm-blanket",
@@ -284,9 +284,9 @@
       "file": "local/stage2/out/frenchie-warm-blanket.png",
       "sha256": "ec15c25b9ff13ec0f48fe69b3212d68a8b52eabc864e8f5ae095ab356099389d",
       "prompt": "heartside ef76390 prompts/frenchie-warm-blanket.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
     },
     {
       "job": "frenchie-over_the_top-mug",
@@ -294,9 +294,9 @@
       "file": "local/stage2/out/frenchie-over_the_top-mug.png",
       "sha256": "d4d3f9adf2bf46dee82366f5a4a00e52333c9accdf2f179a14a817653977b378",
       "prompt": "heartside ef76390 prompts/frenchie-over_the_top-mug.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
     },
     {
       "job": "doodle-sentimental-portrait",
@@ -304,9 +304,9 @@
       "file": "local/stage2/out/doodle-sentimental-portrait.png",
       "sha256": "d0b10d6d37968ee872618b94cb59dd97d2df892da73613c8022202f55668dcda",
       "prompt": "heartside ef76390 prompts/doodle-sentimental-portrait.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
     },
     {
       "job": "doodle-warm-mug",
@@ -314,9 +314,9 @@
       "file": "local/stage2/out/doodle-warm-mug.png",
       "sha256": "f0f9626eed9466ad853a68064ed2bd89d9d898b1ce11fdc698833e87442c91ec",
       "prompt": "heartside ef76390 prompts/doodle-warm-mug.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
     },
     {
       "job": "doodle-hilarious-blanket",
@@ -324,9 +324,9 @@
       "file": "local/stage2/out/doodle-hilarious-blanket.png",
       "sha256": "80b8b46fb7d11697ea5c7c7633902f33ab5965a35860a24bbe2773b2fb7149d9",
       "prompt": "heartside ef76390 prompts/doodle-hilarious-blanket.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "the velvet-cushion-and-spotlight gag repeated across Hilarious and Over the top; repaint once heartside updates the store prompt"
     },
     {
       "job": "dachshund-warm-portrait",
@@ -334,9 +334,9 @@
       "file": "local/stage2/out/dachshund-warm-portrait.png",
       "sha256": "8c426e99ba54f1f8b6ca6bdf5baf11165339853d01846becd0b767cd89d9d3bf",
       "prompt": "heartside ef76390 prompts/dachshund-warm-portrait.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
     },
     {
       "job": "dachshund-hilarious-mug",
@@ -344,9 +344,9 @@
       "file": "local/stage2/out/dachshund-hilarious-mug.png",
       "sha256": "edb24cb2e7c29cae9669089e5f84a85707af20b7edf75a6caff6fad9cf953ae0",
       "prompt": "heartside ef76390 prompts/dachshund-hilarious-mug.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "the velvet-cushion-and-spotlight gag repeated across Hilarious and Over the top; repaint once heartside updates the store prompt"
     },
     {
       "job": "dachshund-over_the_top-blanket",
@@ -354,9 +354,9 @@
       "file": "local/stage2/out/dachshund-over_the_top-blanket.png",
       "sha256": "841f9c337274dacf6baefc2799a57a04d7d80e0991fb971bce966a3131855a52",
       "prompt": "heartside ef76390 prompts/dachshund-over_the_top-blanket.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "the velvet-cushion-and-spotlight gag repeated across Hilarious and Over the top; repaint once heartside updates the store prompt"
     },
     {
       "job": "shepherd-sentimental-mug",
@@ -364,9 +364,9 @@
       "file": "local/stage2/out/shepherd-sentimental-mug.png",
       "sha256": "d85ed320eb5ded900c878de5132b2113d6a584104ac34fcfb0ec5f65296f7b28",
       "prompt": "heartside ef76390 prompts/shepherd-sentimental-mug.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "the dog is painted, not cut paper; repaint once heartside updates the store prompt"
     },
     {
       "job": "shepherd-hilarious-portrait",
@@ -374,9 +374,9 @@
       "file": "local/stage2/out/shepherd-hilarious-portrait.png",
       "sha256": "a099bb8175266d9dfe71588ed212ab1248f7e7a524710a567afe5b76eefde51d",
       "prompt": "heartside ef76390 prompts/shepherd-hilarious-portrait.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "velvet-cushion gag; the dog is painted, not cut paper; repaint once heartside updates the store prompt"
     },
     {
       "job": "shepherd-over_the_top-mug",
@@ -384,9 +384,9 @@
       "file": "local/stage2/out/shepherd-over_the_top-mug.png",
       "sha256": "a874787767626c5ff98a0422cab388cb17272b5510c575d447d316dd075a33b0",
       "prompt": "heartside ef76390 prompts/shepherd-over_the_top-mug.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "awaiting review"
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "velvet staging; the dog is painted, not cut paper; repaint once heartside updates the store prompt"
     }
   ]
 }

@@ -72,6 +72,35 @@ builder is `brief_builder.py` beside this file. Its order:
 - **Screenprint on long coats** still shows fur strands; one more wording pass or accepting it.
 - **One generation per order** stays true: every image here is a single generation from the photo.
 
+## Fixes after painting stage 1 and 2 from recipes v10 (29 October)
+
+Heartside adopted the directed brief as recipes v10 (`ef76390`). The 24 example paintings made
+from its own prompt files show six gaps that a real customer would hit too. Krish approved
+sending them (29 October). Of the 18 stage 2 paintings, 9 were approved and 9 held for these.
+
+1. **Hilarious and Over the top use the same gag.** Seven of ten put the stated toy on a red velvet
+   cushion under a spotlight with red curtains, so the two tones look the same and repeat. The
+   example in this proposal ("a toy on a velvet cushion under a spotlight") was copied into the
+   recipe and became the default. Fix: Hilarious builds its joke from the buyer's own answer (the
+   couch as a film critic's balcony, the coffee guarded like treasure, the feet pinned like a
+   paperweight) and does not use velvet, spotlights or curtains. Over the top keeps the grand,
+   symmetrical royal-portrait staging.
+2. **The joke can overwrite where the owner said the dog is.** The stage 1 frenchie lost its couch and
+   film to a theatre stage. Keep the stated place and activity, with the joke built on them.
+3. **Held items lose their verb.** "A tennis ball in his mouth" became "with his tennis ball", and the
+   ball ended up on the seat. Keep the owner's verb (in the mouth, hugged, at the paws).
+4. **Settings invite unnamed accessories.** A walk added a leash. Add "leash" to the avoid list
+   unless the owner named one.
+5. **Blankets invent scenery** (mountains and a lake for "out on a walk"). Keep a blanket's ground to
+   the stated place.
+6. **Collage paints the dog.** All three shepherd collages are painted fur. Use the wording proven in
+   the control test: "the dog itself built from 20 to 30 hand-cut paper pieces, each one flat colour
+   with scissor-cut or torn edges, no brushwork or fur strands anywhere".
+
+The approvals ledger beside the examples folder
+(`assets/heartside-examples-2026-10-29.approvals.json`) records which painting of each job is
+approved, with its hash and prompt; only those may be copied to Drive, GitHub or the store.
+
 ## Evidence
 
 All grids are in `evidence/`. The stage 1 examples built with this method are on branch
