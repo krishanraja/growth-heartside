@@ -9,14 +9,14 @@ Read heartside's README and canon first. Then make recipes v13 (`claude/product-
 merge `1bb9243`) into v14 with two fixes. Krish rejected the v13 painting of `shepherd-hilarious-portrait`
 (29 October): "if I was paying $119 I would not accept that".
 
-1. **The note area is a quiet part of the scene, never a blank patch.** The v13 portrait prompt asks for
-   the lower-right quarter to be left plain twice, once in the scene line and once in the framing, and
-   the collage style rendered it literally as a bare, torn sheet of paper filling a quarter of the
-   portrait. A customer choosing collage would get the same. Say it once, in the framing only, and say
-   what it is: "The lower-right quarter is a calm, low-detail continuation of the scene (soft ground,
+1. **The note area is a quiet part of the scene, never a blank patch.** Every v13 portrait prompt says
+   "Leave the lower-right quarter plain for a small note." in the scene line, and the collage style
+   rendered "plain" literally as a bare, torn sheet of paper filling a quarter of the portrait. A
+   customer choosing collage would get the same. Replace that sentence, in the framing line, with what
+   the area is: "The lower-right quarter is a calm, low-detail continuation of the scene (soft ground,
    plain wall or sky in the same medium), where a small note will be added later; never a blank sheet,
    card, label, frame or empty patch." Apply the same wording to the mug's note area. Add a test that
-   no prompt mentions the note area twice and none asks for anything "plain" or "blank" on its own.
+   no prompt asks for the note area to be "plain" or "blank".
 2. **The walk joke has to be funny, not just proud.** After four tries the "parade" walk reads as a
    dog walking proudly. Rewrite `scene.joke.walk` so the joke lands from the owner's own words alone,
    with no person and no props: "the dog leading the morning walk like a five-star general inspecting
