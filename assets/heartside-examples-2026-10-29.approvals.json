@@ -547,6 +547,16 @@
       "status": "rejected",
       "decided": "Krish, 2026-10-29",
       "reason": "the person's legs end in the sky; not funny"
+    },
+    {
+      "job": "shepherd-hilarious-portrait",
+      "candidate": "store-v13",
+      "file": "local/v13/out/shepherd-hilarious-portrait.png",
+      "sha256": "40ecd05239ec4579f68d41b68bf8d8eb0cacb4b39c294b7e42b1f6be5017627d",
+      "prompt": "heartside 1bb9243 prompts/shepherd-hilarious-portrait.txt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "below the bar for a $119 product: a bare torn sheet of paper fills the note corner, and the joke reads as pride, not humour"
     }
   ]
 }
