@@ -253,7 +253,10 @@ now produces an example audience film, cover, Stories, Pins and subtitles
 from approved v3 mug photos, with silent audio (`docs/ENGINE.md`). The old
 product-repo renderer (`tools/content/reel.py`) still targets the retired
 poster. New motion and voice adapters are subsequent work.
-Higgsfield credits are Krish's; any generation that spends them needs his yes.
+Higgsfield credits are Krish's. Within this engine's share of a prepaid pool, as the
+Control Center directive's `credits` block states it, generation needs no per-batch
+yes (Ruling, Krish, 2026-10-29; `docs/CONTROL-CENTER-BRIEF.md`, "Prepaid credits");
+beyond that share, any generation that spends them needs his yes.
 
 ## Measurement
 
