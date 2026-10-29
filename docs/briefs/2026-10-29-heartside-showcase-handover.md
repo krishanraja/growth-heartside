@@ -1,6 +1,8 @@
 # Claude Code handover: bring the breed example artwork into heartside
 
-29 October 2026. Paste the prompt below into a Claude Code session on `krishanraja/heartside`.
+29 October 2026. Run this last: after painter v15, the tone pipeline upgrade, and the growth engine has
+regenerated and Krish has approved the full example set. Paste into a Claude Code session on
+`krishanraja/heartside`.
 
 ---
 
@@ -30,8 +32,8 @@ generation each from a real stock photo, and approved by Krish one by one.
   kind, scene, ratio and intended uses for every file).
 - **Only use what the ledger approves.** `assets/heartside-examples-2026-10-29.approvals.json` lists
   every painting made; use a job only where it has an entry with `status` "approved", and check the
-  painting's sha256 against it. 23 of 24 are approved; `shepherd-hilarious-portrait` and the six bundle
-  shots (`mockups/<dog>-set/`) are still coming and will appear in the same places.
+  painting's sha256 against it. Which jobs are approved is in the ledger at the time you run; the growth engine regenerates the set
+  from the upgraded store prompt first.
 - The same set is filed for people in Google Drive: `Heartside/00_Brand-Assets/02_Imagery/Product-Examples`.
 
 **What to build.** Art-direct it yourself; Krish wants it to show the products off and feel like magic,
@@ -53,13 +55,21 @@ Rules that hold:
   branch, run heartside's tests and checks, and open one pull request with screenshots at phone and
   desktop width.
 
-**Then write the CoWork prompt.** When the pull request is ready, write a CoWork prompt (saved in
-heartside's docs, and given to Krish in your final message) that realigns the live artwork after he
-merges and publishes: Shopify product media for the mug, blanket and portrait (replacing the old
-gallery with the approved mockups, Example-labelled, in a sensible order per product), Teeinblue
-templates, previews and the default artwork shown in the personaliser, collection and homepage
-images, and anywhere else the old pug examples still appear. It must work only from the approved
-files, change nothing it cannot verify, record what it replaced, and stop for Krish before anything
-irreversible or customer-facing goes live.
+**Then write the CoWork prompt.** When the pull request is ready, write one CoWork prompt (saved in
+heartside's docs, and given to Krish in your final message) that takes everything live in order, and
+stops for Krish before each customer-facing step:
+1. **The painter upgrades that are merged but not live.** Teeinblue still holds the v11 prompt blocks;
+   recipes v12 to the latest (the tone pipeline and blanket pattern work included) are merged on the
+   release branch with their `tools/print-art/teeinblue/PROMPT-SPEC-*.md` files. Read your own latest
+   now-notes for the exact state. The theme that writes the latest field text goes live first, then
+   CoWork applies the latest mug, portrait and blanket blocks in Teeinblue, checks each against its
+   spec's hashes, and runs the storefront and repository handle checks straight after.
+2. **The artwork.** Shopify product media for the mug, blanket and portrait (replace the old pug gallery
+   with the approved mockups, Example-labelled, in a sensible order per product), Teeinblue templates,
+   previews and the default artwork shown in the personaliser, collection and homepage images, and
+   anywhere else the old pug examples still appear.
+3. **Proof.** One real-device walkthrough per product, and one test personalisation per tone to confirm
+   buyers get the new painter output.
+It must work only from approved files, change nothing it cannot verify, and record what it replaced.
 
 Finish with the pull request link and the CoWork prompt.
