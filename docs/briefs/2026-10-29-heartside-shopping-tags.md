@@ -1,5 +1,9 @@
 # For a heartside build session: make every post shoppable
 
+**Status, 29 Oct (done by a Cowork session).** Pinterest is done and proven by a test Pin. Instagram and
+Facebook wait on Meta's Commerce review (about 26 Nov). TikTok Shop is held by Krish's ruling, so
+TikTok sends people to heartside.io. Record: `docs/evidence/2026-10-29-socials-and-shopping-tags.md`.
+
 29 Oct 2026. Krish asked that the growth engine's posts be shoppable and handed the setup to a
 heartside session. This is a draft for that session; the growth engine changes nothing in the store
 or the sales channels (`AGENTS.md`, rule 9).

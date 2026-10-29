@@ -89,7 +89,8 @@ gift may be sold in a post, the mug included (Ruling, Krish, 2026-10-29).
 | Instagram | https://www.instagram.com/yourdoghasnotes |
 | Facebook | https://www.facebook.com/yourdoghasnotes |
 | TikTok | https://www.tiktok.com/@yourdoghasnotes |
-| Display name everywhere | Heartside: Personalized Dog Gifts |
+| Display name everywhere | Heartside: Personalized Dog Gifts (TikTok: Heartside: Gifts from your dog, its 30-character limit) |
+| Pinterest | https://www.pinterest.com/yourdoghasnotes (business; product tags live) |
 | The build repository (read only) | https://github.com/krishanraja/heartside |
 
 The only customer-facing address is krish@heartside.io. Never put any other

@@ -3,6 +3,21 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-29: Socials set up and shoppable where the platforms allow (Cowork session; record in
+  `docs/evidence/2026-10-29-socials-and-shopping-tags.md`).
+  - TikTok Shop is held, with no products listed. TikTok's in-app checkout takes no dog photo, and
+    Heartside's painting has to come before checkout. TikTok sells only by sending people to
+    heartside.io, through posts, the bio and ads. Revisit only if a post-purchase photo flow exists
+    and Krish asks. TikTok's bio shows heartside.io as plain text, not a link, so TikTok posts say
+    "heartside.io" on screen or in the caption.
+  - Artist's touch stays off every social catalog. It is an add-on and is never tagged on its own.
+  - Pinterest product tags work now, for all three gifts. A test Pin was clicked through to the
+    right page, with Pinterest as the referrer. Instagram and Facebook tags wait on Meta's Commerce
+    review, expected by about 26 November. Until then those posts sell through the bio link and
+    Story link stickers.
+  - TikTok's display name is "Heartside: Gifts from your dog". The full display name is over
+    TikTok's 30-character limit.
+
 - 2026-10-29: Runway allocation. Krish: the prepaid Runway credits that lapse on 7 November are to be
   mostly used getting Heartside up and running once ad and organic post production starts. The
   amount stays out of this public repository (NOW.md never_publish: provider credit balances).
