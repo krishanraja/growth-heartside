@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- Heartside's prepaid credits are spent by a daily scheduled session (docs/CREDITS-SESSION.md) that reserves and settles each generation through Control Center; the runner reads the credits block and reports credits_spent at 1.16.0 only for a spend of its own. (2026-10-29)
 - Control Center protocol 1.16.0 (prepaid credits) is in docs/control-center/, with Heartside's pools, the rule and its walls in docs/CONTROL-CENTER-BRIEF.md and the PLAYBOOK credit line brought in line with the 2026-10-29 ruling. No engine code changed. (2026-10-29)
 - Eight scheduled jobs in `automations.json` (sync, numbers, radar, the daily pack, creators, the weekly Answers drafts, store and search, the weekly report), executed on GitHub Actions by `.github/workflows/engine.yml` (`AGENTS.md`, "The schedule").
 - The Control Center loop on protocol 1.2.0: a daily directive, one report, Krish's decisions read back by digest (`docs/control-center/ENGINE-PROTOCOL.md`; `b1a14af`). The first live run, on 19 Oct, succeeded (`docs/GET-GOING.md`).
@@ -77,7 +78,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-10-29): build GET-GOING Step 6, so the engine reads the directive's `credits` block and reports `credits_spent` at schema_version 1.16.0.
+- Next (2026-10-29): confirm the first scheduled credits session settles a spend and the next directive's remaining_for_you drops by it.
 - **Next action:** Codex makes stage 1 of heartside's breed examples (6 paintings, with cutouts, crops and mockups) from `docs/briefs/codex/2026-10-29-breed-examples-stage-1.md`, on its own branch; Claude checks the return with `python3 growth.py examples check --stage 1` and a frame-by-frame review before Krish's review. Then the daily layer from `docs/briefs/2026-10-29-creative-direction.md`: 5 posts a day per platform, starting with "Translate your dog" carousels.
 - **Waiting on Krish:** start Codex on this repository with the one line "Run docs/briefs/codex/2026-10-29-breed-examples-stage-1.md". Set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). A heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
