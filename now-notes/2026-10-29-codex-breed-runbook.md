@@ -1,0 +1,4 @@
+Status: The Codex brief for heartside's breed examples is now a supervisor runbook with one literal prompt per step (branch claude/canva-integration-plan-cpy1p2, not yet on main). Krish's machine is connected as the bridge environment Lorimer:growth-heartside; starting the Codex driver session there was blocked by this session's permission check pending his choice.
+Next: Krish either allows mcp__claude-code-remote__create_session or opens the driver session himself with the pasted prompt; then the Golden Retriever pilot runs steps 1 to 9 and comes back to him as a review sheet.
+North Star check (2026-10-29): recalibration proposed. Unchanged from 27 Oct: the organic-only ladder ($25,000 by 28 Dec) is above heartside's whole-store ladder ($9,312 by 28 Dec) from 16 Nov, so one is miscalibrated; Krish to reconcile.
+Changed: Krish said the first Codex card "would never understand what that means", so Codex now gets one exact, checked step at a time.
