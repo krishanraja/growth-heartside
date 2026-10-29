@@ -120,8 +120,12 @@ address of Krish's in anything.
 4. **The product on screen is always the real design.** AI may make dogs and
    rooms. It never draws the product and never shows AI "customers" holding
    or reviewing it. Product images are the live store's own renders, each
-   labeled Example, with an example dog that is never a customer's. Biscuit
-   is retired; no Buddy image is used until heartside approves one.
+   labeled Example, with an example dog that is never a customer's, or
+   heartside's breed examples made from its own brief, where a product body
+   may be generated but the painting is composited unchanged. One hero concept
+   may morph a realistic AI dog into the real artwork, ending on the real
+   render (Krish, 29 Oct). Biscuit is retired; no Buddy image is used until
+   heartside approves one.
 5. **Heartside's words.** Follow the canon's voice rules: US spelling, no em
    dashes, no exclamation marks anywhere (Buddy included),
    none of the banned words, none of the retired lines ("written by your
