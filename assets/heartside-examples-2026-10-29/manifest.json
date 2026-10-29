@@ -4713,5 +4713,215 @@
     ],
     "scene": "hand",
     "ratio": "9x16"
+  },
+  {
+    "file": "mockups/golden-set/home-1x1.png",
+    "job": "golden",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/golden-set/home-4x5.png",
+    "job": "golden",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/golden-set/home-9x16.png",
+    "job": "golden",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/lab-set/home-1x1.png",
+    "job": "lab",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/lab-set/home-4x5.png",
+    "job": "lab",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/lab-set/home-9x16.png",
+    "job": "lab",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/frenchie-set/home-1x1.png",
+    "job": "frenchie",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/frenchie-set/home-4x5.png",
+    "job": "frenchie",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/frenchie-set/home-9x16.png",
+    "job": "frenchie",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/doodle-set/home-1x1.png",
+    "job": "doodle",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/doodle-set/home-4x5.png",
+    "job": "doodle",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/doodle-set/home-9x16.png",
+    "job": "doodle",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/dachshund-set/home-1x1.png",
+    "job": "dachshund",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/dachshund-set/home-4x5.png",
+    "job": "dachshund",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
+  },
+  {
+    "file": "mockups/dachshund-set/home-9x16.png",
+    "job": "dachshund",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "kind": "set",
+    "scene": "home",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social",
+      "site"
+    ]
   }
 ]
