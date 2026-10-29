@@ -3,6 +3,12 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-29: Runway allocation. Krish: the prepaid Runway credits that lapse on 7 November are to be
+  mostly used getting Heartside up and running once ad and organic post production starts. The
+  amount stays out of this public repository (NOW.md never_publish: provider credit balances).
+  Production uses them for the hero films in `docs/briefs/2026-10-29-creative-direction.md`, stills
+  first, and logs each generation's concept and asset.
+
 - 2026-10-29: Concept-level approval, cadence and platforms (answers in this session to a ruling his
   "Growth engines alignment" session relayed).
   - "As long as I get enough of a look at the breadth of concepts, then yes, concept-level approval

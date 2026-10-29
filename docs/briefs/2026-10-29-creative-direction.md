@@ -64,6 +64,7 @@ attribution` reads.
 
 1. Stage 1 of the breed examples (Codex), reviewed.
 2. "Translate your dog" carousels and note stills from it, in the daily pack.
-3. Higgsfield stills for The Wait and Every Dog Says It Differently, inside an allocation Krish
-   approves on his list; Runway motion on the winner.
+3. Higgsfield stills for The Wait and Every Dog Says It Differently, then Runway motion on the
+   winners. Krish has allocated the prepaid Runway credits that lapse on 7 November to this work
+   (29 Oct), so the hero films and their cut-downs are planned to use most of them before then.
 4. Stage 2 of the breed examples after Krish's yes; the set shots feed the bundle offer.
