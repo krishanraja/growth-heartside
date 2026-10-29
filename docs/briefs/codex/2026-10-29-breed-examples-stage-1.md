@@ -1,127 +1,241 @@
-# Codex card: Heartside breed examples, stage 1
+# Breed examples, stage 1: the supervisor's runbook for driving Codex
 
-Written 29 Oct 2026 by the growth engine's Claude session for Codex. Krish approved stage 1 only
-(6 paintings) on 29 Oct: "go and get codex to build out all the assets". He also said this batch
-"is going to set the tone for everything", so the bar is a professional product shoot, not a draft.
-Stage 2 needs a person's review of stage 1 and a new yes from Krish; it is not in this card.
+29 Oct 2026. Krish approved stage 1 only (6 paintings): "go and get codex to build out all the
+assets, make sure you micromanage codex properly". He also said this batch "is going to set the tone
+for everything". Stage 2 needs a person's review of stage 1 and a new yes from Krish.
 
-Follow this card exactly. Where it is stricter than heartside's brief at the end, the card wins. If
-a step cannot be done as written, stop at that step, record it in `failures.json` and report. Do not
-improvise a workaround, and do not lower the bar to finish.
+**Who does what.** A Claude session (the supervisor) drives Codex with `codex exec`, one prompt per
+step, in `~/growth-heartside` on Krish's machine. Codex never sees this file whole: it gets only the
+step prompt below, sent verbatim with the `<...>` filled in. After every step the supervisor runs the
+checks listed, opens every new image, and sends the next step only when the step passed. A failed
+step stops the run and goes to Krish. Generation is never retried without Krish's yes.
 
-## 0. Set up (no generation yet)
+**Source.** Heartside commit `eccc695c44d98008d5989bd118089acd762e465f` (branch
+`claude/product-launch-readiness-mlh1bc`), folder `design/examples-2026-10-29-breeds/`. Raw files:
+`https://raw.githubusercontent.com/krishanraja/heartside/eccc695c44d98008d5989bd118089acd762e465f/<path>`.
+Heartside's own brief is at the end of this file, unchanged; this runbook implements it and is
+stricter where they differ.
 
-1. In `krishanraja/growth-heartside`, from the latest `main`, create the branch
-   `codex/heartside-examples-2026-10-29`. Work and commit only there. Never push to `main` or to any
-   other branch, and never touch `krishanraja/heartside`.
-2. The source is heartside commit `eccc695c44d98008d5989bd118089acd762e465f` (branch
-   `claude/product-launch-readiness-mlh1bc`), folder `design/examples-2026-10-29-breeds/`. Read files
-   from `https://raw.githubusercontent.com/krishanraja/heartside/eccc695c44d98008d5989bd118089acd762e465f/<path>`.
-   Never read them from heartside's `main`.
-3. Run `python3 growth.py examples check --stage 1`. It downloads `jobs.json` into
-   `assets/heartside-examples-2026-10-29/` and verifies it against a pinned hash. Expect a list of
-   missing files. If it says the job list is wrong, stop.
-4. The six stage-1 jobs, and only these: `golden-sentimental-portrait`, `lab-warm-portrait`,
-   `frenchie-hilarious-portrait`, `doodle-over_the_top-portrait`, `dachshund-sentimental-blanket`,
-   `shepherd-warm-blanket`.
+**Order.** The pilot job `golden-sentimental-portrait` runs through steps 1 to 9 and stops for
+review. After Krish's "continue", the other five run through steps 3 to 9 one job at a time:
+`lab-warm-portrait`, `frenchie-hilarious-portrait`, `doodle-over_the_top-portrait`,
+`dachshund-sentimental-blanket`, `shepherd-warm-blanket`.
 
-## 1. The pilot: one job, then stop
+**Per-job settings.**
 
-Do `golden-sentimental-portrait` alone, through every step below, to the full bar. Then:
-`python3 growth.py examples check --stage 1 --only golden-sentimental-portrait` must end `ready for
-review`. Commit, push the branch, report (section 7) and **stop**. Do not start the other five until
-you are told "continue" after a review of the pilot. Anything the review asks you to change about
-your method applies to the other five; the pilot itself is not redone unless Krish says so.
+| Job | Gift | Frame or blanket | Home scene light (tone) |
+|---|---|---|---|
+| golden-sentimental-portrait | portrait | red oak frame | quiet early-morning window light |
+| lab-warm-portrait | portrait | black frame | a cheerful sunny kitchen |
+| frenchie-hilarious-portrait | portrait | white frame | a bright, playful, colourful room |
+| doodle-over_the_top-portrait | portrait | black frame | velvet walls, gold light, a spotlight |
+| dachshund-sentimental-blanket | blanket | cream sherpa | quiet early-morning window light |
+| shepherd-warm-blanket | blanket | cream sherpa | a cheerful sunlit sofa |
 
-## 2. The reference photo
+All paths below are relative to `assets/heartside-examples-2026-10-29/` unless they start with `~`.
 
-- Search Unsplash and Pexels for the breed. Look at several before choosing one.
-- The one you choose: a single adult dog of that exact breed, the whole head sharp, eyes and nose
-  in focus, natural colour, even light, no people or hands, no other animals, no text, logo or
-  watermark, no costume. Prefer a three-quarter view that also shows the body, so the painting can
-  show more than a head. Coat colour as the job's brief implies (a golden Golden, a black or yellow
-  Lab is fine, a fawn or brindle Frenchie, an apricot or cream Doodle, a red or black-and-tan
-  Dachshund, a black-and-tan German Shepherd).
-- Download the largest size offered (at least 1600 px on the short side). Save it as
-  `photos/<dog>.jpg`, and record photographer, page URL and licence in `credits.json`.
-- Never a generated dog, and never a photo of a person's identifiable pet from social media.
+---
 
-## 3. The painting
+## Step 1. Setup (once)
 
-- Your built-in OpenAI image generation, as an edit with the photo as the input image, the full
-  prompt file text as the prompt (unchanged, nothing added), at the job's exact `size`, at the
-  highest quality. If built-in generation is unavailable, stop and report. Do not call any API with
-  a key, and do not use any other provider.
-- One generation per painting. Save it untouched as `paintings/<id>.png`. If it came back another
-  shape, crop around the dog to `size`; never pad.
-- Before moving on, look at it and write in your report: is it the photo's dog (face, ears, coat,
-  markings)? Is the whole image in the named medium? Any letters, extra props, a second dog, extra
-  limbs or a distorted eye? Does the mood read as the job's tone? You may not regenerate; report.
+**Send to Codex:**
+```
+You are in ~/growth-heartside. Do exactly this and nothing else:
+1. git fetch origin && git checkout -B codex/heartside-examples-2026-10-29 origin/main
+2. . .venv/bin/activate
+3. python3 growth.py examples check --stage 1 --only golden-sentimental-portrait
+Do not generate, download or edit anything else.
+Reply with exactly three lines: the current branch, the commit (git rev-parse --short HEAD),
+and the last line the check printed.
+```
+**Pass when:** the branch is `codex/heartside-examples-2026-10-29`, and the check printed a list of
+missing files (not "the job list is wrong").
 
-## 4. Cutouts and crops
+## Step 2. Can Codex make images here? (once)
 
-- `cutouts/<id>.png`: background removal on the painting (rembg with `isnet-general-use`, or
-  similar), then clean the edge: no halo, no bitten ears or tail, fur edges kept soft. Same size as
-  the painting, transparent background.
-- `crops/<id>-<ratio>.png`: place the painting on the ratio's canvas at one uniform scale, the dog's
-  face inside the middle 80%, then extend only the empty area by an image edit with a mask that
-  protects every pixel of the original painting. Never scale non-uniformly, and never let the edit
-  touch the dog.
+**Send to Codex:**
+```
+Answer only, change nothing: in this environment, can you generate an image and edit an image
+(image in, image out, with a text prompt) using your built-in OpenAI image generation, and save
+the result as a PNG file at a path I give you? Which sizes can you produce: 1024x1024, 1024x1536,
+1536x1024? Reply "yes" or "no" for each of: generate, edit from an input image, save to a path,
+each size. Do not test it by generating anything.
+```
+**Pass when:** yes to edit from an input image, save to a path, and the job's size. If not, stop and
+tell Krish; no other provider is used without his yes.
 
-## 5. Mockups: the hard part
+## Step 3. The reference photo (per job)
 
-The look to hit: an unretouched-looking product photograph a premium gift shop would publish. At
-phone size nobody should be able to tell the art was placed by code.
+**Send to Codex:**
+```
+In ~/growth-heartside, find ONE real photo of a <breed> on unsplash.com or pexels.com.
+Rules for the photo: one adult <breed> only; the whole head sharp, eyes and nose in focus; natural
+colour and even light; no people or hands; no other animals; no text, logo or watermark; no costume;
+prefer a three-quarter view that shows the body. Coat: <coat>.
+Look at at least five candidates before choosing. Download the largest size (at least 1600 px on the
+short side) to assets/heartside-examples-2026-10-29/photos/<dog>.jpg as a JPEG.
+Add to assets/heartside-examples-2026-10-29/credits.json (create it if missing, keep other entries):
+"<dog>": {"photographer": "...", "source_url": "<the photo's page URL>", "licence": "Unsplash License" or "Pexels License"}.
+Do not generate any image. Do not commit.
+Reply with: the page URL, the photographer, the pixel size, and one sentence on why this photo.
+```
+Coats: golden: golden; lab: black or yellow; frenchie: fawn or brindle; doodle: apricot or cream;
+dachshund: red or black and tan, smooth coat; shepherd: black and tan.
 
-- **The base plate.** Generate the scene with the product blank: an empty frame with a plain white
-  mat area (portrait), or a plain cream sherpa blanket (blanket). Match the real product on its live
-  store page: a thin simple frame for the 12 x 18 portrait, a 50 x 60 inch sherpa that reads as
-  fleece. One base plate per scene, three scenes per painting, so at most three generations per job.
-- **The composite, by code, never by a model.** Find the print area's four corners (portrait) or the
-  visible blanket surface (blanket). Warp the master painting into it with a perspective transform
-  (portrait) or a perspective transform plus a gentle displacement map from the plate's folds
-  (blanket). Then carry the plate's real light onto the art: multiply a blurred luminance of the
-  blank print area over the art at 60 to 85 percent, and keep the frame's edge shadow on top. The
-  painting's pixels are otherwise unchanged: no repainting, no style transfer, no model edit over it.
-- **Scenes and tone.** Studio: the product alone on soft cream, even light. Home: a lived-in US home
-  in the tone's light (Sentimental: quiet morning light; Warm: a cheerful kitchen or sofa;
-  Hilarious: bright and playful; Over the top: velvet, gold light or a spotlight). In hand: the
-  portrait being hung on a wall by two hands, or the blanket over a sofa arm. Hands only: five
-  natural fingers each, no faces, no rings or tattoos that draw the eye.
-- **Ratios.** Each scene at 1:1, 4:5 and 9:16, made from the one composite by crop or by a masked
-  background extension, never by a new generation.
-- **Your own reject check before saving each scene.** Straight, square frame corners; the art sits
-  inside the frame, not over it; the mat and the reserved note area plain; no wrong shadows, no
-  melted fingers, no warped dog, no text. If a scene fails it, record it as failed with the reason.
+**Supervisor checks:** open the photo. One dog of the right breed, sharp head, no people, text or
+watermark; open the source URL and confirm the licence. A photo may be replaced (it is not a
+generation) if it fails.
 
-## 6. The review sheet, the manifest, the check
+## Step 4. The painting (per job, one generation)
 
-- `contact/<id>.jpg`: one sheet per job showing the photo, the painting, the cutout on grey, the
-  three crops and the nine mockups, each labelled with its file name in the sheet's margin (labels
-  in the sheet only, never on an asset).
-- `manifest.json` exactly as heartside's brief says, one entry per file except photos and sheets.
-- `python3 growth.py examples check --stage 1` (or `--only <id>` for the pilot) after each step and
-  before each commit. It must end `ready for review`. A failed file goes in `failures.json` as
-  `{"<path>": "<reason>"}`; leaving a file out without that is an error. Do not write `review.md`:
-  a person writes it.
+Fetch first: `curl -s -o /tmp/<id>.txt <raw base>/design/examples-2026-10-29-breeds/prompts/<id>.txt`
+and read `size` from `jobs.json`.
 
-## 7. Report (after the pilot, and again at the end)
+**Send to Codex:**
+```
+Make exactly one image, once. Use your built-in image edit with this input image:
+assets/heartside-examples-2026-10-29/photos/<dog>.jpg
+The prompt is the entire content of the file /tmp/<id>.txt, word for word. Do not shorten it, do not
+add anything, do not summarise it. Size <size>. Highest quality.
+Save the result untouched as assets/heartside-examples-2026-10-29/paintings/<id>.png (PNG). If it is
+not exactly <size>, crop around the dog to <size>; never pad or stretch.
+Do not make a second version for any reason. Do not commit.
+Reply with: the file path, its pixel size, and "1 generation used".
+```
+**Supervisor checks** (open the painting next to the photo): the same dog (face, ears, coat colour,
+markings); the whole image in the job's medium; no letters, signature, extra dog, extra limb or
+distorted eye; only the props in the job's `brief`; the tone reads at a glance; the bottom-right
+note area is quiet. If it fails, stop and show Krish; no regeneration without his yes.
 
-- the branch and the commit, and the check's last line;
-- per job: painting, cutout, crops, scenes, each done or failed with the reason;
-- your section 3 answers for each painting, and anything in section 5 you were not happy with;
-- the number of image generations you made, by kind (paintings, base plates, extensions);
-- the photo credits, one line per dog.
+## Step 5. The cutout (per job)
 
-## 8. Never
+**Send to Codex:**
+```
+Make a cutout of the dog from assets/heartside-examples-2026-10-29/paintings/<id>.png using rembg
+with the model "isnet-general-use" (python: from rembg import remove, new_session). Keep the full
+resolution and the same pixel size. Clean the edge: no halo, no bitten ears, tail or paws; keep fur
+edges soft (a 1 px feather at most). The toy or accessory the dog holds stays with the dog.
+Save as assets/heartside-examples-2026-10-29/cutouts/<id>.png (RGBA PNG, transparent background).
+Do not generate any image. Do not commit.
+Reply with: the path, the size, and the percent of fully transparent pixels.
+```
+**Supervisor checks:** view on grey and on black: clean edge, nothing of the dog cut off.
 
-- push to `main`, touch heartside, or edit anything outside `assets/heartside-examples-2026-10-29/`;
-- generate a stage-2 job, a set, a retry or any extra item;
-- use a generated dog as the reference photo, or a photo with people, text or a watermark;
-- add words, letters, logos, watermarks or signatures to any asset;
-- add a prop, costume or accessory the job's `brief` does not name, another dog, or a face;
-- install anything beyond Pillow, NumPy, OpenCV and a background-removal package such as rembg;
-- post, upload, share or send anything anywhere.
+## Step 6. The crops (per job)
+
+**Send to Codex:**
+```
+From assets/heartside-examples-2026-10-29/paintings/<id>.png make three crops:
+crops/<id>-1x1.png 1080x1080, crops/<id>-4x5.png 1080x1350, crops/<id>-9x16.png 1080x1920
+(all under assets/heartside-examples-2026-10-29/).
+For each: scale the painting uniformly (same factor both ways) so the dog's face sits inside the
+middle 80% of the canvas, and fill the canvas. Where the painting does not reach the canvas edge,
+extend ONLY that empty area with your image edit, using a mask that protects every pixel of the
+placed painting, in the painting's own style and light. Never scale non-uniformly, never pad with a
+flat colour, never let the edit touch the dog or the painted area.
+Do not commit.
+Reply with: the three paths and sizes, and how many image edits you used (at most 3).
+```
+**Supervisor checks:** the dog identical in all three; no visible seam between painting and
+extension; the face inside the middle 80%.
+
+## Step 7. Base plates (per job, three generations)
+
+**Send to Codex** (portrait jobs):
+```
+Generate three photographs, one each, no retries. Each shows a <frame colour> picture frame, thin and
+simple, portrait orientation 2:3 (a 12 x 18 inch print), holding a plain, bright, completely blank
+white print with nothing on it. Photorealistic, like a premium gift shop's product photo. No text,
+logo, people's faces, other frames or artwork anywhere.
+1. studio: the frame alone, standing straight-on on a soft cream surface against a soft cream wall,
+   even soft light, the whole frame visible with margin. Save base/<id>-studio.png at 1024x1536.
+2. home: the frame hanging straight on the wall of a lived-in American home, <home light>, the whole
+   frame visible and square to the camera. Save base/<id>-home.png at 1024x1536.
+3. hand: two adult hands (no face, no rings, no tattoos, five natural fingers each) hanging the frame
+   on a pale wall, the frame square to the camera and fully visible. Save base/<id>-hand.png at 1024x1536.
+Save under ~/growth-heartside/local/base/ (not under assets/). Do not commit.
+Reply with: the three paths and "3 generations used".
+```
+**Send to Codex** (blanket jobs):
+```
+Generate three photographs, one each, no retries. Each shows a plain cream sherpa fleece blanket,
+50 x 60 inches, completely blank with no pattern or print. Photorealistic, like a premium gift shop's
+product photo. No text, logo, people's faces or other blankets.
+1. studio: the blanket laid flat, seen from directly above, on a soft cream background, even soft
+   light, the whole blanket visible with margin. Save base/<id>-studio.png at 1024x1024.
+2. home: the blanket spread smoothly across the seat and back of a sofa in a lived-in American home,
+   <home light>, a large flat area of the blanket facing the camera. Save base/<id>-home.png at 1536x1024.
+3. hand: the blanket draped over a sofa arm with a hand smoothing it (no face, no rings, five
+   natural fingers), the draped face of the blanket large and facing the camera. Save
+   base/<id>-hand.png at 1024x1536.
+Save under ~/growth-heartside/local/base/ (not under assets/). Do not commit.
+Reply with: the three paths and "3 generations used".
+```
+**Supervisor checks:** each plate looks like a real photo of the real product (thin frame, true 2:3,
+or a real-looking sherpa); straight corners; plausible hands; nothing printed on the product.
+
+## Step 8. The composites (per job, by code only)
+
+**Send to Codex:**
+```
+Write and run one Python script, tools/compose_<id>.py under ~/growth-heartside/local/ (not in assets),
+that places assets/heartside-examples-2026-10-29/paintings/<id>.png onto each base plate in
+~/growth-heartside/local/base/<id>-{studio,home,hand}.png. Use only Pillow, NumPy and OpenCV.
+Never send the painting to an image model.
+For each plate:
+1. Find the blank print area: for a frame, the four corners of the white print inside the frame; for
+   a blanket, the visible blanket surface. Detect them, then save the points to
+   local/base/<id>-<scene>-points.json, and draw them on a debug copy local/base/<id>-<scene>-debug.png.
+2. Warp the painting into that area: a perspective transform for a frame; for a blanket, a
+   perspective transform plus a gentle displacement map from the plate's own folds (the plate's
+   blurred luminance gradient, strength low enough that the dog's face stays undistorted).
+3. Carry the plate's light onto the art: multiply a Gaussian-blurred luminance of the blank area
+   (normalised to its mean) over the warped art at 70 percent. Keep the frame's inner shadow on top.
+   Leave the painting's pixels otherwise unchanged.
+4. Save the scene at full size, then make 1080x1080, 1080x1350 and 1080x1920 versions by cropping;
+   where a ratio needs more room than the plate has, extend only the surroundings with a masked image
+   edit that protects the product and the art. Save as
+   assets/heartside-examples-2026-10-29/mockups/<id>/<scene>-1x1.png, -4x5.png, -9x16.png.
+Do not commit.
+Reply with: the nine paths, any scene where corner detection needed a manual fix, and how many
+image edits you used for extensions.
+```
+**Supervisor checks:** open all nine at phone size and full size. The art sits exactly inside the
+frame's opening, not over the frame; straight edges; the light looks native; the note area and mat
+plain; the dog undistorted; on blankets, the print follows the fabric without smearing the face.
+A failed scene goes into `failures.json` with its reason; it is not redone without Krish's yes.
+
+## Step 9. Sheet, manifest, check, commit (per job)
+
+**Send to Codex:**
+```
+In ~/growth-heartside:
+1. Make assets/heartside-examples-2026-10-29/contact/<id>.jpg: one sheet with the photo, the painting,
+   the cutout on grey, the three crops and the nine mockups, each with its file name written in the
+   sheet margin (never on an asset).
+2. Update assets/heartside-examples-2026-10-29/manifest.json (a JSON list; keep other entries): one
+   entry per painting, cutout, crop and mockup file of <id>, each with file (path relative to that
+   folder), job "<id>", breed "<breed>", style "<style>", tone "<tone>", gift "<gift>", kind
+   (painting, cutout, crop or mockup), scene and ratio where they apply, and uses (painting:
+   ["site","ad","social"]; cutout: ["ad","social","character"]; crop and mockup: ["ad","social"]).
+3. Any file of <id> that failed: add "<path>": "<reason>" to failures.json (create it if missing).
+4. Run: python3 growth.py examples check --stage 1 --only <id>   (for the last job: --stage 1 only)
+   It must end with "ready for review". If it does not, fix only what it names, and run it again.
+5. git add assets/heartside-examples-2026-10-29 && git commit -m "breed examples: <id>"
+   && git push -u origin codex/heartside-examples-2026-10-29
+Do not add anything outside assets/heartside-examples-2026-10-29/. Do not write review.md.
+Reply with: the commit, and the check's last line.
+```
+**Supervisor checks:** run the check yourself; open the contact sheet; confirm the commit touches
+only `assets/heartside-examples-2026-10-29/`. After the pilot: stop and send Krish the contact sheet,
+the generation count and your findings.
+
+## Never (applies to every step)
+
+Push to `main`, touch heartside, edit outside `assets/heartside-examples-2026-10-29/` and `local/`;
+generate a stage-2 job, a set, a retry or an extra; use a generated dog as the photo; put words,
+logos, watermarks or signatures in an asset; add props the job's brief does not name; post, upload
+or send anything anywhere.
 
 ---
 
