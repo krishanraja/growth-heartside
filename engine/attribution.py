@@ -30,7 +30,7 @@ from zoneinfo import ZoneInfo
 from . import ledger
 
 TIMEZONE = 'Europe/London'  # the shop's verified IANA zone (docs/ENGINE.md)
-API_VERSION = '2025-10'
+API_VERSION = '2026-10'
 SCOPE = 'read_orders'
 ENV = ('HEARTSIDE_SHOP_DOMAIN', 'SHOPIFY_CLIENT_ID', 'SHOPIFY_CLIENT_SECRET')
 CREATIVE_ID = re.compile(r'^(IG|FB|TT|YT|PIN|GG|EM|WEB|CR)_(EMO|ENT|UTIL|PROOF|OFFER)_([A-Z]+)_C(\d{2,3})_H(\d{2,3})_V(\d{1,2})_(\d{8})$')
