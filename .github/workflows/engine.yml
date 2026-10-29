@@ -28,6 +28,9 @@ concurrency:
 jobs:
   draft:
     runs-on: ubuntu-latest
+    env:
+      # The Shopify store handle is never published (heartside NOW.md); it lives in a repository variable.
+      HEARTSIDE_SHOP_DOMAIN: ${{ vars.HEARTSIDE_SHOP_DOMAIN }}
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4

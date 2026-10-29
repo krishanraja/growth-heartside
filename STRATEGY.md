@@ -1,5 +1,7 @@
 # Heartside acquisition strategy
 
+> **29 Oct 2026: read heartside's canon over this file.** Heartside relaunched on 27 Oct. The host is Buddy (Biscuit is retired), the range is the mug, the word-free blanket and the portrait (the ornament is on hold), and prices are read from the sync. Where this file names Biscuit, four gifts or older prices, heartside's canon and `growth.py check` win. The rewrite of this file is tracked in `NOW.md`.
+
 Krish asked for an organic growth engine using the AI tools available to
 produce delightful material and generate $10,000 in sales in a month.
 The 17 October instruction keeps marketing and customer acquisition here;

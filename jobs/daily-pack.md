@@ -31,14 +31,14 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
    - **The brief** (`platform: other`). It includes:
      - the hook (first frame, works muted);
      - a beat sheet with times, and a shot list;
-     - on-screen text, any voiceover and any Biscuit lines;
+     - on-screen text and any voiceover;
      - the source assets from heartside's library;
      - how the real print files appear;
      - what must not appear: AI customers, the product drawn by AI,
        invented reactions.
 
      9:16, with text inside the safe zone. Start every line the public will
-     see or hear with `Hook:`, `On screen:`, `Voiceover:`, `Biscuit:`,
+     see or hear with `Hook:`, `On screen:`, `Voiceover:`, `Buddy:`,
      `Cover:` or `Caption:`. `check` holds those lines to the copy rules and
      reads the rest as notes for Krish.
    - **Instagram Reel** (`instagram`, REEL): the caption, with the search
@@ -56,7 +56,7 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
      title under 100 characters, a description under 500 with the search
      phrase, and the tracked link to the most specific page.
    - **Comment prompt** (`instagram`, POST), if the format invites it:
-     "Comment your dog's name", with Biscuit's reply pattern for the radar.
+     "Comment your dog's name", with the reply pattern for the radar.
 4. State the test in the brief's `why`, in the test record shape
    (`knowledge/COPY-DOCTRINE.md`, section 8): question, mechanism, control,
    the one changed variable and the signal. Test current recognition stories
@@ -66,10 +66,10 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
 5. Write the production spec under `local/specs/`, using
    `campaigns/waits-at-the-door.json` as the schema. A scheduled run never
    edits that tracked file. Keep the visible detail true to its approved
-   example product. Once the Morning Mug is purchase-ready, a verified buy spec
-   can declare its current single-unit offer and exact product destination;
-   use {link} in captions for per-creative tracking. Other gifts still need
-   approved real photography. Run `python3 growth.py render <spec>`. It produces native audience films with restrained motion, an original local
+   example product. A verified buy spec for the blanket or the portrait can
+   declare its current single-unit offer and exact product destination; use
+   {link} in captions for per-creative tracking. The mug is never the hero
+   offer. Run `python3 growth.py render <spec>`. It produces native audience films with restrained motion, an original local
    score, cover, carousel, Stories, Pins and subtitles. Approved narration can
    be attached with verified provenance. Connected provider jobs use the budget
    and receipt contract in docs/PROVIDERS.md; no paid generation is automatic.

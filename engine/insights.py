@@ -33,7 +33,7 @@ def import_observation(db, document):
         raise ValueError('use an HTTPS reporting surface URL without credentials or tracking queries')
     hosts = {'native': {'instagram.com', 'www.instagram.com', 'facebook.com', 'www.facebook.com',
                         'business.facebook.com', 'www.tiktok.com', 'tiktok.com', 'www.pinterest.com', 'pinterest.com', 'analytics.pinterest.com'},
-             'shopify_utm': {'admin.shopify.com', 'bnf1em-ge.myshopify.com'}}
+             'shopify_utm': {'admin.shopify.com'} | (ledger.shop_domains() - {'heartside.io'})}
     if url.hostname not in hosts[document['source']]:
         raise ValueError('source URL is not a known reporting surface')
     observed, published = [dt.datetime.fromisoformat(document[k].replace('Z', '+00:00')) for k in ('observed_at', 'published_at')]

@@ -7,39 +7,39 @@
   "variation": 1,
   "intent": "audience",
   "layout": "recognition",
-  "mechanism": "Recognizing the early walker tests whether a specific everyday ritual earns sends.",
+  "mechanism": "Test whether the morning walk, a routine most owners share, earns sends to the person who does it.",
   "scenes": [
     {
-      "asset": "mug_dog",
+      "asset": "portrait_oak",
       "seconds": 3,
       "headline": "For the one who gets up first.",
-      "text": "Before the coffee. Before the rest of the house."
+      "text": "Before the coffee, before the rest of the house."
     },
     {
-      "asset": "mug_note",
+      "asset": "blanket",
       "seconds": 4,
-      "headline": "A little thank-you from the dog.",
-      "text": "For all those ordinary mornings together."
+      "headline": "A thank-you for every early walk.",
+      "text": "From the dog, painted from its photo and your answers."
     },
     {
-      "asset": "mug_dog",
+      "asset": "portrait_unframed",
       "seconds": 3,
       "headline": "Your dog loves you too.",
       "text": "Send this to your dog's early walker."
     }
   ],
-  "native_hooks": {
-    "facebook": "For the one who gets up first.",
-    "tiktok": "For the one who gets up first."
-  },
   "captions": {
-    "instagram": "Personalized dog gifts for the person who knows the little things. For the one who gets up first. Send this to your dog's early walker. #PersonalizedDogGifts #GiftsFromTheDog",
-    "facebook": "For the one who gets up first. For all those ordinary mornings together. Send this to your dog's early walker.",
-    "tiktok": "Personalized dog gifts. For the one who gets up first. Send this to your dog's early walker. #GiftsFromTheDog #DogPeople",
+    "instagram": "Personalized dog gifts for the early walker. A gift from the dog, for all those ordinary mornings together. Send this to your dog's early walker. #PersonalizedDogGifts #GiftsFromTheDog",
+    "facebook": "For the one who gets up first. A thank-you from the dog for all those ordinary mornings together. Who walks your dog first?",
+    "tiktok": "For the one who gets up first. #GiftsFromTheDog #DogWalk",
     "pinterest": [
-      "Personalized dog gifts: for the early walker\nFor all those ordinary mornings together. Shown with Biscuit, Heartside's fictional AI dog. Save this gift idea.",
-      "A gift from the dog for their person\nFor the one who gets up first. Send this to your dog's early walker. Example artwork features Biscuit, our fictional AI dog."
+      "Gift ideas for the dog walker in your life\nA portrait painted from a photo of the dog they walk every morning. Save this gift idea.",
+      "A gift from the dog for the early walker\nShown with an example dog. Save this for someone who gets up first."
     ]
   },
-  "voiceover": "For the one who gets up first. Before the coffee. A little thank-you from the dog."
+  "native_hooks": {
+    "facebook": "For the one who gets up first.",
+    "tiktok": "Someone always gets up first."
+  },
+  "voiceover": "For the one who gets up first, before the coffee. A thank-you from the dog for every early walk."
 }

@@ -21,7 +21,7 @@ class MediaTests(unittest.TestCase):
             root = Path(temporary)
             cache = root / 'local/assets/test'; cache.mkdir(parents=True)
             records = {}
-            for role in ('mug_dog', 'mug_note', 'biscuit', 'biscuit_entryway', 'logo'):
+            for role in (*assets.PRODUCT_IMAGES, 'logo'):
                 path = cache / (role + '.png')
                 Image.new('RGB', (700, 700), '#F0C0C0').save(path)
                 records[role] = {'path': str(path.relative_to(root)), 'sha256': assets.sha256(path)}
@@ -46,10 +46,10 @@ class MediaTests(unittest.TestCase):
                 self.assertEqual(manifest, cached)
                 from tests.test_offers import state as ready_state
                 sale = copy.deepcopy(spec); sale['intent'] = 'buy'; sale['variation'] = 3
-                sale['offers'] = [{'id':'the-morning-mug','quantity':1,'unit_price':'29.00'}]
-                sale['destination'] = 'https://heartside.io/products/mug'
+                sale['offers'] = [{'id':'blanket','quantity':1,'unit_price':'129.00'}]
+                sale['destination'] = 'https://heartside.io/products/your-dogs-personality-blanket'
                 for platform in ('instagram','facebook','tiktok'):
-                    sale['captions'][platform] = 'The Morning Mug, $29.00. {link}'
+                    sale['captions'][platform] = "Your Dog's Personality Blanket, $129.00. {link}"
                 state_ready = ready_state()
                 bought, bought_manifest = media.render(root, sale, state_ready, growth.check_pack, day='2026-10-17', link_builder=growth.tracked)
                 self.assertEqual(media.verify(root, bought['production'], bought), [])
@@ -63,6 +63,15 @@ class MediaTests(unittest.TestCase):
                 wrong_sale = copy.deepcopy(sale); wrong_sale['offers'][0]['unit_price']='89.00'
                 with self.assertRaises(ValueError):
                     media.render(root, wrong_sale, state_ready, growth.check_pack, day='2026-10-17', link_builder=growth.tracked)
+                # The mug is shown, never sold as the hero offer.
+                mug_sale = copy.deepcopy(sale); mug_sale['offers'] = [{'id':'mug','quantity':1,'unit_price':'45.00'}]
+                mug_sale['destination'] = 'https://heartside.io/products/your-dogs-illustrated-mug'
+                with self.assertRaises(ValueError):
+                    media.render(root, mug_sale, state_ready, growth.check_pack, day='2026-10-17', link_builder=growth.tracked)
+                # A retired scene asset never renders.
+                retired = copy.deepcopy(spec); retired['scenes'][0]['asset'] = 'biscuit'
+                with self.assertRaises(ValueError):
+                    media.render(root, retired, state, growth.check_pack, day='2026-10-17')
                 wrong = {**pack, 'heartside_sha': 'b' * 40}
                 self.assertTrue(media.verify(root, pack['production'], wrong))
                 wrong = copy.deepcopy(pack); wrong['items'][0]['text'] = 'A different claim.'
@@ -80,6 +89,28 @@ class MediaTests(unittest.TestCase):
                         media.render(root, changed, state, growth.check_pack, day='2026-10-17')
                 self.assertEqual(output.read_bytes(), original)
                 self.assertEqual(media.verify(root, pack['production'], pack), [])
+
+    def test_a_blank_template_is_not_a_painted_render(self):
+        from PIL import Image
+        import random
+        with tempfile.TemporaryDirectory() as temporary:
+            blank = Path(temporary) / 'blank.png'
+            Image.new('RGB', (600, 800), '#F4F4F4').save(blank)
+            self.assertFalse(assets.painted(blank))
+            busy = Path(temporary) / 'busy.png'
+            rng = random.Random(1)
+            image = Image.new('RGB', (256, 256))
+            image.putdata([(rng.randrange(256), rng.randrange(256), rng.randrange(256)) for _ in range(256 * 256)])
+            image.save(busy)
+            self.assertTrue(assets.painted(busy))
+
+    def test_an_approved_role_missing_from_the_live_gallery_stops(self):
+        store = [{'title': "Your Dog's Portrait", 'url': 'https://heartside.io/products/your-dogs-portrait',
+                  'images': [{'src': 'https://heartside.io/cdn/shop/files/checkout-tile-portrait.png?v=1'}]}]
+        with self.assertRaises(ValueError):
+            assets.product_image(store, 'portrait_black')
+        with self.assertRaises(ValueError):
+            assets.product_image(None, 'blanket')
 
     def test_generated_paths_cannot_escape_local(self):
         with tempfile.TemporaryDirectory() as temporary:

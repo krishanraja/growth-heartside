@@ -28,8 +28,9 @@ does not change any autonomous schedule.
 `growth.py bundle <pack-path> local/review/campaign.zip` creates a portable review
 artifact. Unzip and open `review.html`. No web account or second dashboard is needed.
 
-The seven checked concepts with 28 prewritten hook experiments cover three reusable families: recognition, two-sided
-product proof and fictional Biscuit hosting. Each has native captions, hook
+The seven checked concepts with 28 prewritten hook experiments cover three reusable families: recognition, product
+proof and a question to the audience. Since 29 Oct they show only the live store's current renders, blanket and
+portrait first; the mug appears in one audience concept and is never sold as the hero offer. Each has native captions, hook
 metadata, a declared mechanism and an audience intent. Selection falls back to a
 stable seven-day rotation, never an invented trend. An eligible observed
 replication candidate gets a changed opening and hook ID, holding its mechanism
@@ -44,11 +45,13 @@ See [the AI provider contract](PROVIDERS.md). The default films combine local Ko
 score and captions. All narration remains a draft requiring human listening
 review; it uses no metered provider API. See [voice provenance](VOICE-LICENSES.md). Nothing is approved or published by rendering.
 
-Approved product photos, logo and typefaces come from the full synced Heartside
-commit. `--heartside-dir /path/to/heartside` reads via `git show SHA:path` without
-executing its code. The separate fictional Biscuit entryway scene is generated
-brand material from this repository with visible AI disclosure, never a customer
-or product reconstruction. Each output has file checksums, native copy digests,
+The logo and typefaces come from the full synced Heartside commit
+(`--heartside-dir /path/to/heartside` reads via `git show SHA:path` without
+executing its code). Product images are the live store's own gallery renders,
+named role by role in `engine/assets.py` (`PRODUCT_IMAGES`), each recorded with
+its source URL and checksum; a blank template or checkout tile is refused, and
+every frame carries an Example label. The retired fictional Biscuit entryway
+scene is kept in `assets/fictional/` for provenance and is no longer loaded. Each output has file checksums, native copy digests,
 product SHA and a content-addressed revision. Modified copy/files fail checking;
 failed renders preserve previous output. Renderer source and FFmpeg/Pillow/zlib versions also participate in revision
 identity, so different production runtimes cannot silently share an approval.
@@ -134,7 +137,8 @@ Read reports, never order/customer records. Schema: `platform: shopify`,
 `scope: store`, `currency: USD`, `source`, offset `observed_at`, `period` with
 inclusive `start`, exclusive `end`, verified `timezone`, and the tool's `result`
 (`shopDomain`, `columns`, one ungrouped `rows` entry), or explicit allowlisted
-aggregate `values`. `bnf1em-ge.myshopify.com` is the verified store. The shop's
+aggregate `values`. The verified store's Shopify handle is never published: it is the
+`HEARTSIDE_SHOP_DOMAIN` repository variable, and `heartside.io` is always accepted. The shop's
 IANA timezone was verified as `Europe/London`; a display abbreviation such as
 BST must not replace that zone. Source reporting days are independent of New
 York job times.
@@ -279,21 +283,21 @@ stand-in; the CLI's default `--mode synthetic` never touches Krish's numbers or 
 
 ## Verified conversion media
 
-The renderer also accepts `intent: buy`, one declared Morning Mug unit, the
-exact live product `destination`, and current gift `offers`. Only this gift has
-the required approved real photography in the present renderer. The same copy,
-price, availability, source, subtitle, narration and media checks apply. Put
-`{link}` in native captions; rendering supplies a separate tracked destination
-for every creative ID. Structured offers are included in purchase-copy digests.
-A different gift, wrong price, unavailable product or missing link fails before
-production. No discount, delivery deadline or checkout result is invented.
+The renderer also accepts `intent: buy` with one declared unit of a lead gift
+(the blanket or the portrait), the exact live product `destination`, and current
+gift `offers`, when the film shows that gift. The mug is shown in audience films
+but never sold as the hero offer: it sits below heartside's 30% net floor in every
+modeled case. The same copy, price, availability, source, subtitle, narration and
+media checks apply. Put `{link}` in native captions; rendering supplies a separate
+tracked destination for every creative ID. Structured offers are included in
+purchase-copy digests. A different gift, wrong price, unavailable product or
+missing link fails before production. No discount, delivery deadline or checkout
+result is invented.
 
-When the Morning Mug and V3 homepage are public and the catalog is current,
-the scheduled fallback tests a conversion edition every third day. It reads the
-actual canonical price and live destination; the remaining days keep recognition
-and sharing hypotheses. Until then, it continues audience production. The
-current library remains audience material because the public gift range is not
-ready. An authoring session can prepare its own verified purchase spec using
+When the lead gifts and the homepage are public and the catalog is current, the
+scheduled fallback tests a conversion edition every third day for the gift the
+film ends on. It reads the canon's configured price and the live destination;
+the remaining days keep recognition and sharing hypotheses. An authoring session can prepare its own verified purchase spec using
 these same boundaries. For Instagram/TikTok, place the prepared URL in the
 appropriate link surface by hand; a shared bio link does not establish which
 Reel caused an order. Direct Story/Pin links provide more specific evidence.

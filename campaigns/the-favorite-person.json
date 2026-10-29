@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "title": "Who is your dog's favorite person?",
+  "concept": "C92",
+  "pillar": "ENT",
+  "hook": "H01",
+  "variation": 1,
+  "intent": "audience",
+  "layout": "recognition",
+  "mechanism": "Ask one recognizable question over the real gifts; test meaningful replies without simulating customer reactions or showing a host.",
+  "scenes": [
+    {
+      "asset": "portrait_white",
+      "seconds": 3,
+      "headline": "Who is your dog's favorite person?",
+      "text": "Every dog has one, and they know it."
+    },
+    {
+      "asset": "blanket",
+      "seconds": 4,
+      "headline": "Who gets the biggest greeting?",
+      "text": "The early walker, or the keeper of the warm spot?"
+    },
+    {
+      "asset": "portrait_black",
+      "seconds": 3,
+      "headline": "Your dog loves you too.",
+      "text": "A gift from the dog, for that person."
+    }
+  ],
+  "captions": {
+    "instagram": "Personalized dog gifts for the person your dog picked. Who gets the biggest greeting in your house? #PersonalizedDogGifts #GiftsFromTheDog",
+    "facebook": "Every dog has a favorite person. The early walker, or the keeper of the warm spot? Tell us who gets the biggest greeting.",
+    "tiktok": "Who is your dog's favorite person? #GiftsFromTheDog #DogPeople",
+    "pinterest": [
+      "Gift ideas from the dog to its favorite person\nA portrait or blanket painted from a photo of your dog. Save this gift idea.",
+      "A gift from the dog for their person\nShown with an example dog. Save this for the person your dog picked."
+    ]
+  },
+  "native_hooks": {
+    "facebook": "Who is your dog's favorite person?",
+    "tiktok": "Who gets the first hello?"
+  },
+  "voiceover": "Every dog has a favorite person. The early walker, or the keeper of the warm spot? Your dog knows."
+}

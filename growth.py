@@ -116,72 +116,97 @@ PLATFORMS = ('instagram', 'facebook', 'tiktok', 'pinterest', 'youtube', 'google'
 # docs/ (e.g. docs/COWORK-HANDOVER-2026-10-15.md) is added after it, because
 # sessions write those before the README catches up. These are always added.
 # ---------------------------------------------------------------------------
-ALWAYS_CANON = ('README.md', 'design/BRAND-SYSTEM.md', 'shopify/README.md')
-FALLBACK_CANON = ('docs/V3-GIFTS-FROM-YOUR-DOG.md', 'docs/POSITIONING.md', 'docs/HANDOFF.md', 'docs/SYNC.md')
+ALWAYS_CANON = ('README.md', 'design/CANVA-SOURCES.md', 'shopify/README.md')
+FALLBACK_CANON = ('docs/NORTH_STAR.md', 'docs/SCOPE.md', 'docs/ECONOMICS.md', 'docs/SYNC.md')
 HANDOVER = re.compile(r'^(?:[A-Z0-9]+-)*HANDOVER-(\d{4}-\d{2}-\d{2})[\w-]*\.md$')
+# Files the rules are read from that are not reading for a session: NOW.md is
+# heartside's status (read live, never stored), and the text workflow builder
+# holds the voice Buddy and the gift lines are written in.
+RULE_FILES = ('NOW.md', 'n8n/build.mjs')
 
-# The sections of heartside's canon that the RULES below were written from,
-# with their fingerprint at heartside commit 1028556 (14 Oct 2026); V3 2 re-read
-# at 0f345a7 (21 Oct 2026, the dog's own voice on the gifts); HANDOFF 2 and
-# POSITIONING 3 re-read at 87c60af (21 Oct 2026, both docs rewritten for v3). If any
+# The sections of heartside's sources that the RULES below were written from,
+# with their fingerprint at heartside commit 54b6b0e (29 Oct 2026, after the 27
+# October relaunch moved V3, HANDOFF and POSITIONING into docs/history/). If any
 # section changes, or stops being canon, no pack passes until a person reads
 # the new words and updates RULES and RULES_BASIS in an interactive session.
+# A prefix that is not a heading names a code or front-matter line: the block
+# runs to its closing bracket, or is that one line.
 RULES_SOURCES = (
-    ('docs/V3-GIFTS-FROM-YOUR-DOG.md', '## 2. '),    # what Krish rejected, and the rules that follow
-    ('docs/V3-GIFTS-FROM-YOUR-DOG.md', '### 4.6 '),  # Biscuit's voice
-    ('docs/HANDOFF.md', '## 2. '),                   # hard rules
-    ('docs/POSITIONING.md', '## 3. '),               # retire from headlines
+    ('docs/NORTH_STAR.md', '## The number'),                   # the metric and ladder reports use
+    ('docs/SCOPE.md', '## Non-negotiable instructions'),       # Buddy, US spelling, no em dash or !, no invented proof
+    ('docs/ECONOMICS.md', '## Current owner ruling'),          # 30% net floor; the live offers; new offers gated
+    ('NOW.md', 'never_publish:'),                              # what never appears in public
+    ('n8n/build.mjs', 'const VOICE = ['),                      # Buddy's voice and hype words
+    ('n8n/build.mjs', 'const DOG_VOICE = ['),                  # the gift lines: the dog talking, worn lines
 )
 RULES_BASIS = {
-    'docs/V3-GIFTS-FROM-YOUR-DOG.md ## 2. ': 'e9207867e2acd138',
-    'docs/V3-GIFTS-FROM-YOUR-DOG.md ### 4.6 ': 'f4a6bd4ab5ce2c91',
-    'docs/HANDOFF.md ## 2. ': 'da2c887c9b21a96a',
-    'docs/POSITIONING.md ## 3. ': '889e30e22d4cb248',
+    'docs/NORTH_STAR.md ## The number': '6f65915e793fa4af',
+    'docs/SCOPE.md ## Non-negotiable instructions': 'b712fce84c407252',
+    'docs/ECONOMICS.md ## Current owner ruling': 'a8cea2c24b9f1ce4',
+    'NOW.md never_publish:': 'ce87743276e56558',
+    'n8n/build.mjs const VOICE = [': '356e2ec50cc13e1b',
+    'n8n/build.mjs const DOG_VOICE = [': '61fca8df9c1a40d9',
 }
 
 # ---------------------------------------------------------------------------
 # Heartside's house rules, from the sections above. Each line says where.
 # ---------------------------------------------------------------------------
-EM_DASH = re.compile('\u2014')                                    # HANDOFF 2.6, V3 2
+EM_DASH = re.compile('\u2014')                                    # SCOPE 10, VOICE, DOG_VOICE
 BANNED = ['elevate', 'unleash', 'must-have', 'must have', 'game-changer', 'game changer',
-          'fur baby', 'furbaby', 'fur-baby', 'fur babies']        # V3 2
+          'fur baby', 'furbaby', 'fur-baby', 'fur babies']        # VOICE (n8n/build.mjs)
 SLOP = ['delve', "in today's", 'in a world where', "it's worth noting", 'seamless', 'unlock',
         'harness', 'leverage', 'robust', 'tapestry', 'realm', 'cutting-edge', 'revolutionize',
         'transformative', 'synergy', 'buckle up', 'look no further', 'a testament to']  # Krish's kill list
 NOT_BUT = re.compile(r"\b(?:it'?s|this is|that'?s)\s+not\s+(?:just\s+|only\s+|about\s+)?[^.;:!?]{1,60}[,;]\s*(?:it'?s|but)\b"
-                     r"|\bisn'?t\s+(?:just|only)\b", re.I)           # V3 2
-RETIRED = [  # POSITIONING 3 and V3 2, 3
+                     r"|\bisn'?t\s+(?:just|only)\b", re.I)           # AGENTS.md rule 5
+RETIRED = [  # the retired lines kept from POSITIONING 3 and V3 2 (now in heartside's docs/history/), SCOPE 5, DOG_VOICE
     (re.compile(r'written by (?:your|the|a) dog', re.I), '"written by your dog" is retired (dogs can\'t write; gifts are FROM the dog)'),
     (re.compile(r"now it'?s in writing", re.I), '"Now it\'s in writing" is retired'),
     (re.compile(r'your dog has notes(?!\w)', re.I), '"Your dog has notes" is retired as a headline and undecided as a sign-off: ask Krish (the handle @yourdoghasnotes is fine)'),
     (re.compile(r'annual review|performance review|body double|areas? for improvement', re.I), 'names a product or the HR joke retired at the v3 launch'),
-    # V3 2 and 13 (20 Oct): gift lines are the dog talking (I is the dog, you is the person); the
+    # DOG_VOICE (Krish, 20 Oct): gift lines are the dog talking (I is the dog, you is the person); the
     # third-person lines no longer print, so showing them as a gift's words misstates the product
     (re.compile(r"waits at the door for you|steals your side of the bed|lives for our morning walks|your shadow, always|always happy to see you|likes any time with you best", re.I),
-     'quotes a retired third-person gift line: gifts now speak as the dog ("I took your side of the bed. Not sorry.")'),
+     'quotes a retired third-person gift line: gifts now speak as the dog ("I hear your car before anyone else does.")'),
     # POSITIONING 3 (21 Oct): the one-line offer for the retired v2 range
-    (re.compile(r'posters?, ornaments? (?:and|&) pillows?', re.I), 'the retired one-line offer: Heartside now sells a mug, a blanket, a framed print and an ornament from the dog'),
+    (re.compile(r'posters?, ornaments? (?:and|&) pillows?', re.I), 'the retired one-line offer: Heartside now sells a mug, a blanket and a portrait from the dog'),
+    # SCOPE 5 (27 Oct): the host is Buddy everywhere; Biscuit is retired
+    # A customer's dog may be called Biscuit ("Love, Biscuit"), so only host uses are refused (from PR #21).
+    (re.compile(r"^\s*biscuit\s*:|\b(?:tell|ask|meet|chat with)\s+biscuit\b|\b(?:i'?m|i am)\s+biscuit\b"
+                r"|\bbiscuit,?\s+(?:our|the|heartside'?s)\b|\b(?:our|heartside'?s)\s+(?:[\w-]+\s+){0,3}biscuit\b", re.I | re.M),
+     'names Biscuit, the retired host: the host is Buddy everywhere (SCOPE 5)'),
+    # DOG_VOICE: the worn lines
+    (re.compile(r"\byou'?re welcome\b|\bit isn'?t close\b|\bnot sorry\b|\bobviously\b|\bthat'?s the deal\b|\bthat'?s the rule\b|\bthe whole list\b|\bin this economy\b", re.I),
+     'uses a worn line heartside bans (you\'re welcome, it isn\'t close, not sorry, obviously, that\'s the deal, that\'s the rule, the whole list, in this economy)'),
 ]
-FAKE_PROOF = [  # HANDOFF 2.3, V3 2
+# VOICE and DOG_VOICE: never clipped fragments stacked together ("Run. Walk. Fetch. Legend.").
+def stacked(line):
+    """True when a line holds two sentences in a row of three words or fewer."""
+    parts = [p.strip(' "\'\u201c\u201d()') for p in re.split(r'(?<=[.?!])\s+', line.strip())]
+    short = [bool(p) and p[-1:] in '.?!' and len(p.split()) <= 3 for p in parts]
+    return any(a and b for a, b in zip(short, short[1:]))
+
+
+FAKE_PROOF = [  # SCOPE 10: no invented reviews, sales or approvals
     (re.compile(r'sold out|only \d+ left|selling fast|hurry|last chance|limited time|ends (?:tonight|soon|today)|while (?:supplies|stocks?) last|countdown', re.I),
      'invented scarcity or urgency (only a real, confirmed order-by date is allowed)'),
     (re.compile(r'best[- ]?sell(?:er|ing)|#1\b|number one|\u2605|5[- ]star|five[- ]star|\d+ reviews|happy customers|customers love|thousands of|loved by', re.I),
      'claims proof Heartside does not have (no invented reviews, ratings, rankings or customer counts)'),
     (re.compile(r'~~|\bwas \$\d|\bregularly \$\d', re.I), 'a strike-through or "was" price'),
 ]
-SAD = re.compile(r'rainbow bridge|passed away|crossed the bridge|in (?:loving )?memory|memorial|put to sleep|\bRIP\b|cancer', re.I)  # HANDOFF 2.6, V3 4.6, 9
+SAD = re.compile(r'rainbow bridge|passed away|crossed the bridge|in (?:loving )?memory|memorial|put to sleep|\bRIP\b|cancer', re.I)  # VOICE, AGENTS.md rule 5
 # Briefs, reports, radar notes and store fixes mix instructions for Krish with
 # words the public will see. In those, only lines marked as public get the
 # copy rules; every line still gets the em dash and link rules.
 INTERNAL = ('other', 'store')
-PUBLIC_LINE = re.compile(r'^\s*(?:on[- ]screen|voiceover|vo|biscuit|caption|cover|copy|headline|title|hook|cta)\s*:', re.I)
+PUBLIC_LINE = re.compile(r'^\s*(?:on[- ]screen|voiceover|vo|buddy|biscuit|caption|cover|copy|headline|title|hook|cta)\s*:', re.I)
 UK = [(re.compile(r'personalis', re.I), 'personaliz'), (re.compile(r'\bcolour', re.I), 'color'),
       (re.compile(r'\bfavourite', re.I), 'favorite'), (re.compile(r'\bcentre\b', re.I), 'center'),
       (re.compile(r'\bcatalogue', re.I), 'catalog'), (re.compile(r'\borganis', re.I), 'organiz'),
       (re.compile(r'\bcosy\b', re.I), 'cozy'), (re.compile(r'\bmum\b', re.I), 'mom'),
-      (re.compile(r'\bjewellery', re.I), 'jewelry')]               # HANDOFF 2.6: US spelling
+      (re.compile(r'\bjewellery', re.I), 'jewelry')]               # SCOPE 10: US spelling
 EMAIL = re.compile(r'[\w.+-]+@[\w-]+\.[\w.-]+')
-CONTACT = 'krish@heartside.io'                                     # HANDOFF 2.5
+CONTACT = 'krish@heartside.io'                                     # Ruling (Krish, 2026-10-29)
 EMOJI = re.compile('[\U0001F300-\U0001FAFF\u2600-\u27bf]')
 HASHTAG = re.compile(r'(?<![\w&])#\w+')
 LIMITS = {'instagram': 2200, 'tiktok': 4000, 'pinterest': 500, 'youtube': 5000, 'reddit': 1500}
@@ -286,9 +311,20 @@ def canon_paths(readme, handover=None):
 
 
 def section(text, prefix):
-    """The section that starts with a heading line beginning `prefix`, up to the next heading of the same or higher level."""
+    """The section that starts with a heading line beginning `prefix`, up to the next heading of the same or higher level.
+    A prefix that is not a heading names a line: the block runs to the closing `]` when that line ends with `[`,
+    otherwise it is the line alone (a front-matter key)."""
     if text is None:
         return None
+    if not prefix.startswith('#'):
+        lines = text.split('\n')
+        start = next((i for i, l in enumerate(lines) if l.startswith(prefix)), None)
+        if start is None:
+            return None
+        if not lines[start].rstrip().endswith('['):
+            return lines[start].strip()
+        end = next((i for i in range(start + 1, len(lines)) if lines[i].startswith(']')), None)
+        return '\n'.join(lines[start:end + 1]).strip() if end is not None else None
     level = len(prefix) - len(prefix.lstrip('#'))
     lines, out, on = text.split('\n'), [], False
     for line in lines:
@@ -323,22 +359,14 @@ def store_products():
         out.append({'id': p.get('id'), 'title': p['title'], 'handle': p['handle'], 'type': p.get('product_type') or '',
                     'prices': prices, 'available': any(v.get('available') for v in p.get('variants', [])),
                     'variants': [{'id': v['id'], 'price': v['price'], 'available': v.get('available', False)} for v in p.get('variants', [])],
+                    'images': [{'src': i['src'], 'width': i.get('width'), 'height': i.get('height')} for i in p.get('images', []) if i.get('src')],
                     'url': f'{STORE}/products/{p["handle"]}'})
     return out
 
 
 def canon_prices(texts):
-    """Dollar amounts in the gift table of heartside's top canon document (V3 section 3)."""
-    out = set()
-    for path, text in texts.items():
-        sec = section(text, '## 3. ') if text else None
-        if sec and 'gift range' in sec.splitlines()[0].lower():
-            for row in sec.splitlines():
-                if row.startswith('|') and '**' in row:
-                    cells = row.split('|')
-                    if len(cells) > 3:
-                        out.update(float(x) for x in re.findall(r'\$(\d+(?:\.\d{2})?)', cells[3]))
-    return sorted(out)
+    """Dollar amounts heartside's canon states as configured gift and add-on prices."""
+    return sorted({c / 100 for o in offers.canonical_offers(texts) for c in o['prices_cents']})
 
 
 STATE_DIR = os.path.join(LOCAL, 'state')
@@ -429,10 +457,14 @@ def sync(quiet=False):
             texts[p] = raw(p, sha)
     for p, _ in RULES_SOURCES:
         if p not in texts:
-            texts[p] = raw(p, sha)
+            try:
+                texts[p] = raw(p, sha)
+            except (urllib.error.URLError, ValueError) as e:  # unread rules are missing rules: STOP
+                texts[p] = None
+                notes.append(f'{p} not read ({getattr(e, "code", e)}), so its rules count as changed')
     canon = {p: digest(texts.get(p))[:16] for p in paths}
     prints = fingerprints(texts)
-    rules_ok = prints == RULES_BASIS and all(p in paths for p, _ in RULES_SOURCES)
+    rules_ok = prints == RULES_BASIS and all(p in paths or p in RULE_FILES for p, _ in RULES_SOURCES)
     commits, pulls = [], []
     try:
         since = prev.get('synced_at') or (dt.datetime.now(dt.timezone.utc) - dt.timedelta(days=3)).isoformat()
@@ -569,7 +601,7 @@ def problems(item, price_points=()):
     low = text.lower()
     for w in BANNED:
         if re.search(r'(?<!\w)' + re.escape(w) + r'(?!\w)', low):
-            out.append(f'it says "{w}", which Heartside bans (V3 section 2)')
+            out.append(f'it says "{w}", which Heartside bans (Buddy\'s VOICE, n8n/build.mjs)')
     for w in SLOP:
         if w in low:
             out.append(f'it says "{w}", a stock phrase that reads as machine-written')
@@ -587,14 +619,13 @@ def problems(item, price_points=()):
     for addr in EMAIL.findall(text):
         if addr.lower() != CONTACT:
             out.append(f'the address {addr} (the only customer-facing address is {CONTACT})')
+    if '!' in text:
+        out.append('an exclamation mark (none in delivered copy, Buddy included: SCOPE 5 and 10)')
     for line in text.splitlines():
-        if line.strip().lower().startswith('biscuit:'):
-            if line.count('!') > 1:
-                out.append('a Biscuit line with more than one exclamation mark')
-            if EMOJI.search(line):
-                out.append('a Biscuit line with an emoji (Biscuit uses none)')
-        elif '!' in line:
-            out.append('an exclamation mark outside a "Biscuit:" line (none in body copy)')
+        if re.match(r'\s*buddy\s*:', line, re.I) and EMOJI.search(line):
+            out.append('a Buddy line with an emoji (Buddy uses none)')
+        if stacked(line):
+            out.append('clipped fragments stacked together (two short sentences in a row): write one natural sentence')
     tags = HASHTAG.findall(text)
     if len(tags) > 5:
         out.append(f'{len(tags)} hashtags (2 to 5 specific ones at most)')
@@ -618,7 +649,7 @@ def problems(item, price_points=()):
         allowed |= {round(a + b, 2) for i, a in enumerate(pts) for b in pts[i:]}
         for p in PRICE.findall(text):
             if float(p) not in allowed:
-                out.append(f'the price ${p} is not a price in the live store or heartside\'s gift table (or a sum of two)')
+                out.append(f'the price ${p} is not a price in the live store or heartside\'s canon (or a sum of two)')
     return out
 
 
@@ -912,9 +943,9 @@ def self_test():
     good = {'pack_date': '2026-10-19', 'kind': 'daily', 'venture': 'heartside', 'heartside_sha': '1028556df9',
             'headline': 'Monday pack', 'items': [{'platform': 'instagram', 'creative_id': cid,
                                                   'text': f'Your dog loves you too. Make their gift {link}'}]}
-    t('a clean pack passes', check_pack(good, [29.0, 89.0, 24.0, 19.0]) == [])
+    t('a clean pack passes', check_pack(good, [29.0, 45.0, 59.0, 119.0, 129.0]) == [])
 
-    def bad(text, word, platform='instagram', pp=(29.0, 89.0, 24.0, 19.0)):
+    def bad(text, word, platform='instagram', pp=(29.0, 45.0, 59.0, 119.0, 129.0)):
         return any(word in e for e in check_pack({**good, 'items': [{'platform': platform, 'text': text}]}, pp))
     t('an em dash is refused', bad('Love \u2014 Kuku', 'em dash'))
     t('a banned word is refused', bad('For your fur baby', 'bans'))
@@ -923,7 +954,17 @@ def self_test():
     t('"written by your dog" is refused', bad('Gifts written by your dog', 'retired'))
     t('a retired third-person gift line is refused', bad('On the mug: "Steals your side of the bed."', 'third-person'))
     t('the retired one-line offer is refused', bad('Personalized posters, ornaments and pillows made from their photo', 'one-line offer'))
-    t("the dog's own voice passes", not bad('On the mug: "I took your side of the bed. Not sorry." Love, Kuku', 'third-person'))
+    t("the dog's own voice passes", not bad('On the mug: "I hear your car before anyone else does." Love, Kuku', 'third-person'))
+    t('a worn line is refused', bad('On the mug: "I took your side of the bed, and I am not sorry."', 'worn line'))
+    t('"in this economy" is refused', bad('A gift in this economy', 'worn line'))
+    t('stacked fragments are refused', bad('Same stick. Every time.', 'stacked'))
+    t('one natural sentence passes', not bad('I keep the couch warm and my eye on you.', 'stacked'))
+    t('Biscuit, the retired host, is refused', bad('Meet Biscuit, our host', 'Biscuit'))
+    t('Buddy, the host, passes', not bad('Buddy asks four questions about your dog.', 'Biscuit'))
+    t('the host line prefix Biscuit is refused', bad('Biscuit: Tell me about your dog.', 'Biscuit', 'other'))
+    t('"Tell Biscuit" is refused', bad('Tell Biscuit about your dog.', 'Biscuit'))
+    t('Heartside\'s fictional Biscuit is refused', bad('Shown with Biscuit, our fictional AI dog.', 'Biscuit'))
+    t('a customer dog called Biscuit passes', not bad('On the mug: "I hear your car before anyone else does." Love, Biscuit', 'Biscuit'))
     t('"Your dog has notes" asks Krish', bad('Your dog has notes.', 'ask Krish'))
     t('the handle is fine', not bad('Follow @yourdoghasnotes', 'ask Krish'))
     t('the retired poster is refused', bad('The Annual Review is back', 'retired'))
@@ -936,9 +977,8 @@ def self_test():
     t('another email address is refused', bad('Write to hello@krishraja.com', 'customer-facing'))
     t('the store address passes', not bad('Write to krish@heartside.io', 'customer-facing'))
     t('an exclamation in body copy is refused', bad('So cute!', 'exclamation'))
-    t('Biscuit may have one', not bad('Biscuit: My tail is going!', 'exclamation'))
-    t('Biscuit may not have two', bad('Biscuit: Wow! Wow!', 'more than one'))
-    t('Biscuit uses no emoji', bad('Biscuit: Good dog \U0001F436', 'emoji'))
+    t('Buddy has no exclamation marks either', bad('Buddy: My tail is going!', 'exclamation'))
+    t('Buddy uses no emoji', bad('Buddy: Good dog \U0001F436', 'emoji'))
     t('a hashtag wall is refused', bad('#a #b #c #d #e #f', 'hashtags'))
     t('an untracked store link is refused', bad('Make yours at https://heartside.io/', 'not tracked'))
     t('a mismatched creative id is refused', any('tracked as' in e for e in check_pack(
@@ -946,12 +986,13 @@ def self_test():
     t('a bad creative id is refused', any('creative_id' in e for e in check_pack(
         {**good, 'items': [{'platform': 'instagram', 'creative_id': 'reel-1', 'text': 'Hello'}]})))
     t('an unknown price is refused', bad('Just $35', 'price'))
-    t('a live price passes', not bad('Mugs are $29', 'price'))
-    t('a sum of two prices passes', not bad('Mug and ornament, $48 together', 'price'))
+    t('a live price passes', not bad('The blanket is $129', 'price'))
+    t('a sum of two prices passes', not bad('Blanket and framed portrait, $248 together', 'price'))
+    t('a retired price is refused', bad('The mug is $29', 'price', pp=(45.0, 59.0, 119.0, 129.0)))
     t('a report can state revenue', not bad('Net sales $604 this week, 11 orders', 'price', 'other'))
     t('a brief may say what must not appear', not bad('Must not appear: memorial content, a countdown, AI customers', 'memorial', 'other'))
     t('a brief\'s on-screen line gets the copy rules', bad('Shot 1: the box\nOn screen: Only 3 left', 'urgency', 'other'))
-    t('a brief\'s Biscuit line gets the copy rules', bad('Biscuit: Our bestseller', 'proof', 'other'))
+    t('a brief\'s Buddy line gets the copy rules', bad('Buddy: Our bestseller', 'proof', 'other'))
     t('a store fix may name the abandoned checkout email', not bad('Turn on the abandoned checkout email in Shopify Messaging', 'death', 'store'))
     t('a store fix\'s copy line gets the copy rules', bad('Copy: Personalised gifts from your dog', 'UK spelling', 'store'))
     t('a brief\'s link is still tracked', bad('Landing: https://heartside.io/', 'not tracked', 'other'))
@@ -964,8 +1005,8 @@ def self_test():
               'What lives where: [`docs/SYNC.md`](docs/SYNC.md).\n\n- other [`docs/X.md`](docs/X.md)')
     paths, found = canon_paths(readme)
     t('canon comes from the README, in its order', found and paths[:3] == ['docs/V3.md', 'docs/P.md', 'docs/SYNC.md'])
-    t('canon always adds the brand system', 'design/BRAND-SYSTEM.md' in paths and 'docs/X.md' not in paths)
-    t('no "Picking this up" line falls back', canon_paths('# nothing')[0][:1] == ['docs/V3-GIFTS-FROM-YOUR-DOG.md'])
+    t('canon always adds the Canva handoff', 'design/CANVA-SOURCES.md' in paths and 'docs/X.md' not in paths)
+    t('no "Picking this up" line falls back', canon_paths('# nothing')[0][:1] == ['docs/NORTH_STAR.md'])
     t('the newest dated handover wins', newest_handover(['COWORK-HANDOVER-2026-10-15.md', 'HANDOVER-2026-10-20.md', 'HANDOFF.md',
                                                          'COWORK-PROMPT-2026-10-14-V3.md']) == 'docs/HANDOVER-2026-10-20.md')
     t('no handover is None', newest_handover(['HANDOFF.md', 'SYNC.md']) is None and newest_handover(None) is None)
@@ -975,8 +1016,12 @@ def self_test():
     doc = '# T\n\n## 1. A\none\n\n## 2. Rules\nno em dashes\n### 2.1 sub\nmore\n\n## 3. Next\nthree'
     t('a section runs to the next heading of its level', section(doc, '## 2. ') == '## 2. Rules\nno em dashes\n### 2.1 sub\nmore')
     t('a missing section is None', section(doc, '## 9. ') is None)
+    code = 'const A = 1;\nconst DOG_VOICE = [\n  "one",\n  "two"\n].join(x);\nconst B = 2;'
+    t('a code block runs to its closing bracket', section(code, 'const DOG_VOICE = [') == 'const DOG_VOICE = [\n  "one",\n  "two"\n].join(x);')
+    t('a front-matter key is its own line', section('---\nnever_publish: [a, b]\nx: 1\n---', 'never_publish:') == 'never_publish: [a, b]')
+    t('an unclosed code block is None', section('const DOG_VOICE = [\n "one"', 'const DOG_VOICE = [') is None)
     files = {'README.md': readme, 'docs/V3.md': 'v3', 'docs/P.md': 'p', 'docs/SYNC.md': 's',
-             'design/BRAND-SYSTEM.md': 'b', 'shopify/README.md': 'r'}
+             'design/CANVA-SOURCES.md': 'b', 'shopify/README.md': 'r'}
     st = {'sha': 'a' * 40, 'rules_ok': True, 'canon': {p: digest(files[p])[:16] for p in paths}}
     same = {**files}
     for p, _ in RULES_SOURCES:
@@ -1008,8 +1053,12 @@ def self_test():
     t('NOW.md is stale when other work follows it', now_verdict([{'sha': 'x', 'message': 'Fix the mug'}, steward], 'n')[0] == 'stale')
     t('NOW.md is unknown when its commit is out of reach', now_verdict([{'sha': 'x', 'message': 'docs(steward): log'}], 'n')[0] == 'unknown')
     t('Automation and merges never make NOW.md stale', now_verdict([{'sha': 'h', 'message': 'chore(heartbeat): record'}, {'sha': 'p', 'message': 'docs(harness): maintain repository administration'}, {'sha': 'm', 'message': 'Merge pull request #9', 'parents': 2}, steward], 'n') == ('fresh', []))
-    gift = '## 3. The gift range (launch)\n\n| Gift | P | Price | x |\n|---|---|---|---|\n| **The Morning Mug** | #403 | $29 | $8 |\n| **The Tree Ornament** | #900 | $24, or $19 with another gift | $7 |'
-    t('gift prices come from the canon table', canon_prices({'docs/V3.md': gift}) == [19.0, 24.0, 29.0])
+    gift = ('The configured baseline is USD45 mug, USD59 unframed portrait, USD119 framed portrait and USD129 blanket. '
+            'Two offers are live: the automatic bundle (15% off two gifts, 20% off three or more) and the USD29 Artist\'s touch add-on. '
+            'Two mugs sit USD0.79 to USD5.13 below the floor.')
+    t('gift prices come from the canon baseline', canon_prices({'docs/ECONOMICS.md': gift}) == [29.0, 45.0, 59.0, 119.0, 129.0])
+    t('canon sources that disagree on a price are a conflict', any(o['conflict'] for o in offers.canonical_offers(
+        {'docs/ECONOMICS.md': gift, 'README.md': 'The configured retail baseline is $49 mug.'})))
     agents = open(os.path.join(HERE, 'AGENTS.md')).read()
     autos = json.load(open(os.path.join(HERE, 'automations.json')))['automations']
     for f in sorted(os.listdir(os.path.join(HERE, 'jobs'))):

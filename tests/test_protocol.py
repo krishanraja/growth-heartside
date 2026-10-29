@@ -23,10 +23,10 @@ TOKEN = 'gen1_' + 'synthetic-test-bearer-' + 'z' * 30
 NOW = dt.datetime(2026, 10, 19, 8, 0, tzinfo=dt.timezone.utc)
 CID = 'IG_EMO_REEL_C01_H03_V1_20261019'
 REVISION = 'c' * 64
-CAPTION = 'Your dog loves you too. The note on the back is signed Love, Biscuit.'
+CAPTION = 'Your dog loves you too. The note on the example portrait is signed Love, Milo.'
 STATE = {'sha': 'a' * 40, 'rules_ok': True, 'synced_at': '2026-10-19T07:55:00+00:00',
-         'offers': [{'id': 'the-morning-mug', 'name': 'The Morning Mug', 'price_cents': 2900}],
-         'store': [{'title': 'An older mug', 'available': True, 'prices': [24.0]}]}
+         'offers': [{'id': 'portrait', 'name': 'portrait', 'kind': 'gift', 'price_cents': 5900, 'prices_cents': [5900, 11900]}],
+         'store': [{'title': 'An older print', 'available': True, 'prices': [24.0]}]}
 DIRECTIVE = {'ok': True, 'chosen_by': 'rule', 'directive': {
     'schema_version': '1.0.0', 'directive_id': 'heartside:2026-10-19', 'engine_id': 'growth-heartside',
     'for_date': '2026-10-19', 'aim': 'synthetic aim', 'objectives': [],
@@ -246,7 +246,7 @@ class ReportTests(unittest.TestCase):
         self.assertNotIn('spend', {p['wall'] for p in report['proposals']})
 
     def test_product_hold_follows_current_product_truth(self):
-        live = {**STATE, 'store': [{'title': 'The Morning Mug', 'available': True, 'prices': [29.0]}], 'homepage_v3': False}
+        live = {**STATE, 'store': [{'title': "Your Dog's Portrait", 'available': True, 'prices': [59.0, 119.0]}], 'homepage_v3': False}
         report = self.build(state=live)
         self.assertEqual([h['reason'] for h in report['holds']], ['Conversion editions held until the V3 homepage is public'])
         report = self.build(state={**live, 'homepage_v3': True})

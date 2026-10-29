@@ -30,16 +30,17 @@ Built in `krishanraja/heartside` (`shopify/README.md`, "Search and answer engine
 
 ## 3. One set of facts, everywhere (entity consistency)
 
-Engines merge what they read about "Heartside" from many places. Every surface uses the same facts, from `heartside/docs/POSITIONING.md` section 1:
+Engines merge what they read about "Heartside" from many places. Every surface uses the same facts, read from heartside's current canon (`README.md`, `docs/SCOPE.md`, `docs/ECONOMICS.md`) and the live store at the synced commit. Updated 29 Oct 2026 at heartside `54b6b0e`; `python3 growth.py sync` prints the live prices, and they beat this list:
 
 - **Name:** Heartside: Personalized Dog Gifts.
-- **One line:** Gifts from your dog: a mug, a blanket, a framed print or an ornament, with a message from your dog to the person it loves.
+- **One line:** Gifts from your dog: an illustrated mug, a word-free sherpa blanket, or a portrait, painted from a photo of your dog.
 - **Proof points:**
-  - the words come from the owner's answers in a one-minute chat with Biscuit;
-  - each gift is signed "Love, [dog]" with a paw;
+  - Buddy, Heartside's host, gathers a photo of the dog and a few answers in a short chat;
+  - the mug and the portrait carry a short note from the dog, signed "Love, [dog]" with a paw; the blanket has no words;
   - a person checks every order before it prints;
-  - free US shipping, US only.
-- **Prices:** $29, $89, $89, and $24 (or $19 with another gift).
+  - US only.
+- **Prices:** mug $45, blanket $129, portrait $59 unframed or $119 framed. Live offers: 15% off two gifts and 20% off three or more, and the $29 Artist's touch add-on (heartside `docs/ECONOMICS.md`).
+- **Not a fact to state:** free shipping to every US address. Heartside's ECONOMICS says its qualified US shipping discount must not be generalized from one quoted destination.
 
 Surfaces to align, with the owner of each:
 - the site meta and `/llms.txt` (heartside);

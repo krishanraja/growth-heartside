@@ -1,6 +1,8 @@
+import os
 from pathlib import Path
 import tempfile
 import unittest
+from unittest import mock
 
 from engine import ledger
 
@@ -62,12 +64,24 @@ class LedgerTests(unittest.TestCase):
 
     def test_tool_result_has_one_row_and_the_right_store(self):
         r = report(); del r['values']
-        r['result'] = {'shopDomain': 'bnf1em-ge.myshopify.com', 'columns': [{'name': 'orders'}], 'rows': [['3']]}
-        ledger.import_report(self.db, r)
-        self.assertEqual(ledger.normalize_report(r)['values'], {'orders': 3})
-        r['result']['shopDomain'] = 'another.myshopify.com'
-        with self.assertRaises(ValueError):
+        r['result'] = {'shopDomain': 'example-store.myshopify.com', 'columns': [{'name': 'orders'}], 'rows': [['3']]}
+        with mock.patch.dict(os.environ, {'HEARTSIDE_SHOP_DOMAIN': 'example-store.myshopify.com'}):
+            ledger.import_report(self.db, r)
+            self.assertEqual(ledger.normalize_report(r)['values'], {'orders': 3})
+            r['result']['shopDomain'] = 'another.myshopify.com'
+            with self.assertRaises(ValueError):
+                ledger.normalize_report(r)
+        r['result']['shopDomain'] = 'example-store.myshopify.com'
+        with mock.patch.dict(os.environ, {'HEARTSIDE_SHOP_DOMAIN': ''}), self.assertRaises(ValueError):
             ledger.normalize_report(r)
+        r['result']['shopDomain'] = 'heartside.io'
+        self.assertEqual(ledger.normalize_report(r)['values'], {'orders': 3})
+
+    def test_the_store_handle_is_not_in_the_public_repository(self):
+        import subprocess
+        tracked = subprocess.run(['git', '-C', str(Path(__file__).resolve().parent.parent), 'grep', '-l', '-i', '-E',
+                                  '[a-z0-9]{6}-[a-z0-9]{2}' + r'\.myshopify\.com'], capture_output=True, text=True)
+        self.assertEqual(tracked.stdout.strip(), '', 'a Shopify store handle is in a tracked file')
 
     def test_older_or_conflicting_observations_cannot_replace_current(self):
         ledger.import_report(self.db, report())

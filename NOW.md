@@ -1,7 +1,7 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-10-27
+as_of: 2026-10-29
 head: 300239c
 lifecycle: live
 production_url: none
@@ -31,9 +31,11 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-10-27)
+## Where it is right now (as of 2026-10-29)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": 200, "current": null, "current_as_of": null, "current_source": null, "urgency": 4, "urgency_reason": "not measured yet (attribution not wired)"} --> **North Star number: U4, far behind.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: not measured yet (attribution not wired), against $200 this week, on the way to $25,000 by 28 December 2026. A bold swing every day; work that does not move the number waits.
+
+**Off STOP since 29 Oct.** The rule checks are rebuilt on heartside's current sources at `54b6b0e` (NORTH_STAR's number, SCOPE's non-negotiables, ECONOMICS's 26 Oct ruling, NOW's never-publish list, and Buddy's and the gift lines' voice in `n8n/build.mjs`), and `python3 growth.py sync` reads rules as current. The live catalog binds the blanket ($129), the portrait ($59 or $119), the mug ($45) and the $29 Artist's touch at canon prices (`python3 growth.py readiness`, 29 Oct). The seven campaigns render from the live store's own product renders with an Example label; none uses Biscuit. Heartside's whole-store number is $24 over the trailing 28 days (heartside `NOW.md`, read 29 Oct); the organic share is still not measured.
 
 Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), and its scheduled workflows ran green on 22 Oct: the draft engine, the hourly sync with heartside, the Control Center directive at 05:10 UTC and `check` (GitHub Actions readback, 22 Oct).
 
@@ -53,6 +55,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-10-29 **The engine caught up with heartside's relaunch and is off STOP** (branch `claude/canva-integration-plan-cpy1p2`). Rules now come from heartside's current sources; `check` refuses Biscuit, every exclamation mark, the worn lines and stacked fragments. Prices come from the canon's configured baseline, cross-checked against the live store; a disagreement holds the gift. Purchase drafts sell only the blanket or the portrait, because the mug sits below the 30% net floor. The renderer uses the store's own renders, refuses blank templates and tiles, and labels every frame Example. The Shopify store handle left every tracked file for the `HEARTSIDE_SHOP_DOMAIN` repository variable, with a test that fails if a handle returns; it remains in git history. `docs/GEO-AEO.md` facts and prices are current, and it no longer claims free shipping to every US address.
 - 2026-10-27 **Heartside relaunched, and this engine is on STOP until it catches up** (`docs/briefs/2026-10-27-heartside-revamp-impact.md`). Sync at heartside `bea22ce` found that the four rule sections it checks had moved into heartside's history. The renderer still uses the retired Biscuit and the old mug photos. A Heartside Canva brand kit exists but has not been updated.
 - 2026-10-27 **The architecture plan is now v3, reviewed three times, and still proposed, not built** (`docs/briefs/2026-10-27-architecture.md`). It has 14 specialists. `learn` owns what works, `librarian` owns the Drive `Heartside/Growth` folder, and `audience` owns followers. GA comes from Control Center. Codex posts approved batches through Buffer from Krish's PC, and Claude orchestrates and checks. The failure register is filed at `docs/REGISTER.md`, and the Canva design-system Cowork prompt at `docs/briefs/2026-10-27-cowork-canva-design-system.md` (the brand-kit prompt is superseded). heartside.io has been on its password page ("Opening soon") since some time after 23 Oct; Krish says it is deliberate until heartside PR #50.
 - 2026-10-23 **An unreachable public catalog now reads as unverified, not as four missing gifts** (`398d15d`, PR #19 `e373717`; `engine/offers.py`, `tests/test_offers.py`). A local read of Heartside's `/products.json` returned HTTP 429, and the engine had no way to tell that from the gifts being gone. The scheduled runner's saved snapshot still showed all four (`74a2939`).
@@ -70,11 +73,12 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- **Next action:** the engine is on STOP. Heartside relaunched on 27 Oct with the store live, three gifts (mug $45, blanket $129, portrait $59 or $119), Buddy as host, its old canon moved to history, and a 30% net-margin rule. `docs/briefs/2026-10-27-heartside-revamp-impact.md` lists what has to change. In an interactive session: rebuild the rules basis on the current canon, move the renderer and campaigns off Biscuit onto the current Printful renders, then take Krish's yes on the architecture plan.
-- **Waiting on Krish:** his direct go to start the work, which reached this session only as a relayed instruction (29 Oct); then Gate 0 in the architecture brief. Both open questions are answered: the gift-line rule holds (heartside `n8n/build.mjs`), and the customer email is krish@heartside.io.
+- **Next action:** wire attribution (mandate step 3): one UTM convention per post family, and Shopify orders read back by landing source, so the North Star line above carries a real organic number. Then the organic loop: the daily pack from the current renders, blanket and portrait first.
+- **Waiting on Krish:** set the repository variable `HEARTSIDE_SHOP_DOMAIN` to the store's `.myshopify.com` handle (GitHub, Settings, Secrets and variables, Actions, Variables). Until then, Shopify aggregate imports are accepted only when they name `heartside.io`. Then Gate 0 in the architecture brief. Every post, send and spend still needs his yes at that moment.
+- **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
-- North Star check (2026-10-27): recalibration proposed. The organic-only ladder ($25,000 by 28 Dec) is above heartside's whole-store ladder ($9,312 by 28 Dec) in every week from 16 Nov, so one of them is miscalibrated; Krish to reconcile.
+- North Star check (2026-10-29): recalibration proposed, unchanged from 27 Oct. The organic-only ladder ($25,000 by 28 Dec) is above heartside's whole-store ladder ($9,312 by 28 Dec) in every week from 16 Nov, so one of them is miscalibrated; Krish to reconcile.
 
 ## Read next
 

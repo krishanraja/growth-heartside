@@ -22,8 +22,9 @@ Krish: about 5 minutes.
      commenter asked, in their terms (`knowledge/COPY-DOCTRINE.md`, section
      1, comment replies).
 
-   A "Comment your dog's name" reply may use Biscuit ("Biscuit: Kuku! My tail
-   is going.") and points to the bio link. Escalate price, policy, complaint
+   A "Comment your dog's name" reply is in Heartside's plain, warm voice, uses
+   the commenter's dog's name only as they wrote it, and points to the bio
+   link. No exclamation marks or emoji. Escalate price, policy, complaint
    and anything sad to Krish as an item with `platform: other`, `why`
    "escalate", and no drafted reply.
 3. **Demand.** In public, look for what people search and say about gifts

@@ -3,6 +3,16 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-29: Krish: "ok get going", approving the mandate heartside's session
+  relayed: rebuild the rule checks on heartside's current NORTH_STAR, NOW, SCOPE
+  and ECONOMICS; move image-making onto the current renders and Buddy; take the
+  store handle and other never-publish items out of this public repository.
+  - `growth.py` reads its rules from those files and `n8n/build.mjs`; Biscuit,
+    exclamation marks, the worn lines and stacked fragments are refused.
+  - Purchase drafts lead with the blanket or the portrait; the mug is shown,
+    never the hero offer (heartside NOW and ECONOMICS, the 30% net floor).
+  - No job file or `automations.json` entry changed.
+
 - 2026-10-22: Ruling (Krish, 2026-10-22): each venture's own repository is
   the only reference for its status and plan; nowhere else holds a copy.
   - The engine no longer keeps a copy of heartside's state. `growth.py sync`

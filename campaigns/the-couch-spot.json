@@ -7,39 +7,39 @@
   "variation": 1,
   "intent": "audience",
   "layout": "recognition",
-  "mechanism": "A shared couch ritual tests recognition and partner-to-partner sends.",
+  "mechanism": "Test whether the shared couch spot and the real blanket earn saves from people shopping for a dog owner.",
   "scenes": [
     {
-      "asset": "mug_dog",
+      "asset": "blanket",
       "seconds": 3,
       "headline": "The couch has a seating plan.",
-      "text": "Your dog made it."
+      "text": "Your dog made it, and you are in it."
     },
     {
-      "asset": "mug_note",
+      "asset": "blanket",
       "seconds": 4,
-      "headline": "One spot always has company.",
-      "text": "A gift idea for the person beside them."
+      "headline": "A sherpa blanket for the warm spot.",
+      "text": "Word-free, painted from your dog's photo and your answers."
     },
     {
-      "asset": "mug_dog",
+      "asset": "blanket",
       "seconds": 3,
       "headline": "Your dog loves you too.",
-      "text": "Who shares their spot with your dog?"
+      "text": "Who shares the warm spot with your dog?"
     }
   ],
-  "native_hooks": {
-    "facebook": "The couch has a seating plan.",
-    "tiktok": "The couch has a seating plan."
-  },
   "captions": {
-    "instagram": "Personalized dog gifts for the person who knows the little things. The couch has a seating plan. Who shares their spot with your dog? #PersonalizedDogGifts #GiftsFromTheDog",
-    "facebook": "The couch has a seating plan. A gift idea for the person beside them. Who shares their spot with your dog?",
-    "tiktok": "Personalized dog gifts. The couch has a seating plan. Who shares their spot with your dog? #GiftsFromTheDog #DogPeople",
+    "instagram": "Personalized dog blanket for the person who shares the couch. A word-free sherpa blanket painted from a photo of your dog. Who shares the warm spot? #PersonalizedDogGifts #DogBlanket",
+    "facebook": "The couch has a seating plan, and your dog made it. A sherpa blanket painted from your dog's photo, for the person beside them.",
+    "tiktok": "The couch has a seating plan. #PersonalizedDogGifts #DogBlanket",
     "pinterest": [
-      "Personalized dog gifts: the keeper of the couch spot\nA gift idea for the person beside them. Shown with Biscuit, Heartside's fictional AI dog. Save this gift idea.",
-      "A gift from the dog for their person\nThe couch has a seating plan. Who shares their spot with your dog? Example artwork features Biscuit, our fictional AI dog."
+      "Personalized dog blanket gift ideas\nA 50 by 60 inch sherpa blanket painted from a photo of your dog. Save this gift idea.",
+      "Custom dog blanket for the couch\nWord-free and painted from your dog's photo. Shown with an example dog. Save this for later."
     ]
   },
-  "voiceover": "The couch has a seating plan. Your dog made it. Who gets the spot beside them?"
+  "native_hooks": {
+    "facebook": "The couch has a seating plan.",
+    "tiktok": "Who shares the warm spot?"
+  },
+  "voiceover": "The couch has a seating plan, and your dog made it. A blanket from the dog, for the warm spot."
 }

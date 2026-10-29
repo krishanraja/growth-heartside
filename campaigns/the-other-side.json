@@ -1,45 +1,45 @@
 {
   "version": 1,
-  "title": "The other side of the mug",
+  "title": "Your dog, as a portrait",
   "concept": "C91",
   "pillar": "PROOF",
   "hook": "H01",
   "variation": 1,
   "intent": "audience",
-  "layout": "two-sides",
-  "mechanism": "A visible turn from the dog face to the real note tests whether product specificity earns saves.",
+  "layout": "recognition",
+  "mechanism": "Test whether the real framed portrait and the note from the dog earn saves and sends from people shopping for a dog owner.",
   "scenes": [
     {
-      "asset": "mug_dog",
+      "asset": "portrait_black",
       "seconds": 3,
-      "headline": "One side is the face you know.",
-      "text": "A real example of Heartside's mug."
+      "headline": "Your dog, as a portrait.",
+      "text": "Painted from one photo of your dog."
     },
     {
-      "asset": "mug_note",
+      "asset": "portrait_unframed",
       "seconds": 4,
-      "headline": "The other side is the part you feel.",
-      "text": "A little note for their person."
+      "headline": "With a short note from the dog.",
+      "text": "Signed with your dog's name and a paw."
     },
     {
-      "asset": "mug_dog",
+      "asset": "portrait_oak",
       "seconds": 3,
-      "headline": "One small part of every morning.",
+      "headline": "Framed in black, white or red oak.",
       "text": "Who would your dog give this to?"
     }
   ],
-  "native_hooks": {
-    "facebook": "One side is the face you know.",
-    "tiktok": "One side is the face you know."
-  },
   "captions": {
-    "instagram": "Personalized dog gifts for the person who knows the little things. One side is the face you know. Who would your dog give this to? #PersonalizedDogGifts #GiftsFromTheDog",
-    "facebook": "One side is the face you know. A little note for their person. Who would your dog give this to?",
-    "tiktok": "Personalized dog gifts. One side is the face you know. Who would your dog give this to? #GiftsFromTheDog #DogPeople",
+    "instagram": "Personalized dog portraits with a short note from the dog. One photo of your dog, a few things only you know, and a portrait for their person, framed or unframed. #PersonalizedDogGifts #DogPortrait",
+    "facebook": "A portrait of your dog with a short note from the dog to its person. Framed in black, white or red oak, or unframed. Who would your dog give this to?",
+    "tiktok": "Your dog, as a portrait with a note from the dog. #PersonalizedDogGifts #DogPortrait",
     "pinterest": [
-      "Personalized dog gifts: the other side of the mug\nA little note for their person. Shown with Biscuit, Heartside's fictional AI dog. Save this gift idea.",
-      "A gift from the dog for their person\nOne side is the face you know. Who would your dog give this to? Example artwork features Biscuit, our fictional AI dog."
+      "Personalized dog portrait gift ideas\nA portrait painted from a photo of your dog, with a short note signed by the dog. Save this gift idea.",
+      "Custom dog portrait for their person\nFramed in black, white or red oak, or unframed. Shown with an example dog. Save this for later."
     ]
   },
-  "voiceover": "The face you know. The little things you know about them. A gift from the dog to their person."
+  "native_hooks": {
+    "facebook": "Your dog, as a portrait.",
+    "tiktok": "Turn one photo into a portrait."
+  },
+  "voiceover": "One photo of your dog becomes a portrait, with a short note from the dog to the person it loves."
 }

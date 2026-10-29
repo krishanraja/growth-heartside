@@ -1,4 +1,4 @@
-"""Render approved product photos into a reviewable pack. No AI calls or spend."""
+"""Render the current product renders into a reviewable pack. No AI calls or spend."""
 import datetime as dt
 from functools import lru_cache
 import json
@@ -12,7 +12,7 @@ from zoneinfo import ZoneInfo
 from . import assets, ledger, sound, offers
 
 
-VERSION = 7
+VERSION = 8
 REQUIRED_ROLES = {'reel', 'cover', 'story_1', 'story_2', 'story_3', 'pin_1', 'pin_2', 'subtitles', 'soundtrack', 'facebook_reel', 'tiktok_reel', 'carousel_1', 'carousel_2', 'carousel_3'}
 
 
@@ -109,28 +109,24 @@ def card(root, source_assets, scene, size, layout='recognition'):
     logo = Image.open(path('logo')).convert('RGBA')
     logo.thumbnail((int(310 * scale), int(105 * scale)), Image.Resampling.LANCZOS)
     out.paste(logo, (int(72 * scale), int(height * .055)), logo)
-    block(draw, scene['headline'], (int(width * .067), int(height * .15), int(width * .91), int(height * .31)),
+    block(draw, scene['headline'], (int(width * .067), int(height * .15), int(width * .91), int(height * .29)),
           path('display_font'), int(82 * scale), int(52 * scale), '#121010')
-    photo = Image.open(path(scene['asset'])).convert('RGB')
-    if layout == 'two-sides' and scene['asset'] == 'mug_dog':
-        first = Image.open(path('mug_dog')).convert('RGB')
-        second = Image.open(path('mug_note')).convert('RGB')
-        pair = Image.new('RGB', (1400, 700), '#FBF6F1')
-        for index, picture in enumerate((first, second)):
-            picture = ImageOps.contain(picture, (690, 690), Image.Resampling.LANCZOS)
-            pair.paste(picture, (index * 700 + (700 - picture.width) // 2, (700 - picture.height) // 2))
-        photo = pair
-    if layout == 'biscuit-desk':
-        # A clearly fictional host badge, never a simulated customer reaction.
-        badge = Image.open(path('biscuit')).convert('RGB')
-        badge = ImageOps.fit(badge, (int(100 * scale), int(100 * scale)))
-        out.paste(badge, (int(width * .80), int(height * .055)))
+    roles = scene['asset'] if isinstance(scene['asset'], list) else [scene['asset']]
+    if len(roles) == 1:
+        photo = Image.open(path(roles[0])).convert('RGB')
+    else:
+        # Two real renders side by side, each whole and unaltered.
+        photo = Image.new('RGB', (1400, 700), '#FBF6F1')
+        for index, role in enumerate(roles):
+            picture = ImageOps.contain(Image.open(path(role)).convert('RGB'), (690, 690), Image.Resampling.LANCZOS)
+            photo.paste(picture, (index * 700 + (700 - picture.width) // 2, (700 - picture.height) // 2))
     box = (int(width * .067), int(height * .31), int(width * .91), int(height * .69))
     photo = ImageOps.contain(photo, (box[2] - box[0], box[3] - box[1]), Image.Resampling.LANCZOS)
     out.paste(photo, ((box[0] + box[2] - photo.width) // 2, (box[1] + box[3] - photo.height) // 2))
     block(draw, scene['text'], (int(width * .067), int(height * .735), int(width * .91), int(height * .79)),
           path('body_font'), int(42 * scale), int(30 * scale), '#121010')
-    block(draw, 'EXAMPLE · Biscuit is an AI character',
+    # Brand Book: label every example. The gallery dog is never a customer's dog.
+    block(draw, 'EXAMPLE · shown with an example dog',
           (int(width * .067), int(height * .705), int(width * .92), int(height * .73)),
           path('body_font'), int(28 * scale), int(24 * scale), '#5A4A44')
     return out
@@ -149,28 +145,32 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
     intent = spec.get('intent')
     if spec.get('version') != 1 or intent not in {'audience', 'buy'}:
         raise ValueError('the renderer requires an audience or verified purchase campaign')
+    scenes = spec.get('scenes')
+    if not isinstance(scenes, list) or len(scenes) != 3:
+        raise ValueError('this template needs three scenes')
+    for scene in scenes:
+        roles = scene.get('asset') if isinstance(scene.get('asset'), list) else [scene.get('asset')]
+        if not 1 <= len(roles) <= 2 or any(r not in assets.PRODUCT_IMAGES for r in roles):
+            raise ValueError('each scene must show one or two approved current product renders')
     if intent == 'buy':
         declared = spec.get('offers')
-        mug = next((o for o in offers.catalog(state) if o['id'] == 'the-morning-mug' and o['ready']), None)
-        if (not offers.fresh_store(state) or not mug or not isinstance(declared, list) or len(declared) != 1
-                or not isinstance(declared[0], dict) or set(declared[0]) - {'id', 'quantity', 'unit_price'}
-                or declared[0].get('id') != mug['id'] or declared[0].get('quantity', 1) != 1
-                or spec.get('destination') != mug['product']['url'] or not link_builder):
-            raise ValueError('purchase media requires the current live Morning Mug, its exact destination, one declared unit and tracked links; other gift photos are not yet approved')
+        gift = next((o for o in offers.catalog(state) if o['ready'] and o['kind'] == 'gift' and o['id'] in offers.LEAD_GIFTS
+                     and isinstance(declared, list) and len(declared) == 1 and isinstance(declared[0], dict)
+                     and declared[0].get('id') == o['id']), None)
+        shown = {assets.PRODUCT_IMAGES[r][0] for s in scenes for r in (s['asset'] if isinstance(s['asset'], list) else [s['asset']])}
+        if (not offers.fresh_store(state) or not gift or set(declared[0]) - {'id', 'quantity', 'unit_price'}
+                or declared[0].get('quantity', 1) != 1 or gift['id'] not in shown
+                or spec.get('destination') != gift['product']['url'] or not link_builder):
+            raise ValueError('purchase media requires one live lead gift (the blanket or the portrait) that the film shows, its exact product page, one declared unit and tracked links')
     day = dt.date.fromisoformat(day) if day else dt.datetime.now(ZoneInfo('America/New_York')).date()
     # The same concept keeps its number in each native edition.
     stem = f'{spec["pillar"]}_REEL_{spec["concept"]}_{spec["hook"]}_V{spec["variation"]}_{day:%Y%m%d}'
     creative_id = 'IG_' + stem
-    scenes = spec.get('scenes')
-    if not isinstance(scenes, list) or len(scenes) != 3:
-        raise ValueError('this template needs three scenes')
     layout = spec.get('layout', 'recognition')
-    if layout not in {'recognition', 'two-sides', 'biscuit-desk'}:
+    if layout != 'recognition':
         raise ValueError('unknown approved media layout')
     duration = 0
     for scene in scenes:
-        if scene.get('asset') not in ('mug_dog', 'mug_note', 'biscuit', 'biscuit_entryway'):
-            raise ValueError('scene must use an approved product or Biscuit asset')
         seconds = scene.get('seconds')
         if isinstance(seconds, bool) or not isinstance(seconds, (int, float)) or not 1 <= seconds <= 10:
             raise ValueError('each scene must last between 1 and 10 seconds')
@@ -200,15 +200,10 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
             item['offers'] = spec['offers']
             item['text'] += '\nCopy: ' + link_builder(spec['destination'], creative_id)
         return item
-    descriptions = {
-        'mug_dog': "An approved example mug with Biscuit, Heartside's fictional AI dachshund.",
-        'mug_note': 'The real note side of the example mug, signed Love, Biscuit.',
-        'biscuit': "Biscuit, Heartside's fictional AI dachshund host.",
-        'biscuit_entryway': 'A generated fictional Biscuit scene at a front door beside sneakers.'}
     scene_alt = []
     for scene in scenes:
-        description = ('Two real photos showing both sides of the example mug.'
-                       if layout == 'two-sides' and scene['asset'] == 'mug_dog' else descriptions[scene['asset']])
+        roles = scene['asset'] if isinstance(scene['asset'], list) else [scene['asset']]
+        description = ' '.join(assets.PRODUCT_IMAGES[r][2] for r in roles)
         scene_alt.append(description + ' Text: ' + scene['headline'] + ' ' + scene['text'])
     pin_index = 0
     for item in items:
@@ -223,7 +218,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
         errors += check_copy(alt_pack, state.get('price_points', []), state=state)
     if errors:
         raise ValueError('; '.join(errors))
-    source = assets.prepare(root, state['sha'], checkout)
+    source = assets.prepare(root, state['sha'], checkout, state.get('store'))
     narration = None
     narration_file = spec.get('narration')
     if spec.get('voiceover'):
