@@ -21,8 +21,8 @@ this a live paid multi-provider orchestrator.
 | Authorized founder film | HeyGen after identity/consent and quote checks | A real authorized speaker; never a fake buyer |
 | Exact final production | Pillow and FFmpeg in this repository | Approved product pixels, readable typography, safe zones and checksums |
 
-The native authoring image generator produced `assets/fictional/biscuit-entryway.png`.
-Its companion JSON records source identity, disclosure and the unknown monetary
+The native authoring image generator produced a Biscuit entryway scene, removed on
+29 October 2026 because Biscuit is retired. Its companion JSON recorded source identity, disclosure and the unknown monetary
 charge. It is a draft brand asset requiring human review. No prepaid-credit or
 paid AI API request was submitted to Higgsfield, ElevenLabs or HeyGen.
 

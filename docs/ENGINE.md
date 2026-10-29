@@ -51,7 +51,7 @@ executing its code). Product images are the live store's own gallery renders,
 named role by role in `engine/assets.py` (`PRODUCT_IMAGES`), each recorded with
 its source URL and checksum; a blank template or checkout tile is refused, and
 every frame carries an Example label. The retired fictional Biscuit entryway
-scene is kept in `assets/fictional/` for provenance and is no longer loaded. Each output has file checksums, native copy digests,
+scene was removed on 29 October 2026 (Biscuit is retired). Each output has file checksums, native copy digests,
 product SHA and a content-addressed revision. Modified copy/files fail checking;
 failed renders preserve previous output. Renderer source and FFmpeg/Pillow/zlib versions also participate in revision
 identity, so different production runtimes cannot silently share an approval.

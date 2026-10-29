@@ -103,5 +103,6 @@ approved, with its hash and prompt; only those may be copied to Drive, GitHub or
 
 ## Evidence
 
-All grids are in `evidence/`. The stage 1 examples built with this method are on branch
+The before-and-after grids were removed on 29 October 2026 with the other rejected artwork; the
+approvals ledger records every candidate and why it was not used. The stage 1 examples built with this method are on branch
 `codex/heartside-examples-2026-10-29` under `assets/heartside-examples-2026-10-29/`.
