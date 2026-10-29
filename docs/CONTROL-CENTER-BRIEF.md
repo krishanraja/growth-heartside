@@ -80,3 +80,32 @@ The full spec is `docs/control-center/ENGINE-PROTOCOL.md`, with the report and d
 - A measured zero and a missing value show differently on Growth > Engines.
 - A post proposal reaches Krish's list. Clear appears in `GET decisions` with your digest. A changed caption asks him again.
 - A stale run (no report for 36 hours) shows as stale, never green.
+
+## Prepaid credits (protocol 1.16.0)
+
+Ruling (Krish, 2026-10-29): a growth engine may spend up to its placement share of a tool's prepaid credits each cycle with no per-batch approval, and reports what it made. Krish: "Ultimately, we should be maxing out everything we can possibly max out that we're already paying for." Credits a vendor wipes at its reset are money already lost. The full spec is `docs/control-center/ENGINE-PROTOCOL.md`, "Prepaid credits: spend your share before it is wiped (1.16.0)".
+
+**Heartside's pools** (Krish's placements in Control Center; the directive's numbers win over these):
+
+| Pool | Placement | Your share | Resets |
+|---|---|---|---|
+| Higgsfield | main | about 2,400 of 3,000 credits a month | the 24th |
+| Runway | main | about 1,800 of 2,250 credits a month | the 7th |
+| 21st Dev | some | about 50 of 500 a month | the 1st |
+
+Measured Higgsfield unit costs: a GPT Image still 2.75 credits, a Seedance clip 210.
+
+**What to do, every run:**
+
+1. Read the directive's optional `credits` block: `{ rule, pools[] }`, each pool with `share`, `share_amount`, `spent_this_cycle`, `remaining_for_you`, `pool_balance`, `resets_on`, `days_left` and `unit_costs[]`, soonest wipe first. A missing block means the read failed, never a share of zero: spend nothing from it that run.
+2. Spend up to `remaining_for_you` of each pool on work that moves this engine's objectives (`net_sales_usd`, `organic_orders`, `organic_net_sales_usd`), with no proposal. Production for an approved concept comes first. Never invent work to use credits up.
+3. Stills before video. Render motion only for a concept that earned it (a concept Krish approved, or a still that tested well).
+4. Record each generation through the provider ledger (`docs/PROVIDERS.md`, "Prepaid credits inside an approved allocation"): `maximum_usd` stays `"0"`, `allocation` names the pool and its cycle under this ruling, and `--credit-allowance` is the pool's `remaining_for_you` from today's directive.
+5. Report each spend in the report's `credits_spent[]`: `{ pool, amount, asset, objective_key }`, at most 40, with `schema_version` `"1.16.0"`. `asset` says in words what was made, never an address. Control Center takes it off the share in the next directive.
+
+**The walls do not move:**
+
+- Never past `remaining_for_you`. Never a top-up, a plan change or new money. Any `maximum_usd` above zero is new money and goes through the USD budget and Krish's yes as before.
+- Making is not publishing. Nothing made with credits is posted, published or sent except through this repository's own rules: a post derived from a concept Krish approved goes through the go-live step under concept-level approval (`AGENTS.md`, "Autonomy"), and anything else keeps its own `go_live` proposal behind `post`. The creative bar holds; weak work is held, not proposed.
+- The product on screen is always the real design (`AGENTS.md`, rule 4). Credits buy dogs, rooms and motion, never a drawn product.
+- This replaces the per-batch spend plan in `docs/briefs/2026-10-22-media-credits.md` for spend inside the share. Spend beyond it still needs his yes.

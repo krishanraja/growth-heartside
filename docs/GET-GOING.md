@@ -58,6 +58,7 @@ Today's live report (2026-10-19) was `held`:
   Done: `growth.py attribution` and its `engine.yml` step (`docs/ENGINE.md`, "Organic attribution"). First live read, 29 Oct (branch run 40855...): trailing 28 days, $0 organic of $0 store, one fully refunded order excluded. It runs from `main` once the branch is merged.
 - [ ] **Step 4.** Make the daily recommendation the next organic post or format test, prepared as `wall: post` with the exact copy and the asset reference, tied to `net_sales_usd` or `organic_orders`, with the evidence of what won before.
 - [ ] **Step 5.** When the V3 homepage goes public, release the conversion hold on the next run on its own and say why, with the evidence link.
+- [ ] **Step 6 (protocol 1.16.0, added 2026-10-29).** Prepaid credits: read the directive's optional `credits` block, spend up to each pool's `remaining_for_you` on production for approved concepts (stills before video, recorded through the provider ledger), and report each spend in `credits_spent[]` at `schema_version: "1.16.0"`, proved against the stand-in: a report with `credits_spent` validates against `docs/control-center/engine-report.schema.json`, a spend past `remaining_for_you` is refused, and a missing `credits` block spends nothing. Rules and Heartside's pools: `docs/CONTROL-CENTER-BRIEF.md`, "Prepaid credits (protocol 1.16.0)". Posting what it makes still follows concept-level approval and the go-live step.
 
 ## Checks
 
