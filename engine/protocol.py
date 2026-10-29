@@ -15,7 +15,7 @@ import re
 import sqlite3
 from zoneinfo import ZoneInfo
 
-from . import ledger, offers
+from . import attribution, ledger, offers
 from .control_center import CODE, Client, ProtocolError, report_digest, sha256
 
 ENGINE_ID, PRODUCT_SLUG, SLUG, COMMAND = 'growth-heartside', 'heartside', 'heartside', 'directive'
@@ -89,11 +89,21 @@ def net_sales(db, now):
             '(Europe/London). Missing is not zero'}
 
 
-def organic_orders():
-    return {'key': 'organic_orders', 'value': None, 'unit': 'orders', 'window_start': None, 'window_end': None,
-            'timezone': 'Europe/London', 'availability': 'missing',
-            'reason': 'Organic order attribution is not measured on the runner. Store order totals do not show which post '
-                      'caused a sale, and creative UTM observations are lifetime snapshots, not weekly windows'}
+def organic_orders(db=None, now=None):
+    base = {'key': 'organic_orders', 'unit': 'orders', 'timezone': 'Europe/London'}
+    reading = attribution.latest(db) if db is not None else None
+    if not reading:
+        return {**base, 'value': None, 'window_start': None, 'window_end': None, 'availability': 'missing',
+                'reason': 'Organic order attribution has not been read yet: the runner needs the read-only Shopify app '
+                          '(scope read_orders) named in docs/ENGINE.md, "Organic attribution"'}
+    observed = dt.datetime.fromisoformat(reading['observed_at'].replace('Z', '+00:00'))
+    fresh = now is None or now - observed <= dt.timedelta(hours=26)
+    window = {'value': reading['organic']['orders'],
+              'window_start': midnight(dt.date.fromisoformat(reading['start'])).isoformat(),
+              'window_end': midnight(dt.date.fromisoformat(reading['end'])).isoformat()}
+    if fresh:
+        return {**base, **window, 'availability': 'measured', 'reason': None}
+    return {**base, **window, 'availability': 'stale', 'reason': f'Organic attribution was last read at {reading["observed_at"]}'}
 
 
 # ---------------------------------------------------------------------------
@@ -278,7 +288,7 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
     status = 'degraded' if degraded or db is None else 'held' if holds else 'ready'
     report = {'schema_version': '1.0.0', 'engine_id': ENGINE_ID, 'product_slug': PRODUCT_SLUG, 'run_id': run_id, 'mode': mode,
               'observed_at': stamp(now), 'source': {'revision': state['sha'], 'captured_at': stamp(dt.datetime.fromisoformat(state['synced_at'].replace('Z', '+00:00')))},
-              'status': status, 'objectives': [net_sales(db, now), organic_orders()],
+              'status': status, 'objectives': [net_sales(db, now), organic_orders(db, now)],
               'activity': [{'line': fit(line, 500), 'evidence_url': None} for line in activity][:40],
               'proposals': proposals, 'events': events, 'holds': holds[:40]}
     report['payload_sha256'] = report_digest(report)

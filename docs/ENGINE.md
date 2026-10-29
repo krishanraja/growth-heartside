@@ -301,3 +301,33 @@ the remaining days keep recognition and sharing hypotheses. An authoring session
 these same boundaries. For Instagram/TikTok, place the prepared URL in the
 appropriate link surface by hand; a shared bio link does not establish which
 Reel caused an order. Direct Story/Pin links provide more specific evidence.
+
+## Organic attribution
+
+`python3 growth.py attribution` reads which store orders came from organic posts
+and stores aggregates only (`engine/attribution.py`). It runs in `engine.yml`
+before the draft jobs, at most every six hours.
+
+- **Tags.** Every tracked link carries `utm_source` (the platform),
+  `utm_medium` (`organic_video`, `organic_social`, `organic_search`,
+  `product_listing` or `email`), `utm_campaign` (`hs_growth_YYYYMM`) and the
+  creative id in `utm_content`. The post family is the creative id's platform,
+  pillar and concept, for example `IG_EMO_C90`.
+- **Tiers.** `engine` (this engine's tags), `organic_social` (a social
+  referrer or organic tags), `organic_search`, `paid` (a paid medium or an ad
+  click id, never counted even when tagged), `pending` (Shopify's journey not
+  ready, up to 72 hours) and `direct`. Organic posts are `engine` plus
+  `organic_social`. Test, cancelled and `hs-internal` orders never count.
+- **Windows.** The trailing 28 days and the last full Monday-to-Monday week,
+  by the London day each order was created. Net sales are each order's
+  current subtotal after discounts and refunds, before shipping and tax.
+- **Privacy.** The query reads an exact field list (a test holds it). No
+  order id, customer field, line item or note is read. Landing pages and
+  referrers are used only to classify an order and are never stored; their
+  query strings can hold a buyer's dog and person names.
+- **Access.** A Shopify Dev Dashboard app with exactly `read_orders`, whose
+  client id and secret are repository secrets (names in `engine.yml`), plus
+  the store handle variable. A token with any other scope is refused. Without
+  them the step prints a hold naming what is missing, and the Control Center
+  report keeps `organic_orders` missing, never zero.
+

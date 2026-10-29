@@ -109,6 +109,12 @@ jobs:
               results = operations.apply('.', db, json.loads(os.environ['OPERATOR_EVENTS']))
           print('Validated operator evidence:', len(results), 'events')
           PY
+      - name: Read organic attribution
+        # Aggregates only; a missing read-only Shopify app is a hold, never a failed run.
+        env:
+          SHOPIFY_CLIENT_ID: ${{ secrets.SHOPIFY_CLIENT_ID }}
+          SHOPIFY_CLIENT_SECRET: ${{ secrets.SHOPIFY_CLIENT_SECRET }}
+        run: python3 growth.py attribution || echo "::warning::organic attribution read failed; the report keeps it missing"
       - name: Run due draft jobs
         id: engine
         env:
