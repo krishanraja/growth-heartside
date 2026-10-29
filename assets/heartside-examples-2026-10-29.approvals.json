@@ -387,6 +387,136 @@
       "status": "rejected",
       "decided": "Krish, 2026-10-29",
       "reason": "velvet staging; the dog is painted, not cut paper; repaint once heartside updates the store prompt"
+    },
+    {
+      "job": "golden-hilarious-blanket",
+      "candidate": "store-v11",
+      "file": "local/v11/out/golden-hilarious-blanket.png",
+      "sha256": "5288888e3070c27988fedc179c287005c5480949f3c738498986cc5ba0fe2810",
+      "prompt": "heartside 1b9a775 prompts/golden-hilarious-blanket.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "lab-hilarious-mug",
+      "candidate": "store-v11",
+      "file": "local/v11/out/lab-hilarious-mug.png",
+      "sha256": "982b351cd53896a78a44525a0c8812304368fa122d737f6536cea904052eab5e",
+      "prompt": "heartside 1b9a775 prompts/lab-hilarious-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "lab-over_the_top-blanket",
+      "candidate": "store-v11",
+      "file": "local/v11/out/lab-over_the_top-blanket.png",
+      "sha256": "a1e3ee8dc003f204ead8303bfca5133abb0b3e7fddb4af6e302bfed6ed024e3a",
+      "prompt": "heartside 1b9a775 prompts/lab-over_the_top-blanket.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "doodle-hilarious-blanket",
+      "candidate": "store-v11",
+      "file": "local/v11/out/doodle-hilarious-blanket.png",
+      "sha256": "26112fb327b099bcd3dea794e5f4093877a555cdf8835a2909fd322f4dc2678f",
+      "prompt": "heartside 1b9a775 prompts/doodle-hilarious-blanket.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "dachshund-hilarious-mug",
+      "candidate": "store-v11",
+      "file": "local/v11/out/dachshund-hilarious-mug.png",
+      "sha256": "e2d5b03c1094da957b41c297269f012ad429f7016a113ee6f57621c1a043a497",
+      "prompt": "heartside 1b9a775 prompts/dachshund-hilarious-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "dachshund-over_the_top-blanket",
+      "candidate": "store-v11",
+      "file": "local/v11/out/dachshund-over_the_top-blanket.png",
+      "sha256": "bdb44ff99f438bbfc65c0574893d0d096e3b60a3f39736e1a5bdf48018fd555f",
+      "prompt": "heartside 1b9a775 prompts/dachshund-over_the_top-blanket.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "shepherd-hilarious-portrait",
+      "candidate": "store-v11",
+      "file": "local/v11/out/shepherd-hilarious-portrait.png",
+      "sha256": "290058304f712938d71b24ca3640863707847ba267c51253cf00285d8a3bcd7d",
+      "prompt": "heartside 1b9a775 prompts/shepherd-hilarious-portrait.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "shepherd-over_the_top-mug",
+      "candidate": "store-v11",
+      "file": "local/v11/out/shepherd-over_the_top-mug.png",
+      "sha256": "7730adedecce0bc0a68b5055a1000ebb3aa921d7aaa7db8c3f34ff7277c598b4",
+      "prompt": "heartside 1b9a775 prompts/shepherd-over_the_top-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "shepherd-sentimental-mug",
+      "candidate": "store-v11",
+      "file": "local/v11/out/shepherd-sentimental-mug.png",
+      "sha256": "e76ac1ba31a52f702945c22d3e920d3c98d5d8ee308d075f309049f43b5f37c1",
+      "prompt": "heartside 1b9a775 prompts/shepherd-sentimental-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "lab-warm-portrait",
+      "candidate": "store-v11",
+      "file": "local/v11/out/lab-warm-portrait.png",
+      "sha256": "cf399c83ccc4a3f7ff562adc260a2af7631aa1023d68a38befda7a16d3db79b1",
+      "prompt": "heartside 1b9a775 prompts/lab-warm-portrait.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "frenchie-hilarious-portrait",
+      "candidate": "store-v11",
+      "file": "local/v11/out/frenchie-hilarious-portrait.png",
+      "sha256": "eea1e5279371259599f91cc695117638406a4f6f79db6c35915380a219c6adc8",
+      "prompt": "heartside 1b9a775 prompts/frenchie-hilarious-portrait.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "doodle-over_the_top-portrait",
+      "candidate": "store-v11",
+      "file": "local/v11/out/doodle-over_the_top-portrait.png",
+      "sha256": "bb347af125dec1d4dec58dabe02bef9eb1331af992020cde9a2b728354051de0",
+      "prompt": "heartside 1b9a775 prompts/doodle-over_the_top-portrait.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "shepherd-warm-blanket",
+      "candidate": "store-v11",
+      "file": "local/v11/out/shepherd-warm-blanket.png",
+      "sha256": "4f16b14f59bb1a41d8f8941247fa23eedf8e5e2ec9acfc6c12065160d94ec61e",
+      "prompt": "heartside 1b9a775 prompts/shepherd-warm-blanket.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
     }
   ]
 }
