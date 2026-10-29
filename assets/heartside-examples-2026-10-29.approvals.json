@@ -454,9 +454,9 @@
       "file": "local/v11/out/shepherd-hilarious-portrait.png",
       "sha256": "290058304f712938d71b24ca3640863707847ba267c51253cf00285d8a3bcd7d",
       "prompt": "heartside 1b9a775 prompts/shepherd-hilarious-portrait.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "not funny: a dog on a trail; awaiting decision"
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "not funny: a dog on a trail; repainted on v12"
     },
     {
       "job": "shepherd-over_the_top-mug",
@@ -464,9 +464,9 @@
       "file": "local/v11/out/shepherd-over_the_top-mug.png",
       "sha256": "7730adedecce0bc0a68b5055a1000ebb3aa921d7aaa7db8c3f34ff7277c598b4",
       "prompt": "heartside 1b9a775 prompts/shepherd-over_the_top-mug.txt",
-      "status": "pending",
-      "decided": null,
-      "reason": "invented mountainside scenery; awaiting decision"
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "invented mountainside scenery; repainted on v12"
     },
     {
       "job": "shepherd-sentimental-mug",
@@ -517,6 +517,36 @@
       "status": "rejected",
       "decided": "Krish, 2026-10-29",
       "reason": "current master kept (v11 too busy)"
+    },
+    {
+      "job": "shepherd-hilarious-portrait",
+      "candidate": "store-v12",
+      "file": "local/v12/out/shepherd-hilarious-portrait-try1.png",
+      "sha256": "64070000bd227a7bb7e21cc512903773e91ca8248dabfbbaa844f65d5e04aecd",
+      "prompt": "heartside 5710175 prompts/shepherd-hilarious-portrait.txt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "contrast too weak (person close behind, not hurrying); repaint once from the same v12 prompt"
+    },
+    {
+      "job": "shepherd-over_the_top-mug",
+      "candidate": "store-v12",
+      "file": "local/v12/out/shepherd-over_the_top-mug.png",
+      "sha256": "f4a8c7682e375b521a0ce2c3ff8fdaeee25c38f2b64697671b27d71108ff78c4",
+      "prompt": "heartside 5710175 prompts/shepherd-over_the_top-mug.txt",
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "v12 passes the bar"
+    },
+    {
+      "job": "shepherd-hilarious-portrait",
+      "candidate": "store-v12-try2",
+      "file": "local/v12/out/shepherd-hilarious-portrait.png",
+      "sha256": "b355ddc1c148ad57c567bfb6203c7ca80c0db2cbe967a837319fdf0ea061cfc9",
+      "prompt": "heartside 5710175 prompts/shepherd-hilarious-portrait.txt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "the person's legs end in the sky; not funny"
     }
   ]
 }
