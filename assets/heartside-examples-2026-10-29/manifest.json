@@ -818,5 +818,265 @@
       "ad",
       "social"
     ]
+  },
+  {
+    "file": "paintings/dachshund-sentimental-blanket.png",
+    "job": "dachshund-sentimental-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Sentimental",
+    "gift": "blanket",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/dachshund-sentimental-blanket.png",
+    "job": "dachshund-sentimental-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Sentimental",
+    "gift": "blanket",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/dachshund-sentimental-blanket-1x1.png",
+    "job": "dachshund-sentimental-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Sentimental",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/dachshund-sentimental-blanket-4x5.png",
+    "job": "dachshund-sentimental-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Sentimental",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/dachshund-sentimental-blanket-9x16.png",
+    "job": "dachshund-sentimental-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Sentimental",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/dachshund-sentimental-blanket/studio-1x1.png",
+    "job": "dachshund-sentimental-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Sentimental",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1",
+    "scene": "studio"
+  },
+  {
+    "file": "mockups/dachshund-sentimental-blanket/hand-1x1.png",
+    "job": "dachshund-sentimental-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Sentimental",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1",
+    "scene": "hand"
+  },
+  {
+    "file": "mockups/dachshund-sentimental-blanket/hand-4x5.png",
+    "job": "dachshund-sentimental-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Sentimental",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5",
+    "scene": "hand"
+  },
+  {
+    "file": "mockups/dachshund-sentimental-blanket/hand-9x16.png",
+    "job": "dachshund-sentimental-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Sentimental",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16",
+    "scene": "hand"
+  },
+  {
+    "file": "paintings/shepherd-warm-blanket.png",
+    "job": "shepherd-warm-blanket",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Warm with a wink",
+    "gift": "blanket",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/shepherd-warm-blanket.png",
+    "job": "shepherd-warm-blanket",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Warm with a wink",
+    "gift": "blanket",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/shepherd-warm-blanket-1x1.png",
+    "job": "shepherd-warm-blanket",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Warm with a wink",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/shepherd-warm-blanket-4x5.png",
+    "job": "shepherd-warm-blanket",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Warm with a wink",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/shepherd-warm-blanket-9x16.png",
+    "job": "shepherd-warm-blanket",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Warm with a wink",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/shepherd-warm-blanket/studio-1x1.png",
+    "job": "shepherd-warm-blanket",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Warm with a wink",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1",
+    "scene": "studio"
+  },
+  {
+    "file": "mockups/shepherd-warm-blanket/hand-1x1.png",
+    "job": "shepherd-warm-blanket",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Warm with a wink",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1",
+    "scene": "hand"
+  },
+  {
+    "file": "mockups/shepherd-warm-blanket/hand-4x5.png",
+    "job": "shepherd-warm-blanket",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Warm with a wink",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5",
+    "scene": "hand"
+  },
+  {
+    "file": "mockups/shepherd-warm-blanket/hand-9x16.png",
+    "job": "shepherd-warm-blanket",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Warm with a wink",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16",
+    "scene": "hand"
   }
 ]

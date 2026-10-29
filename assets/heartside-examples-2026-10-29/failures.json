@@ -1,0 +1,12 @@
+{
+  "mockups/dachshund-sentimental-blanket/home-1x1.png": "print pasted flat across the sofa: ignores the fold from seat to back, no fold shading; redo by code with seat and back as separate panels (Krish chose option 3, 2026-10-29)",
+  "mockups/dachshund-sentimental-blanket/home-4x5.png": "print pasted flat across the sofa: ignores the fold from seat to back, no fold shading; redo by code with seat and back as separate panels (Krish chose option 3, 2026-10-29)",
+  "mockups/dachshund-sentimental-blanket/home-9x16.png": "print pasted flat across the sofa: ignores the fold from seat to back, no fold shading; redo by code with seat and back as separate panels (Krish chose option 3, 2026-10-29)",
+  "mockups/dachshund-sentimental-blanket/studio-4x5.png": "crop falls inside the blanket, so only the artwork shows and no product; re-crop to show the whole blanket with margin",
+  "mockups/dachshund-sentimental-blanket/studio-9x16.png": "crop falls inside the blanket, so only the artwork shows and no product; re-crop to show the whole blanket with margin",
+  "mockups/shepherd-warm-blanket/home-1x1.png": "print pasted flat across the sofa: ignores the fold from seat to back, no fold shading; redo by code with seat and back as separate panels (Krish chose option 3, 2026-10-29)",
+  "mockups/shepherd-warm-blanket/home-4x5.png": "print pasted flat across the sofa: ignores the fold from seat to back, no fold shading; redo by code with seat and back as separate panels (Krish chose option 3, 2026-10-29)",
+  "mockups/shepherd-warm-blanket/home-9x16.png": "print pasted flat across the sofa: ignores the fold from seat to back, no fold shading; redo by code with seat and back as separate panels (Krish chose option 3, 2026-10-29)",
+  "mockups/shepherd-warm-blanket/studio-4x5.png": "crop falls inside the blanket, so only the artwork shows and no product; re-crop to show the whole blanket with margin",
+  "mockups/shepherd-warm-blanket/studio-9x16.png": "crop falls inside the blanket, so only the artwork shows and no product; re-crop to show the whole blanket with margin"
+}
