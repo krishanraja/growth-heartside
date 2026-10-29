@@ -10,9 +10,10 @@ improvise a workaround.
 
 ## 0. Set up (no generation yet)
 
-1. In `krishanraja/growth-heartside`, from the latest `main`, create the branch
-   `codex/heartside-examples-2026-10-29`. Work and commit only there. Never push to `main`, and never
-   touch `krishanraja/heartside`.
+1. In `krishanraja/growth-heartside`, from the branch `claude/canva-integration-plan-cpy1p2` (it has
+   the checker; `main` may not yet), create the branch `codex/heartside-examples-2026-10-29`. Work and
+   commit only there. Never push to `main` or to any other branch, and never touch
+   `krishanraja/heartside`.
 2. The source is heartside commit `eccc695c44d98008d5989bd118089acd762e465f` (branch
    `claude/product-launch-readiness-mlh1bc`), folder `design/examples-2026-10-29-breeds/`. Read files
    from `https://raw.githubusercontent.com/krishanraja/heartside/eccc695c44d98008d5989bd118089acd762e465f/<path>`.
