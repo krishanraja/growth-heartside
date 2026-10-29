@@ -3073,5 +3073,1440 @@
     ],
     "scene": "hand",
     "ratio": "9x16"
+  },
+  {
+    "file": "paintings/golden-hilarious-blanket.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/golden-hilarious-blanket.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/golden-hilarious-blanket-1x1.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/golden-hilarious-blanket-4x5.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/golden-hilarious-blanket-9x16.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/golden-hilarious-blanket/studio-1x1.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/golden-hilarious-blanket/studio-4x5.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/golden-hilarious-blanket/studio-9x16.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/golden-hilarious-blanket/home-1x1.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/golden-hilarious-blanket/home-4x5.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/golden-hilarious-blanket/home-9x16.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/golden-hilarious-blanket/hand-1x1.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/golden-hilarious-blanket/hand-4x5.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/golden-hilarious-blanket/hand-9x16.png",
+    "job": "golden-hilarious-blanket",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "9x16"
+  },
+  {
+    "file": "paintings/lab-hilarious-mug.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/lab-hilarious-mug.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/lab-hilarious-mug-1x1.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/lab-hilarious-mug-4x5.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/lab-hilarious-mug-9x16.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/lab-hilarious-mug/studio-1x1.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/lab-hilarious-mug/studio-4x5.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/lab-hilarious-mug/studio-9x16.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/lab-hilarious-mug/home-1x1.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/lab-hilarious-mug/home-4x5.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/lab-hilarious-mug/home-9x16.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/lab-hilarious-mug/hand-1x1.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/lab-hilarious-mug/hand-4x5.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/lab-hilarious-mug/hand-9x16.png",
+    "job": "lab-hilarious-mug",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "9x16"
+  },
+  {
+    "file": "paintings/doodle-hilarious-blanket.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/doodle-hilarious-blanket.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/doodle-hilarious-blanket-1x1.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/doodle-hilarious-blanket-4x5.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/doodle-hilarious-blanket-9x16.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/doodle-hilarious-blanket/studio-1x1.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/doodle-hilarious-blanket/studio-4x5.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/doodle-hilarious-blanket/studio-9x16.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/doodle-hilarious-blanket/home-1x1.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/doodle-hilarious-blanket/home-4x5.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/doodle-hilarious-blanket/home-9x16.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/doodle-hilarious-blanket/hand-1x1.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/doodle-hilarious-blanket/hand-4x5.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/doodle-hilarious-blanket/hand-9x16.png",
+    "job": "doodle-hilarious-blanket",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Hilarious",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "9x16"
+  },
+  {
+    "file": "paintings/dachshund-hilarious-mug.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/dachshund-hilarious-mug.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/dachshund-hilarious-mug-1x1.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/dachshund-hilarious-mug-4x5.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/dachshund-hilarious-mug-9x16.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/dachshund-hilarious-mug/studio-1x1.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/dachshund-hilarious-mug/studio-4x5.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/dachshund-hilarious-mug/studio-9x16.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/dachshund-hilarious-mug/home-1x1.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/dachshund-hilarious-mug/home-4x5.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/dachshund-hilarious-mug/home-9x16.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/dachshund-hilarious-mug/hand-1x1.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/dachshund-hilarious-mug/hand-4x5.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/dachshund-hilarious-mug/hand-9x16.png",
+    "job": "dachshund-hilarious-mug",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Hilarious",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "9x16"
+  },
+  {
+    "file": "paintings/shepherd-sentimental-mug.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/shepherd-sentimental-mug.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/shepherd-sentimental-mug-1x1.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/shepherd-sentimental-mug-4x5.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/shepherd-sentimental-mug-9x16.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/shepherd-sentimental-mug/studio-1x1.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/shepherd-sentimental-mug/studio-4x5.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/shepherd-sentimental-mug/studio-9x16.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/shepherd-sentimental-mug/home-1x1.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/shepherd-sentimental-mug/home-4x5.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/shepherd-sentimental-mug/home-9x16.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/shepherd-sentimental-mug/hand-1x1.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/shepherd-sentimental-mug/hand-4x5.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/shepherd-sentimental-mug/hand-9x16.png",
+    "job": "shepherd-sentimental-mug",
+    "breed": "German Shepherd",
+    "style": "Cut-paper collage",
+    "tone": "Sentimental",
+    "gift": "mug",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "9x16"
+  },
+  {
+    "file": "paintings/lab-over_the_top-blanket.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/lab-over_the_top-blanket.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/lab-over_the_top-blanket-1x1.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/lab-over_the_top-blanket-4x5.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/lab-over_the_top-blanket-9x16.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/lab-over_the_top-blanket/studio-1x1.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/lab-over_the_top-blanket/studio-4x5.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/lab-over_the_top-blanket/studio-9x16.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/lab-over_the_top-blanket/home-1x1.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/lab-over_the_top-blanket/home-4x5.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/lab-over_the_top-blanket/home-9x16.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/lab-over_the_top-blanket/hand-1x1.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/lab-over_the_top-blanket/hand-4x5.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/lab-over_the_top-blanket/hand-9x16.png",
+    "job": "lab-over_the_top-blanket",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "9x16"
+  },
+  {
+    "file": "paintings/dachshund-over_the_top-blanket.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/dachshund-over_the_top-blanket.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/dachshund-over_the_top-blanket-1x1.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/dachshund-over_the_top-blanket-4x5.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/dachshund-over_the_top-blanket-9x16.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/dachshund-over_the_top-blanket/studio-1x1.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/dachshund-over_the_top-blanket/studio-4x5.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/dachshund-over_the_top-blanket/studio-9x16.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/dachshund-over_the_top-blanket/home-1x1.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/dachshund-over_the_top-blanket/home-4x5.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/dachshund-over_the_top-blanket/home-9x16.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/dachshund-over_the_top-blanket/hand-1x1.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/dachshund-over_the_top-blanket/hand-4x5.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/dachshund-over_the_top-blanket/hand-9x16.png",
+    "job": "dachshund-over_the_top-blanket",
+    "breed": "Dachshund",
+    "style": "Fine ink drawing",
+    "tone": "Over the top",
+    "gift": "blanket",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "9x16"
   }
 ]
