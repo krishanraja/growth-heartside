@@ -65,3 +65,40 @@ Heartside's canon beats this repository (AGENTS.md, rule 2). Where anything belo
   - the store handle moved out of the repo.
 - **G1 gains:** each code and gift line modeled under the 30% floor.
 - **Appendix A** (the Cowork Canva prompt) is replaced by a v4 that follows the Brand Book and CANVA-BRAND-KIT-GUIDE.
+
+## Update, 29 Oct (checked against heartside `54b6b0e`)
+
+On 29 Oct a message from heartside's "Product launch readiness" session answered the two open questions and passed on Krish's instruction to "begin relentlessly driving organic growth". The engine checked each fact below against heartside's sources before recording it.
+
+**The two questions, answered:**
+- **The gift-line rule still holds.** It lives in heartside's `n8n/build.mjs`, the DOG_VOICE text (verified):
+  - I, me and my are the dog; you and your are the person;
+  - no he, she, his or her about the dog, and never the dog's or the person's name;
+  - no "Dear", and no sign-off, because the gift adds "Love, [dog]";
+  - no exclamation marks, no emoji, no em dashes;
+  - no stacked fragments.
+
+  The engine's rules basis gets rebuilt on this file plus NORTH_STAR, NOW, SCOPE and ECONOMICS.
+- **The customer-facing email is krish@heartside.io.** Ruling (Krish, 2026-10-29), as relayed. It matches AGENTS.md and `growth.py` already. hello@krishraja.com from the Brand Book is never used.
+
+**Offers and margin:**
+- **Live offers, approved by Krish** (heartside NOW and ECONOMICS, verified):
+  - an automatic bundle: 15% off two gifts, 20% off three or more;
+  - the $29 Artist's touch add-on;
+  - free US shipping.
+
+  These are not hypothetical, and creative may state them. Any **new** code (creator, audience or post family) still has to be modelled against the 30% net floor before it goes on.
+- **The $45 mug is below the 30% floor** (NOW, verified). Creative leads with the blanket and the portrait. The mug is shown, never as the hero offer.
+
+**Product truth for creative** (as relayed):
+- A painting takes about 1 to 3 minutes after the photo.
+- The buyer approves the design before checkout.
+- One design is one unit.
+- No print-quality claims and no "ships in X days".
+- No Christmas cut-off dates yet.
+
+**Release and payments:**
+- **Payments: not consistent.** The message says Shopify Payments was restored and checked on 29 Oct. Heartside's NOW.md at `54b6b0e` still says "Payments are unverified (28 October)". The engine treats payments as unverified until heartside's NOW.md or a live checkout read says otherwise.
+- **The theme is about to change.** The message says the buyer-journey fixes in heartside PR #72 go live after Krish's 5-painting phone batch; NOW.md records PR #65 as merged but not live. The engine re-syncs before any claim about the buying journey.
+
+**Heartside's number:** $24 net over the trailing 4 weeks against $250 for the week of 26 Oct, which is U4. The next steps on the ladder are $658 (2 Nov), $1,084 (9 Nov) and $1,624 (16 Nov).
