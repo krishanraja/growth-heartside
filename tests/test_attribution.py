@@ -31,6 +31,13 @@ class AttributionTests(unittest.TestCase):
     def test_social_referrer_without_tags_is_organic_social(self):
         self.assertEqual(attribution.classify(order(visit(medium=None, referrer='https://l.instagram.com/?u=x')))[0], 'organic_social')
 
+    def test_buffer_s_own_tags_count_as_organic_social(self):
+        tagged = visit(medium='social', campaign='buffer')
+        tagged['utmParameters']['source'] = 'buffer'
+        self.assertEqual(attribution.classify(order(tagged))[0], 'organic_social')
+        paid = visit(medium='cpc', campaign='buffer'); paid['utmParameters']['source'] = 'facebook'
+        self.assertEqual(attribution.classify(order(paid))[0], 'paid')
+
     def test_paid_signals_never_count_even_when_tagged(self):
         self.assertEqual(attribution.classify(order(visit(CID, medium='paid_social')))[0], 'paid')
         self.assertEqual(attribution.classify(order(visit(CID, landing='https://heartside.io/?gclid=abc')))[0], 'paid')

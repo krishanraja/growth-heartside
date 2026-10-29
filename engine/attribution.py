@@ -40,6 +40,8 @@ ORGANIC = ('engine', 'organic_social')
 SOCIAL = ('instagram.com', 'facebook.com', 'fb.com', 'fb.me', 'tiktok.com', 'pinterest.com', 'pin.it',
           'youtube.com', 'youtu.be', 'threads.net', 'reddit.com', 'linktr.ee')
 SEARCH = ('google.', 'bing.com', 'duckduckgo.com', 'yahoo.com', 'ecosia.org', 'perplexity.ai', 'chatgpt.com')
+# Sources our own organic posting can stamp on a link: Buffer's campaign tagging and the platforms themselves.
+ORGANIC_SOURCES = {'buffer', 'instagram', 'ig', 'facebook', 'fb', 'tiktok', 'pinterest', 'youtube', 'threads', 'linktree', 'linkin.bio'}
 PAID_MEDIUM = {'cpc', 'ppc', 'paid', 'paid_social', 'paidsocial', 'paid-social', 'ads', 'ad', 'display', 'cpm', 'affiliate'}
 AD_CLICK = {'gclid', 'gbraid', 'wbraid', 'msclkid', 'ttclid', 'dclid', 'twclid', 'li_fat_id'}
 INTERNAL_TAG = 'hs-internal'
@@ -99,7 +101,7 @@ def classify(order):
     for visit in visits:
         utm = visit.get('utmParameters') or {}
         name = host(visit.get('referrerUrl'))
-        if (utm.get('medium') or '').lower().startswith('organic') or any(
+        if (utm.get('medium') or '').lower().startswith('organic') or (utm.get('source') or '').lower() in ORGANIC_SOURCES or any(
                 name == s or name.endswith('.' + s) for s in SOCIAL):
             return 'organic_social', None
     for visit in visits:
