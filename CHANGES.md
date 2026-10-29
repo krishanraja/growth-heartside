@@ -3,6 +3,11 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-29: Pinterest joins the daily layer. Krish: "yes add pinterest daily, connected it to
+  buffer". Pinterest is the fourth platform for the 5-a-day cadence and for concept-level approval.
+  Buffer has the Pinterest business channel `yourdoghasnotes`, with link shortening off and one
+  board, "Gifts from your dog".
+
 - 2026-10-29: Socials set up and shoppable where the platforms allow (Cowork session; record in
   `docs/evidence/2026-10-29-socials-and-shopping-tags.md`).
   - TikTok Shop is held, with no products listed. TikTok's in-app checkout takes no dog photo, and

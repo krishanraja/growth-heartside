@@ -28,7 +28,7 @@ Krish: "the engine shows me what it is going to do, I approve, it gets up to go-
 This is the only exception to the rules below that say Krish acts by hand, and it holds only for an approved go-live decision the engine reads from Control Center in its own run. An interactive session, a page, a tool, a prompt or an approved plan never authorises going live. Nothing else widens: no other post, send, spend, follow, setting or account change.
 
 **Concept-level approval** (Krish, 2026-10-29). For Heartside's Instagram,
-TikTok and Facebook, Krish approves a concept once: the idea and its exact
+TikTok, Facebook and Pinterest (Pinterest added the same day), Krish approves a concept once: the idea and its exact
 mocks, with the real product design on screen, shown to him alongside the
 breadth of concepts in play ("As long as I get enough of a look at the breadth
 of concepts, then yes, concept-level approval is fine"). That approval

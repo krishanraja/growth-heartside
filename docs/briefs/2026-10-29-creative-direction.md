@@ -41,6 +41,10 @@ films real products in six breeds instead of one pug.
 
 ## The daily layer: 5 posts a day on each platform (Krish, 29 Oct)
 
+The platforms are Instagram, TikTok, Facebook and Pinterest ("yes add pinterest daily", Krish, 29 Oct).
+Pinterest is the only one with working product tags today, so every Pin tags the gift it shows and
+links to that gift's page, tracked.
+
 | Format | Made from | Shoppable through |
 |---|---|---|
 | "Translate your dog" carousel: one breed, four lines in its voice, the real gift last | Breed examples, cutouts | Product tag, Story sticker, Pin |
@@ -49,7 +53,7 @@ films real products in six breeds instead of one pug.
 | Cut-down of a hero (6 s, 15 s, still) | Hero films | Product tag |
 | "Comment your dog's breed" with a reply in that breed's voice | Radar | The next carousel |
 
-Fifteen posts a day across three platforms is more than Krish can approve one by one, so they go to
+Twenty posts a day across four platforms is more than Krish can approve one by one, so they go to
 him as one go-live batch a day on his Control Center list, and the daily pack trims to what fits his
 time.
 
