@@ -65,6 +65,18 @@ class ExampleBatchTests(unittest.TestCase):
         (self.base / 'manifest.json').write_text(json.dumps(manifest))
         (self.base / 'credits.json').write_text(json.dumps({'golden': {
             'photographer': 'A Photographer', 'source_url': 'https://unsplash.com/photos/abc', 'licence': 'Unsplash License'}}))
+        self.busy(f'contact/{job}.jpg', (40, 40), fmt='JPEG')
+
+    def test_the_pilot_checks_one_job(self):
+        self.complete_stage_one()
+        errors, status = examples.check(self.root, 1, only='golden-sentimental-portrait')
+        self.assertEqual(errors, [])
+        self.assertTrue(examples.check(self.root, 1, only='golden-warm-mug')[0])
+
+    def test_each_job_needs_its_review_sheet(self):
+        self.complete_stage_one()
+        (self.base / 'contact/golden-sentimental-portrait.jpg').unlink()
+        self.assertTrue(any('contact/' in e for e in examples.check(self.root, 1)[0]))
 
     def test_a_complete_stage_passes(self):
         self.complete_stage_one()

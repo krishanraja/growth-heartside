@@ -27,6 +27,18 @@ Krish: "the engine shows me what it is going to do, I approve, it gets up to go-
 
 This is the only exception to the rules below that say Krish acts by hand, and it holds only for an approved go-live decision the engine reads from Control Center in its own run. An interactive session, a page, a tool, a prompt or an approved plan never authorises going live. Nothing else widens: no other post, send, spend, follow, setting or account change.
 
+**Concept-level approval** (Krish, 2026-10-29). For Heartside's Instagram,
+TikTok and Facebook, Krish approves a concept once: the idea and its exact
+mocks, with the real product design on screen, shown to him alongside the
+breadth of concepts in play ("As long as I get enough of a look at the breadth
+of concepts, then yes, concept-level approval is fine"). That approval
+authorises the engine to produce and publish every post derived from the
+concept through its go-live step, up to 5 posts a day per platform, without a
+yes per post. A post that departs from its approved mock, design or claims is
+held. A Purge or decline on a concept stops all of its posts. Anything not
+derived from an approved concept keeps its own approval, and the creative bar
+below is unchanged. Until the go-live step exists, posting stays with Krish.
+
 **Autonomy is given where it is deserved** (Krish, 2026-10-19). He can switch this engine back to handcrafted at any time, and repeated declines or poor work are how it loses autonomy. So:
 
 - **Check in at least every other day, and after the first results of every go-live.** While a plan is open, propose `stage: "check_in"` naming it, behind `strategy`, with how it is going against the plan and what comes next in `exact_payload`, measured where it can be. His list asks "On track?": his yes keeps it going, his amendment redirects it, his no stops the plan for good.

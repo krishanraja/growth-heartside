@@ -10,7 +10,7 @@ COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', '
 
 
 def add_commands(sub):
-    ex = sub.add_parser('examples', help='Check the breed example batch against heartside\'s brief'); ex.add_argument('action', choices=['check']); ex.add_argument('--stage', type=int, required=True)
+    ex = sub.add_parser('examples', help='Check the breed example batch against heartside\'s brief'); ex.add_argument('action', choices=['check']); ex.add_argument('--stage', type=int, required=True); ex.add_argument('--only', help='one job id, for the pilot')
     sub.add_parser('attribution', help='Read which orders came from organic posts, as aggregates (docs/ENGINE.md)')
     library = sub.add_parser('library'); library.add_argument('--date'); library.add_argument('--heartside-dir')
     events = sub.add_parser('events'); events.add_argument('action', choices=['import']); events.add_argument('file')
@@ -49,10 +49,10 @@ def run(args, growth):
     root = Path(growth.HERE)
     if args.cmd == 'examples':
         from . import examples
-        errors, status = examples.check(root, args.stage)
+        errors, status = examples.check(root, args.stage, args.only)
         done = sum(v == 'done' for v in status.values())
         failed = sorted(k for k, v in status.items() if v.startswith('failed'))
-        print(f'stage {args.stage}: {done} of {len(status)} files done, {len(failed)} reported failed, {len(errors)} problems')
+        print(f'stage {args.stage}{" (" + args.only + ")" if args.only else ""}: {done} of {len(status)} files done, {len(failed)} reported failed, {len(errors)} problems')
         for k in failed:
             print(f'  failed {k}: {status[k][8:]}')
         for e in errors:

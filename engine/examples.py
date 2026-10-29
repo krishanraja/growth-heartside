@@ -38,10 +38,10 @@ def batch(root):
     return json.loads(local.read_text())['jobs']
 
 
-def expected(jobs, stage):
-    """Every file the stage should produce, with what each must be."""
+def expected(jobs, stage, only=None):
+    """Every file the stage should produce (or just one job's, for a pilot), with what each must be."""
     out = {}
-    chosen = [j for j in jobs if j['stage'] <= stage]
+    chosen = [j for j in jobs if j['stage'] <= stage and (only is None or j['id'] == only)]
     for job in chosen:
         size = tuple(int(x) for x in job['size'].split('x'))
         meta = {'job': job['id'], 'breed': job['breed'], 'style': job['style'], 'tone': job['tone'], 'gift': job['format']}
@@ -97,13 +97,15 @@ def image_problems(path, spec):
     return problems
 
 
-def check(root, stage):
-    """(errors, status) for the stage: errors that must be fixed, and done or failed for each expected file."""
+def check(root, stage, only=None):
+    """(errors, status) for the stage, or one job of it: errors that must be fixed, and done or failed per file."""
     if stage not in LIMITS:
         return [f'stage must be one of {sorted(LIMITS)}'], {}
     base = Path(root) / ROOT
     jobs = batch(root)
-    want = expected(jobs, stage)
+    if only is not None and not any(j['id'] == only and j['stage'] <= stage for j in jobs):
+        return [f'{only} is not a stage {stage} job'], {}
+    want = expected(jobs, stage, only)
     errors, status = [], {}
     failures = {}
     if (base / 'failures.json').exists():
@@ -112,6 +114,11 @@ def check(root, stage):
             errors.append('failures.json must map each failed file to its reason')
             failures = {}
     present = {p.relative_to(base).as_posix() for p in base.rglob('*') if p.is_file()} - RECORDS
+    contact = {r for r in present if r.startswith('contact/') and r.endswith('.jpg')}
+    present -= contact
+    for job in {want[r]['job'] for r in want if want[r]['kind'] == 'painting'}:
+        if f'contact/{job}.jpg' not in contact and f'paintings/{job}.png' in present:
+            errors.append(f'contact/{job}.jpg: missing (one review sheet per job)')
     for extra in sorted(present - set(want)):
         errors.append(f'{extra}: not in stage {stage} of the brief (a retry, a later stage or a stray file)')
     for rel, spec in want.items():

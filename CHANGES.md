@@ -3,6 +3,16 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-29: Concept-level approval, cadence and platforms (answers in this session to a ruling his
+  "Growth engines alignment" session relayed).
+  - "As long as I get enough of a look at the breadth of concepts, then yes, concept-level approval
+    is fine." Recorded in AGENTS.md, "Concept-level approval".
+  - Cadence: 5 a day per platform (not the 3 to 4 relayed).
+  - Platforms: Instagram, TikTok and Facebook. Not YouTube or X for Heartside.
+  - "Right now, just get this codex artwork produced to a high standard because this is going to set
+    the tone for everything." The Codex card gained a pilot gate (one job, then review) and a
+    compositing recipe.
+
 - 2026-10-29: Krish's creative answers.
   - Breed examples: "go and get codex to build out all the assets, make sure you micromanage codex
     properly", with heartside's breed batch README. Stage 1 (6 paintings) is approved; stage 2 waits
