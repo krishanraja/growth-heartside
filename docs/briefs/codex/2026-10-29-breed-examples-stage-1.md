@@ -88,8 +88,12 @@ generation) if it fails.
 
 ## Step 4. The painting (per job, one generation)
 
-Fetch first: `curl -s -o /tmp/<id>.txt <raw base>/design/examples-2026-10-29-breeds/prompts/<id>.txt`
-and read `size` from `jobs.json`.
+**Departure from heartside's brief (29 Oct, Golden pilot).** Heartside's prompt files are not used.
+They made the model copy the photo (v1 to v3 on the review branch), and Krish asked for the
+generation to be refined, not just accepted. Each job's prompt is its short composed prompt in
+`docs/briefs/2026-10-29-heartside-painting-pipeline.md` ("The short prompts for the rest of stage 1";
+the Golden used v5). Write it to `/tmp/<id>.txt` exactly as quoted there, without the leading `> `,
+and read `size` from `jobs.json`. The findings go to heartside in that same brief.
 
 **Send to Codex:**
 ```
