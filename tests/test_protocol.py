@@ -137,7 +137,10 @@ class StandIn:
                 return self.reply(200, {'ok': True, 'attempt': record})
 
             def report(self, report):
-                if set(report) - set(SCHEMA['properties']) or self.headers.get('Idempotency-Key') != report.get('run_id'):
+                # Like Control Center: any 1.x the schema lists, and a field newer than the version sent is refused.
+                if report.get('credits_spent') is not None and report.get('schema_version') != '1.16.0':
+                    return self.reply(400, {'error': 'schema_version'})
+                if validate(SCHEMA, report) or self.headers.get('Idempotency-Key') != report.get('run_id'):
                     return self.reply(400, {'error': 'bad_request'})
                 if report_digest(report) != report['payload_sha256']:
                     return self.reply(400, {'error': 'payload_sha256'})

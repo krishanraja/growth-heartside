@@ -3,6 +3,10 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-29: Prepaid credits are spent by a daily scheduled session ("Scheduled sessions", Krish's answer on
+  who spends them). `docs/CREDITS-SESSION.md` is its playbook; it is not one of the seven jobs, so
+  `automations.json` is unchanged.
+
 - 2026-10-29: Concept-level approval, cadence and platforms (answers in this session to a ruling his
   "Growth engines alignment" session relayed).
   - "As long as I get enough of a look at the breadth of concepts, then yes, concept-level approval
