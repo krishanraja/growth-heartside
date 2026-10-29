@@ -1,0 +1,32 @@
+{
+  "golden": {
+    "photographer": "Gundula Vogel",
+    "source_url": "https://www.pexels.com/photo/charming-golden-retriever-sitting-indoors-33145687/",
+    "licence": "Pexels License"
+  },
+  "lab": {
+    "photographer": "Genadi Yakovlev",
+    "source_url": "https://www.pexels.com/photo/black-labrador-retriever-sitting-outdoors-in-park-34665975/",
+    "licence": "Pexels License"
+  },
+  "frenchie": {
+    "photographer": "Marino Kurunić",
+    "source_url": "https://www.pexels.com/photo/a-french-bulldog-standing-in-the-grass-27646427/",
+    "licence": "Pexels License"
+  },
+  "doodle": {
+    "photographer": "Oliver Morgan Media",
+    "source_url": "https://www.pexels.com/photo/mini-goldendoodle-on-a-pebbled-beach-16096973/",
+    "licence": "Pexels License"
+  },
+  "dachshund": {
+    "photographer": "Sharon Snider",
+    "source_url": "https://www.pexels.com/photo/close-up-shot-of-a-brown-dachshund-standing-9082859/",
+    "licence": "Pexels License"
+  },
+  "shepherd": {
+    "photographer": "Sabine Kosters",
+    "source_url": "https://www.pexels.com/photo/14026842/",
+    "licence": "Pexels License"
+  }
+}

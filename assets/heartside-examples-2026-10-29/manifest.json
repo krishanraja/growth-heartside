@@ -1,0 +1,822 @@
+[
+  {
+    "file": "paintings/golden-sentimental-portrait.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/golden-sentimental-portrait.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/golden-sentimental-portrait-1x1.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/golden-sentimental-portrait-4x5.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/golden-sentimental-portrait-9x16.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/golden-sentimental-portrait/studio-1x1.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/golden-sentimental-portrait/studio-4x5.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/golden-sentimental-portrait/studio-9x16.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "studio",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/golden-sentimental-portrait/home-1x1.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/golden-sentimental-portrait/home-4x5.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/golden-sentimental-portrait/home-9x16.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "home",
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/golden-sentimental-portrait/hand-1x1.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "1x1"
+  },
+  {
+    "file": "mockups/golden-sentimental-portrait/hand-4x5.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "4x5"
+  },
+  {
+    "file": "mockups/golden-sentimental-portrait/hand-9x16.png",
+    "job": "golden-sentimental-portrait",
+    "breed": "Golden Retriever",
+    "style": "Painterly",
+    "tone": "Sentimental",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "scene": "hand",
+    "ratio": "9x16"
+  },
+  {
+    "file": "paintings/lab-warm-portrait.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/lab-warm-portrait.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/lab-warm-portrait-1x1.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "crop",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/lab-warm-portrait/studio-1x1.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "studio",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/lab-warm-portrait/home-1x1.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "home",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/lab-warm-portrait/hand-1x1.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "hand",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "crops/lab-warm-portrait-4x5.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "crop",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/lab-warm-portrait/studio-4x5.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "studio",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/lab-warm-portrait/home-4x5.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "home",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/lab-warm-portrait/hand-4x5.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "hand",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "crops/lab-warm-portrait-9x16.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "crop",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/lab-warm-portrait/studio-9x16.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "studio",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/lab-warm-portrait/home-9x16.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "home",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/lab-warm-portrait/hand-9x16.png",
+    "job": "lab-warm-portrait",
+    "breed": "Labrador Retriever",
+    "style": "Cinematic",
+    "tone": "Warm with a wink",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "hand",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "paintings/frenchie-hilarious-portrait.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/frenchie-hilarious-portrait.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/frenchie-hilarious-portrait-1x1.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1"
+  },
+  {
+    "file": "crops/frenchie-hilarious-portrait-4x5.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5"
+  },
+  {
+    "file": "crops/frenchie-hilarious-portrait-9x16.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "crop",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16"
+  },
+  {
+    "file": "mockups/frenchie-hilarious-portrait/studio-1x1.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1",
+    "scene": "studio"
+  },
+  {
+    "file": "mockups/frenchie-hilarious-portrait/studio-4x5.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5",
+    "scene": "studio"
+  },
+  {
+    "file": "mockups/frenchie-hilarious-portrait/studio-9x16.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16",
+    "scene": "studio"
+  },
+  {
+    "file": "mockups/frenchie-hilarious-portrait/home-1x1.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1",
+    "scene": "home"
+  },
+  {
+    "file": "mockups/frenchie-hilarious-portrait/home-4x5.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5",
+    "scene": "home"
+  },
+  {
+    "file": "mockups/frenchie-hilarious-portrait/home-9x16.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16",
+    "scene": "home"
+  },
+  {
+    "file": "mockups/frenchie-hilarious-portrait/hand-1x1.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "1x1",
+    "scene": "hand"
+  },
+  {
+    "file": "mockups/frenchie-hilarious-portrait/hand-4x5.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "4x5",
+    "scene": "hand"
+  },
+  {
+    "file": "mockups/frenchie-hilarious-portrait/hand-9x16.png",
+    "job": "frenchie-hilarious-portrait",
+    "breed": "French Bulldog",
+    "style": "Comic book",
+    "tone": "Hilarious",
+    "gift": "portrait",
+    "kind": "mockup",
+    "uses": [
+      "ad",
+      "social"
+    ],
+    "ratio": "9x16",
+    "scene": "hand"
+  },
+  {
+    "file": "paintings/doodle-over_the_top-portrait.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "painting",
+    "uses": [
+      "site",
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "cutouts/doodle-over_the_top-portrait.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "cutout",
+    "uses": [
+      "ad",
+      "social",
+      "character"
+    ]
+  },
+  {
+    "file": "crops/doodle-over_the_top-portrait-1x1.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "crop",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "crops/doodle-over_the_top-portrait-4x5.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "crop",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "crops/doodle-over_the_top-portrait-9x16.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "crop",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/doodle-over_the_top-portrait/studio-1x1.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "studio",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/doodle-over_the_top-portrait/studio-4x5.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "studio",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/doodle-over_the_top-portrait/studio-9x16.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "studio",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/doodle-over_the_top-portrait/home-1x1.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "home",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/doodle-over_the_top-portrait/home-4x5.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "home",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/doodle-over_the_top-portrait/home-9x16.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "home",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/doodle-over_the_top-portrait/hand-1x1.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "hand",
+    "ratio": "1x1",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/doodle-over_the_top-portrait/hand-4x5.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "hand",
+    "ratio": "4x5",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  },
+  {
+    "file": "mockups/doodle-over_the_top-portrait/hand-9x16.png",
+    "job": "doodle-over_the_top-portrait",
+    "breed": "Goldendoodle",
+    "style": "Vintage screenprint",
+    "tone": "Over the top",
+    "gift": "portrait",
+    "kind": "mockup",
+    "scene": "hand",
+    "ratio": "9x16",
+    "uses": [
+      "ad",
+      "social"
+    ]
+  }
+]
