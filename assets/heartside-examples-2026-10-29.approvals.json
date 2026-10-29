@@ -1,0 +1,392 @@
+{
+  "note": "Single source of truth for which example painting is approved. Only approved files are in paintings/. Every other candidate stays under local/ and is never copied to Drive, GitHub or the store.",
+  "photos_rejected": [
+    {
+      "dog": "shepherd",
+      "source": "https://unsplash.com/photos/black-and-tan-german-shepherd-sitting-on-ground-during-daytime-bf0s91oLffI",
+      "reason": "ball carries a brand logo"
+    }
+  ],
+  "paintings": [
+    {
+      "job": "golden-sentimental-portrait",
+      "candidate": "v1",
+      "file": "local/review/golden-v1.png",
+      "sha256": "9a73ce9dfa33238e0cb99a4a4dcc90687ece8485282e9069f3102db6fd1a8969",
+      "prompt": "heartside rulebook prompt (eccc695)",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "awake, no collar or person, photographic face"
+    },
+    {
+      "job": "golden-sentimental-portrait",
+      "candidate": "v2",
+      "file": "local/review/golden-v2.png",
+      "sha256": "c390ec9ed351ee8aef9ce6ca3653afa68e5925eade0160d70e10a1558fba505a",
+      "prompt": "review/prompts/golden-v2-storefront.txt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "same defects as v1"
+    },
+    {
+      "job": "golden-sentimental-portrait",
+      "candidate": "v3",
+      "file": "local/review/golden-v3.png",
+      "sha256": "ebdc9166c8547a507ac2f4d75b97bac4181b64d94b0017bc2d69b24c5019f969",
+      "prompt": "review/prompts/golden-v3-fixed.txt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "same defects as v1"
+    },
+    {
+      "job": "golden-sentimental-portrait",
+      "candidate": "v5",
+      "file": "local/review/golden-v5.png",
+      "sha256": "d7b39148ecd5891f043668d257ab254a3579c74d903c45288a3ee9ea36060ef5",
+      "prompt": "short prompt v5",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "superseded by v7; empty lower half"
+    },
+    {
+      "job": "golden-sentimental-portrait",
+      "candidate": "v6",
+      "file": "local/review/golden-v6.png",
+      "sha256": "e11b80cf73965e32abd7ca7773104bad671ac12b4b05e4f917245f7f592be779",
+      "prompt": "directed brief v6",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "photographic face"
+    },
+    {
+      "job": "golden-sentimental-portrait",
+      "candidate": "v7",
+      "file": "local/review/golden-v7.png",
+      "sha256": "de2b1c09300295531c1088ebc73b7f9c9274aa3695f2f37c41d99a642367b799",
+      "prompt": "combined prompt v7",
+      "status": "superseded",
+      "decided": "Krish, 2026-10-29",
+      "reason": "was the master; replaced by the store v10 painting (collar drifted to the ears)"
+    },
+    {
+      "job": "golden-sentimental-portrait",
+      "candidate": "store-v10",
+      "file": "local/stage1v10/out/golden-sentimental-portrait.png",
+      "sha256": "2aba40fd804ac755a6152657abb70da53862d33636de32bcb8207c988073011a",
+      "prompt": "heartside ef76390 prompts/golden-sentimental-portrait.txt",
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "store prompt; collar at the neck"
+    },
+    {
+      "job": "lab-warm-portrait",
+      "candidate": "v1",
+      "file": "local/review/lab-v1.png",
+      "sha256": "a295bad219e598195db4b7d0c221a5ef1f6efcb070bfaf34a238afcb65b845c7",
+      "prompt": "stage1-v7 prompt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "literal wink; framing too tight"
+    },
+    {
+      "job": "lab-warm-portrait",
+      "candidate": "v2",
+      "file": "local/review/lab-v2.png",
+      "sha256": "d38507055c3d8fa21b68f0f4fe0f4daf058e1fc4bcc046c084741b66978cd7be",
+      "prompt": "stage1-v7 prompt, framing fix",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "pseudo-letters in the bandana pattern"
+    },
+    {
+      "job": "lab-warm-portrait",
+      "candidate": "v3",
+      "file": "local/review/lab-v3.png",
+      "sha256": "fd25cff855c8eaf37648726659681c37fdd5e1a33daa5dee7e3faabf46b572e8",
+      "prompt": "stage1-v7 prompt, plain bandana",
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
+    },
+    {
+      "job": "lab-warm-portrait",
+      "candidate": "store-v10",
+      "file": "local/stage1v10/out/lab-warm-portrait.png",
+      "sha256": "cf7117ce3334c95a7993ccdb08b677e1d623d93f72371050476fc50a03fd47a5",
+      "prompt": "heartside ef76390 prompts/lab-warm-portrait.txt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "tennis ball on the seat, not in his mouth"
+    },
+    {
+      "job": "frenchie-hilarious-portrait",
+      "candidate": "v1",
+      "file": "local/review/frenchie-v1.png",
+      "sha256": "65b25f6cd2fb6b2960f0de34c05040e078ba7fde9c1b81ba2e4eb9ba5cdfca67",
+      "prompt": "stage1-v7 prompt",
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
+    },
+    {
+      "job": "frenchie-hilarious-portrait",
+      "candidate": "store-v10",
+      "file": "local/stage1v10/out/frenchie-hilarious-portrait.png",
+      "sha256": "29399dae4ddf4b198bb51a71378f2490bda588c16610ad2089f8a002af095bac",
+      "prompt": "heartside ef76390 prompts/frenchie-hilarious-portrait.txt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "joke replaced the stated couch and film"
+    },
+    {
+      "job": "doodle-over_the_top-portrait",
+      "candidate": "v1",
+      "file": "local/review/doodle-v1.png",
+      "sha256": "2f4c276b2884976721b3563d2d336505013ae5335d4fd992fbbc8e8195345947",
+      "prompt": "stage1-v7 prompt",
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
+    },
+    {
+      "job": "doodle-over_the_top-portrait",
+      "candidate": "store-v10",
+      "file": "local/stage1v10/out/doodle-over_the_top-portrait.png",
+      "sha256": "0d94a83a3fe299bd4e5c01b0a5f98de63712fdbf1fceeb615021148934d15e47",
+      "prompt": "heartside ef76390 prompts/doodle-over_the_top-portrait.txt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "unnamed leash; weaker sunburst"
+    },
+    {
+      "job": "dachshund-sentimental-blanket",
+      "candidate": "v1",
+      "file": "local/review/dachshund-v1.png",
+      "sha256": "db7ffe71ae4358ddfca46ca9f07f802dbae91fa274db7e0a1cad2e8d97bb042c",
+      "prompt": "stage1-v7 prompt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "central motif copies the photo pose; full colour"
+    },
+    {
+      "job": "dachshund-sentimental-blanket",
+      "candidate": "v2",
+      "file": "local/review/dachshund-v2.png",
+      "sha256": "1fe61c665a9ee347c846e343c42db5842061de09041139c355f91eae8eff6b2f",
+      "prompt": "stage1-v7 prompt, named poses",
+      "status": "superseded",
+      "decided": "Krish, 2026-10-29",
+      "reason": "was the master; replaced by the store v10 painting"
+    },
+    {
+      "job": "dachshund-sentimental-blanket",
+      "candidate": "store-v10",
+      "file": "local/stage1v10/out/dachshund-sentimental-blanket.png",
+      "sha256": "4c660f6680ec089e6a08659fa8ba906150f86923e0c3ff27c8a9d820bebfcaec",
+      "prompt": "heartside ef76390 prompts/dachshund-sentimental-blanket.txt",
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "coherent sleeping set in plain sweaters"
+    },
+    {
+      "job": "shepherd-warm-blanket",
+      "candidate": "v1",
+      "file": "local/review/shepherd-v1.png",
+      "sha256": "f056862df138f4e6859f34ce592867aff23981764f54e2374bb28c3a3769cd77",
+      "prompt": "stage1-v7 prompt",
+      "status": "approved",
+      "decided": "Krish, 2026-10-29",
+      "reason": "passes the bar"
+    },
+    {
+      "job": "shepherd-warm-blanket",
+      "candidate": "store-v10",
+      "file": "local/stage1v10/out/shepherd-warm-blanket.png",
+      "sha256": "416f1f93e9ecb88c9a8ad2b9f22029af702778f4a67cf74de4868e57c56381a1",
+      "prompt": "heartside ef76390 prompts/shepherd-warm-blanket.txt",
+      "status": "rejected",
+      "decided": "Krish, 2026-10-29",
+      "reason": "invented mountains and lake; less like cut paper; very busy"
+    },
+    {
+      "job": "golden-warm-mug",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/golden-warm-mug.png",
+      "sha256": "b5252c01ad348b963a10793622cf75f18b75ce034926ed9b37247d4d1680135e",
+      "prompt": "heartside ef76390 prompts/golden-warm-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "golden-hilarious-blanket",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/golden-hilarious-blanket.png",
+      "sha256": "7e86336198249a946e53e2ce67d9925a20365fa6cb7707424fc38699aea38257",
+      "prompt": "heartside ef76390 prompts/golden-hilarious-blanket.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "golden-over_the_top-portrait",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/golden-over_the_top-portrait.png",
+      "sha256": "857c14167b36118c2db9f2c76a916a76107928cdb6b3367d77b9bd3670374cd5",
+      "prompt": "heartside ef76390 prompts/golden-over_the_top-portrait.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "lab-sentimental-blanket",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/lab-sentimental-blanket.png",
+      "sha256": "e70c2de26c9c31202e9ae1a808b1a3049483db39ffb18383abafa5032e45af08",
+      "prompt": "heartside ef76390 prompts/lab-sentimental-blanket.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "lab-hilarious-mug",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/lab-hilarious-mug.png",
+      "sha256": "b33816572ef7764c34d0b5de809083105e130cf249485deb9da34a0546660e76",
+      "prompt": "heartside ef76390 prompts/lab-hilarious-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "lab-over_the_top-blanket",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/lab-over_the_top-blanket.png",
+      "sha256": "ec239061a37c155d108a3a376248c05c6fc9feea6a47c37898b1f9a8645accbb",
+      "prompt": "heartside ef76390 prompts/lab-over_the_top-blanket.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "frenchie-sentimental-mug",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/frenchie-sentimental-mug.png",
+      "sha256": "27e2e6059219389db799227352208669aeac5933663ab17fcee0bfafec52f044",
+      "prompt": "heartside ef76390 prompts/frenchie-sentimental-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "frenchie-warm-blanket",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/frenchie-warm-blanket.png",
+      "sha256": "ec15c25b9ff13ec0f48fe69b3212d68a8b52eabc864e8f5ae095ab356099389d",
+      "prompt": "heartside ef76390 prompts/frenchie-warm-blanket.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "frenchie-over_the_top-mug",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/frenchie-over_the_top-mug.png",
+      "sha256": "d4d3f9adf2bf46dee82366f5a4a00e52333c9accdf2f179a14a817653977b378",
+      "prompt": "heartside ef76390 prompts/frenchie-over_the_top-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "doodle-sentimental-portrait",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/doodle-sentimental-portrait.png",
+      "sha256": "d0b10d6d37968ee872618b94cb59dd97d2df892da73613c8022202f55668dcda",
+      "prompt": "heartside ef76390 prompts/doodle-sentimental-portrait.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "doodle-warm-mug",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/doodle-warm-mug.png",
+      "sha256": "f0f9626eed9466ad853a68064ed2bd89d9d898b1ce11fdc698833e87442c91ec",
+      "prompt": "heartside ef76390 prompts/doodle-warm-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "doodle-hilarious-blanket",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/doodle-hilarious-blanket.png",
+      "sha256": "80b8b46fb7d11697ea5c7c7633902f33ab5965a35860a24bbe2773b2fb7149d9",
+      "prompt": "heartside ef76390 prompts/doodle-hilarious-blanket.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "dachshund-warm-portrait",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/dachshund-warm-portrait.png",
+      "sha256": "8c426e99ba54f1f8b6ca6bdf5baf11165339853d01846becd0b767cd89d9d3bf",
+      "prompt": "heartside ef76390 prompts/dachshund-warm-portrait.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "dachshund-hilarious-mug",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/dachshund-hilarious-mug.png",
+      "sha256": "edb24cb2e7c29cae9669089e5f84a85707af20b7edf75a6caff6fad9cf953ae0",
+      "prompt": "heartside ef76390 prompts/dachshund-hilarious-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "dachshund-over_the_top-blanket",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/dachshund-over_the_top-blanket.png",
+      "sha256": "841f9c337274dacf6baefc2799a57a04d7d80e0991fb971bce966a3131855a52",
+      "prompt": "heartside ef76390 prompts/dachshund-over_the_top-blanket.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "shepherd-sentimental-mug",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/shepherd-sentimental-mug.png",
+      "sha256": "d85ed320eb5ded900c878de5132b2113d6a584104ac34fcfb0ec5f65296f7b28",
+      "prompt": "heartside ef76390 prompts/shepherd-sentimental-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "shepherd-hilarious-portrait",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/shepherd-hilarious-portrait.png",
+      "sha256": "a099bb8175266d9dfe71588ed212ab1248f7e7a524710a567afe5b76eefde51d",
+      "prompt": "heartside ef76390 prompts/shepherd-hilarious-portrait.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    },
+    {
+      "job": "shepherd-over_the_top-mug",
+      "candidate": "store-v10",
+      "file": "local/stage2/out/shepherd-over_the_top-mug.png",
+      "sha256": "a874787767626c5ff98a0422cab388cb17272b5510c575d447d316dd075a33b0",
+      "prompt": "heartside ef76390 prompts/shepherd-over_the_top-mug.txt",
+      "status": "pending",
+      "decided": null,
+      "reason": "awaiting review"
+    }
+  ]
+}
