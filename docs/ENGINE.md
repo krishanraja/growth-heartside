@@ -30,7 +30,7 @@ artifact. Unzip and open `review.html`. No web account or second dashboard is ne
 
 The seven checked concepts with 28 prewritten hook experiments cover three reusable families: recognition, product
 proof and a question to the audience. Since 29 Oct they show only the live store's current renders, blanket and
-portrait first; the mug appears in one audience concept and is never sold as the hero offer. Each has native captions, hook
+portrait in most concepts and the mug in one; any of them may be sold. Each has native captions, hook
 metadata, a declared mechanism and an audience intent. Selection falls back to a
 stable seven-day rotation, never an invented trend. An eligible observed
 replication candidate gets a changed opening and hook ID, holding its mechanism
@@ -283,18 +283,17 @@ stand-in; the CLI's default `--mode synthetic` never touches Krish's numbers or 
 
 ## Verified conversion media
 
-The renderer also accepts `intent: buy` with one declared unit of a lead gift
-(the blanket or the portrait), the exact live product `destination`, and current
-gift `offers`, when the film shows that gift. The mug is shown in audience films
-but never sold as the hero offer: it sits below heartside's 30% net floor in every
-modeled case. The same copy, price, availability, source, subtitle, narration and
+The renderer also accepts `intent: buy` with one declared unit of a live gift,
+the exact live product `destination`, and current gift `offers`, when the film
+shows that gift. Every gift qualifies, the mug included (Ruling, Krish,
+2026-10-29). The same copy, price, availability, source, subtitle, narration and
 media checks apply. Put `{link}` in native captions; rendering supplies a separate
 tracked destination for every creative ID. Structured offers are included in
 purchase-copy digests. A different gift, wrong price, unavailable product or
 missing link fails before production. No discount, delivery deadline or checkout
 result is invented.
 
-When the lead gifts and the homepage are public and the catalog is current, the
+When the gifts and the homepage are public and the catalog is current, the
 scheduled fallback tests a conversion edition every third day for the gift the
 film ends on. It reads the canon's configured price and the live destination;
 the remaining days keep recognition and sharing hypotheses. An authoring session can prepare its own verified purchase spec using

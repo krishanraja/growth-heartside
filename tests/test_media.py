@@ -63,7 +63,7 @@ class MediaTests(unittest.TestCase):
                 wrong_sale = copy.deepcopy(sale); wrong_sale['offers'][0]['unit_price']='89.00'
                 with self.assertRaises(ValueError):
                     media.render(root, wrong_sale, state_ready, growth.check_pack, day='2026-10-17', link_builder=growth.tracked)
-                # The mug is shown, never sold as the hero offer.
+                # A sale must be for a gift the film shows.
                 mug_sale = copy.deepcopy(sale); mug_sale['offers'] = [{'id':'mug','quantity':1,'unit_price':'45.00'}]
                 mug_sale['destination'] = 'https://heartside.io/products/your-dogs-illustrated-mug'
                 with self.assertRaises(ValueError):

@@ -154,14 +154,14 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
             raise ValueError('each scene must show one or two approved current product renders')
     if intent == 'buy':
         declared = spec.get('offers')
-        gift = next((o for o in offers.catalog(state) if o['ready'] and o['kind'] == 'gift' and o['id'] in offers.LEAD_GIFTS
+        gift = next((o for o in offers.catalog(state) if o['ready'] and o['kind'] == 'gift'
                      and isinstance(declared, list) and len(declared) == 1 and isinstance(declared[0], dict)
                      and declared[0].get('id') == o['id']), None)
         shown = {assets.PRODUCT_IMAGES[r][0] for s in scenes for r in (s['asset'] if isinstance(s['asset'], list) else [s['asset']])}
         if (not offers.fresh_store(state) or not gift or set(declared[0]) - {'id', 'quantity', 'unit_price'}
                 or declared[0].get('quantity', 1) != 1 or gift['id'] not in shown
                 or spec.get('destination') != gift['product']['url'] or not link_builder):
-            raise ValueError('purchase media requires one live lead gift (the blanket or the portrait) that the film shows, its exact product page, one declared unit and tracked links')
+            raise ValueError('purchase media requires one live gift that the film shows, its exact product page, one declared unit and tracked links')
     day = dt.date.fromisoformat(day) if day else dt.datetime.now(ZoneInfo('America/New_York')).date()
     # The same concept keeps its number in each native edition.
     stem = f'{spec["pillar"]}_REEL_{spec["concept"]}_{spec["hook"]}_V{spec["variation"]}_{day:%Y%m%d}'

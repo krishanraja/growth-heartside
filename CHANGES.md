@@ -9,8 +9,10 @@ Newest first. Record his words with the date, then change the job file and
   store handle and other never-publish items out of this public repository.
   - `growth.py` reads its rules from those files and `n8n/build.mjs`; Biscuit,
     exclamation marks, the worn lines and stacked fragments are refused.
-  - Purchase drafts lead with the blanket or the portrait; the mug is shown,
-    never the hero offer (heartside NOW and ECONOMICS, the 30% net floor).
+  - Krish, the same day, asked whether purchase posts may sell the mug (the
+    store recommends it; heartside's economics show it below the 30% floor),
+    and chose "Allow equally": every gift may be sold, the mug included. The
+    one-day block on mug purchase posts is removed.
   - No job file or `automations.json` entry changed.
 
 - 2026-10-22: Ruling (Krish, 2026-10-22): each venture's own repository is

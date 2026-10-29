@@ -68,9 +68,8 @@ with a paw. Printful makes each one to order for US buyers, and a person checks
 every order before it prints. The ornament is on hold (heartside, 27 Oct).
 
 The lead line is "Your dog loves you too." Prices, products and dates change.
-Read them from the sync every time, never from memory or this file. The 30%
-net-margin floor (heartside `docs/ECONOMICS.md`) means the blanket and the
-portrait lead; the mug is shown, never sold as the hero offer.
+Read them from the sync every time, never from memory or this file. Every
+gift may be sold in a post, the mug included (Ruling, Krish, 2026-10-29).
 
 | Where | Address |
 |---|---|
@@ -185,10 +184,9 @@ commit. Creative revisions are kept in `local/engine.sqlite3`.
 
    Keep the `production` object written by the renderer. Never type a fake
    media checksum or substitute an unrelated creative's manifest. The
-   starter library is audience material. Verified purchase specs for the
-   blanket or the portrait can declare one live offer and use native tracked
-   links; the mug is never the hero offer. Read docs/ENGINE.md before
-   conversion work.
+   starter library is audience material. A verified purchase spec can
+   declare one live gift the film shows and use native tracked links. Read
+   docs/ENGINE.md before conversion work.
 
    Platforms: instagram, facebook, tiktok, pinterest, youtube, google, email,
    store, reddit, creator, other. Every heartside.io link is tracked

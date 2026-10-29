@@ -45,12 +45,15 @@ class OfferTests(unittest.TestCase):
         ready['store']=[]
         self.assertIsNone(offers.purchase_campaign(spec,ready))
 
-    def test_the_mug_is_never_the_hero_offer(self):
+    def test_the_mug_sells_like_any_other_gift(self):
         from pathlib import Path
         import json
         spec=json.loads((Path(growth.HERE)/'campaigns/morning-proof.json').read_text())
         ready=state(); ready['homepage_v3']=True
-        self.assertIsNone(offers.purchase_campaign(spec,ready))
+        draft=offers.purchase_campaign(spec,ready)
+        self.assertEqual(draft['offers'],[{'id':'mug','quantity':1,'unit_price':'45.00'}])
+        self.assertEqual(offers.validate_item({'intent':'buy','offers':draft['offers']},
+                         "Your Dog's Illustrated Mug, $45. https://heartside.io/products/your-dogs-illustrated-mug", ready), [])
 
     def test_prices_are_read_from_the_canon_baseline(self):
         rows = {o['id']: o for o in offers.canonical_offers({'docs/ECONOMICS.md': ECONOMICS})}

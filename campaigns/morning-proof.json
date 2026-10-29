@@ -7,7 +7,7 @@
   "variation": 1,
   "intent": "audience",
   "layout": "recognition",
-  "mechanism": "Audience only: show the real mug so the range is honest, without selling it as the hero offer (it sits below the 30% net floor).",
+  "mechanism": "Show the real mug, the gift the store recommends, and test whether its morning ritual earns saves and sends.",
   "scenes": [
     {
       "asset": "mug_front",

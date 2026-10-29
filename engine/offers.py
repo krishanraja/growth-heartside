@@ -20,10 +20,8 @@ def cents(value):
 
 
 # The gifts heartside's canon prices, by the word its "configured baseline" uses.
-# The order is the lead order for purchase drafts: the mug sits below the 30%
-# net floor in every modeled case (heartside NOW.md, ECONOMICS), so it never leads.
+# Every gift may be sold in a purchase draft, the mug included (Ruling, Krish, 2026-10-29).
 GIFTS = ('blanket', 'portrait', 'mug')
-LEAD_GIFTS = ('blanket', 'portrait')
 ADD_ONS = {"artist's touch": 'artists-touch'}
 BASELINE = re.compile(r'(?:\$|USD)\s?(\d+(?:\.\d{2})?)\s+(?:(?:un)?framed\s+)?(' + '|'.join(GIFTS) + r')\b', re.I)
 ADD_ON = re.compile(r"(?:\$|USD)\s?(\d+(?:\.\d{2})?)\s+(artist'?s touch)", re.I)
@@ -175,16 +173,13 @@ def validate_item(item, public_text, state):
 
 
 def purchase_campaign(spec, state):
-    """A ready single-gift conversion draft for the lead gift the film ends on (the blanket or the portrait).
-
-    The mug is shown in audience films but never sold as the hero offer: it sits
-    below the 30% net floor in every modeled case (heartside NOW.md, ECONOMICS)."""
+    """A ready single-gift conversion draft for the gift the film ends on."""
     if not state or not state.get('homepage_v3') or not fresh_store(state):
         return None
     from .assets import PRODUCT_IMAGES
     last = spec['scenes'][-1]['asset']
     shown = PRODUCT_IMAGES.get(last[0] if isinstance(last, list) else last, (None,))[0]
-    gift = next((o for o in catalog(state) if o['id'] == shown and o['id'] in LEAD_GIFTS
+    gift = next((o for o in catalog(state) if o['id'] == shown
                  and o['kind'] == 'gift' and o['ready']), None)
     if not gift:
         return None
