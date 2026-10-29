@@ -6,10 +6,11 @@ from pathlib import Path
 from . import assets, ledger, offers
 
 
-COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library', 'cc'}
+COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library', 'cc', 'attribution'}
 
 
 def add_commands(sub):
+    sub.add_parser('attribution', help='Read which orders came from organic posts, as aggregates (docs/ENGINE.md)')
     library = sub.add_parser('library'); library.add_argument('--date'); library.add_argument('--heartside-dir')
     events = sub.add_parser('events'); events.add_argument('action', choices=['import']); events.add_argument('file')
     sub.add_parser('reporting-access')
@@ -45,6 +46,22 @@ def add_commands(sub):
 
 def run(args, growth):
     root = Path(growth.HERE)
+    if args.cmd == 'attribution':
+        from contextlib import closing
+        from . import attribution, ledger
+        with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
+            result = attribution.run(db)
+        if result['status'] in ('hold', 'current'):
+            print(result['status'].upper() + ': ' + result['reason'])
+            return
+        for name, reading in result['windows'].items():
+            print(f"{name} {reading['start']} to {reading['end']} ({reading['timezone']}): organic {reading['organic']['orders']} orders, "
+                  f"${reading['organic']['net_sales']:,.2f} of store ${reading['store']['net_sales']:,.2f} "
+                  f"({reading['store']['orders']} orders); pending {reading['tiers']['pending']['orders']}, "
+                  f"paid {reading['tiers']['paid']['orders']}; fully refunded {reading['fully_refunded_orders']}")
+            print('  by group: ' + ', '.join(f"{t} {v['orders']}" for t, v in reading['tiers'].items()))
+        print('stored')
+        return
     if args.cmd == 'reporting-access':
         from . import control_center
         result = control_center.probe(growth.BASE, growth.token())

@@ -3,6 +3,7 @@ import datetime as dt
 from decimal import Decimal, InvalidOperation
 import hashlib
 import json
+import os
 from pathlib import Path
 import sqlite3
 from urllib.parse import urlparse
@@ -100,6 +101,13 @@ def mark(db, creative_id, revision, status, published_url=None):
                    (creative_id, revision, status, now(), canonical({'published_url': published_url})))
 
 
+def shop_domains():
+    """Heartside's own store domains. The Shopify store handle is never published (heartside NOW.md
+    never_publish), so it comes from the HEARTSIDE_SHOP_DOMAIN repository variable, never from this file."""
+    handle = os.environ.get('HEARTSIDE_SHOP_DOMAIN', '').strip().lower()
+    return {'heartside.io'} | ({handle} if handle.endswith('.myshopify.com') else set())
+
+
 def normalize_report(document):
     """Only an ungrouped aggregate tool result or explicit aggregate values."""
     allowed = {'platform', 'scope', 'currency', 'source', 'observed_at', 'period'}
@@ -124,7 +132,7 @@ def normalize_report(document):
     if 'result' in document:
         result = document['result']
         result = result.get('structuredContent') or result
-        if result.get('shopDomain') not in ('bnf1em-ge.myshopify.com', 'heartside.io'):
+        if result.get('shopDomain') not in shop_domains():
             raise ValueError('aggregate result is not from Heartside')
         columns, rows = result['columns'], result['rows']
         if len(rows) != 1 or len(rows[0]) != len(columns):

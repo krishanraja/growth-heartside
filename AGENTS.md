@@ -59,15 +59,17 @@ doing at any point in time".
 
 ## What you are growing
 
-Heartside sells gifts from your dog. In a 90-second chat, Biscuit (the
-brand's dachshund host) turns the buyer's answers into a short message from
-the dog, in its own voice, to the person it loves. Those words go on a mug, a sherpa blanket, a framed print or
-a tree ornament, signed "Love, [dog]" with a paw. Printful makes each one to
-order for US buyers, and a person checks every order before it prints.
+Heartside sells gifts from your dog. In a short chat, Buddy (the brand's
+chestnut dachshund host, never the buyer's dog) gathers a photo of the dog and
+the buyer's answers. The dog is painted onto an illustrated mug, a word-free
+sherpa blanket, or a portrait sold unframed or framed; the mug and the portrait
+also carry a short note from the dog, in its own voice, signed "Love, [dog]"
+with a paw. Printful makes each one to order for US buyers, and a person checks
+every order before it prints. The ornament is on hold (heartside, 27 Oct).
 
-The lead line is "Your dog loves you too." The Christmas campaign line is
-"This year, the dog's buying." Prices, products and dates change. Read them
-from the sync every time, never from memory or this file.
+The lead line is "Your dog loves you too." Prices, products and dates change.
+Read them from the sync every time, never from memory or this file. Every
+gift may be sold in a post, the mug included (Ruling, Krish, 2026-10-29).
 
 | Where | Address |
 |---|---|
@@ -117,18 +119,23 @@ address of Krish's in anything.
    date appears only once Krish has confirmed it for that product.
 4. **The product on screen is always the real design.** AI may make dogs and
    rooms. It never draws the product and never shows AI "customers" holding
-   or reviewing it. Biscuit is an openly fictional, AI-made character.
+   or reviewing it. Product images are the live store's own renders, each
+   labeled Example, with an example dog that is never a customer's. Biscuit
+   is retired; no Buddy image is used until heartside approves one.
 5. **Heartside's words.** Follow the canon's voice rules: US spelling, no em
-   dashes, no exclamation marks in body copy (Biscuit may use one per line),
+   dashes, no exclamation marks anywhere (Buddy included),
    none of the banned words, none of the retired lines ("written by your
    dog", "Now it's in writing"), no "it's not X, it's Y". No jokes about a
    dog dying, ageing, illness or abandonment, and none that mock the buyer.
    Business headlines stay plain, warm and true. Gift lines are the dog
    talking to the person it loves (Krish, 20 Oct): I is the dog, you is the
    person, warm first and funny second, signed "Love, [dog]"; never he, she,
-   the dog's name or the person's name, no exclamation marks, no "Dear".
-   Biscuit's voice is unchanged. `python3 growth.py check` enforces what code
-   can, including refusing the retired third-person lines.
+   the dog's name or the person's name, no exclamation marks, no "Dear",
+   no stacked fragments ("Same stick. Every time.") and none of the worn
+   lines heartside's `n8n/build.mjs` bans (you're welcome, not sorry,
+   obviously, in this economy and the rest). `python3 growth.py check`
+   enforces what code can, including refusing the retired third-person lines
+   and the name Biscuit.
 6. **No customer's details, anywhere.** This repository is public. Never copy
    anything from an order, a checkout, a customer record or the chat into a
    file or a pack. That covers names, emails, addresses, dogs' names, photos
@@ -177,9 +184,9 @@ commit. Creative revisions are kept in `local/engine.sqlite3`.
 
    Keep the `production` object written by the renderer. Never type a fake
    media checksum or substitute an unrelated creative's manifest. The
-   starter library is audience material. Verified Morning Mug purchase specs
-   can declare one live offer and use native tracked links; other gift media
-   needs approved photography first. Read docs/ENGINE.md before conversion work.
+   starter library is audience material. A verified purchase spec can
+   declare one live gift the film shows and use native tracked links. Read
+   docs/ENGINE.md before conversion work.
 
    Platforms: instagram, facebook, tiktok, pinterest, youtube, google, email,
    store, reddit, creator, other. Every heartside.io link is tracked
@@ -187,7 +194,7 @@ commit. Creative revisions are kept in `local/engine.sqlite3`.
 
    Items for `other` and `store` mix notes for Krish with public words. In
    those, start each line the public will see with `Hook:`, `On screen:`,
-   `Voiceover:`, `Biscuit:`, `Cover:`, `Caption:`, `Copy:`, `Headline:` or
+   `Voiceover:`, `Buddy:`, `Cover:`, `Caption:`, `Copy:`, `Headline:` or
    `Title:`. The copy rules apply to those lines. The em dash and link
    rules apply to every line.
 2. `python3 growth.py check pack.json` until it says ready.

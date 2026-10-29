@@ -95,7 +95,7 @@ class RuntimeTests(unittest.TestCase):
         file = self.root / 'image.png'; file.write_bytes(b'fictional test asset')
         provenance = {'description':'Fictional room', 'rights':'Generated for the brand', 'disclosure':'AI scene', 'transcript':''}
         with self.assertRaises(ValueError):
-            providers.import_asset(self.root, self.db, row['request_id'], file, 'mug_dog', provenance)
+            providers.import_asset(self.root, self.db, row['request_id'], file, 'blanket', provenance)
         result = providers.import_asset(self.root, self.db, row['request_id'], file, 'fictional_scene', provenance)
         self.assertEqual(json.loads(result.read_text())['source_sha'], 'a'*40)
 

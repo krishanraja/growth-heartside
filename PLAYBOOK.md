@@ -1,5 +1,7 @@
 # The playbook: the organic commerce engine, applied to Heartside
 
+> **29 Oct 2026: read heartside's canon over this file.** Heartside relaunched on 27 Oct. The host is Buddy (Biscuit is retired), the range is the mug, the word-free blanket and the portrait (the ornament is on hold), and prices are read from the sync. Where this file names Biscuit, four gifts or older prices, heartside's canon and `growth.py check` win. The rewrite of this file is tracked in `NOW.md`.
+
 Source: the two documents Krish gave this engine on 14 October 2026, kept in
 `knowledge/` ("The Organic Pet Commerce Engine" and "Organic Pet Commerce
 Growth Corpus"). They were written for a generic UK pet-accessories store.

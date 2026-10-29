@@ -84,7 +84,7 @@ def synthesize(root, transcript, source_sha, limit_seconds):
                   'sha256': assets.sha256(work / 'voice.wav'), 'role': 'narration', 'status': 'draft_local_synthesis',
                   'provider': 'kokoro-local', 'seconds': seconds,
                   'rights': 'Kokoro-82M model and voices: Apache-2.0; kokoro-onnx runtime: MIT. See docs/VOICE-LICENSES.md.',
-                  'disclosure': 'Synthetic brand narration. Biscuit is a fictional AI character.', 'generation_cost_usd': 0}
+                  'disclosure': 'Synthetic brand narration over example product renders.', 'generation_cost_usd': 0}
         (work / 'voice.wav').replace(target / 'voice.wav')
         (work / 'narration.json').write_text(json.dumps(record, indent=2) + '\n')
         (work / 'narration.json').replace(record_path)
