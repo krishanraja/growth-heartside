@@ -23,6 +23,7 @@ from decimal import Decimal
 import json
 import os
 import re
+import urllib.error
 import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
@@ -188,18 +189,35 @@ def missing_env():
     return [name for name in ENV if not os.environ.get(name, '').strip()]
 
 
-def post(url, body, headers=None):
-    request = urllib.request.Request(url, data=json.dumps(body).encode(), method='POST',
-                                     headers={'Content-Type': 'application/json', 'Accept': 'application/json', **(headers or {})})
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return json.loads(response.read())
+def post(url, body, headers=None, form=False):
+    data = urllib.parse.urlencode(body).encode() if form else json.dumps(body).encode()
+    kind = 'application/x-www-form-urlencoded' if form else 'application/json'
+    request = urllib.request.Request(url, data=data, method='POST',
+                                     headers={'Content-Type': kind, 'Accept': 'application/json', **(headers or {})})
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            return json.loads(response.read())
+    except urllib.error.HTTPError as e:
+        raise ValueError(f'Shopify answered HTTP {e.code}: {refusal(e)}') from None
+
+
+def refusal(error):
+    """Shopify's own error code and description, never the request, truncated."""
+    try:
+        body = json.loads(error.read(4000) or b'{}')
+    except (ValueError, OSError):
+        return 'no readable error body'
+    if isinstance(body, dict):
+        parts = [str(body.get(k)) for k in ('error', 'error_description', 'errors') if body.get(k)]
+        return '; '.join(parts)[:300] or 'no error code given'
+    return 'no error code given'
 
 
 def access_token(shop):
     """A 24-hour token from the app's client credentials, refused unless its scope is exactly read_orders."""
     answer = post(f'https://{shop}/admin/oauth/access_token',
                   {'client_id': os.environ['SHOPIFY_CLIENT_ID'], 'client_secret': os.environ['SHOPIFY_CLIENT_SECRET'],
-                   'grant_type': 'client_credentials'})
+                   'grant_type': 'client_credentials'}, form=True)
     scopes = {s.strip() for s in (answer.get('scope') or '').split(',') if s.strip()}
     if scopes != {SCOPE}:
         raise ValueError(f'the Shopify app must have exactly the {SCOPE} scope; it has {len(scopes)} scope(s) of another shape')

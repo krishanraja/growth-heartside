@@ -92,6 +92,19 @@ class AttributionTests(unittest.TestCase):
         with mock.patch.dict(os.environ, env), mock.patch.object(attribution, 'post', return_value={'access_token': 't', 'scope': 'read_orders'}):
             self.assertEqual(attribution.access_token('example-store.myshopify.com'), 't')
 
+    def test_a_refusal_shows_shopify_s_error_code_and_never_the_secret(self):
+        import io, urllib.error
+        body = io.BytesIO(b'{"error": "invalid_client", "error_description": "Client authentication failed"}')
+        error = urllib.error.HTTPError('https://example-store.myshopify.com/admin/oauth/access_token', 400, 'Bad Request', {}, body)
+        env = {'SHOPIFY_CLIENT_ID': 'id', 'SHOPIFY_CLIENT_SECRET': 'very-secret-value'}
+        with mock.patch.dict(os.environ, env), mock.patch('urllib.request.urlopen', side_effect=error) as opened:
+            with self.assertRaises(ValueError) as caught:
+                attribution.access_token('example-store.myshopify.com')
+        self.assertIn('invalid_client', str(caught.exception))
+        self.assertNotIn('very-secret-value', str(caught.exception))
+        sent = opened.call_args[0][0]
+        self.assertEqual(sent.get_header('Content-type'), 'application/x-www-form-urlencoded')
+
     def test_the_objective_reads_the_stored_window_without_writing(self):
         db = sqlite3.connect(':memory:'); db.row_factory = sqlite3.Row
         self.assertEqual(protocol.organic_orders(db)['availability'], 'missing')
