@@ -2,7 +2,7 @@
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
 as_of: 2026-10-29
-head: 300239c
+head: cf011dc
 lifecycle: live
 production_url: none
 state_doc: docs/HANDOFF.md
