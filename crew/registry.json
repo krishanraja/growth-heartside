@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "kind": "crew",
+  "note": "Heartside's channel specialists (Krish, 2026-10-30). The seven channel tasks are defined once in krishanraja/ai-harness contract/channel-tasks.md; each specialist names the tasks it runs and the job that runs each. No new scheduler: every job is already in automations.json. Platforms: Instagram, TikTok and Facebook only (Krish, 2026-10-29).",
+  "crew": [
+    {
+      "id": "meta",
+      "name": "Meta (Instagram + Facebook, paired)",
+      "channels": ["instagram", "facebook"],
+      "signal": "Sends per reach, then tracked link taps and organic orders",
+      "tasks": {
+        "platform-truth": "jobs/report.md",
+        "profile-audit": "jobs/store.md",
+        "idea-bank": "jobs/radar.md",
+        "reel-script": "jobs/daily-pack.md",
+        "caption-set": "jobs/daily-pack.md",
+        "trend-scan": "jobs/radar.md",
+        "channel-plan": "jobs/report.md"
+      }
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok",
+      "channels": ["tiktok"],
+      "signal": "Shares and saves per view, then profile visits to heartside.io",
+      "tasks": {
+        "platform-truth": "jobs/report.md",
+        "profile-audit": "jobs/store.md",
+        "idea-bank": "jobs/radar.md",
+        "reel-script": "jobs/daily-pack.md",
+        "caption-set": "jobs/daily-pack.md",
+        "trend-scan": "jobs/radar.md",
+        "channel-plan": "jobs/report.md"
+      }
+    }
+  ]
+}

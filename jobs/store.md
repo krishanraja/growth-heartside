@@ -9,6 +9,12 @@ heartside repository.
    canon's journey (`docs/V3-GIFTS-FROM-YOUR-DOG.md` section 4) and
    `shopify/README.md` from the sync, so each fix names the section or
    template it touches.
+   **profile-audit** (docs/CHANNEL-TASKS.md): read the live Instagram,
+   Facebook and TikTok profiles (name, photo, bio, link, pinned posts, the
+   last 30 posts). Draft the exact changes to clarity, credibility,
+   discoverability and the call to action, each with the reason a visitor
+   would not follow or tap today. Bio, pin and profile changes stay drafts
+   for Krish.
 2. **Walk the journey as a new buyer** (read only; never add a real order):
    - on a phone-sized window and a desktop one;
    - inside Instagram's in-app browser if the signed-in browser offers it;

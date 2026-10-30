@@ -23,6 +23,12 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
    - the copy diagnosis (`knowledge/COPY-DOCTRINE.md`, section 9, "Before
      drafting"): each edition's awareness level and lead type, the one
      promise and scene, and the proof with its fact source.
+   Then run **reel-script** (docs/CHANNEL-TASKS.md): write 5 hook options
+   for the concept (first frame, works muted), pick the strongest, and note
+   why it beats the other four for the one signal. Put them in the brief as
+   note lines `Alternative hook 1:` to `Alternative hook 5:` and
+   `Picked hook: <n>, because <reason>`. The picked one becomes the brief's
+   `Hook:` line and passes the copy rules.
 3. Draft, one item each, each with its own creative id (PLAYBOOK, "Creative
    ids"). Every heartside.io link is tracked (`python3 growth.py link`). Keep
    the idea the same in every edition. Change the opening frame, hook
@@ -72,7 +78,14 @@ Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
    score, cover, carousel, Stories, Pins and subtitles. Approved narration can
    be attached with verified provenance. Connected provider jobs use the budget
    and receipt contract in docs/PROVIDERS.md; no paid generation is automatic.
-6. Before `check`, run edit passes A to E and score the rubric
+6. **caption-set** for each edition (docs/CHANNEL-TASKS.md): before choosing
+   its caption, write it five ways (story, practical, a plain opinion, the
+   buyer's problem, step by step), pick one for that platform's signal, and
+   record the other four in the brief as note lines `Alternative caption
+   (<platform>, <way>):` with `Picked caption (<platform>): <way>, because
+   <reason>`. These hooks and captions are the alternatives the creative
+   review cites before any go-live.
+   Before `check`, run edit passes A to E and score the rubric
    (`knowledge/COPY-DOCTRINE.md`, section 9). Rewrite or drop any edition
    under 28 of 48. Add `Rubric: total/48, weakest link: <link>` as a note
    line in the brief.

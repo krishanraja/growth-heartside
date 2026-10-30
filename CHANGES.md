@@ -3,6 +3,12 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-30: Channel work runs as the seven channel tasks. Krish asked for each of seven saved Instagram
+  growth prompts to be its own task for every specialist, and for a process to the North Star. They are
+  defined once in ai-harness `contract/channel-tasks.md`. `crew/registry.json` maps two specialists
+  (meta, tiktok) onto them, the radar, daily pack, store and report jobs run them, and
+  docs/CHANNEL-TASKS.md holds the weekly loop. No new job, so `automations.json` is unchanged.
+
 - 2026-10-29: Prepaid credits are spent by a daily scheduled session ("Scheduled sessions", Krish's answer on
   who spends them). `docs/CREDITS-SESSION.md` is its playbook; it is not one of the seven jobs, so
   `automations.json` is unchanged.

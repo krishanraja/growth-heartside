@@ -7,6 +7,10 @@ Progress reaches Control Center through the growth engine protocol
 for media and copy review.
 No social publisher, customer-record reader or paid-generation scheduler exists.
 
+## Channel tasks and the weekly loop
+
+Which specialist runs which of the seven channel tasks, and the loop from this week's gap to the North Star: docs/CHANNEL-TASKS.md.
+
 ## Production
 
 ```sh

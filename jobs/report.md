@@ -21,6 +21,13 @@ Kind `report`. Part 7 in `PLAYBOOK.md`. Time for Krish: about 15 minutes.
    - sends per reach for the A/B angles;
    - where buyers drop in the journey (PLAYBOOK, "Funnel diagnosis");
    - the share loop, if it can be counted yet.
+   Then, for Instagram, Facebook and TikTok (docs/CHANNEL-TASKS.md):
+   - **platform-truth**: what the platform's own pages say this week about
+     ranking and formats, each line `official` (its link and the date read)
+     or `speculation`, and 5 tests to run next week;
+   - **channel-plan**: the next 30 days, with each week's target worked back
+     from the North Star ladder and this week's gap, sized to Krish's 20
+     minutes a day. Propose it as a plan behind the strategy wall.
 4. Write the report as items (`platform: other`), one short section each,
    answering the documents' ten questions:
    1. Which buyer (partner, mom, dad, friend) brought the most contribution?

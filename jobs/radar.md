@@ -45,6 +45,17 @@ Krish: about 5 minutes.
    - `why`: one line.
 
    Never claim a search volume or a trend you did not read.
+   **Weekly, on Mondays: trend-scan and idea-bank** (docs/CHANNEL-TASKS.md).
+   For Instagram, Facebook and TikTok, add one `platform: other` item each:
+   - trend-scan: 10 opportunities (trends, audience interests, new platform
+     features, formats that are working), each with its source url and the
+     date read, ranked by fit, originality, demand and ease, and how to adapt
+     it to Heartside without copying the creator;
+   - idea-bank: 30 ideas from the buyers' problems, questions, mistakes and
+     misconceptions seen above, each with an angle, an opening hook, a format
+     from the PLAYBOOK bank, the core value, why someone would save or send
+     it, and the signal it serves (sends, link taps or orders).
+   A trend or claim with no source or date is dropped.
 4. **The buyer's own words.** If the store numbers show orders, note in one
    item which chat answers are most common (chip counts only, never a
    buyer's typed words). These feed the daily pack's hooks.
