@@ -2,15 +2,22 @@
 
 The seven channel tasks are defined once in krishanraja/ai-harness
 `contract/channel-tasks.md` (Krish, 2026-10-30). This file keeps only
-Heartside's mapping and its loop. `crew/registry.json` names each specialist's
-channels, leading signal and the job that runs each task; `growth.py
---self-test` (`crew_errors`) refuses a specialist with an unknown or missing
-task, no signal, a task in an unscheduled job, or a platform Heartside does not
-post to (Instagram, TikTok and Facebook only, Krish, 2026-10-29).
+Heartside's mapping and its loop. `crew/registry.json` says, for
+each specialist and task, what that task accomplishes for Heartside on its
+channels and the job that runs it. `growth.py --self-test` (`crew_errors`)
+refuses an outcome under a sentence, the same outcome on two specialists, a task
+in an unscheduled job, no leading signal, or a platform Heartside does not post
+to (Instagram, TikTok and Facebook only, Krish, 2026-10-29).
+
+The seven tasks are a starting set, not a template (Krish, 2026-10-30). Here
+they all serve one outcome: a US dog owner buys a gift their dog "sends" to
+someone it loves. So ideas come from gift moments, by buyer and occasion. Every
+script ends on the real product. Trends count only when they can carry the
+real design unchanged. This is unlike a publication, where ideas come from
+published pieces.
 
 The tasks serve the North Star (net sales from organic posts, trailing four
-weeks, $0 of paid ads), never follower counts. Every idea, hook, caption, test
-and plan names the signal it moves.
+weeks, $0 of paid ads), never follower counts.
 
 ## Who runs which
 

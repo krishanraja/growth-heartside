@@ -929,19 +929,27 @@ CHANNEL_TASKS = ('platform-truth', 'profile-audit', 'idea-bank', 'reel-script', 
 
 
 def crew_errors(crew, scheduled_jobs):
-    """Each specialist runs the seven channel tasks (ai-harness contract/channel-tasks.md, Krish, 2026-10-30)
-    in scheduled jobs, names its leading signal, and posts only where Heartside posts (Krish, 2026-10-29)."""
+    """Each specialist says what each channel task (ai-harness contract/channel-tasks.md) accomplishes for Heartside
+    on its channels, never a template (Krish, 2026-10-30), runs it in a scheduled job, names its leading signal, and
+    posts only where Heartside posts (Krish, 2026-10-29)."""
     errors = []
     for sp in crew:
         at = sp.get('id', '?')
-        if sorted(sp.get('tasks', {})) != sorted(CHANNEL_TASKS):
-            errors.append(f'{at}: tasks must be exactly the seven channel tasks')
+        tasks = sp.get('tasks', {})
+        if not isinstance(tasks, dict) or not {'reel-script', 'caption-set', 'channel-plan'} <= set(tasks) or not set(tasks) <= set(CHANNEL_TASKS):
+            errors.append(f'{at}: tasks must be channel tasks, including reel-script, caption-set and channel-plan')
+            tasks = {}
+        if any(len(str(v.get('accomplishes', '')).split()) < 8 for v in tasks.values()):
+            errors.append(f'{at}: each task says in a sentence what it accomplishes for Heartside')
         if not str(sp.get('signal', '')).strip():
             errors.append(f'{at}: names no leading signal')
-        if not all(job in scheduled_jobs for job in sp.get('tasks', {}).values()):
+        if not all(v.get('job') in scheduled_jobs for v in tasks.values()):
             errors.append(f'{at}: a task runs in a job with no automation')
         if not set(sp.get('channels', [])) <= {'instagram', 'facebook', 'tiktok'}:
             errors.append(f'{at}: Heartside posts only to Instagram, Facebook and TikTok')
+    said = [(t, v.get('accomplishes')) for sp in crew if isinstance(sp.get('tasks'), dict) for t, v in sp['tasks'].items()]
+    if len(said) != len(set(said)):
+        errors.append('two specialists say the same thing for one task')
     channels = sorted(c for sp in crew for c in sp.get('channels', []))
     if crew and all(set(sp.get('channels', [])) <= {'instagram', 'facebook', 'tiktok'} for sp in crew) and channels != ['facebook', 'instagram', 'tiktok']:
         errors.append('every Heartside platform needs exactly one specialist')
@@ -1096,8 +1104,17 @@ def self_test():
         t(f'automation "{au["name"]}" never asks to post', not re.search(r'\b(post|publish|send)\b', au['prompt'], re.I))
     crew = json.load(open(os.path.join(HERE, 'crew/registry.json')))['crew']
     t('crew/registry.json maps each specialist to the seven channel tasks', crew_errors(crew, {a['job'] for a in autos}) == [])
-    t('a crew with an unknown task, a missing signal or another platform is refused',
-      len(crew_errors([{'id': 'x', 'channels': ['youtube'], 'signal': '', 'tasks': {'viral': 'jobs/none.md'}}], set())) == 4)
+    t('a crew with an unknown task, no signal, an unscheduled job or another platform is refused',
+      len(crew_errors([{'id': 'x', 'channels': ['youtube'], 'signal': '', 'tasks': {'viral': {'job': 'jobs/none.md'}}}], set())) == 3)
+    vague = {t: {'job': 'jobs/daily-pack.md', 'accomplishes': 'post more'} for t in ('reel-script', 'caption-set', 'channel-plan')}
+    t('a task that does not say what it accomplishes for Heartside is refused',
+      any('in a sentence' in e for e in crew_errors([{'id': 'x', 'channels': ['tiktok'], 'signal': 's', 'tasks': vague}], {'jobs/daily-pack.md'})))
+    same = {t: {'job': 'jobs/daily-pack.md', 'accomplishes': 'the same words for every channel make a template, not a plan'}
+            for t in ('reel-script', 'caption-set', 'channel-plan')}
+    t('the same outcome on two specialists is refused as a template',
+      'two specialists say the same thing for one task' in crew_errors(
+          [{'id': 'a', 'channels': ['tiktok'], 'signal': 's', 'tasks': same}, {'id': 'b', 'channels': ['instagram', 'facebook'], 'signal': 's', 'tasks': same}],
+          {'jobs/daily-pack.md'}))
     t('every job file has an automation', {a['job'] for a in autos} == {f'jobs/{f}' for f in os.listdir(os.path.join(HERE, 'jobs'))})
     for f in ('PLAYBOOK.md', 'BROWSER.md', 'knowledge/README.md', 'knowledge/organic-pet-commerce-engine.md', 'knowledge/organic-pet-growth-corpus.md',
               'knowledge/COPY-DOCTRINE.md'):

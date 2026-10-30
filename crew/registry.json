@@ -1,36 +1,83 @@
 {
   "schema_version": 1,
   "kind": "crew",
-  "note": "Heartside's channel specialists (Krish, 2026-10-30). The seven channel tasks are defined once in krishanraja/ai-harness contract/channel-tasks.md; each specialist names the tasks it runs and the job that runs each. No new scheduler: every job is already in automations.json. Platforms: Instagram, TikTok and Facebook only (Krish, 2026-10-29).",
+  "note": "Heartside's channel specialists (Krish, 2026-10-30). The seven channel tasks are defined once in krishanraja/ai-harness contract/channel-tasks.md; each specialist says what each task accomplishes for Heartside on its channels, and the job that runs it. No new scheduler: every job is already in automations.json. Platforms: Instagram, TikTok and Facebook only (Krish, 2026-10-29).",
   "crew": [
     {
       "id": "meta",
       "name": "Meta (Instagram + Facebook, paired)",
-      "channels": ["instagram", "facebook"],
+      "channels": [
+        "instagram",
+        "facebook"
+      ],
       "signal": "Sends per reach, then tracked link taps and organic orders",
       "tasks": {
-        "platform-truth": "jobs/report.md",
-        "profile-audit": "jobs/store.md",
-        "idea-bank": "jobs/radar.md",
-        "reel-script": "jobs/daily-pack.md",
-        "caption-set": "jobs/daily-pack.md",
-        "trend-scan": "jobs/radar.md",
-        "channel-plan": "jobs/report.md"
+        "platform-truth": {
+          "job": "jobs/report.md",
+          "accomplishes": "Official Instagram and Facebook guidance on Reels, sends, Story link stickers and shopping tags, read against Heartside's own sends per reach"
+        },
+        "profile-audit": {
+          "job": "jobs/store.md",
+          "accomplishes": "The bio, pinned Reels, tracked bio link and Page button tell a US dog owner in one look that their dog can send a gift, and take them to it"
+        },
+        "idea-bank": {
+          "job": "jobs/radar.md",
+          "accomplishes": "Gift moments by buyer (partner, mom, dad, friend) and occasion, where a dog owner sees their own dog telling the person it loves something, each ending on the real product"
+        },
+        "reel-script": {
+          "job": "jobs/daily-pack.md",
+          "accomplishes": "Five muted-first hooks for a gift buyer; the payoff is the live store's real render labeled Example, never an AI-drawn product or customer, judged on sends per reach and tracked taps"
+        },
+        "caption-set": {
+          "job": "jobs/daily-pack.md",
+          "accomplishes": "Five captions: Instagram puts the gift search phrase in the first line, Facebook invites the 30 to 49 gift buyer's own dog story, both in the dog's voice with no exclamation marks"
+        },
+        "trend-scan": {
+          "job": "jobs/radar.md",
+          "accomplishes": "Pet and gifting trends on Instagram and Facebook that can carry the real design unchanged, aimed at the Black Friday and 10 December pushes"
+        },
+        "channel-plan": {
+          "job": "jobs/report.md",
+          "accomplishes": "Thirty days of concepts at up to 5 posts a day per platform under concept approval, worked back from the organic sales ladder and the US gifting calendar"
+        }
       }
     },
     {
       "id": "tiktok",
       "name": "TikTok",
-      "channels": ["tiktok"],
+      "channels": [
+        "tiktok"
+      ],
       "signal": "Shares and saves per view, then profile visits to heartside.io",
       "tasks": {
-        "platform-truth": "jobs/report.md",
-        "profile-audit": "jobs/store.md",
-        "idea-bank": "jobs/radar.md",
-        "reel-script": "jobs/daily-pack.md",
-        "caption-set": "jobs/daily-pack.md",
-        "trend-scan": "jobs/radar.md",
-        "channel-plan": "jobs/report.md"
+        "platform-truth": {
+          "job": "jobs/report.md",
+          "accomplishes": "Official TikTok guidance on search, captions and links for an account under 1,000 followers, with no clickable link yet"
+        },
+        "profile-audit": {
+          "job": "jobs/store.md",
+          "accomplishes": "The bio says heartside.io until the link unlocks at 1,000 followers, and the profile shows what the gift is before anyone taps"
+        },
+        "idea-bank": {
+          "job": "jobs/radar.md",
+          "accomplishes": "The phrases dog owners type into TikTok search for gifts, each answered by a post that shows the real product made from a dog's photo"
+        },
+        "reel-script": {
+          "job": "jobs/daily-pack.md",
+          "accomplishes": "Five on-screen hooks of 3 to 7 words, judged on shares and saves per view, ending on the real render, never AI customers holding it"
+        },
+        "caption-set": {
+          "job": "jobs/daily-pack.md",
+          "accomplishes": "Five captions leading with the search phrase and 2 to 5 specific hashtags, promising no link the account cannot show yet"
+        },
+        "trend-scan": {
+          "job": "jobs/radar.md",
+          "accomplishes": "Sounds and formats in pet TikTok that can carry the real design unchanged, adapted without copying the creator"
+        },
+        "channel-plan": {
+          "job": "jobs/report.md",
+          "accomplishes": "Thirty days judged on profile visits to heartside.io, with low expectations until the audience country reads US"
+        }
       }
     }
   ]
