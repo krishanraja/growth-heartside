@@ -1,3 +1,0 @@
-Status: Krish approved all 24 breed examples and 6 bundle shots, regenerated from heartside's painter v15 (merged to heartside's release branch in PR #79), each with cutout, crops and studio, home and hand mockups; the ledger records every approved painting's sha256 and exact prompt, the old set is superseded, and the shared Drive folder mirrors it. The engine now has real product imagery on all three gifts for its first concepts.
-Next: Krish runs `docs/briefs/2026-10-29-heartside-showcase-handover.md` in a heartside session to bring the approved set into the store; next painter improvement is the shared Over the top frame, which makes the breeds look samey.
-North Star check (2026-10-30): holds.

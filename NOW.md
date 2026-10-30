@@ -41,6 +41,11 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- Krish approved all 24 breed examples and 6 bundle shots, regenerated from heartside's painter v15 (merged to heartside's release branch in PR #79), each with cutout, crops and studio, home and hand mockups; the ledger records every approved painting's sha256 and exact prompt, the old set is superseded, and the shared Drive folder mirrors it. The engine now has real product imagery on all three gifts for its first concepts. (2026-10-30)
+- A worker session is upgrading heartside's painter pipeline on branch claude/painter-pipeline-v15 (blanket scattered pattern, breed-character and tone composer), to a pull request with tests and a prepared test board, generating no images and touching nothing live. The breed example launch is held until that lands. (2026-10-29)
+- A control test (47 generations, two photos, 3 tones, 6 styles, 4 kinds of chat answer, 3 products) showed heartside's long painter prompt reuses the customer photo's pose and face, so tone and style barely show. A short brief built from the chat's own fields, with each tone owning pose, camera and staging, fixes it; the proposal, builder and evidence are in docs/briefs/painter-prompt/. Stage 1 examples are complete and ready for review; stage 2 is on hold. (2026-10-29)
+- Stage 1 breed examples: the four portrait jobs (golden, lab, frenchie, doodle) are complete (painting, cutout, 3 crops, 9 mockups, contact sheet, manifest) on branch codex/heartside-examples-2026-10-29. The two blanket jobs (dachshund, shepherd) have paintings, cutouts and crops, but their home and tall-studio mockups fail the bar: the print is pasted flat across the sofa fold. The painting prompts were rewritten from heartside's 5,500-character rulebook to directed briefs of about 1,200 characters, which fixed the photo-copied face and pose (standard and prompts in review/prompts/stage1-v7/BAR.md on the review branch). (2026-10-29)
+- The breed example launch set is 15 approved paintings (8 mugs, 7 portraits across all six dogs and four tones), each with cutout, crops, nine product mockups and a contact sheet, in assets/heartside-examples-2026-10-29/ with the approvals ledger beside it, and the same set in Drive under 00_Brand-Assets/02_Imagery/Product-Examples. The 8 blankets and 6 bundle shots are held for heartside's painter v15 (scattered pattern) and AI fabric mockups; the shepherd Hilarious portrait is dropped. Old artwork is purged from the repository and Drive. (2026-10-29)
 - Heartside's prepaid credits are spent by a daily scheduled session (`docs/CREDITS-SESSION.md`) that reserves and settles each generation through Control Center, on protocol 1.16.0 (prepaid credits, `docs/control-center/`; walls in `docs/CONTROL-CENTER-BRIEF.md`). The runner reports credits_spent only for a spend of its own. (2026-10-29)
 - Eight scheduled jobs in `automations.json` (sync, numbers, radar, the daily pack, creators, the weekly Answers drafts, store and search, the weekly report), executed on GitHub Actions by `.github/workflows/engine.yml` (`AGENTS.md`, "The schedule").
 - The Control Center loop on protocol 1.2.0: a daily directive, one report, Krish's decisions read back by digest (`docs/control-center/ENGINE-PROTOCOL.md`; `b1a14af`). The first live run, on 19 Oct, succeeded (`docs/GET-GOING.md`).
@@ -53,6 +58,9 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-10-29 Hilarious may use theatrical staging but never invents the dog's toys, food, clothes, habits or places (Ruling, Krish, 2026-10-29).
+- 2026-10-29 The short directed-brief prompt method is the fix proposed for heartside's painter prompt; the examples check's --only flag wrongly flags other jobs' files (fix in growth.py awaits Krish).
+- 2026-10-29 Heartside's painter moved from the 5,500-character rulebook to the directed brief (recipes v10 to v14), driven by this engine's control test and the 24 example paintings.
 - 2026-10-29 **Creative direction set, and Codex briefed for heartside's breed examples.** Real life, then the painting: photographic AI worlds, the real product always real, one hero allowed to morph a dog into its artwork. Five posts a day per platform once running. Codex makes stage 1 (six breeds) under a card with a strict acceptance checker (`engine/examples.py`); stage 2 waits for review and Krish's yes. Shoppable tags go to a heartside session.
 - 2026-10-29 **Organic attribution is live: $0 from organic posts over the trailing 28 days.** The read-only Shopify app is installed; the first read found one store order in the window, fully refunded, so net sales are $0. Net sales subtract refunds and never count a fully refunded order. Buffer's own link tags count as organic social. Buffer's link shortening is off on all three Heartside channels, so the engine's tags reach the store intact.
 - 2026-10-29 **Organic attribution is built and waiting on read-only order access.** `growth.py attribution` classifies orders as engine-tagged (post family known), organic social, organic search, paid, pending or direct, over the trailing 28 days and the last full week, and stores aggregates only; the Control Center `organic_orders` objective reads it, missing until the first live read.
@@ -62,13 +70,13 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-10-29): confirm the first scheduled credits session settles a spend and the next directive's remaining_for_you drops by it.
+- Next (2026-10-30): Krish runs `docs/briefs/2026-10-29-heartside-showcase-handover.md` in a heartside session to bring the approved set into the store; next painter improvement is the shared Over the top frame, which makes the breeds look samey.
 - **Next action:** Codex makes stage 1 of heartside's breed examples (6 paintings, with cutouts, crops and mockups) from `docs/briefs/codex/2026-10-29-breed-examples-stage-1.md`, on its own branch; Claude checks the return with `python3 growth.py examples check --stage 1` and a frame-by-frame review before Krish's review. Then the daily layer from `docs/briefs/2026-10-29-creative-direction.md`: 5 posts a day per platform, starting with "Translate your dog" carousels.
 - **Waiting on Krish:** start Codex on this repository with the one line "Run docs/briefs/codex/2026-10-29-breed-examples-stage-1.md". Set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). A heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
-- North Star check (2026-10-29): holds.
+- North Star check (2026-10-30): holds.
 
 ## Read next
 
