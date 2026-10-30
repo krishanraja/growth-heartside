@@ -1,5 +1,5 @@
 {
-  "note": "Single source of truth for which example painting is approved. Only approved files are in paintings/. Every other candidate stays under local/ and is never copied to Drive, GitHub or the store.",
+  "note": "Single source of truth for which example painting is approved. Only approved files are in paintings/. Every other candidate stays under local/ and is never copied to Drive, GitHub or the store. Bundle shots (all three gifts together) are listed under bundles.",
   "photos_rejected": [
     {
       "dog": "shepherd",
@@ -74,9 +74,10 @@
       "file": "local/stage1v10/out/golden-sentimental-portrait.png",
       "sha256": "2aba40fd804ac755a6152657abb70da53862d33636de32bcb8207c988073011a",
       "prompt": "heartside ef76390 prompts/golden-sentimental-portrait.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "store prompt; collar at the neck"
+      "reason": "store prompt; collar at the neck; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "lab-warm-portrait",
@@ -104,9 +105,10 @@
       "file": "local/review/lab-v3.png",
       "sha256": "fd25cff855c8eaf37648726659681c37fdd5e1a33daa5dee7e3faabf46b572e8",
       "prompt": "stage1-v7 prompt, plain bandana",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "lab-warm-portrait",
@@ -144,9 +146,10 @@
       "file": "local/review/doodle-v1.png",
       "sha256": "2f4c276b2884976721b3563d2d336505013ae5335d4fd992fbbc8e8195345947",
       "prompt": "stage1-v7 prompt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "doodle-over_the_top-portrait",
@@ -184,9 +187,10 @@
       "file": "local/stage1v10/out/dachshund-sentimental-blanket.png",
       "sha256": "4c660f6680ec089e6a08659fa8ba906150f86923e0c3ff27c8a9d820bebfcaec",
       "prompt": "heartside ef76390 prompts/dachshund-sentimental-blanket.txt",
-      "status": "held",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "shepherd-warm-blanket",
@@ -194,9 +198,10 @@
       "file": "local/review/shepherd-v1.png",
       "sha256": "f056862df138f4e6859f34ce592867aff23981764f54e2374bb28c3a3769cd77",
       "prompt": "stage1-v7 prompt",
-      "status": "held",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "shepherd-warm-blanket",
@@ -214,9 +219,10 @@
       "file": "local/stage2/out/golden-warm-mug.png",
       "sha256": "b5252c01ad348b963a10793622cf75f18b75ce034926ed9b37247d4d1680135e",
       "prompt": "heartside ef76390 prompts/golden-warm-mug.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "golden-hilarious-blanket",
@@ -234,9 +240,10 @@
       "file": "local/stage2/out/golden-over_the_top-portrait.png",
       "sha256": "857c14167b36118c2db9f2c76a916a76107928cdb6b3367d77b9bd3670374cd5",
       "prompt": "heartside ef76390 prompts/golden-over_the_top-portrait.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "lab-sentimental-blanket",
@@ -244,9 +251,10 @@
       "file": "local/stage2/out/lab-sentimental-blanket.png",
       "sha256": "e70c2de26c9c31202e9ae1a808b1a3049483db39ffb18383abafa5032e45af08",
       "prompt": "heartside ef76390 prompts/lab-sentimental-blanket.txt",
-      "status": "held",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "lab-hilarious-mug",
@@ -274,9 +282,10 @@
       "file": "local/stage2/out/frenchie-sentimental-mug.png",
       "sha256": "27e2e6059219389db799227352208669aeac5933663ab17fcee0bfafec52f044",
       "prompt": "heartside ef76390 prompts/frenchie-sentimental-mug.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "frenchie-warm-blanket",
@@ -284,9 +293,10 @@
       "file": "local/stage2/out/frenchie-warm-blanket.png",
       "sha256": "ec15c25b9ff13ec0f48fe69b3212d68a8b52eabc864e8f5ae095ab356099389d",
       "prompt": "heartside ef76390 prompts/frenchie-warm-blanket.txt",
-      "status": "held",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "frenchie-over_the_top-mug",
@@ -294,9 +304,10 @@
       "file": "local/stage2/out/frenchie-over_the_top-mug.png",
       "sha256": "d4d3f9adf2bf46dee82366f5a4a00e52333c9accdf2f179a14a817653977b378",
       "prompt": "heartside ef76390 prompts/frenchie-over_the_top-mug.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "doodle-sentimental-portrait",
@@ -304,9 +315,10 @@
       "file": "local/stage2/out/doodle-sentimental-portrait.png",
       "sha256": "d0b10d6d37968ee872618b94cb59dd97d2df892da73613c8022202f55668dcda",
       "prompt": "heartside ef76390 prompts/doodle-sentimental-portrait.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "doodle-warm-mug",
@@ -314,9 +326,10 @@
       "file": "local/stage2/out/doodle-warm-mug.png",
       "sha256": "f0f9626eed9466ad853a68064ed2bd89d9d898b1ce11fdc698833e87442c91ec",
       "prompt": "heartside ef76390 prompts/doodle-warm-mug.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "doodle-hilarious-blanket",
@@ -334,9 +347,10 @@
       "file": "local/stage2/out/dachshund-warm-portrait.png",
       "sha256": "8c426e99ba54f1f8b6ca6bdf5baf11165339853d01846becd0b767cd89d9d3bf",
       "prompt": "heartside ef76390 prompts/dachshund-warm-portrait.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "passes the bar"
+      "reason": "passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "dachshund-hilarious-mug",
@@ -394,9 +408,10 @@
       "file": "local/v11/out/golden-hilarious-blanket.png",
       "sha256": "5288888e3070c27988fedc179c287005c5480949f3c738498986cc5ba0fe2810",
       "prompt": "heartside 1b9a775 prompts/golden-hilarious-blanket.txt",
-      "status": "held",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "lab-hilarious-mug",
@@ -404,9 +419,10 @@
       "file": "local/v11/out/lab-hilarious-mug.png",
       "sha256": "982b351cd53896a78a44525a0c8812304368fa122d737f6536cea904052eab5e",
       "prompt": "heartside 1b9a775 prompts/lab-hilarious-mug.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "v11 passes the bar"
+      "reason": "v11 passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "lab-over_the_top-blanket",
@@ -414,9 +430,10 @@
       "file": "local/v11/out/lab-over_the_top-blanket.png",
       "sha256": "a1e3ee8dc003f204ead8303bfca5133abb0b3e7fddb4af6e302bfed6ed024e3a",
       "prompt": "heartside 1b9a775 prompts/lab-over_the_top-blanket.txt",
-      "status": "held",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "doodle-hilarious-blanket",
@@ -424,9 +441,10 @@
       "file": "local/v11/out/doodle-hilarious-blanket.png",
       "sha256": "26112fb327b099bcd3dea794e5f4093877a555cdf8835a2909fd322f4dc2678f",
       "prompt": "heartside 1b9a775 prompts/doodle-hilarious-blanket.txt",
-      "status": "held",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "dachshund-hilarious-mug",
@@ -434,9 +452,10 @@
       "file": "local/v11/out/dachshund-hilarious-mug.png",
       "sha256": "e2d5b03c1094da957b41c297269f012ad429f7016a113ee6f57621c1a043a497",
       "prompt": "heartside 1b9a775 prompts/dachshund-hilarious-mug.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "v11 passes the bar"
+      "reason": "v11 passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "dachshund-over_the_top-blanket",
@@ -444,9 +463,10 @@
       "file": "local/v11/out/dachshund-over_the_top-blanket.png",
       "sha256": "bdb44ff99f438bbfc65c0574893d0d096e3b60a3f39736e1a5bdf48018fd555f",
       "prompt": "heartside 1b9a775 prompts/dachshund-over_the_top-blanket.txt",
-      "status": "held",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups"
+      "reason": "held for painter v15: blanket dogs overlap and crop into each other (\"dog centipede\"); repaint as a scattered pattern, then AI fabric mockups; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "shepherd-hilarious-portrait",
@@ -474,9 +494,10 @@
       "file": "local/v11/out/shepherd-sentimental-mug.png",
       "sha256": "e76ac1ba31a52f702945c22d3e920d3c98d5d8ee308d075f309049f43b5f37c1",
       "prompt": "heartside 1b9a775 prompts/shepherd-sentimental-mug.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "v11 passes the bar"
+      "reason": "v11 passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "lab-warm-portrait",
@@ -494,9 +515,10 @@
       "file": "local/v11/out/frenchie-hilarious-portrait.png",
       "sha256": "eea1e5279371259599f91cc695117638406a4f6f79db6c35915380a219c6adc8",
       "prompt": "heartside 1b9a775 prompts/frenchie-hilarious-portrait.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "v11 passes the bar"
+      "reason": "v11 passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "doodle-over_the_top-portrait",
@@ -534,9 +556,10 @@
       "file": "local/v12/out/shepherd-over_the_top-mug.png",
       "sha256": "f4a8c7682e375b521a0ce2c3ff8fdaeee25c38f2b64697671b27d71108ff78c4",
       "prompt": "heartside 5710175 prompts/shepherd-over_the_top-mug.txt",
-      "status": "approved",
+      "status": "superseded",
       "decided": "Krish, 2026-10-29",
-      "reason": "v12 passes the bar"
+      "reason": "v12 passes the bar; replaced by the v15 set Krish approved 2026-10-30",
+      "superseded_by": "store-v15"
     },
     {
       "job": "shepherd-hilarious-portrait",
@@ -567,13 +590,387 @@
       "status": "rejected",
       "decided": "Krish, 2026-10-29",
       "reason": "fifth try: a dog walking with a paw up, not funny"
-    }
-  ],
-  "dropped_jobs": [
+    },
+    {
+      "job": "dachshund-hilarious-mug",
+      "candidate": "store-v15",
+      "file": "paintings/dachshund-hilarious-mug.png",
+      "sha256": "a571e1d2dd6fcc8870e2d3a354ac2d143ff123811f2f64e32a44c960d4850712",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/dachshund-hilarious-mug.txt",
+      "prompt_sha256": "d772150a783ec48f732bb1d9638e06e7d06577843e1feafb75494987fc1bb863",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "dachshund-over_the_top-blanket",
+      "candidate": "store-v15",
+      "file": "paintings/dachshund-over_the_top-blanket.png",
+      "sha256": "e1b4a831eaf21ef8364301e9d36b5110f210db4d0fe8c28d787c90c1246dc56e",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/dachshund-over_the_top-blanket.txt",
+      "prompt_sha256": "896f5fcb74b60b76ce519f418ad6245cd9c845724e083a432dcc0a5e11e45c9e",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "dachshund-sentimental-blanket",
+      "candidate": "store-v15",
+      "file": "paintings/dachshund-sentimental-blanket.png",
+      "sha256": "741860e2d94865502ca8b4950fd71147fe1d8a98e2a05df7c456e08e7b269f7f",
+      "prompt": "assets/heartside-examples-2026-10-29.prompts/dachshund-sentimental-blanket.txt (v15 wording just before the final edits merged in 52b5a92)",
+      "prompt_sha256": "064f02081133c590e1f33c4ee1f767dda1b8afe0eb81aaecb5ec69a00ba7f2b8",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "dachshund-warm-portrait",
+      "candidate": "store-v15",
+      "file": "paintings/dachshund-warm-portrait.png",
+      "sha256": "5a79379506fea66d7e47faeda77a5aaecb2e6e4e81af108417daa73d875ac46d",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/dachshund-warm-portrait.txt",
+      "prompt_sha256": "4b93b97a1ec9389ae44c4ae367a764ba5dbc92dd72ebef241d16adcf08fd1716",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "doodle-hilarious-blanket",
+      "candidate": "store-v15",
+      "file": "paintings/doodle-hilarious-blanket.png",
+      "sha256": "62afe4ee168e23ce141d79f178a9bedb602867e1b27f9e9ba3aff91279466711",
+      "prompt": "assets/heartside-examples-2026-10-29.prompts/doodle-hilarious-blanket.txt (v15 wording just before the final edits merged in 52b5a92)",
+      "prompt_sha256": "88b96431f0e8c812dcd59264c34502b2e603efdef3863b6fee82ff5de7c6b55b",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "doodle-over_the_top-portrait",
+      "candidate": "store-v15",
+      "file": "paintings/doodle-over_the_top-portrait.png",
+      "sha256": "94b3e9e9fc9f9c34bb5d06865ad26ca60094f772c6be3af266572e5e2e44e8cf",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/doodle-over_the_top-portrait.txt",
+      "prompt_sha256": "84c8e8d1f5a726c90acd69b91c0f9c4e124b3b7f6c06d348b4af8ae2a58ec9dd",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "doodle-sentimental-portrait",
+      "candidate": "store-v15",
+      "file": "paintings/doodle-sentimental-portrait.png",
+      "sha256": "3e76de2a6b08385b5e0ba4dcd2a8fbc611fe0d13e00a0c092fb6d7725728d355",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/doodle-sentimental-portrait.txt",
+      "prompt_sha256": "5f50da0a9eafec650cf579347528873b8987e3a9da4fe3afe44b3da553f4418a",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "doodle-warm-mug",
+      "candidate": "store-v15",
+      "file": "paintings/doodle-warm-mug.png",
+      "sha256": "3dad53d62983d531b1005e7f56d1860429ce9bebc457969cc2bccc9949d94855",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/doodle-warm-mug.txt",
+      "prompt_sha256": "22f4b6c0f9365b0745f48a3aae98a6d75f485976ac1b67098aec5d8a611ebbcf",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "frenchie-hilarious-portrait",
+      "candidate": "store-v15",
+      "file": "paintings/frenchie-hilarious-portrait.png",
+      "sha256": "c1f2c7963e14bf67e3bcf49cced2d1b5afb8c508a3d7a19b266c26653dd8d25c",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/frenchie-hilarious-portrait.txt",
+      "prompt_sha256": "611a77745a45856b7d282144f230fc9b8f9dbda36ae9d872f1fa807db7eacc09",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "frenchie-over_the_top-mug",
+      "candidate": "store-v15",
+      "file": "paintings/frenchie-over_the_top-mug.png",
+      "sha256": "1a5040929e92e5981578e13ca126a22c0a5569b9bf604f4ab0e33389c81e42f1",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/frenchie-over_the_top-mug.txt",
+      "prompt_sha256": "dbfee618bb40c3a172cd6f6441d81d447526cce0e64e1d2bd7b2a2d8655b97d7",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "frenchie-sentimental-mug",
+      "candidate": "store-v15",
+      "file": "paintings/frenchie-sentimental-mug.png",
+      "sha256": "824bf14edaa6651f6d3178cfc6afce4cf66f84036113e5ac67b4bbfe6d709653",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/frenchie-sentimental-mug.txt",
+      "prompt_sha256": "235009fa3f9b9313771a0cb1a9946e898f5f6366fbc6229c7bc97ddb601e76bf",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "frenchie-warm-blanket",
+      "candidate": "store-v15",
+      "file": "paintings/frenchie-warm-blanket.png",
+      "sha256": "550d3d98130237dad65ae5ee49cedf91b2146ee1dd1a43d9b4eee66a8ae3459b",
+      "prompt": "assets/heartside-examples-2026-10-29.prompts/frenchie-warm-blanket.txt (v15 wording just before the final edits merged in 52b5a92)",
+      "prompt_sha256": "4469bdec38d9a710a441283413898966e1798d5768a2354569744bf6ab4ffc27",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "golden-hilarious-blanket",
+      "candidate": "store-v15",
+      "file": "paintings/golden-hilarious-blanket.png",
+      "sha256": "38db5d47616c6a87eb57609cc419e6112d51956cd1eb57961369a50f6e15c66b",
+      "prompt": "assets/heartside-examples-2026-10-29.prompts/golden-hilarious-blanket.txt (v15 wording just before the final edits merged in 52b5a92)",
+      "prompt_sha256": "9b86300c8191fd10ea958402f3a16652cd9e5b3b54a5cf6cb9feee0103d00ea2",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "golden-over_the_top-portrait",
+      "candidate": "store-v15",
+      "file": "paintings/golden-over_the_top-portrait.png",
+      "sha256": "42933b045e3fddf6bd9ef8d69b63ca8d5afe1e0d3c5ce989fcf1ca6c61f2eb21",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/golden-over_the_top-portrait.txt",
+      "prompt_sha256": "42ad2d33cf6267d8cb2ded3939726780a4d1bb412052d30a59792ded2c4314a2",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "golden-sentimental-portrait",
+      "candidate": "store-v15",
+      "file": "paintings/golden-sentimental-portrait.png",
+      "sha256": "25931cbe46177b309d96fc6404051b38482558d5600dd66fc716aeebd558edec",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/golden-sentimental-portrait.txt",
+      "prompt_sha256": "3b2d505e90b6be0ecca84e6ac5a68ff488d36f25af6bc2407399d75be08f4f76",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "golden-warm-mug",
+      "candidate": "store-v15",
+      "file": "paintings/golden-warm-mug.png",
+      "sha256": "15b070bfcc358ed071f92daffbe2558893bef03820cb894a774e2fd00d8ec878",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/golden-warm-mug.txt",
+      "prompt_sha256": "30f76126b5b39632f6a3ec727118af4aca375c21e639515b3cbe1a24aad91442",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "lab-hilarious-mug",
+      "candidate": "store-v15",
+      "file": "paintings/lab-hilarious-mug.png",
+      "sha256": "1b4029fcf8e450274b5846b206b8185d381684f3a716b770271881b24352ad62",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/lab-hilarious-mug.txt",
+      "prompt_sha256": "c88aca29d52169487ec62a6f3158ca8bef528162f6472b1f6f7718baab72ad4f",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "lab-over_the_top-blanket",
+      "candidate": "store-v15",
+      "file": "paintings/lab-over_the_top-blanket.png",
+      "sha256": "d9386adc450d84df401307f1d604964765feeae3025a4eb3283dd5c77b97a4e5",
+      "prompt": "assets/heartside-examples-2026-10-29.prompts/lab-over_the_top-blanket.txt (v15 wording just before the final edits merged in 52b5a92)",
+      "prompt_sha256": "31cd9642527e1eaadfde46ecdd44dee945344a377b54ce28bf2f529bed643e31",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "lab-sentimental-blanket",
+      "candidate": "store-v15",
+      "file": "paintings/lab-sentimental-blanket.png",
+      "sha256": "652db60c0750836026ec0a355d174f1c13995c5df107a041e27f1dc5b4963134",
+      "prompt": "assets/heartside-examples-2026-10-29.prompts/lab-sentimental-blanket.txt (v15 wording just before the final edits merged in 52b5a92)",
+      "prompt_sha256": "1cf9ae11aad0373ac83e8c60f05437fb1a23fe9d65edbb8f3bc9c1e544e0fbc4",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "lab-warm-portrait",
+      "candidate": "store-v15",
+      "file": "paintings/lab-warm-portrait.png",
+      "sha256": "268cd3680bf553e32d2ab062e65aff57dea5e41e19dcc34790bd7e022072f924",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/lab-warm-portrait.txt",
+      "prompt_sha256": "c74d458d2ac523fd10af66225d8268919572f1ce72a4e4cddece1de5c45df73a",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
     {
       "job": "shepherd-hilarious-portrait",
-      "decided": "Krish, 2026-10-29",
-      "reason": "five tries (v11 to v14) never made the walk joke funny; the set launches with 23, and Hilarious is shown by the other five dogs"
+      "candidate": "store-v15",
+      "file": "paintings/shepherd-hilarious-portrait.png",
+      "sha256": "692ff7ade165fc749933b82af19bca59b1869620cae91683edf120d5e26b34aa",
+      "prompt": "assets/heartside-examples-2026-10-29.prompts/shepherd-hilarious-portrait.txt (v15 wording just before the final edits merged in 52b5a92)",
+      "prompt_sha256": "f013caa386acda9b0af7f3902791007deb563f0dfb03bcefdd0e40d6d89e9013",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "shepherd-over_the_top-mug",
+      "candidate": "store-v15",
+      "file": "paintings/shepherd-over_the_top-mug.png",
+      "sha256": "be0f9b8b9222435af443a1b476523cda492962348d700f2b5b8517ca8d9f42ce",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/shepherd-over_the_top-mug.txt",
+      "prompt_sha256": "4d46c277d26695a71021ea63339b15d430ea200cfc1b4164d540944e49dc3e8b",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "shepherd-sentimental-mug",
+      "candidate": "store-v15",
+      "file": "paintings/shepherd-sentimental-mug.png",
+      "sha256": "a569cafe633045f0eaba288f619fcfa634846dfba4a5adc062a79435b5e7969f",
+      "prompt": "heartside 52b5a92 design/examples-2026-10-29-breeds/prompts/shepherd-sentimental-mug.txt",
+      "prompt_sha256": "2d6ebf7d9fca314c5a1c37d826b2e5902238e2034c9942c573ad90336179a6fe",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    },
+    {
+      "job": "shepherd-warm-blanket",
+      "candidate": "store-v15",
+      "file": "paintings/shepherd-warm-blanket.png",
+      "sha256": "89cf186ea9cc3ddf58a4a510a086a4e6f6155de7d2c7966582fe119099d65889",
+      "prompt": "assets/heartside-examples-2026-10-29.prompts/shepherd-warm-blanket.txt (v15 wording just before the final edits merged in 52b5a92)",
+      "prompt_sha256": "cfc952c688074fb9506405d476c7be7d3a59dbc50b360547464586c98bc5889a",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "reason": "stop 2: all 24 examples and 6 bundles approved"
+    }
+  ],
+  "dropped_jobs": [],
+  "bundles": [
+    {
+      "dog": "golden",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "files": [
+        {
+          "file": "mockups/golden-set/home-1x1.png",
+          "sha256": "a0b8326d40a6a637cbbceb6c5ac41a8dcfa59fe6fb0fb6a2f3dc35a48a96551c"
+        },
+        {
+          "file": "mockups/golden-set/home-4x5.png",
+          "sha256": "5cad743c015e0edb5c04478d9411d29c30432b164fd141b6ca8e5fb9671c09c1"
+        },
+        {
+          "file": "mockups/golden-set/home-9x16.png",
+          "sha256": "21bd82d6c1f9f1910702a5f545cb68f7eb10ec4e6da75d859fe38fe9928f2de6"
+        }
+      ]
+    },
+    {
+      "dog": "lab",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "files": [
+        {
+          "file": "mockups/lab-set/home-1x1.png",
+          "sha256": "9f9cadc06d275a29cee4a4994fb197a11afd69e66af7395ae6c74a7aa701ecff"
+        },
+        {
+          "file": "mockups/lab-set/home-4x5.png",
+          "sha256": "04f503179c225e6566f3c6a3bd249546afd392590979e41a13dd1418ae58cf0a"
+        },
+        {
+          "file": "mockups/lab-set/home-9x16.png",
+          "sha256": "8f0c2d7f060ab25ece6debcced2e1d611c9aa0cfbb390664a1c9385d3a931fd1"
+        }
+      ]
+    },
+    {
+      "dog": "frenchie",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "files": [
+        {
+          "file": "mockups/frenchie-set/home-1x1.png",
+          "sha256": "032e6cb7fb38f6c747b4c5d501598f036f8d91f0ac20d3ab65c0319665ec519b"
+        },
+        {
+          "file": "mockups/frenchie-set/home-4x5.png",
+          "sha256": "ebc67fcb99756533bd88a9bba137c3e5fbb2ff9669baec3f3db4422ceb1295f3"
+        },
+        {
+          "file": "mockups/frenchie-set/home-9x16.png",
+          "sha256": "66b265d2763e9847cc7bd7f013f195c80f46bd045f9add8278237520c9bf2467"
+        }
+      ]
+    },
+    {
+      "dog": "doodle",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "files": [
+        {
+          "file": "mockups/doodle-set/home-1x1.png",
+          "sha256": "aa8680c00936033a7e78c264f86ede98aaa79218568dfa9893ba413aaec07a67"
+        },
+        {
+          "file": "mockups/doodle-set/home-4x5.png",
+          "sha256": "c97f1963018fd1a3d64b9f871d517053715c0382732bc01d039b6c57cf848a60"
+        },
+        {
+          "file": "mockups/doodle-set/home-9x16.png",
+          "sha256": "523ff95f5b715c0873d224001f2eba88db067b28f75b8cf6b648201b7a2a5b7e"
+        }
+      ]
+    },
+    {
+      "dog": "dachshund",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "files": [
+        {
+          "file": "mockups/dachshund-set/home-1x1.png",
+          "sha256": "69ef5a8793f44b96b1bd29289e969a03bf32a9b4329290d58a72b9dc9c7a1fff"
+        },
+        {
+          "file": "mockups/dachshund-set/home-4x5.png",
+          "sha256": "bbbef95cb6b522a98af12407daab5ddfa06ff72a9a64a328f89c5598bcf7db50"
+        },
+        {
+          "file": "mockups/dachshund-set/home-9x16.png",
+          "sha256": "80e8f8edf8075b17a6926f36f0e16e1b334b9a48d392451adc90ba0ed57120a5"
+        }
+      ]
+    },
+    {
+      "dog": "shepherd",
+      "status": "approved",
+      "decided": "Krish, 2026-10-30",
+      "files": [
+        {
+          "file": "mockups/shepherd-set/home-1x1.png",
+          "sha256": "28bee99c9e6002e67ff7ee91016d40da59c6d939e8726417420d7b057063c6e7"
+        },
+        {
+          "file": "mockups/shepherd-set/home-4x5.png",
+          "sha256": "0063539c9579726833478699740e7dd2edcb1ed873e99e419a0b33003d68f6db"
+        },
+        {
+          "file": "mockups/shepherd-set/home-9x16.png",
+          "sha256": "68b63291d20c2917d5538617233217cb6763b63c06b93bfd9439bb9dfb988b83"
+        }
+      ]
     }
   ]
 }

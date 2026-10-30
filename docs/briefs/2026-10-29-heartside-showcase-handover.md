@@ -1,7 +1,8 @@
 # Claude Code handover: bring the breed example artwork into heartside
 
-29 October 2026. Run this last: after painter v15, the tone pipeline upgrade, and the growth engine has
-regenerated and Krish has approved the full example set. Paste into a Claude Code session on
+29 October 2026, updated 30 October. Ready to run: painter v15 (blankets as a scattered pattern, breed
+character and the scene composer) is merged into heartside's release branch (PR #79), and Krish approved
+the full regenerated set of 24 examples and 6 bundles on 30 October. Paste into a Claude Code session on
 `krishanraja/heartside`.
 
 ---
@@ -12,8 +13,10 @@ when your build is done, to write the CoWork prompt that realigns the artwork in
 anywhere else the store shows product images.
 
 **The artwork.** Six example dogs, each painted in its own style, across four tones and all three
-gifts. They were made from heartside's own painter prompt (recipes v10 to v12, the directed brief), one
-generation each from a real stock photo, and approved by Krish one by one.
+gifts. They were made from heartside's own painter prompt (recipes v15, the directed brief), one
+generation each from a real stock photo, and approved by Krish. Blanket mockups use AI-generated fabric
+that folds with the print; the painting itself is composited unchanged. Each dog also has a bundle shot
+(mug, blanket and framed portrait together) in `mockups/<dog>-set/`.
 
 | Dog | Breed | Style |
 |---|---|---|

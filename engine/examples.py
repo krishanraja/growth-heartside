@@ -11,9 +11,9 @@ from pathlib import Path
 import urllib.request
 
 ROOT = 'assets/heartside-examples-2026-10-29'
-HEARTSIDE_COMMIT = 'eccc695c44d98008d5989bd118089acd762e465f'  # branch claude/product-launch-readiness-mlh1bc
+HEARTSIDE_COMMIT = '52b5a92e194e99e4a86d47ae27f707192c4c1502'  # branch claude/product-launch-readiness-mlh1bc
 BATCH = 'design/examples-2026-10-29-breeds'
-JOBS_SHA256 = '84b831df9ceed6a904e1d0d455c9369f6a3a91ee0d318304c1439048a1205445'
+JOBS_SHA256 = '3a0e8a1c6b7ed15ff61ecf7adad743c005c08fee7c6bae71b671ce8a696e09cc'
 RATIOS = {'1x1': (1080, 1080), '4x5': (1080, 1350), '9x16': (1080, 1920)}
 SCENES = ('studio', 'home', 'hand')
 KINDS = {'painting', 'cutout', 'crop', 'mockup', 'set'}
