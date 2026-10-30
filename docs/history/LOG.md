@@ -4,6 +4,23 @@ Newest first. Entries are written by the docs steward (see the steward link in
 NOW.md) and by humans doing the same job by hand. Nothing in this file
 describes current behaviour; NOW.md and the state doc do.
 
+## 2026-10-30
+
+- reconciled at `1525043`: credits session and protocol 1.16.0 taken in; canon sync `c570c99` and closeout folds are automation and move no head. Fixed the audit's `too_long`, `recent_too_many` and `where_too_many` findings.
+- rolled from NOW.md: 2026-10-23 **An unreachable public catalog now reads as unverified, not as four missing gifts** (`398d15d`, PR #19 `e373717`; `engine/offers.py`, `tests/test_offers.py`). A local read of Heartside's `/products.json` returned HTTP 429, and the engine had no way to tell that from the gifts being gone. The scheduled runner's saved snapshot still showed all four (`74a2939`).
+- rolled from NOW.md: 2026-10-23 **The North Star now has a number, a weekly ladder and an urgency rating, so every session knows how far behind it is and how hard to push.** Ruling (Krish, 2026-10-23): every repository chases one aggressive number on a weekly ladder, and urgency U1 to U5 sets its intensity. The number and ladder are in `docs/NORTH_STAR.md`; where it stands is the first line under "Where it is right now". Contract: ai-harness `contract/north-star-metric.md`.
+- rolled from NOW.md: **2026-10-22: no copy of heartside's status kept here** (`90429c8`, merged in PR #15 as `89e1ec9`). A copy of another repository's status goes stale, so `growth.py sync` stops writing one and reads heartside's own `NOW.md` live; unreadable or stale reads as "unknown" and the text is withheld. The last copy is archived at `docs/history/2026-10-22-HEARTSIDE-NOW.md`. Ruling recorded in the commit.
+- rolled from NOW.md: **2026-10-22: a media-credit brief for Higgsfield and Runway** (`dfcc815`): a plan for Krish's list, stills before motion, generating nothing before his yes. It runs ahead of the main build because the Christmas cut-off will not wait (`docs/GET-GOING.md`, Step 0.5).
+- rolled from NOW.md: **2026-10-22: prepaid credits inside an approved allocation pass the provider budget** (`0303ffb`). Krish ruled that such generation counts as authorised; publication, ad spend, top-ups and plan changes still need their own approval.
+- rolled from NOW.md: **2026-10-22: gift-line examples in the new voice** (`68940b1`). Krish: "update the Answers article". The three published Answers articles now quote real sentences in each dog's own personality, following heartside PR #44.
+- rolled from NOW.md: **2026-10-21: protocol 1.2.0 copied from Control Center** (`b1a14af`). It adds "Versions": accept any 1.x back. Legibility and Mindmake required exactly 1.0.0 and stopped reporting for two days when Control Center began serving 1.1.0; this engine already accepted it.
+- rolled from NOW.md: **2026-10-21: GEO and AEO strategy and an eighth job** (`70fa624`): `docs/GEO-AEO.md`, a 28-question bank and a weekly Answers job on Wednesdays, with batch 1 drafted for Krish.
+- rolled from NOW.md: **2026-10-21: heartside's dog-voice ruling and rewritten positioning taken in** (`ca52b75`, `400d62b`). `check` now refuses the retired third-person gift lines and the retired one-line offer.
+- rolled from NOW.md: **2026-10-19: the engine runs autonomously and reports through the one protocol** (`8ba5523`, `a87b932`), with "Get going" as the way a session picks up the plan in `docs/GET-GOING.md` (`70d9236`), and the copywriting, offers and demand corpus wired into the jobs (`c5654b4`).
+- rolled from NOW.md: **2026-10-18: the North Star was set** (`bf8b536`, `c51ed5b`), and the Control Center brief replaced the earlier Control Centre handoff (`9790ed7`).
+- rolled from NOW.md: **2026-10-17: the engine shipped** (`5c31853`, PR #1) with production, replay and recovery runs recorded in `docs/HANDOFF.md` and `docs/VERIFICATION-2026-10-17.json`.
+- rolled from NOW.md (Where it is right now): the 23 Oct local HTTP 429 on `/products.json` (fixed by PR #19, `e373717`); the last held live report of 19 Oct; Step 0 of `docs/GET-GOING.md` complete; PR #15 (`89e1ec9`) merged, so the engine reads heartside's `NOW.md` live.
+
 ## 2026-10-28
 
 - stamped at `80d7402`: canon sync `93c4c52` and repository administration `80d7402` are automation and move no head. Fixed the audit's `next_step` finding: the next action now starts with "- Next".

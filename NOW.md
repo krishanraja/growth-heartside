@@ -1,8 +1,8 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-10-29
-head: cf011dc
+as_of: 2026-10-30
+head: 1525043
 lifecycle: live
 production_url: none
 state_doc: docs/HANDOFF.md
@@ -31,7 +31,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-10-29)
+## Where it is right now (as of 2026-10-30)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": 200, "current": 0, "current_as_of": "2026-10-29", "current_source": "Shopify Admin API orders through growth.py attribution (read-only app), organic posts, trailing 28 days", "urgency": 4, "urgency_reason": "at 0% of this week's target"} --> **North Star number: U4, far behind.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: $0 (measured 29 Oct; the store's only order in the window was fully refunded), against $200 this week, on the way to $25,000 by 28 December 2026. A bold swing every day; work that does not move the number waits.
 
@@ -41,8 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
-- Heartside's prepaid credits are spent by a daily scheduled session (docs/CREDITS-SESSION.md) that reserves and settles each generation through Control Center; the runner reads the credits block and reports credits_spent at 1.16.0 only for a spend of its own. (2026-10-29)
-- Control Center protocol 1.16.0 (prepaid credits) is in docs/control-center/, with Heartside's pools, the rule and its walls in docs/CONTROL-CENTER-BRIEF.md and the PLAYBOOK credit line brought in line with the 2026-10-29 ruling. No engine code changed. (2026-10-29)
+- Heartside's prepaid credits are spent by a daily scheduled session (`docs/CREDITS-SESSION.md`) that reserves and settles each generation through Control Center, on protocol 1.16.0 (prepaid credits, `docs/control-center/`; walls in `docs/CONTROL-CENTER-BRIEF.md`). The runner reports credits_spent only for a spend of its own. (2026-10-29)
 - Eight scheduled jobs in `automations.json` (sync, numbers, radar, the daily pack, creators, the weekly Answers drafts, store and search, the weekly report), executed on GitHub Actions by `.github/workflows/engine.yml` (`AGENTS.md`, "The schedule").
 - The Control Center loop on protocol 1.2.0: a daily directive, one report, Krish's decisions read back by digest (`docs/control-center/ENGINE-PROTOCOL.md`; `b1a14af`). The first live run, on 19 Oct, succeeded (`docs/GET-GOING.md`).
 - Answers batch 1 published on heartside, and updated on 22 Oct to quote the new dog voice (`d664d54`, `68940b1`).
@@ -50,10 +49,7 @@ Live:
 
 Waiting or not measured:
 
-- On 23 Oct, a local Windows read of Heartside's public `/products.json` returned HTTP 429. PR #19 (`e373717`) makes that local failure read as unverified rather than four missing gifts. A new local sync read all four gifts as available, and the scheduled GitHub runner's saved 11:31 UTC snapshot also contained all four.
 - The last live report in the repo (19 Oct) was held: `net_sales_usd` was stale because imported Shopify reports stop at 16 Oct, `organic_orders` is not measured, and conversion editions waited for the V3 homepage (`docs/GET-GOING.md`, "This engine"). Heartside's chat homepage went public on 19 Oct (heartside `9ea7e34`); whether the hold has released is not recorded here.
-- Step 0 of `docs/GET-GOING.md` is complete. It corrected stale documentation only; the live report's numbers are unchanged.
-- Merged on 22 Oct (PR #15, `89e1ec9`): the engine keeps no copy of heartside's status and reads heartside's `NOW.md` live instead (`90429c8`). The hourly sync commits nothing, and the docs steward runs nightly on this repository.
 
 ## What changed recently
 
@@ -63,18 +59,6 @@ Waiting or not measured:
 - 2026-10-29 **The engine caught up with heartside's relaunch and is off STOP** (branch `claude/canva-integration-plan-cpy1p2`). Rules now come from heartside's current sources; `check` refuses Biscuit, every exclamation mark, the worn lines and stacked fragments. Prices come from the canon's configured baseline, cross-checked against the live store; a disagreement holds the gift. Purchase drafts may sell any live gift the film shows; Krish ruled the same day that the mug sells equally. The renderer uses the store's own renders, refuses blank templates and tiles, and labels every frame Example. The Shopify store handle left every tracked file for the `HEARTSIDE_SHOP_DOMAIN` repository variable, with a test that fails if a handle returns; it remains in git history. `docs/GEO-AEO.md` facts and prices are current, and it no longer claims free shipping to every US address.
 - 2026-10-27 **Heartside relaunched, and this engine is on STOP until it catches up** (`docs/briefs/2026-10-27-heartside-revamp-impact.md`). Sync at heartside `bea22ce` found that the four rule sections it checks had moved into heartside's history. The renderer still uses the retired Biscuit and the old mug photos. A Heartside Canva brand kit exists but has not been updated.
 - 2026-10-27 **The architecture plan is now v3, reviewed three times, and still proposed, not built** (`docs/briefs/2026-10-27-architecture.md`). It has 14 specialists. `learn` owns what works, `librarian` owns the Drive `Heartside/Growth` folder, and `audience` owns followers. GA comes from Control Center. Codex posts approved batches through Buffer from Krish's PC, and Claude orchestrates and checks. The failure register is filed at `docs/REGISTER.md`, and the Canva design-system Cowork prompt at `docs/briefs/2026-10-27-cowork-canva-design-system.md` (the brand-kit prompt is superseded). heartside.io has been on its password page ("Opening soon") since some time after 23 Oct; Krish says it is deliberate until heartside PR #50.
-- 2026-10-23 **An unreachable public catalog now reads as unverified, not as four missing gifts** (`398d15d`, PR #19 `e373717`; `engine/offers.py`, `tests/test_offers.py`). A local read of Heartside's `/products.json` returned HTTP 429, and the engine had no way to tell that from the gifts being gone. The scheduled runner's saved snapshot still showed all four (`74a2939`).
-- 2026-10-23 **The North Star now has a number, a weekly ladder and an urgency rating, so every session knows how far behind it is and how hard to push.** Ruling (Krish, 2026-10-23): every repository chases one aggressive number on a weekly ladder, and urgency U1 to U5 sets its intensity. The number and ladder are in `docs/NORTH_STAR.md`; where it stands is the first line under "Where it is right now". Contract: ai-harness `contract/north-star-metric.md`.
-- **2026-10-22: no copy of heartside's status kept here** (`90429c8`, merged in PR #15 as `89e1ec9`). A copy of another repository's status goes stale, so `growth.py sync` stops writing one and reads heartside's own `NOW.md` live; unreadable or stale reads as "unknown" and the text is withheld. The last copy is archived at `docs/history/2026-10-22-HEARTSIDE-NOW.md`. Ruling recorded in the commit.
-- **2026-10-22: a media-credit brief for Higgsfield and Runway** (`dfcc815`): a plan for Krish's list, stills before motion, generating nothing before his yes. It runs ahead of the main build because the Christmas cut-off will not wait (`docs/GET-GOING.md`, Step 0.5).
-- **2026-10-22: prepaid credits inside an approved allocation pass the provider budget** (`0303ffb`). Krish ruled that such generation counts as authorised; publication, ad spend, top-ups and plan changes still need their own approval.
-- **2026-10-22: gift-line examples in the new voice** (`68940b1`). Krish: "update the Answers article". The three published Answers articles now quote real sentences in each dog's own personality, following heartside PR #44.
-- **2026-10-21: protocol 1.2.0 copied from Control Center** (`b1a14af`). It adds "Versions": accept any 1.x back. Legibility and Mindmake required exactly 1.0.0 and stopped reporting for two days when Control Center began serving 1.1.0; this engine already accepted it.
-- **2026-10-21: GEO and AEO strategy and an eighth job** (`70fa624`): `docs/GEO-AEO.md`, a 28-question bank and a weekly Answers job on Wednesdays, with batch 1 drafted for Krish.
-- **2026-10-21: heartside's dog-voice ruling and rewritten positioning taken in** (`ca52b75`, `400d62b`). `check` now refuses the retired third-person gift lines and the retired one-line offer.
-- **2026-10-19: the engine runs autonomously and reports through the one protocol** (`8ba5523`, `a87b932`), with "Get going" as the way a session picks up the plan in `docs/GET-GOING.md` (`70d9236`), and the copywriting, offers and demand corpus wired into the jobs (`c5654b4`).
-- **2026-10-18: the North Star was set** (`bf8b536`, `c51ed5b`), and the Control Center brief replaced the earlier Control Centre handoff (`9790ed7`).
-- **2026-10-17: the engine shipped** (`5c31853`, PR #1) with production, replay and recovery runs recorded in `docs/HANDOFF.md` and `docs/VERIFICATION-2026-10-17.json`.
 
 ## What is next and what is waiting on Krish
 
