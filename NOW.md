@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- The seven channel tasks run inside the radar, daily pack, store and report jobs, mapped by crew/registry.json and checked by growth.py --self-test. Nothing posts. (2026-10-30)
 - Krish approved all 24 breed examples and 6 bundle shots, regenerated from heartside's painter v15 (merged to heartside's release branch in PR #79), each with cutout, crops and studio, home and hand mockups; the ledger records every approved painting's sha256 and exact prompt, the old set is superseded, and the shared Drive folder mirrors it. The engine now has real product imagery on all three gifts for its first concepts. (2026-10-30)
 - A worker session is upgrading heartside's painter pipeline on branch claude/painter-pipeline-v15 (blanket scattered pattern, breed-character and tone composer), to a pull request with tests and a prepared test board, generating no images and touching nothing live. The breed example launch is held until that lands. (2026-10-29)
 - A control test (47 generations, two photos, 3 tones, 6 styles, 4 kinds of chat answer, 3 products) showed heartside's long painter prompt reuses the customer photo's pose and face, so tone and style barely show. A short brief built from the chat's own fields, with each tone owning pose, camera and staging, fixes it; the proposal, builder and evidence are in docs/briefs/painter-prompt/. Stage 1 examples are complete and ready for review; stage 2 is on hold. (2026-10-29)
@@ -70,7 +71,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-10-30): Krish runs `docs/briefs/2026-10-29-heartside-showcase-handover.md` in a heartside session to bring the approved set into the store; next painter improvement is the shared Over the top frame, which makes the breeds look samey.
+- Next (2026-10-30): the next daily pack carries 5 hooks and 5 captions as note lines in its brief, and the Monday radar carries a dated trend scan and idea bank.
 - **Next action:** Codex makes stage 1 of heartside's breed examples (6 paintings, with cutouts, crops and mockups) from `docs/briefs/codex/2026-10-29-breed-examples-stage-1.md`, on its own branch; Claude checks the return with `python3 growth.py examples check --stage 1` and a frame-by-frame review before Krish's review. Then the daily layer from `docs/briefs/2026-10-29-creative-direction.md`: 5 posts a day per platform, starting with "Translate your dog" carousels.
 - **Waiting on Krish:** start Codex on this repository with the one line "Run docs/briefs/codex/2026-10-29-breed-examples-stage-1.md". Set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). A heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
