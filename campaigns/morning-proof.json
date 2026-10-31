@@ -25,21 +25,21 @@
       "asset": "mug_front",
       "seconds": 3,
       "headline": "Your dog loves you too.",
-      "text": "A short note from the dog goes on it too."
+      "text": "The note from the dog comes in the box."
     }
   ],
   "captions": {
-    "instagram": "Personalized dog mug, painted from a photo of your dog, with a short note from the dog. #PersonalizedDogGifts #DogMug",
-    "facebook": "Your dog on the morning mug, painted from one photo, with a short note from the dog to its person.",
+    "instagram": "Personalized dog mug, painted from a photo of your dog. A short note from the dog comes in the box. #PersonalizedDogGifts #DogMug",
+    "facebook": "Your dog on the morning mug, painted from one photo, and a short note from the dog to its person in the box.",
     "tiktok": "Your dog on the morning mug. #GiftsFromTheDog #DogMug",
     "pinterest": [
       "Personalized dog mug gift ideas\nAn 11 oz mug painted from a photo of your dog. Save this gift idea.",
-      "Custom dog mug with a note from the dog\nShown with an example dog, in five interior colors. Save this for later."
+      "Custom dog mug, a gift from the dog\nShown with an example dog, in five interior colors. Save this for later."
     ]
   },
   "native_hooks": {
     "facebook": "Your dog on the morning mug.",
     "tiktok": "A little part of every morning."
   },
-  "voiceover": "Your dog on the morning mug, painted from one photo, with a short note from the dog."
+  "voiceover": "Your dog on the morning mug, painted from one photo, and a short note from the dog in the box."
 }

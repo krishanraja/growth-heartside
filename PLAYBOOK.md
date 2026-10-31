@@ -52,8 +52,9 @@ it does globally".
 
 **"This year, the dog's buying."** (V3 section 8.) A dog gets the person it
 loves a gift. A 90-second chat with Biscuit turns what the buyer knows about
-the two of them into words. Those words go on a mug, a blanket, a print or an
-ornament, signed "Love, [dog]" with a paw. Nobody else in the category can
+the two of them into words. Since 31 Oct the gift carries the painting and
+those words come in the box and on a free digital card, signed "Love, [dog]"
+with a paw (the live store; heartside's canon wins over this passage). Nobody else in the category can
 show words that came from the buyer's own answers. Every piece of content
 shows that idea. Every link goes to the chat.
 

@@ -73,11 +73,14 @@ doing at any point in time".
 
 Heartside sells gifts from your dog. In a short chat, Buddy (the brand's
 chestnut dachshund host, never the buyer's dog) gathers a photo of the dog and
-the buyer's answers. The dog is painted onto an illustrated mug, a word-free
-sherpa blanket, or a portrait sold unframed or framed; the mug and the portrait
-also carry a short note from the dog, in its own voice, signed "Love, [dog]"
-with a paw. Printful makes each one to order for US buyers, and a person checks
-every order before it prints. The ornament is on hold (heartside, 27 Oct).
+the buyer's answers. The dog is painted onto an illustrated mug, a sherpa
+blanket, or a portrait sold unframed or framed. Since 31 Oct every gift prints
+the painting only: the short note from the dog, in its own voice, signed
+"Love, [dog]" with a paw, comes in the box and on a free digital card, and a
+$12 printed Christmas card from the dog ships on its own (live store, read 31
+Oct). Never show or say the note is on the gift (`growth.py check` refuses
+it). Printful makes each one to order for US buyers, and a person checks every
+order before it prints. The ornament is on hold (heartside, 27 Oct).
 
 The lead line is "Your dog loves you too." Prices, products and dates change.
 Read them from the sync every time, never from memory or this file. Every

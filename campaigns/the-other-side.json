@@ -18,8 +18,8 @@
     {
       "asset": "portrait_unframed",
       "seconds": 4,
-      "headline": "With a short note from the dog.",
-      "text": "Signed with your dog's name and a paw."
+      "headline": "And a short note from the dog.",
+      "text": "It comes in the box, signed with a paw."
     },
     {
       "asset": "portrait_oak",
@@ -29,11 +29,11 @@
     }
   ],
   "captions": {
-    "instagram": "Personalized dog portraits with a short note from the dog. One photo of your dog, a few things only you know, and a portrait for their person, framed or unframed. #PersonalizedDogGifts #DogPortrait",
-    "facebook": "A portrait of your dog with a short note from the dog to its person. Framed in black, white or red oak, or unframed. Who would your dog give this to?",
-    "tiktok": "Your dog, as a portrait with a note from the dog. #PersonalizedDogGifts #DogPortrait",
+    "instagram": "Personalized dog portraits, a gift from the dog. One photo of your dog and a few things only you know become a portrait for their person, framed or unframed. A short note from the dog comes in the box. #PersonalizedDogGifts #DogPortrait",
+    "facebook": "A portrait of your dog, and a short note from the dog to its person in the box. Framed in black, white or red oak, or unframed. Who would your dog give this to?",
+    "tiktok": "Your dog, as a portrait, a gift from the dog. #PersonalizedDogGifts #DogPortrait",
     "pinterest": [
-      "Personalized dog portrait gift ideas\nA portrait painted from a photo of your dog, with a short note signed by the dog. Save this gift idea.",
+      "Personalized dog portrait gift ideas\nA portrait painted from a photo of your dog, with a note from the dog in the box. Save this gift idea.",
       "Custom dog portrait for their person\nFramed in black, white or red oak, or unframed. Shown with an example dog. Save this for later."
     ]
   },
@@ -41,5 +41,5 @@
     "facebook": "Your dog, as a portrait.",
     "tiktok": "Turn one photo into a portrait."
   },
-  "voiceover": "One photo of your dog becomes a portrait, with a short note from the dog to the person it loves."
+  "voiceover": "One photo of your dog becomes a portrait, and a short note from the dog to the person it loves comes in the box."
 }

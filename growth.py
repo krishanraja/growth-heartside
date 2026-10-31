@@ -126,7 +126,10 @@ RULE_FILES = ('NOW.md', 'n8n/build.mjs')
 
 # The sections of heartside's sources that the RULES below were written from,
 # with their fingerprint at heartside commit 54b6b0e (29 Oct 2026, after the 27
-# October relaunch moved V3, HANDOFF and POSITIONING into docs/history/). If any
+# October relaunch moved V3, HANDOFF and POSITIONING into docs/history/), and
+# VOICE and DOG_VOICE at bfdb531 (31 Oct 2026: gift lines read at age 12, every
+# joke spells out its punchline, ten comic breed characters for the hilarious
+# tones, and only the dog's own over_the_top lines may tease). If any
 # section changes, or stops being canon, no pack passes until a person reads
 # the new words and updates RULES and RULES_BASIS in an interactive session.
 # A prefix that is not a heading names a code or front-matter line: the block
@@ -144,8 +147,8 @@ RULES_BASIS = {
     'docs/SCOPE.md ## Non-negotiable instructions': 'b712fce84c407252',
     'docs/ECONOMICS.md ## Current owner ruling': 'a8cea2c24b9f1ce4',
     'NOW.md never_publish:': 'ce87743276e56558',
-    'n8n/build.mjs const VOICE = [': '356e2ec50cc13e1b',
-    'n8n/build.mjs const DOG_VOICE = [': '61fca8df9c1a40d9',
+    'n8n/build.mjs const VOICE = [': '82fa7a74ed529f65',
+    'n8n/build.mjs const DOG_VOICE = [': '43dc955615d6b742',
 }
 
 # ---------------------------------------------------------------------------
@@ -175,6 +178,12 @@ RETIRED = [  # the retired lines kept from POSITIONING 3 and V3 2 (now in hearts
     (re.compile(r"^\s*biscuit\s*:|\b(?:tell|ask|meet|chat with)\s+biscuit\b|\b(?:i'?m|i am)\s+biscuit\b"
                 r"|\bbiscuit,?\s+(?:our|the|heartside'?s)\b|\b(?:our|heartside'?s)\s+(?:[\w-]+\s+){0,3}biscuit\b", re.I | re.M),
      'names Biscuit, the retired host: the host is Buddy everywhere (SCOPE 5)'),
+    # The live store, read 31 Oct 2026: the mug, the portrait and the blanket print the painting only, and
+    # "Your note, in your dog's voice, comes in the box and on a free digital card". heartside's DOG_VOICE
+    # still says the meaning line prints on the mug and portrait; the live product pages win (reported to heartside).
+    (re.compile(r"\bnotes?\b[^.\n]{0,40}?\b(?:goes|go|is|are|printed|prints|sits|sit)\s+(?:right\s+)?on\s+(?:it|them|the\s+(?:mug|portrait|print|blanket|gift))\b"
+                r"|\b(?:mug|portrait|print)s?\s+(?:is\s+|are\s+)?(?:printed\s+|signed\s+)?with\s+(?:a\s+|your\s+|the\s+)?(?:short\s+)?note\b", re.I),
+     'says the note is on the gift: since 31 Oct the gifts print the painting only, and the note from the dog comes in the box and on a free digital card (heartside.io)'),
     # DOG_VOICE: the worn lines
     (re.compile(r"\byou'?re welcome\b|\bit isn'?t close\b|\bnot sorry\b|\bobviously\b|\bthat'?s the deal\b|\bthat'?s the rule\b|\bthe whole list\b|\bin this economy\b", re.I),
      'uses a worn line heartside bans (you\'re welcome, it isn\'t close, not sorry, obviously, that\'s the deal, that\'s the rule, the whole list, in this economy)'),
@@ -996,6 +1005,9 @@ def self_test():
     t('"Tell Biscuit" is refused', bad('Tell Biscuit about your dog.', 'Biscuit'))
     t('Heartside\'s fictional Biscuit is refused', bad('Shown with Biscuit, our fictional AI dog.', 'Biscuit'))
     t('a customer dog called Biscuit passes', not bad('On the mug: "I hear your car before anyone else does." Love, Biscuit', 'Biscuit'))
+    t('a note printed on the mug is refused', bad('A short note from the dog goes on it too.', 'note is on the gift'))
+    t('a portrait "with a short note" is refused', bad('Personalized dog portraits with a short note from the dog.', 'note is on the gift'))
+    t('the note in the box passes', not bad('The note from the dog comes in the box and on a free digital card.', 'note is on the gift'))
     t('"Your dog has notes" asks Krish', bad('Your dog has notes.', 'ask Krish'))
     t('the handle is fine', not bad('Follow @yourdoghasnotes', 'ask Krish'))
     t('the retired poster is refused', bad('The Annual Review is back', 'retired'))
