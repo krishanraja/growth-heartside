@@ -157,7 +157,7 @@ What it means:
 The sample was 6 hashtags, giving 201 unique posts.
 
 1. **A cold account isn't a ceiling on TikTok.** 84 posts passed 100,000 plays. The median account behind them has about 14,600 followers, and 38 of the 84 have under 10,000. Several accounts with under 5,000 followers reached 2 to 6 million plays with gift videos.
-2. **They are short videos.** The median length of a 100,000-play post is 14 seconds, and there was no slideshow among them. "Translate your dog" runs as a carousel on Instagram and as a 8 to 12 second video on TikTok.
+2. **They are short videos.** The median length of a 100,000-play post is 14 seconds, and there was no slideshow among them. "Translate your dog" runs as a carousel on Instagram and as an 8 to 12 second video on TikTok.
 3. **Shares come from the recipient and the season, not the painting:**
 
    | Post type | Median shares per 1,000 plays |
