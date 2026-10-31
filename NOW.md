@@ -55,7 +55,6 @@ Waiting or not measured:
 
 ## What changed recently
 
-- 2026-10-31 **Q4 creative strategy approved, and the engine caught up with heartside's artwork-only release** (`docs/briefs/2026-10-31-q4-creative-strategy.md`). The gifts print the painting only; the note comes in the box, on a free digital card and as the $12 Christmas card (live store). Two campaigns, one hook and `AGENTS.md` said the note was on the gift: corrected, and `check` now refuses it. Rules re-based on heartside's new VOICE and DOG_VOICE (`bfdb531`), so sync is off STOP. Buffer read: 4 Heartside posts in October, 0 reactions, 0 shares.
 - 2026-10-29 Hilarious may use theatrical staging but never invents the dog's toys, food, clothes, habits or places (Ruling, Krish, 2026-10-29).
 - 2026-10-29 The short directed-brief prompt method is the fix proposed for heartside's painter prompt; the examples check's --only flag wrongly flags other jobs' files (fix in growth.py awaits Krish).
 - 2026-10-29 Heartside's painter moved from the 5,500-character rulebook to the directed brief (recipes v10 to v14), driven by this engine's control test and the 24 example paintings.
@@ -68,12 +67,12 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-10-31): the Apify winners library (Meta Ad Library long-runners and organic outliers in dog gifts; needs Krish's yes for the credits), then the concept board for one-press approval, then the go-live step through Buffer (`docs/briefs/2026-10-31-q4-creative-strategy.md`, "Order of work"). Also: the next daily pack carries 5 hooks and 5 captions as note lines in its brief, and the Monday radar carries a dated trend scan and idea bank; then the daily layer from `docs/briefs/2026-10-29-creative-direction.md` (5 posts a day per platform, starting with "Translate your dog" carousels) from the approved 24 examples.
+- Next (2026-10-31): the next daily pack carries 5 hooks and 5 captions as note lines in its brief, and the Monday radar carries a dated trend scan and idea bank; then the daily layer from `docs/briefs/2026-10-29-creative-direction.md` (5 posts a day per platform, starting with "Translate your dog" carousels) from the approved 24 examples.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
-- North Star check (2026-10-31): holds. The plan front-loads borrowed reach and the Christmas calendar, because the ladder's last two weeks fall after the shipping cutoffs.
+- North Star check (2026-10-30): holds.
 
 ## Read next
 
