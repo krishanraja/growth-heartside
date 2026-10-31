@@ -3,6 +3,19 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-10-31: Which tool does which job, and the first concepts.
+  - Concepts C20 to C24 (Send this to the dog mom, Translate your dog, Opened the presents early, Her
+    grandkids have four legs, The wait) approved at concept level on the board
+    (`docs/briefs/2026-10-31-q4-creative-strategy.md`). Cadence for the first week: two a day from
+    1 Nov. Posting: he sees the final videos, then says yes to scheduling that exact batch.
+  - "Higgsfield should be for actual production. Mockup should be done in ChatGPT images through the
+    Codex plugin." Codex runs on his WSL machine through `tools/wsl-bridge.sh`.
+  - "Runway instead": Runway for the motion on these posts, run once he confirms.
+  - "We have the Content Watcher repository, which is free, so why are you using Higgsfield credits for
+    this?" Reading a reference video goes through `krishanraja/content-watcher` first; a paid analysis
+    only when it cannot read the post. From a cloud session YouTube blocks it (bot check), so it runs
+    on his home connection through the bridge.
+
 - 2026-10-30: Channel work runs as the seven channel tasks. Krish asked for each of seven saved Instagram
   growth prompts to be its own task for every specialist, and for a process to the North Star. They are
   defined once in ai-harness `contract/channel-tasks.md`. `crew/registry.json` maps two specialists
