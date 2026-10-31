@@ -1,10 +1,34 @@
-# Codex card: mockups for C25 "The Seating Plan", in ChatGPT images
+# Codex card: concept mockups for C20 to C25, in ChatGPT images
 
 31 Oct 2026. Krish: "Higgsfield should be for actual production. Mockup should be done in ChatGPT images through
 the Codex plugin." Run by Krish's WSL session (or Codex directly) in `~/growth-heartside`. It makes mockup stills
 only. It posts, sends and spends nothing beyond the ChatGPT images it generates, and it never draws the product.
 
-## The concept
+## The order (Krish, 31 Oct)
+
+"I want concept design done in codex chatgpt images first, so I can see we are on the right track, only then we use
+runway and higgsfield." So Codex makes every concept's opening stills in ChatGPT images. Krish reviews them on the
+concept board, and only then does any Runway or Higgsfield motion run.
+
+## C20 to C24: the opening stills
+
+These are one 9:16 still per concept, plus one per breed for C23. The same rules apply to every still: photographic, a
+lived-in US home at Christmas, a low camera at the dog's eye level, warm light, shallow focus, and no text, logo or
+product. The dog matches its reference photo in `assets/heartside-examples-2026-10-29/photos/` exactly, so the real
+painting at the end is visibly the same dog. People appear only as hands, feet or from behind.
+
+| File (`local/production/stills/codex-…png`) | Reference photo | Scene |
+|---|---|---|
+| `c20` | `lab.jpg` (red bandana) | asleep across a woman's feet in cream wool socks on a rug, Christmas morning, tree lights out of focus |
+| `c21` | `golden.jpg` | chin resting on an older woman's knitted slippers by a fireplace, her hand on its head, stockings behind |
+| `c22` | `frenchie.jpg` (small blue bow tie) | sitting in torn red and gold wrapping paper under a lit tree at night, guilty face, ribbon on its head |
+| `c23-golden` | `golden.jpg` | trotting toward the camera down a hallway carrying one fuzzy slipper |
+| `c23-shepherd` | `shepherd.jpg` | sitting upright by the front door at 7 am like a supervisor, wreath on the door |
+| `c23-dachshund` | `dachshund.jpg` | head and front half inside a paper grocery bag on a kitchen floor, tail up |
+| `c23-doodle` | `doodle.jpg` | on a sofa giving an unimpressed side-eye to a pile of loud Christmas sweaters |
+| `c24` | `lab.jpg` (red bandana) | at a front window at dusk, from behind, headlights in the snow outside |
+
+## C25: the new concept
 
 **C25, The Seating Plan.** This is a new concept, not yet approved: these mockups are what Krish approves. It uses
 the format of the Short Krish keeps seeing: one static wide shot in a real home, the dog as the actor, and a payoff
