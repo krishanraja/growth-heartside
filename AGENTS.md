@@ -98,6 +98,26 @@ gift may be sold in a post, the mug included (Ruling, Krish, 2026-10-29).
 The only customer-facing address is krish@heartside.io. Never put any other
 address of Krish's in anything.
 
+## How creative is made (Ruling, Krish, 2026-10-31)
+
+A process rule, not taste. Follow it every time, in this order. A paid tool used out of order is a failure.
+
+1. **Read reference posts with Content Watcher first** (`krishanraja/content-watcher`, free). It runs on
+   Krish's machine through the WSL bridge, because YouTube blocks cloud IPs. Never use a paid video analysis
+   by default; use one only when Content Watcher cannot read the post, and say so.
+2. **Concept design is made in Codex with ChatGPT images**, on Krish's machine. That covers the opening
+   stills and mockups for every concept, using the card in `docs/briefs/codex/`. Do not make concept stills in
+   Higgsfield or Runway.
+3. **Krish reviews the concepts** on the concept board and says they are on track.
+4. **Only then Runway (motion) and Higgsfield (production).** Preflight the cost and reserve it through
+   Control Center before any call.
+5. **Cut, check, then schedule.** `growth.py` checks every word. Krish says yes to the exact batch, then it
+   goes to Buffer.
+
+Codex and Content Watcher run on Krish's WSL machine: he runs `tools/wsl-bridge.sh`, and a cloud session
+messages that local Remote Control session with `send_message`. If that session is not connected, ask Krish
+to start it. Never substitute a paid tool for it.
+
 ## The rules that never bend
 
 1. **You draft. Krish acts.** Never post, send, comment, reply, like,
