@@ -3,6 +3,20 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-01: The creative platform and a round of 48 ideas. Krish: "lets kick off aggressive content
+  production, i want to nail down a creative direction that can overarch various executional ideas".
+  - Platform approved: "Your dog loves you too. Here's the proof." Every post shows a true act of dog
+    love, then the real painting as the receipt.
+  - Tone: "we need all 3 to run in rotation. we dont have enough time to test and learn". Warm first,
+    funny first and pure heart run side by side and are compared, not tested in sequence.
+  - The $12 printed Christmas card's 3 Dec 11:59 pm ET cutoff may be stated as its order-by line, on
+    the card only.
+  - "Get as divergent as you possibly can, come back to me with 40-50 ideas of all tones and
+    varieties". The 48 ideas are in `docs/briefs/2026-11-01-ideas.json`, and he votes on a private
+    board (Approve, Improve, Reject, with comments). His votes set the bar for each tone before any mock
+    or plan proposal.
+  - No job file or `automations.json` entry changed.
+
 - 2026-10-30: Channel work runs as the seven channel tasks. Krish asked for each of seven saved Instagram
   growth prompts to be its own task for every specialist, and for a process to the North Star. They are
   defined once in ai-harness `contract/channel-tasks.md`. `crew/registry.json` maps two specialists
