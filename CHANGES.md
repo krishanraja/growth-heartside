@@ -3,6 +3,13 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-02: A Codex lane in this repository. Krish asked whether Codex is doing the asset production as
+  designed, then chose "Add a lane to this repo" over queuing cards in heartside. `codex/README.md`
+  mirrors heartside's lane (card, Control Center booking, branch `codex/<id>`, settle). Because this
+  repository is public, the lane is picture-only: licensed music and voice never enter git, and the session
+  adds the locked sound to Codex's picture. Krish adds `krishanraja/growth-heartside` to
+  `config/codex-lanes.json` on his home computer. No job file or `automations.json` entry changed.
+
 - 2026-11-02: Sound is locked for all ten concepts (F01's dip-and-fade ending approved). F04, F05 and F12
   are recast to breeds with approved renders (F04 golden, F05 and F12 frenchie), and the narrator re-read
   F04's opening with "golden retriever". Wave 1 pictures: 30 Higgsfield key frames and three animatics
