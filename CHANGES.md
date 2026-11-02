@@ -3,6 +3,15 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-02: Reset to finished posts. Krish: "I swear I approved 10 concepts before, and now we've got
+  only a few of them, but we've got different variations of them. I'm kind of getting a bit lost amidst all
+  this now and a bit demotivated". No more boards of parts: one status page shows all ten concepts and
+  the finished posts. F10 (group chat), F11 (search history) and F06 (frenchie, dachshund and lab
+  carousels, each with a reel) are built in code with the locked music, and end on the real renders
+  labelled Example. The session makes the humour call for F01 (absurd "Plan C"), F02 (absurd "Project
+  Nothing") and F04 (meme "me vs my golden"). The round-8 board is parked. No job file or
+  `automations.json` entry changed.
+
 - 2026-11-02: Humour retune. Krish on the wave-1 animatics: "The Dog's Christmas Shopping List needs a
   rescript, its just not funny. The others need a lot more humour about them." He picked all four comic
   modes (absurd escalation, meme-text, slapstick, deadpan) at "Cheeky, still giftable": "We'll need all
