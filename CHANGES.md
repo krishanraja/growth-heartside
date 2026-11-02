@@ -3,6 +3,13 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-02: Round 4 sound votes. F10 (the chat) is approved. F02's music is Monsieur Cat Walk. F01's
+  Mix B is remixed so the crescendo sits under the voice and the chime fades in ("drowns out the voice
+  a little bit, and then the sprinkle sound comes in really abruptly"). F02 drops "Nothing is free" and
+  takes Krish's laptop line, with the dash and exclamation mark removed under the voice rules. The F05 judge
+  is redirected for "way more intonation and personality". The round-5 board holds these three. ElevenLabs:
+  12,507 of 20,000 booked. No job file or `automations.json` entry changed.
+
 - 2026-11-02: Round 3 sound votes. F03, F04, F07, F11 and F12 are locked. F01 has its dachshund (option 3,
   directed "a bit miffed at the start, but then hilariously and positively takes control", never angry)
   and Mix B with the Fool Me Twice crescendo. F02 gets the line where the golden realizes it must get its

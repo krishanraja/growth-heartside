@@ -548,14 +548,14 @@
     "F02": "Heartside golden (ElevenLabs design 3)",
     "F03": "Heartside shepherd (ElevenLabs design 3)",
     "F04": "Heartside narrator (ElevenLabs design 1)",
-    "F05": "American judge (round 4 pick pending)",
+    "F05": "Heartside judge (American), directed theatrical: pick a take in round 5",
     "F07": "Heartside doodle (ElevenLabs design 1)",
     "F12": "Heartside chihuahua (ElevenLabs design 1)",
-    "F01": "Heartside dachshund (round 3 option 3), directed miffed then gleeful"
+    "F01": "Heartside dachshund, take 1 in Mix B"
    },
    "music": {
     "F01": "The Ingenious into the Fool Me Twice crescendo (mix B, approved)",
-    "F02": "pending: Bug-A-Boo rejected in round 3",
+    "F02": "Monsieur Cat Walk (Speedy The Spider)",
     "F03": "Young Mystery Detectives",
     "F04": "The Call of the Wild",
     "F05": "Estimations",
@@ -617,19 +617,13 @@
    },
    "F02": {
     "title": "The Dog's Christmas Shopping List",
-    "change": "The searches are now the heart of the film: six escalating searches, each with its own joke, about 15 seconds. Round 3: adds the line where the golden realizes it has to get its human something (Krish, 2 Nov).",
+    "change": "The searches are now the heart of the film: six escalating searches, each with its own joke, about 15 seconds. Round 3: adds the line where the golden realizes it has to get its human something (Krish, 2 Nov). Round 4: the 'Nothing is free' line and its search are removed, and the laptop line is in, in Krish's words with the dash and exclamation mark taken out for the voice rules (2 Nov).",
     "beats": [
      {
       "t": "0-5s",
       "picture": "2:14 am. A golden retriever lit by a laptop, paw on the trackpad, very focused.",
       "on_screen": "",
-      "vo": "Okay. My human said they want nothing for Christmas. But everyone else is getting them something. I have no money and no thumbs, so I'm going to have to figure this out myself."
-     },
-     {
-      "t": "3-5s",
-      "picture": "A plain search bar types the search letter by letter. The result appears.",
-      "on_screen": "Search: what does nothing cost  /  Result: $0.00",
-      "vo": "Nothing is free. Amazing. This is going great."
+      "vo": "Okay. My human said they want nothing for Christmas. But everyone else is getting them something. Hmm. No money, no thumbs, but I've got my human's laptop. Let's have a look."
      },
      {
       "t": "5-8s",
@@ -677,13 +671,13 @@
       "t": "0-3s",
       "picture": "A tiny gavel bangs. A pug sits in a wooden dock, looking extremely innocent.",
       "on_screen": "THE COURT OF THE COUCH",
-      "vo": "Judge: Order. Order in the living room."
+      "vo": "Judge: Order. ORDER in the living room."
      },
      {
       "t": "3-8s",
       "picture": "An easel with a photo of the pug asleep in the person's warm spot on the couch.",
       "on_screen": "Exhibit A",
-      "vo": "Judge: The defendant is accused of stealing the human's spot on the couch, every single day."
+      "vo": "Judge: The defendant is accused of stealing the human's spot on the couch. Every single day."
      },
      {
       "t": "8-12s",
@@ -695,7 +689,7 @@
       "t": "12-15s",
       "picture": "Close-up: the pug looks up with enormous eyes. A collective 'awww' from an unseen gallery.",
       "on_screen": "",
-      "vo": "Judge: [sighs] Objection overruled by cuteness."
+      "vo": "Judge: Oh, look at that face. [sighs] Objection overruled by cuteness."
      },
      {
       "t": "15-21s",
