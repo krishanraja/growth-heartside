@@ -253,6 +253,7 @@ STANDING = [  # each one was caught by a reviewer on 2 Nov 2026; add new catches
     'no stray marks that read as glitches or threats (laser dots, warped text, extra limbs)',
     'avatars and crops show a dog face; captions never cover the key visual or the EXAMPLE label',
     'every emoji, prop and picture matches the word it sits next to',
+    'legible text in a generated frame (signs, notes, labels) must agree with the script, or be unreadable',
 ]
 def resolve(lid, spec):
     return LINES[lid]['text'].replace('{breed}', spec.get('breed') or 'dog') if lid in LINES else f'[{lid}]'
