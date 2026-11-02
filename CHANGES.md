@@ -3,6 +3,12 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-02: Round 5 sound votes. F02 (take 1 over Monsieur Cat Walk) and the F05 judge (take 1) are
+  approved, so sound is locked for nine of ten concepts. F01's ending is remixed: "It just ends abruptly.
+  Surely, we would just lower the music and have the sprinkle over it". The music now dips under the chime
+  and fades instead of cutting dead, and the sound bible rule is changed to match. No credits used. No job
+  file or `automations.json` entry changed.
+
 - 2026-11-02: Round 4 sound votes. F10 (the chat) is approved. F02's music is Monsieur Cat Walk. F01's
   Mix B is remixed so the crescendo sits under the voice and the chime fades in ("drowns out the voice
   a little bit, and then the sprinkle sound comes in really abruptly"). F02 drops "Nothing is free" and

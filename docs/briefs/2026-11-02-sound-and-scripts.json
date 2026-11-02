@@ -21,11 +21,12 @@
    }
   ],
   "rules": [
-   "The music stops dead on the punchline. The button lands in silence or with one sound.",
+   "The music cuts on the punchline only mid-film. At the end it never stops dead: it dips under the final chime and fades out (Krish, 2 Nov: 'Surely, we would just lower the music and have the sprinkle over it').",
    "The swear is bleeped (Krish, 2 Nov). The bleep is the joke; the brand never swears.",
    "Every product reveal gets the same signature sound, a short warm chime, so the series is recognisable with eyes closed.",
    "Captions carry every spoken line, because most people watch muted. The joke must work with the sound off.",
-   "Under 30 seconds. The real product is on screen by second 20 and stays for at least 3 seconds, labelled Example."
+   "Under 30 seconds. The real product is on screen by second 20 and stays for at least 3 seconds, labelled Example.",
+   "The voice always sits on top: music stays well under any spoken line and swells only after it lands. Sound effects fade in, never slam (Krish, 2 Nov)."
   ]
  },
  "concepts": [
@@ -545,10 +546,10 @@
   "date": "2026-11-02",
   "locked": {
    "voices": {
-    "F02": "Heartside golden (ElevenLabs design 3)",
+    "F02": "Heartside golden, round 5 take 1 (locked)",
     "F03": "Heartside shepherd (ElevenLabs design 3)",
     "F04": "Heartside narrator (ElevenLabs design 1)",
-    "F05": "Heartside judge (American), directed theatrical: pick a take in round 5",
+    "F05": "Heartside judge (American), take 1 (locked)",
     "F07": "Heartside doodle (ElevenLabs design 1)",
     "F12": "Heartside chihuahua (ElevenLabs design 1)",
     "F01": "Heartside dachshund, take 1 in Mix B"
