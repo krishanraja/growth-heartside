@@ -3,6 +3,14 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-02: Humour retune. Krish on the wave-1 animatics: "The Dog's Christmas Shopping List needs a
+  rescript, its just not funny. The others need a lot more humour about them." He picked all four comic
+  modes (absurd escalation, meme-text, slapstick, deadpan) at "Cheeky, still giftable": "We'll need all
+  different types of assets if we intend to flood socials, and we'll need to tune the humour". F01, F02
+  and F04 are rewritten in all four modes (`docs/briefs/2026-11-02-humour-rescripts.json`), each with a
+  joke map and a laugh every 3 to 4 seconds, on a private humour board. Nothing is spent until he picks.
+  No job file or `automations.json` entry changed.
+
 - 2026-11-02: A Codex lane in this repository. Krish asked whether Codex is doing the asset production as
   designed, then chose "Add a lane to this repo" over queuing cards in heartside. `codex/README.md`
   mirrors heartside's lane (card, Control Center booking, branch `codex/<id>`, settle). Because this
