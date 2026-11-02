@@ -552,7 +552,7 @@
     "F05": "Heartside judge (American), take 1 (locked)",
     "F07": "Heartside doodle (ElevenLabs design 1)",
     "F12": "Heartside chihuahua (ElevenLabs design 1)",
-    "F01": "Heartside dachshund, take 1 in Mix B"
+    "F01": "Heartside dachshund, take 1, Mix B with the dip-and-fade ending (locked)"
    },
    "music": {
     "F01": "The Ingenious into the Fool Me Twice crescendo (mix B, approved)",
@@ -798,5 +798,25 @@
    }
   }
  },
- "chat_mock_rule": "Ruling (Krish, 2026-11-02): inside an on-screen chat mock only, emojis and 'WTF' are allowed as the dogs' own texting. Captions, voiceover and gift lines keep every voice rule."
+ "chat_mock_rule": "Ruling (Krish, 2026-11-02): inside an on-screen chat mock only, emojis and 'WTF' are allowed as the dogs' own texting. Captions, voiceover and gift lines keep every voice rule.",
+ "recast": {
+  "ruling": "Krish, 2026-11-02: recast to breeds with approved renders",
+  "F04": {
+   "breed": "golden retriever",
+   "ends_on": "golden blanket (live store render golden-hilarious-blanket)"
+  },
+  "F05": {
+   "breed": "french bulldog",
+   "ends_on": "frenchie blanket (live store render frenchie-warm-blanket)"
+  },
+  "F12": {
+   "breed": "french bulldog",
+   "ends_on": "frenchie portrait (live store render frenchie-hilarious-portrait)"
+  }
+ },
+ "wave1_pictures": {
+  "stills": "30 Higgsfield GPT Image 2.5 stills (high, 2k), 2 per beat, each made from the live store's own render of that dog so the photographed dog matches the painted one; 82.5 credits, reserved and settled",
+  "animatics": "F01, F02, F04 cut to the locked sound, captions burned in, ending on the unaltered store render labelled Example; built in this session with ffmpeg as direction-stage storyboards",
+  "codex": "heartside's Codex lane (codex/queue) does not cover this repository yet; final builds wait on Krish's call"
+ }
 }
