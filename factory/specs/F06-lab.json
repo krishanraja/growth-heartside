@@ -5,12 +5,12 @@
  "render": "mug-real-lab.jpg",
  "title": "F06.title",
  "lines": [
-  "F06.la1",
-  "F06.la2",
-  "F06.la3"
+  "F06.kla1",
+  "F06.kla2",
+  "F06.kla3"
  ],
- "music": "m_quirk_brat.mp3",
- "music_level": 0.5,
+ "music": "m_roast_boss.mp3",
+ "music_level": 0.4,
  "durs": [
   2.2,
   2.8,
@@ -18,8 +18,6 @@
   3.2,
   4.5
  ],
- "end": {
-  "super": "F06.end"
- },
+ "end": {},
  "variant_of": "F06-frenchie"
 }

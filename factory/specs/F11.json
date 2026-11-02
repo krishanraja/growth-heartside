@@ -7,36 +7,41 @@
  "queries": [
   {
    "line": "F11.q1",
-   "hold": 1.4
+   "hold": 2.0,
+   "result": "F11.r1"
   },
   {
    "line": "F11.q2",
    "result": "F11.r2",
-   "hold": 1.9
+   "hold": 2.0
   },
   {
    "line": "F11.q3",
-   "hold": 1.7
+   "hold": 2.0,
+   "result": "F11.r3"
   },
   {
    "line": "F11.q4",
-   "hold": 1.6
+   "hold": 2.0,
+   "result": "F11.r4"
   },
   {
    "line": "F11.q5",
-   "hold": 1.5
+   "hold": 2.0,
+   "result": "F11.r5"
   },
   {
    "line": "F11.q6",
-   "hold": 1.6
+   "hold": 2.0,
+   "result": "F11.r6"
   },
   {
-   "line": "F11.q7"
+   "line": "F11.q7",
+   "result": "F11.r7"
   }
  ],
  "end_render": "mug-real-dachshund.jpg",
  "end": {
-  "super": "F11.r7",
   "hold": 5.0
  }
 }

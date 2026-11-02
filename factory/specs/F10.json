@@ -17,6 +17,11 @@
    "line": "F10.c01"
   },
   {
+   "who": "B",
+   "line": "F10.c24",
+   "dur": 0.9
+  },
+  {
    "who": "A",
    "dur": 1.1,
    "line": "F10.c02"
@@ -25,6 +30,11 @@
    "who": "A",
    "dur": 1.6,
    "line": "F10.c03"
+  },
+  {
+   "who": "C",
+   "line": "F10.c25",
+   "dur": 1.1
   },
   {
    "who": "B",
@@ -135,7 +145,6 @@
    "mug-real-frenchie.jpg",
    "mug-real-dachshund.jpg"
   ],
-  "super": "F10.end",
   "hold": 4.5
  }
 }

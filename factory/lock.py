@@ -216,9 +216,9 @@ def check(spec, quiet=False):
 
 # ---------------------------------------------------------------- media gates
 def probe(mp4):
-    j = json.loads(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'stream=codec_type,width,height:format=duration', '-of', 'json', mp4], capture_output=True, text=True).stdout)
+    j = json.loads(subprocess.run(['ffprobe', '-v', 'error', '-show_entries', 'stream=codec_type,width,height,duration:format=duration', '-of', 'json', mp4], capture_output=True, text=True).stdout)
     v = next(s for s in j['streams'] if s['codec_type'] == 'video'); a = [s for s in j['streams'] if s['codec_type'] == 'audio']
-    return v['width'], v['height'], float(j['format']['duration']), bool(a)
+    return v['width'], v['height'], float(v.get('duration') or j['format']['duration']), bool(a)
 
 
 def media(spec, mp4):
@@ -230,28 +230,38 @@ def media(spec, mp4):
     out = subprocess.run(['ffmpeg', '-i', mp4, '-af', 'ebur128', '-f', 'null', '-'], capture_output=True, text=True).stderr
     m = re.findall(r'I:\s+(-?[\d.]+) LUFS', out)
     if m and not -18 <= float(m[-1]) <= -13: probs.append(f'loudness {m[-1]} LUFS (want -18 to -13)')
-    # the post must end on the product card, held at least 3 seconds
+    # the post must end on the product, on screen for at least the last 3 seconds (it may move)
     end_png = spec.get('_end_png') or f"{OUT}/{spec['id']}/end.png"
     if end_png and os.path.exists(end_png):
         import numpy as np
         from PIL import Image
         ref = np.asarray(Image.open(end_png).convert('L').resize((108, 192)), dtype=float)
-        for back in (0.2, 3.0):
+
+        def grab(back):
             raw = subprocess.run(['ffmpeg', '-v', 'error', '-ss', f'{max(dur - back, 0):.2f}', '-i', mp4, '-frames:v', '1', '-vf', 'scale=108:192,format=gray', '-f', 'rawvideo', '-'], capture_output=True).stdout
             fr = np.frombuffer(raw, np.uint8).astype(float)
-            if fr.size != ref.size or abs(fr.reshape(ref.shape) - ref).mean() > 12:
-                probs.append(f'the frame {back}s from the end is not the product end card'); break
+            return fr.reshape(ref.shape) if fr.size == ref.size else None
+        last, earlier = grab(0.1), grab(3.0)
+        if last is None or abs(last - ref).mean() > 12:
+            probs.append('the last frame is not the product ending')
+        elif earlier is None or abs(earlier - last).mean() > 25:
+            probs.append('the product is on screen for less than the last 3 seconds')
     return probs
 
 
 # ---------------------------------------------------------------- review brief
 STANDING = [  # each one was caught by a reviewer on 2 Nov 2026; add new catches here
     'one setting and one cast across the post: no shot that jumps to another place or adds a human where the joke has none',
-    'no AI-drawn product: no mug, blanket, portrait or card with lettering or a dog painting except the real render labelled EXAMPLE',
+    'no AI-drawn product: no mug, blanket, portrait or card with lettering or a dog painting except the real store render',
+    'organic, not an ad: no slogan, URL, price or call to action on screen (a link preview inside a chat may show its domain); links go in the caption',
+    'no badge or label on the product (Krish, 2 Nov: never EXAMPLE badges)',
+    'no line of text ends with one word alone on its last line',
+    'a search bar stays one line and never grows; long searches scroll out of view at the start',
+    'a moving product keeps its painting intact: no warping, smearing or redrawn design',
     'no plain blanket or mug in a generated frame that could pass for the product without its design',
     'no chestnut or red dachshund in a generated frame (it can read as Buddy, and no Buddy image is approved)',
     'no stray marks that read as glitches or threats (laser dots, warped text, extra limbs)',
-    'avatars and crops show a dog face; captions never cover the key visual or the EXAMPLE label',
+    'avatars and crops show a dog face; captions never cover the key visual or the product',
     'every emoji, prop and picture matches the word it sits next to',
     'legible text in a generated frame (signs, notes, labels) must agree with the script, or be unreadable',
 ]
@@ -276,7 +286,8 @@ def brief(spec):
     elif t == 'film':
         out.append(f"The dog is a {spec['breed']}.")
         out += [f"- picture: {s.get('picture', s.get('frame') or 'real render ' + s.get('render', ''))} / line: {resolve(s['line'], spec) if s.get('line') else '(none)'}" for s in spec['shots']]
-    out.append(f"- ends on: {', '.join(spec['end'].get('renders', [spec.get('end_render', spec.get('render'))]))} with \"{resolve(spec['end']['super'], spec)}\"")
+    ends = spec['end'].get('renders', [spec.get('end_render', spec.get('render'))])
+    out.append(f"- ends on: {', '.join(ends)}, moving, with no text" + (f' (answer above it: "{resolve(spec["queries"][-1]["result"], spec)}")' if spec.get('queries') and spec['queries'][-1].get('result') else ''))
     return '\n'.join(out)
 
 

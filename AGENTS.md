@@ -131,8 +131,10 @@ address of Krish's in anything.
    date appears only once Krish has confirmed it for that product.
 4. **The product on screen is always the real design.** AI may make dogs and
    rooms. It never draws the product and never shows AI "customers" holding
-   or reviewing it. Product images are the live store's own renders, each
-   labeled Example, with an example dog that is never a customer's, or
+   or reviewing it. Product images are the live store's own renders, pixels
+   unaltered (they may move: scale, sway, push-in), never presented as a
+   customer's dog and carrying no badge or label (Krish, 2 Nov: "We never
+   need EXAMPLE badges anywhere"), or
    heartside's breed examples made from its own brief, where a product body
    may be generated but the painting is composited unchanged. One hero concept
    may morph a realistic AI dog into the real artwork, ending on the real

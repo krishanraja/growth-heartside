@@ -498,8 +498,9 @@
     "dachshund",
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
   },
   {
    "id": "F06.da2",
@@ -509,8 +510,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
   },
   {
    "id": "F06.da3",
@@ -520,8 +522,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
   },
   {
    "id": "F06.la1",
@@ -534,8 +537,9 @@
     "doodle",
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
   },
   {
    "id": "F06.la2",
@@ -545,8 +549,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
   },
   {
    "id": "F06.la3",
@@ -556,8 +561,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
   },
   {
    "id": "F07.v1",
@@ -902,9 +908,257 @@
    "breeds": [
     "any"
    ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's wording, now a caption (CAP.painted)"
+  },
+  {
+   "id": "F06.kda1",
+   "text": "You bought me stairs for the couch. I use them to fart on your pillow. Soz",
+   "role": "roast.1",
+   "kind": "gift",
+   "breeds": [
+    "dachshund",
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "note": "\"Soz\" is UK slang; the buyers are in the US. Krish to confirm.",
+   "text_sha256": "085bc4abd192d43de72e51ab27e390215f010253bd12051178a816af9dc48a09"
+  },
+  {
+   "id": "F06.kda2",
+   "text": "Who walks who here? Pretty sure I know the answer.",
+   "role": "roast.2",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "text_sha256": "543b6ee7a9782dd099554bccbbf984dca640bd767992fde40dd4e1e0bab6d763"
+  },
+  {
+   "id": "F06.kda3",
+   "text": "Proud to guard my wuss of an owner.",
+   "role": "roast.soft",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "note": "teases character, where heartside allows habits: Krish to confirm",
+   "text_sha256": "ec5a7a67e85f4c39688feddadc2b6bc4101328910a9795f8387bfa7e0294c304"
+  },
+  {
+   "id": "F06.kla1",
+   "text": "Come on, you can throw better than that.",
+   "role": "roast.1",
+   "kind": "gift",
+   "breeds": [
+    "lab",
+    "golden",
+    "doodle",
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "text_sha256": "5ac1ad4a7a847187724d59fb1b76421bbda6e4ef2fe96e59dd8cd3399318f49a"
+  },
+  {
+   "id": "F06.kla2",
+   "text": "I know where the treats are FYI - top right cupboard.",
+   "role": "roast.2",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "text_sha256": "4cc6be0e1ec50681deef56d8bf128a5d81369a0d24740426c2b00b093eaf4114"
+  },
+  {
+   "id": "F06.kla3",
+   "text": "You are my favorite human, that I spend time with every day, and isn't the mailman.",
+   "role": "roast.soft",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "note": "his words with \"favourite\" changed to US \"favorite\" (canon: US spelling)",
+   "text_sha256": "c9d0d356a27773cbf6e14da355139c333ee980a41e488800853eba343abad6d5"
+  },
+  {
+   "id": "F10.c24",
+   "text": "bro",
+   "role": "chat.react_bro",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "text_sha256": "ff3727276784ada3f6d609a19ed541d9e888759559d81a4045e3c790aa40f276"
+  },
+  {
+   "id": "F10.c25",
+   "text": "5th year running",
+   "role": "chat.react_tradition",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "text_sha256": "601adca94c2fbe8fe5ec0146660206b0759c42d56a023e35545c3a1207ce249d"
+  },
+  {
+   "id": "F10.c26",
+   "text": "is it the same stick",
+   "role": "chat.react_extra",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
    "status": "proposed",
    "source": "proposed by the engine, 2026-11-02",
-   "note": "claim: check against heartside canon before approving"
+   "note": "Krish asked for more witty replies"
+  },
+  {
+   "id": "F10.c27",
+   "text": "the stick has seen things",
+   "role": "chat.react_extra",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "Krish asked for more witty replies"
+  },
+  {
+   "id": "F11.r1",
+   "text": "sit on their foot (works every time)",
+   "role": "search.r1",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "answer for the search; Krish picks one"
+  },
+  {
+   "id": "F11.r1b",
+   "text": "lean on them until they fall over",
+   "role": "search.r1",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "answer for the search; Krish picks one"
+  },
+  {
+   "id": "F11.r3",
+   "text": "they knew (they always know)",
+   "role": "search.r3",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "answer for the search; Krish picks one"
+  },
+  {
+   "id": "F11.r3b",
+   "text": "rude",
+   "role": "search.r3",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "answer for the search; Krish picks one"
+  },
+  {
+   "id": "F11.r4b",
+   "text": "yes (run)",
+   "role": "search.r4",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "answer for the search; Krish picks one"
+  },
+  {
+   "id": "F11.r5",
+   "text": "only with a very good sit",
+   "role": "search.r5",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "answer for the search; Krish picks one"
+  },
+  {
+   "id": "F11.r5b",
+   "text": "try the eyes",
+   "role": "search.r5",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "answer for the search; Krish picks one"
+  },
+  {
+   "id": "F11.r6",
+   "text": "0 results",
+   "role": "search.r6",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "answer for the search; Krish picks one"
+  },
+  {
+   "id": "F11.r6b",
+   "text": "you can't (and that's okay)",
+   "role": "search.r6",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "answer for the search; Krish picks one"
+  },
+  {
+   "id": "CAP.painted",
+   "text": "Painted lovingly in your style of choice using our next-generation AI artists.",
+   "role": "caption.how",
+   "kind": "caption",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "note": "a caption line, never on screen",
+   "text_sha256": "446f86da120e7de735137e9198afe3d861dae5a951f69fb61361c32a26d502d4"
   }
  ]
 }

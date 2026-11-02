@@ -3,6 +3,22 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-02: Organic, not ads. Krish on the nine finished posts: "We never need "EXAMPLE" badges
+  anywhere, and the mugs should animate somewhat? "Your dog loves you too." isnt really needed on these
+  posts, they are not paid ads remember, they should come across like organic social posts." He also
+  ruled on wrapped text, the search bar and the roast music.
+  - Product images carry no badge (AGENTS.md rule 4). Heartside's canon tags examples on its own store
+    pages, and these posts never present a render as a customer's dog.
+  - No slogan, URL or call to action on screen. Endings are the real product, moving, and links go in
+    the caption.
+  - Text wraps evenly and never leaves one word on its last line ("the word ... sprawled onto a second
+    line ... looks shitty").
+  - The search bar never grows; long searches scroll out at the start. Every search gets a punchline
+    answer.
+  - The roasts move from Brat to "Who's the Boss Now".
+  - His board rewrites are in the joke bank in his words. Only "favourite" changed, to US "favorite".
+  - No job file or `automations.json` entry changed.
+
 - 2026-11-02: The lock system. Krish: "We need to figure out a way of making this reliable so that we
   don't get drift and we don't get weird humor and things that don't make sense once stuff is locked in.
   After that, I can trust the system to autonomously drive growth." Then: "yes, build the lock system,

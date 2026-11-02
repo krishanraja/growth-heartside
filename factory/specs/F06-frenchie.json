@@ -9,8 +9,8 @@
   "F06.fr2",
   "F06.fr3"
  ],
- "music": "m_quirk_brat.mp3",
- "music_level": 0.5,
+ "music": "m_roast_boss.mp3",
+ "music_level": 0.4,
  "durs": [
   2.2,
   2.8,
@@ -18,7 +18,5 @@
   3.2,
   4.5
  ],
- "end": {
-  "super": "F06.end"
- }
+ "end": {}
 }

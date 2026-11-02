@@ -5,8 +5,9 @@ HEARTSIDE_ASSETS at a folder holding renders/ (the live store's renders), frames
 (generated key frames), audio/ (licensed music, SFX and voice reads) and fonts/
 (Fraunces, Karla, Courier Prime, all OFL). It defaults to local/assets/library.
 """
-import os, re, subprocess, textwrap
-from PIL import Image, ImageDraw, ImageFont
+import itertools, math, os, re, subprocess, textwrap
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from textfit import EMOJI_RE, runs, text_width, wrap_rich, balanced_wrap, lone_word
 
 LIB = os.path.abspath(os.environ.get('HEARTSIDE_ASSETS', os.path.join(os.path.dirname(__file__), '..', 'local', 'assets', 'library')))
 OUTDIR = os.path.abspath(os.environ.get('HEARTSIDE_OUT', os.path.join(os.path.dirname(__file__), '..', 'local', 'media', 'factory')))
@@ -15,7 +16,6 @@ W, H = 1080, 1920
 CREAM, INK, STAMP, PAPER = (246, 241, 231), (36, 32, 27), (184, 50, 42), (255, 253, 248)
 F = lambda f, s: ImageFont.truetype(f'{A}/{f}', s)
 EMO = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf', 109)
-EMOJI_RE = re.compile('([\U0001F300-\U0001FAFF☀-➿☕])')
 
 
 def bold(f, wght):
@@ -46,20 +46,6 @@ def emoji_img(ch, size):
     return im.resize((max(1, round(im.width * r)), size), Image.LANCZOS)
 
 
-def runs(text):
-    return [p for p in EMOJI_RE.split(text) if p]
-
-
-def text_width(d, text, font, size):
-    w = 0
-    for p in runs(text):
-        if EMOJI_RE.fullmatch(p):
-            w += size + 6
-        else:
-            w += d.textlength(p, font=font)
-    return w
-
-
 def draw_rich(im, xy, text, font, size, fill):
     d = ImageDraw.Draw(im)
     x, y = xy
@@ -73,18 +59,6 @@ def draw_rich(im, xy, text, font, size, fill):
             x += d.textlength(p, font=font)
 
 
-def wrap_rich(d, text, font, size, maxw):
-    words, lines, cur = text.split(' '), [], ''
-    for w in words:
-        t = (cur + ' ' + w).strip()
-        if text_width(d, t, font, size) <= maxw:
-            cur = t
-        else:
-            lines.append(cur); cur = w
-    lines.append(cur)
-    return lines
-
-
 def avatar(render, center, r=130, size=88):
     im = Image.open(f'{R}/{render}').convert('RGB')
     cx, cy = center
@@ -95,36 +69,94 @@ def avatar(render, center, r=130, size=88):
     return out
 
 
-def product_card(renders, super_text, sub=None):
-    """The real store renders, untouched, each labelled Example, on cream."""
-    im = Image.new('RGB', (W, H), CREAM)
-    d = ImageDraw.Draw(im, 'RGBA')
-    lines = textwrap.wrap(super_text, 18)
-    for i, l in enumerate(lines):
-        tw = d.textlength(l, font=SUPER); d.text(((W - tw) / 2, 180 + i * 98), l, font=SUPER, fill=INK)
-    top = 200 + 98 * len(lines) + 40
-    n = len(renders)
+def _ease_back(p):
+    c1 = 1.70158; c3 = c1 + 1
+    return 1 + c3 * (p - 1) ** 3 + c1 * (p - 1) ** 2
+
+
+def _layout(n, box):
+    x0, y0, x1, y1 = box
     if n == 1:
-        boxes = [(70, top, W - 70, 1700)]
+        return [box]
+    cols = 2; rows = (n + 1) // 2; gap = 30
+    cw = (x1 - x0 - gap) // 2; ch = (y1 - y0 - gap * (rows - 1)) // rows
+    out = []
+    for i in range(n):
+        r, c = divmod(i, cols)
+        if n % 2 and i == n - 1:
+            out.append(((x0 + x1 - cw) // 2, y0 + r * (ch + gap), (x0 + x1 + cw) // 2, y0 + r * (ch + gap) + ch))
+        else:
+            out.append((x0 + c * (cw + gap), y0 + r * (ch + gap), x0 + c * (cw + gap) + cw, y0 + r * (ch + gap) + ch))
+    return out
+
+
+def _border_color(img):
+    import numpy as np
+    a = np.asarray(img.convert('RGB'), dtype=float); e = np.concatenate([a[:8].reshape(-1, 3), a[-8:].reshape(-1, 3), a[:, :8].reshape(-1, 3), a[:, -8:].reshape(-1, 3)])
+    return tuple(int(v) for v in np.median(e, axis=0))
+
+
+def _feather(size, r=36):
+    m = Image.new('L', size, 0); ImageDraw.Draw(m).rectangle((r, r, size[0] - r, size[1] - r), fill=255)
+    return m.filter(ImageFilter.GaussianBlur(r / 2))
+
+
+def product_clip(renders, out_mp4, dur, bg=None, box=(60, 160, W - 60, 1760), overlay=None, end_png=None, fps=30):
+    """The real store renders, pixels untouched, moving like a phone video. A scene render
+    (portrait, blanket) fills the frame with a slow push-in. A mug sits on its own backdrop colour
+    with feathered edges, drops in with a small settle, then floats and sways while the camera
+    pushes in. No badge, no text (Krish, 2 Nov: organic posts; the mugs should animate).
+    `overlay(img, t)` may draw a caption."""
+    imgs = [Image.open(f'{R}/{p}').convert('RGB') for p in renders]
+    scene = len(renders) == 1 and 'mug' not in renders[0] and bg is None
+    n = round(dur * fps)
+    proc = subprocess.Popen(['ffmpeg', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', f'{W}x{H}', '-r', str(fps), '-i', '-',
+                             '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', '-pix_fmt', 'yuv420p', out_mp4],
+                            stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if scene:
+        src = imgs[0]; r0 = max(W / src.width, H / src.height)
+        back = src.resize((round(src.width * r0), round(src.height * r0)), Image.BICUBIC)
+        bx, by = (back.width - W) // 2, (back.height - H) // 2
+        back = back.crop((bx, by, bx + W, by + H)).filter(ImageFilter.GaussianBlur(28))
+        back = Image.blend(back, Image.new('RGB', (W, H), (20, 18, 15)), 0.25)
+        fit = min((W - 60) / src.width, 1500 / src.height)
     else:
-        boxes = []
-        cols = 2; cw = (W - 70 * 2 - 30) // 2; ch = (1700 - top - 30 * ((n + 1) // 2 - 1)) // ((n + 1) // 2)
-        for i in range(n):
-            r, c = divmod(i, cols)
-            if n % 2 and i == n - 1:
-                boxes.append(((W - cw) // 2, top + r * (ch + 30), (W + cw) // 2, top + r * (ch + 30) + ch))
-            else:
-                boxes.append((70 + c * (cw + 30), top + r * (ch + 30), 70 + c * (cw + 30) + cw, top + r * (ch + 30) + ch))
-    for path, (x0, y0, x1, y1) in zip(renders, boxes):
-        p = Image.open(f'{R}/{path}').convert('RGB'); p.thumbnail((x1 - x0, y1 - y0), Image.LANCZOS)
-        px, py = x0 + (x1 - x0 - p.width) // 2, y0 + (y1 - y0 - p.height) // 2
-        im.paste(p, (px, py))
-        d.rounded_rectangle((px + 16, py + 16, px + 180, py + 66), 8, fill=(20, 18, 15, 190))
-        d.text((px + 32, py + 22), 'EXAMPLE', font=SMALL, fill=(255, 255, 255))
-    if sub:
-        tw = d.textlength(sub, font=SMALL); d.text(((W - tw) / 2, 1740), sub, font=SMALL, fill=INK)
-    tw = d.textlength('heartside.io', font=SMALL); d.text(((W - tw) / 2, 1800), 'heartside.io', font=SMALL, fill=STAMP)
-    return im
+        cols = [_border_color(i) for i in imgs]
+        tone = tuple(sum(c[k] for c in cols) // len(cols) for k in range(3))
+        if bg is not None:   # inside a UI (a search result): the product sits in its own card
+            base = bg.copy(); ImageDraw.Draw(base).rounded_rectangle(box, 30, fill=tone)
+        else:
+            base = Image.new('RGB', (W, H), tone)
+        items = []
+        for img, (x0, y0, x1, y1) in zip(imgs, _layout(len(imgs), box)):
+            p = img.copy(); p.thumbnail((int((x1 - x0) * 0.98), int((y1 - y0) * 0.98)), Image.LANCZOS)
+            p = p.convert('RGBA'); p.putalpha(_feather(p.size, max(12, p.width // 14)))
+            items.append((p, ((x0 + x1) // 2, (y0 + y1) // 2)))
+    last = None
+    for f in range(n):
+        t = f / fps
+        if scene:
+            p = min(t / 0.5, 1); s = fit * (0.94 + 0.06 * _ease_back(p)) * (1.0 + 0.05 * t / max(dur, 0.1))
+            im = src.resize((round(src.width * s), round(src.height * s)), Image.BICUBIC)
+            frame = back.copy(); frame.paste(im, ((W - im.width) // 2, (H - im.height) // 2 - 60))
+        else:
+            frame = base.copy(); push = 1 + 0.035 * t / max(dur, 0.1)
+            for i, (img, (cx, cy)) in enumerate(items):
+                p = min(max((t - i * 0.14) / 0.6, 0), 1)
+                if p <= 0:
+                    continue
+                s = (0.82 + 0.18 * _ease_back(p)) * push
+                ang = 1.4 * math.sin(2 * math.pi * t / 3.2 + i) * p
+                dy = (1 - _ease_back(p)) * 260 + 7 * math.sin(2 * math.pi * t / 2.6 + i) * p
+                im = img.resize((max(1, int(img.width * s)), max(1, int(img.height * s))), Image.BICUBIC).rotate(ang, Image.BICUBIC, expand=True)
+                frame.paste(im, (int(cx - im.width / 2), int(cy - im.height / 2 + dy)), im)
+        if overlay:
+            frame = overlay(frame, t)
+        proc.stdin.write(frame.convert('RGB').tobytes()); last = frame
+    proc.stdin.close(); proc.wait()
+    if end_png:
+        last.save(end_png)
+    return out_mp4
 
 
 def run(cmd):
