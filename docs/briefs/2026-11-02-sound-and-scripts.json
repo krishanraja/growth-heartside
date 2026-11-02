@@ -548,14 +548,14 @@
     "F02": "Heartside golden (ElevenLabs design 3)",
     "F03": "Heartside shepherd (ElevenLabs design 3)",
     "F04": "Heartside narrator (ElevenLabs design 1)",
-    "F05": "Heartside narrator as the judge",
+    "F05": "American judge (round 4 pick pending)",
     "F07": "Heartside doodle (ElevenLabs design 1)",
     "F12": "Heartside chihuahua (ElevenLabs design 1)",
-    "F01": "redesign in progress"
+    "F01": "Heartside dachshund (round 3 option 3), directed miffed then gleeful"
    },
    "music": {
-    "F01": "The Ingenious, with a crescendo from Fool Me Twice if it has none",
-    "F02": "Bug-A-Boo",
+    "F01": "The Ingenious into the Fool Me Twice crescendo (mix B, approved)",
+    "F02": "pending: Bug-A-Boo rejected in round 3",
     "F03": "Young Mystery Detectives",
     "F04": "The Call of the Wild",
     "F05": "Estimations",
@@ -617,13 +617,13 @@
    },
    "F02": {
     "title": "The Dog's Christmas Shopping List",
-    "change": "The searches are now the heart of the film: six escalating searches, each with its own joke, about 15 seconds.",
+    "change": "The searches are now the heart of the film: six escalating searches, each with its own joke, about 15 seconds. Round 3: adds the line where the golden realizes it has to get its human something (Krish, 2 Nov).",
     "beats": [
      {
-      "t": "0-3s",
+      "t": "0-5s",
       "picture": "2:14 am. A golden retriever lit by a laptop, paw on the trackpad, very focused.",
       "on_screen": "",
-      "vo": "Okay. My human said they want nothing for Christmas."
+      "vo": "Okay. My human said they want nothing for Christmas. But everyone else is getting them something. I have no money and no thumbs, so I'm going to have to figure this out myself."
      },
      {
       "t": "3-5s",
@@ -707,40 +707,46 @@
    },
    "F10": {
     "title": "The Dogs' Group Chat",
-    "change": "Each breed pushed to full caricature: the literal lab, the deadpan shepherd, the beagle who ate the gift, the dramatic frenchie.",
+    "change": "Krish's jokes built in (2 Nov): LOL replies to the stick, emojis inside the chat, a beagle who cannot spell, the ham, and the frenchie's line followed by WTF and 'no I meant licking'. Emojis and WTF appear only inside the on-screen chat, never in captions (his ruling).",
     "beats": [
      {
       "t": "Frame 1",
       "picture": "Chat titled 'Gifts for our humans'. Caricature avatars in Heartside's painted style.",
-      "on_screen": "Lab: I'm giving mine a stick.  /  Lab: A really good stick.  /  Lab: I've been saving it since August.",
-      "vo": "Message pops over the quirky bed (Bug-A-Boo)."
+      "on_screen": "Lab: I'm giving mine a stick 🦴  /  Lab: A really good stick.  /  Lab: I've been saving it since August.",
+      "vo": "Message pops over the music."
      },
      {
       "t": "Frame 2",
       "picture": "",
-      "on_screen": "Shepherd: You gave a stick last year.  /  Lab: And they LOVED it.  /  Shepherd: They threw it away.",
-      "vo": "A sad trombone sting."
+      "on_screen": "Shepherd: LOL  /  Frenchie: 😂😂 a REALLY good stick  /  Beagle: lol the gud stik",
+      "vo": "Laugh-track pops."
      },
      {
       "t": "Frame 3",
       "picture": "",
-      "on_screen": "Beagle: I already got mine a gift.  /  Beagle: Then I ate it.  /  Beagle: It was a ham.",
-      "vo": "A crunch sound effect."
+      "on_screen": "Shepherd: You gave a stick last year.  /  Lab: And they LOVED it.  /  Shepherd: They threw it away.  /  Lab: and then they THREW IT AGAIN 🥹",
+      "vo": "A sad trombone sting."
      },
      {
       "t": "Frame 4",
       "picture": "",
-      "on_screen": "Frenchie: I'm giving mine my presence, every five minutes, all night, on their face.",
-      "vo": ""
+      "on_screen": "Beagle: i got my humin a gift  /  Beagle: then i ate my humin's gift  /  Beagle: shuldnt hav got him a ham 🍖",
+      "vo": "A crunch sound effect."
      },
      {
       "t": "Frame 5",
-      "picture": "The beagle shares a heartside.io link: its own portrait.",
-      "on_screen": "Lab: wait  /  Shepherd: wait  /  Lab: CAN I BE A MUG",
-      "vo": "Record scratch."
+      "picture": "",
+      "on_screen": "Frenchie: I'm giving mine my presence, every five minutes, all night, on their face.  /  Shepherd: WTF  /  Lab: WTF 😳  /  Frenchie: no I meant licking 👅  /  Shepherd: still WTF",
+      "vo": "Record scratch on the first WTF."
      },
      {
       "t": "Frame 6",
+      "picture": "The beagle shares a heartside.io link: its own portrait.",
+      "on_screen": "Lab: wait  /  Shepherd: wait  /  Lab: CAN I BE A MUG ☕",
+      "vo": "Music stops dead."
+     },
+     {
+      "t": "Frame 7",
       "picture": "The three real gifts, Example label.",
       "on_screen": "Shepherd: Ordering for the whole pack.",
       "vo": "The Heartside chime."
@@ -796,5 +802,6 @@
     ]
    }
   }
- }
+ },
+ "chat_mock_rule": "Ruling (Krish, 2026-11-02): inside an on-screen chat mock only, emojis and 'WTF' are allowed as the dogs' own texting. Captions, voiceover and gift lines keep every voice rule."
 }

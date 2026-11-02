@@ -3,6 +3,16 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-02: Round 3 sound votes. F03, F04, F07, F11 and F12 are locked. F01 has its dachshund (option 3,
+  directed "a bit miffed at the start, but then hilariously and positively takes control", never angry)
+  and Mix B with the Fool Me Twice crescendo. F02 gets the line where the golden realizes it must get its
+  human something, and new music (Bug-A-Boo rejected). F05 gets an American judge ("Needs an American
+  accent."). F10 carries Krish's jokes. Ruling: inside an on-screen chat mock only, emojis and "WTF" are
+  allowed as the dogs' own texting, while captions, voiceover and gift lines keep every voice rule (his choice:
+  "Emojis yes, WTF as written"). ElevenLabs share: 10,287 of 20,000 booked; the earlier voice-design
+  bookings were estimates and look high against the provider balance. No job file or
+  `automations.json` entry changed.
+
 - 2026-11-02: Round 2 sound votes. Krish locked voices for F02, F03, F04, F07 and F12 (all
   ElevenLabs-designed; every Higgsfield preset rejected) and music for all 10 concepts. He sent the
   dachshund voice back ("more like a cartoon character", "more pissed off", "younger"), and sent back the
