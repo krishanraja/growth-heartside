@@ -3,6 +3,20 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-02: Ten concepts approved, and the sound comes first. Krish approved F01 to F07 (except
+  F08 and F09), F10, F11 and F12 on the idea board: "I've approved 10 concepts. I think that's enough to
+  get on with ... the audio treatment and the specifics of the humor execution are quite important to me."
+  - F01's swear is bleeped, never spoken (his choice of "Bleeped").
+  - The dog's inner voice is one voice per breed group (his choice).
+  - The narrator and the scores are original voices and licensed genre tracks, never a real person's
+    voice or a real film theme ("Yes, original in that register").
+  - Take heartside's new VOICE and DOG_VOICE into growth.py ("Yes, update it").
+  - Higgsfield: "Changed permissions for Higgsfield, so just carry on autonomously without asking each
+    time." Every spend is still reserved and settled against Heartside's share in Control Center.
+  - The funny bar is in `docs/briefs/2026-11-02-funny-bar.md`. Scripts and the sound bible are in
+    `docs/briefs/2026-11-02-sound-and-scripts.json`. He votes on the takes on a private sound board.
+  - No job file or `automations.json` entry changed.
+
 - 2026-11-01: The creative platform and a round of 48 ideas. Krish: "lets kick off aggressive content
   production, i want to nail down a creative direction that can overarch various executional ideas".
   - Platform approved: "Your dog loves you too. Here's the proof." Every post shows a true act of dog
