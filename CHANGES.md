@@ -3,6 +3,14 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-02: ElevenLabs share unlocked for Heartside ("elevenlabs share is unlocked fyi, do you need it?",
+  then "I set all connector use to always approve"). It funds a voice designed for each recurring
+  character: 3 previews each for the narrator, dachshund, golden retriever, shepherd, doodle and
+  chihuahua. About 3,700 of the 20,000-character share was used, reserved and settled in Control Center.
+  The designed voices sit beside the Higgsfield presets on the sound board, with an F01 sketch on the
+  designed dachshund. Directed reads, with delivery tags, wait for Krish's pick of each voice. Connector
+  approval changes no wall: posting, sending and new money still go through the go-live step.
+
 - 2026-11-02: Ten concepts approved, and the sound comes first. Krish approved F01 to F07 (except
   F08 and F09), F10, F11 and F12 on the idea board: "I've approved 10 concepts. I think that's enough to
   get on with ... the audio treatment and the specifics of the humor execution are quite important to me."
