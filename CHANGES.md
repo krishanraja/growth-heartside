@@ -3,6 +3,16 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-02: Round 2 sound votes. Krish locked voices for F02, F03, F04, F07 and F12 (all
+  ElevenLabs-designed; every Higgsfield preset rejected) and music for all 10 concepts. He sent the
+  dachshund voice back ("more like a cartoon character", "more pissed off", "younger"), and sent back the
+  F02, F05, F10 and F11 scripts for more exaggerated comedy and a clearer layout. F01's wink is the real
+  dog popping out of the steam, then a hard cut to the untouched mug (his choice: "Real dog winks, then
+  cut"). "Use all the ElevenLabs connectors without keeping on asking me." The round-3 board holds the
+  redesigned dachshund, two F01 mixes, the rewritten scripts and directed reads. ElevenLabs share used
+  so far: about 8,100 of 20,000 characters, every call reserved and settled. No job file or
+  `automations.json` entry changed.
+
 - 2026-11-02: ElevenLabs share unlocked for Heartside ("elevenlabs share is unlocked fyi, do you need it?",
   then "I set all connector use to always approve"). It funds a voice designed for each recurring
   character: 3 previews each for the narrator, dachshund, golden retriever, shepherd, doodle and

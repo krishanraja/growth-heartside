@@ -540,5 +540,261 @@
   "m_elegant_castle": "A Night at the Castle (Jon Algar), elegant small ensemble",
   "m_elegant_butterfly": "Butterfly Garden (Claude Signet), baroque elegant"
  },
- "voice_note": "ElevenLabs takes are voices designed for each character (one voice per breed group, Krish 2 Nov); the Higgsfield takes are preset voices. In the ElevenLabs F01 take the spoken word 'bleep' is replaced by a tone in the sketch."
+ "voice_note": "ElevenLabs takes are voices designed for each character (one voice per breed group, Krish 2 Nov); the Higgsfield takes are preset voices. In the ElevenLabs F01 take the spoken word 'bleep' is replaced by a tone in the sketch.",
+ "round3": {
+  "date": "2026-11-02",
+  "locked": {
+   "voices": {
+    "F02": "Heartside golden (ElevenLabs design 3)",
+    "F03": "Heartside shepherd (ElevenLabs design 3)",
+    "F04": "Heartside narrator (ElevenLabs design 1)",
+    "F05": "Heartside narrator as the judge",
+    "F07": "Heartside doodle (ElevenLabs design 1)",
+    "F12": "Heartside chihuahua (ElevenLabs design 1)",
+    "F01": "redesign in progress"
+   },
+   "music": {
+    "F01": "The Ingenious, with a crescendo from Fool Me Twice if it has none",
+    "F02": "Bug-A-Boo",
+    "F03": "Young Mystery Detectives",
+    "F04": "The Call of the Wild",
+    "F05": "Estimations",
+    "F06": "Brat",
+    "F07": "Butterfly Garden",
+    "F10": "Bug-A-Boo",
+    "F11": "Brat",
+    "F12": "Estimations"
+   }
+  },
+  "scripts": {
+   "F01": {
+    "title": "Becoming the Mug",
+    "change": "Adds Krish's wink: the real dog pops up and winks, then a hard cut to the untouched real mug.",
+    "beats": [
+     {
+      "t": "0-3s",
+      "picture": "Kitchen, morning. A person at the table (shoulders and hands only) scrolls a phone, a mug beside them. A dachshund at their feet, staring up, ignored.",
+      "on_screen": "",
+      "vo": "My human has looked at that phone for nine minutes, and at me for zero."
+     },
+     {
+      "t": "3-9s",
+      "picture": "Dog's-eye close-up: the mug lifted, the person smiling at it.",
+      "on_screen": "",
+      "vo": "Every morning, that mug gets the first smile of the day."
+     },
+     {
+      "t": "9-14s",
+      "picture": "Slow push in on the dachshund. Eyes narrow. It looks at the mug, then at the camera.",
+      "on_screen": "",
+      "vo": "Fine. If the mug gets the love, then I will become the mug."
+     },
+     {
+      "t": "14-18s",
+      "picture": "Low angle: it backs up, wiggles, takes a run-up across the kitchen floor.",
+      "on_screen": "",
+      "vo": "Oh, [BLEEP] it. I'm going in. (Music: The Ingenious builds into the crescendo.)"
+     },
+     {
+      "t": "18-20s",
+      "picture": "Slow-motion leap, ears flying, into a burst of steam. Splash cut.",
+      "on_screen": "",
+      "vo": "Music peaks and cuts dead on the splash."
+     },
+     {
+      "t": "20-22s",
+      "picture": "The real dachshund pops its head up out of the steam, looks straight at camera, and winks.",
+      "on_screen": "",
+      "vo": "A single comedy ding on the wink."
+     },
+     {
+      "t": "22-27s",
+      "picture": "Hard cut to the real mug render with the dachshund painting, untouched. Example label.",
+      "on_screen": "Your dog, in every morning.",
+      "vo": "The Heartside chime."
+     }
+    ]
+   },
+   "F02": {
+    "title": "The Dog's Christmas Shopping List",
+    "change": "The searches are now the heart of the film: six escalating searches, each with its own joke, about 15 seconds.",
+    "beats": [
+     {
+      "t": "0-3s",
+      "picture": "2:14 am. A golden retriever lit by a laptop, paw on the trackpad, very focused.",
+      "on_screen": "",
+      "vo": "Okay. My human said they want nothing for Christmas."
+     },
+     {
+      "t": "3-5s",
+      "picture": "A plain search bar types the search letter by letter. The result appears.",
+      "on_screen": "Search: what does nothing cost  /  Result: $0.00",
+      "vo": "Nothing is free. Amazing. This is going great."
+     },
+     {
+      "t": "5-8s",
+      "picture": "Result: a video thumbnail of a dog completely mummified in tape and wrapping paper.",
+      "on_screen": "Search: how to wrap a present with no thumbs",
+      "vo": "That's me. That is going to be me."
+     },
+     {
+      "t": "8-10s",
+      "picture": "Result: one word in huge type.",
+      "on_screen": "Search: is a tennis ball a good gift for a human  /  Result: No.",
+      "vo": "[gasps] The internet is being so rude tonight."
+     },
+     {
+      "t": "10-13s",
+      "picture": "The golden glances suspiciously at the phone charging on the desk.",
+      "on_screen": "Search: why does my human stare at a little glowing rectangle all day",
+      "vo": "It's the phone. I'm jealous of a phone."
+     },
+     {
+      "t": "13-16s",
+      "picture": "Result: a single polite line.",
+      "on_screen": "Search: can I give my human the stick I've been saving since August  /  Result: Please don't.",
+      "vo": "It's a really good stick, though."
+     },
+     {
+      "t": "16-19s",
+      "picture": "Final search. The real heartside.io page loads with the mug and a golden's painting. Example label.",
+      "on_screen": "Search: gift so my human thinks about me all day",
+      "vo": "Oh. Oh no. It's my face, on a mug, every single morning."
+     },
+     {
+      "t": "19-25s",
+      "picture": "The golden turns to camera, tail going, overjoyed.",
+      "on_screen": "This year, the dog's buying.",
+      "vo": "This is the best idea anyone has ever had, and the anyone was me. The Heartside chime."
+     }
+    ]
+   },
+   "F05": {
+    "title": "The Court of the Couch",
+    "change": "Rewritten with every spoken line and every on-screen line shown separately. The judge is the Heartside narrator's voice.",
+    "beats": [
+     {
+      "t": "0-3s",
+      "picture": "A tiny gavel bangs. A pug sits in a wooden dock, looking extremely innocent.",
+      "on_screen": "THE COURT OF THE COUCH",
+      "vo": "Judge: Order. Order in the living room."
+     },
+     {
+      "t": "3-8s",
+      "picture": "An easel with a photo of the pug asleep in the person's warm spot on the couch.",
+      "on_screen": "Exhibit A",
+      "vo": "Judge: The defendant is accused of stealing the human's spot on the couch, every single day."
+     },
+     {
+      "t": "8-12s",
+      "picture": "The pug slowly pushes a folded blanket across the floor with its nose.",
+      "on_screen": "The defense",
+      "vo": "Judge: Does the defense have anything to say for itself?"
+     },
+     {
+      "t": "12-15s",
+      "picture": "Close-up: the pug looks up with enormous eyes. A collective 'awww' from an unseen gallery.",
+      "on_screen": "",
+      "vo": "Judge: [sighs] Objection overruled by cuteness."
+     },
+     {
+      "t": "15-21s",
+      "picture": "The real blanket with a pug's painting, folded on the couch. Example label.",
+      "on_screen": "Guilty. And very cozy.",
+      "vo": "Judge: The court finds the defendant guilty, and very cozy. Case closed. Gavel, then the Heartside chime."
+     }
+    ]
+   },
+   "F10": {
+    "title": "The Dogs' Group Chat",
+    "change": "Each breed pushed to full caricature: the literal lab, the deadpan shepherd, the beagle who ate the gift, the dramatic frenchie.",
+    "beats": [
+     {
+      "t": "Frame 1",
+      "picture": "Chat titled 'Gifts for our humans'. Caricature avatars in Heartside's painted style.",
+      "on_screen": "Lab: I'm giving mine a stick.  /  Lab: A really good stick.  /  Lab: I've been saving it since August.",
+      "vo": "Message pops over the quirky bed (Bug-A-Boo)."
+     },
+     {
+      "t": "Frame 2",
+      "picture": "",
+      "on_screen": "Shepherd: You gave a stick last year.  /  Lab: And they LOVED it.  /  Shepherd: They threw it away.",
+      "vo": "A sad trombone sting."
+     },
+     {
+      "t": "Frame 3",
+      "picture": "",
+      "on_screen": "Beagle: I already got mine a gift.  /  Beagle: Then I ate it.  /  Beagle: It was a ham.",
+      "vo": "A crunch sound effect."
+     },
+     {
+      "t": "Frame 4",
+      "picture": "",
+      "on_screen": "Frenchie: I'm giving mine my presence, every five minutes, all night, on their face.",
+      "vo": ""
+     },
+     {
+      "t": "Frame 5",
+      "picture": "The beagle shares a heartside.io link: its own portrait.",
+      "on_screen": "Lab: wait  /  Shepherd: wait  /  Lab: CAN I BE A MUG",
+      "vo": "Record scratch."
+     },
+     {
+      "t": "Frame 6",
+      "picture": "The three real gifts, Example label.",
+      "on_screen": "Shepherd: Ordering for the whole pack.",
+      "vo": "The Heartside chime."
+     }
+    ]
+   },
+   "F11": {
+    "title": "The Dog's Search History",
+    "change": "Seven searches escalating from sweet to unhinged to the punchline, each with its own sting.",
+    "beats": [
+     {
+      "t": "Frame 1",
+      "picture": "A search bar types letter by letter.",
+      "on_screen": "how to say I love you without thumbs",
+      "vo": "Brat comedy bed, a key click per letter."
+     },
+     {
+      "t": "Frame 2",
+      "picture": "",
+      "on_screen": "how long is 5 minutes in dog time  /  Result: forever (approx.)",
+      "vo": "Sting."
+     },
+     {
+      "t": "Frame 3",
+      "picture": "",
+      "on_screen": "my human asked who's a good boy and didn't wait for an answer",
+      "vo": "Sting."
+     },
+     {
+      "t": "Frame 4",
+      "picture": "",
+      "on_screen": "is the vacuum dangerous yes or yes",
+      "vo": "Sting."
+     },
+     {
+      "t": "Frame 5",
+      "picture": "",
+      "on_screen": "can dogs buy things if they ask very politely",
+      "vo": "Sting."
+     },
+     {
+      "t": "Frame 6",
+      "picture": "",
+      "on_screen": "how to look humble when you're this handsome",
+      "vo": "Sting."
+     },
+     {
+      "t": "Frame 7",
+      "picture": "The result: the real mug with a dog's painting. Example label.",
+      "on_screen": "put my own face on a mug: weird or genius",
+      "vo": "Record scratch, then the Heartside chime."
+     }
+    ]
+   }
+  }
+ }
 }
