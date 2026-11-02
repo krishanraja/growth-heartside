@@ -1,0 +1,50 @@
+{
+ "id": "F03",
+ "title": "Operation Stocking",
+ "breed": "shepherd",
+ "voice": "vo_F03.mp3",
+ "music": "m_spy_young.mp3",
+ "music_level": 0.22,
+ "shots": [
+  {
+   "until": 4.4,
+   "frame": "f301.png",
+   "cap": "Listen up. At 0600 hours, the humans wake up."
+  },
+  {
+   "until": 7.2,
+   "frame": "f303.png",
+   "cap": "Before then, the gift goes under the tree."
+  },
+  {
+   "until": 10.7,
+   "frame": "f302.png",
+   "cap": "The beagle is on scent. The frenchie is lookout."
+  },
+  {
+   "until": 13.3,
+   "frame": "f305.png",
+   "cap": "And nobody touches the cookies."
+  },
+  {
+   "until": 16.3,
+   "frame": "f304.png",
+   "cap": "Questions? Good."
+  }
+ ],
+ "sfx": [
+  {
+   "at": 6.7,
+   "synth": "creak",
+   "vol": 0.8
+  }
+ ],
+ "end": {
+  "renders": [
+   "shepherd-hilarious-portrait.jpg"
+  ],
+  "super": "The dog's been planning this.",
+  "sub": "Painted from one photo of your dog.",
+  "hold": 4.2
+ }
+}

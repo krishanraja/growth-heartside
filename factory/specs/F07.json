@@ -1,0 +1,43 @@
+{
+ "id": "F07",
+ "title": "The Art Critic",
+ "breed": "doodle",
+ "voice": "vo_F07.mp3",
+ "music": "m_elegant_butterfly.mp3",
+ "music_level": 0.22,
+ "shots": [
+  {
+   "until": 2.4,
+   "frame": "f701.png",
+   "cap": "Hmm."
+  },
+  {
+   "until": 6.6,
+   "frame": "f702.png",
+   "cap": "The brushwork is bold. The light is daring."
+  },
+  {
+   "until": 8.6,
+   "frame": "f703.png",
+   "cap": "And the subject is, frankly,"
+  },
+  {
+   "until": 12.0,
+   "render": "doodle-sentimental-portrait.jpg",
+   "cap": "the most handsome dog I have ever seen."
+  },
+  {
+   "until": 14.4,
+   "frame": "f704c.png",
+   "cap": "I'll allow it on your wall."
+  }
+ ],
+ "end": {
+  "renders": [
+   "doodle-sentimental-portrait.jpg"
+  ],
+  "super": "Your dog, on your wall.",
+  "sub": "Painted from one photo of your dog.",
+  "hold": 4.2
+ }
+}

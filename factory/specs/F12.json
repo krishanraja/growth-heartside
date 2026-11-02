@@ -1,0 +1,59 @@
+{
+ "id": "F12",
+ "title": "Head of Security",
+ "breed": "frenchie",
+ "voice": "vo_F12.mp3",
+ "music": "m_court_estim.mp3",
+ "music_level": 0.22,
+ "shots": [
+  {
+   "until": 2.0,
+   "frame": "f1201.png",
+   "cap": "Unidentified box on the porch."
+  },
+  {
+   "until": 3.9,
+   "frame": "f1203.png",
+   "cap": "Threat level: maximum."
+  },
+  {
+   "until": 7.3,
+   "frame": "f1202.png",
+   "cap": "Requesting backup. Backup is asleep on the couch."
+  },
+  {
+   "until": 8.3,
+   "frame": "f1203.png",
+   "cap": "Proceeding alone."
+  },
+  {
+   "until": 9.2,
+   "frame": "f1204.png"
+  },
+  {
+   "until": 11.3,
+   "render": "frenchie-hilarious-portrait.jpg",
+   "cap": "Oh. It's me."
+  },
+  {
+   "until": 14.3,
+   "frame": "f1205.png",
+   "cap": "Threat cleared. I look incredible."
+  }
+ ],
+ "sfx": [
+  {
+   "at": 9.05,
+   "file": "s_scratch.mp3",
+   "vol": 0.7
+  }
+ ],
+ "end": {
+  "renders": [
+   "frenchie-hilarious-portrait.jpg"
+  ],
+  "super": "Your dog loves you too.",
+  "sub": "Painted from one photo of your dog.",
+  "hold": 4.2
+ }
+}

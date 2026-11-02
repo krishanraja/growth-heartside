@@ -1,0 +1,79 @@
+{
+ "id": "F05",
+ "title": "The Court of the Couch",
+ "breed": "frenchie",
+ "voice": "vo_F05.mp3",
+ "music": "m_court_estim.mp3",
+ "music_level": 0.2,
+ "shots": [
+  {
+   "until": 3.3,
+   "frame": "f501.png",
+   "cap": "Order. ORDER in the living room."
+  },
+  {
+   "until": 7.4,
+   "frame": "f502.png",
+   "cap": "The defendant is accused of stealing the human's spot on the couch."
+  },
+  {
+   "until": 10.0,
+   "frame": "f501.png",
+   "cap": "Every single day."
+  },
+  {
+   "until": 13.3,
+   "frame": "f503.png",
+   "cap": "Does the defense have anything to say for itself?"
+  },
+  {
+   "until": 16.0,
+   "frame": "f505.png",
+   "cap": "Oh, look at that face."
+  },
+  {
+   "until": 17.1,
+   "frame": "f504.png"
+  },
+  {
+   "until": 20.3,
+   "frame": "f506.png",
+   "cap": "Objection overruled by cuteness."
+  },
+  {
+   "until": 24.9,
+   "render": "frenchie-warm-blanket.jpg",
+   "cap": "The court finds the defendant guilty, and very cozy."
+  }
+ ],
+ "sfx": [
+  {
+   "at": 0.05,
+   "synth": "gavel",
+   "vol": 0.9
+  },
+  {
+   "at": 0.95,
+   "synth": "gavel",
+   "vol": 0.9
+  },
+  {
+   "at": 19.6,
+   "synth": "gavel",
+   "vol": 0.9
+  },
+  {
+   "at": 25.2,
+   "synth": "gavel",
+   "vol": 0.9
+  }
+ ],
+ "end": {
+  "renders": [
+   "frenchie-warm-blanket.jpg"
+  ],
+  "super": "Guilty. And very cozy.",
+  "sub": "Case closed.",
+  "hold": 4.0
+ }
+}
