@@ -914,7 +914,7 @@
   },
   {
    "id": "F06.kda1",
-   "text": "You bought me stairs for the couch. I use them to fart on your pillow. Soz",
+   "text": "You bought me stairs for the couch. I use them to fart on your pillow. My bad.",
    "role": "roast.1",
    "kind": "gift",
    "breeds": [
@@ -922,9 +922,8 @@
     "frenchie"
    ],
    "status": "approved",
-   "source": "Krish, 2026-11-02 (board, his words)",
-   "note": "\"Soz\" is UK slang; the buyers are in the US. Krish to confirm.",
-   "text_sha256": "085bc4abd192d43de72e51ab27e390215f010253bd12051178a816af9dc48a09"
+   "source": "Krish, 2026-11-02 (board, his words; \"My bad.\" for \"Soz\" approved in chat: \"yes, use both\")",
+   "text_sha256": "27278f9233f3dfb17c2ffe748296f734c3f603bfb99f7de6dcc0346a48409e97"
   },
   {
    "id": "F06.kda2",
@@ -940,16 +939,15 @@
   },
   {
    "id": "F06.kda3",
-   "text": "Proud to guard my wuss of an owner.",
+   "text": "You jump at every noise, so I check them all for you.",
    "role": "roast.soft",
    "kind": "gift",
    "breeds": [
     "any"
    ],
    "status": "approved",
-   "source": "Krish, 2026-11-02 (board, his words)",
-   "note": "teases character, where heartside allows habits: Krish to confirm",
-   "text_sha256": "ec5a7a67e85f4c39688feddadc2b6bc4101328910a9795f8387bfa7e0294c304"
+   "source": "Krish, 2026-11-02 (approved in chat: \"yes, use both\")",
+   "text_sha256": "eea26fd5e007efdce0b514b788dcd247022807e48e42fa5d0f63ce95f828692b"
   },
   {
    "id": "F06.kla1",
