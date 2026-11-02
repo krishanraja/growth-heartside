@@ -1,6 +1,6 @@
 {
  "id": "F07",
- "title": "The Art Critic",
+ "template": "film",
  "breed": "doodle",
  "voice": "vo_F07.mp3",
  "music": "m_elegant_butterfly.mp3",
@@ -9,35 +9,39 @@
   {
    "until": 2.4,
    "frame": "f701.png",
-   "cap": "Hmm."
+   "line": "F07.v1",
+   "picture": "smug doodle in a turtleneck at a gallery"
   },
   {
    "until": 6.6,
    "frame": "f702.png",
-   "cap": "The brushwork is bold. The light is daring."
+   "line": "F07.v2",
+   "picture": "doodle sniffing the frame, wall label UNTITLED (VERY GOOD BOY)"
   },
   {
    "until": 8.6,
    "frame": "f703.png",
-   "cap": "And the subject is, frankly,"
+   "line": "F07.v3",
+   "picture": "doodle, paw on chin, dogs in berets in awe behind"
   },
   {
    "until": 12.0,
    "render": "doodle-sentimental-portrait.jpg",
-   "cap": "the most handsome dog I have ever seen."
+   "line": "F07.v4"
   },
   {
    "until": 14.4,
    "frame": "f704c.png",
-   "cap": "I'll allow it on your wall."
+   "line": "F07.v5",
+   "picture": "doodle turns to camera, slow smug blink"
   }
  ],
+ "sfx": [],
  "end": {
   "renders": [
    "doodle-sentimental-portrait.jpg"
   ],
-  "super": "Your dog, on your wall.",
-  "sub": "Painted from one photo of your dog.",
+  "super": "LEAD",
   "hold": 4.2
  }
 }

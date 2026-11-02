@@ -1,0 +1,141 @@
+{
+ "id": "F10",
+ "template": "chat",
+ "title": "F10.title",
+ "cast": {
+  "A": "lab",
+  "B": "shepherd",
+  "C": "frenchie",
+  "D": "dachshund"
+ },
+ "music": "m_sneak_bugaboo.mp3",
+ "music_level": 0.45,
+ "messages": [
+  {
+   "who": "A",
+   "dur": 1.5,
+   "line": "F10.c01"
+  },
+  {
+   "who": "A",
+   "dur": 1.1,
+   "line": "F10.c02"
+  },
+  {
+   "who": "A",
+   "dur": 1.6,
+   "line": "F10.c03"
+  },
+  {
+   "who": "B",
+   "dur": 0.8,
+   "line": "F10.c04"
+  },
+  {
+   "who": "C",
+   "dur": 1.1,
+   "line": "F10.c05"
+  },
+  {
+   "who": "D",
+   "dur": 1.4,
+   "line": "F10.c06"
+  },
+  {
+   "who": "B",
+   "dur": 1.3,
+   "line": "F10.c07"
+  },
+  {
+   "who": "A",
+   "dur": 1.1,
+   "line": "F10.c08"
+  },
+  {
+   "who": "B",
+   "dur": 1.2,
+   "line": "F10.c09"
+  },
+  {
+   "who": "A",
+   "dur": 1.7,
+   "line": "F10.c10"
+  },
+  {
+   "who": "D",
+   "dur": 1.1,
+   "line": "F10.c11"
+  },
+  {
+   "who": "D",
+   "dur": 1.2,
+   "line": "F10.c12"
+  },
+  {
+   "who": "D",
+   "dur": 1.8,
+   "line": "F10.c13"
+  },
+  {
+   "who": "C",
+   "dur": 2.4,
+   "line": "F10.c14"
+  },
+  {
+   "who": "B",
+   "dur": 0.9,
+   "line": "F10.c15",
+   "sfx": "scratch"
+  },
+  {
+   "who": "A",
+   "dur": 0.9,
+   "line": "F10.c16"
+  },
+  {
+   "who": "C",
+   "dur": 1.4,
+   "line": "F10.c17"
+  },
+  {
+   "who": "B",
+   "dur": 1.6,
+   "line": "F10.c18"
+  },
+  {
+   "who": "D",
+   "dur": 2.2,
+   "render": "dachshund-warm-portrait.jpg"
+  },
+  {
+   "who": "A",
+   "dur": 0.7,
+   "line": "F10.c19"
+  },
+  {
+   "who": "B",
+   "dur": 0.8,
+   "line": "F10.c19"
+  },
+  {
+   "who": "A",
+   "dur": 1.8,
+   "line": "F10.c20"
+  },
+  {
+   "who": "B",
+   "dur": 2.2,
+   "line": "F10.c21"
+  }
+ ],
+ "end": {
+  "renders": [
+   "mug-real-lab.jpg",
+   "mug-real-shepherd.jpg",
+   "mug-real-frenchie.jpg",
+   "mug-real-dachshund.jpg"
+  ],
+  "super": "F10.end",
+  "hold": 4.5
+ }
+}

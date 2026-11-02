@@ -1,0 +1,42 @@
+{
+ "id": "F11",
+ "template": "search",
+ "breed": "dachshund",
+ "music": "m_quirk_brat.mp3",
+ "music_level": 0.42,
+ "queries": [
+  {
+   "line": "F11.q1",
+   "hold": 1.4
+  },
+  {
+   "line": "F11.q2",
+   "result": "F11.r2",
+   "hold": 1.9
+  },
+  {
+   "line": "F11.q3",
+   "hold": 1.7
+  },
+  {
+   "line": "F11.q4",
+   "hold": 1.6
+  },
+  {
+   "line": "F11.q5",
+   "hold": 1.5
+  },
+  {
+   "line": "F11.q6",
+   "hold": 1.6
+  },
+  {
+   "line": "F11.q7"
+  }
+ ],
+ "end_render": "mug-real-dachshund.jpg",
+ "end": {
+  "super": "F11.r7",
+  "hold": 5.0
+ }
+}

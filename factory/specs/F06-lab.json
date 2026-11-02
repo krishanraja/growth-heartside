@@ -1,0 +1,25 @@
+{
+ "id": "F06-lab",
+ "template": "roast",
+ "breed": "lab",
+ "render": "mug-real-lab.jpg",
+ "title": "F06.title",
+ "lines": [
+  "F06.la1",
+  "F06.la2",
+  "F06.la3"
+ ],
+ "music": "m_quirk_brat.mp3",
+ "music_level": 0.5,
+ "durs": [
+  2.2,
+  2.8,
+  2.8,
+  3.2,
+  4.5
+ ],
+ "end": {
+  "super": "F06.end"
+ },
+ "variant_of": "F06-frenchie"
+}

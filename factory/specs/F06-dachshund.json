@@ -1,0 +1,25 @@
+{
+ "id": "F06-dachshund",
+ "template": "roast",
+ "breed": "dachshund",
+ "render": "mug-real-dachshund.jpg",
+ "title": "F06.title",
+ "lines": [
+  "F06.da1",
+  "F06.da2",
+  "F06.da3"
+ ],
+ "music": "m_quirk_brat.mp3",
+ "music_level": 0.5,
+ "durs": [
+  2.2,
+  2.8,
+  2.8,
+  3.2,
+  4.5
+ ],
+ "end": {
+  "super": "F06.end"
+ },
+ "variant_of": "F06-frenchie"
+}

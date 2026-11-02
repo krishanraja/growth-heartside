@@ -1,6 +1,6 @@
 {
  "id": "F12",
- "title": "Head of Security",
+ "template": "film",
  "breed": "frenchie",
  "voice": "vo_F12.mp3",
  "music": "m_court_estim.mp3",
@@ -9,51 +9,55 @@
   {
    "until": 2.0,
    "frame": "f1201.png",
-   "cap": "Unidentified box on the porch."
+   "line": "F12.v1",
+   "picture": "box lands on porch, frenchie in SECURITY vest freezes at the window"
   },
   {
    "until": 3.9,
    "frame": "f1203.png",
-   "cap": "Threat level: maximum."
+   "line": "F12.v2",
+   "picture": "frenchie in sunglasses army-crawls behind a cushion fort toward the box"
   },
   {
    "until": 7.3,
    "frame": "f1202.png",
-   "cap": "Requesting backup. Backup is asleep on the couch."
+   "line": "F12.v3",
+   "picture": "frenchie with walkie-talkie, huge dog asleep upside down on the couch"
   },
   {
    "until": 8.3,
    "frame": "f1203.png",
-   "cap": "Proceeding alone."
+   "line": "F12.v4",
+   "picture": "frenchie crawling toward the box"
   },
   {
    "until": 9.2,
-   "frame": "f1204.png"
+   "frame": "f1204.png",
+   "picture": "hands open the box, frenchie braces with paws over face"
   },
   {
    "until": 11.3,
    "render": "frenchie-hilarious-portrait.jpg",
-   "cap": "Oh. It's me."
+   "line": "F12.v5"
   },
   {
    "until": 14.3,
    "frame": "f1205.png",
-   "cap": "Threat cleared. I look incredible."
+   "line": "F12.v6",
+   "picture": "frenchie flopped, starstruck, gazing into the box"
   }
  ],
  "sfx": [
-  {
-   "at": 9.05,
-   "file": "s_scratch.mp3",
-   "vol": 0.7
-  }
+  [
+   9.05,
+   "scratch"
+  ]
  ],
  "end": {
   "renders": [
    "frenchie-hilarious-portrait.jpg"
   ],
-  "super": "Your dog loves you too.",
-  "sub": "Painted from one photo of your dog.",
+  "super": "LEAD",
   "hold": 4.2
  }
 }

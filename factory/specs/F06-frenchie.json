@@ -1,0 +1,24 @@
+{
+ "id": "F06-frenchie",
+ "template": "roast",
+ "breed": "frenchie",
+ "render": "mug-real-frenchie.jpg",
+ "title": "F06.title",
+ "lines": [
+  "F06.fr1",
+  "F06.fr2",
+  "F06.fr3"
+ ],
+ "music": "m_quirk_brat.mp3",
+ "music_level": 0.5,
+ "durs": [
+  2.2,
+  2.8,
+  2.8,
+  3.2,
+  4.5
+ ],
+ "end": {
+  "super": "F06.end"
+ }
+}

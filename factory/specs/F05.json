@@ -1,6 +1,6 @@
 {
  "id": "F05",
- "title": "The Court of the Couch",
+ "template": "film",
  "breed": "frenchie",
  "voice": "vo_F05.mp3",
  "music": "m_court_estim.mp3",
@@ -9,71 +9,74 @@
   {
    "until": 3.3,
    "frame": "f501.png",
-   "cap": "Order. ORDER in the living room."
+   "line": "F05.v1",
+   "picture": "frenchie in a cushion dock, basset hound judge in a wig"
   },
   {
    "until": 7.4,
    "frame": "f502.png",
-   "cap": "The defendant is accused of stealing the human's spot on the couch."
+   "line": "F05.v2",
+   "picture": "easel, EXHIBIT A: photo of the frenchie asleep on the couch, unimpressed person on the floor"
   },
   {
    "until": 10.0,
    "frame": "f501.png",
-   "cap": "Every single day."
+   "line": "F05.v3",
+   "picture": "frenchie in the dock"
   },
   {
    "until": 13.3,
    "frame": "f503.png",
-   "cap": "Does the defense have anything to say for itself?"
+   "line": "F05.v4",
+   "picture": "frenchie drags a tartan throw forward as evidence, basset judge behind"
   },
   {
    "until": 16.0,
    "frame": "f505.png",
-   "cap": "Oh, look at that face."
+   "line": "F05.v5",
+   "picture": "close-up, enormous pleading eyes, DEFENDANT plaque, living room behind"
   },
   {
    "until": 17.1,
-   "frame": "f504.png"
+   "frame": "f504.png",
+   "picture": "six dogs on the living-room couch as the jury, melting"
   },
   {
    "until": 20.3,
    "frame": "f506.png",
-   "cap": "Objection overruled by cuteness."
+   "line": "F05.v6",
+   "picture": "basset judge sighs and bangs the gavel"
   },
   {
-   "until": 24.9,
+   "until": 26.1,
    "render": "frenchie-warm-blanket.jpg",
-   "cap": "The court finds the defendant guilty, and very cozy."
+   "line": "F05.v7"
   }
  ],
  "sfx": [
-  {
-   "at": 0.05,
-   "synth": "gavel",
-   "vol": 0.9
-  },
-  {
-   "at": 0.95,
-   "synth": "gavel",
-   "vol": 0.9
-  },
-  {
-   "at": 19.6,
-   "synth": "gavel",
-   "vol": 0.9
-  },
-  {
-   "at": 25.2,
-   "synth": "gavel",
-   "vol": 0.9
-  }
+  [
+   0.05,
+   "gavel"
+  ],
+  [
+   0.95,
+   "gavel"
+  ],
+  [
+   19.6,
+   "gavel"
+  ],
+  [
+   25.95,
+   "gavel"
+  ]
  ],
  "end": {
   "renders": [
    "frenchie-warm-blanket.jpg"
   ],
-  "super": "Guilty. And very cozy.",
-  "sub": "Case closed.",
+  "super": "LEAD",
+  "sub": "F05.v8",
   "hold": 4.0
  }
 }

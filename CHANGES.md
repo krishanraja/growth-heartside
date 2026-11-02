@@ -3,6 +3,19 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-02: The lock system. Krish: "We need to figure out a way of making this reliable so that we
+  don't get drift and we don't get weird humor and things that don't make sense once stuff is locked in.
+  After that, I can trust the system to autonomously drive growth." Then: "yes, build the lock system,
+  then finish the films".
+  - `factory/` now holds the joke bank (lines with roles, breed tags, approval status and a hash of the
+    approved words) and the render catalog (checksums). Specs carry ids only, never free text.
+  - Locks freeze a post's skeleton by fingerprint, so only the slots can vary.
+  - Code gates check copy, breed fit, renders, media and drift.
+  - An independent reviewer works to a standing checklist that grows with each catch.
+  - The trust ramp sends the first 5 variants to Krish, then 1 in 10. Two declines pause a lock.
+  - Tests are in `tests/test_factory_lock.py`.
+  - No job file or `automations.json` entry changed.
+
 - 2026-11-02: Reset to finished posts. Krish: "I swear I approved 10 concepts before, and now we've got
   only a few of them, but we've got different variations of them. I'm kind of getting a bit lost amidst all
   this now and a bit demotivated". No more boards of parts: one status page shows all ten concepts and

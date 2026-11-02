@@ -1,6 +1,6 @@
 {
  "id": "F03",
- "title": "Operation Stocking",
+ "template": "film",
  "breed": "shepherd",
  "voice": "vo_F03.mp3",
  "music": "m_spy_young.mp3",
@@ -9,42 +9,45 @@
   {
    "until": 4.4,
    "frame": "f301.png",
-   "cap": "Listen up. At 0600 hours, the humans wake up."
+   "line": "F03.v1",
+   "picture": "shepherd in a beanie over a living room blueprint, cookies crossed out"
   },
   {
    "until": 7.2,
    "frame": "f303.png",
-   "cap": "Before then, the gift goes under the tree."
+   "line": "F03.v2",
+   "picture": "the crew frozen mid-tiptoe past the stairs"
   },
   {
    "until": 10.7,
    "frame": "f302.png",
-   "cap": "The beagle is on scent. The frenchie is lookout."
+   "line": "F03.v3",
+   "picture": "beagle in night-vision goggles sniffs, frenchie on lookout with a flashlight"
   },
   {
    "until": 13.3,
    "frame": "f305.png",
-   "cap": "And nobody touches the cookies."
+   "line": "F03.v4",
+   "picture": "beagle caught with a cookie in its mouth, shepherd glaring"
   },
   {
    "until": 16.3,
    "frame": "f304.png",
-   "cap": "Questions? Good."
+   "line": "F03.v5",
+   "picture": "shepherd nudges a wrapped gift under the tree"
   }
  ],
  "sfx": [
-  {
-   "at": 6.7,
-   "synth": "creak",
-   "vol": 0.8
-  }
+  [
+   6.7,
+   "creak"
+  ]
  ],
  "end": {
   "renders": [
    "shepherd-hilarious-portrait.jpg"
   ],
-  "super": "The dog's been planning this.",
-  "sub": "Painted from one photo of your dog.",
+  "super": "F03.end",
   "hold": 4.2
  }
 }
