@@ -1,0 +1,9 @@
+{
+ "id": "F07",
+ "status": "locked",
+ "approved_by": "Krish, board 2026-11-02: Lock (F07). Rebuilt under his same-day rulings: no badge, no on-screen slogan or URL, moving product.",
+ "fingerprint": "f1441d8566e38fdfc6b567af90387d5f95b88288a458d17bbd6176c8bc66ed4a",
+ "master": "specs/F07.json",
+ "template": "film",
+ "slots": "end render of the same product and breed"
+}

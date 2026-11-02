@@ -96,6 +96,23 @@ def _border_color(img):
     return tuple(int(v) for v in np.median(e, axis=0))
 
 
+def _cutout(img, tone, tol=10):
+    """Make the render's own plain backdrop transparent, only where it touches the image edge, so
+    the mug, its painting and its shadow keep every pixel and no box shows (review, 2 Nov)."""
+    import numpy as np
+    a = np.asarray(img.convert('RGB'), dtype=float)
+    dist = np.abs(a - np.array(tone, dtype=float)).max(axis=2)
+    near = Image.fromarray(((dist <= tol) * 255).astype('uint8'))
+    w, h = near.size
+    for xy in [(0, 0), (w - 1, 0), (0, h - 1), (w - 1, h - 1), (w // 2, 0), (w // 2, h - 1), (0, h // 2), (w - 1, h // 2)]:
+        if near.getpixel(xy) == 255:
+            ImageDraw.floodfill(near, xy, 128)
+    region = np.asarray(near) == 128
+    alpha = np.where(region, np.clip((dist - 2) / (tol - 2), 0, 1) * 255, 255).astype('uint8')
+    out = img.convert('RGBA'); out.putalpha(Image.fromarray(alpha).filter(ImageFilter.GaussianBlur(1.2)))
+    return out
+
+
 def _feather(size, r=36):
     m = Image.new('L', size, 0); ImageDraw.Draw(m).rectangle((r, r, size[0] - r, size[1] - r), fill=255)
     return m.filter(ImageFilter.GaussianBlur(r / 2))
@@ -130,7 +147,7 @@ def product_clip(renders, out_mp4, dur, bg=None, box=(60, 160, W - 60, 1760), ov
         items = []
         for img, (x0, y0, x1, y1) in zip(imgs, _layout(len(imgs), box)):
             p = img.copy(); p.thumbnail((int((x1 - x0) * 0.98), int((y1 - y0) * 0.98)), Image.LANCZOS)
-            p = p.convert('RGBA'); p.putalpha(_feather(p.size, max(12, p.width // 14)))
+            p = _cutout(p, _border_color(p))
             items.append((p, ((x0 + x1) // 2, (y0 + y1) // 2)))
     last = None
     for f in range(n):
