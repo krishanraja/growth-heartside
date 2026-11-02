@@ -126,7 +126,10 @@ RULE_FILES = ('NOW.md', 'n8n/build.mjs')
 
 # The sections of heartside's sources that the RULES below were written from,
 # with their fingerprint at heartside commit 54b6b0e (29 Oct 2026, after the 27
-# October relaunch moved V3, HANDOFF and POSITIONING into docs/history/). If any
+# October relaunch moved V3, HANDOFF and POSITIONING into docs/history/), and
+# VOICE and DOG_VOICE at 93780ae (2 Nov 2026: hilarious lines land a punchline,
+# over_the_top gift lines may tease the person's habits, a reading age of 12,
+# each archetype's comic character, the meaning line at 44 characters). If any
 # section changes, or stops being canon, no pack passes until a person reads
 # the new words and updates RULES and RULES_BASIS in an interactive session.
 # A prefix that is not a heading names a code or front-matter line: the block
@@ -144,8 +147,8 @@ RULES_BASIS = {
     'docs/SCOPE.md ## Non-negotiable instructions': 'b712fce84c407252',
     'docs/ECONOMICS.md ## Current owner ruling': 'a8cea2c24b9f1ce4',
     'NOW.md never_publish:': 'ce87743276e56558',
-    'n8n/build.mjs const VOICE = [': '356e2ec50cc13e1b',
-    'n8n/build.mjs const DOG_VOICE = [': '61fca8df9c1a40d9',
+    'n8n/build.mjs const VOICE = [': '82fa7a74ed529f65',
+    'n8n/build.mjs const DOG_VOICE = [': '43dc955615d6b742',
 }
 
 # ---------------------------------------------------------------------------

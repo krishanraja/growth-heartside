@@ -143,7 +143,10 @@ address of Krish's in anything.
    none of the banned words, none of the retired lines ("written by your
    dog", "Now it's in writing"), no "it's not X, it's Y". No jokes about a
    dog dying, ageing, illness or abandonment, and none that mock the buyer.
-   Business headlines stay plain, warm and true. Gift lines are the dog
+   Only the dog's own gift lines may tease the person, in heartside's
+   over_the_top tone: their habits and life with the dog, never their body,
+   looks, age, money, job or family, and never a swear word (heartside
+   `n8n/build.mjs`, 2 Nov). Business headlines stay plain, warm and true. Gift lines are the dog
    talking to the person it loves (Krish, 20 Oct): I is the dog, you is the
    person, warm first and funny second, signed "Love, [dog]"; never he, she,
    the dog's name or the person's name, no exclamation marks, no "Dear",
