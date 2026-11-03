@@ -30,7 +30,7 @@
   },
   {
    "until": 8.4,
-   "frame": "f417.png",
+   "frame": "f424.png",
    "line": "F04.m2",
    "cap_y": 200,
    "picture": "a hand points; the golden opens one eye"
@@ -39,14 +39,14 @@
    "until": 10.6,
    "frame": "f422.png",
    "line": "F04.m4",
-   "cap_y": 200,
+   "cap_y": 1720,
    "picture": "the person perches on the edge; the golden takes the rest"
   },
   {
    "until": 12.6,
    "frame": "f423.png",
    "line": "F04.m2",
-   "cap_y": 200,
+   "cap_y": 1720,
    "picture": "the golden stretches all four legs and pushes the person off"
   },
   {
