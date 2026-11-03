@@ -1208,6 +1208,227 @@
    "status": "approved",
    "source": "Krish, 2026-11-03 (approved the plan that set these words)",
    "text_sha256": "905313a1d1ddbaa2b469f1658a292ef52d83e2be4c6f6d2e2a9b3359df57630b"
+  },
+  {
+   "id": "F01.p1",
+   "text": "Day four hundred. The mug got another kiss.",
+   "role": "film.F01.p1",
+   "kind": "dialogue",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+  },
+  {
+   "id": "F01.p2",
+   "text": "I've been studying it. It doesn't fetch. It doesn't wag. It just sits there, being hot.",
+   "role": "film.F01.p2",
+   "kind": "dialogue",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+  },
+  {
+   "id": "F01.p3",
+   "text": "So I ran the numbers.",
+   "role": "film.F01.p3",
+   "kind": "dialogue",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+  },
+  {
+   "id": "F01.p4",
+   "text": "Plan A was obvious. Plan B was also obvious.",
+   "role": "film.F01.p4",
+   "kind": "dialogue",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+  },
+  {
+   "id": "F01.p5",
+   "text": "Plan C is unhinged. I love Plan C.",
+   "role": "film.F01.p5",
+   "kind": "dialogue",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+  },
+  {
+   "id": "F01.p6",
+   "text": "Oh, [bleep] it. I'm going in.",
+   "role": "film.F01.p6",
+   "kind": "dialogue",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+  },
+  {
+   "id": "F01.p7",
+   "text": "Plan C: success.",
+   "role": "film.F01.p7",
+   "kind": "dialogue",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+  },
+  {
+   "id": "F02.p1",
+   "text": "My human said they want nothing for Christmas. Challenge accepted.",
+   "role": "film.F02.p1",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+  },
+  {
+   "id": "F02.p2",
+   "text": "Option three is a long shot, but I believe in it.",
+   "role": "film.F02.p2",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+  },
+  {
+   "id": "F02.p3",
+   "text": "I brought in a consultant. He ate the budget.",
+   "role": "film.F02.p3",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+  },
+  {
+   "id": "F02.p4",
+   "text": "Hour two. I've invented a new color. It's called squirrel.",
+   "role": "film.F02.p4",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+  },
+  {
+   "id": "F02.p5",
+   "text": "Oh. Oh no.",
+   "role": "film.F02.p5",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+  },
+  {
+   "id": "F02.p6",
+   "text": "It's me, on a mug. They have to look at me every single morning.",
+   "role": "film.F02.p6",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+  },
+  {
+   "id": "F02.p7",
+   "text": "You're fired, but in a nice way.",
+   "role": "film.F02.p7",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+  },
+  {
+   "id": "F04.m1",
+   "text": "me: gets up for 4 seconds",
+   "role": "film.F04.m1",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)"
+  },
+  {
+   "id": "F04.m2",
+   "text": "my golden:",
+   "role": "film.F04.m2",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)"
+  },
+  {
+   "id": "F04.m3",
+   "text": "me: that's my spot",
+   "role": "film.F04.m3",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)"
+  },
+  {
+   "id": "F04.m4",
+   "text": "me: fine, I'll sit on the edge",
+   "role": "film.F04.m4",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)"
+  },
+  {
+   "id": "F04.m5",
+   "text": "The human has been relocated.",
+   "role": "film.F04.m5",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)"
+  },
+  {
+   "id": "F04.m6",
+   "text": "so I got a blanket with my golden's face on it. at least now we share",
+   "role": "film.F04.m6",
+   "kind": "dialogue",
+   "breeds": [
+    "golden"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)",
+   "note": "reworded after review: \"their face\" could read as the human"
   }
  ]
 }

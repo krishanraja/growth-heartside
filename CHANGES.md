@@ -3,6 +3,23 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-03: The last three concepts built, and the home-computer lane checked. Krish: "You also can queue stuff for the home computer to upload in the right place - makeyourmindup engine does it. Merge all to main", then "And then build the rest and merge again".
+  - F01 Becoming the mug (absurd "Plan C"), F02 Project Nothing (the golden) and F04 Me vs my golden (meme captions) are built through the factory.
+    - 16 new Higgsfield key frames, 2 of them replacements after review (44 credits).
+    - New reads in the saved dachshund, golden and narrator voices (1,941 ElevenLabs characters).
+    - Licensed full-quality Epidemic music; F01 keeps Mix B.
+    - Every spend was reserved and settled in Control Center.
+  - Their lines enter the joke bank as proposed. Locking a post approves its lines.
+  - Each passed `lock.py check` apart from those proposed lines, and passed `media`. An independent review held all three; every hold was fixed and re-checked:
+    - a search bar that wrapped;
+    - a dog who changed between shots;
+    - captions over the joke;
+    - an unclear "their face".
+  - One call is Krish's: F01's dachshund matches the store's own red dachshund render, which the standing check flags because it can read as Buddy.
+  - They are in the library zip (39 files) and a second schedule Sheet for 9 and 10 Nov, every row marked "awaiting Krish's lock: do not post". They are on the lock page with Lock buttons.
+  - The home-computer lane (`content-engine/scripts/post-pack/send.py` plus the library sync on Krish's runner) writes only into the makeyourmindup library. Its path rule refuses any other top folder, so it cannot file Heartside media into `Heartside/05_Social-Library`. Using it would put Heartside files in the wrong venture's folder. Codex keeps pulling the checksummed zip.
+  - The film template takes an optional `cap_y` for meme-style top captions. No job file or `automations.json` entry changed.
+
 - 2026-11-03: The Drive social library. Krish: "Codex will orchestrate and schedule send my posts, you need to build a library of assets in my Google drive. Strategies."
   - The nine locked posts were re-mixed with licensed full-quality Epidemic downloads in place of the review previews. Same recordings and timings; the record scratch is a licensed take.
   - Packed with checksums into one hosted zip. Media went by link because the Drive connector can't upload video; Krish chose links plus a Codex pull.
