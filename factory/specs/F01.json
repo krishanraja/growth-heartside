@@ -9,9 +9,9 @@
  "shots": [
   {
    "until": 3.9,
-   "frame": "f103.png",
+   "frame": "f101.png",
    "line": "F01.p1",
-   "picture": "the person sips from a plain white mug while the dachshund watches like a jilted lover"
+   "picture": "the person scrolls beside a plain white mug while the dachshund in its sweater watches like a jilted lover"
   },
   {
    "until": 10.9,
@@ -21,7 +21,7 @@
   },
   {
    "until": 12.6,
-   "frame": "f114.png",
+   "frame": "f117.png",
    "line": "F01.p3",
    "picture": "dachshund in a hard hat measuring a plain mug; chalkboard SMILES AT MUG: 9 / SMILES AT ME: 0"
   },
@@ -52,9 +52,9 @@
   },
   {
    "until": 27.2,
-   "frame": "f111.png",
+   "frame": "f118.png",
    "line": "F01.p7",
-   "picture": "the dachshund pops out of the steam and winks"
+   "picture": "the dachshund, still in its sweater, pops out of the steam and winks"
   }
  ],
  "sfx": [

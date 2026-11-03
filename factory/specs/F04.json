@@ -9,10 +9,10 @@
  "shots": [
   {
    "until": 2.6,
-   "frame": "f403.png",
+   "frame": "f421.png",
    "line": "F04.m1",
    "cap_y": 200,
-   "picture": "the person gets up and walks away; the golden on the rug"
+   "picture": "the person gets up and walks away; the golden on the rug watches the spot"
   },
   {
    "until": 4.4,
@@ -37,14 +37,14 @@
   },
   {
    "until": 10.6,
-   "frame": "f418.png",
+   "frame": "f422.png",
    "line": "F04.m4",
    "cap_y": 200,
    "picture": "the person perches on the edge; the golden takes the rest"
   },
   {
    "until": 12.6,
-   "frame": "f419.png",
+   "frame": "f423.png",
    "line": "F04.m2",
    "cap_y": 200,
    "picture": "the golden stretches all four legs and pushes the person off"
@@ -60,7 +60,7 @@
    "until": 19.2,
    "render": "golden-hilarious-blanket.jpg",
    "line": "F04.m6",
-   "cap_y": 200
+   "cap_y": 1500
   }
  ],
  "sfx": [
