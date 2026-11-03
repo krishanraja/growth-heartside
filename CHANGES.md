@@ -3,6 +3,12 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-03: Drive cleanup. Krish: "Delete the superseded READMEs and 02b".
+  - Seven files in `Heartside/05_Social-Library` were moved to Drive's trash, where Drive keeps them for 30 days: the six READMEs titled superseded, and "02b Schedule and captions (superseded 3 Nov, use 02c)".
+  - The folder now holds exactly: "00 README for Codex", "01 Posting strategy", 02, 02c, 02d and `Posts/`.
+  - The tree in `docs/DRIVE-MAP.md` matches, and its rule 6 records that only Krish's word deletes.
+  - Ruling (Krish, 2026-11-03): superseded Drive copies may be trashed once he names them. No job file or `automations.json` entry changed.
+
 - 2026-11-03: F01, F02 and F04 locked. Krish: "Lock F01, F02 and F04, keep the dachshund".
   - Their 20 lines are approved with text hashes. The standing check carries his exception: F01's red dachshund in its green sweater matches the store's own render.
   - The final independent review held F01 (the opening shot hid the dog, the tape measure had stray numbers, the wink lost the sweater) and F04 (the person's clothes changed, and captions covered the golden's face and the blanket). Six frames were regenerated (16.5 Higgsfield credits, reserved and settled) and the captions were moved. The reviewer then passed all three.
