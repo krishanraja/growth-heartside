@@ -12,13 +12,15 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 ├── _Archive/                                                1zPLSgX44QaIZK6gwmnnRz7lr60kzg9qQ   Krish's. Read only.
 ├── POSITIONING.md, V3-GIFTS-FROM-YOUR-DOG.md, SYNC.md                                           Krish's. Read only.
 └── 05_Social-Library/                                       1AHZLgwj1nHemNJeP56fQU6iTpgIEALzZ   The only folder the growth engine and Codex use.
-    ├── 00 README for Codex                (Doc)             17nMYWfo4G2zzcmoV9xMCfqDM0Rqr791TNRjDDw_iAwc   The live instructions.
-    ├── 00 README for Codex (superseded …) (2 Docs)          kept for history; never edited, never followed
+    ├── 00 README for Codex                (Doc)             1KQrrlXEHk6QwoEdlm30zuGWBw22uNoxTHuNbCZoXFyU   The one live instructions (3 Nov 17:45).
+    ├── 00 README for Codex (superseded …) (5 Docs)          kept for history; never edited, never followed
     ├── 01 Posting strategy                (Doc)             1OT8Cx18mbSpxrDq4c_Buj63JbMon2WfD2nOJMtREojg
-    ├── 02 Schedule and captions           (Sheet)           15rHaDxdYtdK4eFmUC4GSbBGAnhlSOO0K67Gl0NozIdU   the nine locked posts, 4 to 8 Nov
-    ├── 02b Schedule and captions (F01 F02 F04, awaiting lock) (Sheet)  1DQeSWIIGx6shSxZnuAHB5utN0UXj28x-ChsWzBoYi_Y
+    ├── 02 Schedule and captions           (Sheet)           15rHaDxdYtdK4eFmUC4GSbBGAnhlSOO0K67Gl0NozIdU   F03, F05, F06 x3, F07, F10, F11, F12, 4 to 8 Nov
+    ├── 02b … (superseded 3 Nov, use 02c)  (Sheet)           1DQeSWIIGx6shSxZnuAHB5utN0UXj28x-ChsWzBoYi_Y   history only; never posted from
+    ├── 02c Schedule and captions (F01 F02 F04) (Sheet)      1L-bCycPmND3OLm0lo7FJVrPi1xV92deLw-sJVoz0cn8   locked 3 Nov, 9 and 10 Nov
+    ├── 02d Schedule and captions (F13)    (Sheet)           1eY_iFenDdrsMuSlSoexKUEYjDQ41eX5GJ5lSd7CFfdg   F13 photo, 3 Nov
     └── Posts/                                               1boYZjB7ma-1YIcKzSl51usdYuNk6faHO
-        ├── F01/ … F12/, F06-frenchie/, F06-dachshund/, F06-lab/    one folder per post id
+        ├── F01/ … F13/, F06-frenchie/, F06-dachshund/, F06-lab/    one folder per post id (F13 1poEUrkd3Cd5t4ah7JjnrNMfvY2WyB71e)
         │   └── heartside_<id>_<slug>_<kind>.<ext>                  the post's media, nothing else
 ```
 
@@ -51,10 +53,11 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
    - The connectors cannot edit Sheets they did not create, so one batch gets one Sheet, and never one per post.
    - Rows for a post not yet locked say `awaiting Krish's lock: do not post` in `notes`.
    - The live README lists every `02…` Sheet. Update it in the same step.
-6. **The README.**
+6. **Superseded never means deleted.** A Sheet or README that a newer one replaces is renamed "(superseded <date>, use …)" and kept. Codex never posts from it and the engine never edits it. Only Krish deletes.
+7. **The README.**
    - If its text changes, the growth engine writes a new "00 README for Codex" and renames the old one "(superseded <date>, use the newer one)". There is only ever one live copy.
    - Superseded copies are never edited. Krish may delete them.
-7. **A retired post**
+8. **A retired post**
    - stays where it is;
    - gets `retired` in `notes` on its rows;
    - is never deleted or moved by the engine or Codex.

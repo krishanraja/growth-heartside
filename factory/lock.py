@@ -264,7 +264,7 @@ STANDING = [  # each one was caught by a reviewer on 2 Nov 2026; add new catches
     'a search bar stays one line and never grows; long searches scroll out of view at the start',
     'a moving product keeps its painting intact: no warping, smearing or redrawn design',
     'no plain blanket or mug in a generated frame that could pass for the product without its design',
-    'no chestnut or red dachshund in a generated frame (it can read as Buddy, and no Buddy image is approved)',
+    'no chestnut or red dachshund in a generated frame (it can read as Buddy, and no Buddy image is approved), except F01\'s dog, which matches the store\'s own dachshund render (Ruling, Krish, 2026-11-03: "keep the dachshund")',
     'no stray marks that read as glitches or threats (laser dots, warped text, extra limbs)',
     'avatars and crops show a dog face; captions never cover the key visual or the product',
     'every emoji, prop and picture matches the word it sits next to',

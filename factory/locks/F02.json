@@ -1,0 +1,9 @@
+{
+ "id": "F02",
+ "status": "locked",
+ "approved_by": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+ "fingerprint": "bf8e786b3f7eb714d85e558874e108e7c0dcb228fdf8529f97c51d7fac83b1f6",
+ "master": "specs/F02.json",
+ "template": "film",
+ "slots": "end render of the same product and breed"
+}

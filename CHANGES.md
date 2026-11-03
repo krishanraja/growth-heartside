@@ -3,6 +3,18 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-03: F01, F02 and F04 locked. Krish: "Lock F01, F02 and F04, keep the dachshund".
+  - Their 20 lines are approved with text hashes. The standing check carries his exception: F01's red dachshund in its green sweater matches the store's own render.
+  - The final independent review held F01 (the opening shot hid the dog, the tape measure had stray numbers, the wink lost the sweater) and F04 (the person's clothes changed, and captions covered the golden's face and the blanket). Six frames were regenerated (16.5 Higgsfield credits, reserved and settled) and the captions were moved. The reviewer then passed all three.
+  - Locked: F01 `cdb20995`, F02 `bf8e786b`, F04 `1cb55bb3`. `lock.py gate`: all twelve posts may go out.
+  - Drive:
+    - the new F01 and F04 media went through the home-computer lane and were verified written;
+    - "02c Schedule and captions (F01 F02 F04)" holds their rows, and 02b is marked superseded;
+    - a merged "00 README for Codex" covers 02, 02c and the F13 Sheet 02d that a Codex session added, and every older README is marked superseded;
+    - the backup zip was rebuilt.
+  - `docs/DRIVE-MAP.md` is updated. Superseded never means deleted.
+  - Ruling (Krish, 2026-11-03): F01 keeps the dachshund that matches the store's own render. No job file or `automations.json` entry changed.
+
 - 2026-11-03: Heartside gets the home-computer lane. Krish: "Why don't you duplicate that Python script for Heartside then? We're going to need to do a lot more of this type of stuff moving forward", then chose to add Heartside to content-engine's library lane rather than build a separate copy. Then: "Keep going then until 100% done".
   - In content-engine ([krishanraja/content-engine#356](https://github.com/krishanraja/content-engine/pull/356)), the library lane takes a second library, `heartside`, with paths `Posts/<post id>/<file>`. makeyourmindup stays the default.
   - The home computer's sync writes Heartside files into `Heartside/05_Social-Library/Posts/`.

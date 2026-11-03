@@ -1217,8 +1217,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "33cf4288f635c5b482b01acba7a2b70c82f035b32b7fcbc5bd8f9f9c9a93458e"
   },
   {
    "id": "F01.p2",
@@ -1228,8 +1229,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "7e8f731fe6206b6b10f5674ea001c347bbd6e441b4bd13c78f2e02f97ca2fd7e"
   },
   {
    "id": "F01.p3",
@@ -1239,8 +1241,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "758a5854d04bae7301ac358992338cb08afc406c56008ab464a5c10c8ef4da7b"
   },
   {
    "id": "F01.p4",
@@ -1250,8 +1253,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "c8a50636dc2f916977fa33471a9089b873f613ace6f99041d0a40f8df576a3e2"
   },
   {
    "id": "F01.p5",
@@ -1261,8 +1265,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "56f94e7fb81b5e0fd505b5c7b8a421e6d384545ee9abbfd5bf39fc92c392c5cb"
   },
   {
    "id": "F01.p6",
@@ -1272,8 +1277,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "61cb0cdfe7eaf4a9c76eb8c6fa9fceefb8afbd1f1d6a7ef570bbe55ec1cdbba9"
   },
   {
    "id": "F01.p7",
@@ -1283,8 +1289,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F01A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "bbab77bf63b90c4e96c1067e484e26a212d6182e8a47f7e36e0a890f3aad35dd"
   },
   {
    "id": "F02.p1",
@@ -1294,8 +1301,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "c662f21731a27bab4a62f881a85db07ed644e7312471fb6ec3dcfdb0cda8c8e5"
   },
   {
    "id": "F02.p2",
@@ -1305,8 +1313,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "15a4348c6f4846b69b713ea83e9caf20561bb9761230788c2670d2cce493cfa7"
   },
   {
    "id": "F02.p3",
@@ -1316,8 +1325,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "6cc129ece0d481d6c8a8728bc36c1f33eefb676a948201012abf16e12d9a63f6"
   },
   {
    "id": "F02.p4",
@@ -1327,8 +1337,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "5de4a55073ace5a04784abefca227ec9c98ddfb6cf1158652dedf66f92f258da"
   },
   {
    "id": "F02.p5",
@@ -1338,8 +1349,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "f73af2949ac40ca62e1acf9acac6d2fe8f72aa7a0540f7153dae170e14fe013e"
   },
   {
    "id": "F02.p6",
@@ -1349,8 +1361,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "31700b0a1df96e55ddd326e830c7ae4ee1d16ca8e1fb2c7660c68cc0071fc504"
   },
   {
    "id": "F02.p7",
@@ -1360,8 +1373,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F02A)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "e1b187e30fe06b192c3ab288fc3e0bbfc66ca55bda78d984c435afdca9d22c5d"
   },
   {
    "id": "F04.m1",
@@ -1371,8 +1385,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "60d80f34a20eec56332a1c2f1e0d4a974ea6206874f5c135bcf0b987c6cd26bb"
   },
   {
    "id": "F04.m2",
@@ -1382,8 +1397,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "348fcafc8be12cfa680f39895cf168074a0a0e4dc68ac4ae102826214aaf6c51"
   },
   {
    "id": "F04.m3",
@@ -1393,8 +1409,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "1167b21d4c12be574e432c58fdcbbdc21d4382f927c4a821b4243dd19d98219e"
   },
   {
    "id": "F04.m4",
@@ -1404,8 +1421,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "f7e9c5d501832ef4f568efd58528f094dfc42d9fd8f9233b8cfd97153f4d0409"
   },
   {
    "id": "F04.m5",
@@ -1415,8 +1433,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "text_sha256": "24f0ff7aba1e569767b61be9f8d7182e7bca54efb05e5e2ff41f4c64b4429278"
   },
   {
    "id": "F04.m6",
@@ -1426,9 +1445,10 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-03: the session humour pick (docs/briefs/2026-11-02-humour-rescripts.json, F04B)",
-   "note": "reworded after review: \"their face\" could read as the human"
+   "status": "approved",
+   "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
+   "note": "reworded after review: \"their face\" could read as the human",
+   "text_sha256": "7ece8938e80b37339b709a931937f25b845da4923e14e3b7be2b7e7139cb1e57"
   }
  ]
 }
