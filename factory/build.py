@@ -9,6 +9,7 @@ import json, os, sys, textwrap
 from PIL import Image, ImageDraw
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import *
+from common import _border_color, _cutout
 import lock
 
 NAMES = {'lab': 'Lab', 'shepherd': 'Shepherd', 'frenchie': 'Frenchie', 'dachshund': 'Dachshund', 'golden': 'Golden', 'doodle': 'Doodle'}
@@ -220,31 +221,33 @@ def roast(spec, work):
     CW, CH = 1080, 1350; breed = spec['breed']
     MEME = F('Anton.ttf', 96)
 
-    def meme(photo, text):
+    def meme(photo, text, w, h, pos='top'):
+        """The photo filling w x h, with the line in meme type laid out for that frame (never cropped)."""
         im = Image.open(f'{FR}/{photo}').convert('RGB')
-        r = max(CW / im.width, CH / im.height); im = im.resize((round(im.width * r), round(im.height * r)), Image.LANCZOS)
-        x, y = (im.width - CW) // 2, (im.height - CH) // 2; im = im.crop((x, y, x + CW, y + CH))
+        r = max(w / im.width, h / im.height); im = im.resize((round(im.width * r), round(im.height * r)), Image.LANCZOS)
+        x, y = (im.width - w) // 2, (im.height - h) // 2; im = im.crop((x, y, x + w, y + h))
         d = ImageDraw.Draw(im); size = 96
         while True:
-            f = F('Anton.ttf', size); lines = balanced_wrap(d, text.upper(), f, CW - 120, size)
-            if len(lines) <= 3 or size <= 64: break
+            f = F('Anton.ttf', size); lines = balanced_wrap(d, text.upper(), f, w - 120, size)
+            if (len(lines) <= 3 and max(d.textlength(l, font=f) for l in lines) <= w - 120) or size <= 60: break
             size -= 6
-        lh = int(size * 1.12); y0 = 60
+        lh = int(size * 1.12); top = 60 if pos == 'top' else h - 60 - lh * len(lines) - int(h * 0.04)
+        if pos == 'top' and h > w * 1.5: top = int(h * 0.12)   # clear of the app's own top bar in a reel
         for i, l in enumerate(lines):
             tw = d.textlength(l, font=f)
-            d.text(((CW - tw) / 2, y0 + i * lh), l, font=f, fill=(255, 255, 255), stroke_width=max(4, size // 14), stroke_fill=(0, 0, 0))
+            d.text(((w - tw) / 2, top + i * lh), l, font=f, fill=(255, 255, 255), stroke_width=max(4, size // 14), stroke_fill=(0, 0, 0))
         return im
     texts = [T(spec['title'], spec)] + [T(l, spec) for l in spec['lines']]
-    slides = [meme(fr, tx) for fr, tx in zip(spec['frames'], texts)]
-    im = Image.new('RGB', (CW, CH), CREAM)   # the real mug, nothing else on the slide
-    p = Image.open(f"{R}/{spec['render']}").convert('RGB'); p.thumbnail((980, 1230), Image.LANCZOS)
-    im.paste(p, ((CW - p.width) // 2, (CH - p.height) // 2)); slides.append(im)
+    pos = spec.get('text_pos', ['top'] * len(spec['frames']))
+    slides = [meme(fr, tx, CW, CH, ps) for fr, tx, ps in zip(spec['frames'], texts, pos)]
+    p = Image.open(f"{R}/{spec['render']}").convert('RGB')   # the real mug on its own backdrop tone: no panel
+    tone = _border_color(p); im = Image.new('RGB', (CW, CH), tone)
+    p.thumbnail((980, 1230), Image.LANCZOS); cp = _cutout(p, _border_color(p))
+    im.paste(cp, ((CW - p.width) // 2, (CH - p.height) // 2), cp); slides.append(im)
     parts = []
     for i, s in enumerate(slides[:-1]):
         s.save(f'{work}/slide{i + 1}.png')
-        v = Image.new('RGB', (W, H), (0, 0, 0))
-        big = s.resize((round(CW * H / CH), H), Image.LANCZOS); v.paste(big, ((W - big.width) // 2, 0))
-        v.save(f'{work}/v{i + 1}.png'); n = round(spec['durs'][i] * 30); out = f'{work}/v{i + 1}.mp4'
+        meme(spec['frames'][i], texts[i], W, H, pos[i]).save(f'{work}/v{i + 1}.png'); n = round(spec['durs'][i] * 30); out = f'{work}/v{i + 1}.mp4'
         run(['ffmpeg', '-y', '-loop', '1', '-i', f'{work}/v{i + 1}.png', '-vf', f"scale=2160:3840,zoompan=z='min(zoom+0.0012,1.10)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps=30,format=yuv420p",
              '-frames:v', str(n), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', out]); parts.append(out)
     slides[-1].save(f'{work}/slide{len(slides)}.png')

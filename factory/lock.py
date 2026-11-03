@@ -101,7 +101,7 @@ def skeleton(spec):
     """The spec with every slot replaced by what it must stay: a line by its role, a render by its
     product type, the cast and breed by their names only. Voiced films keep their lines."""
     s = copy.deepcopy(spec); voiced = 'voice' in spec
-    for k in ('id', 'title_note', 'variant_of', 'note'):
+    for k in ('id', 'title_note', 'variant_of', 'note', 'text_pos'):   # text placement follows each photo
         s.pop(k, None)
 
     def walk(x):
