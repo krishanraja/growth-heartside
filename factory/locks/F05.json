@@ -1,0 +1,9 @@
+{
+ "id": "F05",
+ "status": "locked",
+ "approved_by": "Krish, 2026-11-03: Lock it all.",
+ "fingerprint": "0777cb96f56566c0c492a53f36e30060b9adebe440ac035dfd73baea2d99e86f",
+ "master": "specs/F05.json",
+ "template": "film",
+ "slots": "end render of the same product and breed"
+}

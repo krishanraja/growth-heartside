@@ -3,6 +3,12 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-03: All nine Christmas posts locked. Krish: "Lock it all."
+  - Locked: F10, F12, F03, F05 and F06 (frenchie, with the dachshund and lab as its variants). F07 and F11 were locked earlier.
+  - Every post passes the full go-live gate: copy, breed, renders, drift, media, an independent reviewer pass on the exact post, and his approval.
+  - The gate now matches a verdict to the exact post by spec and fingerprint, whichever lock existed when it was recorded.
+  - No job file or `automations.json` entry changed.
+
 - 2026-11-03: Troll-meme roasts and the chat punchlines.
   - On the roasts, Krish wrote: "These are not funny compared to the dash. Rewrite these in that kind of humour style. Also I don't want plain black cards. I want images that look like the dog is trolling them, like that classic troll meme image - but a dog. That vibe".
   - The frenchie roast is rewritten in the dachshund's style. All three breeds now run on 12 generated troll-grin photos with meme type, and a boom hit lands on each reveal.

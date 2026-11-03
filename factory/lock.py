@@ -331,7 +331,8 @@ def record(spec, verdict, note=''):
 def gate(spec, mp4):
     probs, warns = check(spec)
     probs += media(spec, mp4)
-    rs = [r for r in records((lock_for(spec)[0] or {}).get('id', spec['id'])) if r['spec'] == spec['id'] and r['fingerprint'] == fingerprint(spec)]
+    # a verdict belongs to the exact post (its spec and fingerprint), whichever lock existed when it was recorded
+    rs = [r for r in ledger()['records'] if r['spec'] == spec['id'] and r['fingerprint'] == fingerprint(spec)]
     rv = [r['verdict'] for r in rs if r['verdict'].startswith('reviewer-')]
     if not rv or rv[-1] != 'reviewer-pass':
         probs.append('no independent reviewer pass on this exact post')
