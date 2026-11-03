@@ -1,4 +1,0 @@
-Status: Krish approved 10 funny concepts (F01-F07 without F08/F09, F10, F11, F12). The engine is off STOP: growth.py takes in heartside's new VOICE and DOG_VOICE, and sync reads rules as current. A private sound board holds second-by-second scripts for all 10, three voice takes per character (18 takes, 14.4 Higgsfield credits, reserved and settled), licensed music candidates, and a rough F01 sound sketch. The funny bar is in docs/briefs/2026-11-02-funny-bar.md.
-Changed: Krish ruled that F01's swear is bleeped, the dog's inner voice is one voice per breed group, sound-alikes are original voices and licensed genre tracks, and Higgsfield work runs without asking each time (Rulings, Krish, 2026-11-02).
-Next: read Krish's sound-board votes, then make Higgsfield key-frame stills for F01, F02 and F04 to the locked sound.
-North Star check (2026-11-02): holds.
