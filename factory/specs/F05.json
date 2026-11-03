@@ -1,0 +1,80 @@
+{
+ "id": "F05",
+ "template": "film",
+ "breed": "frenchie",
+ "voice": "vo_F05.mp3",
+ "music": "m_court_estim.mp3",
+ "music_level": 0.2,
+ "shots": [
+  {
+   "until": 3.3,
+   "frame": "f501.png",
+   "line": "F05.v1",
+   "picture": "frenchie in a cushion dock, basset hound judge in a wig"
+  },
+  {
+   "until": 7.4,
+   "frame": "f502.png",
+   "line": "F05.v2",
+   "picture": "easel, EXHIBIT A: photo of the frenchie asleep on the couch, unimpressed person on the floor"
+  },
+  {
+   "until": 10.0,
+   "frame": "f501.png",
+   "line": "F05.v3",
+   "picture": "frenchie in the dock"
+  },
+  {
+   "until": 13.3,
+   "frame": "f503.png",
+   "line": "F05.v4",
+   "picture": "frenchie drags a tartan throw forward as evidence, basset judge behind"
+  },
+  {
+   "until": 16.0,
+   "frame": "f505.png",
+   "line": "F05.v5",
+   "picture": "close-up, enormous pleading eyes, DEFENDANT plaque, living room behind"
+  },
+  {
+   "until": 17.1,
+   "frame": "f504.png",
+   "picture": "six dogs on the living-room couch as the jury, melting"
+  },
+  {
+   "until": 20.3,
+   "frame": "f506.png",
+   "line": "F05.v6",
+   "picture": "basset judge sighs and bangs the gavel"
+  },
+  {
+   "until": 26.1,
+   "render": "frenchie-warm-blanket.jpg",
+   "line": "F05.v7"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "gavel"
+  ],
+  [
+   0.95,
+   "gavel"
+  ],
+  [
+   19.6,
+   "gavel"
+  ],
+  [
+   25.95,
+   "gavel"
+  ]
+ ],
+ "end": {
+  "renders": [
+   "frenchie-warm-blanket.jpg"
+  ],
+  "hold": 4.0
+ }
+}

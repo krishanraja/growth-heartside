@@ -1,0 +1,52 @@
+{
+ "id": "F03",
+ "template": "film",
+ "breed": "shepherd",
+ "voice": "vo_F03.mp3",
+ "music": "m_spy_young.mp3",
+ "music_level": 0.22,
+ "shots": [
+  {
+   "until": 4.4,
+   "frame": "f301.png",
+   "line": "F03.v1",
+   "picture": "shepherd in a beanie over a living room floor plan, cookies with a DO NOT TOUCH card"
+  },
+  {
+   "until": 7.2,
+   "frame": "f303.png",
+   "line": "F03.v2",
+   "picture": "the crew frozen mid-tiptoe past the stairs"
+  },
+  {
+   "until": 10.7,
+   "frame": "f302.png",
+   "line": "F03.v3",
+   "picture": "beagle in night-vision goggles sniffs, frenchie on lookout with a flashlight"
+  },
+  {
+   "until": 13.3,
+   "frame": "f305.png",
+   "line": "F03.v4",
+   "picture": "beagle caught with a cookie in its mouth, shepherd glaring"
+  },
+  {
+   "until": 16.3,
+   "frame": "f304.png",
+   "line": "F03.v5",
+   "picture": "shepherd nudges a wrapped gift under the tree"
+  }
+ ],
+ "sfx": [
+  [
+   6.7,
+   "creak"
+  ]
+ ],
+ "end": {
+  "renders": [
+   "shepherd-hilarious-portrait.jpg"
+  ],
+  "hold": 4.2
+ }
+}

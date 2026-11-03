@@ -1,0 +1,1213 @@
+{
+ "about": "The joke bank. A post may only use approved lines, on breeds each line is tagged for. New lines enter as proposed and reach Krish in batches; his decline retires a line or a line and breed pair. An approved line carries text_sha256 of its exact words: editing an approved line un-approves it, so a change becomes a new proposed line.",
+ "lines": [
+  {
+   "id": "F10.c01",
+   "text": "I'm giving mine a stick 🦴",
+   "role": "chat.stick_1",
+   "kind": "chat",
+   "breeds": [
+    "lab",
+    "golden",
+    "doodle",
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "719b7562ceb56c653c35c4d53e0727c4792429ad933cc4e4d6911702b399a523"
+  },
+  {
+   "id": "F10.c01b",
+   "text": "I'm giving mine a stick 🪵",
+   "role": "chat.stick_1",
+   "kind": "chat",
+   "breeds": [
+    "lab",
+    "golden",
+    "doodle",
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "moot: the bone emoji is now the joke (\"Bro, that's a bone\"), Krish 3 Nov"
+  },
+  {
+   "id": "F10.c02",
+   "text": "A really good stick.",
+   "role": "chat.stick_2",
+   "kind": "chat",
+   "breeds": [
+    "lab",
+    "golden",
+    "doodle",
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "2afc92fdbfdcf1e55e051ddd95eac91228acadb9dc1a604df0c2dc318724f3f5"
+  },
+  {
+   "id": "F10.c03",
+   "text": "I've been saving it since August.",
+   "role": "chat.stick_3",
+   "kind": "chat",
+   "breeds": [
+    "lab",
+    "golden",
+    "doodle",
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "1c4544f1022fb9cebbd4932755711a360fbc73605850f30a3c666f3dee366335"
+  },
+  {
+   "id": "F10.c04",
+   "text": "LOL",
+   "role": "chat.react",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "6e0290d62f6db1779d6318df50209de8c9b93adb29b7dd46e7b563f044103b40"
+  },
+  {
+   "id": "F10.c05",
+   "text": "😂😂 a REALLY good stick",
+   "role": "chat.mock_stick",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "a2c3dc83aedad016f0f6524050e2c7b1f6231e4d29e6d69be002b8ed65d9a36b"
+  },
+  {
+   "id": "F10.c06",
+   "text": "lol the gud stik",
+   "role": "chat.mock_stick_dialect",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "1598f97490b6d98b98be306d8cfbaeb7ca79523ae0d3b796662724a5b4e05843"
+  },
+  {
+   "id": "F10.c07",
+   "text": "You gave a stick last year.",
+   "role": "chat.callout",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "7ce9e29ef9e1ac4a3b48d266397151fabb85ff9f19e37ff1a977b571d5ced807"
+  },
+  {
+   "id": "F10.c08",
+   "text": "And they LOVED it.",
+   "role": "chat.stick_defend",
+   "kind": "chat",
+   "breeds": [
+    "lab",
+    "golden",
+    "doodle",
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "b59d0629feb2d1725fe06599b54586c9d3fb77695074b4cde0b897d0992e3d25"
+  },
+  {
+   "id": "F10.c09",
+   "text": "They threw it away.",
+   "role": "chat.callout_2",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "617741d0b331d75aacb8c7ef9c258e17b74f50cdf199993f45d7faf6269e5107"
+  },
+  {
+   "id": "F10.c10",
+   "text": "and then they THREW IT AGAIN 🥹",
+   "role": "chat.stick_payoff",
+   "kind": "chat",
+   "breeds": [
+    "lab",
+    "golden",
+    "doodle",
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "2efdd51652bd0a1469b730ad8970c3815b549f96e93ea901d63c5b81e72dcd86"
+  },
+  {
+   "id": "F10.c11",
+   "text": "i got my humin a gift",
+   "role": "chat.ate_1",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "fe026ac494ce7f6af9199cbe7a6ff1b566ecad12d4c5fd5a32cbb64b478146f2"
+  },
+  {
+   "id": "F10.c12",
+   "text": "then i ate my humin's gift",
+   "role": "chat.ate_2",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "2ce7c883d8674c2b2bb92199f0a9791b55778d306c6d90b38e8634c2dffe8804"
+  },
+  {
+   "id": "F10.c13",
+   "text": "shuldnt hav got him a ham 🍖",
+   "role": "chat.ate_3",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "67bfe6339b2d08c5dfc7eac002cdd168dc960143614f9d83c3cb5a93fff494c0"
+  },
+  {
+   "id": "F10.c14",
+   "text": "I'm giving mine my presence, every five minutes, all night, on their face.",
+   "role": "chat.presence",
+   "kind": "chat",
+   "breeds": [
+    "frenchie",
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "b750e42cbf01856e8609fcf29f56c67d2f016358940119d4ac126bc16db72cd9"
+  },
+  {
+   "id": "F10.c15",
+   "text": "WTF",
+   "role": "chat.wtf",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "b680b32490540916ac08883ba2c6f94f091e8103cff1c1ac52fae15cc8b1369e"
+  },
+  {
+   "id": "F10.c16",
+   "text": "WTF 😳",
+   "role": "chat.wtf",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "be14f79e0798807d18165c29e9ad99e97fe734d0b7134a6be77fc4b29e0d2e96"
+  },
+  {
+   "id": "F10.c17",
+   "text": "no I meant licking 👅",
+   "role": "chat.presence_fix",
+   "kind": "chat",
+   "breeds": [
+    "frenchie",
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "119fbfa9fb4a38bde18f6b44a6a08c3de43d5c13a415b0fe9a1cc5ee440d6ecb"
+  },
+  {
+   "id": "F10.c18",
+   "text": "still WTF",
+   "role": "chat.wtf_2",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "81aa9c4f55074f0680162a28a771fd7d27740b4e931774be166a7401fcdf6596"
+  },
+  {
+   "id": "F10.c19",
+   "text": "wait",
+   "role": "chat.wait",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "716ecabb45ac6a88a049398fde2d3d5225c6dd3121ae9bbc5af457eb4baf056a"
+  },
+  {
+   "id": "F10.c20",
+   "text": "CAN I BE A MUG ☕",
+   "role": "chat.mug_ask",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "01d49b5f064cc5a6bfce4c2b957d4aec15946c45fe12ac8be3ec6d95a9255eb5"
+  },
+  {
+   "id": "F10.c21",
+   "text": "Ordering for the whole pack.",
+   "role": "chat.close",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "26658a78d45375f540c7cf27ba322f65c4cbd07f9e38bbda9c1dfca00d01e3c8"
+  },
+  {
+   "id": "F10.title",
+   "text": "Gifts for our humans",
+   "role": "chat.chat_title",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "a7b5ad8d61a989539d8c2eb66be2d4094cd1c83b633da10fd01572f415ca9dc0"
+  },
+  {
+   "id": "F10.end",
+   "text": "This year, the dog's buying.",
+   "role": "end.super",
+   "kind": "headline",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "00f905fda043dba3a18f606c0c6e41ec2d3a89973cf65590a355c58b91d7d529"
+  },
+  {
+   "id": "F11.q1",
+   "text": "how to say I love you without thumbs",
+   "role": "search.q1",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "e14f4e9396abe6ad08527f9fa8337327a955b7534446b5fc756fce978d90f5af"
+  },
+  {
+   "id": "F11.q2",
+   "text": "how long is 5 minutes in dog time",
+   "role": "search.q2",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "72da26a990c0346f0f3834129d030cc634d14c0503fb935e6ee484e8c5e688ce"
+  },
+  {
+   "id": "F11.q3",
+   "text": "my human asked who's a good boy and didn't wait for an answer",
+   "role": "search.q3",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "d372fab8d8e9f7513e642ccc7da339f3c0832a47c9722e268434649b30111c57"
+  },
+  {
+   "id": "F11.q4",
+   "text": "is the vacuum dangerous yes or yes",
+   "role": "search.q4",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "6d685ef457adaa89dee667ff70666f1d093995ac448fac25e8211708890915aa"
+  },
+  {
+   "id": "F11.q5",
+   "text": "can dogs buy things if they ask very politely",
+   "role": "search.q5",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "2e21c3b14712e20606e02c0a4478c9a216ab3a2828e7ec9b87f899c11ba5ef8d"
+  },
+  {
+   "id": "F11.q6",
+   "text": "how to look humble when you're this handsome",
+   "role": "search.q6",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "b097466684b5d70f5ff7d916693a925fe41005aea24dbeccbd24ec1143927ca4"
+  },
+  {
+   "id": "F11.q7",
+   "text": "put my own face on a mug: weird or genius",
+   "role": "search.q7",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "6961b511c07387809150eb96c0101a4dc581687a7af6b6fce9d604339d13a876"
+  },
+  {
+   "id": "F11.r2",
+   "text": "forever (approx.)",
+   "role": "search.r2",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "b6757408c70ea3b5fb9c4fbed39521857417763838220830684311cb69c70465"
+  },
+  {
+   "id": "F11.r4",
+   "text": "yes",
+   "role": "search.r4",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "8a798890fe93817163b10b5f7bd2ca4d25d84c52739a645a889c173eee7d9d3d"
+  },
+  {
+   "id": "F11.r7",
+   "text": "genius.",
+   "role": "search.r7",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "dbe249bb2932997b491775807f4907a424ec3289dec0464d9f07324edfcf6d27"
+  },
+  {
+   "id": "F06.title",
+   "text": "What your {breed} really thinks of you.",
+   "role": "roast.title",
+   "kind": "headline",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "e9b29e67aab64b3dca9f4da0861853ad94ab2858d0217985ce6bf0f047c75912"
+  },
+  {
+   "id": "F06.end",
+   "text": "From your dog, so you never forget it.",
+   "role": "end.super",
+   "kind": "headline",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "1fced744b3054576f4c5c893d32098621491ba13d43a60497376089475b7cc60"
+  },
+  {
+   "id": "F06.fr1",
+   "text": "You leave for five minutes and I have to rebuild my whole life.",
+   "role": "roast.1",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "6589b7002fff25aa164b20197fa9e46c5a99f1333e245499a2c8e798cc3ef020",
+   "note": "Krish 3 Nov: \"not funny compared to the dash\""
+  },
+  {
+   "id": "F06.fr2",
+   "text": "You call it your side of the bed, which is very funny to me.",
+   "role": "roast.2",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "e84158f966921c2db8557ff85cd7e8dfa9dd6ee9ad55ae98c85a1434b2c63851",
+   "note": "Krish 3 Nov: \"not funny compared to the dash\""
+  },
+  {
+   "id": "F06.fr3",
+   "text": "You are slow at the door, but you are the only one I wait for.",
+   "role": "roast.soft",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "ef5e63fa65e518e223256acc794201e76e0df32ecfc27ec97a6840de46939148",
+   "note": "Krish 3 Nov: \"not funny compared to the dash\""
+  },
+  {
+   "id": "F06.da1",
+   "text": "You bought me stairs for the couch. I use them to reach your pillow.",
+   "role": "roast.1",
+   "kind": "gift",
+   "breeds": [
+    "dachshund",
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
+  },
+  {
+   "id": "F06.da2",
+   "text": "You say \"walk\" like it is a question. It has never been a question.",
+   "role": "roast.2",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
+  },
+  {
+   "id": "F06.da3",
+   "text": "I guard you from every leaf on this street, because you are mine.",
+   "role": "roast.soft",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
+  },
+  {
+   "id": "F06.la1",
+   "text": "You throw the ball and then look shocked every time I bring it back.",
+   "role": "roast.1",
+   "kind": "gift",
+   "breeds": [
+    "lab",
+    "golden",
+    "doodle",
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
+  },
+  {
+   "id": "F06.la2",
+   "text": "You hide the treats in the same cupboard and call it a secret.",
+   "role": "roast.2",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
+  },
+  {
+   "id": "F06.la3",
+   "text": "You are my favorite person, and I have met the mailman.",
+   "role": "roast.soft",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's rewrite, 2 Nov"
+  },
+  {
+   "id": "F07.v1",
+   "text": "Hmm.",
+   "role": "film.F07.v1",
+   "kind": "dialogue",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "7f2302c86d005fed4397eef4134c2c03eb6324268449f5cf97595e6307942c31"
+  },
+  {
+   "id": "F07.v2",
+   "text": "The brushwork is bold. The light is daring.",
+   "role": "film.F07.v2",
+   "kind": "dialogue",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "bc2b59e50ed39d040ce0ea254f494d3bc261c0e6fb930da07133165a51d8be9c"
+  },
+  {
+   "id": "F07.v3",
+   "text": "And the subject is, frankly,",
+   "role": "film.F07.v3",
+   "kind": "dialogue",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "149a475037c48fb104145cb3c29102bf7508a4abe5cab04b9e0cb05b57a02c7d"
+  },
+  {
+   "id": "F07.v4",
+   "text": "the most handsome dog I have ever seen.",
+   "role": "film.F07.v4",
+   "kind": "dialogue",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "5c1be8e83ca0679071de230a1adb5522a9e251c728f69666e8e6e6434281ba58"
+  },
+  {
+   "id": "F07.v5",
+   "text": "I'll allow it on your wall.",
+   "role": "film.F07.v5",
+   "kind": "dialogue",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "ec1bbc044ef0ad89d4a15ff7ef2f04527717be967a5fef423aef1a176874bdbc"
+  },
+  {
+   "id": "F12.v1",
+   "text": "Unidentified box on the porch.",
+   "role": "film.F12.v1",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "8a9f24f7792dbe3cf1ceff932c63d8823181429c0e789c3013997c81fe9dbfbf"
+  },
+  {
+   "id": "F12.v2",
+   "text": "Threat level: maximum.",
+   "role": "film.F12.v2",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "a06e16374799c4eb1201b7a6dc0cd2e0592e0a6f15f8d66b740a1048a3a126d8"
+  },
+  {
+   "id": "F12.v3",
+   "text": "Requesting backup. Backup is asleep on the couch.",
+   "role": "film.F12.v3",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "0fb915fb2e7d68bd94d51dbb324ba66263b694cfcaf1ead8ae6c15b39260efce"
+  },
+  {
+   "id": "F12.v4",
+   "text": "Proceeding alone.",
+   "role": "film.F12.v4",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "4b5a524e54e36ec3a949da6e7a983194e3507ea50bb15f3f0fe036380a7dffa2"
+  },
+  {
+   "id": "F12.v5",
+   "text": "Oh. It's me.",
+   "role": "film.F12.v5",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "520dec36bdef8cfe9af5309683db45a5b849cc5969f1b76c5b6649aeb154e07a"
+  },
+  {
+   "id": "F12.v6",
+   "text": "Threat cleared. I look incredible.",
+   "role": "film.F12.v6",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "57cf547a71781cd842e56391c884317d82220f00ef28e7cc25752e860f4c2dfd"
+  },
+  {
+   "id": "F03.v1",
+   "text": "Listen up. At 0600 hours, the humans wake up.",
+   "role": "film.F03.v1",
+   "kind": "dialogue",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "4717a50f8a6a32f04fef3b5ec4eaa0920d72da620c81167d6a8e9013185d8103"
+  },
+  {
+   "id": "F03.v2",
+   "text": "Before then, the gift goes under the tree.",
+   "role": "film.F03.v2",
+   "kind": "dialogue",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "591b768558aaaecb141f282f45385461b3a2fe9656fc4dbdfda29ea1dd8b918c"
+  },
+  {
+   "id": "F03.v3",
+   "text": "The beagle is on scent. The frenchie is lookout.",
+   "role": "film.F03.v3",
+   "kind": "dialogue",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "2f838dc7b41891aced1bc4c1c2e2f4d0286abcc8bc56196eca48f593e95d06d3"
+  },
+  {
+   "id": "F03.v4",
+   "text": "And nobody touches the cookies.",
+   "role": "film.F03.v4",
+   "kind": "dialogue",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "d76c0769568e7fe1b9da6eb4d18ad449ebff8ef210b56f5dfb44fb559a75470c"
+  },
+  {
+   "id": "F03.v5",
+   "text": "Questions? Good.",
+   "role": "film.F03.v5",
+   "kind": "dialogue",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "674860ee07b062b5ffdb02584cf2149ed59ecc195f8e316fbcf89a8fb5ae7ea0"
+  },
+  {
+   "id": "F05.v1",
+   "text": "Order. ORDER in the living room.",
+   "role": "film.F05.v1",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "da329f2dff268fc973a5b9d60339741b46d2511817cfea80b5b16ef15dd6a5d3"
+  },
+  {
+   "id": "F05.v2",
+   "text": "The defendant is accused of stealing the human's spot on the couch.",
+   "role": "film.F05.v2",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "abd7d43ef1aad04fb229db7cd55403b98cb9ae20bd64f25bc00a7a6c35e300a8"
+  },
+  {
+   "id": "F05.v3",
+   "text": "Every single day.",
+   "role": "film.F05.v3",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "069c23131d140fcc0e9c17b656183519da114441dd445d158a8a19c34a84d551"
+  },
+  {
+   "id": "F05.v4",
+   "text": "Does the defense have anything to say for itself?",
+   "role": "film.F05.v4",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "dfff0fa626c1669c2c5c1abe67d8fd1341c7026be1daabe285b1e9493ca482a7"
+  },
+  {
+   "id": "F05.v5",
+   "text": "Oh, look at that face.",
+   "role": "film.F05.v5",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "61d155c38d9922b0f58d714b0348cddddc7ee727e91e7e66bfbb99011f08195f"
+  },
+  {
+   "id": "F05.v6",
+   "text": "Objection overruled by cuteness.",
+   "role": "film.F05.v6",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "85e61e261e1d03b8c9462f1dd1cb731c8e2c8137fe0edbd5490cc79cb3c6ea8f"
+  },
+  {
+   "id": "F05.v7",
+   "text": "The court finds the defendant guilty, and very cozy.",
+   "role": "film.F05.v7",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "99dbe39ec5d66aca44cb33465c1c0cce0e24f4a78ba84c7d5e2b84c7fc139566"
+  },
+  {
+   "id": "F05.v8",
+   "text": "Case closed.",
+   "role": "film.F05.v8",
+   "kind": "dialogue",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (locked voice read)",
+   "text_sha256": "e474c5de64f5d8c8cbac110ea60949d6b54838954e1f89fbf559e13db45750e5"
+  },
+  {
+   "id": "F03.end",
+   "text": "The dog's been planning this.",
+   "role": "end.super",
+   "kind": "headline",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "text_sha256": "f1b06caf5e6042f397e021c520f160d369aef87c7187808998bb1cbaee1187de"
+  },
+  {
+   "id": "F05.end",
+   "text": "Guilty. And very cozy.",
+   "role": "end.super",
+   "kind": "headline",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "Krish, 2026-11-02 (approved script)",
+   "note": "In the approved F05 script, but it breaks the stacked-fragments rule (VOICE). Krish decides."
+  },
+  {
+   "id": "LEAD",
+   "text": "Your dog loves you too.",
+   "role": "end.super",
+   "kind": "headline",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Heartside lead line (heartside canon)",
+   "text_sha256": "be159c3f952f2be60860a4532682919309460182db4f89952349a71638654547"
+  },
+  {
+   "id": "F07.end",
+   "text": "Your dog, on your wall.",
+   "role": "end.super",
+   "kind": "headline",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02"
+  },
+  {
+   "id": "SUB.photo",
+   "text": "Painted from one photo of your dog.",
+   "role": "end.sub",
+   "kind": "claim",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "replaced by Krish's wording, now a caption (CAP.painted)"
+  },
+  {
+   "id": "F06.kda1",
+   "text": "You bought me stairs for the couch. I use them to fart on your pillow. My bad.",
+   "role": "roast.1",
+   "kind": "gift",
+   "breeds": [
+    "dachshund",
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words; \"My bad.\" for \"Soz\" approved in chat: \"yes, use both\")",
+   "text_sha256": "27278f9233f3dfb17c2ffe748296f734c3f603bfb99f7de6dcc0346a48409e97"
+  },
+  {
+   "id": "F06.kda2",
+   "text": "Who walks who here? Pretty sure I know the answer.",
+   "role": "roast.2",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "text_sha256": "543b6ee7a9782dd099554bccbbf984dca640bd767992fde40dd4e1e0bab6d763"
+  },
+  {
+   "id": "F06.kda3",
+   "text": "You jump at every noise, so I check them all for you.",
+   "role": "roast.soft",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (approved in chat: \"yes, use both\")",
+   "text_sha256": "eea26fd5e007efdce0b514b788dcd247022807e48e42fa5d0f63ce95f828692b"
+  },
+  {
+   "id": "F06.kla1",
+   "text": "Come on, you can throw better than that.",
+   "role": "roast.1",
+   "kind": "gift",
+   "breeds": [
+    "lab",
+    "golden",
+    "doodle",
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "text_sha256": "5ac1ad4a7a847187724d59fb1b76421bbda6e4ef2fe96e59dd8cd3399318f49a"
+  },
+  {
+   "id": "F06.kla2",
+   "text": "I know where the treats are FYI - top right cupboard.",
+   "role": "roast.2",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "text_sha256": "4cc6be0e1ec50681deef56d8bf128a5d81369a0d24740426c2b00b093eaf4114"
+  },
+  {
+   "id": "F06.kla3",
+   "text": "You are my favorite human, that I spend time with every day, and isn't the mailman.",
+   "role": "roast.soft",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "note": "his words with \"favourite\" changed to US \"favorite\" (canon: US spelling)",
+   "text_sha256": "c9d0d356a27773cbf6e14da355139c333ee980a41e488800853eba343abad6d5"
+  },
+  {
+   "id": "F10.c24",
+   "text": "Bro, that's a bone 😂",
+   "role": "chat.react_bro",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (his words), board note on F10",
+   "text_sha256": "f53fed3809abca792c512b6114e5da008e3f9590e5af3226308d1ea87aaddc9e"
+  },
+  {
+   "id": "F10.c25",
+   "text": "5th year running",
+   "role": "chat.react_tradition",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "text_sha256": "601adca94c2fbe8fe5ec0146660206b0759c42d56a023e35545c3a1207ce249d"
+  },
+  {
+   "id": "F10.c26",
+   "text": "is it the same stick",
+   "role": "chat.react_extra",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "Krish asked for more witty replies"
+  },
+  {
+   "id": "F10.c27",
+   "text": "the stick has seen things",
+   "role": "chat.react_extra",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "Krish asked for more witty replies"
+  },
+  {
+   "id": "F11.r1",
+   "text": "sit on their foot (works every time)",
+   "role": "search.r1",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "f7990e7812b3d8fcc13ed02392e13df711cefbb2913c0650ec17bd26d106a25d"
+  },
+  {
+   "id": "F11.r1b",
+   "text": "lean on them until they fall over",
+   "role": "search.r1",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "not chosen: Krish locked F11 with the first answers"
+  },
+  {
+   "id": "F11.r3",
+   "text": "they knew (they always know)",
+   "role": "search.r3",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "10dde0e9190642758e1eac138d9d3af8bb3283c6c104757b4be7419d38157c2c"
+  },
+  {
+   "id": "F11.r3b",
+   "text": "rude",
+   "role": "search.r3",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "not chosen: Krish locked F11 with the first answers"
+  },
+  {
+   "id": "F11.r4b",
+   "text": "yes (run)",
+   "role": "search.r4",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "not chosen: Krish locked F11 with the first answers"
+  },
+  {
+   "id": "F11.r5",
+   "text": "only with a very good sit",
+   "role": "search.r5",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "e66c8696bfdadb01db2a98a52f3ca9cb3294477ed16aed3bf80603c69bfd66cf"
+  },
+  {
+   "id": "F11.r5b",
+   "text": "try the eyes",
+   "role": "search.r5",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "not chosen: Krish locked F11 with the first answers"
+  },
+  {
+   "id": "F11.r6",
+   "text": "0 results",
+   "role": "search.r6",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "ff7009f4a9652ed56f299b960aa8e11a6c5f697ade6f2bccfc5cce1d7fc12946"
+  },
+  {
+   "id": "F11.r6b",
+   "text": "you can't (and that's okay)",
+   "role": "search.r6",
+   "kind": "search",
+   "breeds": [
+    "any"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-02",
+   "note": "not chosen: Krish locked F11 with the first answers"
+  },
+  {
+   "id": "CAP.painted",
+   "text": "Painted lovingly in your style of choice using our next-generation AI artists.",
+   "role": "caption.how",
+   "kind": "caption",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-02 (board, his words)",
+   "note": "a caption line, never on screen",
+   "text_sha256": "446f86da120e7de735137e9198afe3d861dae5a951f69fb61361c32a26d502d4"
+  },
+  {
+   "id": "F10.c28",
+   "text": "They threw it AWAY mate 😂😵",
+   "role": "chat.correction",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (his words), answering the F10 question",
+   "text_sha256": "fa8dae088ad2e644963504c33f513ee460064763e75543462d4262f50ddd2a0f"
+  },
+  {
+   "id": "F06.fr4",
+   "text": "I licked your side of the couch, so legally it's mine now.",
+   "role": "roast.1",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (approved the plan that set these words)",
+   "text_sha256": "266233f3391b16dc326ebfdadee561739fdbc864f0587f2f5666508df5453fe6"
+  },
+  {
+   "id": "F06.fr5",
+   "text": "I snore, I fart, I hog the bed, and you still call me perfect. Correct.",
+   "role": "roast.2",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (approved the plan that set these words)",
+   "text_sha256": "d7d28239903ddf507eac019f27dbbcb3571392d98b5e7afe1d6cec03ffeb5263"
+  },
+  {
+   "id": "F06.fr6",
+   "text": "You're slow at the door, but I'd wait forever. Mostly for snacks.",
+   "role": "roast.soft",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (approved the plan that set these words)",
+   "text_sha256": "905313a1d1ddbaa2b469f1658a292ef52d83e2be4c6f6d2e2a9b3359df57630b"
+  }
+ ]
+}

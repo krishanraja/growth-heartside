@@ -1,0 +1,822 @@
+{
+ "board": "Heartside sound and script board, round 2",
+ "date": "2026-11-02",
+ "sound_bible": {
+  "modes": [
+   {
+    "name": "The dog's inner voice",
+    "rule": "Thoughts as voiceover, one recurring voice per breed group (Krish, 2 Nov). Dry and sincere, never cute. The dog believes every word."
+   },
+   {
+    "name": "The narrator",
+    "rule": "An original British natural-history narrator: hushed, reverent, utterly serious about a dog stealing a couch. No imitation of any real presenter."
+   },
+   {
+    "name": "Genre parody scores",
+    "rule": "Licensed from Epidemic Sound in the genre's register: spy and heist, wildlife epic, courtroom drama, gallery baroque, quirky comedy. Never a real film theme."
+   },
+   {
+    "name": "The room",
+    "rule": "Real foley under everything: nails on wood, a tail thump, a sigh, a mug set down. It keeps the AI picture believable."
+   }
+  ],
+  "rules": [
+   "The music cuts on the punchline only mid-film. At the end it never stops dead: it dips under the final chime and fades out (Krish, 2 Nov: 'Surely, we would just lower the music and have the sprinkle over it').",
+   "The swear is bleeped (Krish, 2 Nov). The bleep is the joke; the brand never swears.",
+   "Every product reveal gets the same signature sound, a short warm chime, so the series is recognisable with eyes closed.",
+   "Captions carry every spoken line, because most people watch muted. The joke must work with the sound off.",
+   "Under 30 seconds. The real product is on screen by second 20 and stays for at least 3 seconds, labelled Example.",
+   "The voice always sits on top: music stays well under any spoken line and swells only after it lands. Sound effects fade in, never slam (Krish, 2 Nov)."
+  ]
+ },
+ "concepts": [
+  {
+   "id": "F01",
+   "title": "Becoming the Mug",
+   "gift": "mug",
+   "breed": "dachshund",
+   "voice_role": "dachshund",
+   "krish": "We need to have a frame of the human ignoring the dog first, and then some sort of Mission Impossible-style music that swells up where the dog goes, \"Fuck it, I'm going to jump into the mug.\"",
+   "mechanism": "Setup: the dog is ignored for a phone. Escalation: the dog's wounded logic. Button: the leap, then the dog is the mug.",
+   "script": [
+    {
+     "t": "0-3s",
+     "picture": "Kitchen, morning. A person at the table (shoulders and hands only) scrolls a phone, a mug beside them. A dachshund sits at their feet, staring up.",
+     "sound": "Room tone, a spoon on ceramic. Sneaky bed starts low. VO: My human has looked at that phone for nine minutes, and at me for zero."
+    },
+    {
+     "t": "3-9s",
+     "picture": "Dog's-eye close-up of the mug being lifted, the person smiling at it.",
+     "sound": "VO: Every morning, that mug gets the first smile of the day."
+    },
+    {
+     "t": "9-14s",
+     "picture": "Slow push in on the dachshund. Its eyes narrow. It looks at the mug, then at the camera.",
+     "sound": "VO: Fine. If the mug gets the love, then I will become the mug."
+    },
+    {
+     "t": "14-18s",
+     "picture": "Low angle. The dog backs up, wiggles, takes a run-up across the kitchen floor.",
+     "sound": "The spy swell comes in hard. VO: Oh, [BLEEP] it. I'm going in."
+    },
+    {
+     "t": "18-21s",
+     "picture": "Slow-motion leap, ears flying, straight into the mug. Splash cut.",
+     "sound": "Music hits its peak, then cuts dead on the splash."
+    },
+    {
+     "t": "21-26s",
+     "picture": "Hard cut to the real mug render with the dachshund painting, turning slowly. Example label. Super: Your dog, in every morning.",
+     "sound": "Silence for half a second, then the Heartside chime."
+    }
+   ],
+   "music": [
+    "m_spy_catch",
+    "m_spy_fool",
+    "m_sneak_ingenious"
+   ],
+   "voices": [
+    "e_dac1",
+    "e_dac2",
+    "e_dac3",
+    "v03",
+    "v04",
+    "v05"
+   ],
+   "sketch": "sketch_F01_el",
+   "voice_design": "A small dog's inner voice: a dry, wry American man in his forties. Unhurried, quietly wounded, deadpan, building to fed-up exasperation and a reckless decision.",
+   "sketch_alt": "sketch_F01"
+  },
+  {
+   "id": "F02",
+   "title": "The Dog's Christmas Shopping List",
+   "gift": "mug, portrait, blanket",
+   "breed": "golden retriever",
+   "voice_role": "golden",
+   "krish": "I think the audio needs to be what the dog's thinking in his head, like Scrubs style, inner monologue.",
+   "mechanism": "Inner monologue of an overjoyed, totally literal golden. The joke is the literal logic (searching 'nothing'). Button: it found itself.",
+   "script": [
+    {
+     "t": "0-3s",
+     "picture": "2:14 am. A golden retriever lit by a laptop, paw on the trackpad, very focused.",
+     "sound": "Late-night lo-fi bed, keyboard clicks. VO: Okay. My human said they want nothing for Christmas."
+    },
+    {
+     "t": "3-8s",
+     "picture": "Screen: the search bar types 'nothing'. Result: a photo of an empty box.",
+     "sound": "VO: So I looked up nothing, and it's just an empty box, which is so sad. A small sad trombone sting."
+    },
+    {
+     "t": "8-14s",
+     "picture": "Tabs pile up: tennis balls, a bigger couch, more tennis balls. The golden's tail starts going.",
+     "sound": "Music lifts. VO: Then I found this."
+    },
+    {
+     "t": "14-20s",
+     "picture": "The real heartside.io page with the mug, a golden's painting on it. Example label.",
+     "sound": "VO: It's my face, on a mug, every single morning."
+    },
+    {
+     "t": "20-25s",
+     "picture": "Golden staring into the camera, delighted. Super: This year, the dog's buying.",
+     "sound": "VO: This is the best idea anyone has ever had, and the anyone was me. Heartside chime."
+    }
+   ],
+   "music": [
+    "m_lofi_relax",
+    "m_lofi_tidal",
+    "m_sneak_bugaboo"
+   ],
+   "voices": [
+    "e_gol1",
+    "e_gol2",
+    "e_gol3",
+    "v06",
+    "v07",
+    "v08"
+   ],
+   "voice_design": "A golden retriever's inner monologue: a sincere, breathless, overjoyed young American man. A late-night half-whisper, takes everything literally, sitcom-style."
+  },
+  {
+   "id": "F03",
+   "title": "Operation Stocking",
+   "gift": "portrait",
+   "breed": "German shepherd",
+   "voice_role": "shepherd",
+   "krish": "Mission Impossible star music and tiptoeing and comedy exaggeration",
+   "mechanism": "Deadly-serious heist briefing, absurdly exaggerated sneaking. Button: the gift lands, the crew relaxes.",
+   "script": [
+    {
+     "t": "0-4s",
+     "picture": "Top-down blueprint of a living room, red string, a German shepherd with a pointer.",
+     "sound": "Spy music, low pulse. VO: Listen up. At six hundred hours the humans wake up."
+    },
+    {
+     "t": "4-8s",
+     "picture": "Quick cuts of the crew: a beagle sniffing the air, a frenchie in a doorway on lookout.",
+     "sound": "VO: Before then, the gift goes under the tree. The beagle is on scent. The frenchie is lookout."
+    },
+    {
+     "t": "8-15s",
+     "picture": "Exaggerated tiptoe past the stairs in slow motion, one paw at a time; a floorboard creaks; everyone freezes mid-step.",
+     "sound": "Music drops to pizzicato on each step; the creak; total silence; then it resumes."
+    },
+    {
+     "t": "15-19s",
+     "picture": "The shepherd nudges a wrapped frame under the tree. Crew exhale.",
+     "sound": "VO: And nobody touches the cookies. Questions? Good."
+    },
+    {
+     "t": "19-24s",
+     "picture": "Cut to the real framed portrait. Example label. Super: The dog's been planning this.",
+     "sound": "Music cuts dead. Heartside chime."
+    }
+   ],
+   "music": [
+    "m_spy_fool",
+    "m_spy_young",
+    "m_sneak_business"
+   ],
+   "voices": [
+    "e_she1",
+    "e_she2",
+    "e_she3",
+    "v12",
+    "v13",
+    "v14"
+   ],
+   "voice_design": "A German shepherd heist leader: a gravelly, deadly-serious American man in his fifties giving a mission briefing. Low, clipped, unamused."
+  },
+  {
+   "id": "F04",
+   "title": "Nature Documentary: The Couch Thief",
+   "gift": "blanket",
+   "breed": "greyhound",
+   "voice_role": "narrator",
+   "krish": "Make narrator sound like David Attenborough with epic music in the background",
+   "mechanism": "A reverent wildlife register applied to a dog stealing a warm spot. Button: the blanket is the dog's own painting.",
+   "script": [
+    {
+     "t": "0-5s",
+     "picture": "Wide, golden light. A greyhound lies very still on the rug, eyes on the couch.",
+     "sound": "Epic orchestral bed, low. Narrator: Here, in the living room, we find the greyhound. It has waited all afternoon for this moment."
+    },
+    {
+     "t": "5-10s",
+     "picture": "The person stands up from the couch (legs only) and walks out of frame.",
+     "sound": "Narrator: The human rises, only for a second, to fetch a snack."
+    },
+    {
+     "t": "10-15s",
+     "picture": "Slow motion: the greyhound flows onto the couch into the warm spot, settles, closes its eyes.",
+     "sound": "Music swells to full. Narrator: And in one silent movement, the territory is claimed."
+    },
+    {
+     "t": "15-19s",
+     "picture": "The person returns, holding a snack, and stops.",
+     "sound": "Music cuts. Narrator: The human will not be getting it back."
+    },
+    {
+     "t": "19-25s",
+     "picture": "The real blanket with a greyhound-style painting, folded on the couch. Example label.",
+     "sound": "Narrator: Remarkably, it has even put itself on the blanket. Heartside chime."
+    }
+   ],
+   "music": [
+    "m_epic_callwild",
+    "m_epic_sunrise"
+   ],
+   "voices": [
+    "e_nar1",
+    "e_nar2",
+    "e_nar3",
+    "v00",
+    "v01",
+    "v02"
+   ],
+   "voice_design": "An original older British natural-history documentary narrator, male, in his seventies. Hushed, reverent, unhurried and utterly serious, with warm breathy wonder and long pauses. Not an imitation of any real person."
+  },
+  {
+   "id": "F05",
+   "title": "The Court of the Couch",
+   "gift": "blanket",
+   "breed": "pug",
+   "voice_role": "narrator",
+   "krish": "",
+   "mechanism": "Courtroom gravity over a tiny crime. Button: the defense is the blanket.",
+   "script": [
+    {
+     "t": "0-3s",
+     "picture": "A tiny gavel bangs. A pug sits in a dock, looking extremely innocent.",
+     "sound": "Courtroom tension sting. Judge (the narrator voice): The court will now hear the case of the stolen couch spot."
+    },
+    {
+     "t": "3-9s",
+     "picture": "Exhibit A on an easel: a photo of the pug asleep in the person's spot.",
+     "sound": "Gasp from an unseen gallery. Judge: The defendant was found asleep in the warm spot, every single day."
+    },
+    {
+     "t": "9-15s",
+     "picture": "The pug slowly slides a folded blanket forward with its nose.",
+     "sound": "Music builds. Judge: The defense has one piece of evidence."
+    },
+    {
+     "t": "15-21s",
+     "picture": "Close-up: the real blanket with the pug's painting. Example label.",
+     "sound": "Judge: The court finds the defendant guilty, and very cozy. Gavel. Heartside chime."
+    }
+   ],
+   "music": [
+    "m_court_twowarn",
+    "m_court_estim"
+   ],
+   "voices": []
+  },
+  {
+   "id": "F07",
+   "title": "The Art Critic",
+   "gift": "portrait",
+   "breed": "doodle",
+   "voice_role": "doodle",
+   "krish": "Make sure he looks obviously smug",
+   "mechanism": "A snobbish critic reviewing a painting that turns out to be of itself. Smugness is the whole joke: half-closed eyes, chin up, a slow approving nod.",
+   "script": [
+    {
+     "t": "0-4s",
+     "picture": "A tiny white gallery. A doodle stands before a framed portrait, chin raised, eyes half closed, unbearably smug.",
+     "sound": "Baroque harpsichord bed. VO: Hmm."
+    },
+    {
+     "t": "4-10s",
+     "picture": "It tilts its head, steps back, steps closer, sniffs the frame.",
+     "sound": "VO: The brushwork is bold. The light is daring."
+    },
+    {
+     "t": "10-15s",
+     "picture": "Reverse shot reveals the painting is of the doodle itself.",
+     "sound": "VO: And the subject is, frankly, the most handsome dog I have ever seen."
+    },
+    {
+     "t": "15-20s",
+     "picture": "The doodle turns to camera, one slow smug blink. Cut to the real portrait. Example label.",
+     "sound": "Music stops. VO: I'll allow it on your wall. Heartside chime."
+    }
+   ],
+   "music": [
+    "m_elegant_castle",
+    "m_elegant_butterfly"
+   ],
+   "voices": [
+    "e_doo1",
+    "e_doo2",
+    "e_doo3",
+    "v09",
+    "v10",
+    "v11"
+   ],
+   "voice_design": "A doodle as a snobbish gallery critic: a plummy, languid British man in his forties. Drawling, theatrical, unbearably pleased with himself."
+  },
+  {
+   "id": "F12",
+   "title": "Head of Security",
+   "gift": "portrait",
+   "breed": "chihuahua",
+   "voice_role": "chihuahua",
+   "krish": "The music has to make this one.",
+   "mechanism": "Tiny dog, maximum threat assessment. The music does the acting: action-movie tension that collapses into a sweet chime.",
+   "script": [
+    {
+     "t": "0-4s",
+     "picture": "A delivery box lands on a porch. A chihuahua inside the window goes rigid.",
+     "sound": "Action tension hits on the thud. VO: Unidentified box on the porch. Threat level: maximum."
+    },
+    {
+     "t": "4-9s",
+     "picture": "It circles the box at a crouch, growling, glancing back at the couch where a big dog sleeps.",
+     "sound": "Music builds. VO: Requesting backup. Backup is asleep on the couch. Proceeding alone."
+    },
+    {
+     "t": "9-14s",
+     "picture": "The box opens (hands out of frame). The chihuahua braces for impact.",
+     "sound": "Music peaks, then a record scratch."
+    },
+    {
+     "t": "14-20s",
+     "picture": "Inside: the real framed portrait of a chihuahua-style dog. The chihuahua relaxes completely. Example label.",
+     "sound": "VO: Oh. It's me. Threat cleared. I look incredible. Heartside chime."
+    }
+   ],
+   "music": [
+    "m_spy_young",
+    "m_court_estim",
+    "m_spy_catch"
+   ],
+   "voices": [
+    "e_chi1",
+    "e_chi2",
+    "e_chi3",
+    "v15",
+    "v16",
+    "v17"
+   ],
+   "voice_design": "A chihuahua head of security: an intense, clipped American man with a raspy movie-trailer edge, then sudden vain relief."
+  },
+  {
+   "id": "F06",
+   "title": "Your Breed's Honest Opinion of You",
+   "gift": "mug",
+   "breed": "series (frenchie first)",
+   "voice_role": "",
+   "krish": "This would depend on the copy, but I could see this working for a few different breeds.",
+   "mechanism": "Footage-free carousel: three roasts in the over-the-top tone, then one soft line, then the real gift. Each breed uses its comic character from heartside's archetypes.",
+   "script": [
+    {
+     "t": "Slide 1",
+     "picture": "French bulldog staring into the lens. Headline: What your frenchie really thinks of you.",
+     "sound": "Reel version: comedy plucks."
+    },
+    {
+     "t": "Slide 2",
+     "picture": "Line: You leave for five minutes and I have to rebuild my whole life.",
+     "sound": "Record scratch on the cut."
+    },
+    {
+     "t": "Slide 3",
+     "picture": "Line: You call it your side of the bed, which is very funny to me.",
+     "sound": ""
+    },
+    {
+     "t": "Slide 4",
+     "picture": "Line: You are slow at the door, but you are the only one I wait for.",
+     "sound": "Music softens."
+    },
+    {
+     "t": "Slide 5",
+     "picture": "The real mug with a frenchie painting. Example label. Copy: From your dog, so you never forget it.",
+     "sound": "Heartside chime."
+    }
+   ],
+   "music": [
+    "m_quirk_brat",
+    "m_quirk_jello"
+   ],
+   "voices": []
+  },
+  {
+   "id": "F10",
+   "title": "The Dogs' Group Chat",
+   "gift": "mug, portrait, blanket",
+   "breed": "lab, shepherd, beagle",
+   "voice_role": "",
+   "krish": "Comedy caricature",
+   "mechanism": "Each breed's comic character exaggerated in the chat: the literal lab, the deadpan shepherd, the snack-obsessed beagle. Caricature avatars in heartside's painted style.",
+   "script": [
+    {
+     "t": "Frame 1",
+     "picture": "Chat titled 'Gifts for our humans'. Lab: I'm giving mine a stick.",
+     "sound": "Message pop sounds, quirky bed."
+    },
+    {
+     "t": "Frame 2",
+     "picture": "Shepherd: Again? Beagle: I already ate my gift.",
+     "sound": ""
+    },
+    {
+     "t": "Frame 3",
+     "picture": "Beagle shares a heartside.io link: its own portrait.",
+     "sound": "Record scratch."
+    },
+    {
+     "t": "Frame 4",
+     "picture": "Everyone reacts. Lab: I want to be a mug.",
+     "sound": ""
+    },
+    {
+     "t": "Frame 5",
+     "picture": "The three real gifts. Example label.",
+     "sound": "Heartside chime."
+    }
+   ],
+   "music": [
+    "m_quirk_jello",
+    "m_sneak_bugaboo"
+   ],
+   "voices": []
+  },
+  {
+   "id": "F11",
+   "title": "The Dog's Search History",
+   "gift": "mug",
+   "breed": "any",
+   "voice_role": "",
+   "krish": "Comedy music",
+   "mechanism": "Autocomplete as confession. Each search gets a comedy sting; the last search lands on the product.",
+   "script": [
+    {
+     "t": "Frame 1",
+     "picture": "Search bar types: how to say I love you without thumbs",
+     "sound": "Quirky comedy bed, a key-click per letter."
+    },
+    {
+     "t": "Frame 2",
+     "picture": "can a dog buy a mug",
+     "sound": "Sting."
+    },
+    {
+     "t": "Frame 3",
+     "picture": "what does my person do all day without me",
+     "sound": "Sting."
+    },
+    {
+     "t": "Frame 4",
+     "picture": "is it weird to put my own face on a gift",
+     "sound": "Record scratch."
+    },
+    {
+     "t": "Frame 5",
+     "picture": "The real mug result. Example label.",
+     "sound": "Heartside chime."
+    }
+   ],
+   "music": [
+    "m_quirk_brat",
+    "m_sneak_business"
+   ],
+   "voices": []
+  }
+ ],
+ "voices": {
+  "v00": "Alistair",
+  "v01": "Harrison",
+  "v02": "Sterling",
+  "v03": "Archie",
+  "v04": "Holden",
+  "v05": "Fraser",
+  "v06": "Benji",
+  "v07": "Cody",
+  "v08": "Evan",
+  "v09": "Julian",
+  "v10": "Caspian",
+  "v11": "Xavier",
+  "v12": "Gideon",
+  "v13": "Barrett",
+  "v14": "Knox",
+  "v15": "Kevin",
+  "v16": "Vlad",
+  "v17": "Brooks",
+  "e_dac1": "ElevenLabs design 1",
+  "e_dac2": "ElevenLabs design 2",
+  "e_dac3": "ElevenLabs design 3",
+  "e_gol1": "ElevenLabs design 1",
+  "e_gol2": "ElevenLabs design 2",
+  "e_gol3": "ElevenLabs design 3",
+  "e_she1": "ElevenLabs design 1",
+  "e_she2": "ElevenLabs design 2",
+  "e_she3": "ElevenLabs design 3",
+  "e_nar1": "ElevenLabs design 1",
+  "e_nar2": "ElevenLabs design 2",
+  "e_nar3": "ElevenLabs design 3",
+  "e_doo1": "ElevenLabs design 1",
+  "e_doo2": "ElevenLabs design 2",
+  "e_doo3": "ElevenLabs design 3",
+  "e_chi1": "ElevenLabs design 1",
+  "e_chi2": "ElevenLabs design 2",
+  "e_chi3": "ElevenLabs design 3"
+ },
+ "music": {
+  "m_spy_catch": "Catch Me (Ritchie Everett), 1970s big-band chase",
+  "m_spy_fool": "Fool Me Twice (Jon Sumner), action and sneaking",
+  "m_spy_young": "Young Mystery Detectives (Trailer Worx), suspense",
+  "m_sneak_ingenious": "The Ingenious (Arthur Benson), eccentric 1950s sneak",
+  "m_sneak_bugaboo": "Bug-A-Boo (Moss Harman), quirky sneak",
+  "m_sneak_business": "Sneaky Business (J.R. Productions), quirky sneak",
+  "m_epic_callwild": "The Call of the Wild (Victor Lundberg), epic orchestral",
+  "m_epic_sunrise": "Sunrise after Storms (Jay Taylor), cinematic orchestral",
+  "m_lofi_relax": "relax yo self (Justnormal, frumhere), quirky lo-fi",
+  "m_lofi_tidal": "Tidal Waves (Auxjack), laid-back lo-fi",
+  "m_quirk_jello": "Jello Walking (Arthur Benson), funny eccentric",
+  "m_quirk_brat": "Brat (Stationary Sign), comedy",
+  "m_court_twowarn": "Two Warnings (Alec Slayne), mysterious suspense",
+  "m_court_estim": "Estimations (Christoffer Moe Ditlevsen), dark suspense",
+  "m_elegant_castle": "A Night at the Castle (Jon Algar), elegant small ensemble",
+  "m_elegant_butterfly": "Butterfly Garden (Claude Signet), baroque elegant"
+ },
+ "voice_note": "ElevenLabs takes are voices designed for each character (one voice per breed group, Krish 2 Nov); the Higgsfield takes are preset voices. In the ElevenLabs F01 take the spoken word 'bleep' is replaced by a tone in the sketch.",
+ "round3": {
+  "date": "2026-11-02",
+  "locked": {
+   "voices": {
+    "F02": "Heartside golden, round 5 take 1 (locked)",
+    "F03": "Heartside shepherd (ElevenLabs design 3)",
+    "F04": "Heartside narrator (ElevenLabs design 1)",
+    "F05": "Heartside judge (American), take 1 (locked)",
+    "F07": "Heartside doodle (ElevenLabs design 1)",
+    "F12": "Heartside chihuahua (ElevenLabs design 1)",
+    "F01": "Heartside dachshund, take 1, Mix B with the dip-and-fade ending (locked)"
+   },
+   "music": {
+    "F01": "The Ingenious into the Fool Me Twice crescendo (mix B, approved)",
+    "F02": "Monsieur Cat Walk (Speedy The Spider)",
+    "F03": "Young Mystery Detectives",
+    "F04": "The Call of the Wild",
+    "F05": "Estimations",
+    "F06": "Brat",
+    "F07": "Butterfly Garden",
+    "F10": "Bug-A-Boo",
+    "F11": "Brat",
+    "F12": "Estimations"
+   }
+  },
+  "scripts": {
+   "F01": {
+    "title": "Becoming the Mug",
+    "change": "Adds Krish's wink: the real dog pops up and winks, then a hard cut to the untouched real mug.",
+    "beats": [
+     {
+      "t": "0-3s",
+      "picture": "Kitchen, morning. A person at the table (shoulders and hands only) scrolls a phone, a mug beside them. A dachshund at their feet, staring up, ignored.",
+      "on_screen": "",
+      "vo": "My human has looked at that phone for nine minutes, and at me for zero."
+     },
+     {
+      "t": "3-9s",
+      "picture": "Dog's-eye close-up: the mug lifted, the person smiling at it.",
+      "on_screen": "",
+      "vo": "Every morning, that mug gets the first smile of the day."
+     },
+     {
+      "t": "9-14s",
+      "picture": "Slow push in on the dachshund. Eyes narrow. It looks at the mug, then at the camera.",
+      "on_screen": "",
+      "vo": "Fine. If the mug gets the love, then I will become the mug."
+     },
+     {
+      "t": "14-18s",
+      "picture": "Low angle: it backs up, wiggles, takes a run-up across the kitchen floor.",
+      "on_screen": "",
+      "vo": "Oh, [BLEEP] it. I'm going in. (Music: The Ingenious builds into the crescendo.)"
+     },
+     {
+      "t": "18-20s",
+      "picture": "Slow-motion leap, ears flying, into a burst of steam. Splash cut.",
+      "on_screen": "",
+      "vo": "Music peaks and cuts dead on the splash."
+     },
+     {
+      "t": "20-22s",
+      "picture": "The real dachshund pops its head up out of the steam, looks straight at camera, and winks.",
+      "on_screen": "",
+      "vo": "A single comedy ding on the wink."
+     },
+     {
+      "t": "22-27s",
+      "picture": "Hard cut to the real mug render with the dachshund painting, untouched. Example label.",
+      "on_screen": "Your dog, in every morning.",
+      "vo": "The Heartside chime."
+     }
+    ]
+   },
+   "F02": {
+    "title": "The Dog's Christmas Shopping List",
+    "change": "The searches are now the heart of the film: six escalating searches, each with its own joke, about 15 seconds. Round 3: adds the line where the golden realizes it has to get its human something (Krish, 2 Nov). Round 4: the 'Nothing is free' line and its search are removed, and the laptop line is in, in Krish's words with the dash and exclamation mark taken out for the voice rules (2 Nov).",
+    "beats": [
+     {
+      "t": "0-5s",
+      "picture": "2:14 am. A golden retriever lit by a laptop, paw on the trackpad, very focused.",
+      "on_screen": "",
+      "vo": "Okay. My human said they want nothing for Christmas. But everyone else is getting them something. Hmm. No money, no thumbs, but I've got my human's laptop. Let's have a look."
+     },
+     {
+      "t": "5-8s",
+      "picture": "Result: a video thumbnail of a dog completely mummified in tape and wrapping paper.",
+      "on_screen": "Search: how to wrap a present with no thumbs",
+      "vo": "That's me. That is going to be me."
+     },
+     {
+      "t": "8-10s",
+      "picture": "Result: one word in huge type.",
+      "on_screen": "Search: is a tennis ball a good gift for a human  /  Result: No.",
+      "vo": "[gasps] The internet is being so rude tonight."
+     },
+     {
+      "t": "10-13s",
+      "picture": "The golden glances suspiciously at the phone charging on the desk.",
+      "on_screen": "Search: why does my human stare at a little glowing rectangle all day",
+      "vo": "It's the phone. I'm jealous of a phone."
+     },
+     {
+      "t": "13-16s",
+      "picture": "Result: a single polite line.",
+      "on_screen": "Search: can I give my human the stick I've been saving since August  /  Result: Please don't.",
+      "vo": "It's a really good stick, though."
+     },
+     {
+      "t": "16-19s",
+      "picture": "Final search. The real heartside.io page loads with the mug and a golden's painting. Example label.",
+      "on_screen": "Search: gift so my human thinks about me all day",
+      "vo": "Oh. Oh no. It's my face, on a mug, every single morning."
+     },
+     {
+      "t": "19-25s",
+      "picture": "The golden turns to camera, tail going, overjoyed.",
+      "on_screen": "This year, the dog's buying.",
+      "vo": "This is the best idea anyone has ever had, and the anyone was me. The Heartside chime."
+     }
+    ]
+   },
+   "F05": {
+    "title": "The Court of the Couch",
+    "change": "Rewritten with every spoken line and every on-screen line shown separately. The judge is the Heartside narrator's voice.",
+    "beats": [
+     {
+      "t": "0-3s",
+      "picture": "A tiny gavel bangs. A pug sits in a wooden dock, looking extremely innocent.",
+      "on_screen": "THE COURT OF THE COUCH",
+      "vo": "Judge: Order. ORDER in the living room."
+     },
+     {
+      "t": "3-8s",
+      "picture": "An easel with a photo of the pug asleep in the person's warm spot on the couch.",
+      "on_screen": "Exhibit A",
+      "vo": "Judge: The defendant is accused of stealing the human's spot on the couch. Every single day."
+     },
+     {
+      "t": "8-12s",
+      "picture": "The pug slowly pushes a folded blanket across the floor with its nose.",
+      "on_screen": "The defense",
+      "vo": "Judge: Does the defense have anything to say for itself?"
+     },
+     {
+      "t": "12-15s",
+      "picture": "Close-up: the pug looks up with enormous eyes. A collective 'awww' from an unseen gallery.",
+      "on_screen": "",
+      "vo": "Judge: Oh, look at that face. [sighs] Objection overruled by cuteness."
+     },
+     {
+      "t": "15-21s",
+      "picture": "The real blanket with a pug's painting, folded on the couch. Example label.",
+      "on_screen": "Guilty. And very cozy.",
+      "vo": "Judge: The court finds the defendant guilty, and very cozy. Case closed. Gavel, then the Heartside chime."
+     }
+    ]
+   },
+   "F10": {
+    "title": "The Dogs' Group Chat",
+    "change": "Krish's jokes built in (2 Nov): LOL replies to the stick, emojis inside the chat, a beagle who cannot spell, the ham, and the frenchie's line followed by WTF and 'no I meant licking'. Emojis and WTF appear only inside the on-screen chat, never in captions (his ruling).",
+    "beats": [
+     {
+      "t": "Frame 1",
+      "picture": "Chat titled 'Gifts for our humans'. Caricature avatars in Heartside's painted style.",
+      "on_screen": "Lab: I'm giving mine a stick 🦴  /  Lab: A really good stick.  /  Lab: I've been saving it since August.",
+      "vo": "Message pops over the music."
+     },
+     {
+      "t": "Frame 2",
+      "picture": "",
+      "on_screen": "Shepherd: LOL  /  Frenchie: 😂😂 a REALLY good stick  /  Beagle: lol the gud stik",
+      "vo": "Laugh-track pops."
+     },
+     {
+      "t": "Frame 3",
+      "picture": "",
+      "on_screen": "Shepherd: You gave a stick last year.  /  Lab: And they LOVED it.  /  Shepherd: They threw it away.  /  Lab: and then they THREW IT AGAIN 🥹",
+      "vo": "A sad trombone sting."
+     },
+     {
+      "t": "Frame 4",
+      "picture": "",
+      "on_screen": "Beagle: i got my humin a gift  /  Beagle: then i ate my humin's gift  /  Beagle: shuldnt hav got him a ham 🍖",
+      "vo": "A crunch sound effect."
+     },
+     {
+      "t": "Frame 5",
+      "picture": "",
+      "on_screen": "Frenchie: I'm giving mine my presence, every five minutes, all night, on their face.  /  Shepherd: WTF  /  Lab: WTF 😳  /  Frenchie: no I meant licking 👅  /  Shepherd: still WTF",
+      "vo": "Record scratch on the first WTF."
+     },
+     {
+      "t": "Frame 6",
+      "picture": "The beagle shares a heartside.io link: its own portrait.",
+      "on_screen": "Lab: wait  /  Shepherd: wait  /  Lab: CAN I BE A MUG ☕",
+      "vo": "Music stops dead."
+     },
+     {
+      "t": "Frame 7",
+      "picture": "The three real gifts, Example label.",
+      "on_screen": "Shepherd: Ordering for the whole pack.",
+      "vo": "The Heartside chime."
+     }
+    ]
+   },
+   "F11": {
+    "title": "The Dog's Search History",
+    "change": "Seven searches escalating from sweet to unhinged to the punchline, each with its own sting.",
+    "beats": [
+     {
+      "t": "Frame 1",
+      "picture": "A search bar types letter by letter.",
+      "on_screen": "how to say I love you without thumbs",
+      "vo": "Brat comedy bed, a key click per letter."
+     },
+     {
+      "t": "Frame 2",
+      "picture": "",
+      "on_screen": "how long is 5 minutes in dog time  /  Result: forever (approx.)",
+      "vo": "Sting."
+     },
+     {
+      "t": "Frame 3",
+      "picture": "",
+      "on_screen": "my human asked who's a good boy and didn't wait for an answer",
+      "vo": "Sting."
+     },
+     {
+      "t": "Frame 4",
+      "picture": "",
+      "on_screen": "is the vacuum dangerous yes or yes",
+      "vo": "Sting."
+     },
+     {
+      "t": "Frame 5",
+      "picture": "",
+      "on_screen": "can dogs buy things if they ask very politely",
+      "vo": "Sting."
+     },
+     {
+      "t": "Frame 6",
+      "picture": "",
+      "on_screen": "how to look humble when you're this handsome",
+      "vo": "Sting."
+     },
+     {
+      "t": "Frame 7",
+      "picture": "The result: the real mug with a dog's painting. Example label.",
+      "on_screen": "put my own face on a mug: weird or genius",
+      "vo": "Record scratch, then the Heartside chime."
+     }
+    ]
+   }
+  }
+ },
+ "chat_mock_rule": "Ruling (Krish, 2026-11-02): inside an on-screen chat mock only, emojis and 'WTF' are allowed as the dogs' own texting. Captions, voiceover and gift lines keep every voice rule.",
+ "recast": {
+  "ruling": "Krish, 2026-11-02: recast to breeds with approved renders",
+  "F04": {
+   "breed": "golden retriever",
+   "ends_on": "golden blanket (live store render golden-hilarious-blanket)"
+  },
+  "F05": {
+   "breed": "french bulldog",
+   "ends_on": "frenchie blanket (live store render frenchie-warm-blanket)"
+  },
+  "F12": {
+   "breed": "french bulldog",
+   "ends_on": "frenchie portrait (live store render frenchie-hilarious-portrait)"
+  }
+ },
+ "wave1_pictures": {
+  "stills": "30 Higgsfield GPT Image 2.5 stills (high, 2k), 2 per beat, each made from the live store's own render of that dog so the photographed dog matches the painted one; 82.5 credits, reserved and settled",
+  "animatics": "F01, F02, F04 cut to the locked sound, captions burned in, ending on the unaltered store render labelled Example; built in this session with ffmpeg as direction-stage storyboards",
+  "codex": "heartside's Codex lane (codex/queue) does not cover this repository yet; final builds wait on Krish's call"
+ }
+}

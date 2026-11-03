@@ -1,0 +1,9 @@
+{
+ "id": "F10",
+ "status": "locked",
+ "approved_by": "Krish, 2026-11-03: Lock it all.",
+ "fingerprint": "c3da200778d9f0cd990b33590489ffa5f0b2b5236774fdba34e9da20269ca908",
+ "master": "specs/F10.json",
+ "template": "chat",
+ "slots": "cast, lines by role, link render"
+}

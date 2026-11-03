@@ -1,0 +1,931 @@
+{
+ "board": "Heartside idea board, round 1",
+ "date": "2026-11-01",
+ "platform": "Your dog loves you too. Here's the proof.",
+ "note": "48 divergent ideas for Krish to Approve, Improve or Reject. Every idea ends on the real product design, labelled Example. Dog lines follow heartside's DOG_VOICE: I is the dog, you is the person, signed Love, [dog].",
+ "ideas": [
+  {
+   "id": "F01",
+   "tone": "funny",
+   "title": "Becoming the Mug",
+   "format": "Reel / TikTok",
+   "gift": "mug",
+   "job": "thumbstop",
+   "hook": "A dachshund sprints at the camera and launches itself straight at a mug on the table.",
+   "beats": [
+    "Slow motion: ears flying, total commitment.",
+    "Splash cut: the dog vanishes into the mug.",
+    "The mug turns slowly. The dog is now its painting.",
+    "Super: Your dog wants to be in your morning."
+   ],
+   "line": "I jumped in so you'd never drink your coffee without me.",
+   "why": "Absurd physical comedy in the first second, then the reveal answers the question the viewer just asked.",
+   "make": "Higgsfield or Runway for the leap and splash; hard cut to the real mug render (no AI on the product).",
+   "risk": "The splash must cut to the real render, not morph the mug itself.",
+   "krish_verdict": "approve",
+   "krish_comment": "We need to have a frame of the human ignoring the dog first, and then some sort of Mission Impossible-style music that swells up where the dog goes, \"Fuck it, I'm going to jump into the mug.\""
+  },
+  {
+   "id": "F02",
+   "tone": "funny",
+   "title": "The Dog's Christmas Shopping List",
+   "format": "Reel / TikTok",
+   "gift": "mug, portrait, blanket",
+   "job": "buy",
+   "hook": "2:14 am. A golden retriever lit by a laptop screen, paw on the trackpad.",
+   "beats": [
+    "Screen: search bar types 'what to get my person who says they want nothing'.",
+    "Tabs pile up: tennis balls, a bigger couch, more tennis balls.",
+    "Lands on heartside.io and the mug with its own face.",
+    "Super: This year, the dog's buying."
+   ],
+   "line": "You said you want nothing, so I got you more of me.",
+   "why": "Uses canon's own line and the most relatable gift problem. The screen is the real store, so it demonstrates.",
+   "make": "AI dog at laptop (Higgsfield still to motion); screen is a real screen recording of heartside.io composited in.",
+   "risk": "Screen recording must be the live store, not a mock.",
+   "krish_verdict": "approve",
+   "krish_comment": "I think the audio needs to be what the dog's thinking in his head, like Scrubs style, inner monologue."
+  },
+  {
+   "id": "F03",
+   "tone": "funny",
+   "title": "Operation Stocking",
+   "format": "Reel series (3 parts)",
+   "gift": "portrait",
+   "job": "share",
+   "hook": "A blueprint of a living room, red string, and a German shepherd briefing the team.",
+   "beats": [
+    "Part 1: the plan. Infiltrate, get the gift under the tree before the humans wake.",
+    "Part 2: the crew (a beagle on scent, a frenchie as lookout) creep past the stairs.",
+    "Part 3: the gift lands under the tree. Cut to the real framed portrait.",
+    "Super: The dog's been planning this."
+   ],
+   "line": "I have watched over this house all year, so this one was easy.",
+   "why": "Heist is a format people follow across parts; each part ends on a cliffhanger that brings them back.",
+   "make": "AI dogs in a real-looking home, Higgsfield stills, Runway motion on the winning shots.",
+   "risk": "Three parts means three times the production. Test part 1 alone first.",
+   "krish_verdict": "approve",
+   "krish_comment": "Mission Impossible star music and tiptoeing and comedy exaggeration"
+  },
+  {
+   "id": "F04",
+   "tone": "funny",
+   "title": "Nature Documentary: The Couch Thief",
+   "format": "Reel / TikTok",
+   "gift": "blanket",
+   "job": "share",
+   "hook": "Hushed narrator: 'Here, in its natural habitat, the greyhound waits for its moment.'",
+   "beats": [
+    "Person stands up for one second.",
+    "The dog flows into the warm spot like water.",
+    "Narrator: 'The territory is claimed. Forever.'",
+    "Reveal: the blanket with the dog's own painting on it."
+   ],
+   "line": "Your spot was warm and empty, so I made it mine.",
+   "why": "Deadpan wildlife narration is a proven share format, and every dog owner has lost a spot this way.",
+   "make": "AI dog footage; narration via ElevenLabs voice (original voice, not an imitation of a real presenter).",
+   "risk": "The narrator must not sound like any real, famous presenter.",
+   "krish_verdict": "approve",
+   "krish_comment": "Make narrator sound like David Attenborough with epic music in the background"
+  },
+  {
+   "id": "F05",
+   "tone": "funny",
+   "title": "The Court of the Couch",
+   "format": "Reel / TikTok",
+   "gift": "blanket",
+   "job": "share",
+   "hook": "A tiny gavel bangs. A pug sits in the dock looking extremely innocent.",
+   "beats": [
+    "Charge: stealing your side of the couch, every single day.",
+    "Exhibit A: a photo of the pug in your spot.",
+    "Defense rests on one argument: the blanket now has the pug on it anyway.",
+    "Verdict: guilty, and very cozy."
+   ],
+   "line": "I sit in your spot because it smells like you.",
+   "why": "Courtroom framing gives a clear setup and punchline. The defense is the product.",
+   "make": "AI pug and courtroom set; on-screen type in Fraunces; real blanket render at the verdict.",
+   "risk": "Keep it to one beat per shot. Courtroom jokes can drag.",
+   "krish_verdict": "approve"
+  },
+  {
+   "id": "F06",
+   "tone": "funny",
+   "title": "Your Frenchie's Honest Opinion of You",
+   "format": "Carousel (breed series)",
+   "gift": "mug",
+   "job": "share",
+   "hook": "Slide 1: a French bulldog staring into the lens. 'What your frenchie really thinks of you.'",
+   "beats": [
+    "Slide 2 to 4: three cheeky lines in the over-the-top roast tone.",
+    "Slide 5: the soft admission.",
+    "Slide 6: the real mug with a frenchie painting, labelled Example.",
+    "Series: one carousel per breed group."
+   ],
+   "line": "You are slow at the door, but you are the only one I wait for.",
+   "why": "Breed-specific roasts get tagged to every friend with that breed. The product is the punchline.",
+   "make": "Footage-free: approved breed examples and cutouts, type only.",
+   "risk": "Roast only the person's habits with the dog, never body, money or job (canon).",
+   "krish_verdict": "approve",
+   "krish_comment": "This would depend on the copy, but I could see this working for a few different breeds."
+  },
+  {
+   "id": "F07",
+   "tone": "funny",
+   "title": "The Art Critic",
+   "format": "Reel / TikTok",
+   "gift": "portrait",
+   "job": "thumbstop",
+   "hook": "A doodle in a tiny gallery, standing in front of a framed portrait of itself, very still.",
+   "beats": [
+    "Gallery whisper voiceover: 'Bold. Fearless. Clearly a genius subject.'",
+    "It tilts its head, steps back, steps closer.",
+    "Walks off satisfied.",
+    "The real portrait, labelled Example."
+   ],
+   "line": "I look expensive on your wall, and I think you should know that.",
+   "why": "The doodle's 'impeccable taste' character from the canon. The dog judges its own portrait; no fake human review.",
+   "make": "AI doodle in a gallery space; the portrait on the wall is the real render composited in.",
+   "risk": "The framed art on screen must be the real render, tracked into the shot.",
+   "krish_verdict": "approve",
+   "krish_comment": "Make sure he looks obviously smug"
+  },
+  {
+   "id": "F08",
+   "tone": "funny",
+   "title": "Hold Still",
+   "format": "Reel / TikTok",
+   "gift": "portrait",
+   "job": "thumbstop",
+   "hook": "A 1700s painter's studio. A Jack Russell on a velvet throne, refusing to hold still.",
+   "beats": [
+    "The painter's brush hovers; the dog spins, sneezes, lies down.",
+    "Fast montage of 12 failed sittings.",
+    "Final: the dog finally poses for one frame.",
+    "Cut to the real portrait. Super: We only needed one photo."
+   ],
+   "line": "I held still for one second, and I want you to know it was for you.",
+   "why": "Turns the ordering mechanism (one photo) into the joke. Ends on the actual benefit.",
+   "make": "AI period set and dog; the painter is seen from behind (hands only, no product in their hands).",
+   "risk": "Ensure no AI person ever touches the real product."
+  },
+  {
+   "id": "F09",
+   "tone": "funny",
+   "title": "Five Minutes Apart",
+   "format": "Reel / TikTok",
+   "gift": "mug",
+   "job": "share",
+   "hook": "The door closes, a violin swells, and a Cavalier slides down the door in slow motion.",
+   "beats": [
+    "Soap-opera close-ups: staring out the rain-streaked window.",
+    "Title card: 4 minutes 58 seconds later.",
+    "The door opens; the dog acts like nothing happened.",
+    "The mug: so you're never really out of sight."
+   ],
+   "line": "You left for five minutes, and I have never been so brave.",
+   "why": "The Companion Velcro comic character from the canon. Every owner of a clingy dog shares this.",
+   "make": "AI Cavalier, practical rain window; licensed violin sting from Epidemic.",
+   "risk": "None beyond keeping the melodrama to 12 seconds."
+  },
+  {
+   "id": "F10",
+   "tone": "funny",
+   "title": "The Dogs' Group Chat",
+   "format": "Carousel / Story",
+   "gift": "mug, portrait, blanket",
+   "job": "share",
+   "hook": "A phone screen: group chat named 'Gifts for our humans'.",
+   "beats": [
+    "The lab: 'I'm giving mine a stick.'",
+    "The shepherd: 'Again?'",
+    "The beagle shares a link to their own portrait.",
+    "Everyone reacts. Last slide: the three real gifts."
+   ],
+   "line": "I'm giving you my face on a mug, because a stick felt small.",
+   "why": "Chat screenshots read at a glance, cost nothing to make, and carry breed personalities side by side.",
+   "make": "Footage-free; chat UI built in code; real product renders last.",
+   "risk": "Low. Built in code, zero credits.",
+   "krish_verdict": "approve",
+   "krish_comment": "Comedy caricature"
+  },
+  {
+   "id": "F11",
+   "tone": "funny",
+   "title": "The Dog's Search History",
+   "format": "Carousel / Story",
+   "gift": "mug",
+   "job": "share",
+   "hook": "A search bar. Auto-complete fills in: 'how to say I love you without thumbs'.",
+   "beats": [
+    "'can a dog buy a mug'",
+    "'what does my person do all day without me'",
+    "'is it weird to put my own face on a gift'",
+    "Final result: the real mug."
+   ],
+   "line": "I can't say it out loud, so I put my face on your mug.",
+   "why": "Search-bar jokes are fast to read and endlessly remixable into new posts.",
+   "make": "Footage-free, built in code; zero credits.",
+   "risk": "Low. Fast to iterate, so good volume filler.",
+   "krish_verdict": "approve",
+   "krish_comment": "Comedy music"
+  },
+  {
+   "id": "F12",
+   "tone": "funny",
+   "title": "Head of Security",
+   "format": "Reel / TikTok",
+   "gift": "portrait",
+   "job": "thumbstop",
+   "hook": "A chihuahua in full threat-assessment mode as a delivery box lands on the porch.",
+   "beats": [
+    "It circles the box with a low growl and calls for backup (nobody comes).",
+    "Box opens itself (the person's hands, out of frame).",
+    "Inside: a portrait of the chihuahua.",
+    "The chihuahua relaxes completely."
+   ],
+   "line": "I checked the box for danger, and it was only me being handsome.",
+   "why": "Tiny dog, huge seriousness: a contrast the eye reads instantly.",
+   "make": "AI chihuahua and porch; the box contents cut to the real portrait render.",
+   "risk": "The unboxing must cut to the render, never show AI hands holding it.",
+   "krish_verdict": "approve",
+   "krish_comment": "The music has to make this one."
+  },
+  {
+   "id": "F13",
+   "tone": "funny",
+   "title": "Gift Wrap Fail",
+   "format": "Reel / TikTok",
+   "gift": "blanket",
+   "job": "share",
+   "hook": "A Bernese mountain dog tries to wrap a present and is wrapped in it instead.",
+   "beats": [
+    "Tape everywhere. Paper on its head.",
+    "It gives up and lies in the paper.",
+    "Cut: the real blanket, the dog's painting on it, folded with a bow.",
+    "Super: Some gifts wrap themselves."
+   ],
+   "line": "I tried to wrap your gift, but I mostly wrapped myself.",
+   "why": "Clumsy big dog energy ('Working Goofball'). Seasonal and instantly readable.",
+   "make": "AI Bernese; real blanket render.",
+   "risk": "Low."
+  },
+  {
+   "id": "F14",
+   "tone": "funny",
+   "title": "Whose Face Goes on the Mug",
+   "format": "Reel / TikTok",
+   "gift": "bundle",
+   "job": "buy",
+   "hook": "Two dogs, one mug, a standoff across the kitchen floor.",
+   "beats": [
+    "Each dog drags the mug to its side.",
+    "A tug-of-war over the coffee table.",
+    "Resolution: two mugs, one each.",
+    "Super: two gifts, 15% off the set."
+   ],
+   "line": "I'm sharing you, but I am not sharing the mug.",
+   "why": "Sells the bundle through the most common multi-dog household fight.",
+   "make": "AI dogs; real mug renders; the bundle terms read from the live store on the day.",
+   "risk": "Bundle wording must match the store exactly when it posts."
+  },
+  {
+   "id": "F15",
+   "tone": "funny",
+   "title": "Bark Translator",
+   "format": "Reel / TikTok",
+   "gift": "mug",
+   "job": "share",
+   "hook": "A single bark becomes a waveform, and subtitles read 'Translating...'",
+   "beats": [
+    "Bark 1 translates to 'Where were you.'",
+    "Bark 2: 'I was worried for 11 whole minutes.'",
+    "Bark 3: the soft one, the love line.",
+    "Final card: the mug with the dog's painting."
+   ],
+   "line": "I bark at the mailman, but you get the soft bark.",
+   "why": "A translator format invites remixes and duets on TikTok.",
+   "make": "Real dog audio from a licensed sound library, waveform built in code.",
+   "risk": "Must not imply a real translation app."
+  },
+  {
+   "id": "F16",
+   "tone": "funny",
+   "title": "The Dog's Unpopular Opinions",
+   "format": "Carousel (breed series)",
+   "gift": "portrait",
+   "job": "share",
+   "hook": "'Unpopular opinions, by a beagle.'",
+   "beats": [
+    "'Your dinner smells better than mine, and that is a crime.'",
+    "'The vet is a liar with treats.'",
+    "'You are my favorite smell in this house.'",
+    "Last slide: the real beagle portrait."
+   ],
+   "line": "Your dinner smells better than mine, but you smell best of all.",
+   "why": "The unpopular-opinions format is native on both platforms and fits the Scent Detective character exactly.",
+   "make": "Footage-free; breed example cutouts and type.",
+   "risk": "Keep it to the dog's own world (no food it was never given, in customer gifts)."
+  },
+  {
+   "id": "W01",
+   "tone": "warm",
+   "title": "Translate Your Dog",
+   "format": "Carousel (breed series)",
+   "gift": "mug, portrait, blanket",
+   "job": "save",
+   "hook": "Slide 1: a Border Collie mid-stare. 'What your collie is trying to tell you.'",
+   "beats": [
+    "Four slides, four lines in that breed's own voice.",
+    "The last slide: the gift with that breed's painting.",
+    "One carousel per breed, 24 breeds already painted."
+   ],
+   "line": "I hear your car before anyone else does.",
+   "why": "Saves and sends among owners of each breed. We already have all 24 breeds painted and approved.",
+   "make": "Footage-free; approved breed examples.",
+   "risk": "The archetype words (manager, menace, detective) never appear in the line (canon)."
+  },
+  {
+   "id": "W02",
+   "tone": "warm",
+   "title": "Every Dog Says It Differently",
+   "format": "Reel / TikTok",
+   "gift": "mug, portrait, blanket",
+   "job": "share",
+   "hook": "Same moment, six breeds: the key turns in the door.",
+   "beats": [
+    "The collie is already at the door, organized.",
+    "The golden brings a sock, overjoyed.",
+    "The shiba glances up, then sighs.",
+    "Each with its line on screen, then its painting."
+   ],
+   "line": "I act like I didn't wait for you, but I did.",
+   "why": "Shows the product's whole mechanism: the dog's own personality, made into a gift.",
+   "make": "AI dogs in one consistent hallway; the six real paintings at the end.",
+   "risk": "Six dogs in one shot style; continuity takes care."
+  },
+  {
+   "id": "W03",
+   "tone": "warm",
+   "title": "The Seating Plan",
+   "format": "Reel / TikTok",
+   "gift": "blanket",
+   "job": "save",
+   "hook": "Top-down camera: a couch, and a dog already in the middle.",
+   "beats": [
+    "Home after home from above: every dog has claimed the spot.",
+    "Gentle music, rhythmic cuts.",
+    "The final couch has the blanket with the dog's painting.",
+    "Super: Their spot, now on your couch for good."
+   ],
+   "line": "The middle of the couch is mine, and the middle is next to you.",
+   "why": "Satisfying top-down rhythm and instant recognition of the dog's spot.",
+   "make": "AI top-down stills, animated; real blanket render.",
+   "risk": "Low."
+  },
+  {
+   "id": "W04",
+   "tone": "warm",
+   "title": "The Dog Advent Calendar",
+   "format": "Daily series, 1 to 24 Dec",
+   "gift": "mug, portrait, blanket, card",
+   "job": "share",
+   "hook": "Door number 1 opens. Behind it: a dachshund's painting and one line.",
+   "beats": [
+    "One breed a day, 24 days, 24 breeds already painted.",
+    "Each day's line in that breed's voice.",
+    "Comments vote for tomorrow's breed.",
+    "Until 3 Dec, each door also reminds: the printed card from the dog, order by 3 Dec 11:59 pm ET."
+   ],
+   "line": "Every day I wait for you is a good day, because you come home.",
+   "why": "A series with a daily reason to come back, built on assets we already own. It runs right through the Christmas window.",
+   "make": "Footage-free motion in code; approved breed examples.",
+   "risk": "24 days of commitment. The card cutoff appears on the card only (Krish's ruling)."
+  },
+  {
+   "id": "W05",
+   "tone": "warm",
+   "title": "Comment Your Dog's Breed",
+   "format": "Post plus replies",
+   "gift": "mug",
+   "job": "comments",
+   "hook": "'Tell me your dog's breed and I'll tell you what they'd say to you.'",
+   "beats": [
+    "Replies in that breed's voice (Krish posts them).",
+    "The best replies become tomorrow's carousel.",
+    "The post pins the mug at the end."
+   ],
+   "line": "You picked me, and I would pick you every single time.",
+   "why": "Comments are the cheapest signal of interest, and every reply is new content.",
+   "make": "Footage-free; radar drafts the replies, Krish sends them.",
+   "risk": "Replies are drafted by the engine and sent by Krish (rule 1)."
+  },
+  {
+   "id": "W06",
+   "tone": "warm",
+   "title": "Morning Coffee, Dog's-Eye View",
+   "format": "Reel / TikTok",
+   "gift": "mug",
+   "job": "buy",
+   "hook": "A low camera as steam rises and a dog's chin rests on a knee.",
+   "beats": [
+    "The person's hand reaches for the mug (hand only, it's real footage or no hand).",
+    "The mug turns slowly: the dog's painting.",
+    "Room sound only: the kettle, a tail on the floor.",
+    "Super: Your dog, in every morning."
+   ],
+   "line": "My mornings are better because you're in them.",
+   "why": "The quietest hook, the product in its natural daily moment. Works as a still too.",
+   "make": "Real footage with Krish's mug sample when it arrives; until then the real mug render in a still life.",
+   "risk": "No AI hand on the real mug: still life only until a real sample is filmed."
+  },
+  {
+   "id": "W07",
+   "tone": "warm",
+   "title": "The Snow Globe",
+   "format": "Reel / TikTok",
+   "gift": "portrait",
+   "job": "thumbstop",
+   "hook": "A tiny dog inside a snow globe on a mantel, looking up.",
+   "beats": [
+    "A finger taps the glass (out of focus).",
+    "Snow swirls.",
+    "Pull focus past it: the real portrait on the mantel behind.",
+    "Super: This year, the dog's buying."
+   ],
+   "line": "Every Christmas with you is my favorite one.",
+   "why": "A beautiful, seasonal single image that stops the scroll and ends on the product in its home.",
+   "make": "Higgsfield still of the globe, Runway motion; real portrait render composited on the mantel.",
+   "risk": "Composite must keep the portrait unchanged."
+  },
+  {
+   "id": "W08",
+   "tone": "warm",
+   "title": "The Dog's Letter to Santa",
+   "format": "Reel / Carousel",
+   "gift": "card",
+   "job": "buy",
+   "hook": "Typewriter type on cream paper: 'To Santa. I don't need anything this year.'",
+   "beats": [
+    "'But my person does, and here is what they need.'",
+    "A list of tiny things only this dog notices.",
+    "Sealed with a paw.",
+    "Final: the printed Christmas card from the dog, $12, order by 3 Dec 11:59 pm ET."
+   ],
+   "line": "I don't need anything this year, but I want you to have the best Christmas.",
+   "why": "The cleanest Christmas buy: the $12 card has a real deadline and a low price.",
+   "make": "Footage-free; Courier Prime type; the real card image.",
+   "risk": "The 3 Dec date is approved for the card only."
+  },
+  {
+   "id": "W09",
+   "tone": "warm",
+   "title": "Photo In, Painting Out",
+   "format": "Reel / Carousel",
+   "gift": "portrait",
+   "job": "buy",
+   "hook": "Split screen: a phone photo of a dog on the left, blank canvas on the right.",
+   "beats": [
+    "A brush-stroke wipe reveals the real painting.",
+    "Repeat with three breeds, faster each time.",
+    "End on the framed portrait.",
+    "Super: One photo of your dog. That's all."
+   ],
+   "line": "You took a thousand photos of me, and this is my favorite one.",
+   "why": "Demonstration is the strongest proof we have. The viewer imagines their own dog.",
+   "make": "Example dogs only (never a customer's photo); the painting revealed is the real approved example.",
+   "risk": "The 'before' photo must be an example dog's source, never a customer's."
+  },
+  {
+   "id": "W10",
+   "tone": "warm",
+   "title": "Which Mood Is Your Dog",
+   "format": "Carousel",
+   "gift": "portrait",
+   "job": "save",
+   "hook": "One dog, four paintings: sweet, warm, hilarious, over the top. 'Which one is yours?'",
+   "beats": [
+    "Slide per mood, each with its line.",
+    "Last slide: you choose the mood when you make yours.",
+    "CTA: comment the mood."
+   ],
+   "line": "I pretend I'm the boss, but you're my whole world.",
+   "why": "Shows the real product choice (the tone slider), and invites a comment.",
+   "make": "Footage-free; the store's own 'one dog in four moods' set.",
+   "risk": "Only uses paintings already approved on the store."
+  },
+  {
+   "id": "W11",
+   "tone": "warm",
+   "title": "For the One Who Says They Want Nothing",
+   "format": "Reel / Still",
+   "gift": "mug",
+   "job": "buy",
+   "hook": "'Every family has one person who says they want nothing.'",
+   "beats": [
+    "'Here's what they actually want.'",
+    "The dog's face, on their mug.",
+    "Super: From the dog, so they can't say no."
+   ],
+   "line": "You said you wanted nothing, so I sent you me.",
+   "why": "A problem-solution lead for gift seekers who are already looking.",
+   "make": "Footage-free motion; real mug renders.",
+   "risk": "Close to F02's line. Pick one if both win."
+  },
+  {
+   "id": "W12",
+   "tone": "warm",
+   "title": "Tag the Person Your Dog Loves More",
+   "format": "Still",
+   "gift": "mug",
+   "job": "comments",
+   "hook": "'Tag the person your dog loves more than you.'",
+   "beats": [
+    "One clear image: a dog's painting on the mug.",
+    "Caption invites a tag."
+   ],
+   "line": "I love everyone here, but you are my favorite.",
+   "why": "Tag mechanics spread organic reach through exactly the right recipients.",
+   "make": "Footage-free; real mug render.",
+   "risk": "Low effort, but low-effort tag bait can feel cheap. Keep it beautiful."
+  },
+  {
+   "id": "W13",
+   "tone": "warm",
+   "title": "The Mug Travels",
+   "format": "Reel / TikTok (stop motion)",
+   "gift": "mug",
+   "job": "share",
+   "hook": "One mug moves across a kitchen counter on its own, frame by frame.",
+   "beats": [
+    "Morning coffee, a desk, a car cupholder, a bedside.",
+    "The dog appears beside it in each scene.",
+    "Final frame: the mug and the dog together.",
+    "Super: Wherever you go, I'm in your hand."
+   ],
+   "line": "Wherever you go today, I'm going with you.",
+   "why": "Stop-motion feels handmade and is loved by both algorithms.",
+   "make": "Real mug sample when it arrives; until then held.",
+   "risk": "Needs a real mug in hand. Hold until the sample lands."
+  },
+  {
+   "id": "W14",
+   "tone": "warm",
+   "title": "Your Day, My Day",
+   "format": "Reel / TikTok",
+   "gift": "portrait",
+   "job": "share",
+   "hook": "Split screen: a busy day for the person, an hour-by-hour wait for the dog.",
+   "beats": [
+    "Left: meetings, traffic. Right: the dog moves with the sunlight.",
+    "Both sides speed up toward 6 pm.",
+    "They meet at the door. Screen merges.",
+    "The portrait: the person it waits for."
+   ],
+   "line": "Your day is long, but mine is just waiting for you.",
+   "why": "Split-screen contrast with a payoff when they meet.",
+   "make": "AI dog in a home; the person is seen only from behind or in silhouette.",
+   "risk": "Avoid the person's face; no AI person near the product."
+  },
+  {
+   "id": "W15",
+   "tone": "warm",
+   "title": "The Painting Brushes On",
+   "format": "Reel / TikTok",
+   "gift": "portrait",
+   "job": "thumbstop",
+   "hook": "A blank cream canvas. Brush strokes start appearing, layer by layer.",
+   "beats": [
+    "Ears, then eyes, then the nose.",
+    "It speeds up.",
+    "The last stroke completes the real painting, and it slides into its frame.",
+    "Super: Painted from one photo of your dog."
+   ],
+   "line": "You always look at me like this, so now I look back.",
+   "why": "Process-reveal videos hold attention to the last frame, which is the product.",
+   "make": "A mask-wipe reveal of the real painting (we never redraw it).",
+   "risk": "Must reveal the real painting, not an AI redraw."
+  },
+  {
+   "id": "W16",
+   "tone": "warm",
+   "title": "The Christmas Card From the Dog",
+   "format": "Still / Story",
+   "gift": "card",
+   "job": "buy",
+   "hook": "A real Christmas card with a dog's painting on the front, lying on a doormat.",
+   "beats": [
+    "Text: This year the card is from the dog.",
+    "Price and the order-by line.",
+    "Story link sticker to the card page."
+   ],
+   "line": "Merry Christmas, and thank you for always coming home to me.",
+   "why": "The cheapest, fastest yes in the range. Pure buy intent with a real deadline.",
+   "make": "Footage-free; the real card image.",
+   "risk": "Card order-by only: 3 Dec 11:59 pm ET."
+  },
+  {
+   "id": "H01",
+   "tone": "heart",
+   "title": "The Wait",
+   "format": "Reel / TikTok (hero)",
+   "gift": "portrait",
+   "job": "share",
+   "hook": "A dog's-eye view of a front door. Light crawls across the floor all afternoon.",
+   "beats": [
+    "The dog dozes, wakes, checks the door.",
+    "A car pulls in. The tail starts before the door opens.",
+    "Cut to black. One line in Courier.",
+    "The portrait."
+   ],
+   "line": "I don't know where you go all day, but I know you come back.",
+   "why": "The quietest, truest dog moment. People send this to the one their dog waits for.",
+   "make": "Higgsfield stills, Runway motion on the best; room sound only, licensed music last.",
+   "risk": "Pace: must earn the payoff in under 20 seconds."
+  },
+  {
+   "id": "H02",
+   "tone": "heart",
+   "title": "I Can't Buy You Anything",
+   "format": "Reel / TikTok",
+   "gift": "mug, portrait, blanket",
+   "job": "share",
+   "hook": "Voiceover over a sleeping dog: 'I don't have money, and I don't have thumbs.'",
+   "beats": [
+    "'But I've watched you every day.'",
+    "Small moments: keys, a hand on a head, the couch.",
+    "'So this year, someone helped me say it.'",
+    "The three gifts."
+   ],
+   "line": "I can't buy you anything, but I can tell you that you are my whole life.",
+   "why": "States the whole idea of a gift from the dog in one breath.",
+   "make": "AI dog footage, voiceover by a designed ElevenLabs voice.",
+   "risk": "A voice for the dog is a big brand choice; it should be one voice we keep."
+  },
+  {
+   "id": "H03",
+   "tone": "heart",
+   "title": "The Feet",
+   "format": "Reel / TikTok",
+   "gift": "blanket",
+   "job": "save",
+   "hook": "Close-up: a dog asleep on someone's feet under a blanket.",
+   "beats": [
+    "Seasons change through the window: rain, sun, leaves, snow.",
+    "The dog is always on the feet.",
+    "The blanket under it is now the blanket with its painting.",
+    "Super: Where they always are."
+   ],
+   "line": "I sleep on your feet so I know when you get up.",
+   "why": "One visual, one feeling, with the blanket in the most natural place it can be.",
+   "make": "AI shots of feet and dog; final real blanket render.",
+   "risk": "Seasons passing must not suggest the dog ageing (canon)."
+  },
+  {
+   "id": "H04",
+   "tone": "heart",
+   "title": "Heartbeat",
+   "format": "Reel / TikTok",
+   "gift": "blanket",
+   "job": "thumbstop",
+   "hook": "Black screen. The sound of a dog breathing slowly on your lap.",
+   "beats": [
+    "A soft heartbeat joins.",
+    "Fade up: a dog asleep on a lap, filmed from above.",
+    "One line in Courier.",
+    "The blanket with its painting."
+   ],
+   "line": "When I'm on your lap, I can hear that you're home.",
+   "why": "Sound-first hooks stop thumbs on muted-by-default feeds because the captions say 'turn your sound on'.",
+   "make": "Licensed sound; AI or stock dog footage; real blanket render.",
+   "risk": "Sound must be licensed through Epidemic."
+  },
+  {
+   "id": "H05",
+   "tone": "heart",
+   "title": "To the One Who Moved Away",
+   "format": "Reel / Still",
+   "gift": "mug",
+   "job": "buy",
+   "hook": "A dog lying beside an empty bed in a kid's old room.",
+   "beats": [
+    "'Your dog doesn't know what college is.'",
+    "'It just knows you left.'",
+    "The mug arrives at a dorm (the mug only).",
+    "Super: Send them the dog."
+   ],
+   "line": "Your room still smells like you, so that's where I sleep now.",
+   "why": "A sharp recipient (kids at college, a partner who moved away) with a clear reason to buy now.",
+   "make": "AI empty room; real mug render.",
+   "risk": "Must stay sweet, not sad; no suggestion the dog is unwell."
+  },
+  {
+   "id": "H06",
+   "tone": "heart",
+   "title": "From the Dog, to Mom",
+   "format": "Still series (by recipient)",
+   "gift": "portrait",
+   "job": "buy",
+   "hook": "'For Mom, from the one who never leaves her side.'",
+   "beats": [
+    "One still per recipient: Mom, Dad, Grandma, a partner, the dog walker.",
+    "Each with its own line.",
+    "Each ends on a real gift."
+   ],
+   "line": "You feed me, you walk me, and you let me sleep where I want.",
+   "why": "Recipient-led copy meets buyers exactly where Christmas shopping starts: who it's for.",
+   "make": "Footage-free; real renders.",
+   "risk": "Keep each still beautiful, not a template."
+  },
+  {
+   "id": "H07",
+   "tone": "heart",
+   "title": "Things Your Dog Does That You Never Noticed",
+   "format": "Carousel",
+   "gift": "portrait",
+   "job": "save",
+   "hook": "'Seven things your dog does for you that you never noticed.'",
+   "beats": [
+    "They wait outside the bathroom door.",
+    "They sleep facing the door to watch over you.",
+    "They check on you at night.",
+    "Last slide: the portrait."
+   ],
+   "line": "I sleep facing the door so I can keep you safe.",
+   "why": "List carousels are the most-saved format on Instagram, and this one ends on the gift.",
+   "make": "Footage-free; breed examples.",
+   "risk": "Behaviors described as warm observation, not science claims."
+  },
+  {
+   "id": "H08",
+   "tone": "heart",
+   "title": "The Note in the Box",
+   "format": "Reel / TikTok",
+   "gift": "portrait, mug, blanket",
+   "job": "buy",
+   "hook": "A real box opens. On top: the dog's note on the packing slip.",
+   "beats": [
+    "Hands lift the slip (real footage).",
+    "The gift underneath.",
+    "The free digital card on a phone.",
+    "Super: Every gift comes with a note from the dog."
+   ],
+   "line": "I wanted you to read this before you saw my face.",
+   "why": "Shows what actually arrives, which is our strongest real proof.",
+   "make": "Real footage only, from Krish's real order. Held until the sample arrives.",
+   "risk": "Held until there is a real box to film. Never staged with AI."
+  },
+  {
+   "id": "H09",
+   "tone": "heart",
+   "title": "Silent Film",
+   "format": "Reel / TikTok",
+   "gift": "mug",
+   "job": "share",
+   "hook": "No music at all. Just the room. A dog watches someone make coffee.",
+   "beats": [
+    "The dog follows from room to room.",
+    "Typed words appear, one line at a time.",
+    "The mug, last.",
+    "No voiceover and no music, only the room."
+   ],
+   "line": "I follow you from room to room because every room is better with you.",
+   "why": "Silence is the thumbstop in a feed of trending audio.",
+   "make": "AI footage with real room sound; real mug render.",
+   "risk": "Some viewers scroll on silence. Worth testing because it's cheap."
+  },
+  {
+   "id": "H10",
+   "tone": "heart",
+   "title": "The Window Seat",
+   "format": "Reel / Still",
+   "gift": "portrait",
+   "job": "share",
+   "hook": "Rain on a window. A dog watching the street, waiting for one car.",
+   "beats": [
+    "Headlights pass, and none of them are yours.",
+    "Then yours. The dog's whole body changes.",
+    "The portrait of that face.",
+    "Super: Your dog loves you too."
+   ],
+   "line": "I know the sound of your car better than my own name.",
+   "why": "The canon's lead line, earned by a scene.",
+   "make": "Higgsfield still; Runway motion; real portrait render.",
+   "risk": "Close to The Wait. Pick the stronger if both win."
+  },
+  {
+   "id": "H11",
+   "tone": "heart",
+   "title": "Paw on Hand",
+   "format": "Reel / TikTok (the one morph)",
+   "gift": "portrait",
+   "job": "thumbstop",
+   "hook": "Extreme close-up: a paw resting on a hand.",
+   "beats": [
+    "Pull back slowly to the dog's face.",
+    "The real dog turns, softly, into its painting.",
+    "Settle on the real framed portrait.",
+    "Super: Your dog, kept."
+   ],
+   "line": "I put my paw on your hand so you know I'm here.",
+   "why": "The morph is the most stopping visual we have; the tender version suits a portrait.",
+   "make": "Runway morph from an AI dog into the real example painting; ends on the real render.",
+   "risk": "Krish allowed one morph. F01 and this one compete for it, unless he lifts the limit."
+  },
+  {
+   "id": "H12",
+   "tone": "heart",
+   "title": "From Down Here",
+   "format": "Reel / TikTok",
+   "gift": "mug, portrait",
+   "job": "share",
+   "hook": "Camera at dog height, looking up at the person (faceless), all day.",
+   "beats": [
+    "Feet, hands, a dropped sock, a hand coming down for a scratch.",
+    "The dog's eyes never leave them.",
+    "The final shot: the dog's painting, looking back up at you.",
+    "Super: You're their whole world."
+   ],
+   "line": "I've seen most of the world from down here, and you're the best part.",
+   "why": "A point of view nobody shows, which instantly reframes the dog's love.",
+   "make": "AI low-angle footage; the person never shown with the product.",
+   "risk": "Low."
+  },
+  {
+   "id": "H13",
+   "tone": "heart",
+   "title": "Two People, One Dog in the Middle",
+   "format": "Reel / Still",
+   "gift": "blanket",
+   "job": "share",
+   "hook": "From above: a bed, two pairs of feet, and a dog squarely in the middle.",
+   "beats": [
+    "Night after night, the dog in the middle.",
+    "The blanket with its painting on the bed.",
+    "Super: For the two of you, from the one in the middle."
+   ],
+   "line": "I sleep in the middle so I can be close to both of you.",
+   "why": "Couples gift: one partner buys for the other, from the dog.",
+   "make": "AI top-down still; real blanket render.",
+   "risk": "Feet only; no AI people near the product."
+  },
+  {
+   "id": "H14",
+   "tone": "heart",
+   "title": "First Snow",
+   "format": "Reel / TikTok",
+   "gift": "portrait",
+   "job": "thumbstop",
+   "hook": "A dog sees snow for the first time and freezes, then leaps.",
+   "beats": [
+    "Pure joy in slow motion.",
+    "Snow on its nose.",
+    "Inside: the portrait on the wall above the tree.",
+    "Super: The face you'll want to keep."
+   ],
+   "line": "Everything is new when I'm with you, even the cold stuff.",
+   "why": "Seasonal joy that matches the Christmas window and is pure delight.",
+   "make": "AI snow footage; real portrait composited.",
+   "risk": "Low."
+  },
+  {
+   "id": "H15",
+   "tone": "heart",
+   "title": "The Grandparent Gift",
+   "format": "Still / Reel",
+   "gift": "portrait",
+   "job": "buy",
+   "hook": "'Grandma has a photo of every grandkid. Except one.'",
+   "beats": [
+    "A mantel of family photos.",
+    "A gap.",
+    "The dog's framed portrait fills it.",
+    "Super: The grandkid with four legs."
+   ],
+   "line": "You always save me a treat, so I saved you a spot on your wall.",
+   "why": "A concrete family gift moment and a recipient with buying power.",
+   "make": "AI mantel scene; real portrait render composited.",
+   "risk": "Family photos in the scene must be obviously generic, never real people."
+  },
+  {
+   "id": "H16",
+   "tone": "heart",
+   "title": "What I'd Say If I Could",
+   "format": "Reel / TikTok (voiceover series)",
+   "gift": "mug, portrait, blanket",
+   "job": "share",
+   "hook": "A dog looks straight into the lens. Subtitles start: 'If I could say one thing to you.'",
+   "beats": [
+    "A short, sincere speech in its breed's voice.",
+    "Each episode a different breed.",
+    "Ends on its gift.",
+    "Series, one a day."
+   ],
+   "line": "If I could say one thing, it would be that I'm glad it's you.",
+   "why": "Direct-to-camera talking pets are among the most shared pet formats, and this one is sincere, not silly.",
+   "make": "AI dog close-up; subtitles only or a designed voice.",
+   "risk": "If voiced, one consistent voice per breed."
+  }
+ ],
+ "votes_read": "2026-11-02: 10 approved (all funny), no rejects; the warm and pure-heart ideas are unvoted."
+}

@@ -1,0 +1,35 @@
+{
+ "id": "F06-lab",
+ "template": "roast",
+ "breed": "lab",
+ "render": "mug-real-lab.jpg",
+ "title": "F06.title",
+ "lines": [
+  "F06.kla1",
+  "F06.kla2",
+  "F06.kla3"
+ ],
+ "music": "m_roast_boss.mp3",
+ "music_level": 0.4,
+ "durs": [
+  2.4,
+  3.0,
+  3.0,
+  3.2,
+  4.5
+ ],
+ "end": {},
+ "variant_of": "F06-frenchie",
+ "frames": [
+  "t620.png",
+  "t621.png",
+  "t622.png",
+  "t623.png"
+ ],
+ "text_pos": [
+  "top",
+  "top",
+  "bottom",
+  "top"
+ ]
+}

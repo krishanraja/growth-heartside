@@ -1,0 +1,4 @@
+Status: 48 divergent ideas (16 funny, 16 warm, 16 pure heart) under the approved platform "Your dog loves you too. Here's the proof." are in docs/briefs/2026-11-01-ideas.json and on Krish's private voting board; every public line passes heartside's voice checks. The sync at heartside 93780ae says STOP because VOICE and DOG_VOICE in n8n/build.mjs changed, so no pack passes until growth.py takes them in.
+Changed: Krish approved the platform, ruled that all three tones run in rotation at once ("we dont have enough time to test and learn"), and confirmed 3 Dec 11:59 pm ET as the order-by line for the $12 printed Christmas card only (Rulings, Krish, 2026-11-01).
+Next: read Krish's votes, write what a high-quality idea looks like in each tone, and revise the Improve ideas.
+North Star check (2026-11-01): holds.

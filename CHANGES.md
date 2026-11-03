@@ -3,6 +3,155 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-03: The Drive social library. Krish: "Codex will orchestrate and schedule send my posts, you need to build a library of assets in my Google drive. Strategies."
+  - The nine locked posts were re-mixed with licensed full-quality Epidemic downloads in place of the review previews. Same recordings and timings; the record scratch is a licensed take.
+  - Packed with checksums into one hosted zip. Media went by link because the Drive connector can't upload video; Krish chose links plus a Codex pull.
+  - Drive `Heartside/05_Social-Library` holds the Codex instructions, the posting strategy, and a Sheet of 27 rows: 9 posts across TikTok, Instagram and Facebook.
+  - Each row has a caption passing the copy rules, a creative id, a tracked link, the lock fingerprint and an empty `approved` column for Krish.
+  - AGENTS.md records the ruling. No job file or `automations.json` entry changed.
+
+- 2026-11-03: All nine Christmas posts locked. Krish: "Lock it all."
+  - Locked: F10, F12, F03, F05 and F06 (frenchie, with the dachshund and lab as its variants). F07 and F11 were locked earlier.
+  - Every post passes the full go-live gate: copy, breed, renders, drift, media, an independent reviewer pass on the exact post, and his approval.
+  - The gate now matches a verdict to the exact post by spec and fingerprint, whichever lock existed when it was recorded.
+  - No job file or `automations.json` entry changed.
+
+- 2026-11-03: Troll-meme roasts and the chat punchlines.
+  - On the roasts, Krish wrote: "These are not funny compared to the dash. Rewrite these in that kind of humour style. Also I don't want plain black cards. I want images that look like the dog is trolling them, like that classic troll meme image - but a dog. That vibe".
+  - The frenchie roast is rewritten in the dachshund's style. All three breeds now run on 12 generated troll-grin photos with meme type, and a boom hit lands on each reveal.
+  - In F10, the first reply is "Bro, that's a bone 😂". The deluded Lab is corrected with "They threw it AWAY mate 😂😵".
+  - F11 is locked with his board Lock, which approves the answers shown.
+  - No job file or `automations.json` entry changed.
+
+- 2026-11-02: Organic, not ads. Krish on the nine finished posts: "We never need "EXAMPLE" badges
+  anywhere, and the mugs should animate somewhat? "Your dog loves you too." isnt really needed on these
+  posts, they are not paid ads remember, they should come across like organic social posts." He also
+  ruled on wrapped text, the search bar and the roast music.
+  - Product images carry no badge (AGENTS.md rule 4). Heartside's canon tags examples on its own store
+    pages, and these posts never present a render as a customer's dog.
+  - No slogan, URL or call to action on screen. Endings are the real product, moving, and links go in
+    the caption.
+  - Text wraps evenly and never leaves one word on its last line ("the word ... sprawled onto a second
+    line ... looks shitty").
+  - The search bar never grows; long searches scroll out at the start. Every search gets a punchline
+    answer.
+  - The roasts move from Brat to "Who's the Boss Now".
+  - His board rewrites are in the joke bank in his words. Only "favourite" changed, to US "favorite".
+  - No job file or `automations.json` entry changed.
+
+- 2026-11-02: The lock system. Krish: "We need to figure out a way of making this reliable so that we
+  don't get drift and we don't get weird humor and things that don't make sense once stuff is locked in.
+  After that, I can trust the system to autonomously drive growth." Then: "yes, build the lock system,
+  then finish the films".
+  - `factory/` now holds the joke bank (lines with roles, breed tags, approval status and a hash of the
+    approved words) and the render catalog (checksums). Specs carry ids only, never free text.
+  - Locks freeze a post's skeleton by fingerprint, so only the slots can vary.
+  - Code gates check copy, breed fit, renders, media and drift.
+  - An independent reviewer works to a standing checklist that grows with each catch.
+  - The trust ramp sends the first 5 variants to Krish, then 1 in 10. Two declines pause a lock.
+  - Tests are in `tests/test_factory_lock.py`.
+  - No job file or `automations.json` entry changed.
+
+- 2026-11-02: Reset to finished posts. Krish: "I swear I approved 10 concepts before, and now we've got
+  only a few of them, but we've got different variations of them. I'm kind of getting a bit lost amidst all
+  this now and a bit demotivated". No more boards of parts: one status page shows all ten concepts and
+  the finished posts. F10 (group chat), F11 (search history) and F06 (frenchie, dachshund and lab
+  carousels, each with a reel) are built in code with the locked music, and end on the real renders
+  labelled Example. The session makes the humour call for F01 (absurd "Plan C"), F02 (absurd "Project
+  Nothing") and F04 (meme "me vs my golden"). The round-8 board is parked. No job file or
+  `automations.json` entry changed.
+
+- 2026-11-02: Humour retune. Krish on the wave-1 animatics: "The Dog's Christmas Shopping List needs a
+  rescript, its just not funny. The others need a lot more humour about them." He picked all four comic
+  modes (absurd escalation, meme-text, slapstick, deadpan) at "Cheeky, still giftable": "We'll need all
+  different types of assets if we intend to flood socials, and we'll need to tune the humour". F01, F02
+  and F04 are rewritten in all four modes (`docs/briefs/2026-11-02-humour-rescripts.json`), each with a
+  joke map and a laugh every 3 to 4 seconds, on a private humour board. Nothing is spent until he picks.
+  No job file or `automations.json` entry changed.
+
+- 2026-11-02: A Codex lane in this repository. Krish asked whether Codex is doing the asset production as
+  designed, then chose "Add a lane to this repo" over queuing cards in heartside. `codex/README.md`
+  mirrors heartside's lane (card, Control Center booking, branch `codex/<id>`, settle). Because this
+  repository is public, the lane is picture-only: licensed music and voice never enter git, and the session
+  adds the locked sound to Codex's picture. Krish adds `krishanraja/growth-heartside` to
+  `config/codex-lanes.json` on his home computer. No job file or `automations.json` entry changed.
+
+- 2026-11-02: Sound is locked for all ten concepts (F01's dip-and-fade ending approved). F04, F05 and F12
+  are recast to breeds with approved renders (F04 golden, F05 and F12 frenchie), and the narrator re-read
+  F04's opening with "golden retriever". Wave 1 pictures: 30 Higgsfield key frames and three animatics
+  (F01, F02, F04) cut to the locked sound, on a private board for his vote. Krish asked whether Codex is
+  doing asset production as designed. Not yet: heartside's Codex lane watches only that repository, so
+  the final builds wait on his call. No job file or `automations.json` entry changed.
+
+- 2026-11-02: Round 5 sound votes. F02 (take 1 over Monsieur Cat Walk) and the F05 judge (take 1) are
+  approved, so sound is locked for nine of ten concepts. F01's ending is remixed: "It just ends abruptly.
+  Surely, we would just lower the music and have the sprinkle over it". The music now dips under the chime
+  and fades instead of cutting dead, and the sound bible rule is changed to match. No credits used. No job
+  file or `automations.json` entry changed.
+
+- 2026-11-02: Round 4 sound votes. F10 (the chat) is approved. F02's music is Monsieur Cat Walk. F01's
+  Mix B is remixed so the crescendo sits under the voice and the chime fades in ("drowns out the voice
+  a little bit, and then the sprinkle sound comes in really abruptly"). F02 drops "Nothing is free" and
+  takes Krish's laptop line, with the dash and exclamation mark removed under the voice rules. The F05 judge
+  is redirected for "way more intonation and personality". The round-5 board holds these three. ElevenLabs:
+  12,507 of 20,000 booked. No job file or `automations.json` entry changed.
+
+- 2026-11-02: Round 3 sound votes. F03, F04, F07, F11 and F12 are locked. F01 has its dachshund (option 3,
+  directed "a bit miffed at the start, but then hilariously and positively takes control", never angry)
+  and Mix B with the Fool Me Twice crescendo. F02 gets the line where the golden realizes it must get its
+  human something, and new music (Bug-A-Boo rejected). F05 gets an American judge ("Needs an American
+  accent."). F10 carries Krish's jokes. Ruling: inside an on-screen chat mock only, emojis and "WTF" are
+  allowed as the dogs' own texting, while captions, voiceover and gift lines keep every voice rule (his choice:
+  "Emojis yes, WTF as written"). ElevenLabs share: 10,287 of 20,000 booked; the earlier voice-design
+  bookings were estimates and look high against the provider balance. No job file or
+  `automations.json` entry changed.
+
+- 2026-11-02: Round 2 sound votes. Krish locked voices for F02, F03, F04, F07 and F12 (all
+  ElevenLabs-designed; every Higgsfield preset rejected) and music for all 10 concepts. He sent the
+  dachshund voice back ("more like a cartoon character", "more pissed off", "younger"), and sent back the
+  F02, F05, F10 and F11 scripts for more exaggerated comedy and a clearer layout. F01's wink is the real
+  dog popping out of the steam, then a hard cut to the untouched mug (his choice: "Real dog winks, then
+  cut"). "Use all the ElevenLabs connectors without keeping on asking me." The round-3 board holds the
+  redesigned dachshund, two F01 mixes, the rewritten scripts and directed reads. ElevenLabs share used
+  so far: about 8,100 of 20,000 characters, every call reserved and settled. No job file or
+  `automations.json` entry changed.
+
+- 2026-11-02: ElevenLabs share unlocked for Heartside ("elevenlabs share is unlocked fyi, do you need it?",
+  then "I set all connector use to always approve"). It funds a voice designed for each recurring
+  character: 3 previews each for the narrator, dachshund, golden retriever, shepherd, doodle and
+  chihuahua. About 3,700 of the 20,000-character share was used, reserved and settled in Control Center.
+  The designed voices sit beside the Higgsfield presets on the sound board, with an F01 sketch on the
+  designed dachshund. Directed reads, with delivery tags, wait for Krish's pick of each voice. Connector
+  approval changes no wall: posting, sending and new money still go through the go-live step.
+
+- 2026-11-02: Ten concepts approved, and the sound comes first. Krish approved F01 to F07 (except
+  F08 and F09), F10, F11 and F12 on the idea board: "I've approved 10 concepts. I think that's enough to
+  get on with ... the audio treatment and the specifics of the humor execution are quite important to me."
+  - F01's swear is bleeped, never spoken (his choice of "Bleeped").
+  - The dog's inner voice is one voice per breed group (his choice).
+  - The narrator and the scores are original voices and licensed genre tracks, never a real person's
+    voice or a real film theme ("Yes, original in that register").
+  - Take heartside's new VOICE and DOG_VOICE into growth.py ("Yes, update it").
+  - Higgsfield: "Changed permissions for Higgsfield, so just carry on autonomously without asking each
+    time." Every spend is still reserved and settled against Heartside's share in Control Center.
+  - The funny bar is in `docs/briefs/2026-11-02-funny-bar.md`. Scripts and the sound bible are in
+    `docs/briefs/2026-11-02-sound-and-scripts.json`. He votes on the takes on a private sound board.
+  - No job file or `automations.json` entry changed.
+
+- 2026-11-01: The creative platform and a round of 48 ideas. Krish: "lets kick off aggressive content
+  production, i want to nail down a creative direction that can overarch various executional ideas".
+  - Platform approved: "Your dog loves you too. Here's the proof." Every post shows a true act of dog
+    love, then the real painting as the receipt.
+  - Tone: "we need all 3 to run in rotation. we dont have enough time to test and learn". Warm first,
+    funny first and pure heart run side by side and are compared, not tested in sequence.
+  - The $12 printed Christmas card's 3 Dec 11:59 pm ET cutoff may be stated as its order-by line, on
+    the card only.
+  - "Get as divergent as you possibly can, come back to me with 40-50 ideas of all tones and
+    varieties". The 48 ideas are in `docs/briefs/2026-11-01-ideas.json`, and he votes on a private
+    board (Approve, Improve, Reject, with comments). His votes set the bar for each tone before any mock
+    or plan proposal.
+  - No job file or `automations.json` entry changed.
+
 - 2026-10-30: Channel work runs as the seven channel tasks. Krish asked for each of seven saved Instagram
   growth prompts to be its own task for every specialist, and for a process to the North Star. They are
   defined once in ai-harness `contract/channel-tasks.md`. `crew/registry.json` maps two specialists

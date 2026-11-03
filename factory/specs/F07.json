@@ -1,0 +1,46 @@
+{
+ "id": "F07",
+ "template": "film",
+ "breed": "doodle",
+ "voice": "vo_F07.mp3",
+ "music": "m_elegant_butterfly.mp3",
+ "music_level": 0.22,
+ "shots": [
+  {
+   "until": 2.4,
+   "frame": "f701.png",
+   "line": "F07.v1",
+   "picture": "smug doodle in a turtleneck at a gallery"
+  },
+  {
+   "until": 6.6,
+   "frame": "f702.png",
+   "line": "F07.v2",
+   "picture": "doodle sniffing the frame, wall label UNTITLED (VERY GOOD BOY)"
+  },
+  {
+   "until": 8.6,
+   "frame": "f703.png",
+   "line": "F07.v3",
+   "picture": "doodle, paw on chin, dogs in berets in awe behind"
+  },
+  {
+   "until": 12.0,
+   "render": "doodle-sentimental-portrait.jpg",
+   "line": "F07.v4"
+  },
+  {
+   "until": 14.4,
+   "frame": "f704c.png",
+   "line": "F07.v5",
+   "picture": "doodle turns to camera, slow smug blink"
+  }
+ ],
+ "sfx": [],
+ "end": {
+  "renders": [
+   "doodle-sentimental-portrait.jpg"
+  ],
+  "hold": 4.2
+ }
+}

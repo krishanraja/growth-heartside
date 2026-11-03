@@ -1,0 +1,161 @@
+{
+ "about": "Approved store renders. A post may show only these files, byte for byte (sha256), never altered, never presented as a customer's dog. No badge (Krish, 2 Nov). Refresh from the heartside sync, never by hand-editing an image.",
+ "renders": [
+  {
+   "file": "dachshund-sentimental-blanket.jpg",
+   "breed": "dachshund",
+   "product": "blanket",
+   "sha256": "77e9017326ab7371f12c9cf9cff6c987c4f1fcec0271738f5efd9ec3b009349b"
+  },
+  {
+   "file": "dachshund-warm-portrait.jpg",
+   "breed": "dachshund",
+   "product": "portrait",
+   "sha256": "82c52939a726ceffb71e42aa768322014835fdda4775d6e50f002f8860b32540"
+  },
+  {
+   "file": "doodle-hilarious-blanket.jpg",
+   "breed": "doodle",
+   "product": "blanket",
+   "sha256": "636e4c06c99311a0a7d21ddc98fcafc3059ba0ff448742a6a798ef8c1b0c019b"
+  },
+  {
+   "file": "doodle-sentimental-portrait.jpg",
+   "breed": "doodle",
+   "product": "portrait",
+   "sha256": "6c8f5874a815d284e9715ea8bad986ceb763a361c386437d77de4d5d87fc4649"
+  },
+  {
+   "file": "frenchie-hilarious-portrait.jpg",
+   "breed": "frenchie",
+   "product": "portrait",
+   "sha256": "606d6d8222c51bfb4e147afce81e25509d5c87b834e94d52d7d5117a801a3840"
+  },
+  {
+   "file": "frenchie-warm-blanket.jpg",
+   "breed": "frenchie",
+   "product": "blanket",
+   "sha256": "4c4b44831eb736b557be8f20ed26f95724d7572fe114734c7f6fc78c5ff5d0e5"
+  },
+  {
+   "file": "golden-hilarious-blanket.jpg",
+   "breed": "golden",
+   "product": "blanket",
+   "sha256": "e923d97421307cd863352ef9c49992c055f2b449f84f51f9d6512b2e343360ce"
+  },
+  {
+   "file": "golden-sentimental-portrait.jpg",
+   "breed": "golden",
+   "product": "portrait",
+   "sha256": "e92bb2d5568cd01499bee58708f9122cafd18666ca8fcc70a0b5b687d91c86c8"
+  },
+  {
+   "file": "heartside-christmas-card.jpg",
+   "breed": "any",
+   "product": "card",
+   "sha256": "6617c11c5dd383030ef5f414f0a5d3076569b704bf44ac70df0780a555dc7dd7"
+  },
+  {
+   "file": "mug-real-dachshund.jpg",
+   "breed": "dachshund",
+   "product": "mug",
+   "sha256": "842cfa76138bece30f37616342ea22e3040125879af85344e11b761df0e43f87",
+   "face": [
+    680,
+    560
+   ],
+   "crop": [
+    680,
+    600
+   ]
+  },
+  {
+   "file": "mug-real-doodle.jpg",
+   "breed": "doodle",
+   "product": "mug",
+   "sha256": "a05e0cd6e307b94ee09dc8dc3d6a615a3f71dd02637013020f5ccc57929e9800",
+   "face": [
+    648,
+    392
+   ],
+   "crop": [
+    648,
+    392
+   ]
+  },
+  {
+   "file": "mug-real-frenchie.jpg",
+   "breed": "frenchie",
+   "product": "mug",
+   "sha256": "9890caebd4744cda40b35b1a73e5b8e03de74aefd83d82b1bb46b254d8d7aa43",
+   "face": [
+    760,
+    690
+   ],
+   "crop": [
+    760,
+    660
+   ]
+  },
+  {
+   "file": "mug-real-golden.jpg",
+   "breed": "golden",
+   "product": "mug",
+   "sha256": "453910b2d969c4300ea383c140b5bd55fc598b63491612daf6d2dc4b817831f6",
+   "face": [
+    729,
+    459
+   ],
+   "crop": [
+    729,
+    459
+   ]
+  },
+  {
+   "file": "mug-real-lab.jpg",
+   "breed": "lab",
+   "product": "mug",
+   "sha256": "883a55704f6b3fadab8656f40dc64365a1a80429546829ebded95d1d9d5dda9d",
+   "face": [
+    630,
+    545
+   ],
+   "crop": [
+    621,
+    580
+   ]
+  },
+  {
+   "file": "mug-real-shepherd.jpg",
+   "breed": "shepherd",
+   "product": "mug",
+   "sha256": "c4da0541e2efdb9b55bb7272994c898fb4f3ef0be672ecfc0797a99e24dde196",
+   "face": [
+    621,
+    472
+   ],
+   "crop": [
+    621,
+    472
+   ]
+  },
+  {
+   "file": "set-golden-real.jpg",
+   "breed": "golden",
+   "product": "set",
+   "sha256": "103f5665922f401cb2e1140da84a02bc17bc45e76c88940d338409ef244d9457"
+  },
+  {
+   "file": "shepherd-hilarious-portrait.jpg",
+   "breed": "shepherd",
+   "product": "portrait",
+   "sha256": "9196289e3dc13da20036f8a24ec25cf674b2fe50ed3ec177de04b6aff1eeb882"
+  },
+  {
+   "file": "shepherd-warm-blanket.jpg",
+   "breed": "shepherd",
+   "product": "blanket",
+   "sha256": "c7339f3587ee95acb3e235b004745ec0a4991d18793872499f16b5e8e81e4b48"
+  }
+ ]
+}

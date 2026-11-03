@@ -39,6 +39,15 @@ held. A Purge or decline on a concept stops all of its posts. Anything not
 derived from an approved concept keeps its own approval, and the creative bar
 below is unchanged. Until the go-live step exists, posting stays with Krish.
 
+**Codex posts from the Drive library** (Ruling, Krish, 2026-11-03: "Codex will orchestrate and schedule send my posts, you need to build a library of assets in my Google drive.").
+- The engine builds and locks posts, then publishes them to Krish's Drive at `Heartside/05_Social-Library`. That library holds:
+  - the media zip, checksummed;
+  - "00 README for Codex";
+  - "01 Posting strategy";
+  - "02 Schedule and captions".
+- Codex posts only Schedule rows that Krish marks `approved = yes`, exactly as built, and writes back the status and live address.
+- The engine itself still never posts.
+
 **Autonomy is given where it is deserved** (Krish, 2026-10-19). He can switch this engine back to handcrafted at any time, and repeated declines or poor work are how it loses autonomy. So:
 
 - **Check in at least every other day, and after the first results of every go-live.** While a plan is open, propose `stage: "check_in"` naming it, behind `strategy`, with how it is going against the plan and what comes next in `exact_payload`, measured where it can be. His list asks "On track?": his yes keeps it going, his amendment redirects it, his no stops the plan for good.
@@ -131,8 +140,10 @@ address of Krish's in anything.
    date appears only once Krish has confirmed it for that product.
 4. **The product on screen is always the real design.** AI may make dogs and
    rooms. It never draws the product and never shows AI "customers" holding
-   or reviewing it. Product images are the live store's own renders, each
-   labeled Example, with an example dog that is never a customer's, or
+   or reviewing it. Product images are the live store's own renders, pixels
+   unaltered (they may move: scale, sway, push-in), never presented as a
+   customer's dog and carrying no badge or label (Krish, 2 Nov: "We never
+   need EXAMPLE badges anywhere"), or
    heartside's breed examples made from its own brief, where a product body
    may be generated but the painting is composited unchanged. One hero concept
    may morph a realistic AI dog into the real artwork, ending on the real
@@ -143,7 +154,10 @@ address of Krish's in anything.
    none of the banned words, none of the retired lines ("written by your
    dog", "Now it's in writing"), no "it's not X, it's Y". No jokes about a
    dog dying, ageing, illness or abandonment, and none that mock the buyer.
-   Business headlines stay plain, warm and true. Gift lines are the dog
+   Only the dog's own gift lines may tease the person, in heartside's
+   over_the_top tone: their habits and life with the dog, never their body,
+   looks, age, money, job or family, and never a swear word (heartside
+   `n8n/build.mjs`, 2 Nov). Business headlines stay plain, warm and true. Gift lines are the dog
    talking to the person it loves (Krish, 20 Oct): I is the dog, you is the
    person, warm first and funny second, signed "Love, [dog]"; never he, she,
    the dog's name or the person's name, no exclamation marks, no "Dear",
