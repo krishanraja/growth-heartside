@@ -286,9 +286,9 @@ def film(spec, work):
         dur = s['until'] - t0; t0 = s['until']; cap = T(s['line'], spec) if s.get('line') else None
         out = f'{work}/s{i:02d}.mp4'
         if s.get('render'):   # a real render mid-film: moving, captioned, no badge
-            product_clip([s['render']], out, dur, overlay=lambda im, t, c=cap: _caption(im, c), end_png=f'{work}/s{i:02d}.png')
+            product_clip([s['render']], out, dur, overlay=lambda im, t, c=cap, y=s.get('cap_y', 1440): _caption(im, c, y), end_png=f'{work}/s{i:02d}.png')
         else:
-            im = _caption(_cover(f"{FR}/{s['frame']}", s.get('crop_top', 0)), cap)
+            im = _caption(_cover(f"{FR}/{s['frame']}", s.get('crop_top', 0)), cap, s.get('cap_y', 1440))   # meme posts caption at the top
             png = f'{work}/s{i:02d}.png'; im.save(png); n = round(dur * 30)
             run(['ffmpeg', '-y', '-loop', '1', '-i', png, '-vf', f"scale=2160:3840,zoompan=z='min(zoom+0.0007,1.08)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps=30,format=yuv420p",
                  '-frames:v', str(n), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', out])

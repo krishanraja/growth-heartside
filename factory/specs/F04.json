@@ -1,0 +1,98 @@
+{
+ "id": "F04",
+ "template": "film",
+ "breed": "golden",
+ "voice": "vo_F04.mp3",
+ "music": "m_epic_callwild.mp3",
+ "music_level": 0.22,
+ "note": "Meme 'me vs my golden' (rescripts F04B). Music: The Call of the Wild. Captions sit at the top, meme style; the narrator speaks one line.",
+ "shots": [
+  {
+   "until": 2.6,
+   "frame": "f403.png",
+   "line": "F04.m1",
+   "cap_y": 200,
+   "picture": "the person gets up and walks away; the golden on the rug"
+  },
+  {
+   "until": 4.4,
+   "frame": "f409.png",
+   "line": "F04.m2",
+   "cap_y": 200,
+   "picture": "the golden already curled up asleep in the spot"
+  },
+  {
+   "until": 6.6,
+   "frame": "f410.png",
+   "line": "F04.m3",
+   "cap_y": 200,
+   "picture": "the golden fake-sleeping in the spot, smiling"
+  },
+  {
+   "until": 8.4,
+   "frame": "f417.png",
+   "line": "F04.m2",
+   "cap_y": 200,
+   "picture": "a hand points; the golden opens one eye"
+  },
+  {
+   "until": 10.6,
+   "frame": "f418.png",
+   "line": "F04.m4",
+   "cap_y": 200,
+   "picture": "the person perches on the edge; the golden takes the rest"
+  },
+  {
+   "until": 12.6,
+   "frame": "f419.png",
+   "line": "F04.m2",
+   "cap_y": 200,
+   "picture": "the golden stretches all four legs and pushes the person off"
+  },
+  {
+   "until": 15.4,
+   "frame": "f420.png",
+   "line": "F04.m5",
+   "cap_y": 1560,
+   "picture": "the person on the floor; the golden looks down, smug"
+  },
+  {
+   "until": 19.2,
+   "render": "golden-hilarious-blanket.jpg",
+   "line": "F04.m6",
+   "cap_y": 200
+  }
+ ],
+ "sfx": [
+  [
+   0.1,
+   "sting"
+  ],
+  [
+   2.6,
+   "sting"
+  ],
+  [
+   6.6,
+   "sting"
+  ],
+  [
+   8.4,
+   "sting"
+  ],
+  [
+   10.6,
+   "sting"
+  ],
+  [
+   12.5,
+   "boom"
+  ]
+ ],
+ "end": {
+  "renders": [
+   "golden-hilarious-blanket.jpg"
+  ],
+  "hold": 4.0
+ }
+}

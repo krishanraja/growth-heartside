@@ -1,0 +1,70 @@
+{
+ "id": "F02",
+ "template": "film",
+ "breed": "golden",
+ "voice": "vo_F02.mp3",
+ "music": "m_quirk_catwalk.mp3",
+ "music_level": 0.2,
+ "note": "Absurd 'Project Nothing' (rescripts F02A). Music: Monsieur Cat Walk.",
+ "shots": [
+  {
+   "until": 5.0,
+   "frame": "f211.png",
+   "line": "F02.p1",
+   "picture": "3 am: the golden in reading glasses at the laptop"
+  },
+  {
+   "until": 8.7,
+   "frame": "f212.png",
+   "line": "F02.p2",
+   "picture": "spreadsheet GIFT IDEAS: 1. stick / 2. bigger stick / 3. the neighbor's cat"
+  },
+  {
+   "until": 12.7,
+   "frame": "f213.png",
+   "line": "F02.p3",
+   "picture": "video call: a beagle in a tie eating the crackers, labelled Consultant"
+  },
+  {
+   "until": 16.9,
+   "frame": "f214.png",
+   "line": "F02.p4",
+   "picture": "4:12 am: wild-eyed golden at a whiteboard of paw prints, empty water bowls"
+  },
+  {
+   "until": 17.7,
+   "frame": "f217.png",
+   "picture": "face-plant asleep on the keyboard; the search bar reads gift so my human thinks about me all day"
+  },
+  {
+   "until": 20.2,
+   "frame": "f218.png",
+   "line": "F02.p5",
+   "picture": "the same golden, glasses on, jolts awake, amazed"
+  },
+  {
+   "until": 24.8,
+   "render": "mug-real-golden.jpg",
+   "line": "F02.p6"
+  },
+  {
+   "until": 27.8,
+   "frame": "f216.png",
+   "line": "F02.p7",
+   "picture": "the golden grins beside the laptop: Consultant has left the meeting"
+  }
+ ],
+ "sfx": [
+  [
+   16.9,
+   "scratch",
+   0.5
+  ]
+ ],
+ "end": {
+  "renders": [
+   "mug-real-golden.jpg"
+  ],
+  "hold": 4.2
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "id": "F01",
+ "template": "film",
+ "breed": "dachshund",
+ "voice": "vo_F01.mp3",
+ "music": "m_F01_mixb.mp3",
+ "music_level": 1.0,
+ "note": "Absurd 'Plan C' (rescripts F01A). Music: The Ingenious into the Fool Me Twice crescendo (Mix B). The dachshund matches the store's own dachshund example (green sweater on mug-real-dachshund.jpg).",
+ "shots": [
+  {
+   "until": 3.9,
+   "frame": "f103.png",
+   "line": "F01.p1",
+   "picture": "the person sips from a plain white mug while the dachshund watches like a jilted lover"
+  },
+  {
+   "until": 10.9,
+   "frame": "f113.png",
+   "line": "F01.p2",
+   "picture": "dachshund at a tiny desk before a conspiracy board of plain mug photos and red string"
+  },
+  {
+   "until": 12.6,
+   "frame": "f114.png",
+   "line": "F01.p3",
+   "picture": "dachshund in a hard hat measuring a plain mug; chalkboard SMILES AT MUG: 9 / SMILES AT ME: 0"
+  },
+  {
+   "until": 16.9,
+   "frame": "f115.png",
+   "line": "F01.p4",
+   "picture": "flip chart PLAN A: knock it off the table / PLAN B: knock it off the table HARDER; a basset asleep in the audience",
+   "cap_y": 1720
+  },
+  {
+   "until": 21.2,
+   "frame": "f116.png",
+   "line": "F01.p5",
+   "picture": "flip chart PLAN C with a crayon dog diving into a steaming cup; dachshund grins"
+  },
+  {
+   "until": 22.6,
+   "frame": "f108.png",
+   "line": "F01.p6",
+   "picture": "the run-up across the kitchen"
+  },
+  {
+   "until": 25.4,
+   "frame": "f110.png",
+   "line": "F01.p6",
+   "picture": "slow-motion leap into the steam"
+  },
+  {
+   "until": 27.2,
+   "frame": "f111.png",
+   "line": "F01.p7",
+   "picture": "the dachshund pops out of the steam and winks"
+  }
+ ],
+ "sfx": [
+  [
+   21.38,
+   "s_bleep.mp3",
+   0.3
+  ],
+  [
+   25.5,
+   "sting"
+  ]
+ ],
+ "end": {
+  "renders": [
+   "mug-real-dachshund.jpg"
+  ],
+  "hold": 4.2
+ }
+}
