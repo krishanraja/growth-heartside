@@ -41,7 +41,7 @@ below is unchanged. Until the go-live step exists, posting stays with Krish.
 
 **Codex posts from the Drive library** (Ruling, Krish, 2026-11-03: "Codex will orchestrate and schedule send my posts, you need to build a library of assets in my Google drive.").
 - The engine builds and locks posts, then publishes them to Krish's Drive at `Heartside/05_Social-Library`. That library holds:
-  - the media zip, checksummed;
+  - each post's media in `Posts/<post id>/`, filed by Krish's home computer through content-engine's library lane: `python3 factory/send_library.py <library folder>` (Ruling, Krish, 2026-11-03: "Why don't you duplicate that Python script for Heartside then?"), with the checksummed zip kept as a backup;
   - "00 README for Codex";
   - "01 Posting strategy";
   - "02 Schedule and captions".
