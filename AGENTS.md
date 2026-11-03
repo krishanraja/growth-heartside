@@ -45,6 +45,7 @@ below is unchanged. Until the go-live step exists, posting stays with Krish.
   - "00 README for Codex";
   - "01 Posting strategy";
   - "02 Schedule and captions".
+- What lives where in that Drive, and who may write it, is `docs/DRIVE-MAP.md` (Krish, 2026-11-03: "be strict on what goes where as codex tends to sprawl drives quite easily"). Nothing is created in Drive that the map does not name.
 - Codex posts only Schedule rows that Krish marks `approved = yes`, exactly as built, and writes back the status and live address.
 - The engine itself still never posts.
 
