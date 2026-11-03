@@ -48,6 +48,7 @@ below is unchanged. Until the go-live step exists, posting stays with Krish.
 - What lives where in that Drive, and who may write it, is `docs/DRIVE-MAP.md` (Krish, 2026-11-03: "be strict on what goes where as codex tends to sprawl drives quite easily"). Nothing is created in Drive that the map does not name.
 - Codex posts only Schedule rows that Krish marks `approved = yes`, exactly as built, and writes back the status and live address.
 - The engine itself still never posts.
+- Before preparing or posting any social row, read [the channel operating instructions](docs/CHANNEL-TASKS.md#running-the-two-kinds-of-post) and [the Drive ownership map](docs/DRIVE-MAP.md). Keep dog POV and product posts in the same schedule and use the approved row exactly.
 
 **Autonomy is given where it is deserved** (Krish, 2026-10-19). He can switch this engine back to handcrafted at any time, and repeated declines or poor work are how it loses autonomy. So:
 
