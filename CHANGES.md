@@ -3,6 +3,14 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-03: Heartside gets the home-computer lane. Krish: "Why don't you duplicate that Python script for Heartside then? We're going to need to do a lot more of this type of stuff moving forward", then chose to add Heartside to content-engine's library lane rather than build a separate copy. Then: "Keep going then until 100% done".
+  - In content-engine ([krishanraja/content-engine#356](https://github.com/krishanraja/content-engine/pull/356)), the library lane takes a second library, `heartside`, with paths `Posts/<post id>/<file>`. makeyourmindup stays the default.
+  - The home computer's sync writes Heartside files into `Heartside/05_Social-Library/Posts/`.
+  - The recordings pass now keeps the sync's own copy up to date, so nothing needs running at home.
+  - The database migration was applied to production with Krish's yes and read back: 5,303 existing rows kept as makeyourmindup.
+  - `factory/send_library.py` sends the library folder through that lane. It checks every file against its manifest first and never posts anything.
+  - Ruling (Krish, 2026-11-03): Heartside joins content-engine's existing library lane rather than a separate copy. No job file or `automations.json` entry changed.
+
 - 2026-11-03: The last three concepts built, and the home-computer lane checked. Krish: "You also can queue stuff for the home computer to upload in the right place - makeyourmindup engine does it. Merge all to main", then "And then build the rest and merge again".
   - F01 Becoming the mug (absurd "Plan C"), F02 Project Nothing (the golden) and F04 Me vs my golden (meme captions) are built through the factory.
     - 16 new Higgsfield key frames, 2 of them replacements after review (44 credits).
