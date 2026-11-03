@@ -27,9 +27,9 @@
     "doodle",
     "shepherd"
    ],
-   "status": "proposed",
+   "status": "retired",
    "source": "proposed by the engine, 2026-11-02",
-   "note": "the independent reviewer noted a bone emoji next to \"stick\"; this swaps it for wood"
+   "note": "moot: the bone emoji is now the joke (\"Bro, that's a bone\"), Krish 3 Nov"
   },
   {
    "id": "F10.c02",
@@ -413,9 +413,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02",
-   "note": "result card added to the vacuum search for a laugh"
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "8a798890fe93817163b10b5f7bd2ca4d25d84c52739a645a889c173eee7d9d3d"
   },
   {
    "id": "F11.r7",
@@ -425,9 +425,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02",
-   "note": "top result over the real mug"
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "dbe249bb2932997b491775807f4907a424ec3289dec0464d9f07324edfcf6d27"
   },
   {
    "id": "F06.title",
@@ -461,9 +461,10 @@
    "breeds": [
     "any"
    ],
-   "status": "approved",
+   "status": "retired",
    "source": "Krish, 2026-11-02 (approved script)",
-   "text_sha256": "6589b7002fff25aa164b20197fa9e46c5a99f1333e245499a2c8e798cc3ef020"
+   "text_sha256": "6589b7002fff25aa164b20197fa9e46c5a99f1333e245499a2c8e798cc3ef020",
+   "note": "Krish 3 Nov: \"not funny compared to the dash\""
   },
   {
    "id": "F06.fr2",
@@ -473,9 +474,10 @@
    "breeds": [
     "any"
    ],
-   "status": "approved",
+   "status": "retired",
    "source": "Krish, 2026-11-02 (approved script)",
-   "text_sha256": "e84158f966921c2db8557ff85cd7e8dfa9dd6ee9ad55ae98c85a1434b2c63851"
+   "text_sha256": "e84158f966921c2db8557ff85cd7e8dfa9dd6ee9ad55ae98c85a1434b2c63851",
+   "note": "Krish 3 Nov: \"not funny compared to the dash\""
   },
   {
    "id": "F06.fr3",
@@ -485,9 +487,10 @@
    "breeds": [
     "any"
    ],
-   "status": "approved",
+   "status": "retired",
    "source": "Krish, 2026-11-02 (approved script)",
-   "text_sha256": "ef5e63fa65e518e223256acc794201e76e0df32ecfc27ec97a6840de46939148"
+   "text_sha256": "ef5e63fa65e518e223256acc794201e76e0df32ecfc27ec97a6840de46939148",
+   "note": "Krish 3 Nov: \"not funny compared to the dash\""
   },
   {
    "id": "F06.da1",
@@ -991,15 +994,15 @@
   },
   {
    "id": "F10.c24",
-   "text": "bro",
+   "text": "Bro, that's a bone 😂",
    "role": "chat.react_bro",
    "kind": "chat",
    "breeds": [
     "any"
    ],
    "status": "approved",
-   "source": "Krish, 2026-11-02 (board, his words)",
-   "text_sha256": "ff3727276784ada3f6d609a19ed541d9e888759559d81a4045e3c790aa40f276"
+   "source": "Krish, 2026-11-03 (his words), board note on F10",
+   "text_sha256": "f53fed3809abca792c512b6114e5da008e3f9590e5af3226308d1ea87aaddc9e"
   },
   {
    "id": "F10.c25",
@@ -1045,9 +1048,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02",
-   "note": "answer for the search; Krish picks one"
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "f7990e7812b3d8fcc13ed02392e13df711cefbb2913c0650ec17bd26d106a25d"
   },
   {
    "id": "F11.r1b",
@@ -1057,9 +1060,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
+   "status": "retired",
    "source": "proposed by the engine, 2026-11-02",
-   "note": "answer for the search; Krish picks one"
+   "note": "not chosen: Krish locked F11 with the first answers"
   },
   {
    "id": "F11.r3",
@@ -1069,9 +1072,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02",
-   "note": "answer for the search; Krish picks one"
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "10dde0e9190642758e1eac138d9d3af8bb3283c6c104757b4be7419d38157c2c"
   },
   {
    "id": "F11.r3b",
@@ -1081,9 +1084,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
+   "status": "retired",
    "source": "proposed by the engine, 2026-11-02",
-   "note": "answer for the search; Krish picks one"
+   "note": "not chosen: Krish locked F11 with the first answers"
   },
   {
    "id": "F11.r4b",
@@ -1093,9 +1096,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
+   "status": "retired",
    "source": "proposed by the engine, 2026-11-02",
-   "note": "answer for the search; Krish picks one"
+   "note": "not chosen: Krish locked F11 with the first answers"
   },
   {
    "id": "F11.r5",
@@ -1105,9 +1108,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02",
-   "note": "answer for the search; Krish picks one"
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "e66c8696bfdadb01db2a98a52f3ca9cb3294477ed16aed3bf80603c69bfd66cf"
   },
   {
    "id": "F11.r5b",
@@ -1117,9 +1120,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
+   "status": "retired",
    "source": "proposed by the engine, 2026-11-02",
-   "note": "answer for the search; Krish picks one"
+   "note": "not chosen: Krish locked F11 with the first answers"
   },
   {
    "id": "F11.r6",
@@ -1129,9 +1132,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-02",
-   "note": "answer for the search; Krish picks one"
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (locked F11 as shown on the board)",
+   "text_sha256": "ff7009f4a9652ed56f299b960aa8e11a6c5f697ade6f2bccfc5cce1d7fc12946"
   },
   {
    "id": "F11.r6b",
@@ -1141,9 +1144,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
+   "status": "retired",
    "source": "proposed by the engine, 2026-11-02",
-   "note": "answer for the search; Krish picks one"
+   "note": "not chosen: Krish locked F11 with the first answers"
   },
   {
    "id": "CAP.painted",
@@ -1157,6 +1160,54 @@
    "source": "Krish, 2026-11-02 (board, his words)",
    "note": "a caption line, never on screen",
    "text_sha256": "446f86da120e7de735137e9198afe3d861dae5a951f69fb61361c32a26d502d4"
+  },
+  {
+   "id": "F10.c28",
+   "text": "They threw it AWAY mate 😂😵",
+   "role": "chat.correction",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (his words), answering the F10 question",
+   "text_sha256": "fa8dae088ad2e644963504c33f513ee460064763e75543462d4262f50ddd2a0f"
+  },
+  {
+   "id": "F06.fr4",
+   "text": "I licked your side of the couch, so legally it's mine now.",
+   "role": "roast.1",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (approved the plan that set these words)",
+   "text_sha256": "266233f3391b16dc326ebfdadee561739fdbc864f0587f2f5666508df5453fe6"
+  },
+  {
+   "id": "F06.fr5",
+   "text": "I snore, I fart, I hog the bed, and you still call me perfect. Correct.",
+   "role": "roast.2",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (approved the plan that set these words)",
+   "text_sha256": "d7d28239903ddf507eac019f27dbbcb3571392d98b5e7afe1d6cec03ffeb5263"
+  },
+  {
+   "id": "F06.fr6",
+   "text": "You're slow at the door, but I'd wait forever. Mostly for snacks.",
+   "role": "roast.soft",
+   "kind": "gift",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-03 (approved the plan that set these words)",
+   "text_sha256": "905313a1d1ddbaa2b469f1658a292ef52d83e2be4c6f6d2e2a9b3359df57630b"
   }
  ]
 }

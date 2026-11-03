@@ -1,0 +1,9 @@
+{
+ "id": "F11",
+ "status": "locked",
+ "approved_by": "Krish, board 2026-11-03: Lock (F11), approving the post as shown, answers included.",
+ "fingerprint": "6f710c69554af853e751a4f7bcbe4510fbbe6666cac728cf41ca7fb464fc6125",
+ "master": "specs/F11.json",
+ "template": "search",
+ "slots": "breed, lines by role, end render"
+}

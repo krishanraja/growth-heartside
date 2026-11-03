@@ -14,7 +14,10 @@ def load(name):
 class LockTest(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(); lib = self.tmp.name
-        os.makedirs(f'{lib}/renders'); os.makedirs(f'{lib}/locks')
+        os.makedirs(f'{lib}/renders'); os.makedirs(f'{lib}/locks'); os.makedirs(f'{lib}/frames')
+        for name in os.listdir(SPECS):  # stand-in photos for every frame a spec names
+            for fr in json.load(open(os.path.join(SPECS, name), encoding='utf-8')).get('frames', []):
+                open(f'{lib}/frames/{fr}', 'wb').write(b'frame')
         self._saved = (lock.LIB, copy.deepcopy(lock.RENDERS), lock.LEDGER, lock.HERE)
         lock.LIB = lib; lock.LEDGER = f'{lib}/ledger.json'
         for f, r in lock.RENDERS.items():  # stand-in render files, registered by their own checksum
@@ -40,7 +43,8 @@ class LockTest(unittest.TestCase):
         self.assertNotEqual(lock.fingerprint(fr), lock.fingerprint(drift))
 
     def test_unapproved_lines_are_held(self):
-        self.assertTrue(any('not approved' in p for p in self.problems(load('F11'))))
+        s = load('F10'); s['messages'][1]['line'] = 'F10.c26'   # a proposed line
+        self.assertTrue(any('not approved' in p for p in self.problems(s)))
 
     def test_wrong_breed_line_is_held(self):
         s = load('F10'); s['cast']['D'] = 'lab'

@@ -116,6 +116,8 @@ def skeleton(spec):
                     out[k] = ['product:' + RENDERS.get(r, {}).get('product', '?') for r in v]
                 elif k == 'lines' and isinstance(v, list) and not voiced:
                     out[k] = ['role:' + LINES.get(l, {}).get('role', '?') for l in v]
+                elif k == 'frames' and isinstance(v, list):   # breed photos are a slot; their count is not
+                    out[k] = f'slot:{len(v)} photos'
                 elif k == 'cast':
                     out[k] = sorted(v)
                 elif k == 'breed' and not voiced:
@@ -190,6 +192,9 @@ def check(spec, quiet=False):
         want = cast_breeds if breed == 'cast' else {breed}
         if r['breed'] != 'any' and r['breed'] not in want:
             probs.append(f'{f}: shows a {r["breed"]}, but this post is about {", ".join(sorted(want))}')
+    for fr in spec.get('frames', []):
+        if not os.path.exists(f'{LIB}/frames/{fr}'):
+            probs.append(f'frame {fr} missing')
     if spec['template'] == 'film':
         for s in spec['shots']:
             if s.get('frame') and not os.path.exists(f'{LIB}/frames/{s["frame"]}'):

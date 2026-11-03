@@ -45,6 +45,10 @@ def sfx_mix(work, total, end_t, music, level, events, voice=None, voice_level=1.
             src = f'{work}/gavel.wav'; vol = 0.9
             run(['ffmpeg', '-y', '-f', 'lavfi', '-i', 'sine=frequency=95:duration=0.25', '-f', 'lavfi', '-i', 'anoisesrc=d=0.05:c=brown:a=0.8',
                  '-filter_complex', '[0]afade=t=out:st=0.02:d=0.22[a];[1]lowpass=f=1200[b];[a][b]amix=inputs=2,volume=1.6', '-ar', '44100', '-ac', '2', src])
+        elif kind == 'boom':
+            src = f'{work}/boom.wav'; vol = 0.9
+            run(['ffmpeg', '-y', '-f', 'lavfi', '-i', 'sine=frequency=52:duration=0.7', '-f', 'lavfi', '-i', 'sine=frequency=104:duration=0.25',
+                 '-filter_complex', '[0]afade=t=out:st=0.05:d=0.65[a];[1]afade=t=out:st=0.01:d=0.24,volume=0.5[b];[a][b]amix=inputs=2,volume=2.2', '-ar', '44100', '-ac', '2', src])
         elif kind == 'creak':
             src = f'{work}/creak.wav'; vol = 0.8
             run(['ffmpeg', '-y', '-f', 'lavfi', '-i', 'sine=frequency=210:duration=0.5', '-af', 'vibrato=f=18:d=0.9,tremolo=f=30:d=0.6,afade=t=in:d=0.05,afade=t=out:st=0.3:d=0.2,volume=0.7', '-ar', '44100', '-ac', '2', src])
@@ -210,42 +214,45 @@ def search(spec, work):
 
 # ---------------------------------------------------------------- roast (carousel plus reel)
 def roast(spec, work):
-    CW, CH = 1080, 1350; breed = spec['breed']; rd = lock.RENDERS[spec['render']]
-    HEAD = F('Fraunces.ttf', 96); HEAD.set_variation_by_axes([72, 700, 50, 0])
-    LINE = F('Fraunces.ttf', 84); LINE.set_variation_by_axes([72, 560, 50, 0]); TAG = bold(F('Karla.ttf', 34), 800)
+    """Carousel plus reel. With `frames`, each slide is a photo of the dog trolling you with the line
+    in meme type over it (Krish, 3 Nov: "images that look like the dog is trolling them, like that
+    classic troll meme image - but a dog"). The last slide is the real mug."""
+    CW, CH = 1080, 1350; breed = spec['breed']
+    MEME = F('Anton.ttf', 96)
 
-    def centered(d, lines, font, y, lh):
+    def meme(photo, text):
+        im = Image.open(f'{FR}/{photo}').convert('RGB')
+        r = max(CW / im.width, CH / im.height); im = im.resize((round(im.width * r), round(im.height * r)), Image.LANCZOS)
+        x, y = (im.width - CW) // 2, (im.height - CH) // 2; im = im.crop((x, y, x + CW, y + CH))
+        d = ImageDraw.Draw(im); size = 96
+        while True:
+            f = F('Anton.ttf', size); lines = balanced_wrap(d, text.upper(), f, CW - 120, size)
+            if len(lines) <= 3 or size <= 64: break
+            size -= 6
+        lh = int(size * 1.12); y0 = 60
         for i, l in enumerate(lines):
-            tw = d.textlength(l, font=font); d.text(((CW - tw) / 2, y + i * lh), l, font=font, fill=INK)
-    slides = []
-    im = Image.new('RGB', (CW, CH), CREAM); d = ImageDraw.Draw(im, 'RGBA')
-    src = Image.open(f"{R}/{spec['render']}").convert('RGB'); cx, cy = rd['crop']; r = 225
-    crop = src.crop((cx - r, cy - r, cx + r, cy + r)).resize((760, 760), Image.LANCZOS)
-    mask = Image.new('L', crop.size, 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, 759, 759), 40, fill=255)
-    im.paste(crop, ((CW - 760) // 2, 120), mask)
-    centered(d, balanced_wrap(d, T(spec['title'], spec), HEAD, 900, 96), HEAD, 940, 112); slides.append(im)
-    for i, lid in enumerate(spec['lines']):
-        soft = lock.LINES[lid]['role'] == 'roast.soft'
-        im = Image.new('RGB', (CW, CH), CREAM if soft else (36, 32, 27)); d = ImageDraw.Draw(im, 'RGBA')
-        wl = balanced_wrap(d, T(lid, spec), LINE, 900, 84); y0 = (CH - 104 * len(wl)) / 2 - 40
-        d.text((90, y0 - 120), f'{i + 1}/{len(spec["lines"])}', font=TAG, fill=STAMP)
-        for k, w in enumerate(wl):
-            d.text((90, y0 + k * 104), w, font=LINE, fill=INK if soft else (246, 241, 231))
-        d.text((90, CH - 130), f'Love, your {breed}', font=TAG, fill=STAMP if soft else (170, 160, 150)); slides.append(im)
+            tw = d.textlength(l, font=f)
+            d.text(((CW - tw) / 2, y0 + i * lh), l, font=f, fill=(255, 255, 255), stroke_width=max(4, size // 14), stroke_fill=(0, 0, 0))
+        return im
+    texts = [T(spec['title'], spec)] + [T(l, spec) for l in spec['lines']]
+    slides = [meme(fr, tx) for fr, tx in zip(spec['frames'], texts)]
     im = Image.new('RGB', (CW, CH), CREAM)   # the real mug, nothing else on the slide
     p = Image.open(f"{R}/{spec['render']}").convert('RGB'); p.thumbnail((980, 1230), Image.LANCZOS)
     im.paste(p, ((CW - p.width) // 2, (CH - p.height) // 2)); slides.append(im)
-    frames = []
+    parts = []
     for i, s in enumerate(slides[:-1]):
         s.save(f'{work}/slide{i + 1}.png')
-        v = Image.new('RGB', (W, H), s.getpixel((5, 5))); v.paste(s, (0, (H - CH) // 2)); v.save(f'{work}/v{i + 1}.png')
-        frames.append((f'{work}/v{i + 1}.png', spec['durs'][i]))
+        v = Image.new('RGB', (W, H), (0, 0, 0))
+        big = s.resize((round(CW * H / CH), H), Image.LANCZOS); v.paste(big, ((W - big.width) // 2, 0))
+        v.save(f'{work}/v{i + 1}.png'); n = round(spec['durs'][i] * 30); out = f'{work}/v{i + 1}.mp4'
+        run(['ffmpeg', '-y', '-loop', '1', '-i', f'{work}/v{i + 1}.png', '-vf', f"scale=2160:3840,zoompan=z='min(zoom+0.0012,1.10)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps=30,format=yuv420p",
+             '-frames:v', str(n), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', out]); parts.append(out)
     slides[-1].save(f'{work}/slide{len(slides)}.png')
-    frames_to_video(frames, f'{work}/slides.mp4')
-    product_clip([spec['render']], f'{work}/end.mp4', spec['durs'][-1], end_png=f'{work}/end.png')
-    join([f'{work}/slides.mp4', f'{work}/end.mp4'], f'{work}/picture.mp4')
+    product_clip([spec['render']], f'{work}/end.mp4', spec['durs'][-1], end_png=f'{work}/end.png'); parts.append(f'{work}/end.mp4')
+    join(parts, f'{work}/picture.mp4')
     starts = [sum(spec['durs'][:i]) for i in range(len(slides))]; total = sum(spec['durs'])
-    sfx_mix(work, total, starts[-1], spec['music'], spec.get('music_level', 0.5), [(starts[1] - 0.08, 'scratch', 0.6)], soft_at=starts[len(slides) - 2])
+    booms = [(t + 0.02, 'boom') for t in starts[:-1]]
+    sfx_mix(work, total, starts[-1], spec['music'], spec.get('music_level', 0.5), booms, soft_at=starts[len(slides) - 2])
     return mux(work, spec['id']), total
 
 

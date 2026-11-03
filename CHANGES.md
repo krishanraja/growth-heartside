@@ -3,6 +3,13 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-03: Troll-meme roasts and the chat punchlines.
+  - On the roasts, Krish wrote: "These are not funny compared to the dash. Rewrite these in that kind of humour style. Also I don't want plain black cards. I want images that look like the dog is trolling them, like that classic troll meme image - but a dog. That vibe".
+  - The frenchie roast is rewritten in the dachshund's style. All three breeds now run on 12 generated troll-grin photos with meme type, and a boom hit lands on each reveal.
+  - In F10, the first reply is "Bro, that's a bone 😂". The deluded Lab is corrected with "They threw it AWAY mate 😂😵".
+  - F11 is locked with his board Lock, which approves the answers shown.
+  - No job file or `automations.json` entry changed.
+
 - 2026-11-02: Organic, not ads. Krish on the nine finished posts: "We never need "EXAMPLE" badges
   anywhere, and the mugs should animate somewhat? "Your dog loves you too." isnt really needed on these
   posts, they are not paid ads remember, they should come across like organic social posts." He also
