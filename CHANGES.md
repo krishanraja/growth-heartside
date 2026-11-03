@@ -3,6 +3,13 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-03: The Drive social library. Krish: "Codex will orchestrate and schedule send my posts, you need to build a library of assets in my Google drive. Strategies."
+  - The nine locked posts were re-mixed with licensed full-quality Epidemic downloads in place of the review previews. Same recordings and timings; the record scratch is a licensed take.
+  - Packed with checksums into one hosted zip. Media went by link because the Drive connector can't upload video; Krish chose links plus a Codex pull.
+  - Drive `Heartside/05_Social-Library` holds the Codex instructions, the posting strategy, and a Sheet of 27 rows: 9 posts across TikTok, Instagram and Facebook.
+  - Each row has a caption passing the copy rules, a creative id, a tracked link, the lock fingerprint and an empty `approved` column for Krish.
+  - AGENTS.md records the ruling. No job file or `automations.json` entry changed.
+
 - 2026-11-03: All nine Christmas posts locked. Krish: "Lock it all."
   - Locked: F10, F12, F03, F05 and F06 (frenchie, with the dachshund and lab as its variants). F07 and F11 were locked earlier.
   - Every post passes the full go-live gate: copy, breed, renders, drift, media, an independent reviewer pass on the exact post, and his approval.

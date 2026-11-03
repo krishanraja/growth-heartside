@@ -39,6 +39,15 @@ held. A Purge or decline on a concept stops all of its posts. Anything not
 derived from an approved concept keeps its own approval, and the creative bar
 below is unchanged. Until the go-live step exists, posting stays with Krish.
 
+**Codex posts from the Drive library** (Ruling, Krish, 2026-11-03: "Codex will orchestrate and schedule send my posts, you need to build a library of assets in my Google drive.").
+- The engine builds and locks posts, then publishes them to Krish's Drive at `Heartside/05_Social-Library`. That library holds:
+  - the media zip, checksummed;
+  - "00 README for Codex";
+  - "01 Posting strategy";
+  - "02 Schedule and captions".
+- Codex posts only Schedule rows that Krish marks `approved = yes`, exactly as built, and writes back the status and live address.
+- The engine itself still never posts.
+
 **Autonomy is given where it is deserved** (Krish, 2026-10-19). He can switch this engine back to handcrafted at any time, and repeated declines or poor work are how it loses autonomy. So:
 
 - **Check in at least every other day, and after the first results of every go-live.** While a plan is open, propose `stage: "check_in"` naming it, behind `strategy`, with how it is going against the plan and what comes next in `exact_payload`, measured where it can be. His list asks "On track?": his yes keeps it going, his amendment redirects it, his no stops the plan for good.
