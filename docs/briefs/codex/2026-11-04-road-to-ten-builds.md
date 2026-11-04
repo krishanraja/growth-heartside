@@ -1,3 +1,5 @@
+**Superseded 2026-11-04: use `docs/briefs/codex/2026-11-04-asset-prep-session.md`.**
+
 # Codex card: rebuild the posts toward 10 on the home machine
 
 Written 4 Nov 2026 by the growth engine. The plan is `docs/plans/2026-11-04-road-to-ten.md`.

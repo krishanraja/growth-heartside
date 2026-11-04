@@ -3,6 +3,11 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-04: Buffer cleared for Heartside. Krish: "Can you just cancel all buffer schedules for Heartside, and we'll redo them later?"
+  - All 33 scheduled Heartside posts on TikTok, Instagram and Facebook were moved to drafts, not deleted. With the 3 F10 drafts, 36 Heartside drafts remain, captions and media intact.
+  - A readback shows nothing Heartside scheduled.
+  - The asset-prep prompt now ends with one final library (Krish: "one final asset library in Drive and GitHub, ensuring that all old materials are no longer"): Drive folders hold only locked files (removals on his word), `library/CURRENT.md` is the single list, and superseded rows move to history.
+
 - 2026-11-04: Queue swapped, F03 locked. Krish: "lock" (F03), then "Can you just complete everything before I move over to Codex?", then chose "Swap them here".
   - F03 is locked with its three labels, filed and read back. F11's new cut is filed as a review file.
   - 20 queued Buffer posts now carry the locked files, through permanent links that were hashed and read back: F07, F06-dachshund, F12, F04, F03, F06-lab and F05.

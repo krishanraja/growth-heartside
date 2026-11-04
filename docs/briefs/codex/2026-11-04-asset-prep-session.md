@@ -78,10 +78,9 @@ Your job is not finished until:
 - F12;
 - F01 and F02 (motion versions).
 
-**The Buffer queue** (the scheduling thread owns it):
-- 20 posts for 5 to 8 Nov were moved onto the locked files through permanent links and read back.
-- F02 and F06-frenchie were already on their locked files.
-- The old F10 cut's three 8 Nov posts are drafts and must not publish.
+**The Buffer queue is empty** (Krish, 4 Nov: "Can you just cancel all buffer schedules for Heartside, and we'll redo them later?"):
+- All 36 Heartside posts for 4 to 8 Nov are now **drafts** on TikTok, Instagram and Facebook: the 33 that were scheduled and the 3 old F10 posts that were already drafts. Nothing Heartside is scheduled.
+- The drafts keep their captions and media. The scheduling thread rebuilds the schedule from the final library you produce. This session never touches Buffer.
 
 **What is left for this session:**
 
@@ -178,7 +177,32 @@ Look at the locked F06-frenchie reel at 5.6 to 6.0 s.
 - If a human arm or hand is visible, show Krish the frame and propose the smallest fix. Do nothing until he says so.
 - If it is clean, record "checked clean" in `docs/plans/2026-11-04-road-to-ten.md`.
 
-### Step 7: commit, push, close out
+### Step 7: one final library, with nothing old left in use
+
+Krish wants a single final asset library, in Drive and in GitHub, with no old material left where anyone can pick it up by mistake. Do this after step 5, once every lock is in.
+
+1. **Drive, `Heartside/05_Social-Library/Posts/<id>/`.** List every file in every post folder. For each one, mark it:
+   - `KEEP`: the current locked file for that post and kind (sha256 equal to the `locked` row in `library/manifest.json`);
+   - `REMOVE`: everything else, including `review-*` files, files for versions that were replaced, and anything the map does not name.
+
+   Each post folder must end up holding exactly its locked set: the reel, the cover, and slides where the post has them.
+2. **Removing Drive files needs Krish's word, file by file.** `docs/DRIVE-MAP.md` says post folders are never edited or deleted from a session, and only Krish deletes.
+   - Show Krish the `REMOVE` list (post, file name, why).
+   - On his explicit yes for those named files, either he moves them to Drive's trash himself, or you move them to the trash. Never delete permanently; the trash keeps them 30 days.
+   - Check each folder afterwards, list what is left, and confirm it matches `KEEP`.
+3. **The other Drive files.** Check `05_Social-Library` top level against the tree in `docs/DRIVE-MAP.md`. Any extra or superseded README or Sheet goes on the same `REMOVE` list for Krish.
+4. **GitHub.**
+   - Move every row of `library/manifest.json` that is not `locked` into `library/history/2026-11-superseded.json`, unchanged. The manifest then lists only the current library.
+   - Write `library/CURRENT.md`: one table, one row per post and kind, giving the file name, sha256, length, lock words and date, and the Drive path. This is the one page the scheduling thread schedules from.
+   - Put a first line "**Superseded <date>: use `library/CURRENT.md`.**" at the top of each brief that sends people to old files:
+     - `docs/briefs/codex/2026-11-04-motion-cut-F01-F07.md`;
+     - `docs/briefs/codex/2026-11-04-drop-for-review.md`;
+     - `docs/briefs/codex/2026-11-04-road-to-ten-builds.md` (this prompt replaces it).
+   - Point `docs/BOOST-LIBRARY.md` and `docs/PUBLISHING.md` at `library/CURRENT.md`.
+5. **Other copies.** List every place outside Drive that still holds an old version of a Heartside post, such as your review server (`heartside-review.5-161-56-37.sslip.io/media/`) and any local or private board exports. Tell Krish what is there. Remove the old ones only on his word. Never remove the current locked files: drafts in Buffer may still point at them.
+6. **Prove it.** Download each `KEEP` file from the library API and check its sha256 against `library/CURRENT.md`. One mismatch means the library is not final; fix it before the handoff.
+
+### Step 8: commit, push, close out
 
 1. `python3 growth.py --self-test` must pass.
 2. Write `now-notes/2026-11-0X-asset-prep.md` with exactly these lines: `Status:`, `Changed:`, `Next:`, and `North Star check (date): holds.`
@@ -191,6 +215,7 @@ Krish wants the schedule prepared as soon as possible.
 - **The moment F10 is locked and filed, send this message** to `codex://threads/01a1a23e-de37-74f1-95a8-4a9bed2e756d`. Don't wait for the rest; the scheduling thread needs it now.
 - **Send it again, updated, when F11 and the caption-safe masters are locked.**
 - Fill in every `<…>` placeholder. Send only facts you checked; nothing guessed.
+- Send the final version only after step 7 has proved the library, so the scheduling thread works from `library/CURRENT.md`.
 
 > **From the asset-prep session (Heartside), <date and time UTC>. Prepare the schedule now: Krish wants it ASAP.**
 >
@@ -203,25 +228,26 @@ Krish wants the schedule prepared as soon as possible.
 > | F10 | heartside_F10_group-chat_reel.mp4 | <sha256> | "<words>" <date> |
 > | <F11 and the others, as each is locked> | | | |
 >
-> **What to do in Buffer** (organisation `6adcc9a718f8902ff84c01d5`):
+> **The single source to schedule from is `library/CURRENT.md`** on that branch. Use only files listed there, and check their sha256.
 >
-> 1. **F10.** The old cut's three posts are drafts and must stay off the feed until they carry the new file:
->    - TikTok `6aeae9142b43f8ba7d7c9a61`;
->    - Instagram `6aeae915e478396c274e533c`;
->    - Facebook `6aeae915d59713e43431a67a`.
+> **Buffer is empty for Heartside on purpose.** On 4 Nov Krish had every Heartside post moved to drafts: "Can you just cancel all buffer schedules for Heartside, and we'll redo them later?" Build the schedule fresh:
 >
->    Give each the new F10 file, keep its caption, and schedule it. 8 Nov 17:40, 17:45 and 17:50 UTC are still the planned slots, if they are in the future. Ask Krish to approve the slots in chat before re-queuing.
-> 2. **F11.** Its queued posts (TikTok `6aeae904394911f9f1297334`, Instagram `6aeae904dc38f4d7badf16a6`, Facebook `6aeae904e478396c274e3712`; 5 Nov 14:15 to 14:25 UTC) carry the old locked cut. Once F11's new cut is locked, swap the media on all three. If they have already published, leave them.
-> 3. **The caption-safe masters** (F01, F02, F03, F05, F12), once locked. For any of their posts still queued, swap the media. For posts already live, do nothing.
-> 4. **Hosting rule.** Point Buffer only at a permanent public URL that serves the exact locked bytes. Before each edit, download that URL and check its sha256 matches. After each edit, read the post back: still scheduled, same caption and time, new file and length, and a thumbnail that renders.
+> 1. **Propose first, schedule second.**
+>    - Draft the full schedule: post, channel, date and time (in UTC and New York), caption, and the exact file from `library/CURRENT.md`.
+>    - Use `docs/PUBLISHING.md` and `docs/CHANNEL-TASKS.md` for channel practice, and `01 Posting strategy` in Drive for times.
+>    - Show it to Krish and get his approval in chat. Record that in the Schedule Sheet's `notes` as "Approved in chat <date>". Nothing is scheduled without it.
+> 2. **Reuse the drafts where you can.** The 36 Heartside drafts in Buffer (organisation `6adcc9a718f8902ff84c01d5`; TikTok channel `6ae0973f2f1f5ed648e9a327`, Instagram `6ae096872f1f5ed648e99b6d`, Facebook `6ae096d32f1f5ed648e99e98`) carry approved captions.
+>    - Give each the current file from `library/CURRENT.md` and its approved time, then re-queue it.
+>    - Drafts whose post is no longer in the plan stay drafts. Only Krish deletes them.
+> 3. **Hosting rule.** Point Buffer only at a permanent public URL that serves the exact locked bytes.
+>    - Before each edit, download that URL and check its sha256 matches.
+>    - After each edit, read the post back: scheduled, the right caption and time, the new file and its length, and a thumbnail that renders.
 >    - Never use the library's signed links. They expire after an hour, and that broke the F03 swap on 4 Nov.
+>    - Never use the review server `heartside-review.5-161-56-37.sslip.io`.
 >    - On 4 Nov the engine used Higgsfield's CDN (`d2ol7oe51mr4n9.cloudfront.net`). Buffer's own upload also works.
 >    - Test one post first, then do the rest. Stop at the first problem and tell Krish.
-> 5. **One risk to fix before it bites.** F02's posts (TikTok `6aeae907c63bd995bd1ee736`, Instagram `6aeae908394911f9f1297f10`; 5 Nov 20:10 and 20:15 UTC) point at the review server `heartside-review.5-161-56-37.sslip.io`. If that server is down at publish time, they fail. Move them to permanent hosting of the same locked file (sha256 `b06916ceebb692120549f21879…` in `library/manifest.json`), checked as in point 4.
-> 6. **New schedule rows.**
->    - Follow `docs/DRIVE-MAP.md` rule 5. Only Krish marks `approved`, or says it in chat; record that as "Approved in chat <date>" in `notes`. A row with neither is never posted.
->    - If a new `02<letter>` Sheet is needed, confirm with Krish first: the map says the growth engine creates Sheets, and Krish asked this thread to prepare the schedule. Name the conflict rather than picking one.
-> 7. **Boost test.** F12 (6 Nov) and F05 (8 Nov) are arms of the paid boost test (`docs/PAID-BOOSTS.md`, `docs/boost/2026-11-launch-packet.md`). Their queued posts now carry the locked motion versions. Don't change their captions or times without Krish.
+> 4. **Schedule Sheets.** Follow `docs/DRIVE-MAP.md` rule 5: only Krish marks `approved`, or says it in chat. If a new `02<letter>` Sheet is needed, confirm with Krish first: the map says the growth engine creates Sheets, and Krish asked this thread to prepare the schedule. Name the conflict rather than picking one.
+> 5. **Boost test.** F12, F05, F02 and the F06-frenchie carousel are the arms of the paid boost test (`docs/PAID-BOOSTS.md`, `docs/boost/2026-11-launch-packet.md`). Their dates in the launch packet move to wherever the new schedule puts them; tell Krish the new dates.
 >
 > Report back to Krish: each post's id, new due time, the media sha256 you checked, and the readback result.
 
@@ -232,6 +258,12 @@ Krish wants the schedule prepared as soon as possible.
 - [ ] F11 the same.
 - [ ] F01, F02, F03, F05 and F12 caption-safe versions the same, or Krish declined each one in words, with those words recorded.
 - [ ] F06-frenchie at 5.8 s checked, and recorded or fixed with his approval.
+- [ ] One final library:
+  - every Drive post folder holds exactly its locked set;
+  - every `REMOVE` file is trashed on Krish's word, or listed for him as still pending;
+  - `library/manifest.json` lists only locked files, with the rest moved to history;
+  - `library/CURRENT.md` is written, and every file in it was downloaded back and matched its sha256;
+  - old briefs are marked superseded.
 - [ ] `library/manifest.json`, `factory/locks/`, `CHANGES.md` and a now-note updated; self-test passes; committed and pushed to `claude/runway-motion-batch`.
 - [ ] The handoff message sent to `codex://threads/01a1a23e-de37-74f1-95a8-4a9bed2e756d`, first as soon as F10 was locked, then updated with every later lock.
 - [ ] Your final message to Krish lists each asset with its state (locked and filed, or declined), its sha256, and when the scheduling thread was told.
