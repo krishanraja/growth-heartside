@@ -1,3 +1,3 @@
-Status: Added the repository audience-comment skill and its first taste record. George reply awaits review.
-Next: Record Krish's verdict on the George line.
+Status: George approved with an emoji edit and published. Mango/Lola reply drafted.
+Next: Record Krish's verdict on the Lola line.
 North Star check (2026-11-04): holds.
