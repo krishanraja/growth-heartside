@@ -96,9 +96,9 @@ Codex runs `python3 factory/audit.py <folder>` on every master (see `docs/briefs
 | # | Fix | Owner | Needs |
 |---|---|---|---|
 | 1 | ~~Music licence for paid~~ Done: Krish, 4 Nov, "I have the right license for the post type". Closed permanently | Krish | None |
-| 2 | Recut the F10 opener (no blank first second, no "WTF"), keeping it under 30 s | Codex, with new lines from the bank | Krish approves the replacement lines |
-| 3 | Fix the F07, F10 and F11 covers (a frame with a story in it) | Codex | Cover choice only, nothing new generated |
-| 4 | Runway openers into F06 x3; the sniff clip into F07 | Codex (`docs/briefs/codex/2026-11-04-motion-cut-F01-F07.md`) | Upscale to 1080 first |
+| 2 | Recut the F10 opener (no blank first second, no "WTF"), keeping it under 30 s; same for F11's empty search bar | Factory rebuild of the chat and search templates, with new lines from the bank | Krish approves the replacement lines. A 0.4 to 0.6 s trim was tried and still fails the dead-open check, because the templates start on an empty screen |
+| 3 | Fix the F07, F10 and F11 covers (a frame with a story in it) | **Built 4 Nov in session**, awaiting Krish's lock | `local/library/2026-11-04-motion/`. F04's caption falls outside the 3:4 crop in every frame, so its cover is unchanged |
+| 4 | Motion into F01 (4 shots), F02 (opener), F03 (4 shots), F06 x3 (openers), F07 (sniff) | **Built 4 Nov in session** with `factory/splice.py` and `factory/motion/<id>.json`, awaiting Krish's lock | Words and caption layout redrawn with the factory's own code; the audio is the master's, unchanged; all pass `factory/audit.py` |
 | 5 | Paid cut spec: captions ≤ y 1150, a 3 s CTA end card ("Personalized [product] from your dog's photo" plus the product render), 15 to 30 s | Codex | Krish approves each paid cut |
 | 6 | F06-dachshund product match | heartside build session (a black-and-tan dachshund render) | heartside |
 | 7 | F06-lab line replacements | Engine proposes, Krish approves | `factory/bank/lines.json` |
