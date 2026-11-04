@@ -62,12 +62,31 @@ The lines are proposed in the bank (F03.l1 to l3). The cut is `local/library/202
 
 - **The Runway clips are 720p**, so the motion shots are softer than the stills. Higgsfield upscale_video can fix this. Price it per clip before spending.
 
-## The queue (the engine's call, Krish: "you chose")
+## The queue: swapped to the locked files (Krish, 4 Nov: "Swap them here")
 
-The engine leaves the Buffer queue as it is. Krish ruled out queue edits on 4 Nov, after a media swap broke a post. A pause or delete is still a queue edit, and both are harder to undo than letting an approved post run.
+Krish chose to swap the queued posts in this session, using permanent links and checking each one back. The swap Codex tried earlier failed because Buffer was pointed at a signed library link that expired after an hour. These links do not expire.
 
-So F11 and F07 (5 Nov), F06-dachshund (6 Nov), and F03 and F06-lab (7 Nov) go out as they were locked. The new versions go out through new schedule rows: Codex adds them from the locked files, and Krish approves them in chat.
+- **Hosting.** Each locked reel was uploaded to Higgsfield's CDN (`d2ol7oe51mr4n9.cloudfront.net`), then fetched publicly and hashed. All seven matched the locked sha256.
+- **The swaps.** 20 Buffer posts now point at the locked files: F07, F06-dachshund, F12, F04, F03, F06-lab and F05, on TikTok, Instagram and Facebook. One post (F07 TikTok) was tested first.
+- **The checks.** Every edit was read back: the post stays scheduled, the caption and time are unchanged, and Buffer read the new file's length and rendered its thumbnail.
+- **F10.** The three 8 Nov posts of the old cut (the "WTF" version) are now drafts, so they do not publish. They come back when the new F10 is built and locked.
+- **Already right.** F06-frenchie and F02 already carried their locked motion versions, and F11 its locked file. Those posts were not touched.
+- **One risk left.** F06-frenchie (4 Nov) and F02 (5 Nov) are hosted on Codex's review server (`heartside-review.5-161-56-37.sslip.io`). If that server is down at publish time, those posts fail.
 
-The one exception is Krish's to make. F06-dachshund's queued post ends on a dog of a different coat. If he wants it held, he can pause it in Buffer himself in one click.
+| Post | Permanent media URL |
+|---|---|
+| F03 | https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/c842c532-7295-4d93-8fea-fbc4a03015ae.mp4 |
+| F04 | https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/bfbc4e48-4216-488b-af80-c58d6806ee20.mp4 |
+| F05 | https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/8829a1e6-2e9b-406d-8d71-c7db0bb7c5b7.mp4 |
+| F06-dachshund | https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/ba09c664-11b4-48a5-ad8f-e9e777ffcc27.mp4 |
+| F06-lab | https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/8cb7c62f-6f61-4c29-8464-5f27767c36cb.mp4 |
+| F07 | https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/cb4aebad-bc5a-4d25-abd0-e009d0b3ecfa.mp4 |
+| F12 | https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/41239328-d0c2-485b-86f3-64c5fe1ad1bc.mp4 |
+
+## Still open after this session
+
+- **F10**: Codex builds it from the card (the music and avatars are on the home machine), Krish locks it, and the three drafts get its file.
+- **F11**: its new cut (opens on the first joke, last query whole) is in `Posts/F11/` as a `review-reel`, waiting for Krish's lock. The audit's blank-open check still flags the light canvas (pixel spread 26 against a threshold of 30). The queued F11 is the old locked cut.
+- **F01, F02, F03, F05, F12 captions at 1300**: a Codex rebuild.
 
 North Star check (2026-11-04): this moves "every winning format was found by this engine and approved by Krish in one press", because every asset gets to its best version before more reach is bought. The number has not moved.

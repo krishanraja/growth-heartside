@@ -168,7 +168,7 @@ def search(spec, work):
     def bar_font(d, text):
         """A finished query is shown whole: the type shrinks until it fits (never cut off at the start)."""
         size = 62
-        while size > 40 and d.textlength(text, font=bold(F('Karla.ttf', size), 700)) > TW:
+        while size > 34 and d.textlength(text, font=bold(F('Karla.ttf', size), 700)) > TW + 25:   # a finished query has no cursor, so it may use the bar's right padding
             size -= 2
         return bold(F('Karla.ttf', size), 700)
 
@@ -199,7 +199,7 @@ def search(spec, work):
 
     frames, events, t, history, n = [], [], 0.4, [], 0
     open_typed = spec.get('open_typed', 0)   # open mid-typing: frame 1 already shows this share of the first query
-    if open_typed:
+    if open_typed or spec.get('open_on_result'):
         t = 0.0
     else:
         frame('', 0, []).save(f'{work}/k0000.png'); frames.append((f'{work}/k0000.png', 0.4))
@@ -207,6 +207,10 @@ def search(spec, work):
     for qi, q in enumerate(qs):
         text = T(q['line'], spec); last = qi == len(qs) - 1; step = 2 if len(text) > 40 else 1
         c0 = max(step, int(len(text) * open_typed)) if (qi == 0 and open_typed) else step
+        if qi == 0 and spec.get('open_on_result') and not last:   # frame 1 is the first joke, query and answer together
+            res = T(q['result'], spec) if q.get('result') else None
+            n += 1; p = f'{work}/k{n:04d}.png'; frame(text, len(text), history, res, cursor=False).save(p); frames.append((p, q['hold'])); t += q['hold']
+            events.append((0.0, 'sting')); history.append(text); continue
         for c in range(c0, len(text) + step, step):
             n += 1; p = f'{work}/k{n:04d}.png'; frame(text, min(c, len(text)), history).save(p)
             frames.append((p, 0.05)); events.append((t, 'key')); t += 0.05

@@ -3,6 +3,12 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-04: Queue swapped, F03 locked. Krish: "lock" (F03), then "Can you just complete everything before I move over to Codex?", then chose "Swap them here".
+  - F03 is locked with its three labels, filed and read back. F11's new cut is filed as a review file.
+  - 20 queued Buffer posts now carry the locked files, through permanent links that were hashed and read back: F07, F06-dachshund, F12, F04, F03, F06-lab and F05.
+  - The old F10 cut's three 8 Nov posts are drafts. This replaces the earlier no-queue-edits ruling for this swap only.
+  - `library/manifest.json` now marks the F05 and F12 motion finishes as locked.
+
 - 2026-11-04: Lines approved, four posts locked, queue left alone. Krish: "1. approved 2. approved. 3. you chose. Lets finish F03 and then package all up".
   - The five replacement lines are approved; the lines they replace are retired. F04, F06-dachshund, F06-lab and F07 are locked, and their 11 files are filed to Drive with each sha256 read back.
   - The engine's call on the queue: posts already in Buffer go out as queued, under his earlier no-queue-edits ruling. The new versions go out through new schedule rows he approves.

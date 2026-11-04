@@ -1541,9 +1541,10 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-04",
-   "note": "On-screen label over the opening plan, meme type, top."
+   "status": "approved",
+   "source": "Krish, 2026-11-04 (chat: \"lock\", on the F03 cut)",
+   "note": "On-screen label over the opening plan, meme type, top.",
+   "text_sha256": "1b0254f5d45d74382905d40c2dd2e032e3e3ebb71f113de6bc125a864dec8179"
   },
   {
    "id": "F03.l2",
@@ -1553,9 +1554,10 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-04",
-   "note": "On-screen label as the narrator says nobody touches the cookies; the beagle is holding one."
+   "status": "approved",
+   "source": "Krish, 2026-11-04 (chat: \"lock\", on the F03 cut)",
+   "note": "On-screen label as the narrator says nobody touches the cookies; the beagle is holding one.",
+   "text_sha256": "14cf0341988162df5be822c97f8432e335b5cf543c56edd628edb4cd32c3e434"
   },
   {
    "id": "F03.l3",
@@ -1565,9 +1567,10 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-04",
-   "note": "On-screen label just before the cut to the shepherd's portrait of itself."
+   "status": "approved",
+   "source": "Krish, 2026-11-04 (chat: \"lock\", on the F03 cut)",
+   "note": "On-screen label just before the cut to the shepherd's portrait of itself.",
+   "text_sha256": "48b812e55f56a66fba2a0582f59e3e6ba355eb50b8909c59a7d40f6619a17202"
   }
  ]
 }

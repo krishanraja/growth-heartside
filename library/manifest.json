@@ -204,7 +204,7 @@
    "library_path": "05_Social-Library/Posts/F05/heartside_F05_court-of-the-couch_reel.mp4",
    "bytes": 11054972,
    "sha256": "82e8ccd1c1ba5ef050a1bc1b0d1435a393a7623dbccda7c21cfa0da5f10009d6",
-   "status": "locked",
+   "status": "superseded 2026-11-04 by the motion organic finish (same name)",
    "lock_fingerprint": "0777cb96f56566c0",
    "source": "factory",
    "audit": {
@@ -540,7 +540,7 @@
    "library_path": "05_Social-Library/Posts/F12/heartside_F12_head-of-security_reel.mp4",
    "bytes": 6957781,
    "sha256": "5cf938e6df38259c4983b097999c576345ba527438f472ffd3dfd487317e32dd",
-   "status": "locked",
+   "status": "superseded 2026-11-04 by the motion organic finish (same name)",
    "lock_fingerprint": "5223808bcc532dbf",
    "source": "factory",
    "audit": {
@@ -772,7 +772,7 @@
    "library_path": "05_Social-Library/Posts/F03/heartside_F03_operation-stocking_reel.mp4",
    "bytes": 30605928,
    "sha256": "13c264a1ebd42835c73655a93e33406b2455c484581df74b75877855511e688c",
-   "status": "locked",
+   "status": "superseded 2026-11-04 by the labelled version (same name)",
    "lock_fingerprint": null,
    "source": "claude-session motion splice",
    "audit": {
@@ -988,7 +988,7 @@
    "library_path": null,
    "bytes": 25315830,
    "sha256": "d1681fd98eacd4944be0670f50b368e0fb38fabef7cfa6f3c58eb17b2ae56ae7",
-   "status": "candidate: awaiting Krish's lock",
+   "status": "locked",
    "lock_fingerprint": null,
    "source": "codex-motion, organic finish by engine",
    "audit": {
@@ -996,7 +996,7 @@
     "machine": "pass",
     "score_organic": null,
     "score_paid": null,
-    "finding": "codex review-reel 55cac890, end card from the locked reel from 25.0 s: Codex's on-screen 'Make yours at Heartside.io' removed (Krish, 2 Nov: no URL or CTA on screen in organic posts). Board F05-MOTION-980a3a9348",
+    "finding": "codex review-reel 55cac890, end card from the locked reel from 25.0 s: Codex's on-screen 'Make yours at Heartside.io' removed (Krish, 2 Nov: no URL or CTA on screen in organic posts). Board F05-MOTION-980a3a9348 Locked by Krish 4 Nov (\"Lock the rest\"); filed, sha256 read back.",
     "date": "2026-11-04"
    },
    "product": null,
@@ -1012,7 +1012,7 @@
    "library_path": null,
    "bytes": 19559528,
    "sha256": "cadddf498f681fa47cf2beced7e753f20ed2540d187cfd7ac16014a5517ebc0e",
-   "status": "candidate: awaiting Krish's lock",
+   "status": "locked",
    "lock_fingerprint": null,
    "source": "codex-motion, organic finish by engine",
    "audit": {
@@ -1020,7 +1020,7 @@
     "machine": "pass",
     "score_organic": null,
     "score_paid": null,
-    "finding": "codex review-reel 5891683c, end card from the locked reel from 14.75 s: Codex's on-screen 'Make yours at Heartside.io' removed (Krish, 2 Nov: no URL or CTA on screen in organic posts). Board F12-MOTION-0b93e56eaf",
+    "finding": "codex review-reel 5891683c, end card from the locked reel from 14.75 s: Codex's on-screen 'Make yours at Heartside.io' removed (Krish, 2 Nov: no URL or CTA on screen in organic posts). Board F12-MOTION-0b93e56eaf Locked by Krish 4 Nov (\"Lock the rest\"); filed, sha256 read back.",
     "date": "2026-11-04"
    },
    "product": null,
@@ -1285,6 +1285,54 @@
     "score_organic": 9,
     "score_paid": null,
     "finding": "opens tight on the face and pulls back (frame f701c, text removed); sniff clip and payoff unchanged. Locked by Krish 4 Nov (\"2. approved\"); filed through the library lane, sha256 read back",
+    "date": "2026-11-04"
+   },
+   "product": null,
+   "paid_gates": null
+  },
+  {
+   "asset": "heartside_F03_operation-stocking_reel",
+   "post": "F03",
+   "kind": "reel",
+   "use": "organic",
+   "file": "heartside_F03_operation-stocking_reel.mp4",
+   "drive_id": null,
+   "library_path": "05_Social-Library/Posts/F03/heartside_F03_operation-stocking_reel.mp4",
+   "bytes": 31538423,
+   "sha256": "dd7777694a2c6bca07e81009f9d5b0c9f265455301d1896533b355c52f203963",
+   "status": "locked",
+   "lock_fingerprint": "3e10ad2b94872d03c4b2f01be8d4c8f02eca1ed5985958cf8899dd9ff04c5d64",
+   "source": "claude-session road to 10: three meme labels on the locked motion version",
+   "audit": {
+    "checked": "frame by frame; factory/audit.py",
+    "machine": "pass",
+    "score_organic": 9,
+    "score_paid": null,
+    "finding": "labels \"Operation Stocking\", \"The beagle:\", \"The gift:\" (F03.l1 to l3). Locked by Krish 4 Nov (\"lock\"); filed, sha256 read back",
+    "date": "2026-11-04"
+   },
+   "product": null,
+   "paid_gates": null
+  },
+  {
+   "asset": "heartside_F11_search-history_review-reel",
+   "post": "F11",
+   "kind": "review-reel",
+   "use": "review",
+   "file": "heartside_F11_search-history_review-reel.mp4",
+   "drive_id": null,
+   "library_path": "05_Social-Library/Posts/F11/heartside_F11_search-history_review-reel.mp4",
+   "bytes": 2745532,
+   "sha256": "8cc6079f38acfbfa22113205155701eccba754dc038db19278580b052053664d",
+   "status": "candidate: awaiting Krish's lock",
+   "lock_fingerprint": null,
+   "source": "claude-session: master trimmed to open on the first joke; final query redrawn whole",
+   "audit": {
+    "checked": "frame by frame; factory/audit.py",
+    "machine": "dead-open check flags the light canvas (pixel spread 26 < 30); frame 1 carries the query and its answer",
+    "score_organic": 8,
+    "score_paid": null,
+    "finding": "opens on \"how to say I love you without thumbs\" / \"sit on their foot (works every time)\"; 27.3 s",
     "date": "2026-11-04"
    },
    "product": null,
