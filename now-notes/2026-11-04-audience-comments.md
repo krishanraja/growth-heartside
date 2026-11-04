@@ -1,3 +1,3 @@
-Status: Wings/leash comment verified live. Foliage tracker draft awaits approval.
-Next: Record verdict on the foliage tracker draft.
+Status: Foliage tracker comment verified live. NPS squirrel draft ready. Latest skill commits saved locally, sync awaits GitHub recovery.
+Next: Record verdict on the NPS squirrel line.
 North Star check (2026-11-04): holds.
