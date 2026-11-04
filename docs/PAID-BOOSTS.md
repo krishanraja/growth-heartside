@@ -72,13 +72,13 @@ All must be true in the launch packet.
 
 | Arm | Post (Instagram) | Goes live | Product page | Why |
 |---|---|---|---|---|
-| 1 | F12 head of security | 6 Nov, 17:45 UTC | your-dogs-portrait | 9/10. Best reveal ("Oh. It's me.") and 18.5 s long |
+| 1 | F12 head of security | 6 Nov, 14:20 UTC | your-dogs-portrait | 9/10. Best reveal ("Oh. It's me.") and 18.5 s long |
 | 2 | F05 court of the couch | 8 Nov, 14:20 UTC | your-dogs-personality-blanket | 9/10. Strongest concept, ends on the frenchie blanket |
-| 3 | F02 project nothing | 5 Nov, 20:15 UTC | your-dogs-illustrated-mug | 8/10. Best product line ("It's me, on a mug") |
-| 4 | F06-frenchie roast (carousel) | 4 Nov, 17:45 UTC | your-dogs-illustrated-mug | 8/10. A different format: tests a carousel against the films |
+| 3 | F02 project nothing | 5 Nov, 17:45 UTC | your-dogs-illustrated-mug | 8/10. Best product line ("It's me, on a mug") |
+| 4 | F06-frenchie roast (carousel) | 5 Nov, 20:15 UTC | your-dogs-illustrated-mug | 8/10. A different format: tests a carousel against the films |
 
 How the test runs:
-- **Start:** each arm starts within 24 hours of its post going live. Each runs 5 days, so the arms are compared on the same 5-day window, not the same dates.
+- **Start:** the original plan called for a boost within 24 hours. The updated launch packet proposes one approval and a 72-hour organic baseline for each arm. Krish decides the timing before activation. Each arm runs for five days.
 - **What is read, per arm:**
   - cost per landing page view;
   - outbound click-through;

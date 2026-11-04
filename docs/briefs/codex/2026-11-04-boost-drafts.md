@@ -23,12 +23,7 @@ Read first:
    - confirm its media is the locked file (the reel or carousel listed for that post id in `library/manifest.json`);
    - build its campaign, ad set and ad as **drafts**, exactly as the packet says.
 
-   | Arm | Post | Live |
-   |---|---|---|
-   | 4 | F06-frenchie carousel | today, 17:45 UTC |
-   | 3 | F02 | 5 Nov, 20:15 UTC |
-   | 1 | F12 | 6 Nov, 17:45 UTC |
-   | 2 | F05 | 8 Nov, 14:20 UTC |
+   Read the approved organic slots and the proposed paid windows in `docs/boost/2026-11-launch-packet.md`. Verify the actual Instagram publication times before drafting.
 3. **Fill the packet.** In the "To fill" column of `docs/boost/2026-11-launch-packet.md`, write each arm's Instagram permalink and draft ad ID. Mark the "post is live and is its locked file" gate and the AI-label gate. Commit it on `claude/runway-motion-batch`.
 4. **Report** each arm as it is drafted: its permalink, draft ad ID, and anything that did not match the packet.
 
