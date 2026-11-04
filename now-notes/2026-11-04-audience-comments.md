@@ -1,3 +1,3 @@
-Status: Squirrel comment verified live. Earlier skill sync succeeded; latest verdict and wildlife draft ready.
-Next: Record verdict on the wildlife/bear draft.
+Status: Bear/manager comment verified live; bats/angry neighbour draft awaits approval.
+Next: Record verdict on the bat echolocation draft.
 North Star check (2026-11-04): holds.
