@@ -13,17 +13,17 @@
  "messages": [
   {
    "who": "A",
-   "dur": 1.5,
+   "dur": 0.5,
    "line": "F10.c01"
   },
   {
    "who": "B",
    "line": "F10.c24",
-   "dur": 0.9
+   "dur": 0.4
   },
   {
    "who": "A",
-   "dur": 1.1,
+   "dur": 0.5,
    "line": "F10.c02"
   },
   {
@@ -105,8 +105,8 @@
    "mug-real-frenchie.jpg",
    "mug-real-dachshund.jpg"
   ],
-  "hold": 4.0
+  "hold": 4.6
  },
  "open_with": 3,
- "note": "4 Nov recut toward 10/10: opens mid-chat (3 messages on frame 1), no WTF, no \"mate\", under 30 s."
+ "note": "4 Nov recut toward 10/10: opens mid-chat (3 messages on frame 1), no WTF, no \"mate\", 27.2 s, with the fourth message at 1.4 s."
 }

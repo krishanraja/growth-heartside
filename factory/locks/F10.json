@@ -1,9 +1,10 @@
 {
  "id": "F10",
  "status": "locked",
- "approved_by": "Krish, 2026-11-03: Lock it all.",
- "fingerprint": "c3da200778d9f0cd990b33590489ffa5f0b2b5236774fdba34e9da20269ca908",
+ "approved_by": "Codex editorial lock under delegated authority. Krish, 2026-11-04: \"Judge yourself and get this all ready for publishing.\"",
+ "fingerprint": "de04fadd6439a9c6fd89cc12503db9dfc42f79e060377957f17e439f3e9f839a",
  "master": "specs/F10.json",
  "template": "chat",
- "slots": "cast, lines by role, link render"
+ "slots": "cast, lines by role, link render",
+ "media_sha256": "e397946f7db50527b3725c4a15b0ed34d9958e478bb0d690010783f2e5610f6b"
 }

@@ -3,7 +3,7 @@
 This is the checklist a creative must pass before it is posted or boosted, plus the per-channel practice. It adds to `docs/CHANNEL-TASKS.md`, which owns the weekly loop and what to read from each post; this file owns what to build and check before release. It never edits a locked post: a post that fails here goes back to the engine.
 
 - Paid use also follows `docs/PAID-BOOSTS.md`.
-- Files follow `docs/BOOST-LIBRARY.md`.
+- Choose the exact release file in [the current publishing library](../library/CURRENT.md). File and paid-use rules follow `docs/BOOST-LIBRARY.md`.
 - The quality bar and current scores are in `docs/audits/2026-11-04-creative-audit.md`.
 
 Platform specs move. The numbers below are current as of 4 Nov 2026. Each release, check the platform's own preview, and for ads the Ads Manager safe-zone guardrail.

@@ -1,4 +1,4 @@
-**Superseded 2026-11-04: use `docs/briefs/codex/2026-11-04-asset-prep-session.md`.**
+**Superseded 2026-11-04: use `library/CURRENT.md`.**
 
 # Codex card: rebuild the posts toward 10 on the home machine
 

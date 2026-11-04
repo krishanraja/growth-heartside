@@ -34,7 +34,7 @@ Spend: 9 Higgsfield GPT Image 2.5 edits at high quality, 2k (24.75 credits; bala
 | F06.kla2b "I know where the treats are. Top right cupboard." | "I know where the treats are FYI - top right cupboard." | F06-lab |
 | F06.kla3b "Of everyone I see every day, you're my favorite. Sorry, mailman." (or F06.kla3c "You're my favorite human. Don't tell the mailman.") | "You are my favorite human, that I spend time with every day, and isn't the mailman." | F06-lab |
 
-## Built on the home machine by Codex (the music, voices and renders live there)
+## Earlier build card (superseded by the editorial release below)
 
 Card: `docs/briefs/codex/2026-11-04-road-to-ten-builds.md`.
 
@@ -42,8 +42,8 @@ Card: `docs/briefs/codex/2026-11-04-road-to-ten-builds.md`.
 |---|---|---|---|
 | F10 | 5 | 9 | The spec is ready: it opens with 3 messages on screen, has no WTF and no "mate", and runs 28.7 s (was 38.8). Needs the three F10 lines approved. |
 | F11 | 7 | 9 | The spec is ready: it opens 60% into the first search, and the last query shows whole. All its lines are already approved; it needs only a relock. |
-| F12, F05 | 9 | 10 | Rebuild the masters with captions at 1300, then lay the locked motion over them again (Codex's own plans, with `cap_y` 1300). |
-| F01, F02, F03 | 8, 8, 7 | 9 | The same caption rebuild, then `factory/splice.py` with `factory/motion/F0x.json`. F01's "[bleep]" line is still flagged for paid only. |
+| F12, F05 | 9 | Closed | Keep the locked captions at y=1440. |
+| F01, F02, F03 | 8, 8, 7 | Closed | Keep the locked captions at y=1440. F01's "[bleep]" line is still flagged for paid only. |
 | F06-frenchie | 8 | 9 | Check 5.8 s for the sliver of a human arm. If it is there, edit it out of that one frame. |
 
 ## F03, finished without a new voice read (waiting for Krish's lock)
@@ -62,7 +62,7 @@ The lines are proposed in the bank (F03.l1 to l3). The cut is `local/library/202
 
 - **The Runway clips are 720p**, so the motion shots are softer than the stills. Higgsfield upscale_video can fix this. Price it per clip before spending.
 
-## The queue: swapped to the locked files (Krish, 4 Nov: "Swap them here")
+## Earlier queue state, before cancellation: swapped to the locked files (Krish, 4 Nov: "Swap them here")
 
 Krish chose to swap the queued posts in this session, using permanent links and checking each one back. The swap Codex tried earlier failed because Buffer was pointed at a signed library link that expired after an hour. These links do not expire.
 
@@ -83,10 +83,18 @@ Krish chose to swap the queued posts in this session, using permanent links and 
 | F07 | https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/cb4aebad-bc5a-4d25-abd0-e009d0b3ecfa.mp4 |
 | F12 | https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/41239328-d0c2-485b-86f3-64c5fe1ad1bc.mp4 |
 
-## Still open after this session
+## Editorial release, 4 November
 
-- **F10**: Codex builds it from the card (the music and avatars are on the home machine), Krish locks it, and the three drafts get its file.
-- **F11**: its new cut (opens on the first joke, last query whole) is in `Posts/F11/` as a `review-reel`, waiting for Krish's lock. The audit's blank-open check still flags the light canvas (pixel spread 26 against a threshold of 30). The queued F11 is the old locked cut.
-- **F01, F02, F03, F05, F12 captions at 1300**: a Codex rebuild.
+Krish delegated final creative judgment: “Judge yourself and get this all ready for publishing.” The release is 40 verified files in [the current publishing library](../../library/CURRENT.md). The scheduler prepares a fresh proposal for Krish. The earlier queue swaps above are historical.
 
-North Star check (2026-11-04): this moves "every winning format was found by this engine and approved by Krish in one press", because every asset gets to its best version before more reach is bought. The number has not moved.
+- **F10.** 27.2 s, 1080 × 1920 at 30 fps, −14.9 LUFS. Three complete messages on frame one, fourth at 1.4 s, real dachshund portrait, four real mugs at the end. Both the factory audit and the media gate passed. The input store renders matched the approved bank. The licensed Epidemic recordings matched the original locked mix by waveform at their original cues: Moss Harman’s “Bug-A-Boo” (3f52ca6a-6c09-3825-b13c-0077e84edf71), “Record Scratch 01” (6b5baed5-e758-45ad-a445-4ebea06e65ec), and “Shimmer Dust 03” (11f6b5c0-1c8a-4dda-9fbd-fe821f01d669).
+- **F11.** The existing review file became the final reel. At 27.26 s and −14.4 LUFS, it starts with the whole first joke and ends with the complete last query and the dachshund mug. The media gate passed. The automated first-frame check flagged the pale canvas (spread 25); visual inspection confirmed the query and answer are visible.
+- **F06-frenchie.** The cuff and hand were visible in the lower-right corner of the third source image. The repair is confined to that corner of the reel’s 5.4–8.4 s shot and the corresponding third slide. PCM audio, timestamps and the 392 decoded video frames outside the shot matched the prior reel. Both release files passed the factory audit.
+- **Source recovery.** Nine corrected PNGs and eighteen store renders matched their supplied SHA-256 values. Four Google Fonts faces were verified against their upstream Git blobs. The other locked F04, F06-lab and F07 masters remain deliverable as verified final files. Rebuilding those three from scratch would still require the original missing frames or voices.
+- **Drive.** Nine separately named review copies were excluded from the release list. The scheduling handoff starts with the plain-name library files.
+
+## Job C closed for F01, F02, F03, F05 and F12
+
+Ruling (Krish, 2026-11-04): caption move to y=1300 dropped; locked masters stay at 1440.
+
+North Star check (2026-11-04): holds.

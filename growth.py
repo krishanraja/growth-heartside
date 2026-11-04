@@ -132,6 +132,8 @@ RULE_FILES = ('NOW.md', 'n8n/build.mjs')
 # each archetype's comic character, the meaning line at 44 characters). If any
 # section changes, or stops being canon, no pack passes until a person reads
 # the new words and updates RULES and RULES_BASIS in an interactive session.
+# Reviewed at 8e04dba (4 Nov): distinct Roast and Hilarious gift tones, sourced breed facts,
+# background photo validation and optional gifts. The house copy checks below still apply.
 # A prefix that is not a heading names a code or front-matter line: the block
 # runs to its closing bracket, or is that one line.
 RULES_SOURCES = (
@@ -144,7 +146,7 @@ RULES_SOURCES = (
 )
 RULES_BASIS = {
     'docs/NORTH_STAR.md ## The number': '6f65915e793fa4af',
-    'docs/SCOPE.md ## Non-negotiable instructions': 'b712fce84c407252',
+    'docs/SCOPE.md ## Non-negotiable instructions': '3fc383c18c2642c1',
     'docs/ECONOMICS.md ## Current owner ruling': 'a8cea2c24b9f1ce4',
     'NOW.md never_publish:': 'ce87743276e56558',
     'n8n/build.mjs const VOICE = [': '82fa7a74ed529f65',

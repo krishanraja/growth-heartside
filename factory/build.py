@@ -88,12 +88,11 @@ def chat(spec, work):
     def bubble(m):
         who = m['who']; d0 = ImageDraw.Draw(Image.new('RGB', (10, 10)))
         if 'render' in m:
-            body = Image.new('RGBA', (700, 640), (0, 0, 0, 0)); d = ImageDraw.Draw(body, 'RGBA')
-            d.rounded_rectangle((0, 0, 699, 639), 34, fill=(255, 255, 255, 255), outline=(220, 212, 200), width=2)
+            body = Image.new('RGBA', (700, 560), (0, 0, 0, 0)); d = ImageDraw.Draw(body, 'RGBA')
+            d.rounded_rectangle((0, 0, 699, 559), 34, fill=(255, 255, 255, 255), outline=(220, 212, 200), width=2)
             p = Image.open(f"{R}/{m['render']}").convert('RGB'); p.thumbnail((660, 520), Image.LANCZOS)
             mask = Image.new('L', p.size, 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, p.width - 1, p.height - 1), 26, fill=255)
             px = 20 + (660 - p.width) // 2; body.paste(p, (px, 20), mask)
-            d.text((30, 562), 'heartside.io', font=bold(F('Karla.ttf', 32), 500), fill=(140, 130, 120))
         else:
             text = T(m['line'], spec); lines = balanced_wrap(d0, text, BODY, 660, 46)
             bw = int(max(text_width(d0, l, BODY, 46) for l in lines)) + 64; bh = 62 * len(lines) + 40
@@ -108,16 +107,21 @@ def chat(spec, work):
 
     def screen(blocks):
         im = Image.new('RGB', (W, H), PAPER); d = ImageDraw.Draw(im)
-        d.rectangle((0, 0, W, 250), fill=(250, 246, 238)); d.line((0, 250, W, 250), fill=(225, 216, 202), width=2)
+        d.rectangle((0, 0, W, 250), fill=(71, 61, 52)); d.line((0, 250, W, 250), fill=(225, 216, 202), width=2)
         for i, k in enumerate(slots):
             a = AV[k].resize((70, 70)); im.paste(a, (W // 2 - 28 * len(slots) + i * 56, 40), a)
-        t = T(spec['title'], spec); tw = d.textlength(t, font=TITLE); d.text(((W - tw) / 2, 130), t, font=TITLE, fill=INK)
-        s = f'{len(slots)} dogs'; sw = d.textlength(s, font=SMALL); d.text(((W - sw) / 2, 186), s, font=SMALL, fill=(140, 130, 120))
-        y = BOTTOM
-        for b in reversed(blocks):
-            y -= b.height + 22
-            if y < TOP: break
-            im.paste(b, (LEFT, y), b)
+        t = T(spec['title'], spec); tw = d.textlength(t, font=TITLE); d.text(((W - tw) / 2, 130), t, font=TITLE, fill=PAPER)
+        s = f'{len(slots)} dogs'; sw = d.textlength(s, font=SMALL); d.text(((W - sw) / 2, 186), s, font=SMALL, fill=(234, 226, 214))
+        visible = []
+        room = BOTTOM - TOP
+        for block in reversed(blocks):
+            if block.height + 22 > room: break
+            visible.append(block)
+            room -= block.height + 22
+        y = TOP + room // 2
+        for block in reversed(visible):
+            im.paste(block, (LEFT, y), block)
+            y += block.height + 22
         d.rectangle((0, 1790, W, H), fill=(250, 246, 238)); d.line((0, 1790, W, 1790), fill=(225, 216, 202), width=2)
         d.rounded_rectangle((60, 1820, W - 60, 1890), 35, fill=(255, 255, 255), outline=(225, 216, 202), width=2)
         d.text((100, 1834), 'Message', font=bold(F('Karla.ttf', 34), 500), fill=(170, 160, 150))

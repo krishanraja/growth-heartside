@@ -3,6 +3,11 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-04: Krish delegated the editorial release decision: “Judge yourself and get this all ready for publishing.” Codex accepted the new F10 reel, the checked F11 review cut, and the corrected F06-frenchie reel and slide 3. All 40 current files were downloaded from the library API and matched to their plain-name Drive files. The scheduling source is `library/CURRENT.md`.
+
+- Ruling (Krish, 2026-11-04): caption move to y=1300 dropped; locked masters stay at 1440.
+  - Job C closed for F01, F02, F03, F05 and F12.
+
 - 2026-11-04: Buffer cleared for Heartside. Krish: "Can you just cancel all buffer schedules for Heartside, and we'll redo them later?"
   - All 33 scheduled Heartside posts on TikTok, Instagram and Facebook were moved to drafts, not deleted. With the 3 F10 drafts, 36 Heartside drafts remain, captions and media intact.
   - A readback shows nothing Heartside scheduled.

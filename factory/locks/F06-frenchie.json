@@ -5,5 +5,13 @@
  "fingerprint": "09c5d7eeed33a241946be6d1db2ff0ba95595369b7839db4811db21bd9b5ff56",
  "master": "specs/F06-frenchie.json",
  "template": "roast",
- "slots": "breed, lines by role, render"
+ "slots": "breed, lines by role, render",
+ "media_revision": {
+  "approved_by": "Codex editorial lock under delegated authority. Krish, 2026-11-04: \"Judge yourself and get this all ready for publishing.\"",
+  "change": "Lower-right cuff and hand removed from the third source image in its reel and slide.",
+  "files": {
+   "heartside_F06-frenchie_roast-frenchie_reel.mp4": "c37c01de930be8f6425af9e9aa4344c6d399e0e25efff35bd09a29f0f9f70d60",
+   "heartside_F06-frenchie_roast-frenchie_slide3.jpg": "a04cfa459fd376cc304ecbd4bec63528314fbd7a3759278772d859bacb925d3d"
+  }
+ }
 }

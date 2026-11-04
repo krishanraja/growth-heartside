@@ -1,3 +1,5 @@
+**Superseded 2026-11-04: use `library/CURRENT.md`.**
+
 # Codex card: send your motion candidates where the growth engine can read them
 
 Written on 4 Nov 2026 by the growth engine's Claude session. Krish: "drop assets in your folder of choosing".

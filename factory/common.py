@@ -15,7 +15,8 @@ A = LIB + '/fonts'; R = LIB + '/renders'; FR = LIB + '/frames'; AU = LIB + '/aud
 W, H = 1080, 1920
 CREAM, INK, STAMP, PAPER = (246, 241, 231), (36, 32, 27), (184, 50, 42), (255, 253, 248)
 F = lambda f, s: ImageFont.truetype(f'{A}/{f}', s)
-EMO = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf', 109)
+emoji_font = f'{A}/NotoColorEmoji.ttf'
+EMO = ImageFont.truetype(emoji_font if os.path.isfile(emoji_font) else '/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf', 109)
 
 
 def bold(f, wght):
@@ -188,4 +189,5 @@ def frames_to_video(frames, out_noaudio, fps=30):
             fh.write(f"file '{p}'\nduration {s:.3f}\n")
         fh.write(f"file '{frames[-1][0]}'\n")
     run(['ffmpeg', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-vf', f'fps={fps},format=yuv420p,scale={W}:{H}',
+         '-frames:v', str(round(sum(seconds for _, seconds in frames) * fps)),
          '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', out_noaudio])

@@ -2,6 +2,8 @@
 
 Krish asked on 4 Nov 2026 to "get everything into one uniform folder with uniform naming conventions and assets and manifest, so codex can begin planning the paid boost tests".
 
+[The current publishing library](../library/CURRENT.md) lists every schedulable file and its verified SHA-256.
+
 ## One folder
 
 The folder is the one that already exists: Drive `Heartside/05_Social-Library/Posts/<post id>/` (`docs/DRIVE-MAP.md`).
@@ -37,7 +39,7 @@ A source enters the library only as part of a finished, approved master.
 
 ## One manifest
 
-`library/manifest.json` in this repository records every library asset and every candidate on its way in. It holds no customer data and no media. Codex updates it when it audits, cuts or posts. The engine reads it to plan.
+`library/manifest.json` in this repository records the current locked files. It holds no customer data and no media. Codex updates it when it audits, cuts or posts. The engine reads it to plan.
 
 Each entry has these fields:
 
@@ -59,4 +61,4 @@ Each entry has these fields:
 
 - Codex runs `python3 factory/audit.py <folder> --json <out>` on every master before the asset moves to a new status, then copies `bytes`, `sha256` and the verdict into the manifest.
 - A hash in the manifest that differs from the file means the file wins and the entry is stale. Fix the entry before using the file.
-- The 4 Nov manifest has hashes only for the files this session could download (6 reels and 12 covers). The other entries say "not yet". Carousel slides and the F13 photo are still to be added from Codex's audit run.
+- The 4 November release includes 12 reels, 12 covers, 15 carousel slides and the F13 photo. Former versions and held candidates live in `library/history/2026-11-superseded.json`.
