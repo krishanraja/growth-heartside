@@ -15,7 +15,8 @@ sent; one mismatch and nothing is sent. Paths follow the lane's Heartside rule: 
 the id like F01 or F06-frenchie (content-engine config/library-paths.cases.json). A file the library
 already holds is skipped. Sending never posts anything: Codex posts only rows Krish approved (in the Sheet, or in chat recorded in notes).
 
-The engine key is ENGINE_OPERATOR_TOKEN (never printed); the address is ENGINE_BASE_URL, else the
+The engine key is ENGINE_OPERATOR_TOKEN, else MINDMAKE_ENGINE_TOKEN, else Windows Credential Manager
+`Mindmake/engine-operator-token` (the home computers' store, as content-watcher reads it); never printed; the address is ENGINE_BASE_URL, else the
 engine's own.
 """
 import argparse, hashlib, json, os, re, sys, time, urllib.error, urllib.request
@@ -30,6 +31,42 @@ KINDS = {'review-reel': 'a candidate for Krish to review: never posted', 'review
          'paid-reel': 'a paid cut (mp4), run only under docs/PAID-BOOSTS.md', 'paid-cover': 'the paid cut\'s cover',
          'reel': 'the reel (mp4)', 'cover': 'the cover, used as the thumbnail', 'slide': 'a carousel slide, in order'}
 WAITS = (2, 4, 8, None)
+
+
+def _windows_credential(target):
+    """The home computers keep the engine key in Windows Credential Manager (content-watcher secrets.py)."""
+    if sys.platform != 'win32':
+        return None
+    import ctypes
+    from ctypes import wintypes
+
+    class CREDENTIAL(ctypes.Structure):
+        _fields_ = [('Flags', wintypes.DWORD), ('Type', wintypes.DWORD), ('TargetName', wintypes.LPWSTR),
+                    ('Comment', wintypes.LPWSTR), ('LastWritten', wintypes.FILETIME),
+                    ('CredentialBlobSize', wintypes.DWORD), ('CredentialBlob', ctypes.POINTER(ctypes.c_ubyte)),
+                    ('Persist', wintypes.DWORD), ('AttributeCount', wintypes.DWORD), ('Attributes', ctypes.c_void_p),
+                    ('TargetAlias', wintypes.LPWSTR), ('UserName', wintypes.LPWSTR)]
+    advapi32 = ctypes.WinDLL('advapi32', use_last_error=True)
+    pointer = ctypes.POINTER(CREDENTIAL)()
+    if not advapi32.CredReadW(target, 1, 0, ctypes.byref(pointer)):
+        return None
+    try:
+        blob = ctypes.string_at(pointer.contents.CredentialBlob, pointer.contents.CredentialBlobSize)
+    finally:
+        advapi32.CredFree(pointer)
+    for enc in ('utf-16-le', 'utf-8'):
+        try:
+            value = blob.decode(enc).strip('\x00').strip()
+        except UnicodeDecodeError:
+            continue
+        if value and value.isprintable():
+            return value
+    return None
+
+
+def engine_key():
+    return (os.environ.get('ENGINE_OPERATOR_TOKEN') or os.environ.get('MINDMAKE_ENGINE_TOKEN')
+            or _windows_credential('Mindmake/engine-operator-token'))
 
 
 class SendError(Exception):
@@ -77,9 +114,9 @@ def plan(folder, only=None):
 
 class Engine:
     def __init__(self):
-        self.token = os.environ.get('ENGINE_OPERATOR_TOKEN')
+        self.token = engine_key()
         if not self.token:
-            raise SendError('no engine key: set ENGINE_OPERATOR_TOKEN')
+            raise SendError('no engine key: set ENGINE_OPERATOR_TOKEN, or store it in Windows Credential Manager as Mindmake/engine-operator-token')
 
     def post(self, route, body):
         data = json.dumps({**body, 'library': LIBRARY, 'client': 'claude_code'}).encode()

@@ -15,7 +15,7 @@ Nothing goes out without the approval named in its step.
 |---|---|---|
 | Live | F10 (3 Nov, all three platforms) | Old cut. Leave the post up; fix the next cut |
 | Scheduled in Buffer with the locked media | F06-frenchie (4 Nov), F11 and F07 (5 Nov), F06-dachshund and F12 (6 Nov), F03 and F06-lab (7 Nov), F05 (8 Nov), F01, F02 and F04 (moved earlier) | Going out as locked, with still openers |
-| Engine's motion candidates (built today) | F01, F02, F03, F06 x3, F07 reels; F07, F10, F11 covers | Sent to Krish. Awaiting his lock. Staged at `local/library/2026-11-04-motion/` |
+| Engine's motion versions | F01, F02, F03, F06 x3, F07 reels; F07, F10, F11 covers | **Locked by Krish on 4 Nov and filed** to `Posts/<id>/` under their plain names; hashes read back from the library |
 | Codex's motion candidates | F04, F05, F12; the F12 A/B pair | On Codex's board. Coming to the library as `review-` files (`docs/briefs/codex/2026-11-04-drop-for-review.md`) |
 | Needs new lines (Krish approves lines) | F10 (the four "WTF"s), F06-lab (two lines) | The engine proposes the lines |
 | Needs heartside | F06-dachshund's ending: a black-and-tan dachshund render | Brief: `docs/briefs/2026-11-04-heartside-dachshund-render.md` |
@@ -23,7 +23,7 @@ Nothing goes out without the approval named in its step.
 
 ## The steps
 
-1. **Krish locks today's engine candidates.**
+1. **Done (4 Nov): Krish locked today's engine candidates.**
    - Watch the 10 files and reply "lock" (all), or name which.
    - Any he declines stays as it is. His words go in `CHANGES.md` and the commit.
 2. **Codex sends its candidates for review** (the Codex card, 15 minutes). Then the engine audits them, scores them, and puts motion-or-still for F04, F05 and F12 to Krish with the evidence.
@@ -57,6 +57,6 @@ Nothing goes out without the approval named in its step.
 ## What could still stop a post
 
 - **Rows already in Buffer keep their old media until step 4.** Anything that publishes before then goes out as locked: still openers, but approved.
-- **The TikTok profile has no clickable website link.** Krish adds it; until then TikTok posts carry "link in bio" with nothing to click.
+- **The TikTok captions say "Link in bio".** Codex's 3 Nov audit found no clickable website on the profile, so a TikTok viewer who wants the gift has nowhere to tap. It is not a blocker for posting: drop "Link in bio" from TikTok captions or add the link, either is fine.
 
 North Star check (2026-11-04): this plan moves the North Star part "every winning format was found by this engine and approved by Krish in one press": every asset gets to its best version, and the paid test finds which format to scale for free. The number has not moved.

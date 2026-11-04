@@ -3,6 +3,11 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-04: Motion versions locked. Krish: "Happy to lock, presuming you're happy with assets that are part video, part still?" The engine confirmed it was.
+  - Seven reels (F01, F02, F03, F06 x3, F07) and three covers (F07, F10, F11) were filed through the library lane under their plain names, replacing the earlier locked files. Each sha256 was read back from the library. The plans are in `factory/motion/`.
+  - Codex re-attaches media in Buffer for rows not yet published (`docs/plans/2026-11-04-road-to-posting.md`, step 4).
+  - `factory/send_library.py` now also reads the engine key from Windows Credential Manager (`Mindmake/engine-operator-token`), as content-watcher does, so Codex's home-computer runs can send.
+
 - 2026-11-04: Paid test plan, chat approval and the dachshund render. Krish: "Yes to all your 4 questions."
   - **The $250 Meta-only paid test** (`docs/PAID-BOOSTS.md`) is approved as a plan, accepting its trade-off against the $0-paid North Star. Launching it is still a separate go-live of exact files, budget and dates.
   - **Chat approval counts for posting.** AGENTS.md, `docs/DRIVE-MAP.md`, `docs/CHANNEL-TASKS.md` and `factory/send_library.py` now accept `approved = yes`, or "Approved in chat" with the date in `notes`.
