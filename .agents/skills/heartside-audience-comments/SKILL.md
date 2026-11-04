@@ -7,6 +7,8 @@ Read [the working taste record](references/taste.md) before each pick. Update it
 
 Screen the channel and post before drafting. Prefer public or community accounts whose purpose is conversation or information. Skip product-led accounts, sponsored posts, brand collaborations promoting goods, launches, sales links and fundraising appeals. A funny reply deep in the comments still appears under the original pitch. Check the caption, collaborators and call to action. If the fit is weak, move on to another channel.
 
+Before selecting, count published comments and replies per account across this pilot. Maximum three per channel, including replies. No automatic daily/session reset; ask before reusing a channel already at the cap. Rotate when Krish requests it even below three. Unposted drafts do not count. Check the taste record and publication links before sending.
+
 Choose a specific post with a plausible US dog-owner audience. Check its age and actual activity. Prefer an active conversation to a bare follower count. Inspect the scene or use explicitly attributed caption details. Read liked comments and replies; an owner or foster already in the thread can make a reply more natural. Never imply you saw something the caption alone established.
 
 Before proposing a joke about an image or physical action, inspect the actual image or video. Alt text can locate the candidate but cannot establish its expression, predicament or punchline. Avoid imagined behaviour such as demanding to be carried unless the scene supports it. A pun with two meanings still needs a clear connection to what the audience sees.
