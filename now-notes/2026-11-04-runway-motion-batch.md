@@ -73,21 +73,27 @@ Coverage after this check:
 
 That is why the two clips still to make are F02's whiteboard and F03's tiptoe.
 
-## The last two clips (not made yet)
+## The last two clips (made 4 Nov, on Krish's yes)
 
-The source frames are confirmed in Higgsfield, both 1520x2688:
-- **F02 whiteboard (`c9bfba5c`).** The golden in glasses and its red collar stand at a paw-print board, with three steel bowls and a "4:12" clock.
-- **F03 tiptoe (`a45cb7dd`).** The frenchie, the beagle and the shepherd in its beanie creep past the stairs and the tree.
+Krish answered "Yes, make both" in this session, after a scheduled trigger asked for them.
+- Each clip is Gen-4.5, 5 s, 9:16, 720p, 60 credits.
+- Each was reserved and settled in Control Center.
+- Runway went from 138 to 78 to 18 credits.
 
-They need Krish's approval before any credits are spent. The run that asked for them was a scheduled trigger, not Krish, and his standing rule is that extra spend needs his explicit yes immediately before it.
+| Post | Shot | Runway task | Source frame (Higgsfield) | Control Center spend |
+|---|---|---|---|---|
+| F02 | whiteboard | d74bc9cd-b296-40c7-a9ae-1c2bac5e5bca | c9bfba5c | 00864fb6-2343-4b39-9934-007514e0f2bd |
+| F03 | tiptoe | c5cd1343-f6e6-4372-805c-63229d293d92 | a45cb7dd | 259e8faf-552d-4328-bd7b-ab86bccd45b4 |
 
-The plan for each clip:
-- Gen-4.5, 5 s, 9:16 image-to-video, 60 credits.
-- `reserve_credit_spend` (heartside, runway, 60) before it, and `settle_credit_spend` with the task id after it.
-- A short prompt that keeps the dog and room exactly as they are, with no new objects and no text.
+Both were checked the same way as the other 16. Their first frames score 3.0 and 2.8 against their sources.
 
-The 138 credits are wiped on 7 Nov.
+| Post | Shot | Verdict | Use | Why |
+|---|---|---|---|---|
+| F02 | whiteboard | pass | 0.0-1.5 s | It holds the dog, glasses, red collar, board, bowls and "4:12" clock until 1.5 s. At 2 s the glasses float off the face. From about 2.5 s the collar turns pink and the clock reads a different time. |
+| F03 | tiptoe | pass | 0.0-5.0 s | The same three dogs and the same beanie. The camera swings round the dogs in the same hallway, with the same stairs, garland, tree and rug. The foreground gift and branch are in the source. No text. |
 
-Next: Krish pastes `docs/briefs/codex/2026-11-04-motion-cut-F01-F07.md` to Codex. That cuts the 13 passing clips into F01, F02, F03, F06 and F07 for the owner board's Motion candidates and his lock. Separately, he says yes or no to the 120 credits for the two clips above, before 7 Nov. If he says yes, check those two the same way and add them to the card.
+Totals: 15 of 18 clips pass, and 3 are held. F02 now has two moving shots: the hook, and a short whiteboard beat.
+
+Next: Krish pastes `docs/briefs/codex/2026-11-04-motion-cut-F01-F07.md` to Codex. That cuts the 13 passing clips into F01, F02, F03, F06 and F07 for the owner board's Motion candidates and his lock. The two clips he approved on 4 Nov are made, checked and on the card.
 
 North Star check (2026-11-04): holds. More locked posts now open on motion, ready for organic reach. The number itself has not moved yet.
