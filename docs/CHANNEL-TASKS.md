@@ -90,7 +90,7 @@ schedule rows exist. A connected account or a high owner rating is not a schedul
 1. Read the current library README and all listed schedules. Match the platform, brand
    identity, slot, approved cell, media, format, fingerprint and caption. Check the slot
    against both queued and live items; resolve an ambiguous provider receipt before retrying.
-2. Only publish from a row Krish marked yes. Verify the actual permalink and read back the
+2. Only publish from a row Krish approved: `approved = yes`, or "Approved in chat" with the date in `notes` (Krish, 4 Nov). Verify the actual permalink and read back the
    media and words. A scheduler ID is not a live URL. Use only the permitted status,
    live_url, notes and Results fields as directed in the live README. If the asset requires
    a crop, caption replacement or changed audio, return it to the engine; do not improvise.

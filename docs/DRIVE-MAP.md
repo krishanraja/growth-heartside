@@ -30,7 +30,7 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 | `05_Social-Library/` top level | the growth engine only | the Drive connector | Exactly the files in the tree above, plus a new `02<letter>` Sheet when a batch needs one (below). No other files and no new folders |
 | `Posts/<post id>/` | Krish's home computer only | `python3 factory/send_library.py <library folder>` through content-engine's library lane | No one uploads, copies or makes a folder here by hand or through a connector. It is never edited or deleted from a session; the home computer writes new versions beside changed ones |
 | `02…` Sheets, columns `status`, `live_url`, `notes`, and a `Results` tab | Codex only | after it posts | Codex changes no other column, row or file |
-| `02…` Sheets, column `approved` | Krish only | by hand | The engine never writes `yes` |
+| `02…` Sheets, column `approved` | Krish only | by hand. His approval in chat also counts, recorded by Codex in `notes` as "Approved in chat" with the date (Ruling, Krish, 2026-11-04) | The engine never writes `yes` |
 
 ## The rules for a new post
 

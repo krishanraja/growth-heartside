@@ -13,7 +13,7 @@ LIBRARY_DIR holds the media and manifest.json: [{"post", "file", "bytes", "sha25
 library build writes it. Every file is checked against its manifest sha256 and size before anything is
 sent; one mismatch and nothing is sent. Paths follow the lane's Heartside rule: Posts/<post id>/<file>,
 the id like F01 or F06-frenchie (content-engine config/library-paths.cases.json). A file the library
-already holds is skipped. Sending never posts anything: Codex posts only rows Krish marks approved.
+already holds is skipped. Sending never posts anything: Codex posts only rows Krish approved (in the Sheet, or in chat recorded in notes).
 
 The engine key is ENGINE_OPERATOR_TOKEN (never printed); the address is ENGINE_BASE_URL, else the
 engine's own.
@@ -45,7 +45,7 @@ def digests(path):
 
 def purpose(post, name):
     kind = next((words for key, words in KINDS.items() if f'_{key}' in name), 'a file of the post')
-    return f'Heartside post {post}: {kind}. Codex posts it only when Krish marks its row approved.'
+    return f'Heartside post {post}: {kind}. Codex posts it only when Krish has approved its row.'
 
 
 def plan(folder, only=None):

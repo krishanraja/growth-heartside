@@ -1,6 +1,10 @@
 # Paid boosts: the engine's ruling and the rules for any boost
 
-Status: proposed by the growth engine on 4 Nov 2026. Krish's ruling is pending, and nothing is spent until he gives it. He asked: "Ideally I'll put some paid boosts behind these but need your ruling first."
+Status: **plan approved** by Krish on 4 Nov 2026 ("Yes to all your 4 questions", answering "Do you approve the $250 Meta-only test, given it trades against the $0-paid North Star?"). He had asked: "Ideally I'll put some paid boosts behind these but need your ruling first."
+
+What his yes covers, and what it does not:
+- **It covers** the test as designed below: Meta only, a $250 cap including the $90 already approved for F12, the arms, the gates and the kill rule. Codex may build the paid cuts and the launch plan.
+- **It does not** launch anything. Under AGENTS.md "Autonomy", an approved plan never authorises going live. The launch is a separate go-live: the exact files (by SHA-256), budget, dates and audience go to Krish with every gate below shown as true. He presses it, and Codex launches exactly that, once.
 
 ## The ruling
 

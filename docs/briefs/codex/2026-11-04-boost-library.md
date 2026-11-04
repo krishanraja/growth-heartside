@@ -11,7 +11,7 @@ Read these first:
 
 ## Hard lines
 
-- Spend nothing, launch nothing, boost nothing. Planning only. A campaign goes live only with Krish's named approval of the exact campaign, budget, dates and files, given immediately before launch.
+- Krish approved the test plan on 4 Nov (`docs/PAID-BOOSTS.md` status): Meta only, $250 cap including the $90 for F12. That approval covers building the paid cuts and the launch plan. It does not launch anything: spend, launch and boost nothing until Krish presses the go-live for the exact files, budget, dates and audience, every gate shown true.
 - Post nothing that is not already an approved schedule row, and change no locked post's words, captions or renders.
 - No new Drive folders. Library files go only through the home-computer lane: `factory/send_library.py` with a `manifest.json`.
 - Review renders and contact sheets stay under `local/`: never in git or Drive.
@@ -45,7 +45,7 @@ These fixes are creative work only, with no generation spend. Each fixed file is
 | F04 | Move the "my golden:" cover caption above y=1440 so it survives the 3:4 grid crop. |
 
 Leave these alone:
-- **F06-dachshund product mismatch:** it needs a black-and-tan dachshund store render from heartside. Keep the post organic only and flag it in the manifest.
+- **F06-dachshund product mismatch:** Krish approved getting a black-and-tan dachshund render from heartside (`docs/briefs/2026-11-04-heartside-dachshund-render.md`). Until it lands, keep the post organic only and flagged in the manifest.
 - **F06-lab lines:** these go to the engine and then to Krish.
 
 ## 3. Build the paid cuts (candidates, not launches)
@@ -60,7 +60,7 @@ The F12 A and B pair keep their approved openings. Rebuild only their subtitles 
 
 Run `factory/audit.py --paid` on each cut.
 
-## 4. Plan the test (a document, not a campaign)
+## 4. Plan the test (approved plan; the launch is a separate go-live)
 
 Write `local/boost/2026-11-plan.json` and a one-page summary for Krish. Cover:
 - the arms;

@@ -75,7 +75,7 @@ All six pass `factory/lock.py media`: 1080x1920, sound, 6 to 60 s, loudness insi
    - **No CTA end card:** organic posts end on the product with no words, by Krish's rule. An ad needs the product name and a reason to tap (Codex's motion cuts already add "Make yours at Heartside.io"). That makes paid cuts separate creatives that need their own approval.
    - **AI labelling:** the dogs are photorealistic AI. TikTok requires its AI-generated-content label on realistic AI media, and Meta applies "AI info" labels. Set the label at upload; never hide it.
    - **720p clips:** the Runway clips are 720x1280. Cutting them into 1080 masters softens them, so upscale before cutting (Runway `upscale_video` or Topaz). The 18 remaining Runway credits will not cover that.
-5. **The approval column is empty.** Every row in `02c` has a blank `approved` column while the notes say "Approved in chat", and posts are going out through Buffer. The Drive map says Codex posts only rows Krish marked `approved = yes`. Either the README rule changed, or rows are going out unapproved. **Krish should rule on which.**
+5. **Resolved 4 Nov: chat approval counts** (Krish: "Yes to all your 4 questions"; AGENTS.md now says so). The original finding was **the approval column is empty.** Every row in `02c` has a blank `approved` column while the notes say "Approved in chat", and posts are going out through Buffer. The Drive map says Codex posts only rows Krish marked `approved = yes`. Either the README rule changed, or rows are going out unapproved. **Krish should rule on which.**
 6. **The TikTok profile has no clickable website link** (Codex audit, 3 Nov). Any TikTok spend before that is fixed is wasted.
 
 ## What has not been verified (open, not passed)

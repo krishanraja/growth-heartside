@@ -3,6 +3,13 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-04: Paid test plan, chat approval and the dachshund render. Krish: "Yes to all your 4 questions."
+  - **The $250 Meta-only paid test** (`docs/PAID-BOOSTS.md`) is approved as a plan, accepting its trade-off against the $0-paid North Star. Launching it is still a separate go-live of exact files, budget and dates.
+  - **Chat approval counts for posting.** AGENTS.md, `docs/DRIVE-MAP.md`, `docs/CHANNEL-TASKS.md` and `factory/send_library.py` now accept `approved = yes`, or "Approved in chat" with the date in `notes`.
+    - The question was either/or ("keep posting on chat approval, or wait until you mark rows yes?"). The engine read "yes" as "chat approval is the rule", the practice already in use. If he meant the Sheet column only, that is one line to reverse.
+  - **A black-and-tan dachshund render from heartside** is approved. The brief is `docs/briefs/2026-11-04-heartside-dachshund-render.md`.
+  - The fourth question, the music licence, was already settled (below). No job file or `automations.json` entry changed.
+
 - 2026-11-04: Music licence settled for paid use. Krish: "Just use the music. I have the right license for the post type. Mark this as complete permanently."
   - Gate 1 of `docs/PAID-BOOSTS.md` is closed for good. Paid cuts keep the locked track, and every `paid_gates.music_ads` in `library/manifest.json` is `true`.
   - The audit, the publishing playbook and the Codex card no longer raise it. No job file or `automations.json` entry changed.
