@@ -1,5 +1,7 @@
 # Codex card: finish the audit, fill the library, plan the boost test
 
+> **Superseded on 4 Nov 2026.** The engine finished the audit, the library and the fixes in session. Krish then ruled that boosts run the live organic posts ("paid organic boosts, not paid ads"), so sections 3 and 4 (paid cuts, test plan) no longer apply. Use `docs/briefs/codex/2026-11-04-boost-drafts.md` and `docs/boost/2026-11-launch-packet.md` instead.
+
 Written on 4 Nov 2026 by the growth engine's Claude session, for Codex. Krish asked for every motion asset to be audited to a 10/10 bar and gathered into one uniform library with one manifest, "so codex can begin planning the paid boost tests".
 
 Read these first:

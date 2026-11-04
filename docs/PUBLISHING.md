@@ -18,7 +18,7 @@ Platform specs move. The numbers below are current as of 4 Nov 2026. Each releas
 | First second | Motion, and a legible situation on frame 1: no blank interface, no tiny subject, no 2 s still | `factory/audit.py` `dead_open` |
 | Ending | The real store render for the same breed and coat, on screen for at least the last 3 s | `factory/lock.py media` and a person |
 | Organic text zone | Keep words between y=200 and y=1440. Nothing in the right 130 px, where the interface buttons sit | `factory/audit.py` and a person |
-| Paid text zone | Keep words between y=270 and y=1250 (top 14% and bottom 35% clear) and 65 px in from each side | Ads Manager guardrail |
+| Boosted posts | A boost runs the live post exactly as posted (Krish, 4 Nov: "paid organic boosts, not paid ads"), so the organic text zone above applies | `docs/PAID-BOOSTS.md` |
 | Cover | 1080x1920. The story must read inside the centre 1080x1440, the 3:4 grid crop. No blank interface frame | A person |
 | Sound-off | The joke works muted. Subtitles carry every spoken line | A person |
 | AI labelling | Photorealistic AI dogs: switch on TikTok's AI-generated content label, and let Meta's "AI info" label stand | At upload |
@@ -42,14 +42,14 @@ Platform specs move. The numbers below are current as of 4 Nov 2026. Each releas
 - **Carousels.** Slide 1 is the troll-dog hook, and the last slide is the product render. Up to 5 slides at 1080x1350 or 1080x1920 (all slides the same size).
 - **Links.** The link lives in the bio, so the bio link must land on the gift shown in the week's gift-led posts.
 - **What to read:** sends per reach first, then saves, then profile visits and link taps.
-- **Boosting.** Promote from Ads Manager, never from the app's "Boost" button. The app button cannot run a separate paid cut, a paid UTM or a clean audience. The ad uses the paid cut, not the organic post, so organic results stay clean.
+- **Boosting.** Promote the live post from Ads Manager with "Use existing post", never with the app's Boost button. Ads Manager gives the landing-page-views objective, a "Shop now" button to the product page with the paid tracking link, and a fixed budget per post. The post itself is never changed. The exact settings are in `docs/boost/2026-11-launch-packet.md`.
 
 ### Facebook (Page Reels and carousels)
 
 - Post from the Heartside Page with the same master. The tracked link goes in the caption, with no hashtags.
 - The first frame matters even more here: Facebook shows retention by second. F10 lost most of its viewers at 0:01.
 - **What to read:** shares per reach for humour posts. For gift posts: outbound clicks, landing visits, attributed orders.
-- **Boosting:** as on Instagram. One Meta campaign covers both, with placements limited to Reels for the test.
+- **Boosting:** the Instagram post's ad also runs on Facebook Reels and Feed. One campaign covers both.
 
 ### TikTok
 
@@ -67,7 +67,7 @@ Platform specs move. The numbers below are current as of 4 Nov 2026. Each releas
 
 ## 4. Release steps (Codex, from the library)
 
-1. **Find the row.** Take the row from the live `02…` Sheet and the file from `Posts/<id>/` (organic), or the boost library (paid). Check the SHA-256 against the manifest.
+1. **Find the row.** Take the row from the live `02…` Sheet and the file from `Posts/<id>/` (organic),. Check the SHA-256 against the manifest.
 2. **Check the release.**
    - **Posting:** check the approval column is marked, and that the lock fingerprint matches.
    - **Boosting:** also check that every gate in `docs/PAID-BOOSTS.md` is recorded in the manifest.

@@ -3,6 +3,12 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-04: Boosts are boosts of the live organic posts. Krish: "These are going to be paid organic boosts, not paid ads", then, on the engine's recommendation to promote the existing posts from Ads Manager: "Yeah, do it. Get on with it. Make sure everything is perfect and ready to roll ASAP."
+  - `docs/PAID-BOOSTS.md` is rewritten. Ads Manager uses the existing post, optimises for landing page views, and adds a Shop now button to the product page with `utm_medium=paid_social`. The cap is $250.
+  - The four arms are F12, F05, F02 and the F06-frenchie carousel. The earlier $90 F12 opening A/B is replaced, because its guard-first arm is not a live post.
+  - The launch packet is `docs/boost/2026-11-launch-packet.md`, and the Codex card is `docs/briefs/codex/2026-11-04-boost-drafts.md`.
+  - F04's motion version was held. Krish: "The golden video chops a bit. It doesn't tell a great narrative story in terms of the scene progression." F05's and F12's motion versions are locked and filed, with their sha256 read back.
+
 - 2026-11-04: Motion versions locked. Krish: "Happy to lock, presuming you're happy with assets that are part video, part still?" The engine confirmed it was.
   - Seven reels (F01, F02, F03, F06 x3, F07) and three covers (F07, F10, F11) were filed through the library lane under their plain names, replacing the earlier locked files. Each sha256 was read back from the library. The plans are in `factory/motion/`.
   - Superseded the same day: the engine had told Codex to re-attach media in Buffer, which failed. Krish: "Why have you fucking told it to use Buffer?" Queued posts now publish as queued, the motion versions go out from the next schedule batch, and nobody edits the live queue. The F03 Instagram item that Codex's failed swap had left on an expiring link was restored by the engine to its approved Buffer-hosted reel and read back.

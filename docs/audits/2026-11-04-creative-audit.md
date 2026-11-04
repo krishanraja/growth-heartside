@@ -4,7 +4,7 @@ Krish asked on 4 Nov for an audit of every motion creative asset: Codex's builds
 
 The short answer: **none of them is a 10 yet, and none should be boosted as it stands.**
 - **Ready organically:** all 12 locked reels are now checked frame by frame. Eight score 8 or more and can keep going out unpaid: F01, F02, F04, F05, F06-frenchie and F12, plus F03 and F07 at 7 to 8. The best are F12 and F05 (9).
-- **Not ready for paid:** every asset fails at least one paid requirement. The failures are subtitles in Meta's no-text zone, no call-to-action end card, and Runway clips at 720p. (The music licence is settled: Krish, 4 Nov.)
+- **For boosting** (Krish, 4 Nov: boosts run the live organic post, so the organic score is what is boosted; the ad-version gaps below no longer apply): see `docs/PAID-BOOSTS.md`. Originally: **not ready for paid:** every asset fails at least one paid requirement. The failures are subtitles in Meta's no-text zone, no call-to-action end card, and Runway clips at 720p. (The music licence is settled: Krish, 4 Nov.)
 
 ## What was checked, and how
 
