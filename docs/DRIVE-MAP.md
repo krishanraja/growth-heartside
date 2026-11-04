@@ -42,7 +42,8 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
    - `<kind>` is one of:
      - `reel` (mp4);
      - `cover` (jpg);
-     - `slide1` to `slide5` (jpg).
+     - `slide1` to `slide5` (jpg);
+     - `paid-reel`, `paid-reel-a`, `paid-reel-b` (mp4) and `paid-cover` (jpg): paid cuts, kept in the same post folder (Krish, 4 Nov: "one uniform folder with uniform naming conventions"). They are used only under `docs/PAID-BOOSTS.md` and recorded in `library/manifest.json` (`docs/BOOST-LIBRARY.md`).
    - Nothing else goes in a post folder: no source files, no drafts, no captions files, no subfolders.
 3. **Media.** Add the files to the library folder and to its `manifest.json` (post, file, bytes, sha256). Then run `send_library.py`. The home computer files them within about 20 minutes. Check the Drive folder afterwards.
 4. **A changed version** keeps its name and is sent again. The home computer replaces its own earlier copy in place. Never send a "v2" or "final" file name.

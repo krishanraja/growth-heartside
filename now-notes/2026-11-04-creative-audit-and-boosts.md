@@ -1,0 +1,4 @@
+Status: Every Heartside creative is audited against a written 10/10 bar (docs/audits/2026-11-04-creative-audit.md). None is a 10 or paid-ready yet. F10 opens on a blank screen, the F07, F10 and F11 covers fail, F06-dachshund ends on a different dog, and subtitles sit in Meta's ad no-text zone. Six reels and Codex's candidates still need Codex's full-rate check (factory/audit.py).
+Changed: added the paid-boost ruling (docs/PAID-BOOSTS.md: a capped $250 Meta-only creative test, held behind six gates, music licence first), a per-channel publishing playbook (docs/PUBLISHING.md), one uniform library (Posts/<id>/ with paid kinds, docs/BOOST-LIBRARY.md, library/manifest.json) and the Codex card docs/briefs/codex/2026-11-04-boost-library.md.
+Next: Krish rules on the paid test and its North Star trade-off, confirms the Epidemic Sound plan covers ads, then pastes the boost-library card to Codex.
+North Star check (2026-11-04): holds.

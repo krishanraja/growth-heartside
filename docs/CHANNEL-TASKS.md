@@ -31,6 +31,8 @@ jobs. Concept-level approval, the creative bar and rule 1 are unchanged; the 5
 hooks and 5 captions are the alternatives the creative review cites, and the
 rejected ones stay note lines, never public copy.
 
+What to build and check before anything is posted or boosted (specs, safe zones, covers, labels and per-channel steps) is in [the publishing playbook](PUBLISHING.md). Paid use is ruled by [PAID-BOOSTS.md](PAID-BOOSTS.md).
+
 ## The weekly loop
 
 For each scheduled row use the operating instructions below, the [Drive map](DRIVE-MAP.md)
