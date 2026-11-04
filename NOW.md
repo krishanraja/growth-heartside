@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- The production handoff identifies the three motion candidates (F04, F05, F12), their unchanged Drive originals and the separate F12 paid opening pair by SHA-256. The candidates await exact-file creative decisions. Paid activation is held. (2026-11-04)
 - All twelve organic posts (F01 to F07, F10 to F12, with F06 in three breeds) are locked by Krish and pass `lock.py gate`; the lock page shows them locked (2026-11-03).
 - The social library is in Krish's Drive (`Heartside/05_Social-Library`, map in `docs/DRIVE-MAP.md`): one Codex README, the posting strategy, the schedule Sheet with captions, tracked links and lock fingerprints, and each post's media in `Posts/<post id>/`. Krish's home computer files the media (`factory/send_library.py`, 39 files read back byte for byte); the zip is a backup. Codex posts only rows Krish marks `approved = yes` (2026-11-03).
 - Sound is locked for all ten approved concepts and the lock system (joke bank, render catalog, fingerprinted locks, copy, breed, media and drift gates, independent reviewer, 5-then-1-in-10 trust ramp) builds every post from a spec (2026-11-02).
@@ -70,12 +71,12 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-04): Krish marks `approved = yes` on the schedule rows he wants posted, and Codex posts them; then measure sends and visits separately.
+- Next (2026-11-04): Read the three owner decisions on the private board before proposing a replacement master.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
-- North Star check (2026-11-03): holds.
+- North Star check (2026-11-04): holds.
 
 ## Read next
 
