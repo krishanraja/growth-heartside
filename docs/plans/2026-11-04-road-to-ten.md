@@ -91,7 +91,7 @@ Krish delegated final creative judgment: “Judge yourself and get this all read
 - **F11.** The existing review file became the final reel. At 27.26 s and −14.4 LUFS, it starts with the whole first joke and ends with the complete last query and the dachshund mug. The media gate passed. The automated first-frame check flagged the pale canvas (spread 25); visual inspection confirmed the query and answer are visible.
 - **F06-frenchie.** The cuff and hand were visible in the lower-right corner of the third source image. The repair is confined to that corner of the reel’s 5.4–8.4 s shot and the corresponding third slide. PCM audio, timestamps and the 392 decoded video frames outside the shot matched the prior reel. Both release files passed the factory audit.
 - **Source recovery.** Nine corrected PNGs and eighteen store renders matched their supplied SHA-256 values. Four Google Fonts faces were verified against their upstream Git blobs. The other locked F04, F06-lab and F07 masters remain deliverable as verified final files. Rebuilding those three from scratch would still require the original missing frames or voices.
-- **Drive.** Nine separately named review copies were excluded from the release list. The scheduling handoff starts with the plain-name library files.
+- **Drive.** Krish approved moving the nine named review copies to Trash. Verified nine recoverable entries, 40 files left across the post folders, and every remaining checksum. The scheduling chat received F10 and F11 at 18:00 UTC, then the verified full index. It has prepared a 36-placement proposal on the existing working approval board.
 
 ## Job C closed for F01, F02, F03, F05 and F12
 

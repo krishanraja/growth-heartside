@@ -3,6 +3,8 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-04: Krish: “Trash these nine review files”. Moved the nine named F04, F05, F11 and F12 review files to Trash. Read back all nine recoverable entries and rechecked the 40 remaining plain-name release files against their SHA-256.
+
 - 2026-11-04: Krish delegated the editorial release decision: “Judge yourself and get this all ready for publishing.” Codex accepted the new F10 reel, the checked F11 review cut, and the corrected F06-frenchie reel and slide 3. All 40 current files were downloaded from the library API and matched to their plain-name Drive files. The scheduling source is `library/CURRENT.md`.
 
 - Ruling (Krish, 2026-11-04): caption move to y=1300 dropped; locked masters stay at 1440.
