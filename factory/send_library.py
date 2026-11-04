@@ -26,7 +26,8 @@ BASE = os.environ.get('ENGINE_BASE_URL', 'https://content-engine-flame-nu.vercel
 LIBRARY = 'heartside'
 POST_ID = re.compile(r'[A-Z][0-9]{2,3}(?:-[a-z0-9]+)*')
 NAME = re.compile(r'[A-Za-z0-9][A-Za-z0-9._ ()-]{0,98}')
-KINDS = {'paid-reel': 'a paid cut (mp4), run only under docs/PAID-BOOSTS.md', 'paid-cover': 'the paid cut\'s cover',
+KINDS = {'review-reel': 'a candidate for Krish to review: never posted', 'review-cover': 'a candidate cover for review: never posted',
+         'paid-reel': 'a paid cut (mp4), run only under docs/PAID-BOOSTS.md', 'paid-cover': 'the paid cut\'s cover',
          'reel': 'the reel (mp4)', 'cover': 'the cover, used as the thumbnail', 'slide': 'a carousel slide, in order'}
 WAITS = (2, 4, 8, None)
 
