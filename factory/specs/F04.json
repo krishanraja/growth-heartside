@@ -5,7 +5,7 @@
  "voice": "vo_F04.mp3",
  "music": "m_epic_callwild.mp3",
  "music_level": 0.22,
- "note": "Meme 'me vs my golden' (rescripts F04B). Music: The Call of the Wild. Captions sit at the top, meme style; the narrator speaks one line.",
+ "note": "Meme 'me vs my golden' (rescripts F04B). Music: The Call of the Wild. Captions sit at the top, meme style; the narrator speaks one line. 4 Nov: the edge, push-off and floor shots (f422, f423, f420) were redrawn in the opening's room and light (Higgsfield GPT Image 2.5, jobs b7ef5ba8, 72e33b86); captions at the top, the narrator's line at 1300.",
  "shots": [
   {
    "until": 2.6,
@@ -37,30 +37,30 @@
   },
   {
    "until": 10.6,
-   "frame": "f422.png",
+   "frame": "f422c.png",
    "line": "F04.m4",
-   "cap_y": 1720,
+   "cap_y": 200,
    "picture": "the person perches on the edge; the golden takes the rest"
   },
   {
    "until": 12.6,
-   "frame": "f423.png",
+   "frame": "f422c.png",
    "line": "F04.m2",
-   "cap_y": 1720,
+   "cap_y": 200,
    "picture": "the golden stretches all four legs and pushes the person off"
   },
   {
    "until": 15.4,
-   "frame": "f420.png",
+   "frame": "f420c.png",
    "line": "F04.m5",
-   "cap_y": 1560,
+   "cap_y": 1300,
    "picture": "the person on the floor; the golden looks down, smug"
   },
   {
    "until": 19.2,
    "render": "golden-hilarious-blanket.jpg",
    "line": "F04.m6",
-   "cap_y": 1500
+   "cap_y": 1300
   }
  ],
  "sfx": [

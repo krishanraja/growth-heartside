@@ -5,7 +5,7 @@
 
 PLAN.json is a list of shots to replace, each
 {"start": 0, "dur": 2.4, "clip": "path.mp4", "clip_in": 0, "clip_dur": 2.4,
- "text": "...", "style": "meme"|"caption", "cap_y": 1440, "pos": "top"}.
+ "text": "...", "style": "meme"|"caption", "cap_y": 1300, "pos": "top"}.
 Each replaces the master's video from start to start+dur with CLIP from clip_in. When clip_dur
 (the clip's passing window) is shorter than dur, the clip is slowed to fit (at most 1.3x).
 - The clip is scaled and cropped to 1080x1920 (Lanczos, a light sharpen).
@@ -42,7 +42,7 @@ def meme_layer(text, pos='top'):
             break
         size -= 6
     lh = int(size * 1.12)
-    top = int(H * 0.12) if pos == 'top' else H - 60 - lh * len(lines) - int(H * 0.04)
+    top = int(H * 0.12) if pos == 'top' else int(H * 0.76) - lh * len(lines)   # bottom text ends above the reel's caption zone, as build.roast()
     for i, l in enumerate(lines):
         tw = d.textlength(l, font=f)
         d.text(((W - tw) / 2, top + i * lh), l, font=f, fill=(255, 255, 255, 255),
@@ -50,7 +50,7 @@ def meme_layer(text, pos='top'):
     return im
 
 
-def caption_layer(text, y=1440):
+def caption_layer(text, y=1300):
     """Transparent layer with the film subtitle, laid out as build._caption()."""
     im = Image.new('RGBA', (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im, 'RGBA')
     capb = bold(F('Karla.ttf', 54), 800)
@@ -74,7 +74,7 @@ def clip_segment(sh, out, t):
     vf = f"{VF},setpts={stretch:.4f}*PTS,fps=30,format=yuv420p"
     inputs = ['-ss', f'{cin:.3f}', '-t', f'{cdur:.3f}', '-i', sh['clip']]
     if sh.get('text'):
-        layer = meme_layer(sh['text'], sh.get('pos', 'top')) if sh.get('style') == 'meme' else caption_layer(sh['text'], sh.get('cap_y', 1440))
+        layer = meme_layer(sh['text'], sh.get('pos', 'top')) if sh.get('style') == 'meme' else caption_layer(sh['text'], sh.get('cap_y', 1300))
         png = f'{t}/layer{sh["start"]}.png'; layer.save(png)
         run(['ffmpeg', '-y', *inputs, '-i', png, '-filter_complex', f'[0:v]{vf}[v];[v][1:v]overlay=0:0,format=yuv420p[o]',
              '-map', '[o]', '-t', f'{dur:.3f}', *ENC, out])

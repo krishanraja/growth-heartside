@@ -1449,6 +1449,78 @@
    "source": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
    "note": "reworded after review: \"their face\" could read as the human",
    "text_sha256": "7ece8938e80b37339b709a931937f25b845da4923e14e3b7be2b7e7139cb1e57"
+  },
+  {
+   "id": "F10.c15b",
+   "text": "sorry, WHAT",
+   "role": "chat.wtf",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-04",
+   "note": "Replaces \"WTF\" (a swear acronym, rule 5). The shepherd hears \"on their face\" and stops."
+  },
+  {
+   "id": "F10.c18b",
+   "text": "somehow worse",
+   "role": "chat.wtf_2",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-04",
+   "note": "Replaces \"still WTF\". Answers \"no I meant licking\"."
+  },
+  {
+   "id": "F10.c28b",
+   "text": "They threw it AWAY 😂😵",
+   "role": "chat.correction",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-04",
+   "note": "Replaces \"They threw it AWAY mate\" (\"mate\" is not US voice)."
+  },
+  {
+   "id": "F06.kla2b",
+   "text": "I know where the treats are. Top right cupboard.",
+   "role": "roast.2",
+   "kind": "roast",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-04",
+   "note": "Krish's own line without the spaced hyphen and \"FYI\"."
+  },
+  {
+   "id": "F06.kla3b",
+   "text": "Of everyone I see every day, you're my favorite. Sorry, mailman.",
+   "role": "roast.soft",
+   "kind": "roast",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-04",
+   "note": "Krish's line made grammatical; the mailman joke kept."
+  },
+  {
+   "id": "F06.kla3c",
+   "text": "You're my favorite human. Don't tell the mailman.",
+   "role": "roast.soft",
+   "kind": "roast",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-04",
+   "note": "Shorter alternative to F06.kla3b; approve one."
   }
  ]
 }

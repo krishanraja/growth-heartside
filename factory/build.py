@@ -124,8 +124,14 @@ def chat(spec, work):
         return im
 
     frames, blocks, events, t = [], [], [], 0.6
-    screen([]).save(f'{work}/c00.png'); frames.append((f'{work}/c00.png', 0.6))
+    n0 = spec.get('open_with', 0)   # open mid-conversation: frame 1 already shows n0 messages (never a blank screen)
+    if n0:
+        blocks = [bubble(m) for m in spec['messages'][:n0]]; t = sum(m['dur'] for m in spec['messages'][:n0])
+        screen(blocks).save(f'{work}/c00.png'); frames.append((f'{work}/c00.png', t)); events.append((0.0, 'pop'))
+    else:
+        screen([]).save(f'{work}/c00.png'); frames.append((f'{work}/c00.png', 0.6))
     for i, m in enumerate(spec['messages']):
+        if i < n0: continue
         blocks.append(bubble(m)); p = f'{work}/c{i + 1:02d}.png'; screen(blocks).save(p)
         frames.append((p, m['dur'])); events.append((t, m.get('sfx', 'pop'))); t += m['dur']
     hold = spec['end'].get('hold', 4.5)
@@ -159,13 +165,23 @@ def search(spec, work):
             d.text((100, y + 86 + i * lh), l, font=f, fill=INK)
         return y + h + 40
 
+    def bar_font(d, text):
+        """A finished query is shown whole: the type shrinks until it fits (never cut off at the start)."""
+        size = 62
+        while size > 40 and d.textlength(text, font=bold(F('Karla.ttf', size), 700)) > TW:
+            size -= 2
+        return bold(F('Karla.ttf', size), 700)
+
     def frame(query, typed, history, result=None, cursor=True):
         im = Image.new('RGB', (W, H), PAPER); d = ImageDraw.Draw(im, 'RGBA')
         d.text((70, 150), 'Search', font=bold(F('Karla.ttf', 64), 800), fill=INK); im.paste(AVA, (W - 170, 130), AVA)
         d.rounded_rectangle(BAR, 70, fill=(255, 255, 255), outline=(205, 195, 180), width=4)
         d.ellipse((100, 302, 150, 352), outline=(120, 110, 100), width=6); d.line((143, 345, 165, 367), fill=(120, 110, 100), width=7)
-        shown = bar_text(d, query[:typed])
-        d.text((TX, 294), shown, font=SEARCH, fill=INK)
+        if cursor:
+            shown = bar_text(d, query[:typed]); fnt = SEARCH
+        else:
+            shown = query[:typed]; fnt = bar_font(d, shown)
+        d.text((TX, 330 - fnt.size // 2 - 4), shown, font=fnt, fill=INK)
         if cursor:
             lx = TX + d.textlength(shown, font=SEARCH) + 6; d.rectangle((lx, 300, lx + 5, 366), fill=STAMP)
         y = BAR[3] + 40
@@ -182,11 +198,16 @@ def search(spec, work):
         return im
 
     frames, events, t, history, n = [], [], 0.4, [], 0
-    frame('', 0, []).save(f'{work}/k0000.png'); frames.append((f'{work}/k0000.png', 0.4))
+    open_typed = spec.get('open_typed', 0)   # open mid-typing: frame 1 already shows this share of the first query
+    if open_typed:
+        t = 0.0
+    else:
+        frame('', 0, []).save(f'{work}/k0000.png'); frames.append((f'{work}/k0000.png', 0.4))
     qs = spec['queries']; end_t = None
     for qi, q in enumerate(qs):
         text = T(q['line'], spec); last = qi == len(qs) - 1; step = 2 if len(text) > 40 else 1
-        for c in range(step, len(text) + step, step):
+        c0 = max(step, int(len(text) * open_typed)) if (qi == 0 and open_typed) else step
+        for c in range(c0, len(text) + step, step):
             n += 1; p = f'{work}/k{n:04d}.png'; frame(text, min(c, len(text)), history).save(p)
             frames.append((p, 0.05)); events.append((t, 'key')); t += 0.05
         n += 1; p = f'{work}/k{n:04d}.png'; frame(text, len(text), history, cursor=False).save(p); frames.append((p, 0.35)); t += 0.35
@@ -197,7 +218,7 @@ def search(spec, work):
             d.text((70, 150), 'Search', font=bold(F('Karla.ttf', 64), 800), fill=INK); bg.paste(AVA, (W - 170, 130), AVA)
             d.rounded_rectangle(BAR, 70, fill=(255, 255, 255), outline=(205, 195, 180), width=4)
             d.ellipse((100, 302, 150, 352), outline=(120, 110, 100), width=6); d.line((143, 345, 165, 367), fill=(120, 110, 100), width=7)
-            d.text((TX, 294), bar_text(d, text), font=SEARCH, fill=INK)
+            fnt = bar_font(d, text); d.text((TX, 330 - fnt.size // 2 - 4), text, font=fnt, fill=INK)
             y = BAR[3] + 40
             if res:
                 y = answer_block(d, y, res)
@@ -232,6 +253,7 @@ def roast(spec, work):
             if (len(lines) <= 3 and max(d.textlength(l, font=f) for l in lines) <= w - 120) or size <= 60: break
             size -= 6
         lh = int(size * 1.12); top = 60 if pos == 'top' else h - 60 - lh * len(lines) - int(h * 0.04)
+        if pos == 'bottom' and h > w * 1.5: top = int(h * 0.76) - lh * len(lines)   # end above the reel's caption and username zone
         if pos == 'top' and h > w * 1.5: top = int(h * 0.12)   # clear of the app's own top bar in a reel
         for i, l in enumerate(lines):
             tw = d.textlength(l, font=f)
@@ -271,7 +293,7 @@ def _cover(path, crop_top=0.0):
     return im.crop((x, y, x + W, y + H))
 
 
-def _caption(im, text, y=1440):
+def _caption(im, text, y=1300):   # 1300: clear of the Reels and TikTok username and caption zone
     if not text: return im
     d = ImageDraw.Draw(im, 'RGBA'); lines = balanced_wrap(d, text, CAPB, W - 200, 54); lh = 70; h = lh * len(lines) + 44
     d.rounded_rectangle((60, y, W - 60, y + h), 24, fill=(20, 18, 15, 185))
@@ -286,10 +308,20 @@ def film(spec, work):
         dur = s['until'] - t0; t0 = s['until']; cap = T(s['line'], spec) if s.get('line') else None
         out = f'{work}/s{i:02d}.mp4'
         if s.get('render'):   # a real render mid-film: moving, captioned, no badge
-            product_clip([s['render']], out, dur, overlay=lambda im, t, c=cap, y=s.get('cap_y', 1440): _caption(im, c, y), end_png=f'{work}/s{i:02d}.png')
+            product_clip([s['render']], out, dur, overlay=lambda im, t, c=cap, y=s.get('cap_y', 1300): _caption(im, c, y), end_png=f'{work}/s{i:02d}.png')
         else:
-            im = _caption(_cover(f"{FR}/{s['frame']}", s.get('crop_top', 0)), cap, s.get('cap_y', 1440))   # meme posts caption at the top
-            png = f'{work}/s{i:02d}.png'; im.save(png); n = round(dur * 30)
+            im = _caption(_cover(f"{FR}/{s['frame']}", s.get('crop_top', 0)), cap, s.get('cap_y', 1300))   # meme posts caption at the top
+            png = f'{work}/s{i:02d}.png'; n = round(dur * 30)
+            if s.get('pull'):   # a hook: open tight on the subject, then pull back to the whole picture; the caption stays still
+                z0, (fx, fy) = s['pull']['zoom'], s['pull']['focus']
+                _cover(f"{FR}/{s['frame']}", s.get('crop_top', 0)).save(png)
+                cap_png = f'{work}/s{i:02d}_cap.png'; _caption(Image.new('RGBA', (W, H), (0, 0, 0, 0)), cap, s.get('cap_y', 1300)).save(cap_png)
+                z = f"max(1,{z0}-({z0}-1)*min(1,on/{max(1, round(n * 0.8))}))"
+                run(['ffmpeg', '-y', '-loop', '1', '-i', png, '-loop', '1', '-i', cap_png, '-filter_complex',
+                     f"[0]scale=2160:3840,zoompan=z='{z}':x='max(0,min(iw-iw/zoom,{fx}*iw-iw/zoom/2))':y='max(0,min(ih-ih/zoom,{fy}*ih-ih/zoom/2))':d={n}:s={W}x{H}:fps=30[v];[v][1]overlay=0:0:shortest=1,format=yuv420p",
+                     '-frames:v', str(n), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', out])
+                parts.append(out); continue
+            im.save(png)
             run(['ffmpeg', '-y', '-loop', '1', '-i', png, '-vf', f"scale=2160:3840,zoompan=z='min(zoom+0.0007,1.08)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps=30,format=yuv420p",
                  '-frames:v', str(n), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', out])
         parts.append(out)

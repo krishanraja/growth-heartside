@@ -32,21 +32,6 @@
    "line": "F10.c03"
   },
   {
-   "who": "C",
-   "line": "F10.c25",
-   "dur": 1.1
-  },
-  {
-   "who": "B",
-   "dur": 0.8,
-   "line": "F10.c04"
-  },
-  {
-   "who": "C",
-   "dur": 1.1,
-   "line": "F10.c05"
-  },
-  {
    "who": "D",
    "dur": 1.4,
    "line": "F10.c06"
@@ -68,39 +53,19 @@
   },
   {
    "who": "B",
-   "line": "F10.c28",
+   "line": "F10.c28b",
    "dur": 1.7
   },
   {
-   "who": "D",
-   "dur": 1.1,
-   "line": "F10.c11"
-  },
-  {
-   "who": "D",
-   "dur": 1.2,
-   "line": "F10.c12"
-  },
-  {
-   "who": "D",
-   "dur": 1.8,
-   "line": "F10.c13"
-  },
-  {
    "who": "C",
-   "dur": 2.4,
+   "dur": 2.0,
    "line": "F10.c14"
   },
   {
    "who": "B",
    "dur": 0.9,
-   "line": "F10.c15",
+   "line": "F10.c15b",
    "sfx": "scratch"
-  },
-  {
-   "who": "A",
-   "dur": 0.9,
-   "line": "F10.c16"
   },
   {
    "who": "C",
@@ -110,21 +75,16 @@
   {
    "who": "B",
    "dur": 1.6,
-   "line": "F10.c18"
+   "line": "F10.c18b"
   },
   {
    "who": "D",
-   "dur": 2.2,
+   "dur": 1.8,
    "render": "dachshund-warm-portrait.jpg"
   },
   {
    "who": "A",
    "dur": 0.7,
-   "line": "F10.c19"
-  },
-  {
-   "who": "B",
-   "dur": 0.8,
    "line": "F10.c19"
   },
   {
@@ -145,6 +105,8 @@
    "mug-real-frenchie.jpg",
    "mug-real-dachshund.jpg"
   ],
-  "hold": 4.5
- }
+  "hold": 4.0
+ },
+ "open_with": 3,
+ "note": "4 Nov recut toward 10/10: opens mid-chat (3 messages on frame 1), no WTF, no \"mate\", under 30 s."
 }

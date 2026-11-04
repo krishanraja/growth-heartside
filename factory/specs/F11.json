@@ -43,5 +43,6 @@
  "end_render": "mug-real-dachshund.jpg",
  "end": {
   "hold": 5.0
- }
+ },
+ "open_typed": 0.6
 }

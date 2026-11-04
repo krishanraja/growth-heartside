@@ -1,0 +1,4 @@
+Status: Krish asked for every post at 10. Four candidates are built and pass the audit: F06-dachshund recast to the chestnut dog on its mug, F04 in one room and one light, F06-lab with fixed lines, and F07 opening on the face. The factory now prevents the blank opens and the interface collisions. F10 and F11 specs are ready for the home-machine build.
+Changed: factory/build.py and factory/splice.py (openers, safe-zone text); factory/bank/lines.json (5 proposed lines); factory/specs F01, F04, F06-dachshund, F06-lab, F07, F10, F11; docs/plans/2026-11-04-road-to-ten.md; docs/briefs/codex/2026-11-04-road-to-ten-builds.md.
+Next: Krish approves the five lines and locks the four candidates; Codex then builds F10, F11 and the caption-safe masters from the card.
+North Star check (2026-11-04): holds.

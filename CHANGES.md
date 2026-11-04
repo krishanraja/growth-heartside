@@ -3,6 +3,11 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-04: Every post to 10. Krish: "Yes, we need them all to be 10 out of 10. Where are your standards?", then "We need to get as close as we can without regenerating absolutely everything. We've run out of runway credits, but still have higgsfield and openai images."
+  - F06-dachshund's frames were recast to the chestnut dachshund on its mug. F04's second half was redrawn in its opening room and light. F06-lab's two weak lines were replaced, with the old text removed from the frames. F07 now opens tight on the face. These are candidates in `local/library/2026-11-04-ten/`, waiting for Krish's lock. The cost was 9 Higgsfield image edits (24.75 credits).
+  - The factory now opens chats mid-conversation and searches mid-typing, shows a finished search query whole, can pull back from a close-up, and keeps captions and bottom text clear of the platform interface (y 1300; 76% of the reel height).
+  - Five replacement lines are proposed in `factory/bank/lines.json`. F10 and F11 are rebuilt as specs for Codex's home-machine build (`docs/briefs/codex/2026-11-04-road-to-ten-builds.md`). The plan is `docs/plans/2026-11-04-road-to-ten.md`. No job file or `automations.json` entry changed.
+
 - 2026-11-04: Boosts are boosts of the live organic posts. Krish: "These are going to be paid organic boosts, not paid ads", then, on the engine's recommendation to promote the existing posts from Ads Manager: "Yeah, do it. Get on with it. Make sure everything is perfect and ready to roll ASAP."
   - `docs/PAID-BOOSTS.md` is rewritten. Ads Manager uses the existing post, optimises for landing page views, and adds a Shop now button to the product page with `utm_medium=paid_social`. The cap is $250.
   - The four arms are F12, F05, F02 and the F06-frenchie carousel. The earlier $90 F12 opening A/B is replaced, because its guard-first arm is not a live post.
