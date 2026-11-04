@@ -5,6 +5,29 @@ work was handed to heartside PR #13. Control Centre gets only
 [its completed owner brief](CONTROL-CENTRE-BRIEF.md). Its existing draft was left
 untouched during this completion; central delivery defaults off.
 
+## Production handoff for F04, F05 and F12 (4 November 2026)
+
+Three motion edits were made for existing posts. Each keeps its original audio, ends on its product and says “Make yours at Heartside.io”. The owner board played each complete export and served the SHA-256 listed below. No owner decision was present for these three exact files on 4 November. Review them under **Motion candidates** on the private Heartside board.
+
+| Post and locked original in Drive | What changed in the motion edit | Board review ID | Reel SHA-256 |
+|---|---|---|---|
+| F04 · `Posts/F04/heartside_F04_me-vs-my-golden_reel.mp4` | The golden retriever takes the sofa seat. The reveal is the personalized golden blanket. 23.2 s, 696 frames. | `F04-MOTION-346c19bd14` | `346c19bd1440a1b95fd83fef5144901eb58d5517a6192f71bf9e7d11a4e754c4` |
+| F05 · `Posts/F05/heartside_F05_court-of-the-couch_reel.mp4` | The Frenchie defendant and basset judge move. The jury remains illustrated. The film ends on the blanket. 30.1 s, 903 frames. | `F05-MOTION-980a3a9348` | `980a3a93482abf06e2697c96409576222ac8daeab09d5dec819cb39be0882e7f` |
+| F12 · `Posts/F12/heartside_F12_head-of-security_reel.mp4` | The Frenchie spots the parcel, approaches and turns to sleeping backup before the personalized portrait reveal. 18.5 s, 555 frames. | `F12-MOTION-0b93e56eaf` | `0b93e56eaf927284956854aaec6130e9b76161bd7ceb4f1a44717a3c19748ac1` |
+
+**Find the exact files.** In the private production workspace, the board reads `outputs/heartside-feedback-round/media/heartside_<id>_motion-review_reel.mp4` and the matching `heartside_<id>_motion-review_cover.jpg`. Substitute F04, F05 or F12. The reels are 720 × 1280 H.264/AAC at 30 fps. The three covers are 1080 × 1920 JPEGs. The private growth checkout has the source paths, shot selections and byte counts in `local/research/2026-11-03-pov/motion-review-manifest.json` and playback evidence in `motion-board-live-verification.json` beside it. The 1080 × 1920 working exports in `work/mobile-review/motion/<id>-motion-master1080.mp4` have different hashes. A release from one of those files needs its own exact-file check and owner sign-off.
+
+**Separate F12 Facebook opening test.** Both files below are in the same private board media directory. They run 18.5 s at 1080 × 1920 and 30 fps. Only the first 60 frames differ visually. The audio and all decoded frames from 2.0 s onward match.
+
+| Arm | File | SHA-256 | Creative decision |
+|---|---|---|---|
+| A · parcel first | `f12-parcel-first.mp4` | `5cf938e6df38259c4983b097999c576345ba527438f472ffd3dfd487317e32dd` | Byte-identical to the locked F12 Drive reel. Control. |
+| B · guard first | `f12-guard-first.mp4` | `d7e6e06a1219757cc27df392b8fca6b236567d968f5da761e86d20c4aad245c7` | Krish approved this close-up opening on 4 November. It replaces the earlier portrait-first challenger. |
+
+**Next action for Claude.** Read the three exact owner decisions from the private board before proposing any replacement. The [Drive map](DRIVE-MAP.md) reserves `Posts/<id>/` for locked media sent through the home-computer library lane. The three existing library reels and their covers remain the scheduling sources. Creative preparation owns candidate review. The scheduling desk alone operates the queue. The separate Facebook Feed test has an approved $90 lifetime budget ($45 per arm) and is held until Krish has seen the tracking checks and exact launch plan. Use `f12-paid-and-motion-review-plan.json` and `f12-guard-chat-approval.json` beside the private motion manifest for the exact experiment and decision.
+
+**Earlier work in this chat.** In that same private evidence directory, `today-release-manifest.json` maps the ten earlier review items to source cards, files and checksums. `centered-caption-changes.json` records the POV text corrections. `weekly-gallery-release-manifest.json` maps 40 organic placements and two historical paid proposals to their media. Read those as placement history. The three motion edits above are the new films, and the F12 opening plan above supersedes those paid proposals.
+
 ## Delivered
 
 - Current product canon/catalog sync, full source SHA binding and exact offer gates.
