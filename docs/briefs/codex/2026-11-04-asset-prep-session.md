@@ -31,8 +31,19 @@ Your job is not finished until:
   4. `docs/plans/2026-11-04-road-to-ten.md`: what was fixed today and what is still open.
   5. `docs/briefs/codex/2026-11-04-road-to-ten-builds.md`: the build card. This prompt replaces its order of work, but use it for detail.
   6. `docs/audits/2026-11-04-creative-audit.md`: the 10/10 bar every asset is judged against.
-- **Assets folder.** Everything is on this machine, in the folder named by the `HEARTSIDE_ASSETS` environment variable. It holds `renders/`, `frames/`, `audio/` and `fonts/`; the music and voices are licensed and never go into git. It is the folder used to build the F04, F05 and F12 motion masters on 3 and 4 Nov.
-  - If `HEARTSIDE_ASSETS` is unset, find that folder. If you cannot, stop and ask Krish for its path. Never rebuild with substitute music, voices or renders.
+- **Assets folder: there is no copy on this machine. Do not search for one.**
+  - The factory's renders, frames, audio and fonts lived only in a cloud Claude session's temporary container (2 Nov, `session_01JRhKyrTRqzMKQe7KawKUr4`). That container is gone.
+  - The folder was never in git: the repository is public and the music is licensed.
+  - So `factory/build.py` cannot rebuild F10 or the film masters as they stand. Work from the finished files instead:
+    - **F11** needs no folder. Its new cut is already in Drive as `heartside_F11_search-history_review-reel.mp4` (sha256 `8cc6079f…`). Show it to Krish for his lock; do not rebuild it.
+    - **F10** needs a rebuilt folder. Build one at `HEARTSIDE_ASSETS` (any local folder), from the original sources only:
+      - `renders/`: the store's product renders, each matching the sha256 in `factory/bank/renders.json`, from the heartside sync or Krish;
+      - `audio/m_sneak_bugaboo.mp3` and `audio/s_scratch.mp3`: the same Epidemic Sound tracks the locked F10 uses, compared by ear against the locked reel;
+      - `audio/s_shimmer.mp3`;
+      - `fonts/`: Anton, Karla, Fraunces and Courier Prime from google/fonts.
+
+      If any file cannot be matched exactly, stop and ask Krish. Never substitute.
+    - **Caption-safe masters (job C)** need the original frames, voice reads and music. They exist only at their providers: Higgsfield and ElevenLabs history, and Epidemic Sound. Ask Krish whether to recover them or to drop job C. The captions at 1440 already sit almost wholly above the platform's caption zone.
 - **Output folder:** `HEARTSIDE_OUT`. If it is unset, the default is `local/media/factory`. `local/` is gitignored.
 - **The Drive library** is `Heartside/05_Social-Library/Posts/<post id>/`. Only the library lane writes there:
   ```
