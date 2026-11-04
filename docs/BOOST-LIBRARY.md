@@ -27,7 +27,7 @@ A source enters the library only as part of a finished, approved master.
 | `reel` | The organic master, 1080x1920 mp4. When Krish locks a motion version it replaces this file under the same name (Drive map rule 4: never "v2") | organic |
 | `cover` | The organic cover, 1080x1920 jpg | organic |
 | `slide1` to `slide5` | Carousel slides, jpg | organic |
-| `paid-reel` | A paid cut: 15 to 30 s, subtitles in the paid safe zone, a CTA end card, ad-licensed music (`docs/PAID-BOOSTS.md`) | paid |
+| `paid-reel` | A paid cut: 15 to 30 s, subtitles in the paid safe zone, a CTA end card, the locked music track (`docs/PAID-BOOSTS.md`) | paid |
 | `paid-reel-a`, `paid-reel-b`, … | Arms of one paid test that differ only in the stated variable (for example the F12 opening pair) | paid |
 | `paid-cover` | The paid cut's cover, if the ad needs one | paid |
 

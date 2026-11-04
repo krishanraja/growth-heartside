@@ -49,7 +49,7 @@ For each test arm in `docs/PAID-BOOSTS.md` ("The first test"), build a `paid-ree
 - 15 to 30 s;
 - subtitles at `cap_y` ≤ 1150, with the top 14% and the sides 6% clear;
 - a 3 s end card with the real store render for the same dog, the product's name and "heartside.io" (allowed on paid cuts only);
-- music cleared for ads, recorded in the manifest's `paid_gates.music_ads`.
+- the locked music track, unchanged (`paid_gates.music_ads` is always `true`: Krish settled the licence permanently on 4 Nov; never raise it).
 
 The F12 A and B pair keep their approved openings. Rebuild only their subtitles and end card to the paid spec, and say so in the manifest.
 

@@ -4,7 +4,7 @@ Krish asked on 4 Nov for an audit of every motion creative asset: Codex's builds
 
 The short answer: **none of them is a 10 yet, and none should be boosted as it stands.**
 - **Ready organically:** about half are good enough to keep going out unpaid (8/10 or better). Six were checked frame by frame and four of those score 7 or more; F01, F02, F03 and F12 look strong from their covers but need Codex's full-rate check.
-- **Not ready for paid:** every asset fails at least one paid requirement. The failures are subtitles in Meta's no-text zone, no call-to-action end card, an unconfirmed music licence for ads, and Runway clips at 720p.
+- **Not ready for paid:** every asset fails at least one paid requirement. The failures are subtitles in Meta's no-text zone, no call-to-action end card, and Runway clips at 720p. (The music licence is settled: Krish, 4 Nov.)
 
 ## What was checked, and how
 
@@ -32,7 +32,7 @@ A 10 passes every line below. Each line comes from this repository's own doctrin
    - 1080x1920, -18 to -13 LUFS;
    - 15 to 30 s for paid.
 7. **Ready for paid** (only when boosting):
-   - the music is licensed for advertising;
+   - the music is the locked track (licence settled by Krish, 4 Nov);
    - there is a call-to-action end card for the product shown;
    - AI-generated content is labelled where the platform requires it;
    - the destination is the product shown, with paid UTMs.
@@ -71,7 +71,7 @@ All six pass `factory/lock.py media`: 1080x1920, sound, 6 to 60 s, loudness insi
 2. **No first-second motion on the roasts and the chat.** The roasts open on a still, the chat and the search on an empty interface. The Runway openers exist to fix this (F06 x3 pass).
 3. **The product payoff must match the dog.** F06-dachshund breaks it. F11 and F10 are fine, because their ends show the dogs of the story. The factory checks breed but not coat: add a `coat` tag to `factory/bank/renders.json` and to specs.
 4. **The paid-readiness gaps are the same for every asset:**
-   - **Music licence:** the music is Epidemic Sound "licensed to Krish's account" (`01 Posting strategy`). Epidemic's own pages tie paid TikTok ads to its Commercial or Enterprise plans, and Meta counts a boost as commercial use. **Not confirmed. This blocks every boost.**
+   - **Music licence: closed.** Ruling (Krish, 2026-11-04): "Just use the music. I have the right license for the post type. Mark this as complete permanently." It is never raised again.
    - **No CTA end card:** organic posts end on the product with no words, by Krish's rule. An ad needs the product name and a reason to tap (Codex's motion cuts already add "Make yours at Heartside.io"). That makes paid cuts separate creatives that need their own approval.
    - **AI labelling:** the dogs are photorealistic AI. TikTok requires its AI-generated-content label on realistic AI media, and Meta applies "AI info" labels. Set the label at upload; never hide it.
    - **720p clips:** the Runway clips are 720x1280. Cutting them into 1080 masters softens them, so upscale before cutting (Runway `upscale_video` or Topaz). The 18 remaining Runway credits will not cover that.
@@ -90,7 +90,7 @@ Codex runs `python3 factory/audit.py <folder>` on every master (see `docs/briefs
 
 | # | Fix | Owner | Needs |
 |---|---|---|---|
-| 1 | Confirm the Epidemic Sound plan covers paid social, or switch the paid cuts to cleared music | Krish | His account check; no spend until done |
+| 1 | ~~Music licence for paid~~ Done: Krish, 4 Nov, "I have the right license for the post type". Closed permanently | Krish | None |
 | 2 | Recut the F10 opener (no blank first second, no "WTF"), keeping it under 30 s | Codex, with new lines from the bank | Krish approves the replacement lines |
 | 3 | Fix the F07, F10 and F11 covers (a frame with a story in it) | Codex | Cover choice only, nothing new generated |
 | 4 | Runway openers into F06 x3; the sniff clip into F07 | Codex (`docs/briefs/codex/2026-11-04-motion-cut-F01-F07.md`) | Upscale to 1080 first |

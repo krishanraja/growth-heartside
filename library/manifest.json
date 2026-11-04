@@ -673,7 +673,7 @@
    },
    "product": "portrait, frenchie",
    "paid_gates": {
-    "music_ads": null,
+    "music_ads": true,
     "paid_cut_safe_zone": null,
     "cta_end_card": null,
     "product_matches_dog": null,
@@ -705,7 +705,7 @@
    },
    "product": "portrait, frenchie",
    "paid_gates": {
-    "music_ads": null,
+    "music_ads": true,
     "paid_cut_safe_zone": null,
     "cta_end_card": null,
     "product_matches_dog": null,

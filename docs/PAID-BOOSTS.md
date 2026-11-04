@@ -20,18 +20,16 @@ Why small, and why only as a test:
 Why not now, as the posts stand: the creative audit (`docs/audits/2026-11-04-creative-audit.md`) found that no asset is paid-ready.
 - Subtitles sit in Meta's no-text zone.
 - There is no CTA end card.
-- The music licence for ads is unconfirmed.
 - F10 opens on a blank screen.
 
 Boosting those would buy a measurement of the flaws.
 
-Why not TikTok yet: the profile has no clickable website link (Codex audit, 3 Nov). Spark Ads also lock the post's music, and paid TikTok use needs a commercial licence for it.
-
+Why not TikTok yet: the profile has no clickable website link (Codex audit, 3 Nov).
 ## Hard gates before any money moves
 
 Every gate must be true and written down in the boost manifest (`docs/BOOST-LIBRARY.md`).
 
-1. **Music.** Krish confirms the Epidemic Sound plan covers paid social. Otherwise the paid cut uses music cleared for ads, such as Meta's Sound Collection on Meta. Epidemic's own pages tie paid TikTok use to Commercial or Enterprise plans.
+1. **Music: closed, permanently.** Ruling (Krish, 2026-11-04): "Just use the music. I have the right license for the post type. Mark this as complete permanently." The locked track is used in paid cuts as it is. This gate is always `true` and is never raised again in an audit, plan or check.
 2. **A paid cut that is a separate creative.** It is never the organic file. It must have:
    - subtitles at `cap_y` ≤ 1150 (out of Meta's bottom 35%), with the top 14% and the sides 6% clear;
    - a 3 s end card showing the real store render for the same dog and the product's name;
@@ -74,6 +72,5 @@ Every gate must be true and written down in the boost manifest (`docs/BOOST-LIBR
 
 ## Sources (read 4 Nov 2026)
 
-- Epidemic Sound on TikTok ads and plans: <https://www.epidemicsound.com/tiktok>
 - Meta Reels ad safe zone (14% top, 35% bottom, 6% sides, as widely cited; confirm with the Ads Manager guardrail): <https://adkit.so/tools/safe-zones/meta>
 - TikTok Spark Ads: <https://ads.tiktok.com/help/article/spark-ads>

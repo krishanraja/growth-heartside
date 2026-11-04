@@ -22,7 +22,7 @@ Platform specs move. The numbers below are current as of 4 Nov 2026. Each releas
 | Cover | 1080x1920. The story must read inside the centre 1080x1440, the 3:4 grid crop. No blank interface frame | A person |
 | Sound-off | The joke works muted. Subtitles carry every spoken line | A person |
 | AI labelling | Photorealistic AI dogs: switch on TikTok's AI-generated content label, and let Meta's "AI info" label stand | At upload |
-| Music | Organic: the licensed Epidemic track. Paid: only music whose licence covers advertising (`docs/PAID-BOOSTS.md` gate 1) | Licence noted in the manifest |
+| Music | The locked licensed track, organic and paid alike. Krish, 4 Nov: "I have the right license for the post type". Settled, never re-check | None |
 
 ## 2. Captions (every channel)
 
@@ -54,11 +54,11 @@ Platform specs move. The numbers below are current as of 4 Nov 2026. Each releas
 ### TikTok
 
 - **Upload.** Upload the master in the app or TikTok Studio, set the cover from the cover file, switch on the AI-generated content label, and add 3 hashtags.
-- **Sound.** Keep the licensed track. A trending sound only with Krish's yes, and never on a post that might later run as a Spark Ad unless the sound is in TikTok's Commercial Music Library.
+- **Sound.** Keep the licensed track. A trending sound only with Krish's yes.
 - **The first second is the whole game.** Start on a dog already doing something legible.
 - **What to read:** completion and shares per 1,000 views against posts of a similar length. Early abandonment means test the first shot.
 - **Before any TikTok spend:** the profile needs a clickable heartside.io link (it had none on 3 Nov).
-- **Boosting:** Spark Ads only, from a post whose music is cleared for ads. The authorisation code is generated on the post, and the caption and music then cannot change.
+- **Boosting:** Spark Ads only. The authorisation code is generated on the post, and the caption and music then cannot change.
 
 ### Pinterest and YouTube Shorts (not active)
 

@@ -3,6 +3,10 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-04: Music licence settled for paid use. Krish: "Just use the music. I have the right license for the post type. Mark this as complete permanently."
+  - Gate 1 of `docs/PAID-BOOSTS.md` is closed for good. Paid cuts keep the locked track, and every `paid_gates.music_ads` in `library/manifest.json` is `true`.
+  - The audit, the publishing playbook and the Codex card no longer raise it. No job file or `automations.json` entry changed.
+
 - 2026-11-03: Drive cleanup. Krish: "Delete the superseded READMEs and 02b".
   - Seven files in `Heartside/05_Social-Library` were moved to Drive's trash, where Drive keeps them for 30 days: the six READMEs titled superseded, and "02b Schedule and captions (superseded 3 Nov, use 02c)".
   - The folder now holds exactly: "00 README for Codex", "01 Posting strategy", 02, 02c, 02d and `Posts/`.
