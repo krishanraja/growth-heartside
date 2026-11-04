@@ -208,9 +208,10 @@
    "breeds": [
     "any"
    ],
-   "status": "approved",
+   "status": "retired",
    "source": "Krish, 2026-11-02 (approved script)",
-   "text_sha256": "b680b32490540916ac08883ba2c6f94f091e8103cff1c1ac52fae15cc8b1369e"
+   "text_sha256": "b680b32490540916ac08883ba2c6f94f091e8103cff1c1ac52fae15cc8b1369e",
+   "note": "Replaced 2026-11-04 (Krish approved the replacement)."
   },
   {
    "id": "F10.c16",
@@ -220,9 +221,10 @@
    "breeds": [
     "any"
    ],
-   "status": "approved",
+   "status": "retired",
    "source": "Krish, 2026-11-02 (approved script)",
-   "text_sha256": "be14f79e0798807d18165c29e9ad99e97fe734d0b7134a6be77fc4b29e0d2e96"
+   "text_sha256": "be14f79e0798807d18165c29e9ad99e97fe734d0b7134a6be77fc4b29e0d2e96",
+   "note": "Replaced 2026-11-04 (Krish approved the replacement)."
   },
   {
    "id": "F10.c17",
@@ -245,9 +247,10 @@
    "breeds": [
     "any"
    ],
-   "status": "approved",
+   "status": "retired",
    "source": "Krish, 2026-11-02 (approved script)",
-   "text_sha256": "81aa9c4f55074f0680162a28a771fd7d27740b4e931774be166a7401fcdf6596"
+   "text_sha256": "81aa9c4f55074f0680162a28a771fd7d27740b4e931774be166a7401fcdf6596",
+   "note": "Replaced 2026-11-04 (Krish approved the replacement)."
   },
   {
    "id": "F10.c19",
@@ -975,9 +978,10 @@
    "breeds": [
     "any"
    ],
-   "status": "approved",
+   "status": "retired",
    "source": "Krish, 2026-11-02 (board, his words)",
-   "text_sha256": "4cc6be0e1ec50681deef56d8bf128a5d81369a0d24740426c2b00b093eaf4114"
+   "text_sha256": "4cc6be0e1ec50681deef56d8bf128a5d81369a0d24740426c2b00b093eaf4114",
+   "note": "Replaced 2026-11-04 (Krish approved the replacement)."
   },
   {
    "id": "F06.kla3",
@@ -987,9 +991,9 @@
    "breeds": [
     "any"
    ],
-   "status": "approved",
+   "status": "retired",
    "source": "Krish, 2026-11-02 (board, his words)",
-   "note": "his words with \"favourite\" changed to US \"favorite\" (canon: US spelling)",
+   "note": "his words with \"favourite\" changed to US \"favorite\" (canon: US spelling) Replaced 2026-11-04 (Krish approved the replacement).",
    "text_sha256": "c9d0d356a27773cbf6e14da355139c333ee980a41e488800853eba343abad6d5"
   },
   {
@@ -1169,9 +1173,10 @@
    "breeds": [
     "any"
    ],
-   "status": "approved",
+   "status": "retired",
    "source": "Krish, 2026-11-03 (his words), answering the F10 question",
-   "text_sha256": "fa8dae088ad2e644963504c33f513ee460064763e75543462d4262f50ddd2a0f"
+   "text_sha256": "fa8dae088ad2e644963504c33f513ee460064763e75543462d4262f50ddd2a0f",
+   "note": "Replaced 2026-11-04 (Krish approved the replacement)."
   },
   {
    "id": "F06.fr4",
@@ -1458,9 +1463,10 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-04",
-   "note": "Replaces \"WTF\" (a swear acronym, rule 5). The shepherd hears \"on their face\" and stops."
+   "status": "approved",
+   "source": "Krish, 2026-11-04 (chat: \"1. approved\")",
+   "note": "Replaces \"WTF\" (a swear acronym, rule 5). The shepherd hears \"on their face\" and stops.",
+   "text_sha256": "a0db69ba8ac58c9d6090dd280b7551d12ecd0c4257fd8b19ffd2ddb8531e87e4"
   },
   {
    "id": "F10.c18b",
@@ -1470,9 +1476,10 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-04",
-   "note": "Replaces \"still WTF\". Answers \"no I meant licking\"."
+   "status": "approved",
+   "source": "Krish, 2026-11-04 (chat: \"1. approved\")",
+   "note": "Replaces \"still WTF\". Answers \"no I meant licking\".",
+   "text_sha256": "804ff509b49174a2a24044de48fd562c65473588097224e1d6dfbcf39c931017"
   },
   {
    "id": "F10.c28b",
@@ -1482,9 +1489,10 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-04",
-   "note": "Replaces \"They threw it AWAY mate\" (\"mate\" is not US voice)."
+   "status": "approved",
+   "source": "Krish, 2026-11-04 (chat: \"1. approved\")",
+   "note": "Replaces \"They threw it AWAY mate\" (\"mate\" is not US voice).",
+   "text_sha256": "019693ce769ccba333c4f2d8b5cb85a14ac37712ebebdbba9a465b62f21ad0dd"
   },
   {
    "id": "F06.kla2b",
@@ -1494,9 +1502,10 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-04",
-   "note": "Krish's own line without the spaced hyphen and \"FYI\"."
+   "status": "approved",
+   "source": "Krish, 2026-11-04 (chat: \"1. approved\")",
+   "note": "Krish's own line without the spaced hyphen and \"FYI\".",
+   "text_sha256": "af1fa8c81dabf94c71abe179ad470fb4b69dfd800cf6a69a94cf70fb2bf522eb"
   },
   {
    "id": "F06.kla3b",
@@ -1506,9 +1515,10 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-04",
-   "note": "Krish's line made grammatical; the mailman joke kept."
+   "status": "approved",
+   "source": "Krish, 2026-11-04 (chat: \"1. approved\")",
+   "note": "Krish's line made grammatical; the mailman joke kept.",
+   "text_sha256": "e1a5e05d3b0774ba09506fbff60ffeb752291e5fb3cd282086a36df83502f676"
   },
   {
    "id": "F06.kla3c",
@@ -1518,9 +1528,46 @@
    "breeds": [
     "any"
    ],
+   "status": "approved",
+   "source": "Krish, 2026-11-04 (chat: \"1. approved\")",
+   "note": "Shorter alternative to F06.kla3b; approve one.",
+   "text_sha256": "7105bd792fc519e21c83ad1d777b1e148db7822d159c1812a7732c9d90870ee7"
+  },
+  {
+   "id": "F03.l1",
+   "text": "Operation Stocking",
+   "role": "film.F03.label",
+   "kind": "film",
+   "breeds": [
+    "shepherd"
+   ],
    "status": "proposed",
    "source": "proposed by the engine, 2026-11-04",
-   "note": "Shorter alternative to F06.kla3b; approve one."
+   "note": "On-screen label over the opening plan, meme type, top."
+  },
+  {
+   "id": "F03.l2",
+   "text": "The beagle:",
+   "role": "film.F03.label",
+   "kind": "film",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-04",
+   "note": "On-screen label as the narrator says nobody touches the cookies; the beagle is holding one."
+  },
+  {
+   "id": "F03.l3",
+   "text": "The gift:",
+   "role": "film.F03.label",
+   "kind": "film",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-04",
+   "note": "On-screen label just before the cut to the shepherd's portrait of itself."
   }
  ]
 }

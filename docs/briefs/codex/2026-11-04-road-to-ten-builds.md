@@ -26,9 +26,11 @@ Written 4 Nov 2026 by the growth engine. The plan is `docs/plans/2026-11-04-road
    | f701c.png | https://d8j0ntlcm91z4.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/hf_20261104_162234_beeadafe-e3eb-4d07-b6f7-3140606cb16a.png | d1c5a72179f271acaa42165a81f81ba9a537989ce461621432c91c1b0d9bbd37 |
 
 3. **Build F11 now** with `python3 factory/build.py factory/specs/F11.json --preview`. Its lines are approved; `--preview` is needed only because the spec drifts from its old lock. Check that frame 1 is mid-typing and that the last query reads whole.
-4. **Build F10 and F06-lab when Krish approves their lines.** F10 should open with three messages and run about 28.7 s.
+4. **Build F10 now.** Krish approved its lines on 4 Nov. It should open with three messages and run about 28.7 s. F06-lab is already built and filed.
 5. **Rebuild the film masters with captions at y 1300:** F01, F02, F03, F05, F12 (`python3 factory/build.py factory/specs/<id>.json --preview`). Then:
    - F01, F02, F03: lay the locked motion back on with `python3 factory/splice.py <master> <out> factory/motion/<id>.json`. Its default caption is now 1300.
    - F05, F12: lay your own motion clips back on with `cap_y` 1300.
-6. **F06-frenchie:** look at 5.8 s for a sliver of a human arm at the right edge. Report what you find; fix only that frame.
-7. **Check every build** with `python3 factory/audit.py <folder>` and `python3 factory/lock.py media <spec> <mp4>`. Send each as `review-reel` / `review-cover` through `factory/send_library.py`, and report each file's sha256.
+6. **F03's labels:** once Krish locks the F03 cut, re-apply `factory/motion/F03-labels.json` to the rebuilt F03 motion master (replace `MASTER` with that file's path).
+7. **F06-frenchie:** look at 5.8 s for a sliver of a human arm at the right edge. Report what you find; fix only that frame.
+8. **Check every build** with `python3 factory/audit.py <folder>` and `python3 factory/lock.py media <spec> <mp4>`. Send each as `review-reel` / `review-cover` through `factory/send_library.py`, and report each file's sha256.
+9. **New schedule rows.** Add one row per post whose locked file changed on 4 Nov: F01, F02, F03 (after its lock), F04, F06 x3 and F07, plus F10 and F11 once locked. Each row names the Drive file exactly. Put them in a new Schedule sheet, as `docs/DRIVE-MAP.md` names sheets, and show Krish the rows for approval in chat. Never edit or re-attach media to posts already queued in Buffer.

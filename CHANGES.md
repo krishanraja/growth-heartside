@@ -3,6 +3,11 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-04: Lines approved, four posts locked, queue left alone. Krish: "1. approved 2. approved. 3. you chose. Lets finish F03 and then package all up".
+  - The five replacement lines are approved; the lines they replace are retired. F04, F06-dachshund, F06-lab and F07 are locked, and their 11 files are filed to Drive with each sha256 read back.
+  - The engine's call on the queue: posts already in Buffer go out as queued, under his earlier no-queue-edits ruling. The new versions go out through new schedule rows he approves.
+  - F03 has three meme labels (proposed: "Operation Stocking", "The beagle:", "The gift:") and is built for his lock. It needs no new voice read.
+
 - 2026-11-04: Every post to 10. Krish: "Yes, we need them all to be 10 out of 10. Where are your standards?", then "We need to get as close as we can without regenerating absolutely everything. We've run out of runway credits, but still have higgsfield and openai images."
   - F06-dachshund's frames were recast to the chestnut dachshund on its mug. F04's second half was redrawn in its opening room and light. F06-lab's two weak lines were replaced, with the old text removed from the frames. F07 now opens tight on the face. These are candidates in `local/library/2026-11-04-ten/`, waiting for Krish's lock. The cost was 9 Higgsfield image edits (24.75 credits).
   - The factory now opens chats mid-conversation and searches mid-typing, shows a finished search query whole, can pull back from a close-up, and keeps captions and bottom text clear of the platform interface (y 1300; 76% of the reel height).

@@ -4,9 +4,9 @@ Krish, 4 Nov: "Yes, we need them all to be 10 out of 10. Where are your standard
 
 The bar is the one in `docs/audits/2026-11-04-creative-audit.md`. Scores marked "now" are the audit's; "after" is what the fix in this table earns, judged against the same bar. Nothing here is locked until Krish says so.
 
-## Done in session (4 Nov), waiting for Krish's lock
+## Done in session (4 Nov): locked and filed
 
-The candidates are in `local/library/2026-11-04-ten/`. Each one passes `factory/audit.py`, which checks naming, 1080x1920, sound, length, loudness and the open.
+Krish approved the lines and locked all four reels ("1. approved 2. approved"). The 11 files were filed through the library lane to `Posts/<id>/` under their plain names. Each sha256 was read back from the library and matched. `library/manifest.json` lists them as locked and the files they replace as superseded. Each one passes `factory/audit.py`.
 
 | Post | Now | After | What changed |
 |---|---|---|---|
@@ -24,7 +24,7 @@ Spend: 9 Higgsfield GPT Image 2.5 edits at high quality, 2k (24.75 credits; bala
 - **Film** (`pull`): a frame can open tight on its subject and pull back. The default caption moves from y 1440 to 1300, clear of the Reels and TikTok caption and username zone. `factory/splice.py` follows the same default.
 - **Roast**: bottom text ends at 76% of the reel height, above the interface.
 
-## Waiting on Krish's words (approve or kill)
+## Lines approved by Krish on 4 Nov ("1. approved")
 
 | Line | Replaces | Post |
 |---|---|---|
@@ -46,18 +46,28 @@ Card: `docs/briefs/codex/2026-11-04-road-to-ten-builds.md`.
 | F01, F02, F03 | 8, 8, 7 | 9 | The same caption rebuild, then `factory/splice.py` with `factory/motion/F0x.json`. F01's "[bleep]" line is still flagged for paid only. |
 | F06-frenchie | 8 | 9 | Check 5.8 s for the sliver of a human arm. If it is there, edit it out of that one frame. |
 
+## F03, finished without a new voice read (waiting for Krish's lock)
+
+F03 scored 7 because its laughs were thin. Three meme labels now land between the narrator's lines, in F04's "my golden:" format; no new voice is needed.
+
+| When | Label | Why it is funny |
+|---|---|---|
+| 0 to 4.4 s | "Operation Stocking" | Frames the heist in the first second |
+| 10.7 to 13.3 s | "The beagle:" | The narrator says nobody touches the cookies; the beagle is already holding one |
+| 14.6 to 16.3 s | "The gift:" | Sets up the cut to the shepherd's portrait of itself |
+
+The lines are proposed in the bank (F03.l1 to l3). The cut is `local/library/2026-11-04-ten/heartside_F03_operation-stocking_reel.mp4`, laid on the locked motion version (`factory/motion/F03-labels.json`). Score: 7 now, 9 after.
+
 ## What still keeps a post below 10
 
 - **The Runway clips are 720p**, so the motion shots are softer than the stills. Higgsfield upscale_video can fix this. Price it per clip before spending.
-- **F03's laughs per second.** It needs a new joke, which means new lines and a new voice read. That is a creative decision for Krish, so it is not in this pass.
 
-## The queue
+## The queue (the engine's call, Krish: "you chose")
 
-Posts already queued in Buffer go out as they were locked (Krish, 4 Nov: no queue edits). The next five below the bar:
-- F11 and F07, 5 Nov;
-- F06-dachshund, 6 Nov;
-- F03 and F06-lab, 7 Nov.
+The engine leaves the Buffer queue as it is. Krish ruled out queue edits on 4 Nov, after a media swap broke a post. A pause or delete is still a queue edit, and both are harder to undo than letting an approved post run.
 
-Only Krish can pull or pause them. If he does, the 10/10 versions replace them through new schedule rows once locked.
+So F11 and F07 (5 Nov), F06-dachshund (6 Nov), and F03 and F06-lab (7 Nov) go out as they were locked. The new versions go out through new schedule rows: Codex adds them from the locked files, and Krish approves them in chat.
+
+The one exception is Krish's to make. F06-dachshund's queued post ends on a dog of a different coat. If he wants it held, he can pause it in Buffer himself in one click.
 
 North Star check (2026-11-04): this moves "every winning format was found by this engine and approved by Krish in one press", because every asset gets to its best version before more reach is bought. The number has not moved.
