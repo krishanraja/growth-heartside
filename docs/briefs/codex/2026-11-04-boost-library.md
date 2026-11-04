@@ -24,8 +24,13 @@ This session could not download F01, F02, F03, F04, F05 or F12, because they are
    - the 12 library reels and their covers and slides;
    - the 3 motion candidates (F04, F05, F12);
    - the F12 A and B pair.
-2. Review each reel at full frame rate against the bar in the audit doc (sections "The bar" and "Systemic findings"). Score hook, laughs, payoff, craft, copy and fit out of 10, organic and paid, the same way the six scored reels were done.
-3. Copy `bytes`, `sha256`, the machine verdict and your scores into `library/manifest.json`. Add the carousel slides and the F13 photo as their own entries.
+2. Also run Content Watcher on each of those reels, to keep model tokens down (Krish, 4 Nov: "use content-watcher repo so you don't spend tonnes of AI tokens watching videos"):
+   - command: `content-watch read <file> --out local/audit/reads/<post>`, using `krishanraja/content-watcher` with its `[watch]` extras and tesseract;
+   - read `read.md` (shots, cuts, camera moves, hook, loudness, transcript) instead of watching the reel;
+   - commit each `read.md` under `docs/audits/readings/<post>.md`. It is text only: the stills and frames stay under `local/`;
+   - tested 4 Nov on F06-lab (24 s a reel). Shots, cuts, the hook and loudness were measured reliably. OCR of the roasts' outlined white meme text was mostly garbled, so check on-screen words, the product match and AI artifacts on the contact sheet from step 1, not from the reading.
+3. Review each reel at full frame rate against the bar in the audit doc (sections "The bar" and "Systemic findings"). Score hook, laughs, payoff, craft, copy and fit out of 10, organic and paid, the same way the six scored reels were done.
+4. Copy `bytes`, `sha256`, the machine verdict and your scores into `library/manifest.json`. Add the carousel slides and the F13 photo as their own entries.
 
 ## 2. Fix what the audit found
 
