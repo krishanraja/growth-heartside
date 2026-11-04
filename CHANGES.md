@@ -5,7 +5,7 @@ Newest first. Record his words with the date, then change the job file and
 
 - 2026-11-04: Motion versions locked. Krish: "Happy to lock, presuming you're happy with assets that are part video, part still?" The engine confirmed it was.
   - Seven reels (F01, F02, F03, F06 x3, F07) and three covers (F07, F10, F11) were filed through the library lane under their plain names, replacing the earlier locked files. Each sha256 was read back from the library. The plans are in `factory/motion/`.
-  - Codex re-attaches media in Buffer for rows not yet published (`docs/plans/2026-11-04-road-to-posting.md`, step 4).
+  - Superseded the same day: the engine had told Codex to re-attach media in Buffer, which failed. Krish: "Why have you fucking told it to use Buffer?" Queued posts now publish as queued, the motion versions go out from the next schedule batch, and nobody edits the live queue. The F03 Instagram item that Codex's failed swap had left on an expiring link was restored by the engine to its approved Buffer-hosted reel and read back.
   - `factory/send_library.py` now also reads the engine key from Windows Credential Manager (`Mindmake/engine-operator-token`), as content-watcher does, so Codex's home-computer runs can send.
 
 - 2026-11-04: Paid test plan, chat approval and the dachshund render. Krish: "Yes to all your 4 questions."

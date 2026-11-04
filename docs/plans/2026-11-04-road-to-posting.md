@@ -31,11 +31,11 @@ Nothing goes out without the approval named in its step.
    - It sends each one through the library lane under its plain name (`heartside_<id>_<slug>_reel.mp4` / `_cover.jpg`), replacing the locked file in place (Drive map rule 4).
    - It writes `factory/locks` evidence and updates `library/manifest.json` with the new SHA-256s.
    - The schedule rows need no change: the file names stay the same.
-4. **Codex re-attaches media in Buffer.**
-   - For every row whose post is not yet published, it replaces the queued media with the new library file and checks the SHA-256 against the manifest.
-   - Already-published rows are left as they are.
-   - It confirms each re-attachment in `notes`.
-   - *Gate:* the file in Buffer matches the manifest hash.
+4. **No edits to the live queue** (Krish, 4 Nov, after a Buffer media swap failed).
+   - Posts already queued in Buffer publish as queued, with their approved locked media.
+   - The locked motion versions go out from the next schedule batch onward, through new rows that name the Drive files.
+   - Nobody re-attaches media in the queue.
+   - The one queued item a failed swap had broken (F03 Instagram, 7 Nov) was put back on its approved Buffer-hosted reel on 4 Nov and read back.
 5. **New lines.**
    - The engine proposes replacement lines for F10's "WTF"s and F06-lab's two weak lines in `factory/bank/lines.json` (status `proposed`, checked by `growth.py check`). Krish approves or kills them.
    - Then the engine rebuilds F10 so it opens on a full chat with no blank second, under 30 s, and F11 so it opens mid-search. It re-cuts F06-lab with the new lines.
@@ -56,7 +56,7 @@ Nothing goes out without the approval named in its step.
 
 ## What could still stop a post
 
-- **Rows already in Buffer keep their old media until step 4.** Anything that publishes before then goes out as locked: still openers, but approved.
+- **Rows already in Buffer keep their original locked media** and publish that way: still openers, but approved.
 - **The TikTok captions say "Link in bio".** Codex's 3 Nov audit found no clickable website on the profile, so a TikTok viewer who wants the gift has nowhere to tap. It is not a blocker for posting: drop "Link in bio" from TikTok captions or add the link, either is fine.
 
 North Star check (2026-11-04): this plan moves the North Star part "every winning format was found by this engine and approved by Krish in one press": every asset gets to its best version, and the paid test finds which format to scale for free. The number has not moved.
