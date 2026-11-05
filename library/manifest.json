@@ -1,6 +1,6 @@
 {
  "schema": "docs/BOOST-LIBRARY.md",
- "read": "2026-11-04",
+ "read": "2026-11-05",
  "assets": [
   {
    "asset": "heartside_F01_becoming-the-mug_cover",
@@ -1055,6 +1055,190 @@
    "dimensions": [
     1260,
     773
+   ]
+  },
+  {
+   "asset": "heartside_F17_dinner-table_slide1",
+   "post": "F17",
+   "kind": "slide1",
+   "use": "organic",
+   "file": "heartside_F17_dinner-table_slide1.jpg",
+   "drive_id": "1Tt3Q72e29BJLD20TXEB5wmGrsAMP8vgm",
+   "library_path": "05_Social-Library/Posts/F17/heartside_F17_dinner-table_slide1.jpg",
+   "bytes": 702181,
+   "sha256": "b3a87a4a0e29cc9bfbe04458dcf326fc328749142359cb8e02263524e4ca54e2",
+   "status": "locked",
+   "lock_fingerprint": "b3a87a4a0e29cc9b",
+   "source": "Upscale of supplied reference",
+   "audit": {
+    "date": "2026-11-05",
+    "checked": "Release API download and Drive file matched the approved JPG in bytes and SHA-256."
+   },
+   "lock_record": "Krish approved all eight final POV memes for release and Buffer scheduling on 5 November 2026.",
+   "dimensions": [
+    1920,
+    1656
+   ]
+  },
+  {
+   "asset": "heartside_F18_thankful-for-my-dog_slide1",
+   "post": "F18",
+   "kind": "slide1",
+   "use": "organic",
+   "file": "heartside_F18_thankful-for-my-dog_slide1.jpg",
+   "drive_id": "1nVe1kAcnt2lgjHuGnvZsKNCa40Ar_bN2",
+   "library_path": "05_Social-Library/Posts/F18/heartside_F18_thankful-for-my-dog_slide1.jpg",
+   "bytes": 724678,
+   "sha256": "df52c6b5e01e70112ab409bc3113e446662afbb092c5db7f9ba437207d3d4801",
+   "status": "locked",
+   "lock_fingerprint": "df52c6b5e01e7011",
+   "source": "Upscale of supplied reference",
+   "audit": {
+    "date": "2026-11-05",
+    "checked": "Release API download and Drive file matched the approved JPG in bytes and SHA-256."
+   },
+   "lock_record": "Krish approved all eight final POV memes for release and Buffer scheduling on 5 November 2026.",
+   "dimensions": [
+    1920,
+    2253
+   ]
+  },
+  {
+   "asset": "heartside_F19_weirdest-relatives_slide1",
+   "post": "F19",
+   "kind": "slide1",
+   "use": "organic",
+   "file": "heartside_F19_weirdest-relatives_slide1.jpg",
+   "drive_id": "1OR-RuuB-lkzVQ97lPzCk3EH9WVG6JCCk",
+   "library_path": "05_Social-Library/Posts/F19/heartside_F19_weirdest-relatives_slide1.jpg",
+   "bytes": 685327,
+   "sha256": "63742a9b08648a72358ee375780bc924e6877ddbda9f82c8d9b8759e969b46aa",
+   "status": "locked",
+   "lock_fingerprint": "63742a9b08648a72",
+   "source": "Upscale of supplied reference from @kismet",
+   "audit": {
+    "date": "2026-11-05",
+    "checked": "Release API download and Drive file matched the approved JPG in bytes and SHA-256."
+   },
+   "lock_record": "Krish approved all eight final POV memes for release and Buffer scheduling on 5 November 2026.",
+   "dimensions": [
+    1920,
+    2186
+   ]
+  },
+  {
+   "asset": "heartside_F20_family-drama_slide1",
+   "post": "F20",
+   "kind": "slide1",
+   "use": "organic",
+   "file": "heartside_F20_family-drama_slide1.jpg",
+   "drive_id": "1eK8v0UKC2skUCap3KgMGkooZ0IrNE6zu",
+   "library_path": "05_Social-Library/Posts/F20/heartside_F20_family-drama_slide1.jpg",
+   "bytes": 665690,
+   "sha256": "5fde6b95aac34a6c7c72a4199771da0249f9e4fd4d74d388eff2ccdea4d836f6",
+   "status": "locked",
+   "lock_fingerprint": "5fde6b95aac34a6c",
+   "source": "Upscale of supplied reference from @kismet",
+   "audit": {
+    "date": "2026-11-05",
+    "checked": "Release API download and Drive file matched the approved JPG in bytes and SHA-256."
+   },
+   "lock_record": "Krish approved all eight final POV memes for release and Buffer scheduling on 5 November 2026.",
+   "dimensions": [
+    1920,
+    2186
+   ]
+  },
+  {
+   "asset": "heartside_F21_no-debates_slide1",
+   "post": "F21",
+   "kind": "slide1",
+   "use": "organic",
+   "file": "heartside_F21_no-debates_slide1.jpg",
+   "drive_id": "1cp-Y-Xi1bEv7OobGC-pKyfSiCqeLF0NX",
+   "library_path": "05_Social-Library/Posts/F21/heartside_F21_no-debates_slide1.jpg",
+   "bytes": 751500,
+   "sha256": "68686252de06894135be489566e3b3d30a54f52b3818ca2c2d92e87d6f41f3e2",
+   "status": "locked",
+   "lock_fingerprint": "68686252de068941",
+   "source": "Upscale of supplied reference from @kismet",
+   "audit": {
+    "date": "2026-11-05",
+    "checked": "Release API download and Drive file matched the approved JPG in bytes and SHA-256."
+   },
+   "lock_record": "Krish approved all eight final POV memes for release and Buffer scheduling on 5 November 2026.",
+   "dimensions": [
+    1920,
+    2186
+   ]
+  },
+  {
+   "asset": "heartside_F22_no-one-feeds-him_slide1",
+   "post": "F22",
+   "kind": "slide1",
+   "use": "organic",
+   "file": "heartside_F22_no-one-feeds-him_slide1.jpg",
+   "drive_id": "1ti-AWeok0OJIQqo25kfMEPj7PmAGMHEH",
+   "library_path": "05_Social-Library/Posts/F22/heartside_F22_no-one-feeds-him_slide1.jpg",
+   "bytes": 1202216,
+   "sha256": "3df88af72e88a989ef14c400ba229d78c4aae4236ae864f2894e2ace585ffbd4",
+   "status": "locked",
+   "lock_fingerprint": "3df88af72e88a989",
+   "source": "Original photorealistic POV meme",
+   "audit": {
+    "date": "2026-11-05",
+    "checked": "Release API download and Drive file matched the approved JPG in bytes and SHA-256."
+   },
+   "lock_record": "Krish approved all eight final POV memes for release and Buffer scheduling on 5 November 2026.",
+   "dimensions": [
+    1920,
+    2399
+   ]
+  },
+  {
+   "asset": "heartside_F23_turkey-timer_slide1",
+   "post": "F23",
+   "kind": "slide1",
+   "use": "organic",
+   "file": "heartside_F23_turkey-timer_slide1.jpg",
+   "drive_id": "1flnT7lN_3wZh-exCLiKTOq_fBH3RhpwZ",
+   "library_path": "05_Social-Library/Posts/F23/heartside_F23_turkey-timer_slide1.jpg",
+   "bytes": 1461770,
+   "sha256": "faf4936b044078b8e259d12d98aa24d05e5e2d23d936bd9ba2a5fcc0deee0799",
+   "status": "locked",
+   "lock_fingerprint": "faf4936b044078b8",
+   "source": "Original photorealistic POV meme",
+   "audit": {
+    "date": "2026-11-05",
+    "checked": "Release API download and Drive file matched the approved JPG in bytes and SHA-256."
+   },
+   "lock_record": "Krish approved all eight final POV memes for release and Buffer scheduling on 5 November 2026.",
+   "dimensions": [
+    1920,
+    2399
+   ]
+  },
+  {
+   "asset": "heartside_F24_my-chair_slide1",
+   "post": "F24",
+   "kind": "slide1",
+   "use": "organic",
+   "file": "heartside_F24_my-chair_slide1.jpg",
+   "drive_id": "1NjoCuoEZSZV74f0n_ooCqcBLzmhej02p",
+   "library_path": "05_Social-Library/Posts/F24/heartside_F24_my-chair_slide1.jpg",
+   "bytes": 1159832,
+   "sha256": "321a1c7fff44e71a3f00cfef7d0b274131739f3d76b7d722142b46faea13af97",
+   "status": "locked",
+   "lock_fingerprint": "321a1c7fff44e71a",
+   "source": "Original photorealistic POV meme",
+   "audit": {
+    "date": "2026-11-05",
+    "checked": "Release API download and Drive file matched the approved JPG in bytes and SHA-256."
+   },
+   "lock_record": "Krish approved all eight final POV memes for release and Buffer scheduling on 5 November 2026.",
+   "dimensions": [
+    1920,
+    2399
    ]
   }
  ]

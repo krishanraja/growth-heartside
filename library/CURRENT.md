@@ -1,6 +1,6 @@
 # Current Heartside publishing library
 
-Verified 4 November 2026. Each file below was downloaded from the library API and matched byte for byte against both the release checksum and the plain-name file in Drive. All 40 files are in `Heartside/05_Social-Library/`.
+The 40 earlier files were verified on 4 November 2026. The eight Thanksgiving POV memes (F17–F24) were verified on 5 November 2026 against the approved JPGs, the release API downloads and the files in Drive. This index now lists 48 files.
 
 Prepare organic schedules from this table. Read the existing captions in Drive Sheets 02 and 02c, use 02d for F13, and obtain approval for the proposed slots. Use the current four-arm boost packet for paid planning. Spending requires a separate release decision.
 
@@ -46,3 +46,11 @@ Prepare organic schedules from this table. Read the existing captions in Drive S
 | F12 | cover | `Posts/F12/heartside_F12_head-of-security_cover.jpg` | `8861aff3c2459e24639038386f9629a0e12b3225e8983836ccc55e104b70d804` | 356208 | 1080 × 1920 | Krish, 2026-11-03: Lock it all. |
 | F12 | reel | `Posts/F12/heartside_F12_head-of-security_reel.mp4` | `cadddf498f681fa47cf2beced7e753f20ed2540d187cfd7ac16014a5517ebc0e` | 19559528 | 18.483 s | Motion lock and filing recorded 2026-11-04 in CHANGES.md. Exact file-specific owner wording unavailable. |
 | F13 | slide1 | `Posts/F13/heartside_F13_annual-self-review_slide1.jpg` | `aef378e1be0b15286798a4475981d5bfb1c3a90a8f8b4a43d69a70d25043efbf` | 289126 | 1260 × 773 | Owner approved in chat, 2026-11-03, per Sheet 02d. Exact owner wording unavailable. |
+| F17 | slide1 | `Posts/F17/heartside_F17_dinner-table_slide1.jpg` | `b3a87a4a0e29cc9bfbe04458dcf326fc328749142359cb8e02263524e4ca54e2` | 702181 | 1920 × 1656 | Owner release instruction, 2026-11-05 |
+| F18 | slide1 | `Posts/F18/heartside_F18_thankful-for-my-dog_slide1.jpg` | `df52c6b5e01e70112ab409bc3113e446662afbb092c5db7f9ba437207d3d4801` | 724678 | 1920 × 2253 | Owner release instruction, 2026-11-05 |
+| F19 | slide1 | `Posts/F19/heartside_F19_weirdest-relatives_slide1.jpg` | `63742a9b08648a72358ee375780bc924e6877ddbda9f82c8d9b8759e969b46aa` | 685327 | 1920 × 2186 | Owner release instruction, 2026-11-05 |
+| F20 | slide1 | `Posts/F20/heartside_F20_family-drama_slide1.jpg` | `5fde6b95aac34a6c7c72a4199771da0249f9e4fd4d74d388eff2ccdea4d836f6` | 665690 | 1920 × 2186 | Owner release instruction, 2026-11-05 |
+| F21 | slide1 | `Posts/F21/heartside_F21_no-debates_slide1.jpg` | `68686252de06894135be489566e3b3d30a54f52b3818ca2c2d92e87d6f41f3e2` | 751500 | 1920 × 2186 | Owner release instruction, 2026-11-05 |
+| F22 | slide1 | `Posts/F22/heartside_F22_no-one-feeds-him_slide1.jpg` | `3df88af72e88a989ef14c400ba229d78c4aae4236ae864f2894e2ace585ffbd4` | 1202216 | 1920 × 2399 | Owner release instruction, 2026-11-05 |
+| F23 | slide1 | `Posts/F23/heartside_F23_turkey-timer_slide1.jpg` | `faf4936b044078b8e259d12d98aa24d05e5e2d23d936bd9ba2a5fcc0deee0799` | 1461770 | 1920 × 2399 | Owner release instruction, 2026-11-05 |
+| F24 | slide1 | `Posts/F24/heartside_F24_my-chair_slide1.jpg` | `321a1c7fff44e71a3f00cfef7d0b274131739f3d76b7d722142b46faea13af97` | 1159832 | 1920 × 2399 | Owner release instruction, 2026-11-05 |
