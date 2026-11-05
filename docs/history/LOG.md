@@ -4,6 +4,10 @@ Newest first. Entries are written by the docs steward (see the steward link in
 NOW.md) and by humans doing the same job by hand. Nothing in this file
 describes current behaviour; NOW.md and the state doc do.
 
+## 2026-11-05
+
+- reconciled at `836ad8a`: head re-stamped. The three 2026-11-03 closeout notes were malformed again (headings and free-form lines the fold cannot place), so they were rewritten to Status, Next and North Star check lines and folded; their content was already in NOW.md, so the three duplicate bullets and the stale Next line the fold added were removed by hand.
+
 ## 2026-11-04
 
 - reconciled at `172be13`: head re-stamped; the three closeout notes of 2026-11-03 could not be folded (malformed, left for a person) and were read into NOW.md by hand. Fixed the audit's `too_long`, `recent_too_many` and `where_too_many` findings; superseded "Where it is right now" items are condensed in NOW.md, detail in git history.

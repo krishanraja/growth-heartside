@@ -1,8 +1,8 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-11-04
-head: 172be13
+as_of: 2026-11-05
+head: 836ad8a
 lifecycle: live
 production_url: none
 state_doc: docs/HANDOFF.md
@@ -31,7 +31,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-11-04)
+## Where it is right now (as of 2026-11-05)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": 200, "current": 0, "current_as_of": "2026-10-29", "current_source": "Shopify Admin API orders through growth.py attribution (read-only app), organic posts, trailing 28 days", "urgency": 4, "urgency_reason": "at 0% of this week's target"} --> **North Star number: U4, far behind.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: $0 (measured 29 Oct; the store's only order in the window was fully refunded), against $200 this week, on the way to $25,000 by 28 December 2026. A bold swing every day; work that does not move the number waits.
 
