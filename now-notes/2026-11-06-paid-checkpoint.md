@@ -1,3 +1,3 @@
-Status: $25 Meta pilot verified Active with $5.02 spend and 11 landing-page views. Store-side attribution and outbound-click count remain open.
-Next: Reconcile pilot-tagged store sessions and personalization starts with Meta traffic.
+Status: Paid delivery checkpoint saved; organic batch measurement contract recorded from source files. Five concepts await selection and publication.
+Next: Reconcile paid pilot-tagged store sessions with Meta traffic; attach organic publication IDs when Scheduling verifies go-live.
 North Star check (2026-11-06): holds.
