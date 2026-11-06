@@ -3,6 +3,8 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-06: After Krish completed billing and phone verification, the authorized single F10 USD 25 paid pilot was published. Meta returned "1 ad was published"; independent fresh-page readback at 12:56 GMT showed Processing, enabled, USD 25 lifetime and USD 0 spent. Published end remains 7 November 12:45 GMT. Paid delivery is not yet confirmed. The four USD 50 boosts remain held. See `docs/boost/2026-11-05-sandbox.md`.
+
 - 2026-11-06: Krish: "We need to get the first paid test live ASAP." Authorized activation of the prepared single F10 Meta pilot, USD 25 lifetime over 24 hours. The four USD 50 posts remain a separate decision. Payment method connected and pixel/destination checked; Meta's required business billing information currently blocks Publish. See `docs/boost/2026-11-05-sandbox.md` for the exact account, draft and launch evidence. Paid results remain separate from the organic North Star.
 
 - 2026-11-06: After viewing the repaired creative board, Krish: “ok, all looks good”. Human approval recorded for the exact corrected 33-placement organic batch, linked to the existing approved schedule. Scheduling was instructed to restore future approved slots and verify each persisted payload. Paid activity remains unapproved; native-device observations remain unverified rather than being converted into a passing automated review.
