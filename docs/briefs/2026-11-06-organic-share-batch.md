@@ -4,7 +4,7 @@ Status: five original concept mocks made, waiting for concept selection. No new 
 
 ## Ownership and authority
 
-Krish redirected this session to organic inspiration and creative production. Paid monitoring belongs to Heartside - audience growth; queueing and native delivery checks belong to Heartside | scheduling & posting. Both threads received the handoff on 6 November. Existing approved organic placements remain with Scheduling. No new automation or paid generation service was activated.
+Krish redirected this session to organic inspiration and creative production. Current routing, clarified by the audience-growth session on 6 November: paid monitoring, queueing, native delivery checks and owned-post 24h/72h reporting belong to Heartside | scheduling & posting. Heartside - audience growth owns new-follower acquisition tests and its comment-test outcomes. This supersedes the earlier same-day handoff of paid monitoring and owned-post reporting to audience growth. Existing approved organic placements remain with Scheduling. No new automation or paid generation service was activated.
 
 This session supplies a small, reviewable first batch for a higher-volume organic pipeline. Keep the existing ceiling of five posts per day per platform, including already scheduled posts. Fill from approved concepts only; the ceiling is not a quota. One consolidated concept decision covers the batch. New concepts still follow AGENTS.md concept-level approval; a render is not a release.
 
@@ -36,7 +36,7 @@ The other four are original hypotheses, not verified winning posts. This batch d
 
 ## Learning loop handed to the other owners
 
-Scheduling selects the next open approved slots without bunching posts or exceeding the combined ceiling. Audience growth records each post at 24 and 72 hours: reach/views, shares/sends, saves, profile visits and follows when exposed. Compare like formats within the same platform to the trailing ten comparable Heartside posts, using medians and shares per 1,000 reach/views. Label unavailable metrics. Until a usable baseline exists, rank results without pretending an absolute viral threshold is known. Extend a winner into three fresh situations, changing one creative variable at a time. Paid results stay out of the organic comparison.
+Scheduling selects the next open approved slots without bunching posts or exceeding the combined ceiling, and records each owned post at 24 and 72 hours: reach/views, shares/sends, saves, profile visits and follows when exposed. Compare like formats within the same platform to the trailing ten comparable Heartside posts, using medians and shares per 1,000 reach/views. Label unavailable metrics. Until a usable baseline exists, rank results without pretending an absolute viral threshold is known. Creative production uses those results to extend a winner into three fresh situations, changing one creative variable at a time. Paid results stay out of the organic comparison. Audience growth retains acquisition-test and comment-test measurement.
 
 ## Canon and validation note
 
