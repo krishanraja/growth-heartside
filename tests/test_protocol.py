@@ -15,6 +15,7 @@ import urllib.parse
 
 from engine import assets, control_center, ledger, media, protocol
 from engine.control_center import Client, ProtocolError, canonical, report_digest
+from tests.ui_fixtures import evidence
 
 ROOT = Path(__file__).resolve().parent.parent
 SCHEMA = json.loads((ROOT / 'docs/control-center/engine-report.schema.json').read_text())
@@ -232,6 +233,14 @@ class ReportTests(unittest.TestCase):
         pack = self.root / 'local/automation/runs/2026-10-19/daily-pack/pack.json'
         pack.parent.mkdir(parents=True, exist_ok=True)
         pack.write_text(json.dumps({'items': [item]}))
+        release, review = evidence(self.root, CID, REVISION, caption, path, 'instagram', NOW.date())
+        from engine import creative_ui
+        release['alt_text'] = item['alt_text']
+        next(e for e in release['exports'] if e['role'] == 'cover').update(manifest['files']['cover'])
+        review['binding'] = creative_ui.digest(release)
+        base = self.root / 'local/creative-ui' / REVISION
+        (base / (CID + '.release.json')).write_text(json.dumps(release))
+        (base / (CID + '.review.json')).write_text(json.dumps(review))
         return item
 
     def test_empty_ledger_is_schema_valid_and_unknown_objectives_stay_null_with_reasons(self):
@@ -308,6 +317,14 @@ class ReportTests(unittest.TestCase):
         report = self.build()
         self.assertFalse([p for p in report['proposals'] if p['wall'] == 'post'])
         self.assertTrue(any(CID in (h['detail'] or '') for h in report['holds']))
+
+    def test_approved_clean_export_without_native_ui_evidence_is_held(self):
+        self.approve()
+        receipt = self.root / 'local/creative-ui' / REVISION / (CID + '.review.json')
+        receipt.write_text('{}')
+        report = self.build()
+        self.assertFalse([p for p in report['proposals'] if p['wall'] == 'post'])
+        self.assertTrue(any('Placement UI' in h['reason'] for h in report['holds']))
 
     def test_declined_payload_is_not_proposed_again_and_publication_is_an_event(self):
         self.approve()

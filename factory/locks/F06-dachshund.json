@@ -1,0 +1,10 @@
+{
+ "id": "F06-dachshund",
+ "status": "locked",
+ "approved_by": "Krish, 2026-11-04, in chat, on the rebuilt reel: \"2. approved\" (lock the four reels)",
+ "fingerprint": "09c5d7eeed33a241946be6d1db2ff0ba95595369b7839db4811db21bd9b5ff56",
+ "master": "specs/F06-dachshund.json",
+ "template": "roast",
+ "slots": "breed, lines by role, render",
+ "note": "Locked from a cloud session where the asset folder is absent; the asset checks run on the home machine at the next build."
+}

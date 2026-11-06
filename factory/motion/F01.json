@@ -1,0 +1,42 @@
+[
+ {
+  "start": 0,
+  "dur": 3.9,
+  "clip": "F01-hook",
+  "runway_task": "4c40db4f-3cc6-4290-81e3-c3730ae284c9",
+  "clip_in": 0,
+  "clip_dur": 3.9,
+  "text": "Day four hundred. The mug got another kiss.",
+  "style": "caption"
+ },
+ {
+  "start": 16.9,
+  "dur": 4.3,
+  "clip": "F01-grin",
+  "runway_task": "619adae2-53b8-40c0-8266-06c7f6358b8b",
+  "clip_in": 0,
+  "clip_dur": 4.3,
+  "text": "Plan C is unhinged. I love Plan C.",
+  "style": "caption"
+ },
+ {
+  "start": 22.6,
+  "dur": 2.8,
+  "clip": "F01-leap",
+  "runway_task": "530b6cd1-365c-428f-aabc-f7746dc81744",
+  "clip_in": 0,
+  "clip_dur": 2.8,
+  "text": "Oh, [bleep] it. I'm going in.",
+  "style": "caption"
+ },
+ {
+  "start": 25.4,
+  "dur": 1.8,
+  "clip": "F01-wink",
+  "runway_task": "70c9d3b7-cdb0-4430-93e2-97bca205d816",
+  "clip_in": 0,
+  "clip_dur": 1.8,
+  "text": "Plan C: success.",
+  "style": "caption"
+ }
+]

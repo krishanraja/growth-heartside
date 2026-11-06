@@ -21,9 +21,10 @@
  "end": {},
  "variant_of": "F06-frenchie",
  "frames": [
-  "t610.png",
-  "t611.png",
-  "t612.png",
-  "t613.png"
- ]
+  "t610c.png",
+  "t611c.png",
+  "t612c.png",
+  "t613c.png"
+ ],
+ "note": "4 Nov: frames recast to a chestnut red dachshund so the roast dog matches mug-real-dachshund.jpg (Higgsfield GPT Image 2.5 edits of t610 to t613)."
 }

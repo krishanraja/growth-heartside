@@ -3,6 +3,64 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-06: After Krish completed billing and phone verification, the authorized single F10 USD 25 paid pilot was published. Meta returned "1 ad was published"; independent fresh-page readback at 12:56 GMT showed Processing, enabled, USD 25 lifetime and USD 0 spent. Published end remains 7 November 12:45 GMT. Paid delivery is not yet confirmed. The four USD 50 boosts remain held. See `docs/boost/2026-11-05-sandbox.md`.
+
+- 2026-11-06: Krish: "We need to get the first paid test live ASAP." Authorized activation of the prepared single F10 Meta pilot, USD 25 lifetime over 24 hours. The four USD 50 posts remain a separate decision. Payment method connected and pixel/destination checked; Meta's required business billing information currently blocks Publish. See `docs/boost/2026-11-05-sandbox.md` for the exact account, draft and launch evidence. Paid results remain separate from the organic North Star.
+
+- 2026-11-06: After viewing the repaired creative board, Krish: “ok, all looks good”. Human approval recorded for the exact corrected 33-placement organic batch, linked to the existing approved schedule. Scheduling was instructed to restore future approved slots and verify each persisted payload. Paid activity remains unapproved; native-device observations remain unverified rather than being converted into a passing automated review.
+
+- 2026-11-06: Krish: “Yes, integrate this and then correct everything that is currently unpublished in terms of social posts.” Authorized recovery of original Heartside images, including Runway. Implemented the supplied social UI standard in composition and release checks, then made separately versioned editions for all 33 current unpublished placements. Original locked masters and the 4 Nov ruling remain intact. The selected files and exact verification scope are in `library/editions/2026-11-06-ui.json` and `docs/audits/2026-11-06-unpublished-correction.md`. No paid spend or published-post changes.
+
+- 2026-11-04: Krish: “Trash these nine review files”. Moved the nine named F04, F05, F11 and F12 review files to Trash. Read back all nine recoverable entries and rechecked the 40 remaining plain-name release files against their SHA-256.
+
+- 2026-11-04: Krish delegated the editorial release decision: “Judge yourself and get this all ready for publishing.” Codex accepted the new F10 reel, the checked F11 review cut, and the corrected F06-frenchie reel and slide 3. All 40 current files were downloaded from the library API and matched to their plain-name Drive files. The scheduling source is `library/CURRENT.md`.
+
+- Ruling (Krish, 2026-11-04): caption move to y=1300 dropped; locked masters stay at 1440.
+  - Job C closed for F01, F02, F03, F05 and F12.
+
+- 2026-11-04: Buffer cleared for Heartside. Krish: "Can you just cancel all buffer schedules for Heartside, and we'll redo them later?"
+  - All 33 scheduled Heartside posts on TikTok, Instagram and Facebook were moved to drafts, not deleted. With the 3 F10 drafts, 36 Heartside drafts remain, captions and media intact.
+  - A readback shows nothing Heartside scheduled.
+  - The asset-prep prompt now ends with one final library (Krish: "one final asset library in Drive and GitHub, ensuring that all old materials are no longer"): Drive folders hold only locked files (removals on his word), `library/CURRENT.md` is the single list, and superseded rows move to history.
+
+- 2026-11-04: Queue swapped, F03 locked. Krish: "lock" (F03), then "Can you just complete everything before I move over to Codex?", then chose "Swap them here".
+  - F03 is locked with its three labels, filed and read back. F11's new cut is filed as a review file.
+  - 20 queued Buffer posts now carry the locked files, through permanent links that were hashed and read back: F07, F06-dachshund, F12, F04, F03, F06-lab and F05.
+  - The old F10 cut's three 8 Nov posts are drafts. This replaces the earlier no-queue-edits ruling for this swap only.
+  - `library/manifest.json` now marks the F05 and F12 motion finishes as locked.
+
+- 2026-11-04: Lines approved, four posts locked, queue left alone. Krish: "1. approved 2. approved. 3. you chose. Lets finish F03 and then package all up".
+  - The five replacement lines are approved; the lines they replace are retired. F04, F06-dachshund, F06-lab and F07 are locked, and their 11 files are filed to Drive with each sha256 read back.
+  - The engine's call on the queue: posts already in Buffer go out as queued, under his earlier no-queue-edits ruling. The new versions go out through new schedule rows he approves.
+  - F03 has three meme labels (proposed: "Operation Stocking", "The beagle:", "The gift:") and is built for his lock. It needs no new voice read.
+
+- 2026-11-04: Every post to 10. Krish: "Yes, we need them all to be 10 out of 10. Where are your standards?", then "We need to get as close as we can without regenerating absolutely everything. We've run out of runway credits, but still have higgsfield and openai images."
+  - F06-dachshund's frames were recast to the chestnut dachshund on its mug. F04's second half was redrawn in its opening room and light. F06-lab's two weak lines were replaced, with the old text removed from the frames. F07 now opens tight on the face. These are candidates in `local/library/2026-11-04-ten/`, waiting for Krish's lock. The cost was 9 Higgsfield image edits (24.75 credits).
+  - The factory now opens chats mid-conversation and searches mid-typing, shows a finished search query whole, can pull back from a close-up, and keeps captions and bottom text clear of the platform interface (y 1300; 76% of the reel height).
+  - Five replacement lines are proposed in `factory/bank/lines.json`. F10 and F11 are rebuilt as specs for Codex's home-machine build (`docs/briefs/codex/2026-11-04-road-to-ten-builds.md`). The plan is `docs/plans/2026-11-04-road-to-ten.md`. No job file or `automations.json` entry changed.
+
+- 2026-11-04: Boosts are boosts of the live organic posts. Krish: "These are going to be paid organic boosts, not paid ads", then, on the engine's recommendation to promote the existing posts from Ads Manager: "Yeah, do it. Get on with it. Make sure everything is perfect and ready to roll ASAP."
+  - `docs/PAID-BOOSTS.md` is rewritten. Ads Manager uses the existing post, optimises for landing page views, and adds a Shop now button to the product page with `utm_medium=paid_social`. The cap is $250.
+  - The four arms are F12, F05, F02 and the F06-frenchie carousel. The earlier $90 F12 opening A/B is replaced, because its guard-first arm is not a live post.
+  - The launch packet is `docs/boost/2026-11-launch-packet.md`, and the Codex card is `docs/briefs/codex/2026-11-04-boost-drafts.md`.
+  - F04's motion version was held. Krish: "The golden video chops a bit. It doesn't tell a great narrative story in terms of the scene progression." F05's and F12's motion versions are locked and filed, with their sha256 read back.
+
+- 2026-11-04: Motion versions locked. Krish: "Happy to lock, presuming you're happy with assets that are part video, part still?" The engine confirmed it was.
+  - Seven reels (F01, F02, F03, F06 x3, F07) and three covers (F07, F10, F11) were filed through the library lane under their plain names, replacing the earlier locked files. Each sha256 was read back from the library. The plans are in `factory/motion/`.
+  - Superseded the same day: the engine had told Codex to re-attach media in Buffer, which failed. Krish: "Why have you fucking told it to use Buffer?" Queued posts now publish as queued, the motion versions go out from the next schedule batch, and nobody edits the live queue. The F03 Instagram item that Codex's failed swap had left on an expiring link was restored by the engine to its approved Buffer-hosted reel and read back.
+  - `factory/send_library.py` now also reads the engine key from Windows Credential Manager (`Mindmake/engine-operator-token`), as content-watcher does, so Codex's home-computer runs can send.
+
+- 2026-11-04: Paid test plan, chat approval and the dachshund render. Krish: "Yes to all your 4 questions."
+  - **The $250 Meta-only paid test** (`docs/PAID-BOOSTS.md`) is approved as a plan, accepting its trade-off against the $0-paid North Star. Launching it is still a separate go-live of exact files, budget and dates.
+  - **Chat approval counts for posting.** AGENTS.md, `docs/DRIVE-MAP.md`, `docs/CHANNEL-TASKS.md` and `factory/send_library.py` now accept `approved = yes`, or "Approved in chat" with the date in `notes`.
+    - The question was either/or ("keep posting on chat approval, or wait until you mark rows yes?"). The engine read "yes" as "chat approval is the rule", the practice already in use. If he meant the Sheet column only, that is one line to reverse.
+  - **A black-and-tan dachshund render from heartside** is approved. The brief is `docs/briefs/2026-11-04-heartside-dachshund-render.md`.
+  - The fourth question, the music licence, was already settled (below). No job file or `automations.json` entry changed.
+
+- 2026-11-04: Music licence settled for paid use. Krish: "Just use the music. I have the right license for the post type. Mark this as complete permanently."
+  - Gate 1 of `docs/PAID-BOOSTS.md` is closed for good. Paid cuts keep the locked track, and every `paid_gates.music_ads` in `library/manifest.json` is `true`.
+  - The audit, the publishing playbook and the Codex card no longer raise it. No job file or `automations.json` entry changed.
+
 - 2026-11-03: Drive cleanup. Krish: "Delete the superseded READMEs and 02b".
   - Seven files in `Heartside/05_Social-Library` were moved to Drive's trash, where Drive keeps them for 30 days: the six READMEs titled superseded, and "02b Schedule and captions (superseded 3 Nov, use 02c)".
   - The folder now holds exactly: "00 README for Codex", "01 Posting strategy", 02, 02c, 02d and `Posts/`.
@@ -390,3 +448,8 @@ block is the deployed legacy API's missing venture isolation, not a missing
 credential. No token was read out of GitHub, copied into this machine or
 included in the probe artifact. Updated the runbook and recommendation to
 use the proven Actions execution path. Secret-list API access is unnecessary.
+# 6 November 2026: platform UI production standard
+
+- Krish requested the learnings in `Social_Creative_UI_Best_Practices.docx` be hardcoded into the growth engine after seeing organic posts in the platform UI.
+- Shared conservative composition defaults now feed new chat/film and recognition rendering. Release reviews bind the exact export, cover, copy, account, placement, labels and destination, with missing/stale viewer evidence holding new releases and automated proposals.
+- The supplied coordinates remain house defaults, not universal safe zones. Existing locked masters, the 4 November y1440 ruling, approved schedule payloads and paid authority remain unchanged. New versions require their own review.

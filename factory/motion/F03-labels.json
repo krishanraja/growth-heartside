@@ -1,0 +1,35 @@
+[
+ {
+  "start": 0.0,
+  "dur": 4.4,
+  "clip": "MASTER",
+  "clip_in": 0.0,
+  "clip_dur": 4.4,
+  "line": "F03.l1",
+  "text": "Operation Stocking",
+  "style": "meme",
+  "pos": "top"
+ },
+ {
+  "start": 10.7,
+  "dur": 2.6,
+  "clip": "MASTER",
+  "clip_in": 10.7,
+  "clip_dur": 2.6,
+  "line": "F03.l2",
+  "text": "The beagle:",
+  "style": "meme",
+  "pos": "top"
+ },
+ {
+  "start": 14.6,
+  "dur": 1.7,
+  "clip": "MASTER",
+  "clip_in": 14.6,
+  "clip_dur": 1.7,
+  "line": "F03.l3",
+  "text": "The gift:",
+  "style": "meme",
+  "pos": "top"
+ }
+]

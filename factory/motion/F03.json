@@ -1,0 +1,42 @@
+[
+ {
+  "start": 0,
+  "dur": 4.4,
+  "clip": "F03-hook",
+  "runway_task": "e164f8a2-c3d2-4518-b1f2-24bbf79b805b",
+  "clip_in": 0,
+  "clip_dur": 3.5,
+  "text": "Listen up. At 0600 hours, the humans wake up.",
+  "style": "caption"
+ },
+ {
+  "start": 4.4,
+  "dur": 2.8,
+  "clip": "F03-tiptoe",
+  "runway_task": "c5cd1343-f6e6-4372-805c-63229d293d92",
+  "clip_in": 0,
+  "clip_dur": 2.8,
+  "text": "Before then, the gift goes under the tree.",
+  "style": "caption"
+ },
+ {
+  "start": 10.7,
+  "dur": 2.6,
+  "clip": "F03-beagle",
+  "runway_task": "b0aef47a-5dac-4a3f-be39-006edd32e71b",
+  "clip_in": 0,
+  "clip_dur": 2.6,
+  "text": "And nobody touches the cookies.",
+  "style": "caption"
+ },
+ {
+  "start": 13.3,
+  "dur": 3.0,
+  "clip": "F03-gift",
+  "runway_task": "4346ebc6-8181-4103-b9f3-b30a4b30617f",
+  "clip_in": 0,
+  "clip_dur": 2.5,
+  "text": "Questions? Good.",
+  "style": "caption"
+ }
+]

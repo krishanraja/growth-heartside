@@ -209,6 +209,12 @@ def check(spec, quiet=False):
         else:
             probs.append(f'voice {spec["voice"]} missing')
     lk, _ = lock_for(spec)
+    from engine.creative_ui import REVISION as UI_REVISION
+    if spec.get('ui_profile') not in (None, UI_REVISION):
+        probs.append('unknown ui_profile: use ' + UI_REVISION)
+    exact_legacy = (lk and lk.get('status') == 'locked' and fingerprint(spec) == lk['fingerprint'])
+    if not exact_legacy and spec.get('ui_profile') != UI_REVISION:
+        probs.append('new/revised specs must declare ui_profile ' + UI_REVISION + ' before locking')
     if lk:
         if lk.get('status') == 'paused':
             probs.append(f'lock {lk["id"]} is paused after declines')
@@ -256,6 +262,9 @@ def media(spec, mp4):
 
 # ---------------------------------------------------------------- review brief
 STANDING = [  # each one was caught by a reviewer on 2 Nov 2026; add new catches here
+    'review export plus final platform UI, copy and crop using docs/CREATIVE-UI.md; a paid preview never proves the organic viewer experience',
+    'normal and stress views leave the hook, latest chat payoff, subtitles, face, product and mark readable; expanded panels may temporarily occlude',
+    'inspect start, busiest and end frames, full playback, cover crops, non-owner view where required, and native plus baked captions together',
     'one setting and one cast across the post: no shot that jumps to another place or adds a human where the joke has none',
     'no AI-drawn product: no mug, blanket, portrait or card with lettering or a dog painting except the real store render',
     'organic, not an ad: no slogan, URL, price or call to action on screen (a link preview inside a chat may show its domain); links go in the caption',
@@ -328,9 +337,17 @@ def record(spec, verdict, note=''):
     save_ledger(d)
 
 
-def gate(spec, mp4):
+def gate(spec, mp4, release=None, review=None):
     probs, warns = check(spec)
     probs += media(spec, mp4)
+    # A clean export and concept lock do not establish readability inside a platform.
+    # Existing approvals remain on record; a fresh release is checked per placement.
+    if not release or not review:
+        probs.append('placement UI review required: --release FILE --review FILE (docs/CREATIVE-UI.md)')
+    else:
+        if ROOT not in sys.path: sys.path.insert(0, ROOT)
+        from engine.creative_ui import check_files
+        probs += check_files(ROOT, release, review, expected_media=mp4, expected_asset_id=spec['id'])
     # a verdict belongs to the exact post (its spec and fingerprint), whichever lock existed when it was recorded
     rs = [r for r in ledger()['records'] if r['spec'] == spec['id'] and r['fingerprint'] == fingerprint(spec)]
     rv = [r['verdict'] for r in rs if r['verdict'].startswith('reviewer-')]
@@ -348,6 +365,7 @@ def gate(spec, mp4):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('cmd'); ap.add_argument('spec'); ap.add_argument('arg', nargs='?')
     ap.add_argument('--by', default=''); ap.add_argument('--note', default='')
+    ap.add_argument('--release'); ap.add_argument('--review')
     a = ap.parse_args(); spec = json.load(open(a.spec, encoding='utf-8'))
     if a.cmd == 'check':
         p, w = check(spec)
@@ -374,7 +392,7 @@ def main():
         assert a.arg in ('reviewer-pass', 'reviewer-hold', 'krish-approve', 'krish-decline'), a.arg
         record(spec, a.arg, a.note); print('recorded', a.arg); return
     if a.cmd == 'gate':
-        p, w = gate(spec, a.arg)
+        p, w = gate(spec, a.arg, a.release, a.review)
         for x in w: print('note:', x)
         for x in p: print('HOLD:', x)
         print(f"{spec['id']}: {'may go out' if not p else 'held'}"); sys.exit(1 if p else 0)

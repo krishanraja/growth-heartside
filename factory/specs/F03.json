@@ -48,5 +48,6 @@
    "shepherd-hilarious-portrait.jpg"
   ],
   "hold": 4.2
- }
+ },
+ "labels": "factory/motion/F03-labels.json"
 }

@@ -1,9 +1,10 @@
 {
  "id": "F11",
  "status": "locked",
- "approved_by": "Krish, board 2026-11-03: Lock (F11), approving the post as shown, answers included.",
- "fingerprint": "6f710c69554af853e751a4f7bcbe4510fbbe6666cac728cf41ca7fb464fc6125",
+ "approved_by": "Codex editorial lock under delegated authority. Krish, 2026-11-04: \"Judge yourself and get this all ready for publishing.\"",
+ "fingerprint": "1cb491ca35d7d9096e4749a8f8242cf0e0e7387114b2404883b95f4c167a22f5",
  "master": "specs/F11.json",
  "template": "search",
- "slots": "breed, lines by role, end render"
+ "slots": "breed, lines by role, end render",
+ "media_sha256": "8cc6079f38acfbfa22113205155701eccba754dc038db19278580b052053664d"
 }

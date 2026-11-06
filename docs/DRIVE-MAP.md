@@ -30,7 +30,7 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 | `05_Social-Library/` top level | the growth engine only | the Drive connector | Exactly the files in the tree above, plus a new `02<letter>` Sheet when a batch needs one (below). No other files and no new folders |
 | `Posts/<post id>/` | Krish's home computer only | `python3 factory/send_library.py <library folder>` through content-engine's library lane | No one uploads, copies or makes a folder here by hand or through a connector. It is never edited or deleted from a session; the home computer writes new versions beside changed ones |
 | `02…` Sheets, columns `status`, `live_url`, `notes`, and a `Results` tab | Codex only | after it posts | Codex changes no other column, row or file |
-| `02…` Sheets, column `approved` | Krish only | by hand | The engine never writes `yes` |
+| `02…` Sheets, column `approved` | Krish only | by hand. His approval in chat also counts, recorded by Codex in `notes` as "Approved in chat" with the date (Ruling, Krish, 2026-11-04) | The engine never writes `yes` |
 
 ## The rules for a new post
 
@@ -42,7 +42,9 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
    - `<kind>` is one of:
      - `reel` (mp4);
      - `cover` (jpg);
-     - `slide1` to `slide5` (jpg).
+     - `slide1` to `slide5` (jpg);
+     - `paid-reel`, `paid-reel-a`, `paid-reel-b` (mp4) and `paid-cover` (jpg): paid cuts, kept in the same post folder (Krish, 4 Nov: "one uniform folder with uniform naming conventions"). They are used only under `docs/PAID-BOOSTS.md` and recorded in `library/manifest.json` (`docs/BOOST-LIBRARY.md`).
+     - `review-reel` (mp4) and `review-cover` (jpg): a candidate waiting for Krish's lock, so the growth engine can read it through the library (Krish, 4 Nov: "drop assets in your folder of choosing"). **Never posted, never scheduled.** Once Krish locks it, the engine sends the locked file again as `reel` or `cover` (rule 4). The review file stays, and the manifest marks it `superseded`.
    - Nothing else goes in a post folder: no source files, no drafts, no captions files, no subfolders.
 3. **Media.** Add the files to the library folder and to its `manifest.json` (post, file, bytes, sha256). Then run `send_library.py`. The home computer files them within about 20 minutes. Check the Drive folder afterwards.
 4. **A changed version** keeps its name and is sent again. The home computer replaces its own earlier copy in place. Never send a "v2" or "final" file name.

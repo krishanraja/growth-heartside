@@ -157,7 +157,7 @@ def post_payload_sha256(creative_id, revision, channel, caption):
 
 def post_proposals(root, db, now):
     """Approved creatives whose media and caption still match their render manifest."""
-    from . import media, operations
+    from . import media, operations, creative_ui
     rows = db.execute('''SELECT * FROM (SELECT *, row_number() OVER (PARTITION BY creative_id
       ORDER BY updated_at DESC, rowid DESC) AS rank FROM creatives) WHERE rank=1 AND status='approved'
       ORDER BY updated_at DESC, creative_id''').fetchall()
@@ -176,6 +176,11 @@ def post_proposals(root, db, now):
             item = next(i for i in index.get(cid, []) if media.copy_digest(i) == expected)
             if len(item['text']) > 8000:
                 raise ValueError('caption too long')
+            placement_problems = creative_ui.proposal_errors(root, cid, revision, item, json.loads(row['manifest']), today=now.date())
+            if placement_problems:
+                holds.append({'reason': 'Placement UI review required before proposing this post',
+                              'detail': fit(f'{cid}: ' + '; '.join(placement_problems), 1000)})
+                continue
         except (ValueError, KeyError, TypeError, StopIteration, OSError):
             holds.append({'reason': 'An approved creative was not proposed: its media or caption could not be verified',
                           'detail': f'{cid} at revision {revision[:12]}. Render it again or restore its checkpoint, then record a fresh approval.'})
