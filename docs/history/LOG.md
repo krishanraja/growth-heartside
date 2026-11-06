@@ -4,6 +4,12 @@ Newest first. Entries are written by the docs steward (see the steward link in
 NOW.md) and by humans doing the same job by hand. Nothing in this file
 describes current behaviour; NOW.md and the state doc do.
 
+## 2026-11-06
+
+- rolled from NOW.md (Where it is right now): the seven channel tasks run inside the radar, daily pack, store and report jobs, mapped by `crew/registry.json` (2026-10-30).
+- rolled from NOW.md (Where it is right now): all 24 breed examples and 6 bundle shots from heartside's painter v15 are approved, with the ledger of sha256s and prompts, mirrored in Drive (2026-10-30).
+- stamped at `836ad8a`: fixed the audit's `where_too_many` finding (9 bullets, limit 8). No product commit landed since.
+
 ## 2026-11-05
 
 - reconciled at `836ad8a`: head re-stamped. The three 2026-11-03 closeout notes were malformed again (headings and free-form lines the fold cannot place), so they were rewritten to Status, Next and North Star check lines and folded; their content was already in NOW.md, so the three duplicate bullets and the stale Next line the fold added were removed by hand.

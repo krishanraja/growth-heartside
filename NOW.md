@@ -1,7 +1,7 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-11-05
+as_of: 2026-11-06
 head: 836ad8a
 lifecycle: live
 production_url: none
@@ -31,7 +31,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-11-05)
+## Where it is right now (as of 2026-11-06)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": 200, "current": 0, "current_as_of": "2026-10-29", "current_source": "Shopify Admin API orders through growth.py attribution (read-only app), organic posts, trailing 28 days", "urgency": 4, "urgency_reason": "at 0% of this week's target"} --> **North Star number: U4, far behind.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: $0 (measured 29 Oct; the store's only order in the window was fully refunded), against $200 this week, on the way to $25,000 by 28 December 2026. A bold swing every day; work that does not move the number waits.
 
@@ -46,8 +46,6 @@ Live:
 - The social library is in Krish's Drive (`Heartside/05_Social-Library`, map in `docs/DRIVE-MAP.md`): one Codex README, the posting strategy, the schedule Sheet with captions, tracked links and lock fingerprints, and each post's media in `Posts/<post id>/`. Krish's home computer files the media (`factory/send_library.py`, 39 files read back byte for byte); the zip is a backup. Codex posts only rows Krish marks `approved = yes` (2026-11-03).
 - Sound is locked for all ten approved concepts and the lock system (joke bank, render catalog, fingerprinted locks, copy, breed, media and drift gates, independent reviewer, 5-then-1-in-10 trust ramp) builds every post from a spec (2026-11-02).
 - Five channel guides separate posts made to be shared from posts made to earn shop visits; dog POV and product posts stay in one schedule (`docs/CHANNEL-TASKS.md`, 2026-11-03).
-- The seven channel tasks run inside the radar, daily pack, store and report jobs, mapped by `crew/registry.json` (2026-10-30).
-- All 24 breed examples and 6 bundle shots from heartside's painter v15 are approved, with the ledger of sha256s and prompts, mirrored in Drive (2026-10-30).
 - Eight scheduled jobs in `automations.json` run on GitHub Actions (`.github/workflows/engine.yml`); the Control Center loop runs on protocol 1.16.0, with prepaid credits spent by a daily session (`docs/CREDITS-SESSION.md`, `docs/control-center/`). Paid external generation stays off with a zero default budget; generation inside Krish's prepaid-credit allocation counts as authorised (`0303ffb`; `docs/PROVIDERS.md`).
 
 Waiting or not measured:
