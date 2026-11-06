@@ -1,0 +1,4 @@
+Status: Replaced the broken remote-media file preview with a local review board at http://127.0.0.1:8767/. All22 images loaded in the browser; all8 reels reached playable readiness and were started through visible Play buttons. Responsive390px and desktop views have no horizontal overflow. Exact38 selected delivery files retain their hashes. Social drafts and approval states were not changed.
+Next: Krish reviews the working board, then the original native placement review and scheduling handoff continue.
+Changed: factory/review_board.py serves only manifest-selected files and generated posters on loopback, supports video byte ranges, and gives each concept a readable name, full-size media links and platform captions. The old local review.html now points to the working board. The private closeout generator uses this renderer so it cannot recreate the broken remote grid.
+North Star check (2026-11-06): holds.
