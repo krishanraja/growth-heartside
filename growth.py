@@ -134,6 +134,9 @@ RULE_FILES = ('NOW.md', 'n8n/build.mjs')
 # the new words and updates RULES and RULES_BASIS in an interactive session.
 # Reviewed at 8e04dba (4 Nov): distinct Roast and Hilarious gift tones, sourced breed facts,
 # background photo validation and optional gifts. The house copy checks below still apply.
+# Reviewed at b4897a6 (6 Nov): DOG_VOICE replaces the coffee/bone contrast example
+# with the asleep/standing-up example. The plain-language rule is unchanged;
+# examples remain prohibited as reusable copy. No enforcement change is needed.
 # A prefix that is not a heading names a code or front-matter line: the block
 # runs to its closing bracket, or is that one line.
 RULES_SOURCES = (
@@ -150,7 +153,7 @@ RULES_BASIS = {
     'docs/ECONOMICS.md ## Current owner ruling': 'a8cea2c24b9f1ce4',
     'NOW.md never_publish:': 'ce87743276e56558',
     'n8n/build.mjs const VOICE = [': '82fa7a74ed529f65',
-    'n8n/build.mjs const DOG_VOICE = [': '43dc955615d6b742',
+    'n8n/build.mjs const DOG_VOICE = [': 'a1735f7777a1f2ba',
 }
 
 # ---------------------------------------------------------------------------
