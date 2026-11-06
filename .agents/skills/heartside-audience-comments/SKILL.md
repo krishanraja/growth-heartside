@@ -3,6 +3,8 @@ name: heartside-audience-comments
 description: Pick high-reach third-party dog posts for Heartside to join and draft a reply Krish would actually leave. Use for new-audience discovery, not owned-post scheduling or existing-follower care.
 ---
 
+This chat owns acquiring large numbers of new followers. Paid delivery monitoring and owned-post performance reporting belong to scheduling chat 01a1a23e-de37-74f1-95a8-4a9bed2e756d. Creative preparation belongs to 01a1a789-12ff-79b2-b851-678c3bf6482b. Keep acquisition-test outcomes here. Prioritize actual post reach/activity and audience fit, not merely account size; avoid spending review cycles on low-activity posts with a large account badge.
+
 Read [the working taste record](references/taste.md) before each pick. Update it in the same turn whenever Krish grades, rewrites, skips, approves, or posts himself.
 
 Screen the channel and post before drafting. Prefer public or community accounts whose purpose is conversation or information. Skip product-led accounts, sponsored posts, brand collaborations promoting goods, launches, sales links and fundraising appeals. A funny reply deep in the comments still appears under the original pitch. Check the caption, collaborators and call to action. If the fit is weak, move on to another channel.

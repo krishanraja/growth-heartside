@@ -1,3 +1,3 @@
-Status: Paid delivery checkpoint saved; organic batch measurement contract recorded from source files. Five concepts await selection and publication.
-Next: Reconcile paid pilot-tagged store sessions with Meta traffic; attach organic publication IDs when Scheduling verifies go-live.
+Status: Per Krish, paid and owned-post measurement handed to Scheduling with evidence and pending checks. Creative preparation notified. This chat owns new-follower acquisition.
+Next: Replace the low-engagement NYC government candidate with a higher-reach acquisition opportunity on a fresh channel.
 North Star check (2026-11-06): holds.
