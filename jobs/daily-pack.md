@@ -2,6 +2,10 @@
 
 Kind `daily`. Parts 3 and 6 in `PLAYBOOK.md`. Deliver finished media for
 Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
+Read `docs/CREATIVE-UI.md` for the shared working regions and per-platform copy,
+cover and viewer-state checks. A paid mock is not an organic preview. Package
+the exact placement metadata and leave native/device verdicts unverified until
+observed; `factory/lock.py gate` and automated post proposals enforce the review.
 
 1. `python3 growth.py sync`. Use the `heartside_sha` it prints. Run `python3
    growth.py store`. If the v3 gifts are not on sale yet, today's pack builds

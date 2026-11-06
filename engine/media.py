@@ -9,10 +9,10 @@ import tempfile
 import uuid
 from zoneinfo import ZoneInfo
 
-from . import assets, ledger, sound, offers
+from . import assets, ledger, sound, offers, creative_ui
 
 
-VERSION = 8
+VERSION = 9
 REQUIRED_ROLES = {'reel', 'cover', 'story_1', 'story_2', 'story_3', 'pin_1', 'pin_2', 'subtitles', 'soundtrack', 'facebook_reel', 'tiktok_reel', 'carousel_1', 'carousel_2', 'carousel_3'}
 
 
@@ -26,7 +26,7 @@ def runtime_fingerprint():
 
 def renderer_fingerprint():
     return ledger.digest({name: assets.sha256(Path(__file__).with_name(name))
-                          for name in ('media.py', 'assets.py', 'sound.py', 'voice.py')})
+                          for name in ('media.py', 'assets.py', 'sound.py', 'voice.py', 'creative_ui.py')})
 
 
 def copy_digest(item):
@@ -107,10 +107,22 @@ def card(root, source_assets, scene, size, layout='recognition'):
     draw = ImageDraw.Draw(out)
     path = lambda role: assets.local_path(root, source_assets[role]['path'])
     logo = Image.open(path('logo')).convert('RGBA')
-    logo.thumbnail((int(310 * scale), int(105 * scale)), Image.Resampling.LANCZOS)
-    out.paste(logo, (int(72 * scale), int(height * .055)), logo)
-    block(draw, scene['headline'], (int(width * .067), int(height * .15), int(width * .91), int(height * .29)),
-          path('display_font'), int(82 * scale), int(52 * scale), '#121010')
+    vertical = size == (1080, 1920)
+    if vertical:
+        left, _, right, _ = creative_ui.CRITICAL
+        logo_xy, headline_box = (left, 288), (left, 376, right, 536)
+        picture_box, text_box = (left, 552, right, 936), creative_ui.SUBTITLES
+    else:
+        # Feed/Pin compositions have their own geometry, not a Reels rail overlay.
+        left, right = int(width * .1), int(width * .9)
+        logo_xy = (left, int(height * .06))
+        headline_box = (left, int(height * .16), right, int(height * .32))
+        picture_box = (left, int(height * .34), right, int(height * .72))
+        text_box = (left, int(height * .76), right, int(height * .94))
+    logo.thumbnail((int(230 * scale), int(70 * scale)), Image.Resampling.LANCZOS)
+    out.paste(logo, logo_xy, logo)
+    block(draw, scene['headline'], headline_box,
+          path('display_font'), int(64 * scale), int(64 * scale), '#121010')
     roles = scene['asset'] if isinstance(scene['asset'], list) else [scene['asset']]
     if len(roles) == 1:
         photo = Image.open(path(roles[0])).convert('RGB')
@@ -120,15 +132,12 @@ def card(root, source_assets, scene, size, layout='recognition'):
         for index, role in enumerate(roles):
             picture = ImageOps.contain(Image.open(path(role)).convert('RGB'), (690, 690), Image.Resampling.LANCZOS)
             photo.paste(picture, (index * 700 + (700 - picture.width) // 2, (700 - picture.height) // 2))
-    box = (int(width * .067), int(height * .31), int(width * .91), int(height * .69))
+    box = picture_box
     photo = ImageOps.contain(photo, (box[2] - box[0], box[3] - box[1]), Image.Resampling.LANCZOS)
     out.paste(photo, ((box[0] + box[2] - photo.width) // 2, (box[1] + box[3] - photo.height) // 2))
-    block(draw, scene['text'], (int(width * .067), int(height * .735), int(width * .91), int(height * .79)),
-          path('body_font'), int(42 * scale), int(30 * scale), '#121010')
-    # Brand Book: label every example. The gallery dog is never a customer's dog.
-    block(draw, 'EXAMPLE · shown with an example dog',
-          (int(width * .067), int(height * .705), int(width * .92), int(height * .73)),
-          path('body_font'), int(28 * scale), int(24 * scale), '#5A4A44')
+    block(draw, scene['text'], text_box,
+          path('body_font'), int(54 * scale), int(48 * scale), '#121010')
+    # Krish, 2 Nov: no Example badges. Product pixels remain unaltered.
     return out
 
 
@@ -279,7 +288,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
         (work / 'subtitles.srt').write_text('\n'.join(subtitle_parts))
         files['subtitles'] = 'subtitles.srt'
         # Animate the approved photograph/card without altering the print design.
-        # Text remains inside the common safe zone throughout the 2% push-in.
+        # House working region only. Native UI evidence is required before release.
         elapsed = 0
         segments = []
         for i, scene in enumerate(scenes, 1):
@@ -329,6 +338,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
             shutil.copyfile(assets.local_path(root, narration['path']), work / 'narration.wav')
             files['narration'] = 'narration.wav'
         manifest = {'version': VERSION, 'renderer_source': renderer_fingerprint(), 'runtime': runtime_fingerprint(), 'creative_id': creative_id, 'revision': revision,
+                    'ui_policy_revision': creative_ui.REVISION,
                     'heartside_sha': state['sha'], 'intent': intent, 'needs_human_review': True,
                     'audio': 'Original locally synthesized score' + (' with synthetic narration requiring human review' if narration else '; captions-first, no speech'), 'duration_seconds': duration,
                     'copy_sha256': {item['creative_id']: copy_digest(item) for item in items},

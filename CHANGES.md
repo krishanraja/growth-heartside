@@ -440,3 +440,8 @@ block is the deployed legacy API's missing venture isolation, not a missing
 credential. No token was read out of GitHub, copied into this machine or
 included in the probe artifact. Updated the runbook and recommendation to
 use the proven Actions execution path. Secret-list API access is unnecessary.
+# 6 November 2026: platform UI production standard
+
+- Krish requested the learnings in `Social_Creative_UI_Best_Practices.docx` be hardcoded into the growth engine after seeing organic posts in the platform UI.
+- Shared conservative composition defaults now feed new chat/film and recognition rendering. Release reviews bind the exact export, cover, copy, account, placement, labels and destination, with missing/stale viewer evidence holding new releases and automated proposals.
+- The supplied coordinates remain house defaults, not universal safe zones. Existing locked masters, the 4 November y1440 ruling, approved schedule payloads and paid authority remain unchanged. New versions require their own review.

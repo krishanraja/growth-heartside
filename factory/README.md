@@ -53,3 +53,11 @@ A variant passes only if it has the same skeleton, which means:
 ## Adding humour
 
 New lines enter `bank/lines.json` as `proposed`, tagged with their role and breeds. They reach Krish in batches, approve or kill. Only an approved line can ever appear in a post.
+# Platform UI acceptance (6 November 2026)
+
+Read [the creative UI contract](../docs/CREATIVE-UI.md) before each new build.
+Chat and film defaults now use the shared house working region. Exact locked
+masters keep their geometry; opt an intentional revision into
+`ui_profile: social-ui-2026-11-06-v1` and obtain a new approval.
+`lock.py gate` requires `--release` and `--review` evidence for the specific
+placement. A file-level media audit alone is never release clearance.

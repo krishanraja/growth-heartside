@@ -1,0 +1,29 @@
+{
+  "asset_id": "F00",
+  "revision": "replace-with-exact-creative-revision",
+  "policy_revision": "social-ui-2026-11-06-v1",
+  "campaign": "replace-with-campaign-and-review-cycle",
+  "platform": "tiktok",
+  "placement": "video",
+  "mode": "organic",
+  "objective": "replace-with-the-one-viewer-takeaway",
+  "account": "replace-with-verified-account",
+  "description": "",
+  "destination": "",
+  "hashtags_or_topic": [],
+  "alt_text": "",
+  "caption_route": "",
+  "logo_variant": "",
+  "music_rights": "",
+  "disclosures": [],
+  "attachments": [],
+  "crop_anchors": [],
+  "critical_region": [108, 288, 864, 1152],
+  "upload_route": "",
+  "devices": ["android", "ios"],
+  "exports": [
+    {"role": "media", "path": "local/replace.mp4", "sha256": "", "dimensions": [1080, 1920]},
+    {"role": "cover", "path": "local/replace-cover.jpg", "sha256": "", "dimensions": [1080, 1920]},
+    {"role": "transcript", "path": "local/replace-transcript.txt", "sha256": ""}
+  ]
+}

@@ -20,6 +20,10 @@ def bundle(root, pack, destination):
         stage = Path(temporary)
         (stage / 'pack.json').write_text(json.dumps(pack, indent=2) + '\n')
         (stage / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+        for source, name in [('docs/CREATIVE-UI.md', 'creative-ui.md'),
+                             ('config/creative-ui-release.example.json', 'placement-release.example.json')]:
+            if (Path(root) / source).exists():
+                shutil.copyfile(Path(root) / source, stage / name)
         licenses = Path(root) / 'docs/VOICE-LICENSES.md'
         if licenses.exists():
             shutil.copyfile(licenses, stage / 'voice-provenance.md')
@@ -29,7 +33,7 @@ def bundle(root, pack, destination):
             name = role + source.suffix
             shutil.copyfile(source, stage / name)
             links.append(f'<li><a download href="{html.escape(name)}">{html.escape(role)}</a></li>')
-        entries = []
+        entries = ['<p><strong>Placement UI review still required.</strong> These are clean exports, not native platform previews. Review final copy, covers, labels and controls on each required device. See <a href="creative-ui.md">the placement checklist</a> and <a href="placement-release.example.json">release metadata template</a>.</p>']
         for item in pack['items']:
             text = html.escape(item['text'])
             alt = html.escape(item.get('alt_text', ''))

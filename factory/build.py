@@ -11,6 +11,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import *
 from common import _border_color, _cutout
 import lock
+import ui_layout
+
+
+def _ui_v1(spec):
+    locked, _ = lock.lock_for(spec)
+    return ui_layout.enabled(spec, locked, lock.fingerprint(spec))
 
 NAMES = {'lab': 'Lab', 'shepherd': 'Shepherd', 'frenchie': 'Frenchie', 'dachshund': 'Dachshund', 'golden': 'Golden', 'doodle': 'Doodle'}
 TINTS = [(237, 231, 220), (225, 236, 243), (240, 228, 240), (246, 232, 214)]
@@ -70,7 +76,8 @@ def mux(work, sid):
 
 def end_clip(spec, work, renders, hold):
     """The ending: the real product, moving, with no slogan, URL or badge (Krish, 2 Nov: organic posts)."""
-    return product_clip(renders, f'{work}/end.mp4', hold, end_png=f'{work}/end.png')
+    options = {'box': ui_layout.CRITICAL, 'critical_box': ui_layout.CRITICAL} if _ui_v1(spec) else {}
+    return product_clip(renders, f'{work}/end.mp4', hold, end_png=f'{work}/end.png', **options)
 
 
 def join(parts, out):
@@ -82,30 +89,38 @@ def join(parts, out):
 # ---------------------------------------------------------------- chat
 def chat(spec, work):
     cast = spec['cast']; slots = list(cast)
+    native = _ui_v1(spec)
+    body_font = bold(F('Karla.ttf', 54), 500) if native else BODY
+    text_width_max = 570 if native else 660
     AV = {k: avatar(mug(b)['file'], tuple(mug(b)['face'])) for k, b in cast.items()}
     TOP, BOTTOM, LEFT = 300, 1760, 60
 
     def bubble(m):
         who = m['who']; d0 = ImageDraw.Draw(Image.new('RGB', (10, 10)))
         if 'render' in m:
-            body = Image.new('RGBA', (700, 560), (0, 0, 0, 0)); d = ImageDraw.Draw(body, 'RGBA')
-            d.rounded_rectangle((0, 0, 699, 559), 34, fill=(255, 255, 255, 255), outline=(220, 212, 200), width=2)
-            p = Image.open(f"{R}/{m['render']}").convert('RGB'); p.thumbnail((660, 520), Image.LANCZOS)
+            bw, bh = (634, 460) if native else (700, 560)
+            body = Image.new('RGBA', (bw, bh), (0, 0, 0, 0)); d = ImageDraw.Draw(body, 'RGBA')
+            d.rounded_rectangle((0, 0, bw - 1, bh - 1), 34, fill=(255, 255, 255, 255), outline=(220, 212, 200), width=2)
+            p = Image.open(f"{R}/{m['render']}").convert('RGB'); p.thumbnail((bw - 40, bh - 40), Image.LANCZOS)
             mask = Image.new('L', p.size, 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, p.width - 1, p.height - 1), 26, fill=255)
-            px = 20 + (660 - p.width) // 2; body.paste(p, (px, 20), mask)
+            px = 20 + (bw - 40 - p.width) // 2; body.paste(p, (px, 20), mask)
         else:
-            text = T(m['line'], spec); lines = balanced_wrap(d0, text, BODY, 660, 46)
-            bw = int(max(text_width(d0, l, BODY, 46) for l in lines)) + 64; bh = 62 * len(lines) + 40
+            text = T(m['line'], spec); lines = balanced_wrap(d0, text, body_font, text_width_max, 54 if native else 46)
+            bw = int(max(text_width(d0, l, body_font, 54 if native else 46) for l in lines)) + 64; bh = 66 * len(lines) + 40 if native else 62 * len(lines) + 40
+            if native and bw > 646:
+                raise ValueError('chat text crosses the working region; split the beat')
             body = Image.new('RGBA', (bw, bh), (0, 0, 0, 0)); d = ImageDraw.Draw(body)
             d.rounded_rectangle((0, 0, bw - 1, bh - 1), 34, fill=TINTS[slots.index(who) % 4] + (255,))
             for i, l in enumerate(lines):
-                draw_rich(body, (32, 18 + i * 62), l, BODY, 46, INK)
-        blk = Image.new('RGBA', (W - LEFT * 2, body.height + 44), (0, 0, 0, 0))
+                draw_rich(body, (32, 18 + i * (66 if native else 62)), l, body_font, 54 if native else 46, INK)
+        blk = Image.new('RGBA', (756 if native else W - LEFT * 2, body.height + 44), (0, 0, 0, 0))
         ImageDraw.Draw(blk).text((118, 0), NAMES[cast[who]], font=NAME, fill=(130, 120, 110))
         blk.paste(AV[who], (0, blk.height - 88), AV[who]); blk.paste(body, (110, 40), body)
         return blk
 
     def screen(blocks):
+        if native:
+            return ui_layout.chat_screen(blocks, T(spec['title'], spec), list(AV.values()), TITLE, SMALL, PAPER)
         im = Image.new('RGB', (W, H), PAPER); d = ImageDraw.Draw(im)
         d.rectangle((0, 0, W, 250), fill=(71, 61, 52)); d.line((0, 250, W, 250), fill=(225, 216, 202), width=2)
         for i, k in enumerate(slots):
@@ -128,7 +143,7 @@ def chat(spec, work):
         return im
 
     frames, blocks, events, t = [], [], [], 0.6
-    n0 = spec.get('open_with', 0)   # open mid-conversation: frame 1 already shows n0 messages (never a blank screen)
+    n0 = max(1, spec.get('open_with', 0)) if native else spec.get('open_with', 0)
     if n0:
         blocks = [bubble(m) for m in spec['messages'][:n0]]; t = sum(m['dur'] for m in spec['messages'][:n0])
         screen(blocks).save(f'{work}/c00.png'); frames.append((f'{work}/c00.png', t)); events.append((0.0, 'pop'))
@@ -301,7 +316,7 @@ def _cover(path, crop_top=0.0):
     return im.crop((x, y, x + W, y + H))
 
 
-def _caption(im, text, y=1300):   # 1300: clear of the Reels and TikTok username and caption zone
+def _caption(im, text, y=1300):   # Legacy geometry only; not a platform safety guarantee.
     if not text: return im
     d = ImageDraw.Draw(im, 'RGBA'); lines = balanced_wrap(d, text, CAPB, W - 200, 54); lh = 70; h = lh * len(lines) + 44
     d.rounded_rectangle((60, y, W - 60, y + h), 24, fill=(20, 18, 15, 185))
@@ -312,18 +327,21 @@ def _caption(im, text, y=1300):   # 1300: clear of the Reels and TikTok username
 
 def film(spec, work):
     parts, t0 = [], 0.0
+    native = _ui_v1(spec)
+    draw_caption = (lambda im, text, y: ui_layout.caption(im, text, CAPB, y)) if native else _caption
+    default_y = ui_layout.SUBTITLES[1] if native else 1300
     for i, s in enumerate(spec['shots']):
         dur = s['until'] - t0; t0 = s['until']; cap = T(s['line'], spec) if s.get('line') else None
         out = f'{work}/s{i:02d}.mp4'
         if s.get('render'):   # a real render mid-film: moving, captioned, no badge
-            product_clip([s['render']], out, dur, overlay=lambda im, t, c=cap, y=s.get('cap_y', 1300): _caption(im, c, y), end_png=f'{work}/s{i:02d}.png')
+            product_clip([s['render']], out, dur, overlay=lambda im, t, c=cap, y=s.get('cap_y', default_y): draw_caption(im, c, y), end_png=f'{work}/s{i:02d}.png')
         else:
-            im = _caption(_cover(f"{FR}/{s['frame']}", s.get('crop_top', 0)), cap, s.get('cap_y', 1300))   # meme posts caption at the top
+            im = draw_caption(_cover(f"{FR}/{s['frame']}", s.get('crop_top', 0)), cap, s.get('cap_y', default_y))
             png = f'{work}/s{i:02d}.png'; n = round(dur * 30)
             if s.get('pull'):   # a hook: open tight on the subject, then pull back to the whole picture; the caption stays still
                 z0, (fx, fy) = s['pull']['zoom'], s['pull']['focus']
                 _cover(f"{FR}/{s['frame']}", s.get('crop_top', 0)).save(png)
-                cap_png = f'{work}/s{i:02d}_cap.png'; _caption(Image.new('RGBA', (W, H), (0, 0, 0, 0)), cap, s.get('cap_y', 1300)).save(cap_png)
+                cap_png = f'{work}/s{i:02d}_cap.png'; draw_caption(Image.new('RGBA', (W, H), (0, 0, 0, 0)), cap, s.get('cap_y', default_y)).save(cap_png)
                 z = f"max(1,{z0}-({z0}-1)*min(1,on/{max(1, round(n * 0.8))}))"
                 run(['ffmpeg', '-y', '-loop', '1', '-i', png, '-loop', '1', '-i', cap_png, '-filter_complex',
                      f"[0]scale=2160:3840,zoompan=z='{z}':x='max(0,min(iw-iw/zoom,{fx}*iw-iw/zoom/2))':y='max(0,min(ih-ih/zoom,{fy}*ih-ih/zoom/2))':d={n}:s={W}x{H}:fps=30[v];[v][1]overlay=0:0:shortest=1,format=yuv420p",

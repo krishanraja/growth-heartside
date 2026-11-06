@@ -123,3 +123,11 @@ or purchases for Heartside. Review current platform guidance alongside account i
 [Facebook originality](https://about.fb.com/news/2026/03/rewarding-original-creators-on-facebook/),
 [Pinterest creative formats](https://business.pinterest.com/creative-best-practices/) (ad design guidance),
 and [Threads insights](https://about.fb.com/news/2024/10/find-your-community-with-new-threads-educational-insights/).
+# Platform UI handoff (6 November 2026)
+
+For every new/revised creative, reel-script and caption-set use
+[CREATIVE-UI.md](CREATIVE-UI.md). Production owns recomposition; scheduling owns
+the final account/copy/crop/native-label check and post-publication viewer evidence.
+Prepare per-platform editions and concise copy. Never treat a clean export,
+paid ad preview or approved concept as an organic UI pass. Existing locked
+posts and scheduled exact payloads are not silently changed by this standard.

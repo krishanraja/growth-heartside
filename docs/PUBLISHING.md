@@ -6,7 +6,10 @@ This is the checklist a creative must pass before it is posted or boosted, plus 
 - Choose the exact release file in [the current publishing library](../library/CURRENT.md). File and paid-use rules follow `docs/BOOST-LIBRARY.md`.
 - The quality bar and current scores are in `docs/audits/2026-11-04-creative-audit.md`.
 
-Platform specs move. The numbers below are current as of 4 Nov 2026. Each release, check the platform's own preview, and for ads the Ads Manager safe-zone guardrail.
+Platform specs move. For new/revised releases, [CREATIVE-UI.md](CREATIVE-UI.md)
+and `engine/creative_ui.py` own composition and placement acceptance (6 Nov).
+Export sizes below are house presets. Test the organic viewer independently of
+the paid preview; preserve existing locked files and approved captions.
 
 ## 1. The master file (every channel)
 
@@ -17,19 +20,19 @@ Platform specs move. The numbers below are current as of 4 Nov 2026. Each releas
 | Length | Organic 6 to 60 s, and 15 to 30 s where possible. Paid 15 to 30 s | `factory/audit.py` |
 | First second | Motion, and a legible situation on frame 1: no blank interface, no tiny subject, no 2 s still | `factory/audit.py` `dead_open` |
 | Ending | The real store render for the same breed and coat, on screen for at least the last 3 s | `factory/lock.py media` and a person |
-| Organic text zone | Keep words between y=200 and y=1440. Nothing in the right 130 px, where the interface buttons sit | `factory/audit.py` and a person |
-| Boosted posts | A boost runs the live post exactly as posted (Krish, 4 Nov: "paid organic boosts, not paid ads"), so the organic text zone above applies | `docs/PAID-BOOSTS.md` |
-| Cover | 1080x1920. The story must read inside the centre 1080x1440, the 3:4 grid crop. No blank interface frame | A person |
+| Organic working region | New 9:16 compositions start at x108–864, y288–1152; subtitles y960–1120. House defaults, then inspect exact UI | `engine/creative_ui.py`, native review |
+| Boosted posts | Use the live approved post unchanged; separately inspect paid CTA, labels and exact placements. Organic clearance is insufficient | `docs/PAID-BOOSTS.md`, placement review |
+| Cover | Separate cover composition. Check actual profile grid, Reels tab and feed crops; no assumed permanent crop | Native preview and a person |
 | Sound-off | The joke works muted. Subtitles carry every spoken line | A person |
 | AI labelling | Photorealistic AI dogs: switch on TikTok's AI-generated content label, and let Meta's "AI info" label stand | At upload |
 | Music | The locked licensed track, organic and paid alike. Krish, 4 Nov: "I have the right license for the post type". Settled, never re-check | None |
 
 ## 2. Captions (every channel)
 
-- Line 1 is the hook. It makes someone think "I'd send this to ___".
-- Line 2 is Krish's line, word for word: "Gifts from your dog. Painted lovingly in your style of choice using our next-generation AI artists."
-- Then the link (Facebook), or "Link in bio" (Instagram and TikTok).
-- Then 2 to 3 specific hashtags (none on Facebook).
+- New posts lead with one complete scene-specific thought and at most one useful action. Inspect rendered lines with the actual account name and labels.
+- The repeated sales paragraph is no longer a default for new posts (Krish's supplied UI standard, 6 Nov). Previously approved exact captions remain unchanged until a new version is approved.
+- Use a verified destination route: Facebook link, or the actual available profile link/sticker/product tag. Never assume a typed URL is tappable.
+- Only relevant hashtags/topics; none on Facebook. Do not copy one platform's full caption to all others.
 - House rules (AGENTS.md rule 5): US spelling, no exclamation marks, no em dashes or spaced hyphens used as dashes, no swearing or swear acronyms, nothing invented.
 - `growth.py check` enforces what code can.
 - A standalone joke post gets no "tag a mate" and no product slide (`docs/CHANNEL-TASKS.md`). Gift-led posts may ask for a tag.
@@ -38,7 +41,7 @@ Platform specs move. The numbers below are current as of 4 Nov 2026. Each releas
 
 ### Instagram (Reels and carousels)
 
-- **Reels.** Upload the master, then set the cover from the cover file, not from a frame. Preview the grid tile: it crops to 3:4. Use "Share to Feed".
+- **Reels.** Upload the approved Instagram edition and separate cover. Inspect the current grid, Reels tab and feed previews with final copy. Use "Share to Feed" only as approved.
 - **Carousels.** Slide 1 is the troll-dog hook, and the last slide is the product render. Up to 5 slides at 1080x1350 or 1080x1920 (all slides the same size).
 - **Links.** The link lives in the bio, so the bio link must land on the gift shown in the week's gift-led posts.
 - **What to read:** sends per reach first, then saves, then profile visits and link taps.
@@ -46,14 +49,14 @@ Platform specs move. The numbers below are current as of 4 Nov 2026. Each releas
 
 ### Facebook (Page Reels and carousels)
 
-- Post from the Heartside Page with the same master. The tracked link goes in the caption, with no hashtags.
+- Post from the Heartside Page with its reviewed edition and concise Page-specific copy. Reusing the same bytes still requires a Facebook review. The tracked link goes in the caption, with no hashtags.
 - The first frame matters even more here: Facebook shows retention by second. F10 lost most of its viewers at 0:01.
 - **What to read:** shares per reach for humour posts. For gift posts: outbound clicks, landing visits, attributed orders.
 - **Boosting:** the Instagram post's ad also runs on Facebook Reels and Feed. One campaign covers both.
 
 ### TikTok
 
-- **Upload.** Upload the master in the app or TikTok Studio, set the cover from the cover file, switch on the AI-generated content label, and add 3 hashtags.
+- **Upload.** Use the TikTok-reviewed edition, separate cover, required AI label and useful hashtags. Check feed/search entry, normal/stress/expanded description and a non-owner view.
 - **Sound.** Keep the licensed track. A trending sound only with Krish's yes.
 - **The first second is the whole game.** Start on a dog already doing something legible.
 - **What to read:** completion and shares per 1,000 views against posts of a similar length. Early abandonment means test the first shot.
@@ -69,8 +72,9 @@ Platform specs move. The numbers below are current as of 4 Nov 2026. Each releas
 
 1. **Find the row.** Take the row from the live `02…` Sheet and the file from `Posts/<id>/` (organic),. Check the SHA-256 against the manifest.
 2. **Check the release.**
+   - Run the exact placement review in `docs/CREATIVE-UI.md`, binding media, cover, copy, account, destination, labels and attachments. Missing required device/state evidence means hold for the new release, never invent a pass.
    - **Posting:** check the approval column is marked, and that the lock fingerprint matches.
    - **Boosting:** also check that every gate in `docs/PAID-BOOSTS.md` is recorded in the manifest.
 3. **Publish.** Publish once, with the cover, caption, labels and link exactly as built. Read back the live permalink, the media and the words.
-4. **Write back.** Write `status`, `live_url` and `notes`. Read the post at 1 hour, 24 hours, 72 hours and 7 days, and record "not shown" for any number that is missing, never zero.
+4. **Write back.** Write `status`, `live_url` and `notes`, plus template revision and the real viewer UI checks (device, state, evidence and any unverified gaps). Read the post at 1 hour, 24 hours, 72 hours and 7 days, and record "not shown" for any number that is missing, never zero. Track re-exports caused by normal-view UI collisions.
 5. **Hand back what fails.** Anything that needs a crop, recut, caption change or new audio goes back to the engine. Never improvise it at upload.
