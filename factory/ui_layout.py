@@ -1,7 +1,7 @@
 """Asset-independent layout helpers for the social UI house profile.
 
-Existing locked masters use their legacy renderer until a new spec explicitly
-opts into this profile. New concepts and variants use it by default.
+Existing locked masters and their slot-only variants use their legacy renderer
+until a new spec explicitly opts into this profile. New concepts use it by default.
 """
 import sys
 from pathlib import Path
@@ -17,9 +17,11 @@ def enabled(spec, locked=None, fingerprint=None):
         raise ValueError('unknown ui_profile; use ' + REVISION)
     if profile:
         return True
+    # The lock checker separately refuses drift. Never reinterpret a known
+    # master or a matching legacy slot variant as permission to recompose it.
     return not (locked and locked.get('status') == 'locked'
-                and spec.get('id') == locked.get('id')
-                and fingerprint == locked.get('fingerprint'))
+                and (spec.get('id') == locked.get('id')
+                     or fingerprint == locked.get('fingerprint')))
 
 
 def caption(image, text, font, y=None):

@@ -71,7 +71,9 @@ states. Expansion needs an observed behaviour record, not an unobscured-video pa
   action and essential words; it is separate from discovery copy.
 
 `factory/ui_layout.py` supplies the chat and film defaults. Exact locked master
-specifications retain legacy geometry; a new concept or variant gets this profile.
+specifications and matching slot-only variants retain legacy geometry; new
+concepts get this profile. A placement repair of a legacy variant explicitly
+opts in as a new candidate, rather than inheriting its old approval.
 An intentional revision of a locked master sets `ui_profile` to the revision
 above, which changes its fingerprint and requires fresh approval. Never silently
 rewrite `factory/specs`, locks, release hashes or queued posts. In particular,
@@ -79,7 +81,7 @@ the 4 November ruling keeping F01/F02/F03/F05/F12 at y1440 remains recorded.
 Search and roast outputs still need the same placement review; their legacy
 geometry is not certified by the new chat/film helpers.
 
-New/revised specs must declare that profile before locking, so a later lock
+New/recomposed specs must declare that profile before locking, so a later lock
 cannot switch a build back to legacy geometry. Create a separately identified
 candidate when changing a locked skeleton; the existing drift guard continues
 to refuse rewriting its original lock. This is a new review, not a slot-only variant.

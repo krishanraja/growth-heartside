@@ -127,7 +127,9 @@ class LayoutTests(unittest.TestCase):
         locked = {'id': 'F01', 'status': 'locked', 'fingerprint': 'same'}
         self.assertFalse(ui_layout.enabled({'id': 'F01'}, locked, 'same'))
         self.assertTrue(ui_layout.enabled({'id': 'F01', 'ui_profile': ui.REVISION}, locked, 'new'))
-        self.assertTrue(ui_layout.enabled({'id': 'F01-new'}, locked, 'same'))
+        self.assertFalse(ui_layout.enabled({'id': 'F01-new'}, locked, 'same'))
+        self.assertFalse(ui_layout.enabled({'id': 'F01'}, locked, 'pre-existing-drift'))
+        self.assertTrue(ui_layout.enabled({'id': 'F99'}, None, 'new'))
         with self.assertRaises(ValueError):
             ui_layout.enabled({'id': 'new', 'ui_profile': 'typo'})
 

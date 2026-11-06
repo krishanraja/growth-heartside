@@ -212,8 +212,7 @@ def check(spec, quiet=False):
     from engine.creative_ui import REVISION as UI_REVISION
     if spec.get('ui_profile') not in (None, UI_REVISION):
         probs.append('unknown ui_profile: use ' + UI_REVISION)
-    exact_legacy = (lk and lk.get('status') == 'locked' and spec['id'] == lk['id']
-                    and fingerprint(spec) == lk['fingerprint'])
+    exact_legacy = (lk and lk.get('status') == 'locked' and fingerprint(spec) == lk['fingerprint'])
     if not exact_legacy and spec.get('ui_profile') != UI_REVISION:
         probs.append('new/revised specs must declare ui_profile ' + UI_REVISION + ' before locking')
     if lk:
