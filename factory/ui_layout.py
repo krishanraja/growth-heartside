@@ -5,10 +5,45 @@ until a new spec explicitly opts into this profile. New concepts use it by defau
 """
 import sys
 from pathlib import Path
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageOps
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from engine.creative_ui import CRITICAL, SUBTITLES, MAX_CHAT_MESSAGES, REVISION
+from engine.creative_ui import CRITICAL, SUBTITLES, MAX_CHAT_MESSAGES, REVISION, TIKTOK_PHOTO_BACKGROUND, TIKTOK_PHOTO_TEXT
+
+
+def photo_card(photo, text, font, platform, lines=None):
+    """Compose source photos with editable type and visible native controls.
+
+    The caller supplies a clean photo crop; this never generates/repaints it.
+    TikTok's empty top/right/bottom regions use ink for its white controls.
+    """
+    if platform not in ('feed', 'tiktok'):
+        raise ValueError('photo card platform must be feed or tiktok')
+    vertical = platform == 'tiktok'
+    height, width = (1920, 756) if vertical else (1350, 900)
+    bg, fg = (TIKTOK_PHOTO_BACKGROUND, TIKTOK_PHOTO_TEXT) if vertical else (TIKTOK_PHOTO_TEXT, TIKTOK_PHOTO_BACKGROUND)
+    canvas = Image.new('RGB', (1080, height), bg)
+    draw = ImageDraw.Draw(canvas)
+    if lines is None:
+        lines, line = [], ''
+        for word in text.split():
+            trial = (line + ' ' + word).strip()
+            if draw.textlength(trial, font=font) > width and line:
+                lines.append(line); line = word
+            else:
+                line = trial
+        if line:
+            lines.append(line)
+    if ' '.join(lines) != ' '.join(text.split()) or len(lines) > 4 or any(draw.textlength(line, font=font) > width for line in lines):
+        raise ValueError('photo wording must fit four readable lines without changing words')
+    top = 300 if vertical else 60
+    for i, line in enumerate(lines):
+        draw.text(((972 if vertical else 1080) / 2 - draw.textlength(line, font=font) / 2, top + i * 64), line, font=font, fill=fg)
+    photo_top = top + len(lines) * 64 + 36
+    area = (108, photo_top, 864, 1400) if vertical else (60, photo_top, 1020, 1290)
+    fitted = ImageOps.contain(photo, (area[2] - area[0], area[3] - area[1]), Image.Resampling.LANCZOS)
+    canvas.paste(fitted, (round((area[0] + area[2] - fitted.width) / 2), area[1]))
+    return canvas
 
 
 def enabled(spec, locked=None, fingerprint=None):

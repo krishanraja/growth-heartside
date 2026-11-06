@@ -263,6 +263,7 @@ def roast(spec, work):
     in meme type over it (Krish, 3 Nov: "images that look like the dog is trolling them, like that
     classic troll meme image - but a dog"). The last slide is the real mug."""
     CW, CH = 1080, 1350; breed = spec['breed']
+    native = _ui_v1(spec)
     MEME = F('Anton.ttf', 96)
 
     def meme(photo, text, w, h, pos='top'):
@@ -270,6 +271,27 @@ def roast(spec, work):
         im = Image.open(f'{FR}/{photo}').convert('RGB')
         r = max(w / im.width, h / im.height); im = im.resize((round(im.width * r), round(im.height * r)), Image.LANCZOS)
         x, y = (im.width - w) // 2, (im.height - h) // 2; im = im.crop((x, y, x + w, y + h))
+        if native:
+            # A new edition keeps static meme text inside the house working
+            # region. Old locks retain their exact original type and geometry.
+            d = ImageDraw.Draw(im)
+            font = bold(F('Karla.ttf', 54), 800)
+            left, right = (132, 840) if h > 1500 else (90, 990)
+            top = 320 if h > 1500 else 154
+            lines = []; line = ''
+            for word in text.split():
+                trial = (line + ' ' + word).strip()
+                if d.textlength(trial, font=font) > right - left - 48 and line:
+                    lines.append(line); line = word
+                else:
+                    line = trial
+            if line: lines.append(line)
+            if len(lines) > 4 or any(d.textlength(line, font=font) > right-left-48 for line in lines):
+                raise ValueError('split the meme beat; do not shrink the text')
+            d.rounded_rectangle((left, top, right, top + len(lines)*64+28), 20, fill=(20,18,15))
+            for i,line in enumerate(lines):
+                d.text(((left+right-d.textlength(line,font=font))/2,top+8+i*64),line,font=font,fill='white')
+            return im
         d = ImageDraw.Draw(im); size = 96
         while True:
             f = F('Anton.ttf', size); lines = balanced_wrap(d, text.upper(), f, w - 120, size)
@@ -287,16 +309,18 @@ def roast(spec, work):
     slides = [meme(fr, tx, CW, CH, ps) for fr, tx, ps in zip(spec['frames'], texts, pos)]
     p = Image.open(f"{R}/{spec['render']}").convert('RGB')   # the real mug on its own backdrop tone: no panel
     tone = _border_color(p); im = Image.new('RGB', (CW, CH), tone)
-    p.thumbnail((980, 1230), Image.LANCZOS); cp = _cutout(p, _border_color(p))
+    p.thumbnail((864, 1000) if native else (980, 1230), Image.LANCZOS); cp = _cutout(p, _border_color(p))
     im.paste(cp, ((CW - p.width) // 2, (CH - p.height) // 2), cp); slides.append(im)
     parts = []
     for i, s in enumerate(slides[:-1]):
         s.save(f'{work}/slide{i + 1}.png')
         meme(spec['frames'][i], texts[i], W, H, pos[i]).save(f'{work}/v{i + 1}.png'); n = round(spec['durs'][i] * 30); out = f'{work}/v{i + 1}.mp4'
-        run(['ffmpeg', '-y', '-loop', '1', '-i', f'{work}/v{i + 1}.png', '-vf', f"scale=2160:3840,zoompan=z='min(zoom+0.0012,1.10)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps=30,format=yuv420p",
+        vf = f'scale={W}:{H},fps=30,format=yuv420p' if native else f"scale=2160:3840,zoompan=z='min(zoom+0.0012,1.10)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps=30,format=yuv420p"
+        run(['ffmpeg', '-y', '-loop', '1', '-i', f'{work}/v{i + 1}.png', '-vf', vf,
              '-frames:v', str(n), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', out]); parts.append(out)
     slides[-1].save(f'{work}/slide{len(slides)}.png')
-    product_clip([spec['render']], f'{work}/end.mp4', spec['durs'][-1], end_png=f'{work}/end.png'); parts.append(f'{work}/end.mp4')
+    options = {'box': (132,310,840,1110), 'critical_box': (132,310,840,1110)} if native else {}
+    product_clip([spec['render']], f'{work}/end.mp4', spec['durs'][-1], end_png=f'{work}/end.png', **options); parts.append(f'{work}/end.mp4')
     join(parts, f'{work}/picture.mp4')
     starts = [sum(spec['durs'][:i]) for i in range(len(slides))]; total = sum(spec['durs'])
     booms = [(t + 0.02, 'boom') for t in starts[:-1]]
@@ -334,7 +358,8 @@ def film(spec, work):
         dur = s['until'] - t0; t0 = s['until']; cap = T(s['line'], spec) if s.get('line') else None
         out = f'{work}/s{i:02d}.mp4'
         if s.get('render'):   # a real render mid-film: moving, captioned, no badge
-            product_clip([s['render']], out, dur, overlay=lambda im, t, c=cap, y=s.get('cap_y', default_y): draw_caption(im, c, y), end_png=f'{work}/s{i:02d}.png')
+            options = {'box': (132,310,840,930), 'critical_box': (132,310,840,930)} if native else {}
+            product_clip([s['render']], out, dur, overlay=lambda im, t, c=cap, y=s.get('cap_y', default_y): draw_caption(im, c, y), end_png=f'{work}/s{i:02d}.png', **options)
         else:
             im = draw_caption(_cover(f"{FR}/{s['frame']}", s.get('crop_top', 0)), cap, s.get('cap_y', default_y))
             png = f'{work}/s{i:02d}.png'; n = round(dur * 30)
@@ -345,6 +370,16 @@ def film(spec, work):
                 z = f"max(1,{z0}-({z0}-1)*min(1,on/{max(1, round(n * 0.8))}))"
                 run(['ffmpeg', '-y', '-loop', '1', '-i', png, '-loop', '1', '-i', cap_png, '-filter_complex',
                      f"[0]scale=2160:3840,zoompan=z='{z}':x='max(0,min(iw-iw/zoom,{fx}*iw-iw/zoom/2))':y='max(0,min(ih-ih/zoom,{fy}*ih-ih/zoom/2))':d={n}:s={W}x{H}:fps=30[v];[v][1]overlay=0:0:shortest=1,format=yuv420p",
+                     '-frames:v', str(n), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', out])
+                parts.append(out); continue
+            if native:
+                # Move the clean picture only. Scaling baked captions also scales
+                # their measured bounds beyond the placement's working region.
+                _cover(f"{FR}/{s['frame']}", s.get('crop_top', 0)).save(png)
+                cap_png = f'{work}/s{i:02d}_cap.png'
+                draw_caption(Image.new('RGBA', (W, H)), cap, s.get('cap_y', default_y)).save(cap_png)
+                run(['ffmpeg', '-y', '-loop', '1', '-i', png, '-loop', '1', '-i', cap_png, '-filter_complex',
+                     f"[0]scale=2160:3840,zoompan=z='min(zoom+0.0007,1.08)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps=30[v];[v][1]overlay=0:0:shortest=1,format=yuv420p",
                      '-frames:v', str(n), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', out])
                 parts.append(out); continue
             im.save(png)

@@ -16,9 +16,11 @@ CRITICAL = (108, 288, 864, 1152)
 SUBTITLES = (108, 960, 864, 1120)
 CAPTION_SIZE = 54
 MAX_CHAT_MESSAGES = 3
+TIKTOK_PHOTO_BACKGROUND = (36, 32, 27)
+TIKTOK_PHOTO_TEXT = (246, 241, 231)
 PRESETS = {
     'instagram': {'reel': (1080, 1920), 'story': (1080, 1920), 'image': (1080, 1350), 'carousel': (1080, 1350)},
-    'tiktok': {'video': (1080, 1920)},
+    'tiktok': {'video': (1080, 1920), 'image': (1080, 1920), 'carousel': (1080, 1920)},
     'facebook': {'reel': (1080, 1920), 'image': (1080, 1350), 'carousel': (1080, 1350)},
     'threads': {'image': (1080, 1350), 'video': (1080, 1920)},
     'x': {'image': (1080, 1350), 'video': (1080, 1920)},

@@ -98,3 +98,19 @@ Krish delegated final creative judgment: “Judge yourself and get this all read
 Ruling (Krish, 2026-11-04): caption move to y=1300 dropped; locked masters stay at 1440.
 
 North Star check (2026-11-04): holds.
+
+## Unpublished platform correction, 6 November
+
+Krish subsequently authorized integrating `Social_Creative_UI_Best_Practices.docx`,
+correcting every current unpublished placement, and recovering original images
+from Higgsfield/Runway. This creates new UI editions; it does not reopen or
+rewrite the historical 4 November caption ruling above.
+
+Eight reels preserve their approved audio bitstreams, shot boundaries and frame
+counts. Ten roast slides and twelve platform-specific Thanksgiving images are
+recomposed; eight cover JPGs remain references. The sole selected index is
+`library/editions/2026-11-06-ui.json`. All 33 active unpublished placements were
+replaced as drafts by the scheduling chat. The 37 earlier superseded drafts stay
+excluded. No paid spend, published-post edit, deletion or schedule reactivation.
+See `docs/audits/2026-11-06-unpublished-correction.md` for the exact final readback
+and the remaining native device review boundary.

@@ -1,0 +1,4 @@
+Status: Recovered clean sources and approved motion, produced 38 selected UI-edition files, and handed off 33 exact unpublished draft replacements. Library API and CDN bytes match local hashes; Drive names, sizes and parents were read back. Preview-driven typography, contrast, cover metadata and AI-disclosure corrections are recorded in the correction audit. All postings remain held for native release review; no published edits or paid spend.
+Next: Review the exact corrected draft batch on native devices, then return release clearance to the scheduling chat, which rechecks dates before restoring the approved schedule.
+Changed: The supplied document is now enforced in shared layout, source-repair, photo-card and release-evidence paths. Earlier locks and the 4 November caption ruling remain intact. Current selected index: library/editions/2026-11-06-ui.json. Audit: docs/audits/2026-11-06-unpublished-correction.md.
+North Star check (2026-11-06): holds.

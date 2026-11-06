@@ -1,8 +1,17 @@
 # Current Heartside publishing library
 
+**6 November unpublished correction:** use the 38-file [UI edition index](editions/2026-11-06-ui.json)
+for the 33 corrected drafts. Its eight cover JPGs are references; Buffer videos
+use a selected frame on Instagram/TikTok and the automatic frame on Facebook.
+The corrected drafts remain held for release review. Do not restore the old
+media below or activate any of the 37 excluded superseded drafts. The audit and
+handoff are in [the correction report](../docs/audits/2026-11-06-unpublished-correction.md).
+
+## Earlier locked masters
+
 The 40 earlier files were verified on 4 November 2026. The eight Thanksgiving POV memes (F17–F24) were verified on 5 November 2026 against the approved JPGs, the release API downloads and the files in Drive. This index now lists 48 files.
 
-Prepare organic schedules from this table. Read the existing captions in Drive Sheets 02 and 02c, use 02d for F13, and obtain approval for the proposed slots. Use the current four-arm boost packet for paid planning. Spending requires a separate release decision.
+This table preserves the earlier locks and their provenance; it is not the selection for the corrected unpublished batch above. Read the existing captions in Drive Sheets 02 and 02c, use 02d for F13, and obtain approval for new proposed slots. Use the current four-arm boost packet for paid planning. Spending requires a separate release decision.
 
 | Post | Kind | Drive path under 05_Social-Library | SHA-256 | Bytes | Duration or dimensions | Lock record |
 |---|---|---|---|---:|---|---|

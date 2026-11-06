@@ -3,6 +3,8 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-06: Krish: “Yes, integrate this and then correct everything that is currently unpublished in terms of social posts.” Authorized recovery of original Heartside images, including Runway. Implemented the supplied social UI standard in composition and release checks, then made separately versioned editions for all 33 current unpublished placements. Original locked masters and the 4 Nov ruling remain intact. The selected files and exact verification scope are in `library/editions/2026-11-06-ui.json` and `docs/audits/2026-11-06-unpublished-correction.md`. No paid spend or published-post changes.
+
 - 2026-11-04: Krish: “Trash these nine review files”. Moved the nine named F04, F05, F11 and F12 review files to Trash. Read back all nine recoverable entries and rechecked the 40 remaining plain-name release files against their SHA-256.
 
 - 2026-11-04: Krish delegated the editorial release decision: “Judge yourself and get this all ready for publishing.” Codex accepted the new F10 reel, the checked F11 review cut, and the corrected F06-frenchie reel and slide 3. All 40 current files were downloaded from the library API and matched to their plain-name Drive files. The scheduling source is `library/CURRENT.md`.

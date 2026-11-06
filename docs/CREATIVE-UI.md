@@ -59,6 +59,10 @@ states. Expansion needs an observed behaviour record, not an unobscured-video pa
 - Contrast: house target 4.5:1 for ordinary text, assessed on the worst frame.
   Use a stable panel/scrim/outline. Inspect native white controls over light
   artwork; a background treatment must not compete with the story.
+  The 6 Nov Buffer preview exposed invisible white controls on cream TikTok
+  photo cards. `factory.ui_layout.photo_card` now uses brand ink around the
+  photo and cream headlines for TikTok, while feed cards retain cream. The
+  image and carousel TikTok presets are 1080x1920; this remains a house choice.
 - Layers: keep picture, text, subtitles, branding and cover independently
   editable. Do not bake editor overlays, native controls, other-platform
   watermarks or required platform labels into the export. Preserve provenance.
@@ -80,6 +84,30 @@ rewrite `factory/specs`, locks, release hashes or queued posts. In particular,
 the 4 November ruling keeping F01/F02/F03/F05/F12 at y1440 remains recorded.
 Search and roast outputs still need the same placement review; their legacy
 geometry is not certified by the new chat/film helpers.
+
+New-profile roast renders now use measured, bounded text and an intact fitted
+product. New-profile film stills move only the picture beneath static subtitles;
+zooming a flattened caption would invalidate its measured bounds. Existing
+locked versions keep their original geometry. `factory/repair_ui.py` makes
+separate editions from hash-bound clean sources, exact bank wording and shot
+boundaries, with frame-count and original audio-bitstream verification.
+
+### Buffer delivery contract (verified 6 Nov)
+
+Set video title and frame selection under `video.metadata.title` and
+`video.metadata.thumbnailOffset`, with `video.url` beside metadata. The current
+route supports a 1000ms frame for Instagram/TikTok; omit the offset for Facebook
+and inspect its automatic first frame. Separate JPG covers are references, not
+applied custom thumbnails. See the official [VideoAssetInput](https://developers.buffer.com/types/VideoAssetInput.html)
+and [VideoMetadataInput](https://developers.buffer.com/types/VideoMetadataInput.html).
+Read back actual fields after every save; accepted input alone is insufficient.
+
+Generated-source editions set supported Instagram/TikTok AI disclosure inputs.
+Do not preserve a known incorrect false value merely because it was in the old
+draft. Buffer's Facebook native flag and TikTok photo flag are not exposed by
+the current route: use accurate visible copy disclosure, record the unsupported
+native flag honestly, and inspect the platform at release. Source-photo posts
+must not be falsely labelled generated.
 
 New/recomposed specs must declare that profile before locking, so a later lock
 cannot switch a build back to legacy geometry. Create a separately identified

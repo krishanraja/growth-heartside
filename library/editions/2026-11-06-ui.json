@@ -1,0 +1,1074 @@
+{
+  "revision": "social-ui-2026-11-06-v1",
+  "status": "corrected drafts; native device release review pending",
+  "date": "2026-11-06",
+  "authority": "Krish: integrate the document and correct all unpublished social posts.",
+  "files": [
+    {
+      "post": "F01",
+      "file": "heartside_F01_ui-v1_reel.mp4",
+      "role": "video",
+      "bytes": 18998765,
+      "sha256": "974e429c9c1ce5af6e85ec902ed8e5d822d98b47292156700e2653031d14042f",
+      "library_path": "Posts/F01/heartside_F01_ui-v1_reel.mp4",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/4ee2e100-612a-433a-bd9f-540638a42d0e.mp4",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1VubSUeHZ2LpZ_VaQ33WSKTi0-lA7MuFx",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F01",
+      "file": "heartside_F01_ui-v1_cover.jpg",
+      "role": "cover",
+      "bytes": 603032,
+      "sha256": "d576d02553b3f5fb445d0d87a99ae1a473fdf59b691bfe70e5b3103a9298a2c5",
+      "library_path": "Posts/F01/heartside_F01_ui-v1_cover.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/b89cfabd-bd15-4f1f-9680-e5d31f5ba18d.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1Xg8qHTrx_7P_XSQc35TPGpmCKSVpq9jg",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F03",
+      "file": "heartside_F03_ui-v1_reel.mp4",
+      "role": "video",
+      "bytes": 16158329,
+      "sha256": "87295daa0720477e79d8e5cb928263c7f90f4f21cef39ed020664e857a4acc8e",
+      "library_path": "Posts/F03/heartside_F03_ui-v1_reel.mp4",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/b0562741-df2f-4366-a0aa-08e92fc0dd1d.mp4",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1HJS-tWG_DQaY2NxPaifmjaxjfu9EICy4",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F03",
+      "file": "heartside_F03_ui-v1_cover.jpg",
+      "role": "cover",
+      "bytes": 854649,
+      "sha256": "32fdeb4a8a129187cd20170e6f6d518e3cbf8593668b9d50798b7c146e01502b",
+      "library_path": "Posts/F03/heartside_F03_ui-v1_cover.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/72fe626b-a1ea-41ec-bfa3-219c9dfb57ea.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1UN8eIfgegFaXsXPUwq6pLI93jYn7FXQ2",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F04",
+      "file": "heartside_F04_ui-v1_reel.mp4",
+      "role": "video",
+      "bytes": 12926587,
+      "sha256": "db13442cccc97219426950720a549d787da6e66eca42d20c30807e1f98746536",
+      "library_path": "Posts/F04/heartside_F04_ui-v1_reel.mp4",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/2c44fece-2e50-4fa9-b65a-25ad80312a77.mp4",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1vOP_pfXN-aZ2A8dLO9GrcLrtjaVCzn8D",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F04",
+      "file": "heartside_F04_ui-v1_cover.jpg",
+      "role": "cover",
+      "bytes": 725575,
+      "sha256": "9f5fa2ca43b5c95413c6c4e232a8dc4a9d30976796b98878bb666338c03f329b",
+      "library_path": "Posts/F04/heartside_F04_ui-v1_cover.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/84e1df53-7936-469d-b188-fcb8c8eab2fe.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "17rWlwfajLJZfHBYX_ohf-velpVekf8H7",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F05",
+      "file": "heartside_F05_ui-v1_reel.mp4",
+      "role": "video",
+      "bytes": 16588963,
+      "sha256": "d342ed587d85d821e0b53ec14eae06e53dd631f8e5d76a6fdb0bb45a172be1a1",
+      "library_path": "Posts/F05/heartside_F05_ui-v1_reel.mp4",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/026b4421-0fe8-4ae9-a9f3-f63e3fd9f3e9.mp4",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1PuCWLPOGv-ebaXAfIpZ9PKp4my6wd3-B",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F05",
+      "file": "heartside_F05_ui-v1_cover.jpg",
+      "role": "cover",
+      "bytes": 672521,
+      "sha256": "f3be70c21f6fab6c5da98373e1d964a6bb1458f3edd53e14770c2ee2d8426531",
+      "library_path": "Posts/F05/heartside_F05_ui-v1_cover.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/92fb1975-3266-46a9-af4d-d467b2c7ddcd.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1oDMqpbykRMdzuBxQFwJraw7iWweazzJs",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F07",
+      "file": "heartside_F07_ui-v1_reel.mp4",
+      "role": "video",
+      "bytes": 6332427,
+      "sha256": "73866185aa6347217f835630dbf1af2aacf8304ee6210a617e43880f7238c21f",
+      "library_path": "Posts/F07/heartside_F07_ui-v1_reel.mp4",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/cecdb133-dbba-4c9b-b4f2-b000c75d9854.mp4",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1Rld83AM1qVzlIg7_sfMJeZHCOWNi5l_s",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F07",
+      "file": "heartside_F07_ui-v2_cover.jpg",
+      "role": "cover",
+      "bytes": 436462,
+      "sha256": "48e24af093aef587737449e4d6706946edd000bfec235716b83cde63d5c05a6c",
+      "library_path": "Posts/F07/heartside_F07_ui-v2_cover.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/99dbf003-b0a1-4d34-85ba-5ca958353b38.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1GN1NxbUb9-6tvOHjT_RRnnAs1q_Il--y",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F12",
+      "file": "heartside_F12_ui-v1_reel.mp4",
+      "role": "video",
+      "bytes": 12907434,
+      "sha256": "6ea7491a0027b0fd4561d29b62025fdc7440808cdb76ad44991e3ef3eb9cce24",
+      "library_path": "Posts/F12/heartside_F12_ui-v1_reel.mp4",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/0bb66f2f-d9ca-4dd7-b832-c58273484ac7.mp4",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1RgXkw57nKlTnNFfdw9pDBGTLFV8fI6K7",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F12",
+      "file": "heartside_F12_ui-v1_cover.jpg",
+      "role": "cover",
+      "bytes": 637020,
+      "sha256": "8ad3f1be138705248a98cda46006b13556e9b55dd6148feb607a2bb66cf28338",
+      "library_path": "Posts/F12/heartside_F12_ui-v1_cover.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/8eac65dc-ed22-4aa1-a4e5-1289a2e21e71.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1SPOF85Q0jnFFlcLKl707IzeJzW6-3GId",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-lab",
+      "file": "heartside_F06-lab_ui-v1_reel.mp4",
+      "role": "video",
+      "bytes": 7123290,
+      "sha256": "c43dc4e06e3d3a1515d638f162e492aa459f1a567be270392692432ae9b6da4e",
+      "library_path": "Posts/F06-lab/heartside_F06-lab_ui-v1_reel.mp4",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/075ea952-c222-453e-9bc5-0a68226af770.mp4",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1Wj8xN4ecxTWiX-qY8Cg-IbmCMsBI5jy4",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-lab",
+      "file": "heartside_F06-lab_ui-v2_cover.jpg",
+      "role": "cover",
+      "bytes": 515091,
+      "sha256": "60c92d906d2d6be806cc7df41307ad89df05aa6e664d23403175a33740efd2b6",
+      "library_path": "Posts/F06-lab/heartside_F06-lab_ui-v2_cover.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/425ebcd6-786a-4ab0-a667-db2e6283f378.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1FEHJ0s_Ddic2HTYTTXpBm6RXH7q_N2Tu",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-lab",
+      "file": "heartside_F06-lab_ui-v1_slide1.jpg",
+      "role": "image",
+      "bytes": 526767,
+      "sha256": "d0104577ff215d2feee8fa4fd4d5aa5a049354c6c1f67d166424b1531028f5aa",
+      "index": 0,
+      "alt": "Lab dog. Text: What your lab really thinks of you.",
+      "library_path": "Posts/F06-lab/heartside_F06-lab_ui-v1_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/bad929dc-7182-42e4-8c3f-e10de29d1847.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1-oWw5oDaUTjKGptngxge7HoHW-0XDhgc",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-lab",
+      "file": "heartside_F06-lab_ui-v1_slide2.jpg",
+      "role": "image",
+      "bytes": 667436,
+      "sha256": "6e2dd10cb69c7773869d7e31492c77cf79e125e6ed423b77aa5821b28386602a",
+      "index": 1,
+      "alt": "Lab dog. Text: Come on, you can throw better than that.",
+      "library_path": "Posts/F06-lab/heartside_F06-lab_ui-v1_slide2.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/be02d35f-fbb5-40f9-af95-c9ae3518f1d8.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1P3d13V1mdgGEChlFF3y4zs4wXz_z_Vp0",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-lab",
+      "file": "heartside_F06-lab_ui-v2_slide3.jpg",
+      "role": "image",
+      "bytes": 516203,
+      "sha256": "2bd5b5453ed6aa2d6ca59f1429f6be7563188d9536d199799989e4ef3f2a62eb",
+      "index": 2,
+      "alt": "Lab dog. Text: I know where the treats are. Top right cupboard.",
+      "library_path": "Posts/F06-lab/heartside_F06-lab_ui-v2_slide3.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/186ebc11-2c76-4347-942a-8ad3974ac565.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1qENoYAx-PX7rDxtWXhl70XxUluaN-Kd3",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-lab",
+      "file": "heartside_F06-lab_ui-v1_slide4.jpg",
+      "role": "image",
+      "bytes": 673622,
+      "sha256": "a9f0b453a4940705c7c48555c1b8b79120cec707d6fe82a8877634ac9d0d5963",
+      "index": 3,
+      "alt": "Lab dog. Text: Of everyone I see every day, you're my favorite. Sorry, mailman.",
+      "library_path": "Posts/F06-lab/heartside_F06-lab_ui-v1_slide4.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/e667890d-a483-4ec7-ba6c-4be3c48c647f.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1aMuKA8G89x4aEuvSKdkNEpEGsF96qTlz",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-lab",
+      "file": "heartside_F06-lab_ui-v1_slide5.jpg",
+      "role": "image",
+      "bytes": 181891,
+      "sha256": "369dc2ea7af30b4a3323c9e61f83947816b9adeb68ca2c51f2efcf6c460c7cc4",
+      "index": 4,
+      "alt": "Personalized mug showing the lab from the preceding slides.",
+      "library_path": "Posts/F06-lab/heartside_F06-lab_ui-v1_slide5.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/191941e3-c606-45e5-b3c7-81bc6e94cc99.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1suOSkB_gC8Z3Q4VEm3FBYj6zG85MJ1t_",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-dachshund",
+      "file": "heartside_F06-dachshund_ui-v1_reel.mp4",
+      "role": "video",
+      "bytes": 3755515,
+      "sha256": "407032d2c44b20ae6dc675603bc46c910c0761bb726234c36f29369c895dd920",
+      "library_path": "Posts/F06-dachshund/heartside_F06-dachshund_ui-v1_reel.mp4",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/d87b30ad-71f9-4800-9c79-5204b1dfc5a8.mp4",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1wkoj9hxzJS0c2h-xp0l4hpcPCLFlSmWQ",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-dachshund",
+      "file": "heartside_F06-dachshund_ui-v2_cover.jpg",
+      "role": "cover",
+      "bytes": 536803,
+      "sha256": "4dd5e83e84f1fb1715d52546e52e8269b7ba09fef9ca879e5465be0d9400407c",
+      "library_path": "Posts/F06-dachshund/heartside_F06-dachshund_ui-v2_cover.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/4cde331b-a016-4e44-b466-0f9bb8fa6992.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1IK--AMtQBQDoUUHND5jl-RJ6bqbYIP1u",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-dachshund",
+      "file": "heartside_F06-dachshund_ui-v1_slide1.jpg",
+      "role": "image",
+      "bytes": 499228,
+      "sha256": "0df8d4b4081b02c8ef9bfb259cb8ea9f3e74f9fd9ef0ae96acfef1df9da24fa4",
+      "index": 0,
+      "alt": "Dachshund dog. Text: What your dachshund really thinks of you.",
+      "library_path": "Posts/F06-dachshund/heartside_F06-dachshund_ui-v1_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/eef0a7cc-ff7c-41f1-9a53-0b1c5e70e20e.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1MiLiCak4DloHZYB1EUulPAuuEVD5seat",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-dachshund",
+      "file": "heartside_F06-dachshund_ui-v1_slide2.jpg",
+      "role": "image",
+      "bytes": 497190,
+      "sha256": "f3d71cb2fa780ac1a0396502f4d56c6b60f2390e023cd16986dc9169a9f1aeb1",
+      "index": 1,
+      "alt": "Dachshund dog. Text: You bought me stairs for the couch. I use them to fart on your pillow. My bad.",
+      "library_path": "Posts/F06-dachshund/heartside_F06-dachshund_ui-v1_slide2.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/49d49164-4deb-442b-9f88-d3fc2f0e8e68.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1h5E8xKGJn_rp3cMwDQn82EpJ-YUX1AuI",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-dachshund",
+      "file": "heartside_F06-dachshund_ui-v1_slide3.jpg",
+      "role": "image",
+      "bytes": 579790,
+      "sha256": "f73c64a1c7de75f1d3df97b484bc9513f1c7a88113d940e3bff9238fb33e9007",
+      "index": 2,
+      "alt": "Dachshund dog. Text: Who walks who here? Pretty sure I know the answer.",
+      "library_path": "Posts/F06-dachshund/heartside_F06-dachshund_ui-v1_slide3.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/ad497dcb-4d3a-42ec-90d8-709d927ccd48.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "17hgrzVIvk4HLYfa4-XCj4xBl8JRneRAc",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-dachshund",
+      "file": "heartside_F06-dachshund_ui-v1_slide4.jpg",
+      "role": "image",
+      "bytes": 519682,
+      "sha256": "7d4019fe2acb96bc11eee83510f24dc325a518dcf9afd1bb097eaad5c443871f",
+      "index": 3,
+      "alt": "Dachshund dog. Text: You jump at every noise, so I check them all for you.",
+      "library_path": "Posts/F06-dachshund/heartside_F06-dachshund_ui-v1_slide4.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/34046d7d-0e36-44a8-8373-1dabf384979e.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1CYjWl4ZnjsCGtZXD6YOrkrNAJzhW_wtw",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F06-dachshund",
+      "file": "heartside_F06-dachshund_ui-v1_slide5.jpg",
+      "role": "image",
+      "bytes": 211861,
+      "sha256": "9fa22a42f3552a238f590d5c8ae123cbe36e9bfbad795978bd2722d02fe1deb3",
+      "index": 4,
+      "alt": "Personalized mug showing the dachshund from the preceding slides.",
+      "library_path": "Posts/F06-dachshund/heartside_F06-dachshund_ui-v1_slide5.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/f71a12df-a5fe-4f0a-aad4-cc22eb5c0f98.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1TU5PtW0Ys9Bx6h8R6B3XlGg2-SlQn5AH",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F19",
+      "file": "heartside_F19_ui-v1-feed_slide1.jpg",
+      "role": "image",
+      "bytes": 306142,
+      "sha256": "9613772a0fd6986c1429a94dd3fd2ddc972915b6625e57ef06b70cc80dc10487",
+      "platform": "feed",
+      "index": 0,
+      "alt": "Two dogs pose together, one with a startled expression. Text: 'Tis the season for your yearly reunion with your weirdest relatives. (And we love them anyway.)",
+      "library_path": "Posts/F19/heartside_F19_ui-v1-feed_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/a9d719b5-7e35-4d6d-af67-7a2416a23508.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "13iMVJLuu1tsZnyiffBtZvyIfhvHrWsAt",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F19",
+      "file": "heartside_F19_ui-v2-tiktok_slide1.jpg",
+      "role": "image",
+      "bytes": 262081,
+      "sha256": "4b13a76a540ddd200d0b1e871dcc26867afe867336fd08cd8eb9a22de427e0af",
+      "platform": "tiktok",
+      "index": 0,
+      "alt": "Two dogs pose together, one with a startled expression. Text: 'Tis the season for your yearly reunion with your weirdest relatives. (And we love them anyway.)",
+      "library_path": "Posts/F19/heartside_F19_ui-v2-tiktok_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/14880811-6ff8-4b68-a461-21f21a938c35.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1oG7pug7wCcIitg2pQs2cXlslgWmZygMG",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F20",
+      "file": "heartside_F20_ui-v1-feed_slide1.jpg",
+      "role": "image",
+      "bytes": 305403,
+      "sha256": "bc439ba3a129e3ba832990c3a48eb30d159883a2b7aac14e55b335992952ec90",
+      "platform": "feed",
+      "index": 0,
+      "alt": "A wide-eyed husky in front of a family scene with dog faces. Text: Ah yes, Thanksgiving: when the family drama gets served before the turkey.",
+      "library_path": "Posts/F20/heartside_F20_ui-v1-feed_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/0b6f2b15-4d64-40e4-93a3-4cbb4f3241cd.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1HfpKeN2c_190bO1P0fXrJzlQ7hGpqggu",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F20",
+      "file": "heartside_F20_ui-v2-tiktok_slide1.jpg",
+      "role": "image",
+      "bytes": 255782,
+      "sha256": "3766a4a298d0f1852f84d2065d4e5c1854f0301fc02ae3bc946cdc011cadce3a",
+      "platform": "tiktok",
+      "index": 0,
+      "alt": "A wide-eyed husky in front of a family scene with dog faces. Text: Ah yes, Thanksgiving: when the family drama gets served before the turkey.",
+      "library_path": "Posts/F20/heartside_F20_ui-v2-tiktok_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/6de34a8e-99f2-4dde-9b73-d7d8dbb01b24.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1MLzhL7NxqA9gnEgV-p97szBxJe7n18iR",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F21",
+      "file": "heartside_F21_ui-v1-feed_slide1.jpg",
+      "role": "image",
+      "bytes": 337046,
+      "sha256": "929792107c37e823fe40a51082cc3626bd7eb694f6eb4584dc2f60fac561240f",
+      "platform": "feed",
+      "index": 0,
+      "alt": "A dog gives an awkward, toothy smile. Text: My face all Thanksgiving because Mom said no debates at the table this year.",
+      "library_path": "Posts/F21/heartside_F21_ui-v1-feed_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/1a092c54-ed92-48b2-86f1-268a6a191e86.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1a6SrMulH7nXhlRsqxm9qaWMlar7vPOmq",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F21",
+      "file": "heartside_F21_ui-v2-tiktok_slide1.jpg",
+      "role": "image",
+      "bytes": 278214,
+      "sha256": "46523c32148273c9f60e331e3d43d5a3cbc264c2b5e3d7e84f9615a8854ba00d",
+      "platform": "tiktok",
+      "index": 0,
+      "alt": "A dog gives an awkward, toothy smile. Text: My face all Thanksgiving because Mom said no debates at the table this year.",
+      "library_path": "Posts/F21/heartside_F21_ui-v2-tiktok_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/87b1d35b-810d-470b-b4ae-9ca96c210cef.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1WKv4I03PkSlsAdU9hHSAPjMaagT8QCdB",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F22",
+      "file": "heartside_F22_ui-v1-feed_slide1.jpg",
+      "role": "image",
+      "bytes": 454727,
+      "sha256": "3b7db4a614da71db06b3dc5262fd1846a95da811a75d20d2b240329753119890",
+      "platform": "feed",
+      "index": 0,
+      "alt": "A scruffy dog rests its chin on a person\u2019s knee beside an empty bowl. Text: My dog explaining to Grandma that nobody feeds him here.",
+      "library_path": "Posts/F22/heartside_F22_ui-v1-feed_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/0f07ff30-1f3d-4f08-aead-096c8daddd73.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1eqbfPlih-VBCKlffa-MHuexR2lMCmLZ0",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F22",
+      "file": "heartside_F22_ui-v2-tiktok_slide1.jpg",
+      "role": "image",
+      "bytes": 348356,
+      "sha256": "1f059bc4c2bb4bb3120062c506d53e4e1ca59abaa0b885dc39e35f4ed6ab58b5",
+      "platform": "tiktok",
+      "index": 0,
+      "alt": "A scruffy dog rests its chin on a person\u2019s knee beside an empty bowl. Text: My dog explaining to Grandma that nobody feeds him here.",
+      "library_path": "Posts/F22/heartside_F22_ui-v2-tiktok_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/06ff6e2c-9e68-45ab-ac3f-95280b51c801.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "13kw8gFte0ROTlhvveplxC9WZlGgeOPJL",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F23",
+      "file": "heartside_F23_ui-v1-feed_slide1.jpg",
+      "role": "image",
+      "bytes": 552974,
+      "sha256": "6187619e0ae948e90b269c5211d633a0c9cd2515201ba4ee92f4451e2fb5de81",
+      "platform": "feed",
+      "index": 0,
+      "alt": "A German shepherd rests beside an oven with a turkey inside. Text: Can't hear his name. Can hear the turkey timer from upstairs.",
+      "library_path": "Posts/F23/heartside_F23_ui-v1-feed_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/dd39a0b9-6300-4fd3-b2aa-623093f6b7a5.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1c4bsbgcMFNbZPBl6s9rvhcanZi6Fpzsr",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F23",
+      "file": "heartside_F23_ui-v2-tiktok_slide1.jpg",
+      "role": "image",
+      "bytes": 411990,
+      "sha256": "40b046f9598a26325eab7780295ef2397ea26054770e6ad76faceff95df1a9e9",
+      "platform": "tiktok",
+      "index": 0,
+      "alt": "A German shepherd rests beside an oven with a turkey inside. Text: Can't hear his name. Can hear the turkey timer from upstairs.",
+      "library_path": "Posts/F23/heartside_F23_ui-v2-tiktok_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/a774d077-4134-452c-9aef-8a63b4819437.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1-Z5PC9Ejs3mG6sN5Qg6lORkEEFtOxB2l",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F24",
+      "file": "heartside_F24_ui-v1-feed_slide1.jpg",
+      "role": "image",
+      "bytes": 476340,
+      "sha256": "1d5466a0380a9da391b9a1516f0cca668036c47cec62204690857540b1b6905e",
+      "platform": "feed",
+      "index": 0,
+      "alt": "A golden retriever sits in a chair at the dinner table. Text: POV: you get up for the gravy and it's legally his chair now.",
+      "library_path": "Posts/F24/heartside_F24_ui-v1-feed_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/1b02c7ef-4d6c-4b19-a6cc-fc35fe1ad159.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1T_d7IOaKG506cxIGUEcypQrxO0JslJZN",
+      "drive_name_size_parent_verified": true
+    },
+    {
+      "post": "F24",
+      "file": "heartside_F24_ui-v2-tiktok_slide1.jpg",
+      "role": "image",
+      "bytes": 368518,
+      "sha256": "89e747391e5bc02cfb5bbdf2a21d300d36615fb80741dbea97645805996ec189",
+      "platform": "tiktok",
+      "index": 0,
+      "alt": "A golden retriever sits in a chair at the dinner table. Text: POV: you get up for the gravy and it's legally his chair now.",
+      "library_path": "Posts/F24/heartside_F24_ui-v2-tiktok_slide1.jpg",
+      "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/20888cfd-e563-4560-86e8-e8dd676588d4.jpg",
+      "library_sha256_verified": true,
+      "cdn_sha256_verified": true,
+      "drive_id": "1vffmJ1VOJeki58UTXIAC5OV9xVQASVM1",
+      "drive_name_size_parent_verified": true
+    }
+  ],
+  "checks": {
+    "files": 38,
+    "reels": 8,
+    "carousel_slides": 10,
+    "thanksgiving_images": 12,
+    "reference_covers": 8,
+    "locked_masters_changed": false,
+    "paid_spend": 0,
+    "published_posts_changed": 0,
+    "drive_checksums": "not exposed by connector; names, sizes and folder membership only"
+  },
+  "exclusions": [
+    "All 37 pre-existing superseded Buffer drafts",
+    "F07, F06-lab and F06-dachshund ui-v1 reference covers",
+    "F06-lab ui-v1 slide3",
+    "Six Thanksgiving ui-v1-tiktok images"
+  ],
+  "buffer_cover_contract": {
+    "instagram_tiktok": "video.metadata.thumbnailOffset=1000",
+    "facebook": "automatic first frame",
+    "reference_jpg": "not applied as video thumbnail"
+  },
+  "placements": [
+    {
+      "id": "6aeb88f6f67f30658c54e1c8",
+      "platform": "tiktok",
+      "concept": "F12",
+      "state": "draft",
+      "original_due_at": "2026-11-06T14:15:00.000Z",
+      "text": "Head of security found a suspicious box on the porch. Threat level was maximum, briefly.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dogsoftiktok #frenchie #doghumor",
+      "files": [
+        "heartside_F12_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb88f623e3db949c1552d8",
+      "platform": "instagram",
+      "concept": "F12",
+      "state": "draft",
+      "original_due_at": "2026-11-06T14:20:00.000Z",
+      "text": "Head of security found a suspicious box on the porch. Threat level was maximum, briefly.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dogsofinstagram #frenchbulldog #doghumor",
+      "files": [
+        "heartside_F12_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb88f66cbba97f5cbfb967",
+      "platform": "facebook",
+      "concept": "F12",
+      "state": "draft",
+      "original_due_at": "2026-11-06T14:25:00.000Z",
+      "text": "Head of security found a suspicious box on the porch. Threat level was maximum, briefly.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f12_6_facebook\n\nAI-generated scenes.",
+      "files": [
+        "heartside_F12_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aec69038ed5e05aeda3f1be",
+      "platform": "tiktok",
+      "concept": [
+        "F19",
+        "F20"
+      ],
+      "state": "draft",
+      "original_due_at": "2026-11-06T16:00:00.000Z",
+      "text": "The family is here. So are all their opinions.\n\nGifts from your dog. Create yours at Heartside.io.\n\nReference credit to @kismet.",
+      "files": [
+        "heartside_F19_ui-v2-tiktok_slide1.jpg",
+        "heartside_F20_ui-v2-tiktok_slide1.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aec66e28477444d9dbc81f0",
+      "platform": "instagram",
+      "concept": "F19",
+      "state": "draft",
+      "original_due_at": "2026-11-06T16:05:00.000Z",
+      "text": "Every family has a few characters. Ours just shed more.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\nReference credit to @kismet.",
+      "files": [
+        "heartside_F19_ui-v1-feed_slide1.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aec66e28ed5e05aeda3379c",
+      "platform": "facebook",
+      "concept": "F20",
+      "state": "draft",
+      "original_due_at": "2026-11-06T16:10:00.000Z",
+      "text": "We came for the turkey. The drama was complimentary.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=thanksgiving_202611&utm_content=f20\n\nReference credit to @kismet.",
+      "files": [
+        "heartside_F20_ui-v1-feed_slide1.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb887d23e3db949c153222",
+      "platform": "tiktok",
+      "concept": "F06-dachshund",
+      "state": "draft",
+      "original_due_at": "2026-11-06T17:40:00.000Z",
+      "text": "What your dachshund really thinks of you. The stairs were a mistake.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dachshund #dogsoftiktok #doghumor",
+      "files": [
+        "heartside_F06-dachshund_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb891923e3db949c155e2e",
+      "platform": "instagram",
+      "concept": "F06-dachshund",
+      "state": "draft",
+      "original_due_at": "2026-11-06T17:45:00.000Z",
+      "text": "What your dachshund really thinks of you. The stairs were a mistake.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dachshund #sausagedog #doghumor",
+      "files": [
+        "heartside_F06-dachshund_ui-v1_slide1.jpg",
+        "heartside_F06-dachshund_ui-v1_slide2.jpg",
+        "heartside_F06-dachshund_ui-v1_slide3.jpg",
+        "heartside_F06-dachshund_ui-v1_slide4.jpg",
+        "heartside_F06-dachshund_ui-v1_slide5.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb891a1310dbd9d43f4bd3",
+      "platform": "facebook",
+      "concept": "F06-dachshund",
+      "state": "draft",
+      "original_due_at": "2026-11-06T17:50:00.000Z",
+      "text": "What your dachshund really thinks of you. The stairs were a mistake.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f06_dachshund_6_facebook\n\nAI-generated scenes.",
+      "files": [
+        "heartside_F06-dachshund_ui-v1_slide1.jpg",
+        "heartside_F06-dachshund_ui-v1_slide2.jpg",
+        "heartside_F06-dachshund_ui-v1_slide3.jpg",
+        "heartside_F06-dachshund_ui-v1_slide4.jpg",
+        "heartside_F06-dachshund_ui-v1_slide5.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb8839f67f30658c549b14",
+      "platform": "tiktok",
+      "concept": "F01",
+      "state": "draft",
+      "original_due_at": "2026-11-06T20:10:00.000Z",
+      "text": "Day four hundred of losing to a coffee mug. Plan C was always the answer.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dachshund #dogsoftiktok #doghumor",
+      "files": [
+        "heartside_F01_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb8839f67f30658c549b8e",
+      "platform": "instagram",
+      "concept": "F01",
+      "state": "draft",
+      "original_due_at": "2026-11-06T20:15:00.000Z",
+      "text": "Day four hundred of losing to a coffee mug. Plan C was always the answer.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dachshund #sausagedog #doghumor",
+      "files": [
+        "heartside_F01_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb883a8ee551b5aa780fcd",
+      "platform": "facebook",
+      "concept": "F01",
+      "state": "draft",
+      "original_due_at": "2026-11-06T20:20:00.000Z",
+      "text": "Day four hundred of losing to a coffee mug. Plan C was always the answer.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f01_6_facebook\n\nAI-generated scenes.",
+      "files": [
+        "heartside_F01_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aec691df26542fc33d30f6c",
+      "platform": "tiktok",
+      "concept": [
+        "F21",
+        "F22"
+      ],
+      "state": "draft",
+      "original_due_at": "2026-11-07T12:00:00.000Z",
+      "text": "A polite smile for the family. A very different story for Grandma.\n\nGifts from your dog. Create yours at Heartside.io.\n\nReference credit to @kismet.\n\nSlide 2 is AI-generated.",
+      "files": [
+        "heartside_F21_ui-v2-tiktok_slide1.jpg",
+        "heartside_F22_ui-v2-tiktok_slide1.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aec66e2096bdb6b0ff3bd34",
+      "platform": "instagram",
+      "concept": "F21",
+      "state": "draft",
+      "original_due_at": "2026-11-07T12:05:00.000Z",
+      "text": "Smiling politely. Thinking absolutely everything.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\nReference credit to @kismet.",
+      "files": [
+        "heartside_F21_ui-v1-feed_slide1.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aec66e31381c3b3047651cf",
+      "platform": "facebook",
+      "concept": "F22",
+      "state": "draft",
+      "original_due_at": "2026-11-07T12:10:00.000Z",
+      "text": "Grandma is about to hear a very convincing version of events.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=thanksgiving_202611&utm_content=f22\n\nAI-generated image.",
+      "files": [
+        "heartside_F22_ui-v1-feed_slide1.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb887ec6d064586b7c0e41",
+      "platform": "tiktok",
+      "concept": "F04",
+      "state": "draft",
+      "original_due_at": "2026-11-07T14:15:00.000Z",
+      "text": "Get up for four seconds and the spot is gone for good.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#goldenretriever #dogsoftiktok #doghumor",
+      "files": [
+        "heartside_F04_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb887ec6d064586b7c0e90",
+      "platform": "instagram",
+      "concept": "F04",
+      "state": "draft",
+      "original_due_at": "2026-11-07T14:20:00.000Z",
+      "text": "Get up for four seconds and the spot is gone for good.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#goldenretriever #dogsofinstagram #doghumor",
+      "files": [
+        "heartside_F04_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb887e23e3db949c15329a",
+      "platform": "facebook",
+      "concept": "F04",
+      "state": "draft",
+      "original_due_at": "2026-11-07T14:25:00.000Z",
+      "text": "Get up for four seconds and the spot is gone for good.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f04_7_facebook\n\nAI-generated scenes.",
+      "files": [
+        "heartside_F04_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb88f76cbba97f5cbfb999",
+      "platform": "tiktok",
+      "concept": "F07",
+      "state": "draft",
+      "original_due_at": "2026-11-07T17:40:00.000Z",
+      "text": "Our resident art critic reviewed a very handsome portrait. Verdict: it can stay on your wall.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dogsoftiktok #goldendoodle #doghumor",
+      "files": [
+        "heartside_F07_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb88f76cbba97f5cbfb9c7",
+      "platform": "instagram",
+      "concept": "F07",
+      "state": "draft",
+      "original_due_at": "2026-11-07T17:45:00.000Z",
+      "text": "Our resident art critic reviewed a very handsome portrait. Verdict: it can stay on your wall.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dogsofinstagram #goldendoodle #doghumor",
+      "files": [
+        "heartside_F07_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb88f88ee551b5aa784532",
+      "platform": "facebook",
+      "concept": "F07",
+      "state": "draft",
+      "original_due_at": "2026-11-07T17:50:00.000Z",
+      "text": "Our resident art critic reviewed a very handsome portrait. Verdict: it can stay on your wall.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f07_7_facebook\n\nAI-generated scenes.",
+      "files": [
+        "heartside_F07_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aec691e096bdb6b0ff48867",
+      "platform": "tiktok",
+      "concept": [
+        "F23",
+        "F24"
+      ],
+      "state": "draft",
+      "original_due_at": "2026-11-07T19:00:00.000Z",
+      "text": "He heard the timer. He also heard your chair become available.\n\nGifts from your dog. Create yours at Heartside.io.\n\nAI-generated images.",
+      "files": [
+        "heartside_F23_ui-v2-tiktok_slide1.jpg",
+        "heartside_F24_ui-v2-tiktok_slide1.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aec66e38ed5e05aeda337ff",
+      "platform": "instagram",
+      "concept": "F23",
+      "state": "draft",
+      "original_due_at": "2026-11-07T19:05:00.000Z",
+      "text": "His hearing works perfectly when dinner is involved.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\nAI-generated image.",
+      "files": [
+        "heartside_F23_ui-v1-feed_slide1.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aec66e38477444d9dbc8279",
+      "platform": "facebook",
+      "concept": "F24",
+      "state": "draft",
+      "original_due_at": "2026-11-07T19:10:00.000Z",
+      "text": "Should have taken the gravy with you.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=thanksgiving_202611&utm_content=f24\n\nAI-generated image.",
+      "files": [
+        "heartside_F24_ui-v1-feed_slide1.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb88f823e3db949c155390",
+      "platform": "tiktok",
+      "concept": "F06-lab",
+      "state": "draft",
+      "original_due_at": "2026-11-07T20:10:00.000Z",
+      "text": "What your lab really thinks of you. Yes, it knows where the treats are.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#labrador #dogsoftiktok #doghumor",
+      "files": [
+        "heartside_F06-lab_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb891a8ee551b5aa7855b0",
+      "platform": "instagram",
+      "concept": "F06-lab",
+      "state": "draft",
+      "original_due_at": "2026-11-07T20:15:00.000Z",
+      "text": "What your lab really thinks of you. Yes, it knows where the treats are.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#labrador #blacklab #doghumor",
+      "files": [
+        "heartside_F06-lab_ui-v1_slide1.jpg",
+        "heartside_F06-lab_ui-v1_slide2.jpg",
+        "heartside_F06-lab_ui-v2_slide3.jpg",
+        "heartside_F06-lab_ui-v1_slide4.jpg",
+        "heartside_F06-lab_ui-v1_slide5.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb891b6cbba97f5cbfc61c",
+      "platform": "facebook",
+      "concept": "F06-lab",
+      "state": "draft",
+      "original_due_at": "2026-11-07T20:20:00.000Z",
+      "text": "What your lab really thinks of you. Yes, it knows where the treats are.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f06_lab_7_facebook\n\nAI-generated scenes.",
+      "files": [
+        "heartside_F06-lab_ui-v1_slide1.jpg",
+        "heartside_F06-lab_ui-v1_slide2.jpg",
+        "heartside_F06-lab_ui-v2_slide3.jpg",
+        "heartside_F06-lab_ui-v1_slide4.jpg",
+        "heartside_F06-lab_ui-v1_slide5.jpg"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb887fc6d064586b7c0ed4",
+      "platform": "tiktok",
+      "concept": "F05",
+      "state": "draft",
+      "original_due_at": "2026-11-08T14:15:00.000Z",
+      "text": "The court of the couch is now in session. The defendant pleads very cute.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dogsoftiktok #frenchie #doghumor",
+      "files": [
+        "heartside_F05_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb887fc6d064586b7c0f30",
+      "platform": "instagram",
+      "concept": "F05",
+      "state": "draft",
+      "original_due_at": "2026-11-08T14:20:00.000Z",
+      "text": "The court of the couch is now in session. The defendant pleads very cute.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dogsofinstagram #frenchbulldog #doghumor",
+      "files": [
+        "heartside_F05_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb8880f67f30658c54b0f6",
+      "platform": "facebook",
+      "concept": "F05",
+      "state": "draft",
+      "original_due_at": "2026-11-08T14:25:00.000Z",
+      "text": "The court of the couch is now in session. The defendant pleads very cute.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f05_8_facebook\n\nAI-generated scenes.",
+      "files": [
+        "heartside_F05_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb883bf67f30658c549e42",
+      "platform": "tiktok",
+      "concept": "F03",
+      "state": "draft",
+      "original_due_at": "2026-11-08T17:40:00.000Z",
+      "text": "The Christmas heist was planned for weeks. Then the beagle found the cookies.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dogsoftiktok #germanshepherd #christmasgift",
+      "files": [
+        "heartside_F03_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb883b23e3db949c151e08",
+      "platform": "instagram",
+      "concept": "F03",
+      "state": "draft",
+      "original_due_at": "2026-11-08T17:45:00.000Z",
+      "text": "The Christmas heist was planned for weeks. Then the beagle found the cookies.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dogsofinstagram #germanshepherd #christmasgifts",
+      "files": [
+        "heartside_F03_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    },
+    {
+      "id": "6aeb883c6cbba97f5cbf77f1",
+      "platform": "facebook",
+      "concept": "F03",
+      "state": "draft",
+      "original_due_at": "2026-11-08T17:50:00.000Z",
+      "text": "The Christmas heist was planned for weeks. Then the beagle found the cookies.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f03_8_facebook\n\nAI-generated scenes.",
+      "files": [
+        "heartside_F03_ui-v1_reel.mp4"
+      ],
+      "native_review": "pending"
+    }
+  ],
+  "render_proof": [
+    {
+      "id": "F01",
+      "frames": 940,
+      "sha256": "974e429c9c1ce5af6e85ec902ed8e5d822d98b47292156700e2653031d14042f",
+      "original_audio_sha256": "b94c0f330e54f000f743fc7e458236e0e10cba72f24957b65bf6b10f3d97ac2d",
+      "master_sha256": "a355262d899fdda94aa04cc053d1baf5f2ee94720058059a329bdd7202dcac02"
+    },
+    {
+      "id": "F03",
+      "frames": 614,
+      "sha256": "87295daa0720477e79d8e5cb928263c7f90f4f21cef39ed020664e857a4acc8e",
+      "original_audio_sha256": "f8c312ef97ef154df262d1afb2b0fa066c38063ebd869cea51e757743211cb2a",
+      "master_sha256": "dd7777694a2c6bca07e81009f9d5b0c9f265455301d1896533b355c52f203963"
+    },
+    {
+      "id": "F04",
+      "frames": 695,
+      "sha256": "db13442cccc97219426950720a549d787da6e66eca42d20c30807e1f98746536",
+      "original_audio_sha256": "bca3592134f4ae21efbbe7989a084e9a6a3194708624b25d94eef3679f2ba859",
+      "master_sha256": "9e610351a92ffcec75740044e75c433b2fd6d489d1bee65f0a905cfa97093359"
+    },
+    {
+      "id": "F05",
+      "frames": 902,
+      "sha256": "d342ed587d85d821e0b53ec14eae06e53dd631f8e5d76a6fdb0bb45a172be1a1",
+      "original_audio_sha256": "8f61a9213f5f00d0e1fcc8b3dbdf6a0ac1a4b5e68db4a56a7f2db6cc0304cc7b",
+      "master_sha256": "d1681fd98eacd4944be0670f50b368e0fb38fabef7cfa6f3c58eb17b2ae56ae7"
+    },
+    {
+      "id": "F06-dachshund",
+      "frames": 482,
+      "sha256": "407032d2c44b20ae6dc675603bc46c910c0761bb726234c36f29369c895dd920",
+      "original_audio_sha256": "381307f98cb3283e885b69aa069692390598c8e866509536e3105f75c34e2831",
+      "master_sha256": "a5ea9139b5df8b534a5de42673843733f618d1eb24b0ec0589c3900804b0b2db"
+    },
+    {
+      "id": "F06-lab",
+      "frames": 482,
+      "sha256": "c43dc4e06e3d3a1515d638f162e492aa459f1a567be270392692432ae9b6da4e",
+      "original_audio_sha256": "a712f7791cdbb5ef08023e109b765b315d43c8b0e30d5b968fa8a9886bf191bf",
+      "master_sha256": "5d81d25cecc65dc51876fc5072bfee3064608effe9ec7a73b016eadb84419066"
+    },
+    {
+      "id": "F07",
+      "frames": 557,
+      "sha256": "73866185aa6347217f835630dbf1af2aacf8304ee6210a617e43880f7238c21f",
+      "original_audio_sha256": "c566a7e1308c7a56374b2a9f882c57a7a0efdb4529c830b8ee6abe3b64b807aa",
+      "master_sha256": "d03c3d0fd9576b183fd010223deaf85e4c1449e509813394c8b3868d2e6c54e0"
+    },
+    {
+      "id": "F12",
+      "frames": 554,
+      "sha256": "6ea7491a0027b0fd4561d29b62025fdc7440808cdb76ad44991e3ef3eb9cce24",
+      "original_audio_sha256": "ecdb6b2079cc1b6e9e0bc307eb3485b559f32fd938199744bd7fb5120072bf0d",
+      "master_sha256": "cadddf498f681fa47cf2beced7e753f20ed2540d187cfd7ac16014a5517ebc0e"
+    }
+  ],
+  "persisted_verification": {
+    "checkedAt": "2026-11-06T12:06:31.973415+00:00",
+    "posts": 33,
+    "files": 38,
+    "result": "pass",
+    "drafts": 70,
+    "scheduled": 0,
+    "excludedUnchanged": true,
+    "finalReadbackSha256": "8cfedc186a16290dd4bb384587de3a50f84d050e0b133b6455a084e56c200a6c"
+  }
+}
