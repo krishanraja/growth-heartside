@@ -1,9 +1,11 @@
 # Current Heartside publishing library
 
 **6 November unpublished correction:** use the 38-file [UI edition index](editions/2026-11-06-ui.json)
-for the 33 corrected drafts. Its eight cover JPGs are references; Buffer videos
+for the 33 corrected placements. Its eight cover JPGs are references; Buffer videos
 use a selected frame on Instagram/TikTok and the automatic frame on Facebook.
-The corrected drafts remain held for release review. Do not restore the old
+Krish approved the corrected board on 6 November: "ok, all looks good". All 33
+placements are scheduled for 6-8 November and independently verified against
+the final packet and library. Native-device evidence remains unverified. Do not restore the old
 media below or activate any of the 37 excluded superseded drafts. The audit and
 handoff are in [the correction report](../docs/audits/2026-11-06-unpublished-correction.md).
 

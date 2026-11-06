@@ -1,6 +1,6 @@
 {
   "revision": "social-ui-2026-11-06-v1",
-  "status": "corrected drafts; native device release review pending",
+  "status": "human-approved corrected organic batch; all 33 placements scheduled and independently verified",
   "date": "2026-11-06",
   "authority": "Krish: integrate the document and correct all unpublished social posts.",
   "files": [
@@ -466,7 +466,7 @@
       "sha256": "3b7db4a614da71db06b3dc5262fd1846a95da811a75d20d2b240329753119890",
       "platform": "feed",
       "index": 0,
-      "alt": "A scruffy dog rests its chin on a person\u2019s knee beside an empty bowl. Text: My dog explaining to Grandma that nobody feeds him here.",
+      "alt": "A scruffy dog rests its chin on a person’s knee beside an empty bowl. Text: My dog explaining to Grandma that nobody feeds him here.",
       "library_path": "Posts/F22/heartside_F22_ui-v1-feed_slide1.jpg",
       "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/0f07ff30-1f3d-4f08-aead-096c8daddd73.jpg",
       "library_sha256_verified": true,
@@ -482,7 +482,7 @@
       "sha256": "1f059bc4c2bb4bb3120062c506d53e4e1ca59abaa0b885dc39e35f4ed6ab58b5",
       "platform": "tiktok",
       "index": 0,
-      "alt": "A scruffy dog rests its chin on a person\u2019s knee beside an empty bowl. Text: My dog explaining to Grandma that nobody feeds him here.",
+      "alt": "A scruffy dog rests its chin on a person’s knee beside an empty bowl. Text: My dog explaining to Grandma that nobody feeds him here.",
       "library_path": "Posts/F22/heartside_F22_ui-v2-tiktok_slide1.jpg",
       "url": "https://d2ol7oe51mr4n9.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/06ff6e2c-9e68-45ab-ac3f-95280b51c801.jpg",
       "library_sha256_verified": true,
@@ -582,37 +582,40 @@
       "id": "6aeb88f6f67f30658c54e1c8",
       "platform": "tiktok",
       "concept": "F12",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T14:15:00.000Z",
       "text": "Head of security found a suspicious box on the porch. Threat level was maximum, briefly.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dogsoftiktok #frenchie #doghumor",
       "files": [
         "heartside_F12_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T14:15:00.000Z"
     },
     {
       "id": "6aeb88f623e3db949c1552d8",
       "platform": "instagram",
       "concept": "F12",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T14:20:00.000Z",
-      "text": "Head of security found a suspicious box on the porch. Threat level was maximum, briefly.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dogsofinstagram #frenchbulldog #doghumor",
+      "text": "Head of security found a suspicious box on the porch. Threat level was maximum, briefly.\n\nGifts from your dog. Heartside.io · link in bio.\n\n#dogsofinstagram #frenchbulldog #doghumor",
       "files": [
         "heartside_F12_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T14:20:00.000Z"
     },
     {
       "id": "6aeb88f66cbba97f5cbfb967",
       "platform": "facebook",
       "concept": "F12",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T14:25:00.000Z",
       "text": "Head of security found a suspicious box on the porch. Threat level was maximum, briefly.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f12_6_facebook\n\nAI-generated scenes.",
       "files": [
         "heartside_F12_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T14:25:00.000Z"
     },
     {
       "id": "6aec69038ed5e05aeda3f1be",
@@ -621,58 +624,62 @@
         "F19",
         "F20"
       ],
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T16:00:00.000Z",
       "text": "The family is here. So are all their opinions.\n\nGifts from your dog. Create yours at Heartside.io.\n\nReference credit to @kismet.",
       "files": [
         "heartside_F19_ui-v2-tiktok_slide1.jpg",
         "heartside_F20_ui-v2-tiktok_slide1.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T16:00:00.000Z"
     },
     {
       "id": "6aec66e28477444d9dbc81f0",
       "platform": "instagram",
       "concept": "F19",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T16:05:00.000Z",
-      "text": "Every family has a few characters. Ours just shed more.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\nReference credit to @kismet.",
+      "text": "Every family has a few characters. Ours just shed more.\n\nGifts from your dog. Heartside.io · link in bio.\n\nReference credit to @kismet.",
       "files": [
         "heartside_F19_ui-v1-feed_slide1.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T16:05:00.000Z"
     },
     {
       "id": "6aec66e28ed5e05aeda3379c",
       "platform": "facebook",
       "concept": "F20",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T16:10:00.000Z",
       "text": "We came for the turkey. The drama was complimentary.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=thanksgiving_202611&utm_content=f20\n\nReference credit to @kismet.",
       "files": [
         "heartside_F20_ui-v1-feed_slide1.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T16:10:00.000Z"
     },
     {
       "id": "6aeb887d23e3db949c153222",
       "platform": "tiktok",
       "concept": "F06-dachshund",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T17:40:00.000Z",
       "text": "What your dachshund really thinks of you. The stairs were a mistake.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dachshund #dogsoftiktok #doghumor",
       "files": [
         "heartside_F06-dachshund_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T17:40:00.000Z"
     },
     {
       "id": "6aeb891923e3db949c155e2e",
       "platform": "instagram",
       "concept": "F06-dachshund",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T17:45:00.000Z",
-      "text": "What your dachshund really thinks of you. The stairs were a mistake.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dachshund #sausagedog #doghumor",
+      "text": "What your dachshund really thinks of you. The stairs were a mistake.\n\nGifts from your dog. Heartside.io · link in bio.\n\n#dachshund #sausagedog #doghumor",
       "files": [
         "heartside_F06-dachshund_ui-v1_slide1.jpg",
         "heartside_F06-dachshund_ui-v1_slide2.jpg",
@@ -680,13 +687,14 @@
         "heartside_F06-dachshund_ui-v1_slide4.jpg",
         "heartside_F06-dachshund_ui-v1_slide5.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T17:45:00.000Z"
     },
     {
       "id": "6aeb891a1310dbd9d43f4bd3",
       "platform": "facebook",
       "concept": "F06-dachshund",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T17:50:00.000Z",
       "text": "What your dachshund really thinks of you. The stairs were a mistake.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f06_dachshund_6_facebook\n\nAI-generated scenes.",
       "files": [
@@ -696,43 +704,47 @@
         "heartside_F06-dachshund_ui-v1_slide4.jpg",
         "heartside_F06-dachshund_ui-v1_slide5.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T17:50:00.000Z"
     },
     {
       "id": "6aeb8839f67f30658c549b14",
       "platform": "tiktok",
       "concept": "F01",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T20:10:00.000Z",
       "text": "Day four hundred of losing to a coffee mug. Plan C was always the answer.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dachshund #dogsoftiktok #doghumor",
       "files": [
         "heartside_F01_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T20:10:00.000Z"
     },
     {
       "id": "6aeb8839f67f30658c549b8e",
       "platform": "instagram",
       "concept": "F01",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T20:15:00.000Z",
-      "text": "Day four hundred of losing to a coffee mug. Plan C was always the answer.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dachshund #sausagedog #doghumor",
+      "text": "Day four hundred of losing to a coffee mug. Plan C was always the answer.\n\nGifts from your dog. Heartside.io · link in bio.\n\n#dachshund #sausagedog #doghumor",
       "files": [
         "heartside_F01_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T20:15:00.000Z"
     },
     {
       "id": "6aeb883a8ee551b5aa780fcd",
       "platform": "facebook",
       "concept": "F01",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-06T20:20:00.000Z",
       "text": "Day four hundred of losing to a coffee mug. Plan C was always the answer.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f01_6_facebook\n\nAI-generated scenes.",
       "files": [
         "heartside_F01_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-06T20:20:00.000Z"
     },
     {
       "id": "6aec691df26542fc33d30f6c",
@@ -741,110 +753,119 @@
         "F21",
         "F22"
       ],
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T12:00:00.000Z",
       "text": "A polite smile for the family. A very different story for Grandma.\n\nGifts from your dog. Create yours at Heartside.io.\n\nReference credit to @kismet.\n\nSlide 2 is AI-generated.",
       "files": [
         "heartside_F21_ui-v2-tiktok_slide1.jpg",
         "heartside_F22_ui-v2-tiktok_slide1.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T12:00:00.000Z"
     },
     {
       "id": "6aec66e2096bdb6b0ff3bd34",
       "platform": "instagram",
       "concept": "F21",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T12:05:00.000Z",
-      "text": "Smiling politely. Thinking absolutely everything.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\nReference credit to @kismet.",
+      "text": "Smiling politely. Thinking absolutely everything.\n\nGifts from your dog. Heartside.io · link in bio.\n\nReference credit to @kismet.",
       "files": [
         "heartside_F21_ui-v1-feed_slide1.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T12:05:00.000Z"
     },
     {
       "id": "6aec66e31381c3b3047651cf",
       "platform": "facebook",
       "concept": "F22",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T12:10:00.000Z",
       "text": "Grandma is about to hear a very convincing version of events.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=thanksgiving_202611&utm_content=f22\n\nAI-generated image.",
       "files": [
         "heartside_F22_ui-v1-feed_slide1.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T12:10:00.000Z"
     },
     {
       "id": "6aeb887ec6d064586b7c0e41",
       "platform": "tiktok",
       "concept": "F04",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T14:15:00.000Z",
       "text": "Get up for four seconds and the spot is gone for good.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#goldenretriever #dogsoftiktok #doghumor",
       "files": [
         "heartside_F04_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T14:15:00.000Z"
     },
     {
       "id": "6aeb887ec6d064586b7c0e90",
       "platform": "instagram",
       "concept": "F04",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T14:20:00.000Z",
-      "text": "Get up for four seconds and the spot is gone for good.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#goldenretriever #dogsofinstagram #doghumor",
+      "text": "Get up for four seconds and the spot is gone for good.\n\nGifts from your dog. Heartside.io · link in bio.\n\n#goldenretriever #dogsofinstagram #doghumor",
       "files": [
         "heartside_F04_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T14:20:00.000Z"
     },
     {
       "id": "6aeb887e23e3db949c15329a",
       "platform": "facebook",
       "concept": "F04",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T14:25:00.000Z",
       "text": "Get up for four seconds and the spot is gone for good.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f04_7_facebook\n\nAI-generated scenes.",
       "files": [
         "heartside_F04_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T14:25:00.000Z"
     },
     {
       "id": "6aeb88f76cbba97f5cbfb999",
       "platform": "tiktok",
       "concept": "F07",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T17:40:00.000Z",
       "text": "Our resident art critic reviewed a very handsome portrait. Verdict: it can stay on your wall.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dogsoftiktok #goldendoodle #doghumor",
       "files": [
         "heartside_F07_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T17:40:00.000Z"
     },
     {
       "id": "6aeb88f76cbba97f5cbfb9c7",
       "platform": "instagram",
       "concept": "F07",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T17:45:00.000Z",
-      "text": "Our resident art critic reviewed a very handsome portrait. Verdict: it can stay on your wall.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dogsofinstagram #goldendoodle #doghumor",
+      "text": "Our resident art critic reviewed a very handsome portrait. Verdict: it can stay on your wall.\n\nGifts from your dog. Heartside.io · link in bio.\n\n#dogsofinstagram #goldendoodle #doghumor",
       "files": [
         "heartside_F07_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T17:45:00.000Z"
     },
     {
       "id": "6aeb88f88ee551b5aa784532",
       "platform": "facebook",
       "concept": "F07",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T17:50:00.000Z",
       "text": "Our resident art critic reviewed a very handsome portrait. Verdict: it can stay on your wall.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f07_7_facebook\n\nAI-generated scenes.",
       "files": [
         "heartside_F07_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T17:50:00.000Z"
     },
     {
       "id": "6aec691e096bdb6b0ff48867",
@@ -853,58 +874,62 @@
         "F23",
         "F24"
       ],
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T19:00:00.000Z",
       "text": "He heard the timer. He also heard your chair become available.\n\nGifts from your dog. Create yours at Heartside.io.\n\nAI-generated images.",
       "files": [
         "heartside_F23_ui-v2-tiktok_slide1.jpg",
         "heartside_F24_ui-v2-tiktok_slide1.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T19:00:00.000Z"
     },
     {
       "id": "6aec66e38ed5e05aeda337ff",
       "platform": "instagram",
       "concept": "F23",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T19:05:00.000Z",
-      "text": "His hearing works perfectly when dinner is involved.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\nAI-generated image.",
+      "text": "His hearing works perfectly when dinner is involved.\n\nGifts from your dog. Heartside.io · link in bio.\n\nAI-generated image.",
       "files": [
         "heartside_F23_ui-v1-feed_slide1.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T19:05:00.000Z"
     },
     {
       "id": "6aec66e38477444d9dbc8279",
       "platform": "facebook",
       "concept": "F24",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T19:10:00.000Z",
       "text": "Should have taken the gravy with you.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=thanksgiving_202611&utm_content=f24\n\nAI-generated image.",
       "files": [
         "heartside_F24_ui-v1-feed_slide1.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T19:10:00.000Z"
     },
     {
       "id": "6aeb88f823e3db949c155390",
       "platform": "tiktok",
       "concept": "F06-lab",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T20:10:00.000Z",
       "text": "What your lab really thinks of you. Yes, it knows where the treats are.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#labrador #dogsoftiktok #doghumor",
       "files": [
         "heartside_F06-lab_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T20:10:00.000Z"
     },
     {
       "id": "6aeb891a8ee551b5aa7855b0",
       "platform": "instagram",
       "concept": "F06-lab",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T20:15:00.000Z",
-      "text": "What your lab really thinks of you. Yes, it knows where the treats are.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#labrador #blacklab #doghumor",
+      "text": "What your lab really thinks of you. Yes, it knows where the treats are.\n\nGifts from your dog. Heartside.io · link in bio.\n\n#labrador #blacklab #doghumor",
       "files": [
         "heartside_F06-lab_ui-v1_slide1.jpg",
         "heartside_F06-lab_ui-v1_slide2.jpg",
@@ -912,13 +937,14 @@
         "heartside_F06-lab_ui-v1_slide4.jpg",
         "heartside_F06-lab_ui-v1_slide5.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T20:15:00.000Z"
     },
     {
       "id": "6aeb891b6cbba97f5cbfc61c",
       "platform": "facebook",
       "concept": "F06-lab",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-07T20:20:00.000Z",
       "text": "What your lab really thinks of you. Yes, it knows where the treats are.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f06_lab_7_facebook\n\nAI-generated scenes.",
       "files": [
@@ -928,79 +954,86 @@
         "heartside_F06-lab_ui-v1_slide4.jpg",
         "heartside_F06-lab_ui-v1_slide5.jpg"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-07T20:20:00.000Z"
     },
     {
       "id": "6aeb887fc6d064586b7c0ed4",
       "platform": "tiktok",
       "concept": "F05",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-08T14:15:00.000Z",
       "text": "The court of the couch is now in session. The defendant pleads very cute.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dogsoftiktok #frenchie #doghumor",
       "files": [
         "heartside_F05_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-08T14:15:00.000Z"
     },
     {
       "id": "6aeb887fc6d064586b7c0f30",
       "platform": "instagram",
       "concept": "F05",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-08T14:20:00.000Z",
-      "text": "The court of the couch is now in session. The defendant pleads very cute.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dogsofinstagram #frenchbulldog #doghumor",
+      "text": "The court of the couch is now in session. The defendant pleads very cute.\n\nGifts from your dog. Heartside.io · link in bio.\n\n#dogsofinstagram #frenchbulldog #doghumor",
       "files": [
         "heartside_F05_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-08T14:20:00.000Z"
     },
     {
       "id": "6aeb8880f67f30658c54b0f6",
       "platform": "facebook",
       "concept": "F05",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-08T14:25:00.000Z",
       "text": "The court of the couch is now in session. The defendant pleads very cute.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f05_8_facebook\n\nAI-generated scenes.",
       "files": [
         "heartside_F05_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-08T14:25:00.000Z"
     },
     {
       "id": "6aeb883bf67f30658c549e42",
       "platform": "tiktok",
       "concept": "F03",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-08T17:40:00.000Z",
       "text": "The Christmas heist was planned for weeks. Then the beagle found the cookies.\n\nGifts from your dog. Create yours at Heartside.io.\n\n#dogsoftiktok #germanshepherd #christmasgift",
       "files": [
         "heartside_F03_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-08T17:40:00.000Z"
     },
     {
       "id": "6aeb883b23e3db949c151e08",
       "platform": "instagram",
       "concept": "F03",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-08T17:45:00.000Z",
-      "text": "The Christmas heist was planned for weeks. Then the beagle found the cookies.\n\nGifts from your dog. Heartside.io \u00b7 link in bio.\n\n#dogsofinstagram #germanshepherd #christmasgifts",
+      "text": "The Christmas heist was planned for weeks. Then the beagle found the cookies.\n\nGifts from your dog. Heartside.io · link in bio.\n\n#dogsofinstagram #germanshepherd #christmasgifts",
       "files": [
         "heartside_F03_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-08T17:45:00.000Z"
     },
     {
       "id": "6aeb883c6cbba97f5cbf77f1",
       "platform": "facebook",
       "concept": "F03",
-      "state": "draft",
+      "state": "scheduled",
       "original_due_at": "2026-11-08T17:50:00.000Z",
       "text": "The Christmas heist was planned for weeks. Then the beagle found the cookies.\n\nGifts from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_social&utm_campaign=hs_release_20261104&utm_content=f03_8_facebook\n\nAI-generated scenes.",
       "files": [
         "heartside_F03_ui-v1_reel.mp4"
       ],
-      "native_review": "pending"
+      "native_review": "pending",
+      "scheduled_due_at": "2026-11-08T17:50:00.000Z"
     }
   ],
   "render_proof": [
@@ -1070,5 +1103,31 @@
     "scheduled": 0,
     "excludedUnchanged": true,
     "finalReadbackSha256": "8cfedc186a16290dd4bb384587de3a50f84d050e0b133b6455a084e56c200a6c"
+  },
+  "approval": {
+    "reviewer": "Krish",
+    "date": "2026-11-06",
+    "quote": "ok, all looks good",
+    "surface": "Repaired local creative review board",
+    "scope": "Corrected33-placement organic batch under existing approved schedule",
+    "paid_authorized": false,
+    "native_device_evidence": "unverified; human board approval is not a synthetic native-review pass",
+    "packet_sha256": "9b6f44cd84a97bf3bbe33e5197275c6c9884f9aa3a46241b0a79d3c3dbb86b32"
+  },
+  "schedule_verification": {
+    "checkedAt": "2026-11-06 12:29:17 UTC",
+    "result": "pass",
+    "scheduled": 33,
+    "excludedDrafts": 37,
+    "excludedUnchanged": true,
+    "channels": {
+      "tiktok": 11,
+      "instagram": 11,
+      "facebook": 11
+    },
+    "readbackSha256": "538771fa799457ceb4a18b248faec4274ea8a7c7b041045c582be33a1aa71d52",
+    "packetSha256": "9b6f44cd84a97bf3bbe33e5197275c6c9884f9aa3a46241b0a79d3c3dbb86b32",
+    "nativeDeviceEvidence": "unverified",
+    "paidSpendAuthorized": false
   }
 }

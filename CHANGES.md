@@ -3,6 +3,10 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-06: Krish: "We need to get the first paid test live ASAP." Authorized activation of the prepared single F10 Meta pilot, USD 25 lifetime over 24 hours. The four USD 50 posts remain a separate decision. Payment method connected and pixel/destination checked; Meta's required business billing information currently blocks Publish. See `docs/boost/2026-11-05-sandbox.md` for the exact account, draft and launch evidence. Paid results remain separate from the organic North Star.
+
+- 2026-11-06: After viewing the repaired creative board, Krish: “ok, all looks good”. Human approval recorded for the exact corrected 33-placement organic batch, linked to the existing approved schedule. Scheduling was instructed to restore future approved slots and verify each persisted payload. Paid activity remains unapproved; native-device observations remain unverified rather than being converted into a passing automated review.
+
 - 2026-11-06: Krish: “Yes, integrate this and then correct everything that is currently unpublished in terms of social posts.” Authorized recovery of original Heartside images, including Runway. Implemented the supplied social UI standard in composition and release checks, then made separately versioned editions for all 33 current unpublished placements. Original locked masters and the 4 Nov ruling remain intact. The selected files and exact verification scope are in `library/editions/2026-11-06-ui.json` and `docs/audits/2026-11-06-unpublished-correction.md`. No paid spend or published-post changes.
 
 - 2026-11-04: Krish: “Trash these nine review files”. Moved the nine named F04, F05, F11 and F12 review files to Trash. Read back all nine recoverable entries and rechecked the 40 remaining plain-name release files against their SHA-256.

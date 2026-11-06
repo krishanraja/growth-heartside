@@ -114,3 +114,7 @@ replaced as drafts by the scheduling chat. The 37 earlier superseded drafts stay
 excluded. No paid spend, published-post edit, deletion or schedule reactivation.
 See `docs/audits/2026-11-06-unpublished-correction.md` for the exact final readback
 and the remaining native device review boundary.
+
+### Corrected batch approved and restored, 6 November
+
+Krish reviewed the repaired board and said "ok, all looks good". All 33 placements were restored to their original future slots on 6-8 November. Independent readback at 12:29 UTC matched the exact final text, ordered library media and platform metadata. All 37 excluded drafts remained unchanged. See the edition index for the receipt hash. Scheduled is not sent; native-device evidence remains unverified.

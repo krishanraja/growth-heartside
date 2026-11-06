@@ -24,6 +24,14 @@ def build(folder, port=8767):
     folder=Path(folder).resolve()
     files=json.loads((folder/'library-release/manifest.json').read_text(encoding='utf-8'))
     packet=json.loads((folder/'replacement-packet.json').read_text(encoding='utf-8'))
+    release_path=Path(__file__).resolve().parents[1]/'library/editions/2026-11-06-ui.json'
+    badge='Drafts held'
+    if release_path.exists():
+        release=json.loads(release_path.read_text(encoding='utf-8'))
+        approved_hash=release.get('approval',{}).get('packet_sha256')
+        actual_hash=hashlib.sha256((folder/'replacement-packet.json').read_bytes()).hexdigest()
+        if approved_hash==actual_hash and release.get('schedule_verification',{}).get('result')=='pass':
+            badge='Creative approved · Organic scheduled'
     output=folder/'board';output.mkdir(exist_ok=True)
     routes={}
     for row in files:
@@ -60,6 +68,7 @@ def build(folder, port=8767):
     css='''*{box-sizing:border-box}html{scroll-behavior:smooth}body{font:16px/1.5 system-ui;background:#f6f1e7;color:#24201b;margin:0}main{max-width:1200px;margin:auto;padding:32px 24px}h1{font-size:clamp(30px,5vw,48px);line-height:1.12;letter-spacing:-1px;margin:12px 0}h2{font-size:26px;line-height:1.2;margin:4px 0 20px}.intro{max-width:740px;color:#625b50}.badge,.code{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase}.badge{color:#7c382d}nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 36px}nav a{padding:8px 12px;background:#fffaf1;border:1px solid #cfc6b7;border-radius:20px;font-size:13px;text-decoration:none;color:inherit}section{border-top:1px solid #cfc6b7;padding:28px 0;scroll-margin-top:15px}.media{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px;align-items:start}figure{margin:0;min-width:0;max-width:360px}video,img{display:block;width:100%;height:auto;max-height:580px;object-fit:contain;background:#24201b;border-radius:8px}video{aspect-ratio:9/16}figcaption{display:grid;gap:8px;padding:12px 0;font-size:14px}a{color:#843c2f}button{font:inherit;cursor:pointer;background:#24201b;color:#fffaf1;border:0;border-radius:6px;padding:10px 14px;text-align:left}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #bb6b28;outline-offset:3px}.single{display:grid;grid-template-columns:minmax(280px,360px) 1fr;gap:0 32px}.single>header{grid-column:1/-1}.single .captions{margin-top:0}.captions{max-width:760px;margin-top:18px}details{padding:12px 0;border-top:1px solid #ddd4c6}summary{cursor:pointer;font-weight:600}.copy{white-space:pre-wrap;overflow-wrap:anywhere}.error{color:#ae2424}@media(max-width:600px){.single{display:block}main{padding:24px 16px}.media{grid-template-columns:1fr}figure{max-width:none}video,img{max-height:70vh}h2{font-size:24px}}'''
     script='''document.querySelectorAll('.play').forEach(b=>b.onclick=()=>{const v=document.getElementById(b.dataset.video);if(v.paused){document.querySelectorAll('video').forEach(o=>{if(o!==v)o.pause()});v.play().catch(()=>{v.closest('figure').querySelector('.error').hidden=false})}else v.pause()});document.querySelectorAll('video').forEach(v=>{v.onplay=()=>v.closest('figure').querySelector('button').textContent='Pause video';v.onpause=()=>v.closest('figure').querySelector('button').textContent='Play video';});document.querySelectorAll('img,video').forEach(m=>m.addEventListener('error',()=>m.closest('figure').querySelector('.error').hidden=false));'''
     page='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Heartside · Creative review</title><style>'+css+'</style></head><body><main><div class="badge">Heartside · 6 November · Drafts held</div><h1>See every post. Hear every reel.</h1><p class="intro">Eight reels, two five-slide carousels and six photo concepts, with their platform captions. Tap Play for sound. The media below is the exact corrected delivery batch.</p><nav aria-label="Jump to concept">'+''.join(nav)+'</nav>'+''.join(sections)+'</main><script>'+script+'</script></body></html>'
+    page=page.replace('Heartside · 6 November · Drafts held','Heartside · 6 November · '+html.escape(badge))
     target=output/'index.html';target.write_text(page,encoding='utf-8');routes['/']=target
     # File previews cannot reliably load remote or sibling media. Give an explicit
     # working entry point instead of another grid of silently broken assets.
