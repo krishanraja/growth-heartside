@@ -1,5 +1,15 @@
 # F25 to F27 production handoff
 
+## Superseding quality hold, 7 November 2026
+
+At 16:26:35 UTC, Krish said: "I actually find 3 and 5 the funniest, but none of them are really hilarious in their execution." The prior production approval remains historical evidence, but the unreleased F25–F27 placements are now held. Scheduling acknowledged the newer hold and preserved its drafts. Do not execute the earlier scheduling instructions below until this hold is explicitly resolved.
+
+The preferred premises are OG-03 Cheese radar and OG-05 One stick. New execution candidates are at `local/organic-comedy-revision-20261107/03-cheese-r2.png` and `05-stick-r3.png`. These are unapproved review images, not release files. Preference for a premise does not approve its unseen execution. The two revised images retain their original words and strengthen the visual contrast/reveal. No new library IDs are assigned.
+
+Scheduling's 16:31 UTC receipt independently confirms all eight original files now match in Drive; that technical verification does not clear the creative hold. Evidence: `C:/Users/krish/.scratch/heartside-quality-hold-20261106/recovery-and-f25-f27-hold-20261107.json`.
+
+The remaining sections document the earlier handoff and are retained for provenance.
+
 Status: production complete; eight files uploaded through the approved library lane and downloaded again with exact size/SHA-256 matches. Drive filing and native platform checks remain publishing gates. No scheduling or live-post receipt is claimed by this production session.
 
 ## Approval and scope
