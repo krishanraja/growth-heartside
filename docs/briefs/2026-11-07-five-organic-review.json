@@ -1,0 +1,531 @@
+{
+  "batch": "organic-five-20261107",
+  "status": "prepared for review; not uploaded or queued",
+  "assets": [
+    {
+      "concept": "OG-01",
+      "file": "heartside_OG-01_feed_slide1.jpg",
+      "bytes": 694558,
+      "sha256": "d65881ec05cefe6c96536d2dc6dbe4dccc815587f934daf9e2ef88bfb8c15ff3",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-01",
+      "file": "heartside_OG-01_tiktok_slide1.jpg",
+      "bytes": 282191,
+      "sha256": "3dbadd15fc0296b83963702f34d9bd44ea8b811b070799ce5262eb602559a499",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-02",
+      "file": "heartside_OG-02_feed_slide1.jpg",
+      "bytes": 725972,
+      "sha256": "34e589857a59d3a33711e62d91968422d967e01337743458efa01c31e61d54e9",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-02",
+      "file": "heartside_OG-02_tiktok_slide1.jpg",
+      "bytes": 339510,
+      "sha256": "ec4c44b28821abb1919bf92cd2cbf04abda5c079129fe611edea0a5b2f5372c5",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-02",
+      "file": "heartside_OG-02_tiktok_slide2.jpg",
+      "bytes": 422056,
+      "sha256": "6ef653862f8520c944b5fcd72fddedc71bf41378aa785ce0b0ca1409caeec8f5",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-03",
+      "file": "heartside_OG-03_feed_slide1.jpg",
+      "bytes": 623736,
+      "sha256": "926fc0c78b9088c7e11bb94ae8b1be2dda3f550907821ad9a235fc972d5b3143",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-03",
+      "file": "heartside_OG-03_tiktok_slide1.jpg",
+      "bytes": 373716,
+      "sha256": "3981e1e0b13985a7e58d3247b3964e1868f3653bcdcb899d10ec7b8d9a947323",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-03",
+      "file": "heartside_OG-03_tiktok_slide2.jpg",
+      "bytes": 295613,
+      "sha256": "8bf007103a7dce9c9cd4657d4a670752efd15cb3fc48e7e243fcd18c47b65348",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-04",
+      "file": "heartside_OG-04_feed_slide1.jpg",
+      "bytes": 762022,
+      "sha256": "96ec546f35f97f2aa86ea6d10bee174da65e4b993feb5d8e8dd5c9fe2771f893",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-04",
+      "file": "heartside_OG-04_tiktok_slide1.jpg",
+      "bytes": 364917,
+      "sha256": "6d67e1bfbb1f3b5f6b1edf6b3b2b1d46a0cdea389297a11f3b60ff8637097dd3",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-04",
+      "file": "heartside_OG-04_tiktok_slide2.jpg",
+      "bytes": 244786,
+      "sha256": "ffff46c13690f3b071a0b7456069fefe7056fe3933f82b20efa8bb7300b85755",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-05",
+      "file": "heartside_OG-05_feed_slide1.jpg",
+      "bytes": 828676,
+      "sha256": "a850f206aeed95cc9e6e1e0e258ac8b871739d2d578a844ba8ecfc2c11af2caf",
+      "dimensions": [
+        1080,
+        1350
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-05",
+      "file": "heartside_OG-05_tiktok_slide1.jpg",
+      "bytes": 245757,
+      "sha256": "7aeb2cb92025cbb3255a14b2f71dd907ce5125c83150afbe2d05f22d0d213fa6",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "status": "review only"
+    },
+    {
+      "concept": "OG-05",
+      "file": "heartside_OG-05_tiktok_slide2.jpg",
+      "bytes": 598224,
+      "sha256": "7fbcd86a462d5d2afeea11d0b87828de0c22690f2d8a82e4eca46c3ab49f9005",
+      "dimensions": [
+        1080,
+        1920
+      ],
+      "status": "review only"
+    }
+  ],
+  "placements": [
+    {
+      "concept": "OG-01",
+      "library_id": "F25",
+      "title": "Date night",
+      "platform": "instagram",
+      "files": [
+        "heartside_OG-01_feed_slide1.jpg"
+      ],
+      "caption": "He picked the movie. The dog picked the seating.",
+      "alt_text": "A golden retriever lies across a woman and the sofa with a hind paw pressing against her cramped partner, who clutches his popcorn. On-image text: Date night with my two favorite people. One of them is allowed on my lap.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-01",
+      "library_id": "F25",
+      "title": "Date night",
+      "platform": "facebook",
+      "files": [
+        "heartside_OG-01_feed_slide1.jpg"
+      ],
+      "caption": "We bought a three-seater. The dog had other plans.",
+      "alt_text": "A golden retriever lies across a woman and the sofa with a hind paw pressing against her cramped partner, who clutches his popcorn. On-image text: Date night with my two favorite people. One of them is allowed on my lap.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-01",
+      "library_id": "F25",
+      "title": "Date night",
+      "platform": "tiktok",
+      "files": [
+        "heartside_OG-01_tiktok_slide1.jpg"
+      ],
+      "caption": "He picked the movie. The dog picked the seating.",
+      "alt_text": "A golden retriever lies across a woman and the sofa with a hind paw pressing against her cramped partner, who clutches his popcorn. On-image text: Date night with my two favorite people. One of them is allowed on my lap.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-02",
+      "library_id": "F26",
+      "title": "Rain complaint",
+      "platform": "instagram",
+      "files": [
+        "heartside_OG-02_feed_slide1.jpg"
+      ],
+      "caption": "I have been asked to turn the rain off.",
+      "alt_text": "A dachshund demands a walk with his leash in his mouth, then sits on his owner's boots to avoid the wet ground. On-image text: Thirty minutes of begging for a walk. You didn't say the floor was wet.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-02",
+      "library_id": "F26",
+      "title": "Rain complaint",
+      "platform": "facebook",
+      "files": [
+        "heartside_OG-02_feed_slide1.jpg"
+      ],
+      "caption": "Apparently I should have checked the weather with him first.",
+      "alt_text": "A dachshund demands a walk with his leash in his mouth, then sits on his owner's boots to avoid the wet ground. On-image text: Thirty minutes of begging for a walk. You didn't say the floor was wet.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-02",
+      "library_id": "F26",
+      "title": "Rain complaint",
+      "platform": "tiktok",
+      "files": [
+        "heartside_OG-02_tiktok_slide1.jpg",
+        "heartside_OG-02_tiktok_slide2.jpg"
+      ],
+      "caption": "I have been asked to turn the rain off.",
+      "alt_text": "A dachshund demands a walk with his leash in his mouth, then sits on his owner's boots to avoid the wet ground. On-image text: Thirty minutes of begging for a walk. You didn't say the floor was wet.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-03",
+      "library_id": null,
+      "title": "Cheese radar",
+      "platform": "instagram",
+      "files": [
+        "heartside_OG-03_feed_slide1.jpg"
+      ],
+      "caption": "He knows which conversations involve him.",
+      "alt_text": "A chocolate Labrador sleeps with closed eyes and open mouth, with a small snrrrk cue. Next, his enormous nose is inches from a cheese wrapper. On-image text: Me calling him from three feet away. Me opening cheese two rooms away.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-03",
+      "library_id": null,
+      "title": "Cheese radar",
+      "platform": "facebook",
+      "files": [
+        "heartside_OG-03_feed_slide1.jpg"
+      ],
+      "caption": "I hadn't even taken the cheese out of the packet yet.",
+      "alt_text": "A chocolate Labrador sleeps with closed eyes and open mouth, with a small snrrrk cue. Next, his enormous nose is inches from a cheese wrapper. On-image text: Me calling him from three feet away. Me opening cheese two rooms away.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-03",
+      "library_id": null,
+      "title": "Cheese radar",
+      "platform": "tiktok",
+      "files": [
+        "heartside_OG-03_tiktok_slide1.jpg",
+        "heartside_OG-03_tiktok_slide2.jpg"
+      ],
+      "caption": "He knows which conversations involve him.",
+      "alt_text": "A chocolate Labrador sleeps with closed eyes and open mouth, with a small snrrrk cue. Next, his enormous nose is inches from a cheese wrapper. On-image text: Me calling him from three feet away. Me opening cheese two rooms away.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-04",
+      "library_id": "F27",
+      "title": "Forced friendship",
+      "platform": "instagram",
+      "files": [
+        "heartside_OG-04_feed_slide1.jpg"
+      ],
+      "caption": "I know the dog's name. We've met six times.",
+      "alt_text": "Two delighted dogs meet nose to nose while their awkward owners stand together, legs entangled by the leashes. On-image text: My dog made a friend. Now I have to make one too.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-04",
+      "library_id": "F27",
+      "title": "Forced friendship",
+      "platform": "facebook",
+      "files": [
+        "heartside_OG-04_feed_slide1.jpg"
+      ],
+      "caption": "We have discussed their dogs every morning for a month. I still don't know his name.",
+      "alt_text": "Two delighted dogs meet nose to nose while their awkward owners stand together, legs entangled by the leashes. On-image text: My dog made a friend. Now I have to make one too.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-04",
+      "library_id": "F27",
+      "title": "Forced friendship",
+      "platform": "tiktok",
+      "files": [
+        "heartside_OG-04_tiktok_slide1.jpg",
+        "heartside_OG-04_tiktok_slide2.jpg"
+      ],
+      "caption": "I know the dog's name. We've met six times.",
+      "alt_text": "Two delighted dogs meet nose to nose while their awkward owners stand together, legs entangled by the leashes. On-image text: My dog made a friend. Now I have to make one too.",
+      "status": "prepared; not queued",
+      "approval": "Production requested 7 November. Revised execution awaits review.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-05",
+      "library_id": null,
+      "title": "One stick",
+      "platform": "instagram",
+      "files": [
+        "heartside_OG-05_feed_slide1.jpg"
+      ],
+      "caption": "He would like me to make the door wider.",
+      "alt_text": "A close view shows a retriever with a branch; a wider view reveals an enormous fallen limb while his owner holds the front door open. On-image text: I said you could bring one stick home.",
+      "status": "prepared; not queued",
+      "approval": "Stick r3 positively received; production requested. Exact platform exports await batch release confirmation.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-05",
+      "library_id": null,
+      "title": "One stick",
+      "platform": "facebook",
+      "files": [
+        "heartside_OG-05_feed_slide1.jpg"
+      ],
+      "caption": "He carried it all the way home. Getting it through the door is apparently my job.",
+      "alt_text": "A close view shows a retriever with a branch; a wider view reveals an enormous fallen limb while his owner holds the front door open. On-image text: I said you could bring one stick home.",
+      "status": "prepared; not queued",
+      "approval": "Stick r3 positively received; production requested. Exact platform exports await batch release confirmation.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    },
+    {
+      "concept": "OG-05",
+      "library_id": null,
+      "title": "One stick",
+      "platform": "tiktok",
+      "files": [
+        "heartside_OG-05_tiktok_slide1.jpg",
+        "heartside_OG-05_tiktok_slide2.jpg"
+      ],
+      "caption": "He would like me to make the door wider.",
+      "alt_text": "A close view shows a retriever with a branch; a wider view reveals an enormous fallen limb while his owner holds the front door open. On-image text: I said you could bring one stick home.",
+      "status": "prepared; not queued",
+      "approval": "Stick r3 positively received; production requested. Exact platform exports await batch release confirmation.",
+      "native_preview": "pending Scheduling",
+      "disclosure": "Fictional AI-generated comedy. Apply native AI setting where supported and read back; otherwise use destination-appropriate disclosure.",
+      "music": "none; photo format",
+      "destination": "none; standalone entertainment",
+      "hashtags": [],
+      "ui_profile": "social-ui-2026-11-06-v1"
+    }
+  ],
+  "validation": {
+    "files": [
+      {
+        "file": "heartside_OG-01_feed_slide1.jpg",
+        "decode": true,
+        "sha256": "d65881ec05cefe6c96536d2dc6dbe4dccc815587f934daf9e2ef88bfb8c15ff3"
+      },
+      {
+        "file": "heartside_OG-01_tiktok_slide1.jpg",
+        "decode": true,
+        "sha256": "3dbadd15fc0296b83963702f34d9bd44ea8b811b070799ce5262eb602559a499"
+      },
+      {
+        "file": "heartside_OG-02_feed_slide1.jpg",
+        "decode": true,
+        "sha256": "34e589857a59d3a33711e62d91968422d967e01337743458efa01c31e61d54e9"
+      },
+      {
+        "file": "heartside_OG-02_tiktok_slide1.jpg",
+        "decode": true,
+        "sha256": "ec4c44b28821abb1919bf92cd2cbf04abda5c079129fe611edea0a5b2f5372c5"
+      },
+      {
+        "file": "heartside_OG-02_tiktok_slide2.jpg",
+        "decode": true,
+        "sha256": "6ef653862f8520c944b5fcd72fddedc71bf41378aa785ce0b0ca1409caeec8f5"
+      },
+      {
+        "file": "heartside_OG-03_feed_slide1.jpg",
+        "decode": true,
+        "sha256": "926fc0c78b9088c7e11bb94ae8b1be2dda3f550907821ad9a235fc972d5b3143"
+      },
+      {
+        "file": "heartside_OG-03_tiktok_slide1.jpg",
+        "decode": true,
+        "sha256": "3981e1e0b13985a7e58d3247b3964e1868f3653bcdcb899d10ec7b8d9a947323"
+      },
+      {
+        "file": "heartside_OG-03_tiktok_slide2.jpg",
+        "decode": true,
+        "sha256": "8bf007103a7dce9c9cd4657d4a670752efd15cb3fc48e7e243fcd18c47b65348"
+      },
+      {
+        "file": "heartside_OG-04_feed_slide1.jpg",
+        "decode": true,
+        "sha256": "96ec546f35f97f2aa86ea6d10bee174da65e4b993feb5d8e8dd5c9fe2771f893"
+      },
+      {
+        "file": "heartside_OG-04_tiktok_slide1.jpg",
+        "decode": true,
+        "sha256": "6d67e1bfbb1f3b5f6b1edf6b3b2b1d46a0cdea389297a11f3b60ff8637097dd3"
+      },
+      {
+        "file": "heartside_OG-04_tiktok_slide2.jpg",
+        "decode": true,
+        "sha256": "ffff46c13690f3b071a0b7456069fefe7056fe3933f82b20efa8bb7300b85755"
+      },
+      {
+        "file": "heartside_OG-05_feed_slide1.jpg",
+        "decode": true,
+        "sha256": "a850f206aeed95cc9e6e1e0e258ac8b871739d2d578a844ba8ecfc2c11af2caf"
+      },
+      {
+        "file": "heartside_OG-05_tiktok_slide1.jpg",
+        "decode": true,
+        "sha256": "7aeb2cb92025cbb3255a14b2f71dd907ce5125c83150afbe2d05f22d0d213fa6"
+      },
+      {
+        "file": "heartside_OG-05_tiktok_slide2.jpg",
+        "decode": true,
+        "sha256": "7fbcd86a462d5d2afeea11d0b87828de0c22690f2d8a82e4eca46c3ab49f9005"
+      }
+    ],
+    "copy_checks": 15,
+    "stick_source_unchanged": true,
+    "tiktok_text_inside_house_region": true,
+    "native_QA": "not performed",
+    "physical_device_QA": "not performed",
+    "visual_review": "All five feed renders and all nine TikTok compositions inspected on desktop review board; final enlarged photo layouts checked. Fourteen of fourteen browser images loaded. Native/device QA remains unverified."
+  }
+}
