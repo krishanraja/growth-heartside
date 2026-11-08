@@ -61,3 +61,26 @@ masters keep their geometry; opt an intentional revision into
 `ui_profile: social-ui-2026-11-06-v1` and obtain a new approval.
 `lock.py gate` requires `--release` and `--review` evidence for the specific
 placement. A file-level media audit alone is never release clearance.
+
+## Generated dog photography: review before export
+
+Krish, 8 November 2026: "These dogs look fake and sometimes malformed."
+Apply this production review before selecting a generated source, then repeat
+it on the final platform crop. This operational correction does not constitute
+approval of a new taste rule or the corrected artwork.
+
+- Inspect full resolution and phone-size composition. Check scale against
+  furniture and people, limb attachments, joints, paws, tails, ordinary
+  occlusion, and believable contact with the ground or supporting surface.
+- Use natural breed expressions and physically plausible poses. Do not force
+  human smiles or side-eye, stretch bodies, or invent anatomy to stage a joke.
+  The situation and caption must carry the humor.
+- Reject unclear anatomy; cropping a defect out of view is not a repair.
+  Prefer an ordinary pose to a complicated pose that reads as synthetic.
+- Record visual observations against the exact export. Dimensions, hashes and
+  copy checks do not establish realism or creative quality. Keep unresolved
+  candidates held; do not infer acceptance from successful rendering.
+- Label fictional generated scenes honestly in review records. Never present
+  them as real customers, testimonials or documentary evidence.
+
+See [the 8 November correction packet](../docs/briefs/2026-11-08-organic-anatomy-correction.md).

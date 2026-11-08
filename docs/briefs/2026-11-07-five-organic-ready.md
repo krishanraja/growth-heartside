@@ -1,5 +1,10 @@
 # Five organic posts prepared for review
 
+> Superseded for current artwork review on 8 November: Krish rejected dog realism
+> and anatomy. Use [the anatomy correction packet](2026-11-08-organic-anatomy-correction.md).
+> This document retains the historical 7 November artifacts, not release clearance.
+> The publishing hold remains.
+
 Status: 14 verified local image exports for 15 placements across Instagram, Facebook and TikTok. These are revised executions, not queued posts. Existing F25–F27 quality hold remains until release is cleared. No paid actions.
 
 ## Current instruction and taste
