@@ -133,6 +133,33 @@ class SocialRecovery(unittest.TestCase):
         db.close()
 
 
+class CommandLine(unittest.TestCase):
+    """Through growth.py itself, in a fresh copy with no local/ state: the path a new session actually takes."""
+
+    def test_fresh_checkout_recovers_through_the_cli(self):
+        import shutil
+        import subprocess
+        import sys
+        with tempfile.TemporaryDirectory() as tmp:
+            fresh = Path(tmp) / 'repo'
+            shutil.copytree(ROOT, fresh, ignore=shutil.ignore_patterns('local', '.git', '__pycache__'))
+
+            def run(*args):
+                return subprocess.run([sys.executable, 'growth.py', *args], cwd=fresh, capture_output=True, text=True)
+            first = run('events', 'import', 'docs/social/2026-11-09-engagement-history.json')
+            self.assertEqual(first.returncode, 0, first.stderr)
+            self.assertEqual(first.stdout.count('"applied"'), len(json.loads(HISTORY.read_text())))
+            again = run('events', 'import', 'docs/social/2026-11-09-engagement-history.json')
+            self.assertNotIn('"applied"', again.stdout)
+            status = run('social', 'status')
+            self.assertEqual(status.returncode, 0, status.stderr)
+            self.assertIn('Owner: publishing', status.stdout)
+            self.assertIn('First-follower monitor still watching: instagram, pinterest', status.stdout)
+            floor_out = run('floor', '--format', 'meme')
+            self.assertEqual(floor_out.returncode, 0, floor_out.stderr)
+            self.assertIn('dumb-stopping', floor_out.stdout)
+
+
 class FloorAndDrive(unittest.TestCase):
     def test_floor_is_well_formed_and_filters_by_format(self):
         data = json.loads((ROOT / 'factory/floor.json').read_text())

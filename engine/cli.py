@@ -68,8 +68,7 @@ def run(args, growth):
         print('ready for review')
         return
     if args.cmd == 'attribution':
-        from contextlib import closing
-        from . import attribution, ledger
+        from . import attribution
         with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
             result = attribution.run(db)
         if result['status'] in ('hold', 'current'):
