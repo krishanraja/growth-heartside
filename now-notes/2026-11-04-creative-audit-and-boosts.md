@@ -1,4 +1,0 @@
-Status: All 12 locked reels are audited frame by frame. Krish locked motion versions of F01, F02, F03, F05, F06 x3, F07 and F12, plus new F07, F10 and F11 covers; they are filed to Drive with their sha256 read back, and F04's motion is held on his note. Boosts are boosts of the live organic posts (Ads Manager, existing post): a $250 test on F12, F05, F02 and the F06-frenchie carousel, with the launch packet ready.
-Changed: docs/PAID-BOOSTS.md (organic boosts, gates, the test); docs/boost/2026-11-launch-packet.md; docs/PUBLISHING.md; docs/BOOST-LIBRARY.md and library/manifest.json; factory/audit.py, factory/splice.py and factory/motion/ (motion splices). factory/send_library.py now reads the Windows credential. The live Buffer queue is not edited.
-Next: Codex builds the four boost drafts as each post goes live (docs/briefs/codex/2026-11-04-boost-drafts.md), fills the packet, and Krish says go.
-North Star check (2026-11-04): holds.
