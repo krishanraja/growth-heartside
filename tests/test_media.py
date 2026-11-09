@@ -10,6 +10,7 @@ from unittest.mock import patch
 
 import growth
 from engine import assets, media
+from tests.ui_fixtures import font_path
 
 
 @unittest.skipUnless(importlib.util.find_spec('PIL') and shutil.which('ffmpeg') and shutil.which('ffprobe'),
@@ -27,7 +28,7 @@ class MediaTests(unittest.TestCase):
                 records[role] = {'path': str(path.relative_to(root)), 'sha256': assets.sha256(path)}
             for role in ('display_font', 'body_font'):
                 path = cache / (role + '.ttf')
-                shutil.copyfile(ImageFont.truetype('DejaVuSans.ttf', 20).path, path)
+                shutil.copyfile(font_path(), path)
                 records[role] = {'path': str(path.relative_to(root)), 'sha256': assets.sha256(path)}
             source = {'heartside_sha': 'a' * 40, 'assets': records}
             spec = json.loads((Path(growth.HERE) / 'campaigns/waits-at-the-door.json').read_text())

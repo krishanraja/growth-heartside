@@ -13,6 +13,12 @@ Which specialist runs which of the seven channel tasks, and the loop from this w
 
 ## Production
 
+New/revised production follows [CREATIVE-UI.md](CREATIVE-UI.md): shared house
+composition defaults, per-placement metadata and exact-file viewer evidence.
+`engine/protocol.py` holds automated post proposals without a current matching
+placement review, regardless of a concept's approved status. Rendering and
+recording historical delivery remain separate from release clearance.
+
 ```sh
 python3 -m pip install -r requirements-media.txt
 # Install FFmpeg and ffprobe through the system package manager.
@@ -53,8 +59,8 @@ The logo and typefaces come from the full synced Heartside commit
 (`--heartside-dir /path/to/heartside` reads via `git show SHA:path` without
 executing its code). Product images are the live store's own gallery renders,
 named role by role in `engine/assets.py` (`PRODUCT_IMAGES`), each recorded with
-its source URL and checksum; a blank template or checkout tile is refused, and
-every frame carries an Example label. The retired fictional Biscuit entryway
+its source URL and checksum; a blank template or checkout tile is refused.
+No Example badge is added (Krish, 2 Nov). The retired fictional Biscuit entryway
 scene was removed on 29 October 2026 (Biscuit is retired). Each output has file checksums, native copy digests,
 product SHA and a content-addressed revision. Modified copy/files fail checking;
 failed renders preserve previous output. Renderer source and FFmpeg/Pillow/zlib versions also participate in revision

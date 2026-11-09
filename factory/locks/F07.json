@@ -1,9 +1,10 @@
 {
  "id": "F07",
  "status": "locked",
- "approved_by": "Krish, board 2026-11-02: Lock (F07). Rebuilt under his same-day rulings: no badge, no on-screen slogan or URL, moving product.",
- "fingerprint": "f1441d8566e38fdfc6b567af90387d5f95b88288a458d17bbd6176c8bc66ed4a",
+ "approved_by": "Krish, 2026-11-04, in chat, on the rebuilt reel: \"2. approved\" (lock the four reels)",
+ "fingerprint": "b97002505924046372d45d1c471ecfe0ce77f498e8a237c32e0155d60a75e58e",
  "master": "specs/F07.json",
  "template": "film",
- "slots": "end render of the same product and breed"
+ "slots": "end render of the same product and breed",
+ "note": "Locked from a cloud session where the asset folder is absent; the asset checks run on the home machine at the next build."
 }

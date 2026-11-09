@@ -31,6 +31,8 @@ jobs. Concept-level approval, the creative bar and rule 1 are unchanged; the 5
 hooks and 5 captions are the alternatives the creative review cites, and the
 rejected ones stay note lines, never public copy.
 
+What to build and check before anything is posted or boosted (specs, safe zones, covers, labels and per-channel steps) is in [the publishing playbook](PUBLISHING.md). Paid use is ruled by [PAID-BOOSTS.md](PAID-BOOSTS.md).
+
 ## The weekly loop
 
 For each scheduled row use the operating instructions below, the [Drive map](DRIVE-MAP.md)
@@ -88,7 +90,7 @@ schedule rows exist. A connected account or a high owner rating is not a schedul
 1. Read the current library README and all listed schedules. Match the platform, brand
    identity, slot, approved cell, media, format, fingerprint and caption. Check the slot
    against both queued and live items; resolve an ambiguous provider receipt before retrying.
-2. Only publish from a row Krish marked yes. Verify the actual permalink and read back the
+2. Only publish from a row Krish approved: `approved = yes`, or "Approved in chat" with the date in `notes` (Krish, 4 Nov). Verify the actual permalink and read back the
    media and words. A scheduler ID is not a live URL. Use only the permitted status,
    live_url, notes and Results fields as directed in the live README. If the asset requires
    a crop, caption replacement or changed audio, return it to the engine; do not improvise.
@@ -121,3 +123,11 @@ or purchases for Heartside. Review current platform guidance alongside account i
 [Facebook originality](https://about.fb.com/news/2026/03/rewarding-original-creators-on-facebook/),
 [Pinterest creative formats](https://business.pinterest.com/creative-best-practices/) (ad design guidance),
 and [Threads insights](https://about.fb.com/news/2024/10/find-your-community-with-new-threads-educational-insights/).
+# Platform UI handoff (6 November 2026)
+
+For every new/revised creative, reel-script and caption-set use
+[CREATIVE-UI.md](CREATIVE-UI.md). Production owns recomposition; scheduling owns
+the final account/copy/crop/native-label check and post-publication viewer evidence.
+Prepare per-platform editions and concise copy. Never treat a clean export,
+paid ad preview or approved concept as an organic UI pass. Existing locked
+posts and scheduled exact payloads are not silently changed by this standard.

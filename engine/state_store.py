@@ -15,7 +15,7 @@ import uuid
 
 from . import assets, ledger
 
-DIRECTORIES = {'state', 'assets', 'media', 'provider-assets', 'automation'}
+DIRECTORIES = {'state', 'assets', 'media', 'provider-assets', 'automation', 'creative-ui'}
 MAX_BYTES = 500 * 1024 * 1024
 MAX_FILES = 12000
 MAX_EXPANDED_BYTES = 2 * 1024 * 1024 * 1024

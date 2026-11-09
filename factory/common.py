@@ -15,7 +15,8 @@ A = LIB + '/fonts'; R = LIB + '/renders'; FR = LIB + '/frames'; AU = LIB + '/aud
 W, H = 1080, 1920
 CREAM, INK, STAMP, PAPER = (246, 241, 231), (36, 32, 27), (184, 50, 42), (255, 253, 248)
 F = lambda f, s: ImageFont.truetype(f'{A}/{f}', s)
-EMO = ImageFont.truetype('/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf', 109)
+emoji_font = f'{A}/NotoColorEmoji.ttf'
+EMO = ImageFont.truetype(emoji_font if os.path.isfile(emoji_font) else '/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf', 109)
 
 
 def bold(f, wght):
@@ -118,7 +119,7 @@ def _feather(size, r=36):
     return m.filter(ImageFilter.GaussianBlur(r / 2))
 
 
-def product_clip(renders, out_mp4, dur, bg=None, box=(60, 160, W - 60, 1760), overlay=None, end_png=None, fps=30):
+def product_clip(renders, out_mp4, dur, bg=None, box=(60, 160, W - 60, 1760), overlay=None, end_png=None, fps=30, critical_box=None):
     """The real store renders, pixels untouched, moving like a phone video. A scene render
     (portrait, blanket) fills the frame with a slow push-in. A mug sits on its own backdrop colour
     with feathered edges, drops in with a small settle, then floats and sways while the camera
@@ -137,6 +138,9 @@ def product_clip(renders, out_mp4, dur, bg=None, box=(60, 160, W - 60, 1760), ov
         back = back.crop((bx, by, bx + W, by + H)).filter(ImageFilter.GaussianBlur(28))
         back = Image.blend(back, Image.new('RGB', (W, H), (20, 18, 15)), 0.25)
         fit = min((W - 60) / src.width, 1500 / src.height)
+        if critical_box:
+            x0, y0, x1, y1 = critical_box
+            fit = min((x1 - x0) / src.width, (y1 - y0) / src.height) / 1.08
     else:
         cols = [_border_color(i) for i in imgs]
         tone = tuple(sum(c[k] for c in cols) // len(cols) for k in range(3))
@@ -155,7 +159,12 @@ def product_clip(renders, out_mp4, dur, bg=None, box=(60, 160, W - 60, 1760), ov
         if scene:
             p = min(t / 0.5, 1); s = fit * (0.94 + 0.06 * _ease_back(p)) * (1.0 + 0.05 * t / max(dur, 0.1))
             im = src.resize((round(src.width * s), round(src.height * s)), Image.BICUBIC)
-            frame = back.copy(); frame.paste(im, ((W - im.width) // 2, (H - im.height) // 2 - 60))
+            frame = back.copy()
+            if critical_box:
+                cx, cy = (critical_box[0] + critical_box[2]) / 2, (critical_box[1] + critical_box[3]) / 2
+                frame.paste(im, (round(cx - im.width / 2), round(cy - im.height / 2)))
+            else:
+                frame.paste(im, ((W - im.width) // 2, (H - im.height) // 2 - 60))
         else:
             frame = base.copy(); push = 1 + 0.035 * t / max(dur, 0.1)
             for i, (img, (cx, cy)) in enumerate(items):
@@ -188,4 +197,5 @@ def frames_to_video(frames, out_noaudio, fps=30):
             fh.write(f"file '{p}'\nduration {s:.3f}\n")
         fh.write(f"file '{frames[-1][0]}'\n")
     run(['ffmpeg', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-vf', f'fps={fps},format=yuv420p,scale={W}:{H}',
+         '-frames:v', str(round(sum(seconds for _, seconds in frames) * fps)),
          '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '20', out_noaudio])

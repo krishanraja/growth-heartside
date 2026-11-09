@@ -1,9 +1,10 @@
 {
  "id": "F04",
  "status": "locked",
- "approved_by": "Krish, 2026-11-03: Lock F01, F02 and F04, keep the dachshund",
- "fingerprint": "1cb55bb32d7d88e9b336db6e4d6e0a364a04997d4b7f64ddbf64db67f9114d26",
+ "approved_by": "Krish, 2026-11-04, in chat, on the rebuilt reel: \"2. approved\" (lock the four reels)",
+ "fingerprint": "6c946c8a7ddc66f81518db84ec751714b30d739a1e2abd56693fce50e9110ddd",
  "master": "specs/F04.json",
  "template": "film",
- "slots": "end render of the same product and breed"
+ "slots": "end render of the same product and breed",
+ "note": "Locked from a cloud session where the asset folder is absent; the asset checks run on the home machine at the next build."
 }

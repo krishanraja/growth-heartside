@@ -6,8 +6,8 @@
  "title": "F06.title",
  "lines": [
   "F06.kla1",
-  "F06.kla2",
-  "F06.kla3"
+  "F06.kla2b",
+  "F06.kla3b"
  ],
  "music": "m_roast_boss.mp3",
  "music_level": 0.4,
@@ -23,8 +23,8 @@
  "frames": [
   "t620.png",
   "t621.png",
-  "t622.png",
-  "t623.png"
+  "t622c.png",
+  "t623c.png"
  ],
  "text_pos": [
   "top",

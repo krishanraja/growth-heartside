@@ -1,9 +1,11 @@
 {
  "id": "F03",
  "status": "locked",
- "approved_by": "Krish, 2026-11-03: Lock it all.",
- "fingerprint": "0039bfb17bda7a35c54d4b200f0170d510a83ce9dff47995b5843816b2b4e477",
+ "approved_by": "Krish, 2026-11-04, in chat, on the F03 cut with three labels: \"lock\"",
+ "fingerprint": "3e10ad2b94872d03c4b2f01be8d4c8f02eca1ed5985958cf8899dd9ff04c5d64",
  "master": "specs/F03.json",
  "template": "film",
- "slots": "end render of the same product and breed"
+ "slots": "end render of the same product and breed",
+ "labels": "motion/F03-labels.json",
+ "note": "Locked from a cloud session; asset checks run on the home machine at the next build."
 }

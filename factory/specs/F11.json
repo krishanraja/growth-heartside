@@ -43,5 +43,7 @@
  "end_render": "mug-real-dachshund.jpg",
  "end": {
   "hold": 5.0
- }
+ },
+ "open_on_result": true,
+ "note": "4 Nov: opens on the first joke (query and answer on frame 1); the last query shows whole."
 }

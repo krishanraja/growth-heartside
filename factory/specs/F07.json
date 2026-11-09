@@ -8,9 +8,16 @@
  "shots": [
   {
    "until": 2.4,
-   "frame": "f701.png",
+   "frame": "f701c.png",
    "line": "F07.v1",
-   "picture": "smug doodle in a turtleneck at a gallery"
+   "picture": "smug doodle in a turtleneck at a gallery",
+   "pull": {
+    "zoom": 2.2,
+    "focus": [
+     0.4,
+     0.36
+    ]
+   }
   },
   {
    "until": 6.6,
