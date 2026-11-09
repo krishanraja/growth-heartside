@@ -24,6 +24,18 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 
 ## Who writes what
 
+### Session archive exception — 9 November 2026
+
+Krish explicitly requested this session's summary and all created/iterated assets
+be stored in a separate schema-compatible Drive subfolder without interfering
+with live posts. Authorized destination:
+`Heartside/_Archive/2026-11-09_Codex-Creative-Session_Not-for-Publishing/`
+([Drive folder](https://drive.google.com/drive/folders/1gwVjIYoDAJSEshJ4dBFJ5Sq_XL-rG1GW)).
+This bounded exception permits the session source/iteration backup and summary
+there; it does not expand permissions for other folders or alter the live library.
+Archive files are never a publishing input. Read START-HERE.md for the held
+artwork status and ASSET-INVENTORY.csv for the exact archived paths/checksums.
+
 | Where | Who writes it | How | Nobody else |
 |---|---|---|---|
 | `Heartside/` outside `05_Social-Library` | Krish only | by hand | The engine and Codex never create, move, rename or delete anything here |
