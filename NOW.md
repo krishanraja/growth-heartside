@@ -41,6 +41,8 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- The engine now restores the social desks' history and Krish's rejections from the repository alone. - `growth.py social status` covers the engagement tests and the first-follower monitor, imported through the existing operator events. - `growth.py floor` lists 20 rejections in his words, each with its rule and check. - `growth.py drive audit` checks Drive against `config/drive-map.json`: 0 errors and 65 warnings on 9 Nov. - Codex runs only by card, checked by Claude, and `codex/INDEX.md` keeps each card's state. - content-engine#478 points the upload lane at 03b. (2026-11-09)
+- Drive map rewritten for Krish's 9 Nov restructure: creatives iterate in `03a_Social-Production` (dated session folders), release media and schedules live in `03b_Social-Schedule` (was `05_Social-Library`, same ID). AGENTS, NOW, CHANNEL-TASKS and send_library name the new folders. (2026-11-09)
 - The engine keeps the social desks' history and Krish's rejections where the next session reads them (2026-11-09). `growth.py social status` restores both first-follower engagement tests: approved by Krish on 7 Nov, handed to the publishing desk, publication not yet verified. It also restores the first-follower monitor: Instagram and Pinterest are still watched, at 0 on 8 Nov 17:37 UTC and unknown since then. `growth.py floor` holds 20 rejections in his words with their rules and checks. `growth.py drive audit` checks Drive against `config/drive-map.json`: 0 errors and 65 warnings on 9 Nov, all `ui-v1`/`ui-v2` editions in `Posts/`. Codex runs only by card, checked by Claude (`codex/README.md`, `codex/INDEX.md`). The next production session's route is `docs/briefs/2026-11-09-next-session-hero-and-meme-batch.md`.
 - Gaps found on 9 Nov, for Krish:
   - no schedule row has `approved = yes`, yet all 38 rows were posted on chat approvals;
@@ -73,6 +75,8 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-09 This protects approved work and the creative bar; it adds no sales by itself, and the number is still $0 (U4).
+- 2026-11-09 This keeps the post pipeline from stalling; it moves no sales number by itself.
 - 2026-11-07 Stronger visual executions for date night, rain and friendship; larger TikTok photographs after checking the initial layouts. Exact packet: docs/briefs/2026-11-07-five-organic-ready.md and its JSON review receipt. Local board: http://127.0.0.1:8769/five-revised.html. Fifteen copy checks and fourteen image decode/dimension checks pass; all fourteen browser images load. Native and physical-device QA remain unverified.
 - 2026-11-07 Approval and immutable mock hashes are recorded; feed compositions preserved, TikTok layouts split where the reveal benefits. OG-03/05 remain unapproved. All 152 self-tests and nine copy checks pass.
 - 2026-11-06 The supplied document is now enforced in shared layout, source-repair, photo-card and release-evidence paths. Earlier locks and the 4 November caption ruling remain intact. Current selected index: library/editions/2026-11-06-ui.json. Audit: docs/audits/2026-11-06-unpublished-correction.md.
@@ -99,7 +103,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-07): Obtain the consolidated revised-batch release decision, then reconcile the two new library IDs and exact final filenames with Scheduling before native upload checks and queueing.
+- Next (2026-11-09): the production session in `docs/briefs/2026-11-09-next-session-hero-and-meme-batch.md`. PR #42 is merged and Krish's three open questions are decided.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
