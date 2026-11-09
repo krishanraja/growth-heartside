@@ -33,6 +33,38 @@ rejected ones stay note lines, never public copy.
 
 What to build and check before anything is posted or boosted (specs, safe zones, covers, labels and per-channel steps) is in [the publishing playbook](PUBLISHING.md). Paid use is ruled by [PAID-BOOSTS.md](PAID-BOOSTS.md).
 
+
+## Desks: who owns each kind of work
+
+The specialists above own channels. The work itself is run by desks, each a standing Codex chat or a Claude
+session, set by Krish on 7 to 9 Nov 2026 (engagement desk handover, 9 Nov). A desk is an owner, not a store:
+what it decides goes into this repository's records (`growth.py social status`, `factory/floor.json`,
+`codex/INDEX.md`, `CHANGES.md`), never only into its chat.
+
+| Desk | Owns | Where it runs | Writes |
+|---|---|---|---|
+| Publishing | Scheduling, publishing, delivery verification, post audits. The only writer to Buffer | Codex thread 01a1a23e-de37-74f1-95a8-4a9bed2e756d | 02 Sheets `status`, `live_url`, `notes`, `Results`; social `live_verified` events |
+| Engagement | Conversations with existing followers: tests on live posts, prepared for Krish's review | Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937, and the radar job | Social `proposed`, `approved`, `handed_off`, `evaluated` and `follower_check` events |
+| Audience | Reaching new people | Codex thread 01a1a2b0-3d02-7661-8339-73265cc3035b | Proposals for Krish; no outreach outside rule 7 |
+| Production | Ideas, scripts, assets and builds, held to the rejection floor | A Claude session that runs Codex by card (`codex/README.md`) | 03a session folders, `factory/`, `codex/INDEX.md`; locked media to 03b through `send_library.py` |
+
+Two older creative chats exist (01a1a01b-d492-7980-ad4e-895d2cb4df8f and 01a1a789-12ff-79b2-b851-678c3bf6482b).
+Production now has one owner, the Claude session, so neither runs production in parallel with it.
+
+Handoffs carry only the exact approved payload. The engagement desk hands the publishing desk the exact comment and
+target; production hands the publishing desk locked media and schedule rows; nobody else touches Buffer.
+
+**Pinterest** is a live brand profile (https://www.pinterest.com/yourdoghasnotes/) that is monitored for its
+first follower. It is not a posting channel: nothing is posted there, and no Threads account is opened, until
+Krish says so.
+
+**A scoped approval stays scoped.** Krish approved two exact first-follower comments, emoji included, on 7 Nov.
+That covers those two comments on those two posts once each. Every other reply keeps the radar's rules.
+
+**Schedule approval** (Ruling (Krish, 2026-11-09: "Go with your recommendations")). Krish marks `approved = yes` in the Sheet, and the publishing desk posts nothing
+else. This replaces the 4 Nov chat-approval rule: on 9 Nov every one of the 38 posted rows had an empty `approved`
+column and was posted on an approval given in chat. F17 to F27 get their rows in a `02e` Sheet before any further
+post.
 ## The weekly loop
 
 For each scheduled row use the operating instructions below, the [Drive map](DRIVE-MAP.md)
@@ -90,7 +122,7 @@ schedule rows exist. A connected account or a high owner rating is not a schedul
 1. Read the current library README and all listed schedules. Match the platform, brand
    identity, slot, approved cell, media, format, fingerprint and caption. Check the slot
    against both queued and live items; resolve an ambiguous provider receipt before retrying.
-2. Only publish from a row Krish approved: `approved = yes`, or "Approved in chat" with the date in `notes` (Krish, 4 Nov). Verify the actual permalink and read back the
+2. Only publish from a row Krish marked `approved = yes` in the Sheet (Ruling (Krish, 2026-11-09: "Go with your recommendations"); a chat approval no longer counts). Verify the actual permalink and read back the
    media and words. A scheduler ID is not a live URL. Use only the permitted status,
    live_url, notes and Results fields as directed in the live README. If the asset requires
    a crop, caption replacement or changed audio, return it to the engine; do not improvise.
@@ -106,8 +138,10 @@ schedule rows exist. A connected account or a high owner rating is not a schedul
    link proves which post produced an order. Keep boosted traffic out of organic results.
 5. Stock the library with release media only. Record whether the visual, performance and
    audio are owned or cleared for the intended channel and use. An original repost, a
-   creator-native share, a commentary edit and a paid ad are separate uses. Keep source
-   references, review renders and rejected versions out of Drive and public Git. Do not
+   creator-native share, a commentary edit and a paid ad are separate uses. Source
+   references, review renders and rejected versions go in a dated session folder in
+   Drive `03a_Social-Production`, never in `03b_Social-Schedule` or public Git
+   ([Drive map](DRIVE-MAP.md)). Do not
    turn organic approval into a boost or assume a second channel inherits permission.
 
 **Evidence behind the tests (3 Nov 2026).** In the private sample, five recurring TikTok

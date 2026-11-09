@@ -11,7 +11,13 @@ observed; `factory/lock.py gate` and automated post proposals enforce the review
    growth.py store`. If the v3 gifts are not on sale yet, today's pack builds
    the audience and the comment loop, with no "buy" call to action, and the
    headline says so.
-2. Choose **one concept**. In order of preference:
+2. Read the rejection floor for what you are making: `python3 growth.py floor
+   --format <reel|still|carousel|meme>`. Every entry is a check the pack must
+   pass before Krish sees it; a fail is held with its floor id, never shown.
+   Then read `python3 growth.py social status`: an evaluated engagement test
+   with replies is a concept input.
+
+3. Choose **one concept**. In order of preference:
    - a winner to multiply (the latest `report` or `numbers` pack names it);
    - the strongest opportunity in today's or yesterday's radar
      (`python3 growth.py read --days 2 --kind radar`);
@@ -33,7 +39,7 @@ observed; `factory/lock.py gate` and automated post proposals enforce the review
    note lines `Alternative hook 1:` to `Alternative hook 5:` and
    `Picked hook: <n>, because <reason>`. The picked one becomes the brief's
    `Hook:` line and passes the copy rules.
-3. Draft, one item each, each with its own creative id (PLAYBOOK, "Creative
+4. Draft, one item each, each with its own creative id (PLAYBOOK, "Creative
    ids"). Every heartside.io link is tracked (`python3 growth.py link`). Keep
    the idea the same in every edition. Change the opening frame, hook
    wording, caption, cover and call to action to suit the platform. Never
@@ -67,13 +73,13 @@ observed; `factory/lock.py gate` and automated post proposals enforce the review
      phrase, and the tracked link to the most specific page.
    - **Comment prompt** (`instagram`, POST), if the format invites it:
      "Comment your dog's name", with the reply pattern for the radar.
-4. State the test in the brief's `why`, in the test record shape
+5. State the test in the brief's `why`, in the test record shape
    (`knowledge/COPY-DOCTRINE.md`, section 8): question, mechanism, control,
    the one changed variable and the signal. Test current recognition stories
    and gift proof. V3 rejected the HR builder, so the older roast-versus-
    love-letter instruction must not revive it. Judge sends per reach
    alongside useful visits and purchases when observed.
-5. Write the production spec under `local/specs/`, using
+6. Write the production spec under `local/specs/`, using
    `campaigns/waits-at-the-door.json` as the schema. A scheduled run never
    edits that tracked file. Keep the visible detail true to its approved
    example product. A verified buy spec can declare the current single-unit
@@ -82,7 +88,7 @@ observed; `factory/lock.py gate` and automated post proposals enforce the review
    score, cover, carousel, Stories, Pins and subtitles. Approved narration can
    be attached with verified provenance. Connected provider jobs use the budget
    and receipt contract in docs/PROVIDERS.md; no paid generation is automatic.
-6. **caption-set** for each edition (docs/CHANNEL-TASKS.md): before choosing
+7. **caption-set** for each edition (docs/CHANNEL-TASKS.md): before choosing
    its caption, write it five ways (story, practical, a plain opinion, the
    buyer's problem, step by step), pick one for that platform's signal, and
    record the other four in the brief as note lines `Alternative caption
@@ -99,7 +105,7 @@ observed; `factory/lock.py gate` and automated post proposals enforce the review
    changed media makes the daily pack incomplete; report the exact
    failure rather than calling a text brief ready. Revisions are saved
    in `local/engine.sqlite3` automatically.
-7. Headline: the day, the concept and its test, for example "Monday, C04
+8. Headline: the day, the concept and its test, for example "Monday, C04
    'My dog got me a gift' (partner): Reel, Story, FB, TikTok, 2 Pins". Check,
    then store with `growth.py post <printed-draft-path>`. Include the media
    paths and whole pack in the final message. Record actual publication

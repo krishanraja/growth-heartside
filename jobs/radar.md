@@ -26,7 +26,25 @@ Krish: about 5 minutes.
    the commenter's dog's name only as they wrote it, and points to the bio
    link. No exclamation marks or emoji. Escalate price, policy, complaint
    and anything sad to Krish as an item with `platform: other`, `why`
-   "escalate", and no drafted reply.
+   "escalate", and no drafted reply. The two first-follower comments Krish
+   approved on 7 Nov carry an emoji: that approval covers those two exact
+   comments only, never this rule.
+
+   **Engagement tests and first followers.** Run `python3 growth.py social
+   status`. For every open test, do the next action it names, and only if you
+   own it (`engagement` is this job; `publishing` is the publishing desk). When
+   a test's 48-hour window has closed, count the unique substantive replies
+   (brand activity excluded), keep verified-follower replies apart from
+   aggregate ones, and record the outcome as an `evaluated` social event with
+   its decision (keep, iterate, hold or retire) through `growth.py events
+   import` (`docs/ENGINE.md`, "Social history"). A replied-to test feeds the
+   next concept: what the replies said goes into today's demand items. For a
+   channel the first-follower monitor still watches, read its follower count
+   and record it as a `follower_check`; a page that will not load is
+   `unavailable`, never 0. At the first verified count of 1 or more, draft one
+   engagement test for that channel: the live post, the exact comment, the
+   interaction sought, the viewer's route to heartside.io, the 48-hour window
+   and the decision rule, as an item for Krish.
 3. **Demand.** In public, look for what people search and say about gifts
    from dogs, dog gifts for a partner, mom or dad, and the season's gifts:
    - TikTok search and Creator Search Insights (when signed in);

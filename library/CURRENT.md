@@ -1,5 +1,11 @@
 # Current Heartside publishing library
 
+**Retired 9 Nov (Ruling (Krish, 2026-11-09: "Go with your recommendations")):** every `ui-v1` and `ui-v2` platform edition in `Posts/` (the 6 Nov
+UI correction below, and the F19 to F24 feed and TikTok editions) is retired for reuse. Krish rejected title and
+subtitle boxes that cover a dog's eyes and the main action (factory/floor.json `text-clear-of-faces`). The posts
+already live stay live; the files stay in Drive; nothing new is scheduled from them. New posts are built under the
+floor and filed with their own plain names.
+
 **6 November unpublished correction:** use the 38-file [UI edition index](editions/2026-11-06-ui.json)
 for the 33 corrected placements. Its eight cover JPGs are references; Buffer videos
 use a selected frame on Instagram/TikTok and the automatic frame on Facebook.

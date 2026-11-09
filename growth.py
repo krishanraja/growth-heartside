@@ -1110,6 +1110,38 @@ def self_test():
         t(f'automation "{au["name"]}" runs a job that exists', os.path.exists(os.path.join(HERE, au['job'])))
         t(f'automation "{au["name"]}" has a schedule rule', au['schedule'].startswith('RRULE:FREQ='))
         t(f'automation "{au["name"]}" never asks to post', not re.search(r'\b(post|publish|send)\b', au['prompt'], re.I))
+    def card_errors(text):
+        errs = []
+        if '## Floor' not in text:
+            errs.append('no ## Floor section')
+        if re.search(r'\b(buffer|schedul\w*|publish\w*|post it|go live)\b', text.split('## Return')[0], re.I):
+            errs.append('names a live queue, scheduler or publishing')
+        if re.search(r'03b_Social-Schedule|Posts/', text):
+            errs.append('files into 03b; a card files into its 03a session folder')
+        return errs
+    queue = os.path.join(HERE, 'codex/queue')
+    for name in sorted(os.listdir(queue)) if os.path.isdir(queue) else []:
+        if name.endswith('.md'):
+            t(f'codex card {name} has a floor and no live queue', card_errors(open(os.path.join(queue, name), encoding='utf-8').read()) == [])
+    t('a card with no floor that names Buffer is refused', len(card_errors('## Goal\nRe-attach the reel in Buffer.\n## Return\nx')) == 2)
+    drive_map = json.load(open(os.path.join(HERE, 'config/drive-map.json')))
+    drive_doc = open(os.path.join(HERE, 'docs/DRIVE-MAP.md'), encoding='utf-8').read()
+    t('every folder in config/drive-map.json is in docs/DRIVE-MAP.md, by ID',
+      all(fid in drive_doc for fid in drive_map['folders']))
+    from engine import floor as floor_mod
+    t('factory/floor.json is well formed: exact words, a rule and a check for every rejection',
+      floor_mod.errors(json.load(open(os.path.join(HERE, 'factory/floor.json'), encoding='utf-8'))) == [])
+    import tempfile
+    from contextlib import closing as _closing
+    from engine import ledger as _ledger, operations as _ops, social as _social
+    with tempfile.TemporaryDirectory() as tmp, _closing(_ledger.connect(os.path.join(tmp, 'local/engine.sqlite3'))) as db:
+        history = json.load(open(os.path.join(HERE, 'docs/social/2026-11-09-engagement-history.json'), encoding='utf-8'))
+        first = _ops.apply(tmp, db, history)
+        again = _ops.apply(tmp, db, history)
+        t('the social history imports cleanly and replays without duplicates',
+          all(r['status'] == 'applied' for r in first) and all(r['status'] == 'already_applied' for r in again))
+        t('the social history restores both engagement tests and the two channels still monitored',
+          len(_social.status(db)['tests']) == 2 and _social.status(db)['monitor_remaining'] == ['instagram', 'pinterest'])
     crew = json.load(open(os.path.join(HERE, 'crew/registry.json')))['crew']
     t('crew/registry.json maps each specialist to the seven channel tasks', crew_errors(crew, {a['job'] for a in autos}) == [])
     t('a crew with an unknown task, no signal, an unscheduled job or another platform is refused',

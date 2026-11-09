@@ -1,7 +1,7 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-11-07
+as_of: 2026-11-09
 head: 836ad8a
 lifecycle: live
 production_url: none
@@ -31,7 +31,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-11-07)
+## Where it is right now (as of 2026-11-09)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": 200, "current": 0, "current_as_of": "2026-10-29", "current_source": "Shopify Admin API orders through growth.py attribution (read-only app), organic posts, trailing 28 days", "urgency": 4, "urgency_reason": "at 0% of this week's target"} --> **North Star number: U4, far behind.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: $0 (measured 29 Oct; the store's only order in the window was fully refunded), against $200 this week, on the way to $25,000 by 28 December 2026. A bold swing every day; work that does not move the number waits.
 
@@ -41,6 +41,12 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- The engine keeps the social desks' history and Krish's rejections where the next session reads them (2026-11-09). `growth.py social status` restores both first-follower engagement tests: approved by Krish on 7 Nov, handed to the publishing desk, publication not yet verified. It also restores the first-follower monitor: Instagram and Pinterest are still watched, at 0 on 8 Nov 17:37 UTC and unknown since then. `growth.py floor` holds 20 rejections in his words with their rules and checks. `growth.py drive audit` checks Drive against `config/drive-map.json`: 0 errors and 65 warnings on 9 Nov, all `ui-v1`/`ui-v2` editions in `Posts/`. Codex runs only by card, checked by Claude (`codex/README.md`, `codex/INDEX.md`). The next production session's route is `docs/briefs/2026-11-09-next-session-hero-and-meme-batch.md`.
+- Gaps found on 9 Nov, for Krish:
+  - no schedule row has `approved = yes`, yet all 38 rows were posted on chat approvals;
+  - F17 to F24 are live with no schedule row;
+  - the publishing desk left four duplicates and three TikTok pairs in Buffer ERROR "for Claude";
+  - Decided the same day ("Go with your recommendations"): trolling dogs look like real dogs; only `approved = yes` in the Sheet lets Codex post; the `ui-v1`/`ui-v2` editions are retired. PR #42 is merged.
 - All five organic comedy concepts prepared as 14 local image exports covering 15 platform placements, with captions, revised alt text, hashes and a browser-verified review board. Cheese now sleeps with a snoring cue; the liked stick r3 source is unchanged. F25–F27's earlier hold is preserved pending the revised batch decision. No new exports uploaded or queued. (2026-11-07)
 - Krish approved OG-01/02/04 on 7 November; produced F25/F26/F27 as eight checked files for nine organic placements. Uploaded all eight through the established library lane and independently downloaded matching bytes and SHA-256. Production board loads all files. Drive filing and native placement checks remain with Scheduling; no queue or live-post receipt claimed. (2026-11-07)
 - Recovered clean sources and approved motion, produced 38 selected UI-edition files, and handed off 33 exact unpublished draft replacements. Library API and CDN bytes match local hashes; Drive names, sizes and parents were read back. Preview-driven typography, contrast, cover metadata and AI-disclosure corrections are recorded in the correction audit. All postings remain held for native release review; no published edits or paid spend. (2026-11-06)
@@ -56,7 +62,7 @@ Live:
 - All 40 current social assets matched in Drive and the library API. Nine approved review copies are in Trash. The scheduling chat has the verified full index. (2026-11-04)
 - The production handoff identifies the three motion candidates (F04, F05, F12), their unchanged Drive originals and the separate F12 paid opening pair by SHA-256. The candidates await exact-file creative decisions. Paid activation is held. (2026-11-04)
 - All twelve organic posts (F01 to F07, F10 to F12, with F06 in three breeds) are locked by Krish and pass `lock.py gate`; the lock page shows them locked (2026-11-03).
-- The social library is in Krish's Drive (`Heartside/05_Social-Library`, map in `docs/DRIVE-MAP.md`): one Codex README, the posting strategy, the schedule Sheet with captions, tracked links and lock fingerprints, and each post's media in `Posts/<post id>/`. Krish's home computer files the media (`factory/send_library.py`, 39 files read back byte for byte); the zip is a backup. Codex posts only rows Krish marks `approved = yes` (2026-11-03).
+- The social library is in Krish's Drive (`Heartside/03b_Social-Schedule`, formerly `05_Social-Library`, map in `docs/DRIVE-MAP.md`; creatives are iterated in `Heartside/03a_Social-Production` since 9 Nov): one Codex README, the posting strategy, the schedule Sheet with captions, tracked links and lock fingerprints, and each post's media in `Posts/<post id>/`. Krish's home computer files the media (`factory/send_library.py`, 39 files read back byte for byte); the zip is a backup. Codex posts only rows Krish marks `approved = yes` (2026-11-03).
 - Sound is locked for all ten approved concepts and the lock system (joke bank, render catalog, fingerprinted locks, copy, breed, media and drift gates, independent reviewer, 5-then-1-in-10 trust ramp) builds every post from a spec (2026-11-02).
 - Five channel guides separate posts made to be shared from posts made to earn shop visits; dog POV and product posts stay in one schedule (`docs/CHANNEL-TASKS.md`, 2026-11-03).
 - Eight scheduled jobs in `automations.json` run on GitHub Actions (`.github/workflows/engine.yml`); the Control Center loop runs on protocol 1.16.0, with prepaid credits spent by a daily session (`docs/CREDITS-SESSION.md`, `docs/control-center/`). Paid external generation stays off with a zero default budget; generation inside Krish's prepaid-credit allocation counts as authorised (`0303ffb`; `docs/PROVIDERS.md`).
@@ -98,7 +104,7 @@ Waiting or not measured:
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
-- North Star check (2026-11-07): holds.
+- North Star check (2026-11-09): holds.
 
 ## Read next
 

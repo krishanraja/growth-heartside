@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "kind": "crew",
-  "note": "Heartside's channel specialists (Krish, 2026-10-30). The seven channel tasks are defined once in krishanraja/ai-harness contract/channel-tasks.md; each specialist says what each task accomplishes for Heartside on its channels, and the job that runs it. No new scheduler: every job is already in automations.json. Platforms: Instagram, TikTok and Facebook only (Krish, 2026-10-29).",
+  "note": "Heartside's channel specialists (Krish, 2026-10-30). The seven channel tasks are defined once in krishanraja/ai-harness contract/channel-tasks.md; each specialist says what each task accomplishes for Heartside on its channels, and the job that runs it. No new scheduler: every job is already in automations.json. Platforms: Instagram, TikTok and Facebook only (Krish, 2026-10-29). Posting stays on those three. Pinterest has a live brand profile (https://www.pinterest.com/yourdoghasnotes/) that is monitored only: the first-follower monitor watches it and its follower checks are recorded (engine/social.py); nothing is posted there until Krish adds it (Krish's engagement desk, 7 Nov 2026). Engagement, scheduling, production and audience growth are desks, not specialists: docs/CHANNEL-TASKS.md, \"Desks\", says who owns each.",
   "crew": [
     {
       "id": "meta",

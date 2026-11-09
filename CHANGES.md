@@ -3,6 +3,28 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-09: three decisions and #42 merged. Krish: "Go with your recommendations, open the PRs and merge #42".
+  - Trolling dogs show real dog expressions, never a human smile (`factory/floor.json` `troll-not-mild`; the open conflict is closed).
+  - Only `approved = yes` in the Sheet lets Codex post a row. This supersedes the 4 Nov ruling that a chat approval recorded in `notes` counted. AGENTS.md, `docs/CHANNEL-TASKS.md`, `docs/DRIVE-MAP.md`, `factory/send_library.py` and the README for Codex now say so.
+  - The `ui-v1` and `ui-v2` platform editions are retired for reuse (`library/CURRENT.md`, `docs/DRIVE-MAP.md`). Posts already live stay live.
+  - [krishanraja/growth-heartside#42](https://github.com/krishanraja/growth-heartside/pull/42), the 4 to 9 Nov production branch, is merged. This branch is rebased onto it, and the map keeps its paid and review file kinds.
+  - Ruling (Krish, 2026-11-09): only approved = yes in the Sheet lets Codex post; chat approval no longer counts.
+  - Ruling (Krish, 2026-11-09): trolling dogs show real dog expressions, never a human smile.
+  - Ruling (Krish, 2026-11-09): the ui-v1 and ui-v2 editions are retired for reuse.
+
+- 2026-11-09: the engine learns from the social desks and from failed production. Krish: "We need to upgrade the Growth-Heartside engine to ensure it learns from the attached Markdown file in terms of social media audience acquisition", "how can it improve on asset ideation > production > build based on the failed production sessions", "the goal is that Claude sessions manage Codex in the future fully", "Make sure the drive is completely up to date and not able to be corrupted or sprawled", "Ensure that the project documentation and intelligence of the growth repository are automatically augmented".
+  - Social history uses the existing operator events: a `social` type with the same receipts, append-only in `local/engine.sqlite3`, and carried by the checkpoint (`engine/social.py`; `docs/ENGINE.md`, "Social history"). The desks' 4 to 9 Nov record is `docs/social/2026-11-09-engagement-history.json`. The radar and report jobs read it back.
+  - `factory/floor.json` and `growth.py floor` hold every creative rejection in his words, with the rule and the check. That includes the rain session he marked failed ("The whole of this scene just feels weak and lame.").
+  - `codex/README.md`: Claude runs Codex by card, through the plugin at home or the lane from the cloud. Each card has a floor and a 03a destination, and Claude checks every output at full size. `codex/INDEX.md` keeps each card's state, and the self-test lints queued cards.
+  - `config/drive-map.json` and `growth.py drive audit`. Drive: a new START-HERE.txt (the 30 Oct one is kept, marked superseded), and the weekly placement review Sheet moved into 03b.
+  - content-engine [krishanraja/content-engine#478](https://github.com/krishanraja/content-engine/pull/478) points the home computer's lane at `03b_Social-Schedule`. The lane wrote by path and would have stopped. heartside's `docs/SYNC.md` describes the new layout.
+  - Ruling (Krish, 2026-11-09): every lesson, approval and Codex result is recorded in the repository the same session; a chat or Drive summary alone does not count. No job file or `automations.json` entry changed.
+
+- 2026-11-09: Drive restructured. Krish: "Folder 3A is where we're iterating on creatives, and folder 3B is where they're ready for production."
+  - Krish moved `01_Identity`, `02_Imagery` and `04_Decks` up to `Heartside/`, renamed `05_Social-Library` to `03b_Social-Schedule` (same folder ID), and the old social work area to `03a_Social-Production`.
+  - `docs/DRIVE-MAP.md` now maps the whole tree by ID, adds the one-way path from 03a to 03b, and sets the 03a rule: one dated session folder per working session with a `START-HERE.md`, never posted from, and nothing copied from it into 03b.
+  - `AGENTS.md`, `NOW.md`, `docs/CHANNEL-TASKS.md` and `factory/send_library.py` name the new folders. Review renders now belong in 03a instead of being kept out of Drive.
+  - Ruling (Krish, 2026-11-09): 03a_Social-Production is for iterating creatives; 03b_Social-Schedule holds only what is ready for production. No job file or `automations.json` entry changed.
 - 2026-11-06: After Krish completed billing and phone verification, the authorized single F10 USD 25 paid pilot was published. Meta returned "1 ad was published"; independent fresh-page readback at 12:56 GMT showed Processing, enabled, USD 25 lifetime and USD 0 spent. Published end remains 7 November 12:45 GMT. Paid delivery is not yet confirmed. The four USD 50 boosts remain held. See `docs/boost/2026-11-05-sandbox.md`.
 
 - 2026-11-06: Krish: "We need to get the first paid test live ASAP." Authorized activation of the prepared single F10 Meta pilot, USD 25 lifetime over 24 hours. The four USD 50 posts remain a separate decision. Payment method connected and pixel/destination checked; Meta's required business billing information currently blocks Publish. See `docs/boost/2026-11-05-sandbox.md` for the exact account, draft and launch evidence. Paid results remain separate from the organic North Star.

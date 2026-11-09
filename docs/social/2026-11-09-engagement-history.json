@@ -1,0 +1,336 @@
+[
+ {
+  "event_id": "social:fb-first-follower-rival:proposed",
+  "type": "social",
+  "record": {
+   "kind": "engagement",
+   "test_id": "fb-first-follower-rival",
+   "channel": "facebook",
+   "target_url": "https://www.facebook.com/reel/1436549414677089",
+   "stage": "proposed",
+   "at": "2026-11-06T00:00:00Z",
+   "at_precision": "day",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)",
+   "text": "What’s your dog’s biggest rival for your attention? The coffee mug, your phone, or something else? Tell us their name and their sworn enemy. 😂",
+   "interaction": "One short, personal reply about the follower's dog, tied to the coffee-mug reel.",
+   "viewer_route": "Expand the caption and follow its existing tracked link to heartside.io (utm_content=f01_6_facebook).",
+   "decision_rule": "At least one verified follower answers: repeat the format once on another suitable post. Replies with unknown follower status: aggregate engagement signal only. No replies without established follower exposure: inconclusive. One follower is never a rate or a winner.",
+   "evidence": "Reel live 6 Nov 20:20 UTC (native post and Buffer sent record checked). Buffer snapshot 6 Nov 20:21 UTC: 0 impressions, reactions, comments, shares, clicks; early aggregate only."
+  }
+ },
+ {
+  "event_id": "social:fb-first-follower-rival:approved",
+  "type": "social",
+  "record": {
+   "kind": "engagement",
+   "test_id": "fb-first-follower-rival",
+   "channel": "facebook",
+   "target_url": "https://www.facebook.com/reel/1436549414677089",
+   "stage": "approved",
+   "at": "2026-11-07T00:00:00Z",
+   "at_precision": "day",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)",
+   "text": "What’s your dog’s biggest rival for your attention? The coffee mug, your phone, or something else? Tell us their name and their sworn enemy. 😂",
+   "approval": {
+    "words": "Approve both the Facebook and TikTok engagement tests. Hand the exact comments to the publishing desk, and keep monitoring Instagram and Pinterest for their first followers.",
+    "by": "Krish",
+    "date": "2026-11-07",
+    "where": "engagement chat",
+    "scope": "These two exact comments on these two exact posts, once each. Not general permission for other replies, other posts or emoji in replies."
+   }
+  }
+ },
+ {
+  "event_id": "social:fb-first-follower-rival:handed-off",
+  "type": "social",
+  "record": {
+   "kind": "engagement",
+   "test_id": "fb-first-follower-rival",
+   "channel": "facebook",
+   "target_url": "https://www.facebook.com/reel/1436549414677089",
+   "stage": "handed_off",
+   "at": "2026-11-07T00:00:00Z",
+   "at_precision": "day",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937); delivered to the publishing desk thread 01a1a23e-de37-74f1-95a8-4a9bed2e756d by send_message_to_thread",
+   "text": "What’s your dog’s biggest rival for your attention? The coffee mug, your phone, or something else? Tell us their name and their sworn enemy. 😂",
+   "evidence": "Handoff delivery verified. Publication NOT verified: no live comment receipt was seen by the engagement desk."
+  }
+ },
+ {
+  "event_id": "social:tt-first-follower-security:proposed",
+  "type": "social",
+  "record": {
+   "kind": "engagement",
+   "test_id": "tt-first-follower-security",
+   "channel": "tiktok",
+   "target_url": "https://www.tiktok.com/@yourdoghasnotes/video/7705061842653072654",
+   "stage": "proposed",
+   "at": "2026-11-07T00:00:00Z",
+   "at_precision": "day",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)",
+   "text": "What harmless thing has your dog declared a security threat? Give us their name and the suspect. 😂",
+   "interaction": "A brief dog-owner story tied to the parcel and security joke.",
+   "viewer_route": "Type heartside.io in a browser, then \"Design yours in minutes\". No clickable bio link was verified on TikTok.",
+   "decision_rule": "At least one verified follower answers: repeat the format once on another suitable post. Replies with unknown follower status: aggregate engagement signal only. No replies without established follower exposure: inconclusive. One follower is never a rate or a winner.",
+   "evidence": "7 Nov 01:50 UTC native: 1 follower, 96 views, 3 likes, 0 comments on the post; 14 account likes are aggregate, not follower evidence."
+  }
+ },
+ {
+  "event_id": "social:tt-first-follower-security:approved",
+  "type": "social",
+  "record": {
+   "kind": "engagement",
+   "test_id": "tt-first-follower-security",
+   "channel": "tiktok",
+   "target_url": "https://www.tiktok.com/@yourdoghasnotes/video/7705061842653072654",
+   "stage": "approved",
+   "at": "2026-11-07T00:00:00Z",
+   "at_precision": "day",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)",
+   "text": "What harmless thing has your dog declared a security threat? Give us their name and the suspect. 😂",
+   "approval": {
+    "words": "Approve both the Facebook and TikTok engagement tests. Hand the exact comments to the publishing desk, and keep monitoring Instagram and Pinterest for their first followers.",
+    "by": "Krish",
+    "date": "2026-11-07",
+    "where": "engagement chat",
+    "scope": "These two exact comments on these two exact posts, once each. Not general permission for other replies, other posts or emoji in replies."
+   }
+  }
+ },
+ {
+  "event_id": "social:tt-first-follower-security:handed-off",
+  "type": "social",
+  "record": {
+   "kind": "engagement",
+   "test_id": "tt-first-follower-security",
+   "channel": "tiktok",
+   "target_url": "https://www.tiktok.com/@yourdoghasnotes/video/7705061842653072654",
+   "stage": "handed_off",
+   "at": "2026-11-07T00:00:00Z",
+   "at_precision": "day",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937); delivered to the publishing desk thread 01a1a23e-de37-74f1-95a8-4a9bed2e756d by send_message_to_thread",
+   "text": "What harmless thing has your dog declared a security threat? Give us their name and the suspect. 😂",
+   "evidence": "Handoff delivery verified. Publication NOT verified: no live comment receipt was seen by the engagement desk."
+  }
+ },
+ {
+  "event_id": "social:followers:instagram:2026-11-04",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "instagram",
+   "at": "2026-11-04T00:00:00Z",
+   "at_precision": "day",
+   "status": "counted",
+   "count": 0,
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)"
+  }
+ },
+ {
+  "event_id": "social:monitor:instagram:2026-11-04",
+  "type": "social",
+  "record": {
+   "kind": "monitor",
+   "channel": "instagram",
+   "state": "watching",
+   "at": "2026-11-04T00:00:00Z",
+   "at_precision": "day",
+   "source": "Codex automation heartside-s-first-instagram-follower (\"Heartside’s first followers by channel\"), hourly"
+  }
+ },
+ {
+  "event_id": "social:followers:facebook:2026-11-04",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "facebook",
+   "at": "2026-11-04T00:00:00Z",
+   "at_precision": "day",
+   "status": "counted",
+   "count": 0,
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)"
+  }
+ },
+ {
+  "event_id": "social:monitor:facebook:2026-11-04",
+  "type": "social",
+  "record": {
+   "kind": "monitor",
+   "channel": "facebook",
+   "state": "watching",
+   "at": "2026-11-04T00:00:00Z",
+   "at_precision": "day",
+   "source": "Codex automation heartside-s-first-instagram-follower (\"Heartside’s first followers by channel\"), hourly"
+  }
+ },
+ {
+  "event_id": "social:followers:tiktok:2026-11-04",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "tiktok",
+   "at": "2026-11-04T00:00:00Z",
+   "at_precision": "day",
+   "status": "counted",
+   "count": 0,
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)"
+  }
+ },
+ {
+  "event_id": "social:monitor:tiktok:2026-11-04",
+  "type": "social",
+  "record": {
+   "kind": "monitor",
+   "channel": "tiktok",
+   "state": "watching",
+   "at": "2026-11-04T00:00:00Z",
+   "at_precision": "day",
+   "source": "Codex automation heartside-s-first-instagram-follower (\"Heartside’s first followers by channel\"), hourly"
+  }
+ },
+ {
+  "event_id": "social:followers:pinterest:2026-11-04",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "pinterest",
+   "at": "2026-11-04T00:00:00Z",
+   "at_precision": "day",
+   "status": "counted",
+   "count": 0,
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)"
+  }
+ },
+ {
+  "event_id": "social:monitor:pinterest:2026-11-04",
+  "type": "social",
+  "record": {
+   "kind": "monitor",
+   "channel": "pinterest",
+   "state": "watching",
+   "at": "2026-11-04T00:00:00Z",
+   "at_precision": "day",
+   "source": "Codex automation heartside-s-first-instagram-follower (\"Heartside’s first followers by channel\"), hourly"
+  }
+ },
+ {
+  "event_id": "social:followers:facebook:2026-11-06T2048",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "facebook",
+   "at": "2026-11-06T20:48:00Z",
+   "status": "counted",
+   "count": 1,
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)"
+  }
+ },
+ {
+  "event_id": "social:monitor:facebook:delivered",
+  "type": "social",
+  "record": {
+   "kind": "monitor",
+   "channel": "facebook",
+   "state": "delivered",
+   "at": "2026-11-06T20:48:00Z",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)",
+   "evidence": "Test fb-first-follower-rival delivered for review."
+  }
+ },
+ {
+  "event_id": "social:followers:tiktok:2026-11-07T0150",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "tiktok",
+   "at": "2026-11-07T01:50:00Z",
+   "status": "counted",
+   "count": 1,
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)"
+  }
+ },
+ {
+  "event_id": "social:monitor:tiktok:delivered",
+  "type": "social",
+  "record": {
+   "kind": "monitor",
+   "channel": "tiktok",
+   "state": "delivered",
+   "at": "2026-11-07T01:50:00Z",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)",
+   "evidence": "Test tt-first-follower-security delivered for review."
+  }
+ },
+ {
+  "event_id": "social:followers:instagram:2026-11-08T1737",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "instagram",
+   "at": "2026-11-08T17:37:00Z",
+   "status": "counted",
+   "count": 0,
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937); last successful native check"
+  }
+ },
+ {
+  "event_id": "social:followers:instagram:2026-11-09T0842",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "instagram",
+   "at": "2026-11-09T08:42:00Z",
+   "status": "unavailable",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)",
+   "evidence": "Codex in-app browser unavailable; count unknown, not zero."
+  }
+ },
+ {
+  "event_id": "social:followers:instagram:2026-11-09T0937",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "instagram",
+   "at": "2026-11-09T09:37:00Z",
+   "status": "unavailable",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)",
+   "evidence": "Codex in-app browser unavailable; count unknown, not zero."
+  }
+ },
+ {
+  "event_id": "social:followers:pinterest:2026-11-08T1737",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "pinterest",
+   "at": "2026-11-08T17:37:00Z",
+   "status": "counted",
+   "count": 0,
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937); last successful native check"
+  }
+ },
+ {
+  "event_id": "social:followers:pinterest:2026-11-09T0842",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "pinterest",
+   "at": "2026-11-09T08:42:00Z",
+   "status": "unavailable",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)",
+   "evidence": "Codex in-app browser unavailable; count unknown, not zero."
+  }
+ },
+ {
+  "event_id": "social:followers:pinterest:2026-11-09T0937",
+  "type": "social",
+  "record": {
+   "kind": "follower_check",
+   "channel": "pinterest",
+   "at": "2026-11-09T09:37:00Z",
+   "status": "unavailable",
+   "source": "engagement desk handover, 2026-11-09 (Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937)",
+   "evidence": "Codex in-app browser unavailable; count unknown, not zero."
+  }
+ }
+]

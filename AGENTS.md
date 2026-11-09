@@ -40,15 +40,22 @@ derived from an approved concept keeps its own approval, and the creative bar
 below is unchanged. Until the go-live step exists, posting stays with Krish.
 
 **Codex posts from the Drive library** (Ruling, Krish, 2026-11-03: "Codex will orchestrate and schedule send my posts, you need to build a library of assets in my Google drive.").
-- The engine builds and locks posts, then publishes them to Krish's Drive at `Heartside/05_Social-Library`. That library holds:
+- Creatives are iterated in Drive `Heartside/03a_Social-Production`, one dated session folder each, and are never posted from there. The engine builds and locks posts, then publishes them to Krish's Drive at `Heartside/03b_Social-Schedule` (Ruling, Krish, 2026-11-09: "Folder 3A is where we're iterating on creatives, and folder 3B is where they're ready for production."). 03b was `05_Social-Library` until 9 Nov and kept its folder ID. It holds:
   - each post's media in `Posts/<post id>/`, filed by Krish's home computer through content-engine's library lane: `python3 factory/send_library.py <library folder>` (Ruling, Krish, 2026-11-03: "Why don't you duplicate that Python script for Heartside then?"), with the checksummed zip kept as a backup;
   - "00 README for Codex";
   - "01 Posting strategy";
   - "02 Schedule and captions".
 - What lives where in that Drive, and who may write it, is `docs/DRIVE-MAP.md` (Krish, 2026-11-03: "be strict on what goes where as codex tends to sprawl drives quite easily"). Nothing is created in Drive that the map does not name.
-- Codex posts only Schedule rows that Krish has approved, exactly as built, and writes back the status and live address. Approval is either `approved = yes` in the Sheet, or Krish's approval in chat, recorded in the row's `notes` as "Approved in chat" with the date (Ruling, Krish, 2026-11-04: chat approval counts). A row with neither is never posted.
+- Codex posts only Schedule rows that Krish has approved, exactly as built, and writes back the status and live address. Approval is `approved = yes` in the Sheet, marked by Krish; a row without it is never posted (Ruling (Krish, 2026-11-09: "Go with your recommendations"), superseding the 4 Nov ruling that a chat approval recorded in `notes` counted).
 - The engine itself still never posts.
 - Before preparing or posting any social row, read [the channel operating instructions](docs/CHANNEL-TASKS.md#running-the-two-kinds-of-post) and [the Drive ownership map](docs/DRIVE-MAP.md). Keep dog POV and product posts in the same schedule and use the approved row exactly.
+
+**The engine learns from every session** (Krish, 2026-11-09: "Ensure that the project documentation and intelligence of the growth repository are automatically augmented"). Before a session that did creative, social or Drive work ends, it records what happened where the next session reads it, in the same commit as the work:
+- every decline or correction from Krish goes into `factory/floor.json` with his exact words, the rule and the check (and to his taste ledger with `report_to_taste_engine`);
+- every engagement test stage and follower check goes into a dated `docs/social/` event file, imported with `growth.py events import` (public brand facts only);
+- every Codex card's state goes into `codex/INDEX.md`;
+- a session that touched Drive runs the audit in `docs/DRIVE-MAP.md`, "Auditing", and fixes what the map lets it fix.
+A lesson that lives only in a chat window, a Codex thread or a Drive summary is lost to the next session.
 
 **Autonomy is given where it is deserved** (Krish, 2026-10-19). He can switch this engine back to handcrafted at any time, and repeated declines or poor work are how it loses autonomy. So:
 
@@ -68,7 +75,13 @@ Read, in this order, before any job:
    `NOW.md`, read live;
 3. `PLAYBOOK.md`: the operating system, applied to Heartside, then `docs/ENGINE.md` for production and reporting;
 4. `BROWSER.md`: what you may and may never do in Krish's signed-in browser;
-5. the job's own file in `jobs/`.
+5. the job's own file in `jobs/`;
+6. what is outstanding and what Krish has rejected: `python3 growth.py social status`
+   (engagement tests and first followers, each with its owner and next action;
+   in a fresh checkout first `python3 growth.py events import
+   docs/social/2026-11-09-engagement-history.json`, which is safe to replay),
+   `python3 growth.py floor --format <what you are making>` before any creative
+   work, and `codex/INDEX.md` before any Codex work.
 
 If nobody named a job, run the one today's schedule (below) says. The source
 documents behind the playbook are in `knowledge/`. Read them when a job needs

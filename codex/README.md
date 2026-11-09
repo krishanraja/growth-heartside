@@ -35,8 +35,53 @@ A card is built once: the branch `codex/<id>` marks it done. To run it again, us
   the locked sound mix to Codex's picture and does the full-size check with sound.
 - **Never commit a customer's anything** (AGENTS.md rule 6). Inputs are AI stills, the live store's own
   renders and the approved breed examples only.
-- **The product is never generated** (AGENTS.md rule 4). Codex composites the real render unchanged, with
-  the Example label. Generators never touch the product's printed design.
+- **The product is never generated** (AGENTS.md rule 4). Codex composites the real render unchanged, with no
+  badge or label (Krish, 2 Nov: "We never need EXAMPLE badges anywhere"). Generators never touch the product's
+  printed design.
+
+## Claude runs Codex end to end
+
+Krish, 2026-11-09: "the goal is that Claude sessions manage Codex in the future fully and micromanage Codex in
+order to get everything done end to end using the Codex plugin". Codex makes; Claude decides, specifies, checks
+and files. Krish sees only work that already passed Claude's checks, on one review page.
+
+**Two routes, one card.** Every piece of Codex work is a card in `codex/queue/`, whichever route runs it, so
+there is one record of what was asked and what came back.
+- **On Krish's home computer**, where the Codex plugin is installed and signed in (`.claude/settings.json`
+  enables `codex@openai-codex`), Claude hands the card to Codex with the plugin's delegate command
+  (`/codex:rescue` with the card's path) and reads the result back with `/codex:status` and `/codex:result`.
+  Check `/codex:setup` first; if the plugin is missing or signed out, use the queue.
+- **From a cloud session**, push the card and the home computer's lane builds it (the five steps below). This
+  repository must be listed in content-engine `config/codex-lanes.json` for that; until Krish adds it, a cloud
+  session's card waits.
+- Never paste a card into a Codex chat by hand, and never let Codex work outside a card. Work done that way on
+  4 to 9 Nov left no record the next session could find.
+
+**The loop Claude runs for every card.**
+1. **Read the floor first:** `python3 growth.py floor --format <reel|still|carousel|meme|card>`. Every entry
+   that applies becomes a line in the card's `## Floor` section, as a check Codex must meet.
+2. **Write the card** from the template below, with a `## Floor` section, a `## Drive` section naming the 03a
+   session folder it files into (`docs/DRIVE-MAP.md`), and acceptance that checks the picture, not only that
+   commands ran.
+3. **Book, push and hand over** (steps 2 and 3 below, or the plugin).
+4. **Check what came back yourself.** `ok: true` means Codex's commands exited cleanly, nothing more (floor
+   `real-product`). Run the acceptance again, then look at every output at full size, frame by frame where
+   text or a dog moves, against each floor line, and write one line per floor check in the card's result note:
+   pass, or fail with the frame. A fail goes back to Codex as a new card naming the fix; it is never shown to
+   Krish.
+5. **File it.** Review media goes in the card's 03a session folder with a `START-HERE.md`. Only work Krish then
+   locks goes to 03b, through `factory/send_library.py`. Settle the spend.
+6. **Record the card's state** in `codex/INDEX.md`: queued, built, checked, failed (with the floor id), shown to
+   Krish, locked or dropped. One line per card; the next session starts there.
+
+## Card rules
+
+- A card names no live platform, scheduler or queue: no Buffer, no posting, no "schedule" (floor `no-live-queue`).
+- A card that makes media for Drive names its 03a session folder; it never names 03b or `Posts/`.
+- A card lists the floor ids it was checked against; `growth.py --self-test` refuses a queued card without a
+  `## Floor` section or with a live-queue word.
+- One asset or one tightly related set per card. A batch of 50 is 50 lines in a manifest under
+  `codex/inputs/<id>/`, built by one card, checked one by one.
 
 ## Direction first
 
@@ -59,6 +104,14 @@ write_allow: [codex/out/<id>/*]
 What to make, for whom, and the one point it must land. The approved direction: the timeline file, type
 (Fraunces for the big line, Karla for captions, Courier Prime for the dog's words), colors (cream, ink, stamp
 red once), 9:16 at 1080x1920, 30 fps, and the exact input files under codex/inputs/<id>/.
+
+## Floor
+The floor ids this card is held to (`python3 growth.py floor --format <format>`), one per line, each with the
+check Codex must meet, e.g. `real-dogs: four legs, one tail, real fur; no human smile` and
+`text-clear-of-faces: no on-screen word over the dog's eyes or the main action in any frame`.
+
+## Drive
+The 03a session folder the outputs are filed into, e.g. `03a_Social-Production/2026-11-10_Codex-Hero-Batch`.
 
 ## Acceptance
 python3 codex/check_picture.py codex/out/<id>/picture.mp4 codex/inputs/<id>/timeline.json

@@ -2,6 +2,9 @@
 
 When Krish opens this repository and says "Get going", this is the work. AGENTS.md says how to use it; this file says what to do. Written 2026-10-19 by Control Center, from this engine's first live reports.
 
+> **Production session next (9 Nov):** a session that makes creative starts from
+> `docs/briefs/2026-11-09-next-session-hero-and-meme-batch.md`, not from the build below.
+
 ## What "Get going" does
 
 1. Read AGENTS.md to the end (it records Krish's rulings), then docs/NORTH_STAR.md. Say in one line which part of the North Star this run moves.
