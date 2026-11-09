@@ -40,7 +40,7 @@ derived from an approved concept keeps its own approval, and the creative bar
 below is unchanged. Until the go-live step exists, posting stays with Krish.
 
 **Codex posts from the Drive library** (Ruling, Krish, 2026-11-03: "Codex will orchestrate and schedule send my posts, you need to build a library of assets in my Google drive.").
-- The engine builds and locks posts, then publishes them to Krish's Drive at `Heartside/05_Social-Library`. That library holds:
+- Creatives are iterated in Drive `Heartside/03a_Social-Production`, one dated session folder each, and are never posted from there. The engine builds and locks posts, then publishes them to Krish's Drive at `Heartside/03b_Social-Schedule` (Ruling, Krish, 2026-11-09: "Folder 3A is where we're iterating on creatives, and folder 3B is where they're ready for production."). 03b was `05_Social-Library` until 9 Nov and kept its folder ID. It holds:
   - each post's media in `Posts/<post id>/`, filed by Krish's home computer through content-engine's library lane: `python3 factory/send_library.py <library folder>` (Ruling, Krish, 2026-11-03: "Why don't you duplicate that Python script for Heartside then?"), with the checksummed zip kept as a backup;
   - "00 README for Codex";
   - "01 Posting strategy";

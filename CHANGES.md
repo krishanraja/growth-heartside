@@ -3,6 +3,11 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-09: Drive restructured. Krish: "Folder 3A is where we're iterating on creatives, and folder 3B is where they're ready for production."
+  - Krish moved `01_Identity`, `02_Imagery` and `04_Decks` up to `Heartside/`, renamed `05_Social-Library` to `03b_Social-Schedule` (same folder ID), and the old social work area to `03a_Social-Production`.
+  - `docs/DRIVE-MAP.md` now maps the whole tree by ID, adds the one-way path from 03a to 03b, and sets the 03a rule: one dated session folder per working session with a `START-HERE.md`, never posted from, and nothing copied from it into 03b.
+  - `AGENTS.md`, `NOW.md`, `docs/CHANNEL-TASKS.md` and `factory/send_library.py` name the new folders. Review renders now belong in 03a instead of being kept out of Drive.
+  - Ruling (Krish, 2026-11-09): 03a_Social-Production is for iterating creatives; 03b_Social-Schedule holds only what is ready for production. No job file or `automations.json` entry changed.
 - 2026-11-06: After Krish completed billing and phone verification, the authorized single F10 USD 25 paid pilot was published. Meta returned "1 ad was published"; independent fresh-page readback at 12:56 GMT showed Processing, enabled, USD 25 lifetime and USD 0 spent. Published end remains 7 November 12:45 GMT. Paid delivery is not yet confirmed. The four USD 50 boosts remain held. See `docs/boost/2026-11-05-sandbox.md`.
 
 - 2026-11-06: Krish: "We need to get the first paid test live ASAP." Authorized activation of the prepared single F10 Meta pilot, USD 25 lifetime over 24 hours. The four USD 50 posts remain a separate decision. Payment method connected and pixel/destination checked; Meta's required business billing information currently blocks Publish. See `docs/boost/2026-11-05-sandbox.md` for the exact account, draft and launch evidence. Paid results remain separate from the organic North Star.

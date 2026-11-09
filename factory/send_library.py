@@ -4,7 +4,8 @@ Krish, 2026-11-03: "You also can queue stuff for the home computer to upload in 
 then "Why don't you duplicate that Python script for Heartside then? We're going to need to do a lot
 more of this type of stuff moving forward." He chose to add Heartside to content-engine's library lane
 (krishanraja/content-engine, scripts/post-pack/send.py): each file goes to the engine's private
-library, and his always-on machine writes it into Heartside/05_Social-Library/Posts/<post id>/ within
+library, and his always-on machine writes it into Heartside/03b_Social-Schedule/Posts/<post id>/ (folder ID
+1boYZjB7ma-1YIcKzSl51usdYuNk6faHO; the parent was named 05_Social-Library until 2026-11-09) within
 about ten minutes, where Codex posts what he approves.
 
     python3 factory/send_library.py LIBRARY_DIR [--dry-run] [--only F01,F02]
@@ -184,7 +185,7 @@ def send(planned, engine, out=print):
 
 
 def main():
-    ap = argparse.ArgumentParser(description='Send finished posts to Heartside/05_Social-Library through the home-computer lane.')
+    ap = argparse.ArgumentParser(description='Send finished posts to Heartside/03b_Social-Schedule through the home-computer lane.')
     ap.add_argument('folder', help='the library folder: media plus manifest.json')
     ap.add_argument('--only', help='comma-separated post ids, e.g. F01,F02')
     ap.add_argument('--dry-run', action='store_true', help='check and list, send nothing')
@@ -200,7 +201,7 @@ def main():
     except SendError as err:
         sys.exit(f'send_library: {err}')
     print(f"Sent {done['sent']}, already there {done['already']}. Krish's always-on machine writes them into "
-          'Heartside/05_Social-Library/Posts within about ten minutes.')
+          'Heartside/03b_Social-Schedule/Posts within about ten minutes.')
 
 
 if __name__ == '__main__':

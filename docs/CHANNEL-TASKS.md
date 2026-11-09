@@ -106,8 +106,10 @@ schedule rows exist. A connected account or a high owner rating is not a schedul
    link proves which post produced an order. Keep boosted traffic out of organic results.
 5. Stock the library with release media only. Record whether the visual, performance and
    audio are owned or cleared for the intended channel and use. An original repost, a
-   creator-native share, a commentary edit and a paid ad are separate uses. Keep source
-   references, review renders and rejected versions out of Drive and public Git. Do not
+   creator-native share, a commentary edit and a paid ad are separate uses. Source
+   references, review renders and rejected versions go in a dated session folder in
+   Drive `03a_Social-Production`, never in `03b_Social-Schedule` or public Git
+   ([Drive map](DRIVE-MAP.md)). Do not
    turn organic approval into a boost or assume a second channel inherits permission.
 
 **Evidence behind the tests (3 Nov 2026).** In the private sample, five recurring TikTok
