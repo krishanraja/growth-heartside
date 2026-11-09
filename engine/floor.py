@@ -12,7 +12,7 @@ def load(root, fmt=None):
         if fmt not in data['formats']:
             raise ValueError(f'format must be one of {data["formats"]}')
         entries = [e for e in entries if fmt in e['applies_to']]
-    return {'entries': entries, 'open_conflicts': data.get('open_conflicts', [])}
+    return {'entries': entries, 'open_conflicts': data.get('open_conflicts', []), 'resolved_conflicts': data.get('resolved_conflicts', [])}
 
 
 def errors(data):

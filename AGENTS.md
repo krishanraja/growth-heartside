@@ -46,7 +46,7 @@ below is unchanged. Until the go-live step exists, posting stays with Krish.
   - "01 Posting strategy";
   - "02 Schedule and captions".
 - What lives where in that Drive, and who may write it, is `docs/DRIVE-MAP.md` (Krish, 2026-11-03: "be strict on what goes where as codex tends to sprawl drives quite easily"). Nothing is created in Drive that the map does not name.
-- Codex posts only Schedule rows that Krish has approved, exactly as built, and writes back the status and live address. Approval is either `approved = yes` in the Sheet, or Krish's approval in chat, recorded in the row's `notes` as "Approved in chat" with the date (Ruling, Krish, 2026-11-04: chat approval counts). A row with neither is never posted.
+- Codex posts only Schedule rows that Krish has approved, exactly as built, and writes back the status and live address. Approval is `approved = yes` in the Sheet, marked by Krish; a row without it is never posted (Ruling (Krish, 2026-11-09: "Go with your recommendations"), superseding the 4 Nov ruling that a chat approval recorded in `notes` counted).
 - The engine itself still never posts.
 - Before preparing or posting any social row, read [the channel operating instructions](docs/CHANNEL-TASKS.md#running-the-two-kinds-of-post) and [the Drive ownership map](docs/DRIVE-MAP.md). Keep dog POV and product posts in the same schedule and use the approved row exactly.
 

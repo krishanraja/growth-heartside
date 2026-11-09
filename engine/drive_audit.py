@@ -55,8 +55,8 @@ def audit(drive_map, listing):
                 err(where, 'not heartside_<id>_<slug>_<reel|cover|slide1-5>.<mp4|jpg>; sources and drafts go in a 03a session folder')
             elif m['id'] != folder:
                 err(where, f'filed under {folder} but named for {m["id"]}')
-            elif drive_map['kind_ext'][re.sub(r'\d', '', m['kind'])] != m['ext']:
-                err(where, f'a {m["kind"]} must be .{drive_map["kind_ext"][re.sub(r"[0-9]", "", m["kind"])]}')
+            elif drive_map['kind_ext'][re.sub(r'^slide\d$', 'slide', m['kind'])] != m['ext']:
+                err(where, f'a {m["kind"]} must be .{drive_map["kind_ext"][re.sub(r"^slide[0-9]$", "slide", m["kind"])]}')
             elif re.search(r'(^|-)(v\d+|final|copy|new)(-|$)', m['slug']):
                 warn(where, 'a versioned slug; a changed version keeps its name and is sent again')
         elif rule == 'sessions':

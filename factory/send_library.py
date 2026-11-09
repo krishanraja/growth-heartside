@@ -14,7 +14,7 @@ LIBRARY_DIR holds the media and manifest.json: [{"post", "file", "bytes", "sha25
 library build writes it. Every file is checked against its manifest sha256 and size before anything is
 sent; one mismatch and nothing is sent. Paths follow the lane's Heartside rule: Posts/<post id>/<file>,
 the id like F01 or F06-frenchie (content-engine config/library-paths.cases.json). A file the library
-already holds is skipped. Sending never posts anything: Codex posts only rows Krish approved (in the Sheet, or in chat recorded in notes).
+already holds is skipped. Sending never posts anything: Codex posts only rows Krish marked approved = yes in the Sheet.
 
 The engine key is ENGINE_OPERATOR_TOKEN, else MINDMAKE_ENGINE_TOKEN, else Windows Credential Manager
 `Mindmake/engine-operator-token` (the home computers' store, as content-watcher reads it); never printed; the address is ENGINE_BASE_URL, else the

@@ -129,8 +129,8 @@
         "I want images that look like the dog is trolling them"
       ],
       "category": "joke",
-      "rule": "A roast has a dog who is visibly in on the joke. A mild line on a neutral dog fails. Retired lines stay retired for that breed.",
-      "check": "code: lock.py check (retired line/breed pairs); review: the image alone shows the troll",
+      "rule": "A roast has a dog who is visibly in on the joke, shown with real dog expressions that read as trolling (the flat stare, the head tilt, the paw on the thing, the slow look back), never a human smile, grin or side-eye (Krish, 2026-11-09: \"Go with your recommendations\"). A mild line on a neutral dog fails. Retired lines stay retired for that breed.",
+      "check": "code: lock.py check (retired line/breed pairs); review: the image alone shows the troll, with no human facial expression on the dog",
       "applies_to": [
         "reel",
         "still",
@@ -330,13 +330,16 @@
       ]
     }
   ],
-  "open_conflicts": [
+  "open_conflicts": [],
+  "resolved_conflicts": [
     {
       "between": [
         "troll-not-mild",
         "real-dogs"
       ],
-      "what": "3 Nov asked for a wide, smug, squinting grin on a trolling dog (funny-bar.md); the 8 Nov anatomy correction says not to force human smiles or side-eye. Ask Krish which wins before the next roast batch."
+      "decided": "2026-11-09",
+      "words": "Go with your recommendations",
+      "decision": "Real dog expressions that read as trolling; never a human smile."
     }
   ]
 }

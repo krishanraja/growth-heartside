@@ -18,7 +18,8 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │   ├── Failed - 2026-11-09_Codex-Creative-Session_Not-for-Publishing/  1gwVjIYoDAJSEshJ4dBFJ5Sq_XL-rG1GW   7 to 9 Nov organic stills; marked failed by Krish
 │   └── Failed - 2026-11-09_Comedy-and-Rain-Session_Archive/           1aqAORdmOUEakMW0o-pJf8SDkPzShJEIG   6 to 9 Nov rain scene; retired, marked failed by Krish
 ├── 03b_Social-Schedule/                                     1AHZLgwj1nHemNJeP56fQU6iTpgIEALzZ   READY. What Codex posts from. Was 05_Social-Library.
-│   ├── 00 README for Codex                (Doc)             1KQrrlXEHk6QwoEdlm30zuGWBw22uNoxTHuNbCZoXFyU   The one live instructions (3 Nov 17:45).
+│   ├── 00 README for Codex                (Doc)             1Skm9DNvd3kZrz0LWDxTJWzCMaWB8eXByLhtJsCKjbYw   The one live instructions (9 Nov: approved = yes only; ui editions retired).
+│   ├── 00 README for Codex (superseded 2026-11-09, use the newer one)  1KQrrlXEHk6QwoEdlm30zuGWBw22uNoxTHuNbCZoXFyU   the 3 Nov 17:45 copy, kept
 │   ├── 01 Posting strategy                (Doc)             1OT8Cx18mbSpxrDq4c_Buj63JbMon2WfD2nOJMtREojg
 │   ├── 02 Schedule and captions           (Sheet)           15rHaDxdYtdK4eFmUC4GSbBGAnhlSOO0K67Gl0NozIdU   F03, F05, F06 x3, F07, F10, F11, F12, 4 to 8 Nov
 │   ├── 02c Schedule and captions (F01 F02 F04) (Sheet)      1L-bCycPmND3OLm0lo7FJVrPi1xV92deLw-sJVoz0cn8   locked 3 Nov, 9 and 10 Nov
@@ -47,6 +48,10 @@ The machine-readable map is `config/drive-map.json`, and `growth.py --self-test`
 
 A Codex or Claude session that made something in Drive runs the audit before it reports done.
 
+**Retired editions** (Ruling, Krish, 2026-11-09: "Go with your recommendations"). The `ui-v1` and `ui-v2` platform editions in `Posts/` are retired for reuse: they put title and subtitle boxes over dogs' eyes and action (floor `text-clear-of-faces`). They stay in Drive and the posts already live stay live; nothing new is scheduled from them (`library/CURRENT.md`). The audit's versioned-slug warnings on them are expected and stay until Krish deletes them.
+
+**The 9 Nov archive exception.** Krish asked for the 7 to 9 Nov creative session's sources and summary to be archived in Drive, outside the live library. It was filed first under `_Archive` and now sits in 03a as `Failed - 2026-11-09_Codex-Creative-Session_Not-for-Publishing` (`1gwVjIYoDAJSEshJ4dBFJ5Sq_XL-rG1GW`). It was a one-off and widens nothing; its files are never a publishing input.
+
 ## The one-way path: 03a to 03b
 
 A creative moves in one direction only.
@@ -68,7 +73,7 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
 | `03b_Social-Schedule/` top level | the growth engine only | the Drive connector | Exactly the files in the tree above, plus a new `02<letter>` Sheet when a batch needs one (below). No other files and no new folders |
 | `03b_Social-Schedule/Posts/<post id>/` | Krish's home computer only | `python3 factory/send_library.py <library folder>` through content-engine's library lane | No one uploads, copies or makes a folder here by hand or through a connector. It is never edited or deleted from a session; the home computer writes new versions beside changed ones |
 | `02…` Sheets, columns `status`, `live_url`, `notes`, and a `Results` tab | Codex only | after it posts | Codex changes no other column, row or file |
-| `02…` Sheets, column `approved` | Krish only | by hand | The engine never writes `yes` |
+| `02…` Sheets, column `approved` | Krish only | by hand. Only `yes` here lets Codex post the row (Ruling, Krish, 2026-11-09: "Go with your recommendations", superseding the 4 Nov ruling that a chat approval recorded in `notes` counted) | The engine never writes `yes` |
 
 ## The rules for a 03a session folder
 
@@ -88,7 +93,9 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
    - `<kind>` is one of:
      - `reel` (mp4);
      - `cover` (jpg);
-     - `slide1` to `slide5` (jpg).
+     - `slide1` to `slide5` (jpg);
+     - `paid-reel`, `paid-reel-a`, `paid-reel-b` (mp4) and `paid-cover` (jpg): paid cuts, kept in the same post folder (Krish, 4 Nov: "one uniform folder with uniform naming conventions"). They are used only under `docs/PAID-BOOSTS.md` and recorded in `library/manifest.json` (`docs/BOOST-LIBRARY.md`);
+     - `review-reel` (mp4) and `review-cover` (jpg): a candidate waiting for Krish's lock, so the engine can read it through the library (Krish, 4 Nov: "drop assets in your folder of choosing"). **Never posted, never scheduled.** Once Krish locks it, the engine sends the locked file again as `reel` or `cover` (rule 4); the review file stays, and the manifest marks it `superseded`.
    - Nothing else goes in a post folder: no source files, no drafts, no captions files, no subfolders. Those belong in a 03a session folder.
 3. **Media.** Add the locked files to the library folder and to its `manifest.json` (post, file, bytes, sha256). Then run `send_library.py`. The home computer files them within about 20 minutes. Check `03b_Social-Schedule/Posts/<post id>/` afterwards (by folder ID `1boYZjB7ma-1YIcKzSl51usdYuNk6faHO`): if a new `05_Social-Library` folder appeared instead, the lane is still writing by the old name, so stop and tell Krish.
 4. **A changed version** keeps its name and is sent again. The home computer replaces its own earlier copy in place. Never send a "v2" or "final" file name.

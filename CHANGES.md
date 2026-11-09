@@ -3,6 +3,15 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-09: three decisions and #42 merged. Krish: "Go with your recommendations, open the PRs and merge #42".
+  - Trolling dogs show real dog expressions, never a human smile (`factory/floor.json` `troll-not-mild`; the open conflict is closed).
+  - Only `approved = yes` in the Sheet lets Codex post a row. This supersedes the 4 Nov ruling that a chat approval recorded in `notes` counted. AGENTS.md, `docs/CHANNEL-TASKS.md`, `docs/DRIVE-MAP.md`, `factory/send_library.py` and the README for Codex now say so.
+  - The `ui-v1` and `ui-v2` platform editions are retired for reuse (`library/CURRENT.md`, `docs/DRIVE-MAP.md`). Posts already live stay live.
+  - [krishanraja/growth-heartside#42](https://github.com/krishanraja/growth-heartside/pull/42), the 4 to 9 Nov production branch, is merged. This branch is rebased onto it, and the map keeps its paid and review file kinds.
+  - Ruling (Krish, 2026-11-09): only approved = yes in the Sheet lets Codex post; chat approval no longer counts.
+  - Ruling (Krish, 2026-11-09): trolling dogs show real dog expressions, never a human smile.
+  - Ruling (Krish, 2026-11-09): the ui-v1 and ui-v2 editions are retired for reuse.
+
 - 2026-11-09: the engine learns from the social desks and from failed production. Krish: "We need to upgrade the Growth-Heartside engine to ensure it learns from the attached Markdown file in terms of social media audience acquisition", "how can it improve on asset ideation > production > build based on the failed production sessions", "the goal is that Claude sessions manage Codex in the future fully", "Make sure the drive is completely up to date and not able to be corrupted or sprawled", "Ensure that the project documentation and intelligence of the growth repository are automatically augmented".
   - Social history uses the existing operator events: a `social` type with the same receipts, append-only in `local/engine.sqlite3`, and carried by the checkpoint (`engine/social.py`; `docs/ENGINE.md`, "Social history"). The desks' 4 to 9 Nov record is `docs/social/2026-11-09-engagement-history.json`. The radar and report jobs read it back.
   - `factory/floor.json` and `growth.py floor` hold every creative rejection in his words, with the rule and the check. That includes the rain session he marked failed ("The whole of this scene just feels weak and lame.").

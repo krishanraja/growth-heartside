@@ -9,18 +9,15 @@ conversation. It moves the North Star directly: organic posts that travel are th
 ## Step 0: start state (about 10 minutes, before any idea)
 
 1. `python3 growth.py sync`, then read what it printed (AGENTS.md rule 2).
-2. **Merge the production branch first.** [krishanraja/growth-heartside#42](https://github.com/krishanraja/growth-heartside/pull/42)
-   (`claude/runway-motion-batch`) is unmerged. It holds the 4 to 9 Nov work: the platform-UI gate in `factory/lock.py`,
-   `factory/review_board.py`, `factory/audit.py`, the anatomy section of `factory/README.md` and
-   `docs/briefs/2026-11-08-organic-anatomy-correction.md`. Rebase it onto main, run both checks, and merge it, or the
-   session builds on a factory without those gates. Its title and description describe only the first commit; rewrite them.
+2. The 4 to 9 Nov production branch is on `main` ([krishanraja/growth-heartside#42](https://github.com/krishanraja/growth-heartside/pull/42),
+   merged 9 Nov): the platform-UI gate in `factory/lock.py`, `factory/review_board.py`, `factory/audit.py`, the
+   anatomy section of `factory/README.md` and `docs/briefs/2026-11-08-organic-anatomy-correction.md`. Read them.
 3. `python3 growth.py events import docs/social/2026-11-09-engagement-history.json` (safe to replay), then
    `python3 growth.py social status`. Production does not own those tests; note them and move on.
 4. `python3 growth.py floor`, the whole floor, then `--format` for each format you will make. Every entry is a check.
 5. Open a 03a session folder `YYYY-MM-DD_Claude-Hero-and-Meme-Batch` with its `START-HERE.md`, and run the Drive audit
    (`docs/DRIVE-MAP.md`, "Auditing").
-6. Ask Krish the three open questions below in one message, with your recommended answer for each, and carry on with
-   ideas while he answers.
+6. Read "Decided by Krish on 9 Nov" below; those questions are closed.
 
 ## The loop, one stage at a time
 
@@ -62,16 +59,14 @@ Each stage has its gate. Nothing moves to the next stage on a promise.
   the memes under a handful of approved concepts so the ramp is about 5 reviews per concept, not per post. Krish's
   budget is about 20 minutes a day.
 
-## Open questions for Krish (ask once, with a recommendation)
+## Decided by Krish on 9 Nov ("Go with your recommendations")
 
-1. **Troll grin or real dog faces?** 3 Nov asked for "images that look like the dog is trolling them" (a wide, smug
-   grin); 8 Nov said the dogs looked fake and the correction forbids forced human smiles. Recommendation: real dog
-   expressions that read as trolling (the stare, the head tilt, the paw on the thing), never a human smile.
-2. **Approval in the Sheet or in chat?** No schedule row has `approved = yes`, yet all 38 rows were posted on chat
-   approvals. Recommendation: Krish marks `approved = yes` in the 02e Sheet, and the publishing desk posts nothing
-   else.
-3. **The `ui-v1`/`ui-v2` editions in `Posts/`** (65 audit warnings, including the F03 edition Krish rejected on 9 Nov
-   for text over faces). Recommendation: retire them in `notes`; they stay in Drive, but nothing posts from them.
+1. **Trolling dogs look like real dogs.** Real dog expressions that read as trolling (the stare, the head tilt, the
+   paw on the thing), never a human smile (floor `troll-not-mild`).
+2. **Approval lives in the Sheet.** Krish marks `approved = yes` in the `02e` Sheet; the publishing desk posts
+   nothing else. A chat approval no longer counts.
+3. **The `ui-v1`/`ui-v2` editions are retired** (`library/CURRENT.md`). They stay in Drive; nothing new posts from
+   them.
 
 ## Done when
 

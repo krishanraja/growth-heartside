@@ -61,10 +61,10 @@ Krish says so.
 **A scoped approval stays scoped.** Krish approved two exact first-follower comments, emoji included, on 7 Nov.
 That covers those two comments on those two posts once each. Every other reply keeps the radar's rules.
 
-**Schedule approval.** The 02 Sheets' `approved` column is empty in every row, although all 38 rows were posted
-on approvals Krish gave in chat (read 9 Nov). The README for Codex says to post only `approved = yes` rows. Until
-Krish decides which wins, the publishing desk records the chat approval's words and time in `notes` before
-posting, and F17 to F27 get schedule rows in a `02e` Sheet before any further post.
+**Schedule approval** (Ruling (Krish, 2026-11-09: "Go with your recommendations")). Krish marks `approved = yes` in the Sheet, and the publishing desk posts nothing
+else. This replaces the 4 Nov chat-approval rule: on 9 Nov every one of the 38 posted rows had an empty `approved`
+column and was posted on an approval given in chat. F17 to F27 get their rows in a `02e` Sheet before any further
+post.
 ## The weekly loop
 
 For each scheduled row use the operating instructions below, the [Drive map](DRIVE-MAP.md)
@@ -122,7 +122,7 @@ schedule rows exist. A connected account or a high owner rating is not a schedul
 1. Read the current library README and all listed schedules. Match the platform, brand
    identity, slot, approved cell, media, format, fingerprint and caption. Check the slot
    against both queued and live items; resolve an ambiguous provider receipt before retrying.
-2. Only publish from a row Krish approved: `approved = yes`, or "Approved in chat" with the date in `notes` (Krish, 4 Nov). Verify the actual permalink and read back the
+2. Only publish from a row Krish marked `approved = yes` in the Sheet (Ruling (Krish, 2026-11-09: "Go with your recommendations"); a chat approval no longer counts). Verify the actual permalink and read back the
    media and words. A scheduler ID is not a live URL. Use only the permitted status,
    live_url, notes and Results fields as directed in the live README. If the asset requires
    a crop, caption replacement or changed audio, return it to the engine; do not improvise.
