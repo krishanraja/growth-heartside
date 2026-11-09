@@ -8,7 +8,11 @@ Kind `report`. Part 7 in `PLAYBOOK.md`. Time for Krish: about 15 minutes.
    heartside's own `NOW.md` says, from the sync's reading or
    `python3 growth.py now`. If that status is unknown, the report says so.
 2. Read `python3 growth.py read --days 8`, `growth.py creatives list`,
-   and `growth.py metrics report` with explicit dates and timezone.
+   `growth.py social status`, and `growth.py metrics report` with explicit
+   dates and timezone. Summarize each engagement test: its stage, owner and
+   next action, and for evaluated tests the measured outcome with its window,
+   the uncertainty and the decision. Follower counts are milestones, not
+   sales; aggregate engagement is never reported as follower behavior.
    Check coverage before calling anything a full-period total. The ledger
    distinguishes rendered, approved and actually published. Reconcile any
    legacy `local/creatives.csv` evidence without counting it twice.

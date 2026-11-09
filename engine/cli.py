@@ -6,13 +6,19 @@ from pathlib import Path
 from . import assets, ledger, offers
 
 
-COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library', 'cc', 'attribution', 'examples'}
+COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library', 'cc', 'attribution', 'examples', 'social', 'drive', 'floor'}
 
 
 def add_commands(sub):
     ex = sub.add_parser('examples', help='Check the breed example batch against heartside\'s brief'); ex.add_argument('action', choices=['check']); ex.add_argument('--stage', type=int, required=True); ex.add_argument('--only', help='one job id, for the pilot')
     sub.add_parser('attribution', help='Read which orders came from organic posts, as aggregates (docs/ENGINE.md)')
     library = sub.add_parser('library'); library.add_argument('--date'); library.add_argument('--heartside-dir')
+    soc = sub.add_parser('social', help='Engagement tests and the first-follower monitor: what is outstanding and who owns it (engine/social.py)')
+    soc.add_argument('action', choices=['status']); soc.add_argument('--json', action='store_true')
+    drive = sub.add_parser('drive', help="Check a Drive listing against config/drive-map.json (docs/DRIVE-MAP.md)")
+    drive.add_argument('action', choices=['audit']); drive.add_argument('listing')
+    floor = sub.add_parser('floor', help="What Krish rejected and the check each rejection added (factory/floor.json)")
+    floor.add_argument('--format', dest='fmt', help='only the entries for one format: reel, still, carousel, meme, comment, card')
     events = sub.add_parser('events'); events.add_argument('action', choices=['import']); events.add_argument('file')
     sub.add_parser('reporting-access')
     cc = sub.add_parser('cc', help='Control Center protocol loop: start, run, finish (docs/ENGINE.md)')
@@ -120,6 +126,22 @@ def run(args, growth):
             else:
                 result = str(providers.import_asset(root, db, args.request_id, args.file, args.role, json.loads(Path(args.provenance).read_text())))
             print(json.dumps(result, indent=2)); return
+    if args.cmd == 'social':
+        from . import social
+        with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
+            report = social.status(db)
+        print(json.dumps(report, indent=2, ensure_ascii=False) if args.json else '\n'.join(social.lines(report) or ['No social history recorded. Import it: growth.py events import <file>.']))
+        return
+    if args.cmd == 'drive':
+        from . import drive_audit
+        problems = drive_audit.audit(json.loads((root / 'config/drive-map.json').read_text()), json.loads(Path(args.listing).read_text()))
+        print('\n'.join(problems) if problems else 'Drive matches the map.')
+        raise SystemExit(1 if problems else 0)
+    if args.cmd == 'floor':
+        from . import floor
+        entries = floor.load(root, args.fmt)
+        print('\n'.join(floor.lines(entries)))
+        return
     if args.cmd == 'events':
         from . import operations
         with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:

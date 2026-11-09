@@ -4,7 +4,7 @@ import re
 from pathlib import Path
 from urllib.parse import urlparse
 
-from . import assets, insights, ledger, media
+from . import assets, insights, ledger, media, social
 
 
 def validate_creative(root, db, creative_id, revision):
@@ -56,8 +56,13 @@ def apply(root, db, events):
             if set(event) != {'event_id', 'type', 'observation'}:
                 raise ValueError('insight event uses the exact allowlisted schema')
             insights.import_observation(db, event['observation'])
+        elif event.get('type') == 'social':
+            # Engagement tests and follower checks (engine/social.py): the same receipts, append-only.
+            if set(event) != {'event_id', 'type', 'record'}:
+                raise ValueError('social event uses the exact allowlisted schema')
+            social.record(db, event['event_id'], event['record'], ledger.now())
         else:
-            raise ValueError('operator events record only creative status or aggregate insights')
+            raise ValueError('operator events record only creative status, aggregate insights or social history')
         with db:
             db.execute('INSERT INTO operator_events VALUES(?,?,?)', (event['event_id'], fingerprint, ledger.now()))
         results.append({'event_id': event['event_id'], 'status': 'applied'})

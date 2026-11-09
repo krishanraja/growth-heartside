@@ -1,0 +1,68 @@
+{
+  "_about": "The machine-readable half of docs/DRIVE-MAP.md, read by `growth.py drive audit` (engine/drive_audit.py). Folders are found by ID, never by name. Krish, 2026-11-03: \"be strict on what goes where as codex tends to sprawl drives quite easily\"; 2026-11-09: \"Make sure the drive is completely up to date and not able to be corrupted or sprawled\". Change a folder here and in docs/DRIVE-MAP.md together; growth.py --self-test checks every ID here appears in the map. A session folder Krish renames with a \"Failed - \" prefix is his mark that its output failed: it stays where it is, its lessons go into factory/floor.json, and nothing in it is reused.",
+  "heartside": "1QInHx-RNx9fXYdc0KSvTYRcuGTZHxcVh",
+  "folders": {
+    "1QInHx-RNx9fXYdc0KSvTYRcuGTZHxcVh": {
+      "path": "Heartside",
+      "rule": "krish"
+    },
+    "19LX5N9op38Ejx1yGPjqbXX7wU1CrwKIp": {
+      "path": "Heartside/00_Brand-Assets",
+      "rule": "krish"
+    },
+    "1aNXPwYwUS7WE0qJJCOVv2V51ztV3e86l": {
+      "path": "Heartside/01_Identity",
+      "rule": "krish"
+    },
+    "1wW4iVFScNvz_-JnD5nO4eHJKnCjemlSe": {
+      "path": "Heartside/02_Imagery",
+      "rule": "krish"
+    },
+    "1Z2FeYx2hoBX0z8vP5jTHaGV0kBbsI9Fg": {
+      "path": "Heartside/03a_Social-Production",
+      "rule": "sessions"
+    },
+    "1AHZLgwj1nHemNJeP56fQU6iTpgIEALzZ": {
+      "path": "Heartside/03b_Social-Schedule",
+      "rule": "schedule"
+    },
+    "1boYZjB7ma-1YIcKzSl51usdYuNk6faHO": {
+      "path": "Heartside/03b_Social-Schedule/Posts",
+      "rule": "posts"
+    },
+    "1oqA94p1gx-Yxo8xO7WJ_8ZMz-Oi6Qu5P": {
+      "path": "Heartside/04_Decks",
+      "rule": "krish"
+    },
+    "1BJkmC3-Hk6WkSl0MeQjgoWRtEcAvpmiB": {
+      "path": "Heartside/09_OLD - Historical-and-Source",
+      "rule": "krish"
+    },
+    "1zPLSgX44QaIZK6gwmnnRz7lr60kzg9qQ": {
+      "path": "Heartside/_Archive",
+      "rule": "krish"
+    }
+  },
+  "schedule_files": [
+    "^00 README for Codex( \\(superseded [^)]+\\))?$",
+    "^01 Posting strategy( \\(superseded [^)]+\\))?$",
+    "^02[a-z]? Schedule and captions( \\([^)]+\\))*$",
+    "^Heartside \\| [^|]+ \\| Weekly placement review$",
+    "^Posts$"
+  ],
+  "session_folder": "^(Failed - )?\\d{4}-\\d{2}-\\d{2}_[A-Za-z0-9-]+(_[A-Za-z0-9-]+)*$",
+  "session_readme": "^START-HERE.*\\.md$",
+  "post_id": "^[A-Z][0-9]{2,3}(-[a-z0-9]+)*$",
+  "post_file": "^heartside_(?P<id>[A-Z][0-9]{2,3}(?:-[a-z0-9]+)*)_(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)_(?P<kind>reel|cover|slide[1-5])\\.(?P<ext>mp4|jpg)$",
+  "kind_ext": {
+    "reel": "mp4",
+    "cover": "jpg",
+    "slide": "jpg"
+  },
+  "heartside_names": "(?i)^heartside[_ |]|yourdoghasnotes",
+  "new_session_folder": "^\\d{4}-\\d{2}-\\d{2}_(Engine|Codex|Claude)-[A-Za-z0-9-]+(_Not-for-Publishing)?$",
+  "elsewhere": {
+    "1BnCP-jWPgsbrkILW8Hv6sb28pAPXKN_d": "A separate folder also named Heartside: the 28 Oct product UX feedback and its recordings (Vids). Krish's; not the social Drive, so the audit leaves it alone.",
+    "14DEgFcAd6SmUfj82iqh3h9Yc4uEHt5lP": "Vids, inside that UX feedback folder: its session recordings."
+  }
+}

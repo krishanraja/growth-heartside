@@ -15,7 +15,7 @@ import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
 
-from . import assets, dashboard, insights, ledger, media, offers, review, retention
+from . import assets, dashboard, insights, ledger, media, offers, review, retention, social
 
 
 def write_json(path, value):
@@ -150,11 +150,16 @@ def run_job(root, growth, job, day):
             pack = numbers if job == 'numbers' else progress
             if job == 'report':
                 write_json(out / 'decisions.json', insights.decisions(db))
+                write_json(out / 'social.json', social.status(db))
             result = {'data_access': 'Imported aggregate ledger only. Native dashboards and the Shopify connector are session capabilities, not credentials in this runner.'}
         elif job == 'radar':
-            pack = evidence_pack(state, day, 'radar', 'Demand evidence and research access', [
-                {'platform': 'other', 'target_name': 'Public search suggestions', 'why': 'A research input, not evidence of sales or volume.', 'text': demand()}])
-            result = {'native_comments': 'not_available'}
+            report = social.status(db)
+            pack = evidence_pack(state, day, 'radar', 'Demand evidence, engagement tests and the first-follower monitor', [
+                {'platform': 'other', 'target_name': 'Public search suggestions', 'why': 'A research input, not evidence of sales or volume.', 'text': demand()}]
+                + ([{'platform': 'other', 'target_name': 'Engagement tests and first followers',
+                     'why': 'Recorded social history (growth.py social status); each line names its owner and next action.',
+                     'text': '\n'.join(social.lines(report))}] if social.lines(report) else []))
+            result = {'native_comments': 'not_available', 'social_open': [t['test_id'] for t in report['tests'] if t['stage'] not in ('evaluated', 'held', 'cancelled')]}
         elif job == 'store':
             ready = offers.catalog(state)
             pack = evidence_pack(state, day, 'conversion', 'Public store readiness and acquisition handoff', [

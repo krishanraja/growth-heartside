@@ -50,6 +50,13 @@ below is unchanged. Until the go-live step exists, posting stays with Krish.
 - The engine itself still never posts.
 - Before preparing or posting any social row, read [the channel operating instructions](docs/CHANNEL-TASKS.md#running-the-two-kinds-of-post) and [the Drive ownership map](docs/DRIVE-MAP.md). Keep dog POV and product posts in the same schedule and use the approved row exactly.
 
+**The engine learns from every session** (Krish, 2026-11-09: "Ensure that the project documentation and intelligence of the growth repository are automatically augmented"). Before a session that did creative, social or Drive work ends, it records what happened where the next session reads it, in the same commit as the work:
+- every decline or correction from Krish goes into `factory/floor.json` with his exact words, the rule and the check (and to his taste ledger with `report_to_taste_engine`);
+- every engagement test stage and follower check goes into a dated `docs/social/` event file, imported with `growth.py events import` (public brand facts only);
+- every Codex card's state goes into `codex/INDEX.md`;
+- a session that touched Drive runs the audit in `docs/DRIVE-MAP.md`, "Auditing", and fixes what the map lets it fix.
+A lesson that lives only in a chat window, a Codex thread or a Drive summary is lost to the next session.
+
 **Autonomy is given where it is deserved** (Krish, 2026-10-19). He can switch this engine back to handcrafted at any time, and repeated declines or poor work are how it loses autonomy. So:
 
 - **Check in at least every other day, and after the first results of every go-live.** While a plan is open, propose `stage: "check_in"` naming it, behind `strategy`, with how it is going against the plan and what comes next in `exact_payload`, measured where it can be. His list asks "On track?": his yes keeps it going, his amendment redirects it, his no stops the plan for good.
@@ -68,7 +75,13 @@ Read, in this order, before any job:
    `NOW.md`, read live;
 3. `PLAYBOOK.md`: the operating system, applied to Heartside, then `docs/ENGINE.md` for production and reporting;
 4. `BROWSER.md`: what you may and may never do in Krish's signed-in browser;
-5. the job's own file in `jobs/`.
+5. the job's own file in `jobs/`;
+6. what is outstanding and what Krish has rejected: `python3 growth.py social status`
+   (engagement tests and first followers, each with its owner and next action;
+   in a fresh checkout first `python3 growth.py events import
+   docs/social/2026-11-09-engagement-history.json`, which is safe to replay),
+   `python3 growth.py floor --format <what you are making>` before any creative
+   work, and `codex/INDEX.md` before any Codex work.
 
 If nobody named a job, run the one today's schedule (below) says. The source
 documents behind the playbook are in `knowledge/`. Read them when a job needs

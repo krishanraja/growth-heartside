@@ -2,7 +2,7 @@
 
 Read from live Drive on 2026-11-09, after Krish restructured it that morning. Krish, 2026-11-09: "Folder 3A is where we're iterating on creatives, and folder 3B is where they're ready for production." Krish, 2026-11-03: "be strict on what goes where as codex tends to sprawl drives quite easily". This map is the rule. Anything not listed here does not get created. When a rule here and a habit disagree, the rule wins. If a file needs a new home, ask Krish first and add it here.
 
-Folders are found by ID, never by name: two other folders in Drive are also called "Heartside", and four are called `03_Social-and-Ads`. Folder IDs survive a rename and a move.
+Folders are found by ID, never by name: two other folders in Drive are also called "Heartside" (one, `1BnCP-jWPgsbrkILW8Hv6sb28pAPXKN_d`, holds the 28 Oct product UX feedback and is not part of this map), and four are called `03_Social-and-Ads`. Folder IDs survive a rename and a move.
 
 ## The tree
 
@@ -14,16 +14,16 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │   ├── Product-Examples/                                    1ZMucIvPsyCcI6tJ8C0BEWWnKE_JBiPDz   the approved product artwork; read its 00-READ-ME.txt first
 │   └── Photos/                                              1Wwm8wo3M5XavxgNPMeLYyVCQG3YQi2Vd   stock dog photos, not product artwork
 ├── 03a_Social-Production/                                   1Z2FeYx2hoBX0z8vP5jTHaGV0kBbsI9Fg   ITERATING. Creatives in progress. Never posted from.
-│   ├── Profiles/                                            1IW_1t17jwCepQ-3TxuSRopE1sOPBO-gd   Krish's. Read only.
-│   ├── Product-mockups/                                     1oIx6f9TvmL2OOFjAqgvHQS1B18nE4xWK   Krish's. Read only.
-│   └── YYYY-MM-DD_<Maker>-<Topic>/                                                             one folder per working session (rules below)
-│       e.g. 2026-11-09_Codex-Creative-Session_Not-for-Publishing/  1gwVjIYoDAJSEshJ4dBFJ5Sq_XL-rG1GW   Codex's archive of 7 to 9 Nov
+│   ├── YYYY-MM-DD_<Maker>-<Topic>/                                                             one folder per working session (rules below)
+│   ├── Failed - 2026-11-09_Codex-Creative-Session_Not-for-Publishing/  1gwVjIYoDAJSEshJ4dBFJ5Sq_XL-rG1GW   7 to 9 Nov organic stills; marked failed by Krish
+│   └── Failed - 2026-11-09_Comedy-and-Rain-Session_Archive/           1aqAORdmOUEakMW0o-pJf8SDkPzShJEIG   6 to 9 Nov rain scene; retired, marked failed by Krish
 ├── 03b_Social-Schedule/                                     1AHZLgwj1nHemNJeP56fQU6iTpgIEALzZ   READY. What Codex posts from. Was 05_Social-Library.
 │   ├── 00 README for Codex                (Doc)             1KQrrlXEHk6QwoEdlm30zuGWBw22uNoxTHuNbCZoXFyU   The one live instructions (3 Nov 17:45).
 │   ├── 01 Posting strategy                (Doc)             1OT8Cx18mbSpxrDq4c_Buj63JbMon2WfD2nOJMtREojg
 │   ├── 02 Schedule and captions           (Sheet)           15rHaDxdYtdK4eFmUC4GSbBGAnhlSOO0K67Gl0NozIdU   F03, F05, F06 x3, F07, F10, F11, F12, 4 to 8 Nov
 │   ├── 02c Schedule and captions (F01 F02 F04) (Sheet)      1L-bCycPmND3OLm0lo7FJVrPi1xV92deLw-sJVoz0cn8   locked 3 Nov, 9 and 10 Nov
 │   ├── 02d Schedule and captions (F13)    (Sheet)           1eY_iFenDdrsMuSlSoexKUEYjDQ41eX5GJ5lSd7CFfdg   F13 photo, 3 Nov
+│   ├── Heartside | 4–8 November 2026 | Weekly placement review (Sheet)  1Dnm141WQVQKi9S3iyMP99bu4rcKcM-Gii_GHfCzxmYo   the publishing desk's week board; moved here 9 Nov from "Inbox from My AI"
 │   └── Posts/                                               1boYZjB7ma-1YIcKzSl51usdYuNk6faHO
 │       ├── F01/ … F07/, F10/ … F13/, F06-frenchie/, F06-dachshund/, F06-lab/   locked 3 Nov (F13 1poEUrkd3Cd5t4ah7JjnrNMfvY2WyB71e)
 │       ├── F17/ … F24/                                                          filed 5 Nov
@@ -35,7 +35,17 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 └── POSITIONING.md, V3-GIFTS-FROM-YOUR-DOG.md, SYNC.md                                           Krish's. Read only.
 ```
 
-F17 to F27 are in `Posts/`, but the live README lists only 02, 02c and 02d, and those Sheets were last changed on 3 and 4 Nov, before F17 was filed on 5 Nov. Their folders existing does not make them postable: only an `approved = yes` row in a Sheet the live README lists does.
+Read on 9 Nov: none of the listed Sheets has a row for F14 to F27, yet the publishing desk's records show F17 to F24 live on Instagram, Facebook and TikTok (posted on approvals Krish gave in chat), F25 and F26 on quality hold as drafts, and F27 not in Buffer. Their rows go in a new `02e` Sheet before anything else is posted. A folder in `Posts/` never makes a post postable; only an approved row in a Sheet the live README lists does.
+
+## Auditing: every session that touches Drive
+
+The machine-readable map is `config/drive-map.json`, and `growth.py --self-test` checks that every folder in it is in this file by ID. No runner here holds Drive credentials, so a session with the Drive connector audits Drive at its start and before it ends:
+
+1. List, with `search_files` and every page: the children of 03a, 03b and `Posts/`; the children of each post folder and each 03a session folder; and anything titled `heartside_`, `Heartside |` or mentioning `yourdoghasnotes` anywhere in Drive.
+2. Save the items (id, title, mimeType, parentId) as a JSON array at `local/drive/listing-<date>.json` and run `python3 growth.py drive audit local/drive/listing-<date>.json`.
+3. Fix every `ERROR` the map lets the session fix: move a stray Heartside file into the folder the map names (moving keeps its ID, so links still work), and name a superseded file "(superseded …)" rather than deleting it. Report every `WARN` and anything only Krish may change. Never delete.
+
+A Codex or Claude session that made something in Drive runs the audit before it reports done.
 
 ## The one-way path: 03a to 03b
 
@@ -53,7 +63,7 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
 | Where | Who writes it | How | Nobody else |
 |---|---|---|---|
 | `Heartside/` outside 03a and 03b | Krish only | by hand | The engine and Codex never create, move, rename or delete anything here |
-| `03a_Social-Production/Profiles/`, `Product-mockups/` | Krish only | by hand | Read only for everyone else |
+| A 03a folder Krish renamed `Failed - …` | Krish only | by hand | His mark that the session failed. Read it for lessons (they go into `factory/floor.json`); reuse nothing from it |
 | `03a_Social-Production/` session folders | the growth engine (Drive connector) and Codex | one new dated folder per working session | Only the session that created a folder writes into it, and only while that session runs. Afterwards it is read only. No files loose at 03a's top level |
 | `03b_Social-Schedule/` top level | the growth engine only | the Drive connector | Exactly the files in the tree above, plus a new `02<letter>` Sheet when a batch needs one (below). No other files and no new folders |
 | `03b_Social-Schedule/Posts/<post id>/` | Krish's home computer only | `python3 factory/send_library.py <library folder>` through content-engine's library lane | No one uploads, copies or makes a folder here by hand or through a connector. It is never edited or deleted from a session; the home computer writes new versions beside changed ones |
@@ -63,7 +73,7 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
 ## The rules for a 03a session folder
 
 1. **One folder per working session**, named `YYYY-MM-DD_<Maker>-<Topic>`, with the New York date the session started. `<Maker>` is `Engine`, `Codex` or `Claude`; `<Topic>` is a few words joined by hyphens. Add `_Not-for-Publishing` if the folder could be mistaken for release media. Never one folder per file, and never a folder inside another session's folder.
-2. **A `START-HERE.md` at its top**, written first: what the session was making, which post ids or concepts it covers, where it stopped, what Krish decided, and the one next step. Say in its first line that nothing in the folder is approved for publishing.
+2. **A `START-HERE.md` at its top** (a longer name starting `START-HERE` is fine), written first: what the session was making, which post ids or concepts it covers, where it stopped, what Krish decided, and the one next step. Say in its first line that nothing in the folder is approved for publishing.
 3. **Anything inside is fine for iterating**: renders, frames, stills, voice reads the session made, contact sheets, review HTML, prompts, manifests, zips. Reference post ids by the same ids the lane uses (`F28`, `F06-frenchie`) so a later session can find them.
 4. **Never in 03a**, or anywhere in Drive: licensed music or stems, credentials or upload envelopes, browser profiles, and anything from an order, checkout or customer (rule 6 in `AGENTS.md`).
 5. **A later round is a new folder**, not an edit of the old one. Old folders stay where they are; only Krish moves or deletes them, for example into `09_OLD` or `_Archive`.
@@ -87,6 +97,7 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
    - The connectors cannot edit Sheets they did not create, so one batch gets one Sheet, and never one per post.
    - Rows for a post not yet locked say `awaiting Krish's lock: do not post` in `notes`.
    - The live README lists every `02…` Sheet. Update it in the same step.
+   - The publishing desk keeps one `Heartside | <dates> | Weekly placement review` Sheet per week in 03b, and nowhere else.
 6. **Superseded never means deleted.** A Sheet or README that a newer one replaces is renamed "(superseded <date>, use …)" and kept. Codex never posts from it and the engine never edits it. Only Krish deletes: on 3 Nov he had the six superseded READMEs and 02b moved to Drive's trash ("Delete the superseded READMEs and 02b"). The engine trashes a file only on his word for that named file, never permanently.
 7. **The README.**
    - If its text changes, the growth engine writes a new "00 README for Codex" and renames the old one "(superseded <date>, use the newer one)". There is only ever one live copy.
@@ -105,5 +116,6 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
 
 ## History
 
+- 2026-11-09, later: the engine wrote a current `00_Brand-Assets/START-HERE.txt` and renamed the 30 Oct one "(superseded 2026-11-09, use the newer START-HERE.txt)" (Krish: "you update it"), and moved the weekly placement review Sheet from "Inbox from My AI" into 03b.
 - 2026-11-09: Krish flattened `00_Brand-Assets`. `01_Identity`, `02_Imagery` and `04_Decks` moved up to `Heartside/`; `03_Social-and-Ads` became `03a_Social-Production`; `05_Social-Library` became `03b_Social-Schedule`; `05_OLD - Historical-and-Source` became `09_OLD - Historical-and-Source`. The library kept its ID (`1AHZLgwj…`), so Drive links to it still work. The old names are read from `00_Brand-Assets/START-HERE.txt` (30 Oct), which Krish has not yet updated.
 - 2026-11-03: the first map, with `05_Social-Library` as the only folder the engine and Codex used.

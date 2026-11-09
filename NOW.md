@@ -41,6 +41,12 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- The engine keeps the social desks' history and Krish's rejections where the next session reads them (2026-11-09). `growth.py social status` restores both first-follower engagement tests: approved by Krish on 7 Nov, handed to the publishing desk, publication not yet verified. It also restores the first-follower monitor: Instagram and Pinterest are still watched, at 0 on 8 Nov 17:37 UTC and unknown since then. `growth.py floor` holds 20 rejections in his words with their rules and checks. `growth.py drive audit` checks Drive against `config/drive-map.json`: 0 errors and 65 warnings on 9 Nov, all `ui-v1`/`ui-v2` editions in `Posts/`. Codex runs only by card, checked by Claude (`codex/README.md`, `codex/INDEX.md`). The next production session's route is `docs/briefs/2026-11-09-next-session-hero-and-meme-batch.md`.
+- Gaps found on 9 Nov, for Krish:
+  - no schedule row has `approved = yes`, yet all 38 rows were posted on chat approvals;
+  - F17 to F24 are live with no schedule row;
+  - the publishing desk left four duplicates and three TikTok pairs in Buffer ERROR "for Claude";
+  - PR #42 (the 4 to 9 Nov production branch) is unmerged.
 - The production handoff identifies the three motion candidates (F04, F05, F12), their unchanged Drive originals and the separate F12 paid opening pair by SHA-256. The candidates await exact-file creative decisions. Paid activation is held. (2026-11-04)
 - All twelve organic posts (F01 to F07, F10 to F12, with F06 in three breeds) are locked by Krish and pass `lock.py gate`; the lock page shows them locked (2026-11-03).
 - The social library is in Krish's Drive (`Heartside/03b_Social-Schedule`, formerly `05_Social-Library`, map in `docs/DRIVE-MAP.md`; creatives are iterated in `Heartside/03a_Social-Production` since 9 Nov): one Codex README, the posting strategy, the schedule Sheet with captions, tracked links and lock fingerprints, and each post's media in `Posts/<post id>/`. Krish's home computer files the media (`factory/send_library.py`, 39 files read back byte for byte); the zip is a backup. Codex posts only rows Krish marks `approved = yes` (2026-11-03).

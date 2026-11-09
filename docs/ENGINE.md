@@ -226,6 +226,45 @@ Local imports stay local. To update scheduled runs, supply the evidence to the
 GitHub workflow; do not assume another checkout automatically syncs its SQLite
 file. An eventual central UI can use this same typed contract.
 
+## Social history: engagement tests and first followers
+
+Krish, 2026-11-09: the engine must keep and learn from what the social desks do,
+inside the existing system. A third operator event type, `social`, carries it:
+
+```json
+{"event_id": "social:<subject>:<what>", "type": "social", "record": {...}}
+```
+
+`record` is one of three exact shapes (`engine/social.py`):
+
+- `engagement`: one stage of one test (`test_id`), in order `proposed`,
+  `approved` (with Krish's exact words and scope), `handed_off`,
+  `live_verified` (with the permalink evidence and the real publication time),
+  `evaluated` (with the outcome and decision), or `held`/`cancelled`. The exact
+  text cannot change under the same `test_id`: a new wording is a new test.
+- `follower_check`: one channel's count at one time, `counted` with a whole
+  number or `unavailable` with none. Unavailable is unknown, never zero, and
+  never replaces the last successful count.
+- `monitor`: the first-follower monitor's state per channel: `watching`,
+  `delivered` (its test was brought for review) or `retired`.
+
+Times are UTC. A time known only to the day is the date at 00:00 with
+`at_precision: "day"`, never a guessed hour. Records are append-only; a
+correction is a new record whose `supersedes` names the event it corrects.
+Only public brand facts go in: brand-authored text, public brand post URLs and
+aggregate counts. No commenter, follower or customer identity.
+
+Read it back with `python3 growth.py social status` (`--json` for the full
+record): every open test with its owner and next action, the 48-hour window
+counted from verified publication only, and each channel's last successful
+count kept apart from its latest attempt. The radar pack carries the same lines
+and the report writes `social.json` beside `decisions.json`. The history the
+desks built from 4 to 9 November is
+`docs/social/2026-11-09-engagement-history.json`; a fresh session restores it
+with `python3 growth.py events import docs/social/2026-11-09-engagement-history.json`,
+and replaying it changes nothing. Its runtime copy travels in the existing
+checkpoint like the rest of `local/engine.sqlite3`.
+
 `creative_status` events contain exactly `event_id`, `type`, `creative_id`, full
 `revision`, `status` and `url` (null except a real publication permalink).
 `insight` events contain exactly `event_id`, `type`, `observation`, using the
