@@ -39,6 +39,8 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │   ├── 02l Schedule and captions (F35 F36) (Sheet)  1TuVs0eDwKLvtlOjTs6F73oRJPLu2b2Fttg313hlPAqw   F35 2 Dec, F36 30 Nov; approved left for Krish (volume build batch 7)
 │   ├── 02m Schedule and captions (F37) (Sheet)  1Udtv9BC2unBdWZX3mTuTVPryOfmAfTELh-0reghi7oA   F37, 24 Nov; approved left for Krish (volume build batch 8)
 │   ├── 02n Schedule and captions (F34-golden F34-dachshund F34-doodle) (Sheet)  1IO-LkFPIKpOl0xQfVxwRo855d-GGMj3lDteqc3yQcK0   17 Nov, 26 Nov, 1 Dec; approved left for Krish (F34 chat variants)
+│   ├── 02o Schedule and captions (F38 F39 F40) (superseded 2026-11-10, use 02p) (Sheet)  1yfswwu38qS-yYOiZY5japq2KQsbv2rUyeI_ER5705zg   kept; never post from it
+│   ├── 02p Schedule and captions (F38 to F45) (Sheet)  1p8EbI6yRUAyAGpUVTdjGAjKTHXykAgH_mro0EmQL3JQ   24 rows, 12 to 27 Nov; approved left for Krish (dog does dog things)
 │   ├── Heartside | 4–8 November 2026 | Weekly placement review (Sheet)  1Dnm141WQVQKi9S3iyMP99bu4rcKcM-Gii_GHfCzxmYo   the publishing desk's week board; moved here 9 Nov from "Inbox from My AI"
 │   └── Posts/                                               1boYZjB7ma-1YIcKzSl51usdYuNk6faHO
 │       ├── F01/ … F07/, F10/ … F13/, F06-frenchie/, F06-dachshund/, F06-lab/   locked 3 Nov (F13 1poEUrkd3Cd5t4ah7JjnrNMfvY2WyB71e)
@@ -54,6 +56,7 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │       ├── F35/ F36/                                                            filed 10 Nov: package frenchie and pillowcase collie memes (volume build batch 7)
 │       ├── F37/                                                                 filed 10 Nov: the toilet-roll tube dachshund meme (volume build batch 8)
 │       ├── F34-golden/ F34-dachshund/ F34-doodle/                              filed 10 Nov: chat variants of F34 at its locked fingerprint (Krish approved, 10 Nov)
+│       ├── F38/ … F45/                                                          filed 10 Nov: dog does dog things reels (Krish: "Approved of them all"; F41 is the signature mug post)
 │       │   └── heartside_<id>_<slug>_<kind>.<ext>                               the post's media, nothing else
 ├── 04_Decks/                                                1oqA94p1gx-Yxo8xO7WJ_8ZMz-Oi6Qu5P   Krish's. Read only.
 ├── 09_OLD - Historical-and-Source/                          1BJkmC3-Hk6WkSl0MeQjgoWRtEcAvpmiB   Krish's. Read only. Superseded identity, Biscuit, ornament, old scenes. Never reused as current.
