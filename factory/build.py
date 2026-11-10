@@ -97,8 +97,13 @@ def chat(spec, work):
 
     def bubble(m):
         who = m['who']; d0 = ImageDraw.Draw(Image.new('RGB', (10, 10)))
-        if 'render' in m:
-            bw, bh = (634, 460) if native else (700, 560)
+        if 'photo' in m:   # a photo the dog sends: no card, just the rounded picture (social-ui profile only)
+            p = Image.open(f"{FR}/{m['photo']}").convert('RGB'); p.thumbnail((400, 400), Image.LANCZOS)   # leaves room for the reply under it
+            body = Image.new('RGBA', p.size, (0, 0, 0, 0))
+            mask = Image.new('L', p.size, 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, p.width - 1, p.height - 1), 30, fill=255)
+            body.paste(p, (0, 0), mask)
+        elif 'render' in m:
+            bw, bh = (634, 400) if native else (700, 560)   # native: the link preview and one reply share the screen
             body = Image.new('RGBA', (bw, bh), (0, 0, 0, 0)); d = ImageDraw.Draw(body, 'RGBA')
             d.rounded_rectangle((0, 0, bw - 1, bh - 1), 34, fill=(255, 255, 255, 255), outline=(220, 212, 200), width=2)
             p = Image.open(f"{R}/{m['render']}").convert('RGB'); p.thumbnail((bw - 40, bh - 40), Image.LANCZOS)

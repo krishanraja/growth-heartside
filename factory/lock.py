@@ -122,6 +122,8 @@ def skeleton(spec):
                     out[k] = ['role:' + LINES.get(l, {}).get('role', '?') for l in v]
                 elif still and k == 'frame' and isinstance(v, str):   # a still's photo is a slot
                     out[k] = 'slot:photo'
+                elif k == 'photo' and isinstance(v, str):   # a chat photo message: the picture is a slot, its place is not
+                    out[k] = 'slot:photo'
                 elif still and k in ('text_y', 'focus_y'):   # placement follows each photo (text-clear-of-faces)
                     continue
                 elif k == 'frames' and isinstance(v, list):   # breed photos are a slot; their count is not
@@ -164,6 +166,10 @@ def copy_problems(g, text, kind):
     return p
 
 
+def _ui_native(spec):
+    return bool(spec.get('ui_profile'))
+
+
 def check(spec, quiet=False):
     """Returns (problems, warnings). Problems block; warnings are listed for Krish."""
     g = _growth(); probs, warns = [], []
@@ -203,6 +209,12 @@ def check(spec, quiet=False):
     for fr in spec.get('frames', []):
         if not os.path.exists(f'{LIB}/frames/{fr}'):
             probs.append(f'frame {fr} missing')
+    if spec['template'] == 'chat':
+        for m in spec['messages']:
+            if 'photo' in m and not os.path.exists(f'{LIB}/frames/{m["photo"]}'):
+                probs.append(f'frame {m["photo"]} missing')
+            if 'photo' in m and not _ui_native(spec):
+                probs.append(f'photo message {m["photo"]}: only the social-ui profile lays out chat photos')
     if spec['template'] == 'still':
         if not 1 <= len(spec.get('slides', [])) <= 10:
             probs.append('a still post has 1 to 10 photo slides')

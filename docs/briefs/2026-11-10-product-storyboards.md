@@ -173,3 +173,29 @@ The engine, read from F10 (`factory/specs/F10.json`): dogs plan for their humans
 | shepherd | For snacks, I am available immediately. |
 | shepherd | For anything else, she has a blanket with my face on it. Same energy. |
 | shepherd | [attachment: the shepherd blanket] |
+
+## P04 sample build (10 Nov)
+
+Krish: "build P04 as the sample". Built in the F10 chat template with the social-ui profile (`factory/specs/P04.json`,
+lines `P04.*` in the joke bank, all proposed until Krish approves them).
+
+| Version | Judge | What changed |
+|---|---|---|
+| v1, 24.2 s | tier 2: **7**, held | The middle restated one joke four times ("ours??", "…bark?", "zero barks", "I physically cannot"); "do not scare him off" muddled the stakes; nothing to see but text. Layout: the link preview scrolled off before "she's crying" |
+| v2 | not judged | Rewrite: each beat escalates. Shepherd: "one bark and he drives off with it"; the frenchie sends a photo of itself on the fogged window, lips clamped, eyes on the van; "he's vibrating"; "he's waving at us. nobody move". Four lines retired. The opening frame lost the hook line |
+| v3, 25.3 s | tier 2: **7** | Opens on two messages so "code red" stays; the photo shrinks so "he's vibrating" shares its screen. Judge: funny only where the photo is |
+| v5, 28.5 s | tier 2: **7** | Two more photos: the driver waving at the window (the frenchie's ear in front), and the frenchie mid-bark as the van leaves. "he's waving. freeze" (one line, so the photo stays above it). Judge: the product never connects to the plot |
+| v6, 25.4 s | tier 2: **7**, held | The blanket is shown at 3.5 s as the gift in the van; "he's vibrating" and "she's opening it" cut; ends on the one shepherd blanket. Judge: move the product to the climax, the opposite of its v5 advice |
+
+**Held at 7.** Four rounds moved the score nowhere and the judge's advice now reverses itself. Two causes:
+- the judge sees F10 only as a description, never its frames, so it has no real ten to compare a chat post with;
+- the social-ui layout keeps the bottom half clear for platform controls, which the judge reads as empty screens of text. F10 was locked in the full-screen legacy layout.
+
+The fix is calibration before more rounds: put F10's own frames on the tier 2 sheet as the anchor. Krish's eye on v6 is the real test.
+
+Template changes, all limited to the social-ui profile that only P04 uses: a chat message may be a `photo` (a generated
+dog, never a product), checked like every other frame and kept as a slot in the fingerprint; the link preview is 400 px
+tall so one reply fits under it. The doodle mug's avatar point moved to its face.
+
+Sound: message pops, a real double bark (Epidemic Sound) under both bark lines, the end chime. The music is added in the
+platform (`SONG`). Spend: 1.5 Higgsfield credits (6 stills, 1 kept), booked in Control Center.

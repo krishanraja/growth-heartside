@@ -1,0 +1,90 @@
+{
+ "id": "P04",
+ "template": "chat",
+ "title": "P04.title",
+ "cast": {
+  "A": "shepherd",
+  "B": "frenchie",
+  "C": "doodle"
+ },
+ "music": "m_silent.mp3",
+ "music_level": 0.0,
+ "messages": [
+  {
+   "who": "A",
+   "dur": 1.4,
+   "line": "P04.c01"
+  },
+  {
+   "who": "B",
+   "dur": 0.9,
+   "line": "P04.c02",
+   "sfx": "s_barks.mp3"
+  },
+  {
+   "who": "A",
+   "dur": 1.2,
+   "line": "P04.c03b"
+  },
+  {
+   "who": "A",
+   "dur": 2.0,
+   "render": "shepherd-warm-blanket.jpg"
+  },
+  {
+   "who": "A",
+   "dur": 1.7,
+   "line": "P04.c05b"
+  },
+  {
+   "who": "B",
+   "dur": 2.4,
+   "photo": "p04-frenchie-window.jpg"
+  },
+  {
+   "who": "B",
+   "dur": 2.6,
+   "line": "P04.c09"
+  },
+  {
+   "who": "A",
+   "dur": 2.0,
+   "photo": "p04-driver-waves.jpg"
+  },
+  {
+   "who": "A",
+   "dur": 1.3,
+   "line": "P04.c15b"
+  },
+  {
+   "who": "C",
+   "dur": 1.2,
+   "line": "P04.c11"
+  },
+  {
+   "who": "A",
+   "dur": 1.2,
+   "line": "P04.c12"
+  },
+  {
+   "who": "B",
+   "dur": 1.3,
+   "line": "P04.c13"
+  },
+  {
+   "who": "B",
+   "dur": 2.2,
+   "photo": "p04-frenchie-bark.jpg",
+   "sfx": "s_barks.mp3"
+  }
+ ],
+ "end": {
+  "renders": [
+   "shepherd-warm-blanket.jpg"
+  ],
+  "hold": 4.0
+ },
+ "open_with": 2,
+ "note": "Sample, 10 Nov (Krish: \"build P04 as the sample\"). F10 group-chat format, social-ui profile. The blanket is shown as the thing at stake right after the van arrives; three photo beats; ends on the one gift. Sound: pops, real barks, end chime; music added in the platform (SONG).",
+ "ui_profile": "social-ui-2026-11-06-v1"
+}

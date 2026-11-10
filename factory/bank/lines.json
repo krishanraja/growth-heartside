@@ -1571,6 +1571,222 @@
    "source": "Krish, 2026-11-04 (chat: \"lock\", on the F03 cut)",
    "note": "On-screen label just before the cut to the shepherd's portrait of itself.",
    "text_sha256": "48b812e55f56a66fba2a0582f59e3e6ba355eb50b8909c59a7d40f6619a17202"
+  },
+  {
+   "id": "P04.title",
+   "text": "Mom's gift (top secret)",
+   "role": "chat.title",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+  },
+  {
+   "id": "P04.c01",
+   "text": "code red. delivery van outside",
+   "role": "chat.p04_01",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+  },
+  {
+   "id": "P04.c02",
+   "text": "BARK BARK BARK",
+   "role": "chat.p04_02",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+  },
+  {
+   "id": "P04.c03",
+   "text": "NO. this one is ours",
+   "role": "chat.p04_03",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c04",
+   "text": "ours??",
+   "role": "chat.p04_04",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c05",
+   "text": "the gift. for Mom. do not scare him off",
+   "role": "chat.p04_05",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c06",
+   "text": "…bark?",
+   "role": "chat.p04_06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c07",
+   "text": "zero barks",
+   "role": "chat.p04_07",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c08",
+   "text": "I physically cannot",
+   "role": "chat.p04_08",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c09",
+   "text": "I've barked at him for three years. he'll think something's wrong",
+   "role": "chat.p04_09",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+  },
+  {
+   "id": "P04.c10",
+   "text": "she's opening it",
+   "role": "chat.p04_10",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+  },
+  {
+   "id": "P04.c11",
+   "text": "she's crying",
+   "role": "chat.p04_11",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+  },
+  {
+   "id": "P04.c12",
+   "text": "good crying",
+   "role": "chat.p04_12",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+  },
+  {
+   "id": "P04.c13",
+   "text": "ok NOW can I bark",
+   "role": "chat.p04_13",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+  },
+  {
+   "id": "P04.c03b",
+   "text": "NO. that's Mom's gift in there",
+   "role": "chat.p04_03b",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)"
+  },
+  {
+   "id": "P04.c05b",
+   "text": "one bark and he drives off with it",
+   "role": "chat.p04_05b",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)"
+  },
+  {
+   "id": "P04.c14",
+   "text": "he's vibrating",
+   "role": "chat.p04_14",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)"
+  },
+  {
+   "id": "P04.c15",
+   "text": "he's waving at us. nobody move",
+   "role": "chat.p04_15",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)",
+   "note": "replaced by P04.c15b (\"he's waving. freeze\"): one line, so the driver photo stays on screen above it"
+  },
+  {
+   "id": "P04.c15b",
+   "text": "he's waving. freeze",
+   "role": "chat.p04_15",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 v5: one line, so the driver photo stays on screen above it)"
   }
  ]
 }
