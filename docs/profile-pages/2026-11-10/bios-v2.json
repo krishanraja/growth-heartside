@@ -1,0 +1,22 @@
+{
+  "status": "saved and publicly read back; Pinterest retained after audit",
+  "product_sha": "f6d97566bb",
+  "bios": {
+    "instagram": {
+      "text": "Your dog loves you too. Terrible at shopping, though.\nTheir photo → mugs, blankets & portraits.\nMake yours ↓",
+      "characters": 108
+    },
+    "facebook": {
+      "text": "Your dog loves you too. Terrible at shopping, though. Turn their photo into a personalized mug, sherpa blanket or portrait. A gift from your dog, made for you. Make yours at Heartside.io.",
+      "characters": 187
+    },
+    "tiktok": {
+      "text": "Gifts from your dog. They've outsourced the shopping.\nMake yours: heartside.io",
+      "characters": 78
+    },
+    "pinterest": {
+      "text": "Your dog loves you too. Terrible at shopping, though. Turn your dog's photo into a personalized mug, sherpa blanket or portrait. Make your dog's gift at Heartside.io.",
+      "characters": 166
+    }
+  }
+}
