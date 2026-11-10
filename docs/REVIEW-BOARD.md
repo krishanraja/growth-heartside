@@ -53,8 +53,10 @@ Read the board at the start of every session and before acting on anything that 
   `Ruling (Krish, <date>): <the item's question, answered yes>` when it is a ruling.
 - **No:** do what `on_no` said. His note is a correction: put his exact words on the floor
   (`factory/floor.json`) and in his taste ledger, like any decline.
-- **A post Yes** is his approval of its rows. Codex reads approval from the Sheet, so the filing session records it
-  there and cites the verdict's `at` time in `notes`. A post still goes out only when no publishing hold is in force.
+- **A post Yes** is his approval of that post. Codex reads approval only from the Sheet's `approved` column, which only
+  Krish marks (`docs/DRIVE-MAP.md`). Whether a board Yes may be copied into the Sheet for him is his open decision on
+  the board (`decision-board-yes-marks-sheet`). Until he answers Yes to it, no session writes `approved`. A post goes
+  out only when no publishing hold is in force.
 
 ## Never
 
