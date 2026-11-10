@@ -58,6 +58,18 @@ Read the board at the start of every session and before acting on anything that 
   the board (`decision-board-yes-marks-sheet`). Until he answers Yes to it, no session writes `approved`. A post goes
   out only when no publishing hold is in force.
 
+## Queued for the board
+
+Items a session has written in the board's format but has not yet put on the board, because that session had no
+leave to write to it. The next session with that leave writes each one with `ArtifactData` exactly as below, then
+moves it out of this list. Only Heartside's items are queued here: another venture's asks go on that venture's own
+board (the three makeyourmindup asks from this session are in growth-makeyourmindup's `NOW.md`). Fields not shown are `from: claude/laughing-sagan-8epsdc (skills uplift, 10 Nov)`,
+`created_at: 2026-11-10`, `status: open`.
+
+| Doc id | kind | title | question | on_yes / on_no | priority |
+|---|---|---|---|---|---|
+| `decision-switch-on-codes-biolink-survey` | decision | Switch on post codes, the bio-link page and the thank-you survey | Switch on the drafted post-family codes (tracking words, no discount), commission the bio-link page and the one-question thank-you survey in a heartside session, as in the brief? | Yes: Krish creates the codes printed by `python3 growth.py codes` in Shopify, a session adds their lines to `config/codes.json`, and a heartside session gets the bio-link and survey brief. No: nothing changes; sprint sales stay countable only through tracked links. Detail: `docs/briefs/2026-11-10-codes-biolink-survey.md`, including the TikTok blocker (no clickable website on the profile). | 9 |
+
 ## Never
 
 - Write to `verdicts`, or edit an item after he has answered it.
