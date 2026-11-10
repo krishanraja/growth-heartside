@@ -485,6 +485,23 @@
     "carousel",
     "meme"
    ]
+  },
+  {
+   "id": "no-ai-label",
+   "date": "2026-11-10",
+   "made": "The question of turning on TikTok's and Meta's AI-generated label for the realistic dog reels",
+   "words": [
+    "no, do not turn on the AI label"
+   ],
+   "category": "process",
+   "rule": "Heartside posts go out without the platforms' AI-generated label. Codex does not switch it on, and no README or row note asks it to.",
+   "check": "review: no README or Schedule note asks Codex to set an AI-generated label",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
   }
  ],
  "open_conflicts": [],
