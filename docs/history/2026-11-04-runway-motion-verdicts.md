@@ -1,3 +1,7 @@
+> **Historical.** Archived 2026-11-04. Not current guidance.
+> Replaced by: `NOW.md` and `docs/briefs/codex/2026-11-04-motion-cut-F01-F07.md`
+> Reason: a dated record of the 4 Nov Runway motion batch; the clips are now locked or held in Drive.
+
 # Runway motion batch for the locked posts (4 Nov)
 
 Status: 16 Runway Gen-4.5 motion clips are made: 5 seconds, 9:16, 720p, 60 credits each. Each one animates a locked post's own Higgsfield key frame and is reserved and settled in Control Center. Krish's ask was "Use the locked frames", and later: "as much coverage in-market as possible". The aim is that every locked story post opens on motion.
