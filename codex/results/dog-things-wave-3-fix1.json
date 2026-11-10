@@ -1,0 +1,11 @@
+{
+  "card": "dog-things-wave-3-fix1",
+  "ok": false,
+  "problems": [
+    "Codex made no changes, so its work was not checked: [codex] Command failed: /bin/bash -lc \"ls -la; find /tmp /home/krish/dev -name 'F50.mp4' -o -name 'heartside-christma... (exit 1) | [codex] Running command: /bin/bash -lc \"ls -la ../dog-things-wave-3/out ../dog-things-wave-3/inputs; cat ../dog-things... | [codex] Command completed: /bin/bash -lc \"ls -la ../dog-things-wave-3/out ../dog-things-wave-3/inputs; cat ../dog-things... (exit 0) | [codex] Running command: /bin/bash -lc \"find /home/krish /mnt /tmp -type f \\\\( -name 'F50.mp4' -o -name 'heartside-chr... | [codex] Assistant message captured: Blocked: the original `out/F50.mp4` and `inputs/h"
+  ],
+  "dispatch_code": 0,
+  "host": "Lorimer",
+  "finished_at": "2026-11-10T18:48:08Z",
+  "queued_on": "main"
+}
