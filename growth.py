@@ -36,8 +36,18 @@ packs apart from makeyourmindup's (see `post` below).
         What is on sale at heartside.io right now: title, price, link.
 
     python3 growth.py link URL CREATIVE_ID
+    python3 growth.py link URL SLOT [--platform tiktok|instagram|facebook]
         The heartside.io url with the tracking every draft must carry, built
-        from the creative id (PLAYBOOK.md, "Every tracked link").
+        from the creative id (PLAYBOOK.md, "Every tracked link"). A sprint
+        slot id (S01, V001) resolves through its manifest in
+        factory/sprints/ to the slot's creative id on that platform (the
+        slot's first platform when none is named).
+
+    python3 growth.py codes [MANIFEST]
+        Drafts the post-family discount code names for a sprint's buy and
+        signature slots, as tracking words with no discount, and the
+        config/codes.json families they would add. Prints only: switching a
+        code on is Krish's, in Shopify (docs/briefs/2026-11-10-codes-biolink-survey.md).
 
     python3 growth.py check PACK.json
         Heartside's house rules on every draft, the creative ids and links,
@@ -202,6 +212,41 @@ FAKE_PROOF = [  # SCOPE 10: no invented reviews, sales or approvals
      'claims proof Heartside does not have (no invented reviews, ratings, rankings or customer counts)'),
     (re.compile(r'~~|\bwas \$\d|\bregularly \$\d', re.I), 'a strike-through or "was" price'),
 ]
+# AGENTS.md rule 8: statistics the outside growth skills repeat with no source we can check
+# (knowledge/corpus/external-growth-skills.md, "Do not quote"). Refused on every line, notes to Krish included.
+DO_NOT_QUOTE = [
+    # The human claim only: "the 8-second attention span", people/consumers/users and an 8-second span, or "shorter
+    # than a goldfish". A dog saying its own attention span is 8 seconds and all of it is on you is a joke, not a stat.
+    (re.compile(r'\bthe (?:8|eight)[- ]second attention span'
+                r'|\b(?:humans?|people|persons?|consumers?|audiences?|users?|viewers?|shoppers?|buyers?)\W+(?:\w+\W+){0,6}?'
+                r'(?:(?:8|eight)[- ]seconds? attention spans?|attention spans?\W+(?:\w+\W+){0,4}?(?:8|eight)[- ]?seconds?)'
+                r'|attention spans? (?:is |are )?shorter than (?:a |the |that of a )?goldfish', re.I),
+     'quotes the "8-second attention span" statistic, which has no source we can check (AGENTS.md rule 8)'),
+    (re.compile(r'infographics?\W+(?:\w+\W+){0,6}\d+\s*(?:x|times)\b|\d+\s*(?:x|times) more (?:likely to be )?(?:shared|read|viewed)\W+(?:\w+\W+){0,3}infographics?', re.I),
+     'quotes an "infographics get N times more" statistic, which has no source we can check (AGENTS.md rule 8)'),
+    # Only the figure: a referral line with a number or percentage in it.
+    (re.compile(r'referr(?:ed|al) customers?[^\n]{0,60}?\d[^\n]{0,60}?(?:ltv|lifetime value)'
+                r'|(?:ltv|lifetime value)[^\n]{0,60}?\d[^\n]{0,60}?referr(?:ed|al) customers?', re.I),
+     'quotes a referral lifetime-value statistic, which has no source we can check (AGENTS.md rule 8)'),
+    (re.compile(r'visuals? (?:are )?processed\W+(?:\w+\W+){0,2}60,?000 times faster', re.I),
+     'quotes the "visuals are processed 60,000 times faster" statistic, which has no source we can check (AGENTS.md rule 8)'),
+    (re.compile(r'email subscribers?\W+(?:\w+\W+){0,4}\d+\s*(?:x|\u00d7|times) more likely to buy', re.I),
+     'quotes an "email subscribers are N times more likely to buy" statistic from another business (AGENTS.md rule 8)'),
+]
+# A code line sells, so it appears only on an intent-buy item (docs/CHANNEL-TASKS.md: no shop line on a standalone
+# joke; engine/codes.py drafts codes for selling slots only).
+CODE_ASK = re.compile(r'\b(?:use|enter|apply|type)\s+(?:the\s+|my\s+|our\s+)?(?:discount\s+|promo\s+)?code\b|\b(?:discount|promo)\s+code\b', re.I)
+CODE_SHAPE = re.compile(r'\b[A-Z]{3,8}\d{2,3}[TIF]\b')                 # the shape engine/codes.py drafts
+
+
+def registered_codes():
+    try:
+        from engine import attribution
+        return attribution.load_codes()
+    except (ImportError, ValueError, OSError):
+        return {}
+
+
 SAD = re.compile(r'rainbow bridge|passed away|crossed the bridge|in (?:loving )?memory|memorial|put to sleep|\bRIP\b|cancer', re.I)  # VOICE, AGENTS.md rule 5
 # Briefs, reports, radar notes and store fixes mix instructions for Krish with
 # words the public will see. In those, only lines marked as public get the
@@ -233,6 +278,21 @@ def medium(fmt):
     if fmt in ('REEL', 'SHORT', 'VIDEO', 'LIVE'):
         return 'organic_video'
     return {'LISTING': 'product_listing', 'ARTICLE': 'organic_search', 'EMAIL': 'email'}.get(fmt, 'organic_social')
+
+
+SLOT_ID = re.compile(r'^[SV]\d{2,3}$')
+
+
+def slot_creative_id(slot_id, platform=None, sprints_dir=None):
+    """A sprint slot id (S01, V001) as its creative id on one platform, from the newest manifest that holds it."""
+    sys.path.insert(0, os.path.join(HERE, 'factory'))
+    import sprint
+    m = sprint.manifest_for_slot(slot_id, sprints_dir)
+    slot = sprint.find_slot(m, slot_id)
+    platform = platform or slot['platforms'][0]
+    if platform not in slot['platforms']:
+        raise ValueError(f'{slot_id} is not planned for {platform} (it posts to {", ".join(slot["platforms"])})')
+    return sprint.creative_id(m, slot, platform)
 
 
 def tracked(url, creative_id):
@@ -603,10 +663,21 @@ def problems(item, price_points=()):
         out.append(f'creative_id "{cid}" does not follow PLAYBOOK.md, "Creative ids"')
     if EM_DASH.search(text):
         out.append('it has an em dash (use a comma, a full stop or "and")')
+    for rx, why in DO_NOT_QUOTE:
+        if rx.search(text):
+            out.append(why)
     full = text
     if platform in INTERNAL:
         text = '\n'.join(line for line in full.splitlines() if PUBLIC_LINE.match(line))
     low = text.lower()
+    if (item.get('intent') or '') != 'buy':
+        reg = registered_codes()
+        tokens = {t.upper() for t in re.findall(r'[A-Za-z0-9]+', text)}
+        # A typed code carries its number (engine/codes.py), so a plain word that shares a prefix is left alone.
+        hit = sorted(t for t in tokens for c in reg if t.startswith(c) and any(ch.isdigit() for ch in t))
+        if hit or CODE_SHAPE.search(text) or CODE_ASK.search(text):
+            out.append('it carries a discount-code line, which only an intent buy item may (docs/CHANNEL-TASKS.md; '
+                       'engine/codes.py)')
     for w in BANNED:
         if re.search(r'(?<!\w)' + re.escape(w) + r'(?!\w)', low):
             out.append(f'it says "{w}", which Heartside bans (Buddy\'s VOICE, n8n/build.mjs)')
@@ -1195,7 +1266,8 @@ def main():
     sub.add_parser('now')
     cn = sub.add_parser('canon'); cn.add_argument('--full', action='store_true')
     sub.add_parser('store')
-    lk = sub.add_parser('link'); lk.add_argument('url'); lk.add_argument('creative_id')
+    lk = sub.add_parser('link'); lk.add_argument('url'); lk.add_argument('creative_id'); lk.add_argument('--platform')
+    cd = sub.add_parser('codes'); cd.add_argument('manifest', nargs='?', default=os.path.join(HERE, 'factory/sprints/2026-11-S120.json'))
     c = sub.add_parser('check'); c.add_argument('file')
     s = sub.add_parser('post'); s.add_argument('file')
     r = sub.add_parser('read'); r.add_argument('--days', type=int, default=7); r.add_argument('--kind')
@@ -1236,9 +1308,24 @@ def main():
         return
     if a.cmd == 'link':
         try:
-            print(tracked(a.url, a.creative_id))
+            if SLOT_ID.match(a.creative_id):
+                cid = slot_creative_id(a.creative_id, a.platform)
+            else:
+                cid = a.creative_id
+                code = {'tiktok': 'TT', 'instagram': 'IG', 'facebook': 'FB'}
+                if a.platform and code.get(a.platform.lower()) != cid.split('_')[0]:
+                    raise ValueError(f'--platform {a.platform} does not match {cid}; --platform is for a slot id (S01, V001), '
+                                     'and a full creative id already names its platform')
+            print(tracked(a.url, cid))
         except ValueError as e:
             sys.exit(str(e))
+        return
+    if a.cmd == 'codes':
+        from engine import codes
+        try:
+            print(codes.render(codes.draft(json.load(open(a.manifest, encoding='utf-8')))))
+        except (OSError, ValueError, KeyError) as e:
+            sys.exit(f'Not ready: {e}')
         return
     if a.cmd in ('check', 'post'):
         try:

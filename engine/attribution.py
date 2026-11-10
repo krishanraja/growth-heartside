@@ -8,15 +8,17 @@ path alone and a referrer as its host alone, and both only long enough to
 classify the order.
 
 Tiers, best evidence first:
-  engine          the visit carried this engine's own tags (utm_campaign
-                  hs_growth_YYYYMM and a creative id in utm_content), so the
-                  post family is known
+  engine          the order used a discount code from a family Krish registered
+                  in config/codes.json, or the visit carried this engine's own
+                  tags (utm_campaign hs_growth_YYYYMM and a creative id in
+                  utm_content), so the post family is known
   organic_social  a social referrer or organic social tags, with no paid signal
   organic_search  a search engine referrer, no paid signal (not counted as posts)
   paid            any paid signal: paid utm_medium or an ad click id
   pending         Shopify has not finished the journey (up to 72 hours)
   direct          nothing to go on
-Organic posts = engine + organic_social. Paid never counts, even if tagged.
+Organic posts = engine + organic_social. Paid never counts, even if tagged or
+coded: the paid checks run first.
 """
 import datetime as dt
 from decimal import Decimal
@@ -29,6 +31,9 @@ import urllib.request
 from zoneinfo import ZoneInfo
 
 from . import ledger
+
+CODES = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'config', 'codes.json')
+FAMILY = re.compile(r'^(IG|FB|TT|YT|PIN|GG|EM|WEB|CR)_(EMO|ENT|UTIL|PROOF|OFFER)_C\d{2,3}$')
 
 TIMEZONE = 'Europe/London'  # the shop's verified IANA zone (docs/ENGINE.md)
 API_VERSION = '2026-10'
@@ -83,16 +88,48 @@ def ad_click(url):
         return False
 
 
-def classify(order):
-    """(tier, family) for one order's journey; family is set only for the engine tier."""
+def load_codes(path=None):
+    """The registered code families, {PREFIX: family}, upper-cased. Missing file or no families: an empty registry."""
+    try:
+        data = json.load(open(path or CODES, encoding='utf-8'))
+    except FileNotFoundError:
+        return {}
+    families = data.get('families') or {}
+    if not isinstance(families, dict):
+        raise ValueError('config/codes.json: "families" must map a code prefix to a post family')
+    registry = {}
+    for prefix, family in families.items():
+        if not isinstance(prefix, str) or not prefix.strip() or not isinstance(family, str) or not FAMILY.match(family):
+            raise ValueError(f'config/codes.json: {prefix!r} must map to a family like TT_EMO_C301, not {family!r}')
+        registry[prefix.strip().upper()] = family
+    return registry
+
+
+def code_family(order, registry):
+    """The family of the first registered code on the order, by the longest matching prefix, or None."""
+    for code in order.get('discountCodes') or []:
+        name = str(code or '').strip().upper()
+        hits = [p for p in registry if name.startswith(p)]
+        if hits:
+            return registry[max(hits, key=len)]
+    return None
+
+
+def classify(order, registry=None):
+    """(tier, family) for one order's journey; family is set only for the engine tier.
+    registry: {code prefix: family} from config/codes.json (read when not given)."""
+    registry = load_codes() if registry is None else registry
     journey = order.get('customerJourneySummary') or {}
     visits = [v for v in (journey.get('lastVisit'), journey.get('firstVisit')) if v]
     if not journey.get('ready', True) and not visits:
-        return 'pending', None
+        return 'pending', None  # a paid signal may still arrive, and paid is checked before any code
     for visit in visits:
         utm = visit.get('utmParameters') or {}
         if (utm.get('medium') or '').lower() in PAID_MEDIUM or ad_click(visit.get('landingPage')):
             return 'paid', None
+    family = code_family(order, registry)
+    if family:
+        return 'engine', family
     for visit in visits:
         utm = visit.get('utmParameters') or {}
         match = CREATIVE_ID.match(utm.get('content') or '')
@@ -140,6 +177,7 @@ def windows(today):
 def aggregate(orders, start, end):
     """Counts and net sales per tier, and per engine family, for orders created in [start, end) London time."""
     zone = ZoneInfo(TIMEZONE)
+    registry = load_codes()
     tiers = {t: {'orders': 0, 'net_sales': Decimal(0)} for t in TIERS}
     families, refunded = {}, 0
     for order in orders:
@@ -152,7 +190,7 @@ def aggregate(orders, start, end):
         if value <= 0:  # a fully refunded order is not a sale
             refunded += 1
             continue
-        tier, family = classify(order)
+        tier, family = classify(order, registry)
         tiers[tier]['orders'] += 1
         tiers[tier]['net_sales'] += value
         if family:

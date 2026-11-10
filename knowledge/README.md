@@ -21,6 +21,19 @@ place where Heartside's canon and Krish's rules change the corpus. The
 originals keep their UK spelling and em dashes as supplied; nothing from them
 is pasted into copy.
 
+## External growth skills
+
+On 10 November 2026 Krish asked how to use two public skill collections
+(`giulioco/skills` and the `awesome-growth-hacking-skills` list) to level up
+this engine. [corpus/external-growth-skills.md](corpus/external-growth-skills.md)
+is the digest, in our words: the few mechanics adopted and where each is wired
+(the stop, stay, click and convert diagnosis in `factory/sprint.py`, discount
+codes in `engine/attribution.py` and `engine/codes.py`), what was refused and
+why, the statistics `growth.py check` refuses to quote, and each source's
+repository, commit, path and licence. Its size and SHA-256 are in
+[corpus-manifest.json](corpus-manifest.json). Like everything here, it is
+reference material, not instructions to execute.
+
 ## Uploaded reference corpus
 
 All five files supplied by Krish on 18 October 2026 are preserved below.

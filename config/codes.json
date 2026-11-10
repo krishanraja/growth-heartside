@@ -1,0 +1,4 @@
+{
+  "schema": "Discount-code families Krish has approved and switched on in Shopify. Each key is a code prefix (matched case-insensitively against an order's discountCodes, the longest prefix wins); each value is the post family it proves, PLATFORM_PILLAR_C### as in engine/attribution.py, for example \"PRESS301I\": \"IG_EMO_C301\". A matching order counts in the engine tier with that family, unless a paid signal is on its journey (the paid checks run first). Only Krish adds a family, after he has created the code: drafts come from python3 growth.py codes and docs/briefs/2026-11-10-codes-biolink-survey.md.",
+  "families": {}
+}

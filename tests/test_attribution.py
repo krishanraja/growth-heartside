@@ -131,6 +131,66 @@ class AttributionTests(unittest.TestCase):
         self.assertEqual((objective['value'], objective['availability']), (1, 'measured'))
         self.assertEqual(protocol.organic_orders(db, now + dt.timedelta(days=3))['availability'], 'stale')
 
+class DiscountCodeTests(unittest.TestCase):
+    # An example registry lives in the tests only; config/codes.json starts empty until Krish switches codes on.
+    REGISTRY = {'PRESS301I': 'IG_EMO_C301', 'PRESS': 'TT_EMO_C399'}
+
+    def test_a_registered_code_lands_in_engine_with_its_family(self):
+        coded = order(visit(medium=None), discountCodes=['press301i'])
+        self.assertEqual(attribution.classify(coded, self.REGISTRY), ('engine', 'IG_EMO_C301'))
+
+    def test_a_coded_order_with_no_journey_still_counts_once_shopify_is_done(self):
+        coded = order(None, ready=True, discountCodes=['PRESS301I'])
+        self.assertEqual(attribution.classify(coded, self.REGISTRY), ('engine', 'IG_EMO_C301'))
+
+    def test_the_longest_prefix_wins(self):
+        self.assertEqual(attribution.classify(order(None, discountCodes=['PRESSX']), self.REGISTRY), ('engine', 'TT_EMO_C399'))
+
+    def test_paid_signals_beat_a_registered_code(self):
+        paid = order(visit(CID, medium='paid_social'), discountCodes=['PRESS301I'])
+        self.assertEqual(attribution.classify(paid, self.REGISTRY), ('paid', None))
+        clicked = order(visit(medium=None, landing='https://heartside.io/?fbclid=1&gclid=abc'), discountCodes=['PRESS301I'])
+        self.assertEqual(attribution.classify(clicked, self.REGISTRY), ('paid', None))
+
+    def test_an_unknown_code_falls_through(self):
+        social = order(visit(medium=None, referrer='https://l.instagram.com/'), discountCodes=['WELCOME10'])
+        self.assertEqual(attribution.classify(social, self.REGISTRY), ('organic_social', None))
+        self.assertEqual(attribution.classify(order(None, discountCodes=['WELCOME10']), self.REGISTRY), ('direct', None))
+
+    def test_the_shipped_registry_is_valid(self):
+        # Krish registers real families here, so the shipped file is checked for shape, not for being empty.
+        registry = attribution.load_codes()
+        for prefix, family in registry.items():
+            self.assertTrue(prefix and prefix == prefix.upper())
+            self.assertTrue(attribution.FAMILY.match(family), family)
+
+    def test_an_empty_registry_counts_no_code(self):
+        import json, tempfile
+        with tempfile.NamedTemporaryFile('w', suffix='.json', delete=False) as f:
+            json.dump({'families': {}}, f)
+        try:
+            registry = attribution.load_codes(f.name)
+            self.assertEqual(registry, {})
+            self.assertEqual(attribution.classify(order(None, discountCodes=['PRESS301I']), registry), ('direct', None))
+        finally:
+            os.unlink(f.name)
+
+    def test_a_bad_family_is_refused(self):
+        import json, tempfile
+        with tempfile.NamedTemporaryFile('w', suffix='.json', delete=False) as f:
+            json.dump({'families': {'PRESS': 'not a family'}}, f)
+        try:
+            with self.assertRaises(ValueError):
+                attribution.load_codes(f.name)
+        finally:
+            os.unlink(f.name)
+
+    def test_aggregate_counts_a_coded_order_under_its_family(self):
+        with mock.patch.object(attribution, 'load_codes', return_value=self.REGISTRY):
+            reading = attribution.aggregate([order(None, discountCodes=['PRESS301I'])], dt.date(2026, 10, 1), dt.date(2026, 10, 29))
+        self.assertEqual(reading['families'], {'IG_EMO_C301': {'orders': 1, 'net_sales': 129.0}})
+        self.assertEqual(reading['organic']['orders'], 1)
+
 
 if __name__ == '__main__':
     unittest.main()

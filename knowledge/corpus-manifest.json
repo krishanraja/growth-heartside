@@ -84,6 +84,12 @@
       "repository_path": "knowledge/copywriting-offers-demand-corpus-summary.md",
       "bytes": 476,
       "sha256": "2de846209031c79c7d635509da1d64516cfd055f6dad5b60274ef3cdcf926e87"
+    },
+    {
+      "original_filename": "external-growth-skills.md",
+      "repository_path": "knowledge/corpus/external-growth-skills.md",
+      "bytes": 5533,
+      "sha256": "091b5db8d5c74bfa09e0e4861063e2f409a4492b69f5af913404005f7c14b4b1"
     }
   ]
 }
