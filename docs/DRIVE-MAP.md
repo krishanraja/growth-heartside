@@ -18,17 +18,22 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │   ├── Failed - 2026-11-09_Codex-Creative-Session_Not-for-Publishing/  1gwVjIYoDAJSEshJ4dBFJ5Sq_XL-rG1GW   7 to 9 Nov organic stills; marked failed by Krish
 │   └── Failed - 2026-11-09_Comedy-and-Rain-Session_Archive/           1aqAORdmOUEakMW0o-pJf8SDkPzShJEIG   6 to 9 Nov rain scene; retired, marked failed by Krish
 ├── 03b_Social-Schedule/                                     1AHZLgwj1nHemNJeP56fQU6iTpgIEALzZ   READY. What Codex posts from. Was 05_Social-Library.
-│   ├── 00 README for Codex                (Doc)             1Skm9DNvd3kZrz0LWDxTJWzCMaWB8eXByLhtJsCKjbYw   The one live instructions (9 Nov: approved = yes only; ui editions retired).
+│   ├── 00 README for Codex                (Doc)             1tKnG8ex3Us2W6wCWXB_-yQh0Wf24oQR8Hkvk_4UIS64   The one live instructions (10 Nov: Sprint 120, songs added in the platform in the browser, 15 a day).
+│   ├── 00 README for Codex (superseded 2026-11-10, first 10 Nov version, use the newer one)  1MtBe08RdAzAq4kBZuh09M5LmsNXVAYZ-e6QxNBbJJWo   kept; it wrongly said the engine may mark approvals
+│   ├── 00 README for Codex (superseded 2026-11-10, use the newer one)  1Skm9DNvd3kZrz0LWDxTJWzCMaWB8eXByLhtJsCKjbYw   the 9 Nov copy, kept
 │   ├── 00 README for Codex (superseded 2026-11-09, use the newer one)  1KQrrlXEHk6QwoEdlm30zuGWBw22uNoxTHuNbCZoXFyU   the 3 Nov 17:45 copy, kept
 │   ├── 01 Posting strategy                (Doc)             1OT8Cx18mbSpxrDq4c_Buj63JbMon2WfD2nOJMtREojg
 │   ├── 02 Schedule and captions           (Sheet)           15rHaDxdYtdK4eFmUC4GSbBGAnhlSOO0K67Gl0NozIdU   F03, F05, F06 x3, F07, F10, F11, F12, 4 to 8 Nov
 │   ├── 02c Schedule and captions (F01 F02 F04) (Sheet)      1L-bCycPmND3OLm0lo7FJVrPi1xV92deLw-sJVoz0cn8   locked 3 Nov, 9 and 10 Nov
 │   ├── 02d Schedule and captions (F13)    (Sheet)           1eY_iFenDdrsMuSlSoexKUEYjDQ41eX5GJ5lSd7CFfdg   F13 photo, 3 Nov
+│   ├── 02e Schedule and captions (Sprint 120, F28 onward) (Sheet)  1D1CyDAJeyRH0TPw8tLEOQGC-MOL7frTnkwbFt4p-aRM   the sprint, from 12 Nov; approved left for Krish
+│   ├── 02e Schedule and captions (superseded 2026-11-10, approved written in error, never post from it) (Sheet)  1aIm8kIpb-OF0tBp_NZ9swWnTyvc0d0CSQYpOzU3QJqA   kept
 │   ├── Heartside | 4–8 November 2026 | Weekly placement review (Sheet)  1Dnm141WQVQKi9S3iyMP99bu4rcKcM-Gii_GHfCzxmYo   the publishing desk's week board; moved here 9 Nov from "Inbox from My AI"
 │   └── Posts/                                               1boYZjB7ma-1YIcKzSl51usdYuNk6faHO
 │       ├── F01/ … F07/, F10/ … F13/, F06-frenchie/, F06-dachshund/, F06-lab/   locked 3 Nov (F13 1poEUrkd3Cd5t4ah7JjnrNMfvY2WyB71e)
 │       ├── F17/ … F24/                                                          filed 5 Nov
 │       ├── F25/ … F27/                                                          filed 7 Nov
+│       ├── F28/                                                                 filed 10 Nov: the dog 80s dance (Sprint 120)
 │       │   └── heartside_<id>_<slug>_<kind>.<ext>                               the post's media, nothing else
 ├── 04_Decks/                                                1oqA94p1gx-Yxo8xO7WJ_8ZMz-Oi6Qu5P   Krish's. Read only.
 ├── 09_OLD - Historical-and-Source/                          1BJkmC3-Hk6WkSl0MeQjgoWRtEcAvpmiB   Krish's. Read only. Superseded identity, Biscuit, ornament, old scenes. Never reused as current.
@@ -86,7 +91,7 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
 ## The rules for a new post in 03b
 
 1. **Post id.**
-   - A new concept takes the next free number. F27 is the highest in `Posts/` today, so the next is `F28`. Check `Posts/` and `factory/specs` before choosing. Never reuse a number, even for a retired concept.
+   - A new concept takes the next free number. F28 is the highest in `Posts/` today (10 Nov), so the next is `F29`. Check `Posts/` and `factory/specs` before choosing. Never reuse a number, even for a retired concept.
    - A variant of a locked concept is `<id>-<breed>`, for example `F06-frenchie`. Ids match `[A-Z][0-9]{2,3}(-[a-z0-9]+)*`, and the lane refuses anything else.
 2. **File names** are `heartside_<id>_<slug>_<kind>.<ext>`:
    - `<slug>` is lowercase words joined by hyphens, the same for every file of the post.
@@ -100,7 +105,8 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
 3. **Media.** Add the locked files to the library folder and to its `manifest.json` (post, file, bytes, sha256). Then run `send_library.py`. The home computer files them within about 20 minutes. Check `03b_Social-Schedule/Posts/<post id>/` afterwards (by folder ID `1boYZjB7ma-1YIcKzSl51usdYuNk6faHO`): if a new `05_Social-Library` folder appeared instead, the lane is still writing by the old name, so stop and tell Krish.
 4. **A changed version** keeps its name and is sent again. The home computer replaces its own earlier copy in place. Never send a "v2" or "final" file name.
 5. **Schedule rows.**
-   - A post scheduled for the first time gets its rows in a new Sheet `02<next letter> Schedule and captions (<ids>)`, with the same 16 columns as `02`. The next letter is `e`.
+   - A post scheduled for the first time gets its rows in a new Sheet `02<next letter> Schedule and captions (<ids>)`, with the same 16 columns as `02`. Sprint 120's posts all go in `02e` (created 10 Nov); the next new Sheet is `02f`.
+   - A post whose song is added in the platform has a silent reel and a `notes` field starting `SONG`, naming the title, artist and start point. Codex adds the song in the browser (README, section 3).
    - The connectors cannot edit Sheets they did not create, so one batch gets one Sheet, and never one per post.
    - Rows for a post not yet locked say `awaiting Krish's lock: do not post` in `notes`.
    - The live README lists every `02…` Sheet. Update it in the same step.

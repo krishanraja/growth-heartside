@@ -3,6 +3,13 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-10: publishing for Sprint 120. Krish: "All right get everything ready for publish. For things that need songs you're going to still create the assets and create a handover for Codex to do this in the browser, directly in the platform. I approve the rest."
+  - F28, the dog 80s dance, is filed in 03b `Posts/F28/` through the library lane (both files read back at the manifest's byte sizes) and scheduled in `02e` for 12 Nov: TikTok 8:00, Instagram 8:05, Facebook 8:10 ET. Its song is in `notes`, and `approved` is left for Krish.
+  - The new README for Codex tells it to add each song in the browser, in TikTok Studio and Meta Business Suite, never through Buffer, and to stop with "song unavailable" rather than substitute a song.
+  - "The rest" covers batch one's songs as listed, the first $3,000 paid tranche on 15 Nov on posts that beat 3 times the median, and the North Star recalibration. The recommendation that the engine mark `approved = yes` itself after Krish's daily page was not applied: a safety check refused the rule change, and the first 02e Sheet and README that carried it are superseded. Who marks approval stays Krish's call, to make explicitly.
+  - Ruling (Krish, 2026-11-10): songs are added by Codex in the browser, directly in each platform; the assets are silent, with the song named in the row.
+  - Ruling (Krish, 2026-11-10): the first $3,000 of paid boosts on 15 Nov, only on posts that beat 3 times the sprint median.
+
 - 2026-11-10: Sprint 120 planned and the factory equipped for it. Krish: "Our mission is to produce 20 signature Heartside organic posts, and 100 viral posts that generate 500000 views between them in the next 10 days. First ensure the repository is equipped for this - all asset production will go through your Codex lane, and you have full permission to use Higgsfield and Runway credits as many as needed for final generation", then "Photorealistic AI dogs doing things a viewer cant quite tell is real or not - anything is on the cards, I want absolute Creative Genius but the proven formulas to inform".
   - The plan is `docs/plans/2026-11-10-sprint-120.md`, proposed and waiting for his yes. The ledger is `factory/sprints/2026-11-S120.json`, checked by `factory/sprint.py`.
   - The playbook's 26 franchises are graded in `factory/bank/franchises.json`. Ten that need realistic generated motion come back as grade R on his go. Three stay excluded because they would pass fiction off as a real animal's record.
