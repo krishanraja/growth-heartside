@@ -522,13 +522,16 @@
    "date": "2026-11-10",
    "made": "F38 '4 AM routine' (real-dog remake): labels placed shot by shot, some low enough to fall under Instagram's caption and buttons",
    "words": [
-    "just realized that some of the captions (eg\"stakeholder alignment\") in f38 go beneath what is visible in instagram, can you make sure all captions go where the \"4:00 AM - rise\" caption is and redo this? note this feedback for all captions, dont have them moving about all the time and out of visible boundaries"
+    "just realized that some of the captions (eg\"stakeholder alignment\") in f38 go beneath what is visible in instagram, can you make sure all captions go where the \"4:00 AM - rise\" caption is and redo this? note this feedback for all captions, dont have them moving about all the time and out of visible boundaries",
+    "Still not really suitable for TikTok. (10 Nov, with a TikTok screenshot: the 5:31 AM label under the username, caption and a text sticker)",
+    "EnSure all captions fit these new rules."
    ],
    "category": "presentation",
-   "rule": "Every on-screen label in a reel sits in one fixed position for the whole reel: the position of F38's '4:00 AM · rise' label (centered, top of the text at y 1450 on a 1080x1920 frame) or higher, never lower, and never moved shot to shot. No label may sit where a platform's caption or buttons cover it.",
-   "check": "code: every label in a timeline has the same anchor, with its top at or above y 1450; review: the contact sheet shows every label in the same place",
+   "rule": "Every on-screen label, caption or chat in a reel sits inside the band y 250 to 1250 of a 1080x1920 frame, clear of TikTok's and Instagram's top bar and their username, caption and sticker area. Labels sit in one fixed place for the whole reel: centered, the top of the text at y 300 (the top band), one font and size. Never move a label shot by shot; recrop instead. Chats end at y 1250 (factory/ui_layout.py CHAT_FLOOR).",
+   "check": "code: every label anchor is the same, with its text between y 250 and 1250; chat blocks end at CHAT_FLOOR 1250. review: a contact sheet with lines at 250 and 1250 shows every frame's text inside them",
    "applies_to": [
-    "reel"
+    "reel",
+    "still"
    ]
   },
   {
