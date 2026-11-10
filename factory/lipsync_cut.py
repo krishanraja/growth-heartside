@@ -44,6 +44,11 @@ for n, s in enumerate(tl['shots']):
     if pre and t < pre['until']: items.append((pre['text'], pre.get('y', 300), pre.get('size', 66)))
     png = text_png(f'{tmp}/t{n}.png', items); out = f'{tmp}/s{n:02d}.mp4'
     sp = s.get('speed', 1.0); pts = f",setpts=PTS/{sp}" if sp != 1.0 else ''
+    z = s.get('zoom', 1.0)   # punch-in: crop 1/z of the frame around (cx, cy) and scale back up
+    if z != 1.0:
+        cx, cy = s.get('cx', 0.5), s.get('cy', 0.35)
+        pts += (f",crop={W}/{z}:{H}/{z}:min(max({W}*{cx}-{W}/{z}/2\\,0)\\,{W}-{W}/{z})"
+                f":min(max({H}*{cy}-{H}/{z}/2\\,0)\\,{H}-{H}/{z}),scale={W}:{H}")
     vf = f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}{pts},fps={FPS},setsar=1[v];[v][1:v]overlay=0:0[o]"
     if pre and t < pre['until'] < t + s['dur']:   # premise ends inside this shot: split the overlay in time
         png2 = text_png(f'{tmp}/u{n}.png', items[:1] if s.get('caption') else [])

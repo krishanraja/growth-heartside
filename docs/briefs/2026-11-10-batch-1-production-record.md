@@ -74,3 +74,34 @@ earlier placeholders (the manifest still says bulldog, frenchie, shepherd, husky
 
 Higgsfield 552.75 credits, booked and settled in Control Center in three reservations (stills 59.50, motion 474.25,
 S12 ending 19.00). Runway 0. Higgsfield balance after: 1,474.6.
+
+## Second pass: Krish asked for all seven at 9 (10 Nov)
+
+Krish, 10 Nov: "get all of them to 9". Each film was rebuilt once by a parallel producer working from one shared
+brief: a dog reaction close-up after every sung line, escalating gags and a physical ending (the chair roll-out on
+9 to 5, the duvet burrito on Monday morning, the slide off the bench on gym era, the abandoned pile crashing on
+Black Friday, the laundry tower toppling on Sunday reset, the boss chair rolling away on first day, and the gift
+opening before the real mug on S12). Independent Sonnet judges then scored two frames per shot.
+
+| Film | First cut | v2 |
+|---|---|---|
+| S12 | 7 | 8 |
+| HAL-02 | 8 | 8 (and 8 again re-cut at one shot a second) |
+| HAL-03 | 8 | 8 |
+| HAL-04 | 6 | 8 |
+| HAL-05 | 8 | 8 |
+| HAL-06 | 7 | 8 |
+| HAL-07 | 7 | 8 |
+
+Every judge gave the same reason: the staging is faithful, but most beats are "a plain dog doing the lyric" and only
+one or two per film land as a laugh. Pace alone did not help (the one-shot-a-second HAL-02 re-cut stayed at 8). A 9
+needs each line rewritten so its staging produces a surprising visual consequence: about 40 new clips with retakes,
+roughly 450 to 700 credits, against about 750 left in the Higgsfield share until 23 Nov that must also cover the
+other 113 sprint posts. That trade is Krish's, and his own yes or no on the v2 cuts would be the panel's first check
+against him (`panel.py agreement` has no data yet).
+
+Second pass spend: 462.5 Higgsfield credits, booked and settled. Session total: 1,015.25. Two producers were stopped
+by an output filter while writing out song lyrics. Their films were finished by the session, with captions copied
+from the old timelines by script. Producers should never type lyric text.
+
+`factory/lipsync_cut.py` gained `zoom`, `cx` and `cy` per shot (a punch-in crop).
