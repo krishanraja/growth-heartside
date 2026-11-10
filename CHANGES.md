@@ -3,6 +3,10 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-10: publishing hold. Krish: "Make Sure nothing actually gets published yet."
+  - Checked: Buffer has nothing scheduled, sending or awaiting approval on the Heartside channels. No row in 02, 02c, 02d or the live 02e is marked approved and unposted. The superseded 02e is locked read-only. The production session was told to build and file only: no posting, no approved = yes, no messages to the publishing desk, no boosts.
+  - Ruling (Krish, 2026-11-10): nothing is published until Krish lifts the hold.
+
 - 2026-11-10: publishing for Sprint 120. Krish: "All right get everything ready for publish. For things that need songs you're going to still create the assets and create a handover for Codex to do this in the browser, directly in the platform. I approve the rest."
   - F28, the dog 80s dance, is filed in 03b `Posts/F28/` through the library lane (both files read back at the manifest's byte sizes) and scheduled in `02e` for 12 Nov: TikTok 8:00, Instagram 8:05, Facebook 8:10 ET. Its song is in `notes`, and `approved` is left for Krish.
   - The new README for Codex tells it to add each song in the browser, in TikTok Studio and Meta Business Suite, never through Buffer, and to stop with "song unavailable" rather than substitute a song.
