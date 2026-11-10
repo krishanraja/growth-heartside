@@ -29,8 +29,14 @@ MAX_LINES = 3
 def wrap(draw, text, font, width):
     """The fewest lines that fit, split as evenly as possible; never one word alone on the last line.
 
-    Raises if the line needs more than MAX_LINES: rewrite it, never shrink it.
+    Raises if the line needs more than MAX_LINES: rewrite it, never shrink it. A newline in the text is a
+    deliberate break (a two-speaker meme: "Me: ..." then "Him: ..."): each part wraps on its own.
     """
+    if '\n' in text:
+        out = [l for part in text.split('\n') if part.strip() for l in wrap(draw, part, font, width)]
+        if len(out) > MAX_LINES:
+            raise ValueError(f'line does not fit {MAX_LINES} readable lines; rewrite it, do not shrink it: {text!r}')
+        return out
     words = text.split()
     w = lambda ws: draw.textlength(' '.join(ws), font=font)
     for n in range(1, MAX_LINES + 1):
