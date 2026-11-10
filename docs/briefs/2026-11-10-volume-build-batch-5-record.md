@@ -18,3 +18,9 @@ visibly in on it and lifted it to 9 and 9. A prop from the scene of the crime wo
 one key per meme in every brief.
 
 **Spend:** 1.50 Higgsfield credits (6 stills), booked and settled. Session total 145.50; balance 1,184.1.
+
+**Id collision (10 Nov):** the parallel group-chat session also filed an "F33" with a "02j" Sheet within a minute.
+This snowman keeps F33 and 02j; that session renumbered to F34 and 02k, and two of its files
+(`heartside_F33_face-blanket-roast_reel.mp4` and `_cover.jpg`) reached `Posts/F33/` first. They are not named by
+any 02j row; that session flagged them to Krish for removal, and this session leaves them untouched. The next
+volume-build id is F35 with 02l. Pull the branch and read the Drive map before choosing an id.
