@@ -1,4 +1,4 @@
-# Volume build, batches 9 and 10: none filed (10 Nov)
+# Volume build, batches 9 to 13: none filed (10 Nov)
 
 Brief: `docs/briefs/2026-11-10-volume-build.md`. Hold in force: "Make Sure nothing actually gets published yet." Nothing
 was posted, scheduled live or marked approved. Board verdicts read before each batch: none yet.
@@ -27,6 +27,32 @@ was posted, scheduled live or marked approved. Board verdicts read before each b
 | Wreath collar (pug) | not judged | | dropped by the producer: reads as a person dressed the dog |
 | Stocking hat (collie) | not judged | | dropped by the producer: reads as a Santa hat |
 
+## Batch 11: remakes and the gift bow, none at 9
+
+| Post | Tier 2 reads | Tier 1 | Result |
+|---|---|---|---|
+| Rolls remake (a roll in the mouth, crumbs, eye-roll) | 8, 8 | pass | held: the basket hat reads as an added prop |
+| Gift bow and gift tag (Jack Russell, torn wrapping) | 8, 8 | pass | held: a familiar Christmas dog meme |
+| Fallen tree remake (golden, eyes open, side look) | 8, 7 | pass | retired: the side look reads human and the tree reads vague |
+| Laundry remake (Aussie in the folded laundry, a sock) | 7, 6 | pass | retired: soft face, no chaos |
+
+## Batch 12: whole-body evidence, none at 9
+
+| Post | Tier 2 reads | Tier 1 | Result |
+|---|---|---|---|
+| Gold glitter lab | 8, 8 | pass | held: glitter reads painted |
+| Corgi wrapped like a present | 8, 8 | pass | held: human smile, the paper sits like a coat |
+| Bichon grey with vacuum dust, dust bunny on its head | 8, 7 | pass | the best consequence of the run; taken to motion in batch 14 |
+| Dachshund in a gift bag | 7, 7 | pass | retired: cute, not funny |
+| Leaf-covered bernedoodle, silver glitter husky | not judged | | dropped by the producer: costume look, and a repeat of the glitter idea |
+
+## Batch 13: the same pictures with ironic lines, none at 9
+
+The filed posts carry a wry line ("Your package arrived in perfect condition.") where batches 9 to 12 carried a flat
+denial, so the four best pictures went back with new lines at no credit cost: "He made you a card." 7, 8; "Your
+present is ready." 7, 7; "He emptied the vacuum for you." 8, 8; "He saved you one." 8, 7. The line alone moved
+nothing: the judges score the picture.
+
 ## Lessons (observations, not Krish's rulings)
 
 1. **Remakes of a familiar prop stall at 8.** Pot, slipper and lampshade each had three pictures and never passed.
@@ -37,6 +63,10 @@ was posted, scheduled live or marked approved. Board verdicts read before each b
    Aussie's eye-rolls as the best expressions of the batch.
 4. **The evidence must be visible, not implied.** "Nobody touched the rolls" with no roll in shot needs a second look.
 5. **Two basket helmets in one batch cost both of them novelty.** One device per batch.
+6. **Judges read a sheet together, so a repeated line template costs every post that uses it.** Vary the line shape
+   within a sheet.
+7. **Five batches plateaued at 8.** Stills now score on photographic realism and on a surprising consequence; a
+   consequence that happens (a dust cloud shaken off) may need motion, which batch 14 tests.
 
 ## Spend
 
