@@ -29,3 +29,9 @@ looked pasted on, it ended on a hold, and it carried lyric captions (now banned)
 8. The hands type fast; the dog's head snaps to a squirrel outside the window.
 9. The dog's chin sinks onto the keyboard, eyes closing.
 10. The dog is asleep on the keyboard; the hands keep typing on their own, then give a thumbs-up to camera.
+
+## Result (10 Nov)
+
+20 s silent cut, with no on-screen text. The premise line was tried twice and removed: at both heights it touched the main action, and the song states the premise anyway. It was built from 14 stills and 11 Kling 3.0 pro clips. Two still retakes and one clip retake failed (location, ears, refusal never reading), and the refusal is a still with a push-in. Spend: 99.75 Higgsfield credits.
+
+Tier 2 judge: **6, held.** Valid points: the coffee refusal does not read as a refusal; the squirrel and the wave are flat; the middle never escalates. Best beat: asleep on the keyboard while the hands keep typing and give a thumbs-up. One point is a judge error: it asked for a product ending, which only signature posts carry. The tier 2 brief now has to compare viral posts with viral tens only.

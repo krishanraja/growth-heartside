@@ -52,6 +52,11 @@
    "id": "no-lyrics",
    "floor": "no-lyric-captions",
    "ask": "No on-screen text repeats a song lyric in any frame. A single opening premise line is allowed."
+  },
+  {
+   "id": "subtraction",
+   "floor": "no-lyric-captions",
+   "ask": "List every element on screen that is not the dog, its hands or the gag (text, overlays, props that do nothing). Answer yes only if each one earns its place; name any that does not."
   }
  ],
  "tier2_rubric": "Score 1 to 10 against the tens above in the same format. 10: it would beat the matching ten. 9: as good as it. 7 to 8: competent but forgettable. 6 or below: a floor anchor would apply. Name the ten you compared against, the single strongest beat with its frame, and, if below 9, the floor quote Krish would most likely say. Only 9 and above reach Krish."
