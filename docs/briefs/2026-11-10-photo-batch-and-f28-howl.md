@@ -75,3 +75,9 @@ P2 is made. Round 3 takes the judge's change for each of the rest:
 - P11: "He is hiding from the vacuum. It is not plugged in." The plug and cord are in view; the tail is tucked and still.
 - P12: "Black Friday haul. Everything was free. Most of it was yours."
 - F28-howl: he walks out of frame the moment his falsetto ends, and the song plays on to an empty rug. Line: "He does not do the outro."
+
+## Round 3 scores: P1, P3, P4, P5, P6, P7, P11, F28-howl 8; P9, P10, P12 7. P2 image: 7 (left) and 6 (right)
+
+Three rounds have stalled at 8: each pass fixes one note, and the next judge finds another. So the scripts at 8 and the
+P2 photo go to Krish's board as his call (`script-P1` to `script-P11`, `script-F28-howl`, `post-P2-cat-restructure`).
+P9, P10 and P12 are dropped at 7. Spend so far: 0.5 Higgsfield (P2).
