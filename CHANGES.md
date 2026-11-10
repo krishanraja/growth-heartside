@@ -538,3 +538,11 @@ Ruling (Krish, 2026-11-10): "JUST DO IT NOW". After Control Center refused a 450
 share (15 left), the engine spent 450 Runway credits directly on the account: 18 Gen-4 Turbo clips (F38 2, F39 10,
 F41 6). The account is now at 5. F45's motion (about 150) waits for credits. The Control Center share needs Krish to
 reconcile it.
+
+## 2026-11-10: Instagram and Facebook songs are posted from Krish's phone
+
+Codex reported "Audio editor unavailable" (Instagram) and "Exact recording not found" (Facebook) in Meta Business
+Suite: Meta's music catalogue is only in the phone apps, so a browser cannot add these songs. README v5.1 had wrongly
+sent Codex there. Asked how the Instagram and Facebook song reels should get their music, Krish chose: "I add songs on
+my phone". README v5.2: Codex schedules TikTok song rows in TikTok Studio and every NO SONG row; Instagram and Facebook
+song rows (24) are Krish's, listed in Drive Sheet "04 Phone posts (Instagram and Facebook songs)".

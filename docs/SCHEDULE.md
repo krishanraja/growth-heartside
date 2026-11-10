@@ -16,7 +16,7 @@ manually add music to and ensure syncs, direct in the platform". Everything Code
 
 - **Sheet `02r Schedule and captions (Sprint 120, all)`** (`17YDMiuC-RqdZt-22R3yK5U81_RlBd8ZhZSJ9GQ01vPk`): 57 rows, 19
   posts, 11 to 17 Nov plus F42 on 27 Nov. Read back cell by cell: 928 of 928 match. 02q is renamed superseded.
-- **`00 README for Codex`** v5.1 (`1MntGhyNnKzkDfJY6aUiXd9_jD5DwOaD3Vqeh2LteRLU`): post only 02r rows marked
+- **`00 README for Codex`** v5.2 (`1zlk9mTZIOT34XizHC6xAHKcxXrv1HoRZUIjgnfw86S0`): post only 02r rows marked
   `approved = yes`. It has a per-post song table (TRACK, START, VOLUME, SYNC, LENGTH), the click path in TikTok Studio
   and Meta Business Suite, a sync check to play through before scheduling, the evening-before song check, and the
   stop rule (never substitute a sound, never post without it). It also says never to use Buffer for song rows and
@@ -32,10 +32,17 @@ manually add music to and ensure syncs, direct in the platform". Everything Code
 **The one step left is Krish's:** type `yes` in the `approved` column of 02r for the rows to post. The engine is not
 allowed to mark it.
 
+**Instagram and Facebook song reels are Krish's, from his phone** (Krish, 10 Nov: "I add songs on my phone"):
+Meta's music catalogue exists only in the phone apps, and Meta Business Suite on the web cannot add these songs. The 24
+such posts are listed in Drive Sheet `04 Phone posts (Instagram and Facebook songs)`. Each line has the reel and cover
+links, the caption, the song settings and the app steps. README v5.2 has Codex remind Krish each morning, then record
+the live post.
+
 **The next session (Codex), per day:**
 1. The evening before: run the song check in README 3a, and add the "Song check" tab.
-2. For each approved row: song rows go direct in TikTok Studio or Meta Business Suite, with the sync check before
-   scheduling. Photo rows (NO SONG) may go through either.
+2. For each approved row: TikTok song rows go in TikTok Studio, with the sync check before scheduling. NO SONG rows
+   go in Meta Business Suite or TikTok as usual. Instagram and Facebook song rows: remind Krish (sheet 04), then
+   record the live post.
 3. After each post: write status and live_url, and confirm the sound label on the live post.
 
 ## The schedule (Eastern time), as in 02r
