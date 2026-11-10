@@ -34,6 +34,8 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │   ├── 02h Schedule and captions (F31) (Sheet)  1J_uO5ieKRhWHyoFLhx-6VFGRI9iBy7YofDwXGiL7TG0   F31, 12 Dec; approved left for Krish (volume build batch 3)
 │   ├── 02i Schedule and captions (F32) (Sheet)  1NM4lc6Apu_IT0bgnKDEx-w4zy8uxOFy4fOcK_Fi_USs   F32, 28 Nov; approved left for Krish (volume build batch 4)
 │   ├── 02j Schedule and captions (F33) (Sheet)  1x6z9q3ZhaWCRVoodNK33nttB2PVgriY-v0HoL7ZvDfc   F33, 19 Dec; approved left for Krish (volume build batch 5)
+│   ├── 02j Schedule and captions (F33, chat) (superseded 2026-11-10, a duplicate 02j filed in a race; never post from it) (Sheet)  1MbsZitBhRcojVMBlfK_M3ZKVMXLQSSA9NQwAowHEefg   kept until Krish removes it
+│   ├── 02k Schedule and captions (F34) (Sheet)  1OJ3UAqFauKibM3mQU3qzpm985-PUNB0oQI2_EUKbQPk   F34, 13 Nov; approved left for Krish (the dog group chat, Krish 9)
 │   ├── Heartside | 4–8 November 2026 | Weekly placement review (Sheet)  1Dnm141WQVQKi9S3iyMP99bu4rcKcM-Gii_GHfCzxmYo   the publishing desk's week board; moved here 9 Nov from "Inbox from My AI"
 │   └── Posts/                                               1boYZjB7ma-1YIcKzSl51usdYuNk6faHO
 │       ├── F01/ … F07/, F10/ … F13/, F06-frenchie/, F06-dachshund/, F06-lab/   locked 3 Nov (F13 1poEUrkd3Cd5t4ah7JjnrNMfvY2WyB71e)
@@ -44,7 +46,8 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │       ├── F30/                                                                 filed 10 Nov: the pumpkin pie meme (volume build batch 2)
 │       ├── F31/                                                                 filed 10 Nov: the gingerbread corgi meme (volume build batch 3)
 │       ├── F32/                                                                 filed 10 Nov: the flour ghost lab meme (volume build batch 4)
-│       ├── F33/                                                                 filed 10 Nov: the snowman lab meme (volume build batch 5)
+│       ├── F33/                                                                 filed 10 Nov: the snowman lab meme (volume build batch 5). Also holds two stray files from a numbering race, heartside_F33_face-blanket-roast_reel.mp4 and _cover.jpg; no row names them, and they stay until Krish removes them
+│       ├── F34/                                                                 filed 10 Nov: the face-blanket roast, the dog group chat (Krish 9, structure locked)
 │       │   └── heartside_<id>_<slug>_<kind>.<ext>                               the post's media, nothing else
 ├── 04_Decks/                                                1oqA94p1gx-Yxo8xO7WJ_8ZMz-Oi6Qu5P   Krish's. Read only.
 ├── 09_OLD - Historical-and-Source/                          1BJkmC3-Hk6WkSl0MeQjgoWRtEcAvpmiB   Krish's. Read only. Superseded identity, Biscuit, ornament, old scenes. Never reused as current.
@@ -102,7 +105,7 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
 ## The rules for a new post in 03b
 
 1. **Post id.**
-   - A new concept takes the next free number. F33 is the highest filed today (10 Nov), so the next is `F34`. Check `Posts/` and `factory/specs` before choosing. Never reuse a number, even for a retired concept.
+   - A new concept takes the next free number. F34 is the highest filed today (10 Nov), so the next is `F35`. Check `Posts/` and `factory/specs` before choosing. Never reuse a number, even for a retired concept.
    - A variant of a locked concept is `<id>-<breed>`, for example `F06-frenchie`. Ids match `[A-Z][0-9]{2,3}(-[a-z0-9]+)*`, and the lane refuses anything else.
 2. **File names** are `heartside_<id>_<slug>_<kind>.<ext>`:
    - `<slug>` is lowercase words joined by hyphens, the same for every file of the post.
@@ -116,7 +119,7 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
 3. **Media.** Add the locked files to the library folder and to its `manifest.json` (post, file, bytes, sha256). Then run `send_library.py`. The home computer files them within about 20 minutes. Check `03b_Social-Schedule/Posts/<post id>/` afterwards (by folder ID `1boYZjB7ma-1YIcKzSl51usdYuNk6faHO`): if a new `05_Social-Library` folder appeared instead, the lane is still writing by the old name, so stop and tell Krish.
 4. **A changed version** keeps its name and is sent again. The home computer replaces its own earlier copy in place. Never send a "v2" or "final" file name.
 5. **Schedule rows.**
-   - A post scheduled for the first time gets its rows in a new Sheet `02<next letter> Schedule and captions (<ids>)`, with the same 16 columns as `02`. The connectors cannot add rows to a Sheet once it exists, so each filed batch gets its own Sheet (`02e` F28, `02f` F29, `02g` F30, `02h` F31, `02i` F32, `02j` F33); the next is `02k`. The live README treats every non-superseded `02…` Schedule Sheet as postable, so a new Sheet needs no README change.
+   - A post scheduled for the first time gets its rows in a new Sheet `02<next letter> Schedule and captions (<ids>)`, with the same 16 columns as `02`. The connectors cannot add rows to a Sheet once it exists, so each filed batch gets its own Sheet (`02e` F28, `02f` F29, `02g` F30, `02h` F31, `02i` F32, `02j` F33, `02k` F34); the next is `02l`. The live README treats every non-superseded `02…` Schedule Sheet as postable, so a new Sheet needs no README change.
    - A post whose song is added in the platform has a silent reel and a `notes` field starting `SONG`, naming the title, artist and start point. Codex adds the song in the browser (README, section 3).
    - The connectors cannot edit Sheets they did not create, so one batch gets one Sheet, and never one per post.
    - Rows for a post not yet locked say `awaiting Krish's lock: do not post` in `notes`.

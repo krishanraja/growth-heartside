@@ -1,5 +1,5 @@
 {
- "id": "P04",
+ "id": "F34",
  "template": "chat",
  "title": "P04.title",
  "cast": {
@@ -161,5 +161,6 @@
  },
  "open_with": 5,
  "note": "Sample, 10 Nov. Lads banter (Krish, 10 Nov): the shepherd put his own face on Mom's gift and the lads roast him for it. Builds like WhatsApp; only message sounds; music added in the platform (SONG).",
- "ui_profile": "social-ui-2026-11-06-v1"
+ "ui_profile": "social-ui-2026-11-06-v1",
+ "title_note": "storyboard P04 \"Code red: the delivery van\", rebuilt as the face-blanket roast"
 }

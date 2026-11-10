@@ -3,6 +3,12 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-10: the dog group chat product post, F34. Krish: "It should feel like a bunch of lads bantering, being hilarious, roasting each other, being best friends, and knowing each other inside out, but talking in dog language as dog personalities. I think it's kind of stupid to have a barking noise in it. I think that messages should build like a WhatsApp message would build." Then: "7, make it more hilarious, drop a "bro" in there, some emojis, mis spellings." Then: "9, file it and lock the structure".
+  - `factory/floor.json`: `chat-lads-banter`, `no-novelty-sfx`, `chat-builds-like-whatsapp`. Code enforces the last two: the social-ui chat fills the screen and scrolls, and `lock.py check` refuses any chat sound but the message pop and key click.
+  - F34 is locked (`factory/locks/F34.json`) and filed in 03b `Posts/F34/` with `02k` for 13 Nov; `approved` is left for Krish. Its structure, and how to make a variant, is in `docs/briefs/2026-11-10-F34-chat-structure.md`. It is the tier 2 anchor for chat posts, and the panel runs about a point below Krish on them.
+  - Ruling (Krish, 2026-11-10): F34's chat structure is locked; chat variants change only cast, lines by role and renders.
+  - Numbering race: the volume build filed F33 (the snowman meme) and its 02j about 30 seconds before this post was filed under the same id. This post became F34 in 02k (concept C134). The duplicate 02j is renamed superseded and set read-only. Two stray files (`heartside_F33_face-blanket-roast_*`) sit in `Posts/F33/`, where no row names them; removing them needs Krish's yes.
+
 - 2026-11-10: no lyric captions. Krish: "I don't think we ever need subtitles for videos for song lyrics."
   - `factory/floor.json` `no-lyric-captions`; the judges' tier 1 asks it (`factory/bank/anchors.json`); `factory/lipsync_cut.py` refuses a shot caption; the lip-sync franchise, batch brief and plan say so. A premise line is the only text a lip-sync may carry.
   - Ruling (Krish, 2026-11-10): no song-lyric subtitles on any video.

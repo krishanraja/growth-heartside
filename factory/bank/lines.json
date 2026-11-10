@@ -1580,8 +1580,9 @@
    "breeds": [
     "any"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "81c766df45d9cdf864fc6014abad04075c715f816153562820ed323146a97db3"
   },
   {
    "id": "P04.c01",
@@ -2311,8 +2312,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "cdde0b08f0e9fc5f8d6ec6d61a1e7967b03259ceab0efb1c04825ded759b4718"
   },
   {
    "id": "P04.s02",
@@ -2322,8 +2324,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "74c73b87d6293a99c3a487bf89b2bc24357af7fc8e867d1f963e5bf7af7f5d4c"
   },
   {
    "id": "P04.s03",
@@ -2333,8 +2336,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "a529f42427af117bd44cd7ca2abbc7d00d891e7b1a69ab5a9f8cc58f328d73aa"
   },
   {
    "id": "P04.s04",
@@ -2344,8 +2348,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "460798306ffdf3feb4a9c86241855687f8eeeb671c404561cd056f1d1b7025f9"
   },
   {
    "id": "P04.s05",
@@ -2355,8 +2360,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "e3cc9b0a2903a24ba91ca5e98b11eedd25fc38d367b40b5bfeecddf036b9fb75"
   },
   {
    "id": "P04.s06",
@@ -2366,8 +2372,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "e6ee5aa60a9670b2dc3ff9e167789d20766e96f7d98efef13aebdc01c3ec1004"
   },
   {
    "id": "P04.s07",
@@ -2377,8 +2384,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "f6189bb973b19c1cdb9b21a5da5a09472e5074bbca147aead01ed97a7afb70df"
   },
   {
    "id": "P04.s08",
@@ -2388,8 +2396,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "3c39744e20b0293339c980eadecccbf97671e3d4783c1cc845542ceeaaa692b4"
   },
   {
    "id": "P04.s09",
@@ -2399,8 +2408,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "d1f51086b1f635992011ba3df624f8da603eb05c20f644e73d391c08f6e949df"
   },
   {
    "id": "P04.s10",
@@ -2410,8 +2420,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "b1bd174b3a9e3f2f8374a179fe2aed34218e344145256b3350f831aed7b16c41"
   },
   {
    "id": "P04.s11",
@@ -2421,8 +2432,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "fb0bd97e3573f1727f1b36df3a07ed2b75d0fe21a1580658bc00d34e34736855"
   },
   {
    "id": "P04.s12",
@@ -2432,8 +2444,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "d5855a80b8325168e7e524c01b56005de0bcf26f0c1261ff87caa721fe2bd960"
   },
   {
    "id": "P04.s13",
@@ -2455,8 +2468,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "1b8af8178d12657bddab079d8aee7be3086a7e6bfb31c7d0c3fe2d92c49325b0"
   },
   {
    "id": "P04.s15",
@@ -2466,8 +2480,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "7272dd7e304ae5c78cf78bd81d4ad0cb75c0d32d7c02087545c47bb81e929fcc"
   },
   {
    "id": "P04.s16",
@@ -2477,8 +2492,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "373cef090cb5d3bcf4756b23348fb07099e7936b3df68986960a05075debc5d7"
   },
   {
    "id": "P04.s17",
@@ -2500,8 +2516,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "bfdd63318b84b82c6ff76c07c1d3c6827d28a647504fbdbbcf89a40d81d37604"
   },
   {
    "id": "P04.s19",
@@ -2511,8 +2528,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "85462dc166baf80e521141df8ff710fd64ab988825953e74ab0f9a85d3d0019e"
   },
   {
    "id": "P04.s20",
@@ -2570,8 +2588,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "0a0c77231524cd71c1be31cb11471f20b708cb18161b35678ffb1a3f6958d46d"
   },
   {
    "id": "P04.s25",
@@ -2605,8 +2624,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v11: tier 2 scored v10 an 8; its fixes for the middle, the doodle gift, the remote payoff and the bro count)"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "ee3b459c6a14f95a22d8076c40900a9d8c50f06c067df06fc7c74a48749d0e0d"
   },
   {
    "id": "P04.t02",
@@ -2616,8 +2636,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v11: tier 2 scored v10 an 8; its fixes for the middle, the doodle gift, the remote payoff and the bro count)"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "6adc55f3becfaf1bf7256e1b09198a32006199f526cb5e4981d50bb255889d65"
   },
   {
    "id": "P04.t03",
@@ -2627,8 +2648,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v11: tier 2 scored v10 an 8; its fixes for the middle, the doodle gift, the remote payoff and the bro count)"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "d70e3a63df2db247e3f6b2afa5fa38ee26c7deba581d3daec5baea4ac3c24461"
   },
   {
    "id": "P04.t04",
@@ -2638,8 +2660,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v11: tier 2 scored v10 an 8; its fixes for the middle, the doodle gift, the remote payoff and the bro count)"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "940c9f33723e5e6b247748dd80dbdc50cfdff742223a2c2de3bd9ede72118428"
   },
   {
    "id": "P04.t05",
@@ -2661,8 +2684,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v11: tier 2 scored v10 an 8; its fixes for the middle, the doodle gift, the remote payoff and the bro count)"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "af90cffcf9b55fa0dfa51014aeff0f45958ae0715a2221f17b001d5a8a125079"
   },
   {
    "id": "P04.u01",
@@ -2672,8 +2696,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v12: tier 2 on v11, the tail is sentiment, not roast)"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "bb814547936cf63a162bb3315d1e6d0eb80ca5a78755624dd38c46c00d1de3f1"
   },
   {
    "id": "P04.u02",
@@ -2683,8 +2708,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v12: tier 2 on v11, the tail is sentiment, not roast)"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "855a7f70f9a17e9d519797eca4a220c646422a9a6f5698b79cee1dc9585460ef"
   }
  ]
 }

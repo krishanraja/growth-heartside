@@ -340,7 +340,11 @@ def brief(spec):
     t = spec['template']
     if t == 'chat':
         out.append('Cast: ' + ', '.join(f'{k} is a {v}' for k, v in spec['cast'].items()))
-        out += [f"- {spec['cast'][m['who']]}: {resolve(m['line'], spec) if 'line' in m else '[shares a link to ' + m['render'] + ']'}" for m in spec['messages']]
+        def said(m):
+            if 'line' in m: return resolve(m['line'], spec)
+            if 'render' in m: return '[shares a link to ' + m['render'] + ']'
+            return '[sends a photo: ' + m['photo'] + ']'
+        out += [f"- {spec['cast'][m['who']]}: {said(m)}" for m in spec['messages']]
     elif t == 'search':
         out.append(f"The searcher is a {spec['breed']}.")
         out += [f"- searches: {resolve(q['line'], spec)}" + (f" / result: {resolve(q['result'], spec)}" if q.get('result') else '') for q in spec['queries']]
