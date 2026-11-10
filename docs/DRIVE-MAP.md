@@ -38,6 +38,7 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │   ├── 02k Schedule and captions (F34) (Sheet)  1OJ3UAqFauKibM3mQU3qzpm985-PUNB0oQI2_EUKbQPk   F34, 13 Nov; approved left for Krish (the dog group chat, Krish 9)
 │   ├── 02l Schedule and captions (F35 F36) (Sheet)  1TuVs0eDwKLvtlOjTs6F73oRJPLu2b2Fttg313hlPAqw   F35 2 Dec, F36 30 Nov; approved left for Krish (volume build batch 7)
 │   ├── 02m Schedule and captions (F37) (Sheet)  1Udtv9BC2unBdWZX3mTuTVPryOfmAfTELh-0reghi7oA   F37, 24 Nov; approved left for Krish (volume build batch 8)
+│   ├── 02n Schedule and captions (F34-golden F34-dachshund F34-doodle) (Sheet)  1IO-LkFPIKpOl0xQfVxwRo855d-GGMj3lDteqc3yQcK0   17 Nov, 26 Nov, 1 Dec; approved left for Krish (F34 chat variants)
 │   ├── Heartside | 4–8 November 2026 | Weekly placement review (Sheet)  1Dnm141WQVQKi9S3iyMP99bu4rcKcM-Gii_GHfCzxmYo   the publishing desk's week board; moved here 9 Nov from "Inbox from My AI"
 │   └── Posts/                                               1boYZjB7ma-1YIcKzSl51usdYuNk6faHO
 │       ├── F01/ … F07/, F10/ … F13/, F06-frenchie/, F06-dachshund/, F06-lab/   locked 3 Nov (F13 1poEUrkd3Cd5t4ah7JjnrNMfvY2WyB71e)
@@ -52,6 +53,7 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │       ├── F34/                                                                 filed 10 Nov: the face-blanket roast, the dog group chat (Krish 9, structure locked)
 │       ├── F35/ F36/                                                            filed 10 Nov: package frenchie and pillowcase collie memes (volume build batch 7)
 │       ├── F37/                                                                 filed 10 Nov: the toilet-roll tube dachshund meme (volume build batch 8)
+│       ├── F34-golden/ F34-dachshund/ F34-doodle/                              filed 10 Nov: chat variants of F34 at its locked fingerprint (Krish approved, 10 Nov)
 │       │   └── heartside_<id>_<slug>_<kind>.<ext>                               the post's media, nothing else
 ├── 04_Decks/                                                1oqA94p1gx-Yxo8xO7WJ_8ZMz-Oi6Qu5P   Krish's. Read only.
 ├── 09_OLD - Historical-and-Source/                          1BJkmC3-Hk6WkSl0MeQjgoWRtEcAvpmiB   Krish's. Read only. Superseded identity, Biscuit, ornament, old scenes. Never reused as current.
@@ -123,7 +125,7 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
 3. **Media.** Add the locked files to the library folder and to its `manifest.json` (post, file, bytes, sha256). Then run `send_library.py`. The home computer files them within about 20 minutes. Check `03b_Social-Schedule/Posts/<post id>/` afterwards (by folder ID `1boYZjB7ma-1YIcKzSl51usdYuNk6faHO`): if a new `05_Social-Library` folder appeared instead, the lane is still writing by the old name, so stop and tell Krish.
 4. **A changed version** keeps its name and is sent again. The home computer replaces its own earlier copy in place. Never send a "v2" or "final" file name.
 5. **Schedule rows.**
-   - A post scheduled for the first time gets its rows in a new Sheet `02<next letter> Schedule and captions (<ids>)`, with the same 16 columns as `02`. The connectors cannot add rows to a Sheet once it exists, so each filed batch gets its own Sheet (`02e` F28, `02f` F29, `02g` F30, `02h` F31, `02i` F32, `02j` F33, `02k` F34, `02l` F35 and F36, `02m` F37); the next is `02n`. The live README treats every non-superseded `02…` Schedule Sheet as postable, so a new Sheet needs no README change.
+   - A post scheduled for the first time gets its rows in a new Sheet `02<next letter> Schedule and captions (<ids>)`, with the same 16 columns as `02`. The connectors cannot add rows to a Sheet once it exists, so each filed batch gets its own Sheet (`02e` F28, `02f` F29, `02g` F30, `02h` F31, `02i` F32, `02j` F33, `02k` F34, `02l` F35 and F36, `02m` F37, `02n` the F34 chat variants); the next is `02o`. The live README treats every non-superseded `02…` Schedule Sheet as postable, so a new Sheet needs no README change.
    - A post whose song is added in the platform has a silent reel and a `notes` field starting `SONG`, naming the title, artist and start point. Codex adds the song in the browser (README, section 3).
    - The connectors cannot edit Sheets they did not create, so one batch gets one Sheet, and never one per post.
    - Rows for a post not yet locked say `awaiting Krish's lock: do not post` in `notes`.

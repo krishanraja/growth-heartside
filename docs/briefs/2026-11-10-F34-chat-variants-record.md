@@ -21,6 +21,16 @@ All three keep F34's fingerprint `dabe3d3b9b180cba`; `lock.py check` reports onl
 `lock.py media` passes. Each is on the review board (`post-F34-<breed>`) with its reel and cover. A Yes approves its
 lines and files it as `F34-<breed>` with its own 02 Sheet; nothing files before that.
 
+## Filed (Krish, 10 Nov: "i approve them all")
+
+The 75 lines are approved in `factory/bank/lines.json` and `lock.py` records `krish-approve` and an independent
+`reviewer-pass` for each post. A first reviewer held F34-golden because the dachshund avatar looked chestnut; it is a
+crop of the store's own dachshund mug render (the F01 exception), and the same check found the golden avatar showed a
+window, not a face: `factory/bank/renders.json` now centres it on the dog (726, 640). After the rebuild, both
+reviewers passed. The release gate's per-platform placement review stays for posting time, as F34's own rows say.
+Files went through the library lane (`Posts/F34-golden/`, `F34-dachshund/`, `F34-doodle/`, reel and cover each) and
+the rows are in `02n` for 17 Nov, 26 Nov and 1 Dec, `approved` blank for Krish.
+
 ## Lessons (observations, not Krish's rulings)
 
 1. **Judges score the closer hardest.** Every read compared the last line with F34's "thats a hostage situation": a
