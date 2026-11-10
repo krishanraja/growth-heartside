@@ -360,6 +360,50 @@
    "applies_to": [
     "reel"
    ]
+  },
+  {
+   "id": "chat-lads-banter",
+   "date": "2026-11-10",
+   "made": "P04 \"Code red: the delivery van\" sample, v6 (10 Nov): a chat post with real bark sound effects, three messages on screen at a time, and plotting lines with no banter",
+   "words": [
+    "It should feel like a bunch of lads bantering, being hilarious, roasting each other, being best friends, and knowing each other inside out, but talking in dog language as dog personalities."
+   ],
+   "category": "joke",
+   "rule": "A dog group chat is best mates bantering: each dog has a fixed personality, they roast each other, call back to shared history and know each other inside out, in dog terms. Every message either roasts, defends or escalates; a line that only moves the plot along fails.",
+   "check": "review: every line in the script is marked roast, defense, callback or escalation; a chat with a plot-only line, or a dog with no personality the others play off, is held",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel"
+   ]
+  },
+  {
+   "id": "no-novelty-sfx",
+   "date": "2026-11-10",
+   "made": "P04 \"Code red: the delivery van\" sample, v6 (10 Nov): a chat post with real bark sound effects, three messages on screen at a time, and plotting lines with no banter",
+   "words": [
+    "I think it's kind of stupid to have a barking noise in it."
+   ],
+   "category": "sound",
+   "rule": "No literal sound effects acting out the joke (barks, woofs, cartoon noises). A chat post carries only the phone's own message sounds; the music is added in the platform.",
+   "check": "code: lock.py check refuses any chat sfx other than the message pop and key click on social-ui specs",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "chat-builds-like-whatsapp",
+   "date": "2026-11-10",
+   "made": "P04 \"Code red: the delivery van\" sample, v6 (10 Nov): a chat post with real bark sound effects, three messages on screen at a time, and plotting lines with no banter",
+   "words": [
+    "I think that messages should build like a WhatsApp message would build. They shouldn't just appear one at a time."
+   ],
+   "category": "presentation",
+   "rule": "A chat fills the screen and builds as a real group chat does: every new message lands under the last and the older ones push up and scroll off the top, never a few bubbles alone on an empty screen.",
+   "check": "code: the chat template keeps every message that fits between the header and the chat floor; a frame after the opening with fewer than four messages on screen fails, unless a photo or link fills the space",
+   "applies_to": [
+    "reel"
+   ]
   }
  ],
  "open_conflicts": [],

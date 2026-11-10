@@ -90,34 +90,39 @@ def join(parts, out):
 def chat(spec, work):
     cast = spec['cast']; slots = list(cast)
     native = _ui_v1(spec)
-    body_font = bold(F('Karla.ttf', 54), 500) if native else BODY
-    text_width_max = 570 if native else 660
+    body_font = bold(F('Karla.ttf', 46), 500) if native else BODY   # WhatsApp-sized text: more of the chat on screen
+    text_width_max = 560 if native else 660
     AV = {k: avatar(mug(b)['file'], tuple(mug(b)['face'])) for k, b in cast.items()}
     TOP, BOTTOM, LEFT = 300, 1760, 60
 
     def bubble(m):
         who = m['who']; d0 = ImageDraw.Draw(Image.new('RGB', (10, 10)))
-        if 'photo' in m:   # a photo the dog sends: no card, just the rounded picture (social-ui profile only)
+        if m.get('dots'):   # "typing…": the dog's bubble with three dots, as WhatsApp shows it (social-ui only)
+            body = Image.new('RGBA', (150, 106), (0, 0, 0, 0)); d = ImageDraw.Draw(body)
+            d.rounded_rectangle((0, 0, 149, 105), 34, fill=TINTS[slots.index(who) % 4] + (255,))
+            for k in range(3):
+                d.ellipse((34 + k * 30, 44, 52 + k * 30, 62), fill=(150, 140, 130))
+        elif 'photo' in m:   # a photo the dog sends: no card, just the rounded picture (social-ui profile only)
             p = Image.open(f"{FR}/{m['photo']}").convert('RGB'); p.thumbnail((400, 400), Image.LANCZOS)   # leaves room for the reply under it
             body = Image.new('RGBA', p.size, (0, 0, 0, 0))
             mask = Image.new('L', p.size, 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, p.width - 1, p.height - 1), 30, fill=255)
             body.paste(p, (0, 0), mask)
         elif 'render' in m:
-            bw, bh = (634, 400) if native else (700, 560)   # native: the link preview and one reply share the screen
+            bw, bh = (634, 600) if native else (700, 560)   # native: big enough to read the product at a glance
             body = Image.new('RGBA', (bw, bh), (0, 0, 0, 0)); d = ImageDraw.Draw(body, 'RGBA')
             d.rounded_rectangle((0, 0, bw - 1, bh - 1), 34, fill=(255, 255, 255, 255), outline=(220, 212, 200), width=2)
             p = Image.open(f"{R}/{m['render']}").convert('RGB'); p.thumbnail((bw - 40, bh - 40), Image.LANCZOS)
             mask = Image.new('L', p.size, 0); ImageDraw.Draw(mask).rounded_rectangle((0, 0, p.width - 1, p.height - 1), 26, fill=255)
             px = 20 + (bw - 40 - p.width) // 2; body.paste(p, (px, 20), mask)
         else:
-            text = T(m['line'], spec); lines = balanced_wrap(d0, text, body_font, text_width_max, 54 if native else 46)
-            bw = int(max(text_width(d0, l, body_font, 54 if native else 46) for l in lines)) + 64; bh = 66 * len(lines) + 40 if native else 62 * len(lines) + 40
+            text = T(m['line'], spec); lines = balanced_wrap(d0, text, body_font, text_width_max, 46)
+            bw = int(max(text_width(d0, l, body_font, 46) for l in lines)) + 64; bh = 58 * len(lines) + 34 if native else 62 * len(lines) + 40
             if native and bw > 646:
                 raise ValueError('chat text crosses the working region; split the beat')
             body = Image.new('RGBA', (bw, bh), (0, 0, 0, 0)); d = ImageDraw.Draw(body)
             d.rounded_rectangle((0, 0, bw - 1, bh - 1), 34, fill=TINTS[slots.index(who) % 4] + (255,))
             for i, l in enumerate(lines):
-                draw_rich(body, (32, 18 + i * (66 if native else 62)), l, body_font, 54 if native else 46, INK)
+                draw_rich(body, (32, 15 + i * (58 if native else 62)), l, body_font, 46, INK)
         blk = Image.new('RGBA', (756 if native else W - LEFT * 2, body.height + 44), (0, 0, 0, 0))
         ImageDraw.Draw(blk).text((118, 0), NAMES[cast[who]], font=NAME, fill=(130, 120, 110))
         blk.paste(AV[who], (0, blk.height - 88), AV[who]); blk.paste(body, (110, 40), body)
@@ -125,6 +130,10 @@ def chat(spec, work):
 
     def screen(blocks):
         if native:
+            shown = ui_layout.chat_blocks(blocks)
+            fills = any(b.height > 300 for b, _ in shown)   # a photo or link preview fills the space
+            if len(blocks) > n0 and len(shown) < 4 and not fills:
+                raise ValueError(f'chat shows {len(shown)} messages at message {len(blocks)} ({[b.height for b, _ in shown]}); open on more (floor chat-builds-like-whatsapp)')
             return ui_layout.chat_screen(blocks, T(spec['title'], spec), list(AV.values()), TITLE, SMALL, PAPER)
         im = Image.new('RGB', (W, H), PAPER); d = ImageDraw.Draw(im)
         d.rectangle((0, 0, W, 250), fill=(71, 61, 52)); d.line((0, 250, W, 250), fill=(225, 216, 202), width=2)
@@ -156,6 +165,9 @@ def chat(spec, work):
         screen([]).save(f'{work}/c00.png'); frames.append((f'{work}/c00.png', 0.6))
     for i, m in enumerate(spec['messages']):
         if i < n0: continue
+        if native and m.get('typing'):   # the sender's typing bubble first, then the message replaces it
+            p = f'{work}/c{i + 1:02d}t.png'; screen(blocks + [bubble({'who': m['who'], 'dots': True})]).save(p)
+            frames.append((p, m['typing'])); t += m['typing']
         blocks.append(bubble(m)); p = f'{work}/c{i + 1:02d}.png'; screen(blocks).save(p)
         frames.append((p, m['dur'])); events.append((t, m.get('sfx', 'pop'))); t += m['dur']
     hold = spec['end'].get('hold', 4.5)

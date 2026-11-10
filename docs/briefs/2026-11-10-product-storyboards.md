@@ -199,3 +199,28 @@ tall so one reply fits under it. The doodle mug's avatar point moved to its face
 
 Sound: message pops, a real double bark (Epidemic Sound) under both bark lines, the end chime. The music is added in the
 platform (`SONG`). Spend: 1.5 Higgsfield credits (6 stills, 1 kept), booked in Control Center.
+
+### Krish's correction and the rebuild (10 Nov)
+
+Krish on v6: "It should feel like a bunch of lads bantering, being hilarious, roasting each other, being best friends,
+and knowing each other inside out, but talking in dog language as dog personalities. I think it's kind of stupid to have
+a barking noise in it. I think that messages should build like a WhatsApp message would build. They shouldn't just
+appear one at a time."
+
+On the floor as `chat-lads-banter`, `no-novelty-sfx` and `chat-builds-like-whatsapp`, and in his taste ledger. Code now
+enforces the last two: a social-ui chat fills the screen from the header to the chat floor, the oldest messages slide
+up under the header, the build fails if a screen after the opening shows fewer than four messages, and `lock.py check`
+refuses any chat sound but the message pop and key click. A sender's typing bubble (at most 1 s) can come before a
+message. Chat text is 46 px, about WhatsApp's size.
+
+The barking-noise build was my addition (Epidemic Sound barks); it is gone. Those three rules came from a 6 Nov
+best-practices document the engine adopted, not from Krish.
+
+| Version | Tier 2 | What changed |
+|---|---|---|
+| v7, 34 s | 6 | Lads banter: the shepherd put his own face on Mom's gift and the lads roast him. Plot lines remained; the face joke came 13 s in |
+| v8, 31 s | 6 | Opens on the face blanket; roast chain; typing bubbles. The shepherd never roasts back; van and stick tangents |
+| v9, 36 s | 6, held | Opens mid-chat on a full screen (who ate the remote); every dog's gift becomes the next roast; the shepherd hits back ("you do that every day", "that's a Tuesday"); the remote pays off ("IN YOUR BED"); ends on "a dozen of your face at once. I'd cry too" |
+
+Judge's open points on v9: the remote gag should thread through the middle, and two lines only move the plot ("ok boys.
+Mom's gift is on the way. don't embarrass me", "what did you even get her").

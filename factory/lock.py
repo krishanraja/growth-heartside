@@ -213,6 +213,10 @@ def check(spec, quiet=False):
         for m in spec['messages']:
             if 'photo' in m and not os.path.exists(f'{LIB}/frames/{m["photo"]}'):
                 probs.append(f'frame {m["photo"]} missing')
+            if _ui_native(spec) and m.get('sfx', 'pop') not in ('pop', 'key'):
+                probs.append(f'sfx {m["sfx"]}: a chat carries only the message pop and key click (floor no-novelty-sfx)')
+            if 'typing' in m and not (_ui_native(spec) and 0 < m['typing'] <= 1.0):
+                probs.append('a typing bubble needs the social-ui profile and at most 1 s')
             if 'photo' in m and not _ui_native(spec):
                 probs.append(f'photo message {m["photo"]}: only the social-ui profile lays out chat photos')
     if spec['template'] == 'still':

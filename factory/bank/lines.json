@@ -1591,8 +1591,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
   },
   {
    "id": "P04.c02",
@@ -1602,8 +1603,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
   },
   {
    "id": "P04.c03",
@@ -1685,8 +1687,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
   },
   {
    "id": "P04.c10",
@@ -1696,8 +1699,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
   },
   {
    "id": "P04.c11",
@@ -1707,8 +1711,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
   },
   {
    "id": "P04.c12",
@@ -1718,8 +1723,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
   },
   {
    "id": "P04.c13",
@@ -1729,8 +1735,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
   },
   {
    "id": "P04.c03b",
@@ -1740,8 +1747,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
   },
   {
    "id": "P04.c05b",
@@ -1751,8 +1759,9 @@
    "breeds": [
     "shepherd"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
   },
   {
    "id": "P04.c14",
@@ -1762,8 +1771,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)"
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
   },
   {
    "id": "P04.c15",
@@ -1785,8 +1795,488 @@
    "breeds": [
     "shepherd"
    ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 v5: one line, so the driver photo stays on screen above it)",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.b01",
+   "text": "code red. van outside. NOBODY bark",
+   "role": "chat.p04_b01",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.b02",
+   "text": "BARK BARK BARK",
+   "role": "chat.p04_b02",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b03",
+   "text": "frenchie I swear",
+   "role": "chat.p04_b03",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.b04",
+   "text": "it's the same guy. I've barked at him for three years. it's tradition",
+   "role": "chat.p04_b04",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b05",
+   "text": "he waved at me. we're friends now",
+   "role": "chat.p04_b05",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b06",
+   "text": "he waves at everyone doodle. he waved at the bin",
+   "role": "chat.p04_b06",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b07",
+   "text": "so the bin and I are friends too",
+   "role": "chat.p04_b07",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b08",
+   "text": "focus. Mom's gift is in that van. one bark and he takes it back",
+   "role": "chat.p04_b08",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b09",
+   "text": "what did you even get her",
+   "role": "chat.p04_b09",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
    "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (P04 v5: one line, so the driver photo stays on screen above it)"
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.b10",
+   "text": "…that's your face",
+   "role": "chat.p04_b10",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.b11",
+   "text": "it's SO many of your face",
+   "role": "chat.p04_b11",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.b12",
+   "text": "so she thinks of me when I'm not there",
+   "role": "chat.p04_b12",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.b13",
+   "text": "you have never once not been there",
+   "role": "chat.p04_b13",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.b14",
+   "text": "you follow her to the bathroom",
+   "role": "chat.p04_b14",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.b15",
+   "text": "and I always will",
+   "role": "chat.p04_b15",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.b16",
+   "text": "she's opening it 😭",
+   "role": "chat.p04_b16",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b17",
+   "text": "she's crying",
+   "role": "chat.p04_b17",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b18",
+   "text": "a dozen of your face at once. I'd cry too",
+   "role": "chat.p04_b18",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.b19",
+   "text": "can I bark now",
+   "role": "chat.p04_b19",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b20",
+   "text": "one. ONE bark",
+   "role": "chat.p04_b20",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.n01",
+   "text": "ok boys. Mom's gift is on the way. don't embarrass me",
+   "role": "chat.p04_n01",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.n02",
+   "text": "you got her a blanket of you",
+   "role": "chat.p04_n02",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.n03",
+   "text": "I got her a stick",
+   "role": "chat.p04_n03",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.n04",
+   "text": "doodle that's MY stick",
+   "role": "chat.p04_n04",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.n05",
+   "text": "it's Mom's stick now",
+   "role": "chat.p04_n05",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.n06",
+   "text": "same guy every day. it's tradition",
+   "role": "chat.p04_n06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.n07",
+   "text": "she's crying 😭",
+   "role": "chat.p04_n07",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.r01",
+   "text": "who ate the remote",
+   "role": "chat.p04_r01",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r02",
+   "text": "not me",
+   "role": "chat.p04_r02",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r03",
+   "text": "doodle it's in your bed",
+   "role": "chat.p04_r03",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r04",
+   "text": "the remote came to me",
+   "role": "chat.p04_r04",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r05",
+   "text": "someone has to guard her in there",
+   "role": "chat.p04_r05",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r06",
+   "text": "what did YOU get her",
+   "role": "chat.p04_r06",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r07",
+   "text": "I barked at the mailman for her",
+   "role": "chat.p04_r07",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r08",
+   "text": "you do that every day",
+   "role": "chat.p04_r08",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r09",
+   "text": "and every day she's safe",
+   "role": "chat.p04_r09",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r10",
+   "text": "doodle?",
+   "role": "chat.p04_r10",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r11",
+   "text": "I licked her face for 20 minutes",
+   "role": "chat.p04_r11",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r12",
+   "text": "that's a Tuesday",
+   "role": "chat.p04_r12",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r13",
+   "text": "and I found the remote",
+   "role": "chat.p04_r13",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r14",
+   "text": "IN YOUR BED",
+   "role": "chat.p04_r14",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
+  },
+  {
+   "id": "P04.r15",
+   "text": "good crying",
+   "role": "chat.p04_r15",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "proposed",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")"
   }
  ]
 }

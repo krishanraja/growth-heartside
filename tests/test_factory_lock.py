@@ -78,6 +78,14 @@ class LockTest(unittest.TestCase):
         next(m for m in swapped['messages'] if 'photo' in m)['photo'] = 'another.jpg'
         self.assertEqual(lock.fingerprint(spec), lock.fingerprint(swapped))   # the picture is a slot
 
+    def test_social_ui_chat_refuses_novelty_sfx_and_long_typing(self):
+        spec = load('P04')
+        bark = copy.deepcopy(spec); bark['messages'][1]['sfx'] = 's_barks.mp3'
+        self.assertTrue(any('no-novelty-sfx' in p for p in self.problems(bark)))
+        slow = copy.deepcopy(spec); slow['messages'][1]['typing'] = 2.5
+        self.assertTrue(any('typing bubble' in p for p in self.problems(slow)))
+        self.assertFalse(any('no-novelty-sfx' in p or 'typing bubble' in p for p in self.problems(spec)))
+
     def test_balanced_wrap_never_leaves_a_lone_word(self):
         os.environ.setdefault('HEARTSIDE_ASSETS', self.tmp.name)
         from PIL import ImageDraw, Image, ImageFont

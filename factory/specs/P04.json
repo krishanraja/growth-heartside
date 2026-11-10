@@ -11,71 +11,146 @@
  "music_level": 0.0,
  "messages": [
   {
-   "who": "A",
-   "dur": 1.4,
-   "line": "P04.c01"
-  },
-  {
    "who": "B",
-   "dur": 0.9,
-   "line": "P04.c02",
-   "sfx": "s_barks.mp3"
-  },
-  {
-   "who": "A",
-   "dur": 1.2,
-   "line": "P04.c03b"
-  },
-  {
-   "who": "A",
-   "dur": 2.0,
-   "render": "shepherd-warm-blanket.jpg"
-  },
-  {
-   "who": "A",
-   "dur": 1.7,
-   "line": "P04.c05b"
-  },
-  {
-   "who": "B",
-   "dur": 2.4,
-   "photo": "p04-frenchie-window.jpg"
-  },
-  {
-   "who": "B",
-   "dur": 2.6,
-   "line": "P04.c09"
-  },
-  {
-   "who": "A",
-   "dur": 2.0,
-   "photo": "p04-driver-waves.jpg"
-  },
-  {
-   "who": "A",
-   "dur": 1.3,
-   "line": "P04.c15b"
+   "line": "P04.r01",
+   "dur": 0.3
   },
   {
    "who": "C",
-   "dur": 1.2,
-   "line": "P04.c11"
+   "line": "P04.r02",
+   "dur": 0.3
+  },
+  {
+   "who": "B",
+   "line": "P04.r03",
+   "dur": 0.3
+  },
+  {
+   "who": "C",
+   "line": "P04.r04",
+   "dur": 0.3
   },
   {
    "who": "A",
+   "line": "P04.n01",
+   "dur": 2.0
+  },
+  {
+   "who": "B",
+   "line": "P04.b09",
+   "dur": 1.0
+  },
+  {
+   "who": "A",
+   "render": "shepherd-warm-blanket.jpg",
+   "dur": 2.2
+  },
+  {
+   "who": "B",
+   "line": "P04.b10",
+   "dur": 0.8,
+   "typing": 0.6
+  },
+  {
+   "who": "C",
+   "line": "P04.b11",
+   "dur": 1.0
+  },
+  {
+   "who": "B",
+   "line": "P04.n02",
+   "dur": 1.1
+  },
+  {
+   "who": "A",
+   "line": "P04.b12",
+   "dur": 1.4,
+   "typing": 0.5
+  },
+  {
+   "who": "B",
+   "line": "P04.b13",
+   "dur": 1.2
+  },
+  {
+   "who": "B",
+   "line": "P04.b14",
+   "dur": 1.1
+  },
+  {
+   "who": "A",
+   "line": "P04.r05",
    "dur": 1.2,
-   "line": "P04.c12"
+   "typing": 0.5
+  },
+  {
+   "who": "A",
+   "line": "P04.r06",
+   "dur": 0.9
   },
   {
    "who": "B",
-   "dur": 1.3,
-   "line": "P04.c13"
+   "line": "P04.r07",
+   "dur": 1.2
   },
   {
    "who": "B",
-   "dur": 2.2,
    "photo": "p04-frenchie-bark.jpg",
-   "sfx": "s_barks.mp3"
+   "dur": 1.6
+  },
+  {
+   "who": "A",
+   "line": "P04.r08",
+   "dur": 0.9,
+   "typing": 0.5
+  },
+  {
+   "who": "B",
+   "line": "P04.r09",
+   "dur": 1.0
+  },
+  {
+   "who": "A",
+   "line": "P04.r10",
+   "dur": 0.8
+  },
+  {
+   "who": "C",
+   "line": "P04.r11",
+   "dur": 1.2
+  },
+  {
+   "who": "A",
+   "line": "P04.r12",
+   "dur": 0.8,
+   "typing": 0.5
+  },
+  {
+   "who": "C",
+   "line": "P04.r13",
+   "dur": 1.0,
+   "typing": 0.6
+  },
+  {
+   "who": "B",
+   "line": "P04.r14",
+   "dur": 0.8
+  },
+  {
+   "who": "C",
+   "line": "P04.n07",
+   "dur": 0.8
+  },
+  {
+   "who": "A",
+   "line": "P04.r15",
+   "dur": 0.8
+  },
+  {
+   "who": "B",
+   "line": "P04.b18",
+   "dur": 2.2,
+   "typing": 0.7
   }
  ],
  "end": {
@@ -84,7 +159,7 @@
   ],
   "hold": 4.0
  },
- "open_with": 2,
- "note": "Sample, 10 Nov (Krish: \"build P04 as the sample\"). F10 group-chat format, social-ui profile. The blanket is shown as the thing at stake right after the van arrives; three photo beats; ends on the one gift. Sound: pops, real barks, end chime; music added in the platform (SONG).",
+ "open_with": 5,
+ "note": "Sample, 10 Nov. Lads banter (Krish, 10 Nov): the shepherd put his own face on Mom's gift and the lads roast him for it. Builds like WhatsApp; only message sounds; music added in the platform (SONG).",
  "ui_profile": "social-ui-2026-11-06-v1"
 }
