@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- Claude sessions here show Krish a ChatGPT sign-in link and code whenever Codex is signed out (.claude/hooks/codex-login.sh at session start, cloud included); his subscription, never an API key (Krish, 2026-11-10). (2026-11-10)
 - The engine restores the social desks' history and Krish's rejections from the repository alone: `growth.py social status` (the two first-follower engagement tests, approved 7 Nov, publication not yet verified; Instagram and Pinterest followers watched, 0 at 8 Nov 17:37 UTC, unknown since) and `growth.py floor` (20 rejections in his words, each with rule and check). `growth.py drive audit` reports 0 errors and 65 warnings on 9 Nov. Codex runs only by card, checked by Claude (`codex/INDEX.md`). (2026-11-09)
 - Drive: creatives iterate in `03a_Social-Production`, release media and schedules live in `03b_Social-Schedule` (was `05_Social-Library`, same ID); map in `docs/DRIVE-MAP.md`. Codex posts only rows Krish marks `approved = yes`. (2026-11-09)
 - Gaps found on 9 Nov, for Krish: no schedule row has `approved = yes` yet all 38 rows were posted on chat approvals; F17 to F24 are live with no schedule row; the publishing desk left four duplicates and three TikTok pairs in Buffer ERROR. Decided the same day ("Go with your recommendations"): only `approved = yes` lets Codex post; `ui-v1`/`ui-v2` editions are retired. PR #42 is merged.
@@ -69,12 +70,12 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-09): the production session in `docs/briefs/2026-11-09-next-session-hero-and-meme-batch.md`. PR #42 is merged and Krish's three open questions are decided.
+- Next (2026-11-10): none for this; the first cloud session that uses Codex shows him the link and code.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
-- North Star check (2026-11-09): holds.
+- North Star check (2026-11-10): holds.
 
 ## Read next
 
