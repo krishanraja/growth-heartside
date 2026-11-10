@@ -24,8 +24,11 @@ manually add music to and ensure syncs, direct in the platform". Everything Code
 - **Media:** the real-dog F38 and F41 and the F30-pepper slide went through the library lane on 10 Nov (`local/library/2026-11-10-real`,
   `2026-11-10-pepper`). Each 02r row's notes carry the sha256.
 - **Labels fixed, 10 Nov (`fixed-label-position`):** F38 and F41 were rebuilt with every label in F38's "4:00 AM · rise"
-  spot. Use `heartside_F38_4am-routine-real_v2_reel.mp4` and `heartside_F41_dog-christmas-real_v2_reel.mp4` in
-  `Posts/F38-real` and `Posts/F41-real`; the earlier files are superseded. F38 was already posted by Krish on the
+  spot. Use `heartside_F38_4am-routine-real_v2_reel.mp4` and `heartside_F41_christmas-shopping-real_v2_reel.mp4` in
+  `Posts/F38` and `Posts/F41` (named `heartside_F41_christmas-shopping-real_v2_reel.mp4` after the move); the earlier
+  files are renamed `SUPERSEDED_`. Sheet 04 and Doc 04a were rebuilt with the v2 links. The lane filed them first into
+  stray `Posts/F38-real` and `Posts/F41-real` folders (now empty) because the manifest named the post `F38-real`:
+  the manifest `post` must be the existing `Posts/` folder name. F38 was already posted by Krish on the
   old cut; reposting is his call.
 
 **What changed from 02q, on Krish's board answers of 10 Nov:**
