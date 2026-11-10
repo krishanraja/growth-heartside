@@ -74,30 +74,30 @@
    ]
   },
   {
-   "name": "The Upright Hype Video",
+   "name": "The Trend Dance Reskin",
    "grade": "R",
    "mode": "motion",
-   "why": "Krish's pick, 10 Nov (\"We should Generate a realistic version of this with dog's\"): YouTube Short WzzueiNf-uU, 20 s, about 247,000 views when read (Apify run KHIGZqR4EiHadqBfe). Two small animals stand upright and perform into a low ultra-wide lens like a rap video: one close-up hype verse each, then a synced two-shot dance. Music only, no speech (content-watcher read: no speech, -14.2 LUFS).",
-   "timeline": "0-7s pup A close-up into the low ultra-wide lens, paws to camera, mouth wide on the beat, pup B dancing behind; 7-14s pup B close-up, paws on head, howling; 14-20s both side by side, synced dance, freeze on the last beat",
-   "comment_prompt": "Which one is your dog, the rapper or the hype man?",
+   "why": "Krish's pick, 10 Nov (\"We should Generate a realistic version of this with dog's\"): YouTube Short WzzueiNf-uU, 20 s, about 247,000 views when read (Apify run KHIGZqR4EiHadqBfe). Its sound is Bronski Beat, \"Smalltown Boy\" (Shazam match at 29.6 s into the song, Apify run EFcaZGnLgV5O26HVN), the viral 80s dance trend: 72K Shorts on the sound, top ones at 10M, 7.2M and 7M views (Krish's screenshot, 10 Nov). Two small animals stand upright and do the trend's moves into a low ultra-wide lens, close-up each, then the synced two-shot. Riding a trending sound with its known dance is the distribution.",
+   "timeline": "0-1s hook card over pup A (\"Hey dog, can you do the viral 80s dance?\"); 1-7s pup A close-up doing the trend moves into the low ultra-wide lens; 7-14s pup B close-up, paws on head; 14-20s both side by side in sync, freeze on the last beat. Sound: Smalltown Boy, added in the app from the trend's start point.",
+   "comment_prompt": "Tag the person whose dog would actually do this.",
    "concepts": [
     {
-     "id": "UHV-01",
-     "concept": "Frenchie and Shiba garage hype video",
-     "payoff": "both freeze on the last beat, chests out",
+     "id": "TDR-01",
+     "concept": "Hey dog, can you do the viral 80s dance? (Frenchie and Shiba, garage)",
+     "payoff": "both nail the synced move and freeze, chests out",
      "props": "none",
      "location": "garage, laundry room"
     },
     {
-     "id": "UHV-02",
-     "concept": "Corgi and husky kitchen cypher",
-     "payoff": "the husky drops the verse, the corgi falls over",
-     "props": "none",
+     "id": "TDR-02",
+     "concept": "Grandma's dog does the viral 80s dance (senior golden in a cardigan)",
+     "payoff": "the old dog out-dances the puppy",
+     "props": "cardigan",
      "location": "kitchen"
     },
     {
-     "id": "UHV-03",
-     "concept": "Christmas morning hype video by the tree",
+     "id": "TDR-03",
+     "concept": "The viral 80s dance by the Christmas tree (lab and doodle)",
      "payoff": "both freeze in front of the presents",
      "props": "Christmas tree, wrapped boxes",
      "location": "living room"
