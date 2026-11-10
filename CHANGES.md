@@ -546,3 +546,11 @@ Suite: Meta's music catalogue is only in the phone apps, so a browser cannot add
 sent Codex there. Asked how the Instagram and Facebook song reels should get their music, Krish chose: "I add songs on
 my phone". README v5.2: Codex schedules TikTok song rows in TikTok Studio and every NO SONG row; Instagram and Facebook
 song rows (24) are Krish's, listed in Drive Sheet "04 Phone posts (Instagram and Facebook songs)".
+
+## 2026-11-10 (evening): holds on F28 and F34; F38 posted by Krish
+
+Krish: "f28 is super glitchy and needs to be redone, also are you sure its all the dance to one song? looks like two
+different dance trends". Checked: it is two scenes in two rooms. From 0 to 12 s, a garage, with the dogs taking turns
+in close-up doing the head-grab wail. From 12 to 24 s, a laundry room, with a side-by-side arm dance and a fall. Both
+dogs stand on their hind legs like people. "f34 something similar was recently posted so I will do that later". "just
+posted f38". README v5.3 holds F28 and F34 and has Codex record F38 as Krish's post.
