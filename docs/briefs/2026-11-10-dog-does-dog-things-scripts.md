@@ -356,3 +356,20 @@ between y 220 and 1450, and F38 and F40 were re-cut and re-sent through the lane
 new sha256: F38 `9b77670c9002`, F40 `4d7899d105c5`). (3) The Sheets connector cannot edit `02o` (permission denied),
 so its notes still carry the earlier sha256 for F38 and F40: the next filing writes `02p` with corrected F38 and F40
 rows and renames `02o` superseded.
+
+## Wave 2 filed (Krish, 10 Nov: "Yes. Merge it auto main, file it")
+
+Every reel carries a deadpan label on every shot (floor `deadpan-labels`). Library lane sent all ten files (reel and
+cover, sha256 checked). Sheet `02p Schedule and captions (F38 to F45)` holds 24 rows, `approved` blank: F38 and F40
+with their re-sent safe-band media, F39 unchanged, and F41 to F45. `02o` is renamed superseded.
+
+| Post | Film | First slot (ET) | Caption line |
+|---|---|---|---|
+| F43 | 9 to 5 | Tue 17 Nov 18:00 | Answers every Slack in under a second. Out of office at 5 sharp 💀 |
+| F41 | Christmas shopping (signature, mug link) | Sat 21 Nov 18:00 | Did all the Christmas shopping. Quality-controlled your present personally 💀 |
+| F44 | Sunday reset | Sun 22 Nov 10:00 | Sunday reset complete. Back to factory settings 💀 |
+| F45 | First day at work | Mon 23 Nov 07:30 | Day one. Met the team, slept through the meeting, got the corner office 💀 |
+| F42 | Black Friday haul | Fri 27 Nov 12:00 | Black Friday haul review. The box won 💀 |
+
+Panel against Krish on this format: he approved all eight (F38 to F45); the panel held them at 7.5 to 8. Its anchors
+now carry F38 to F40; treat an 8 from two judges as passing for dog-does-dog-things until agreement is measured again.
