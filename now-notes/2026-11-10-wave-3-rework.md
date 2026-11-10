@@ -1,0 +1,4 @@
+Status: Krish said No to F48 and F49 ("Should be a video, right?") and Yes to reworking the three held reels. He chose "every beat moves" (about 475 Runway credits) and ruled "if you spend credits, nothing must be less than a 9". Both are in factory/floor.json (every-beat-moves, spend-means-nine) and in his taste ledger. Round 1 rework scripts scored F46 8, F47 8, F48 7, F49 8, F50 8, so no credit was spent. Round 2 (docs/briefs/2026-11-10-dog-things-wave-3-rework.md) is being judged.
+Next: book the Runway clips and Higgsfield stills only for the round 2 scripts that score 9, then put them through one Codex card and judge the finished reels. Only 9s go to the board.
+Changed: dog-does-dog-things reels now need real motion in every beat, and every credit spend needs a 9 on the script first.
+North Star check (2026-11-10): holds.
