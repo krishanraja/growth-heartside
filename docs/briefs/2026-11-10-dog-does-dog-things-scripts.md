@@ -334,3 +334,25 @@ office (payoff).
 
 **Spend plan:** Higgsfield about 78 of 81.6 (about 60 stills at 0.25, 7 Kling clips); Runway 11 clips, reserved after
 Higgsfield is settled (one reservation at a time), its per-clip cost read from the first clip before the rest run.
+
+## Wave 2: made (10 Nov)
+
+All five films were built stills first: every still was checked on a contact sheet before any motion, then video only
+where the motion is the joke. Cuts in the session scratchpad (`dog/<film>/`); review page "Dog Routines, Wave Two".
+
+| Film | Cut | Clips | Judges | Spend |
+|---|---|---|---|---|
+| Christmas shopping (signature, real lab mug) | v3, 21.6 s, dated labels | 4 Kling (Higgsfield) | 8 and 7 before labels | 37.5 Higgsfield |
+| Black Friday haul | v4, 14.2 s, haul labels | 3 Kling (Higgsfield) | 8 and 8 | 28.25 Higgsfield |
+| 9 to 5 | v2, 16.8 s | 1 Kling, 4 Gen-4 Turbo (Runway) | not judged | 2.5 Higgsfield, 190 Runway |
+| Sunday reset | v2, 14.2 s | 1 Kling, 3 Gen-4 Turbo (Runway) | not judged | 2.5 Higgsfield, 165 Runway |
+| First day at work | v2, 16.0 s | 1 Kling, 2 Gen-4 Turbo (Runway) | not judged | 2.0 Higgsfield, about 115 Runway |
+
+Higgsfield 72.75 reserved and settled (8.85 left until 24 Nov); Runway 360 settled against a 400 reservation (980
+left). Codex was not needed. Observations: (1) Kling 3 Standard on Runway cost about 90 a clip by the first reading,
+far above its quote, so the run switched to Gen-4 Turbo at a measured 25; read a model's cost on one clip with nothing
+else running before a batch. (2) Platform UI covers the top 220 and bottom 470 px of a 1080x1920 frame: labels now sit
+between y 220 and 1450, and F38 and F40 were re-cut and re-sent through the lane with safe-band labels (same names,
+new sha256: F38 `9b77670c9002`, F40 `4d7899d105c5`). (3) The Sheets connector cannot edit `02o` (permission denied),
+so its notes still carry the earlier sha256 for F38 and F40: the next filing writes `02p` with corrected F38 and F40
+rows and renames `02o` superseded.
