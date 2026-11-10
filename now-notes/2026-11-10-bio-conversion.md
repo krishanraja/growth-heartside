@@ -1,4 +1,0 @@
-Status: Instagram, Facebook and TikTok bios strengthened and saved; Pinterest retained after live review. Instagram's final CTA is visible without expanding the 108-character desktop bio. Exact active copy is in docs/profile-pages/2026-11-10/bios-v2.json.
-Changed: The first 127-character Instagram candidate hid its CTA behind more despite fitting the editor limit. The shorter version passed public readback; the profile-audit acceptance now checks native truncation as well as character count. No website, post, spend or account-type change.
-Next: Check the TikTok mobile Edit profile screen for a Website field and Instagram mobile link-title controls, then resume the eight-comment shortlist and three collaboration proposals. Measure website taps and qualified sessions before claiming improved conversion.
-North Star check (2026-11-10): holds.
