@@ -111,7 +111,7 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
 ## The rules for a new post in 03b
 
 1. **Post id.**
-   - A new concept takes the next free number. F37 is the highest filed today (10 Nov), so the next is `F38`. Check `Posts/` and `factory/specs` before choosing. Never reuse a number, even for a retired concept.
+   - A new concept takes the next free number. F40 is the highest filed today (10 Nov), so the next is `F41`. Check `Posts/` and `factory/specs` before choosing. Never reuse a number, even for a retired concept.
    - A variant of a locked concept is `<id>-<breed>`, for example `F06-frenchie`. Ids match `[A-Z][0-9]{2,3}(-[a-z0-9]+)*`, and the lane refuses anything else.
 2. **File names** are `heartside_<id>_<slug>_<kind>.<ext>`:
    - `<slug>` is lowercase words joined by hyphens, the same for every file of the post.
@@ -125,7 +125,7 @@ Nothing is ever copied, moved or dragged from 03a into 03b, by a person, Codex o
 3. **Media.** Add the locked files to the library folder and to its `manifest.json` (post, file, bytes, sha256). Then run `send_library.py`. The home computer files them within about 20 minutes. Check `03b_Social-Schedule/Posts/<post id>/` afterwards (by folder ID `1boYZjB7ma-1YIcKzSl51usdYuNk6faHO`): if a new `05_Social-Library` folder appeared instead, the lane is still writing by the old name, so stop and tell Krish.
 4. **A changed version** keeps its name and is sent again. The home computer replaces its own earlier copy in place. Never send a "v2" or "final" file name.
 5. **Schedule rows.**
-   - A post scheduled for the first time gets its rows in a new Sheet `02<next letter> Schedule and captions (<ids>)`, with the same 16 columns as `02`. The connectors cannot add rows to a Sheet once it exists, so each filed batch gets its own Sheet (`02e` F28, `02f` F29, `02g` F30, `02h` F31, `02i` F32, `02j` F33, `02k` F34, `02l` F35 and F36, `02m` F37, `02n` the F34 chat variants); the next is `02o`. The live README treats every non-superseded `02…` Schedule Sheet as postable, so a new Sheet needs no README change.
+   - A post scheduled for the first time gets its rows in a new Sheet `02<next letter> Schedule and captions (<ids>)`, with the same 16 columns as `02`. The connectors cannot add rows to a Sheet once it exists, so each filed batch gets its own Sheet (`02e` F28, `02f` F29, `02g` F30, `02h` F31, `02i` F32, `02j` F33, `02k` F34, `02l` F35 and F36, `02m` F37, `02n` the F34 chat variants, `02o` F38 to F40); the next is `02p`. The live README treats every non-superseded `02…` Schedule Sheet as postable, so a new Sheet needs no README change.
    - A post whose song is added in the platform has a silent reel and a `notes` field starting `SONG`, naming the title, artist and start point. Codex adds the song in the browser (README, section 3).
    - The connectors cannot edit Sheets they did not create, so one batch gets one Sheet, and never one per post.
    - Rows for a post not yet locked say `awaiting Krish's lock: do not post` in `notes`.

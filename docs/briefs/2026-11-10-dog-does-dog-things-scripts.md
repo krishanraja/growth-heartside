@@ -221,3 +221,21 @@ Observations (not Krish's rulings):
    more than one knowing flat stare. Script that into the next five films before generation.
 3. Labels did the parody work in the two labelled films; escalating them (fasting, mindful commute, burnout,
    boundaries) raised no score on its own.
+
+## Filed (Krish, 10 Nov: "Approved of them all")
+
+| Post | Film | Release files (sha256, first 12) | Schedule (02o, approved blank) |
+|---|---|---|---|
+| F38 | 4 AM routine (v2), golden | reel `4805f28b3073`, cover at 6.2 s (meditation) | 12 Nov 18:00, 18:05, 18:10 ET |
+| F39 | Gym era (v2), Rottweiler | reel `e1bcc1463f42`, cover at 2.8 s (the log) | 13 Nov 18:00, 18:05, 18:10 ET |
+| F40 | Monday morning (v2), golden | reel `31ade0a1b04c`, cover at 13.8 s (the hedge) | Monday 16 Nov 07:30, 07:35, 07:40 ET |
+
+The library lane accepted all six files (`send_library.py`, sha256 checked before sending). Sheet `02o Schedule and
+captions (F38 F39 F40)` holds nine rows (TikTok, Instagram, Facebook each), `approved` blank for Krish, notes starting
+`SONG` with the track and start point, creative ids C150 to C152, Facebook links tracked through `growth.py link`.
+Captions: "Up at 4. Aligned with stakeholders by 5:32. Asleep by 9. Thought leader 💀"; "Benched a log. Ate the log.
+Recovery is a lifestyle 💀"; "Inbox zero by 8. Burnout by 9:05. Boundaries by 9:06 💀".
+
+**Panel against Krish: 0 of 3.** The judges held all three at 8; Krish approved all three. `panel.py agreement` says
+to rebuild the anchors before the next batch: for this format, the tier 2 anchors under-score real dog behavior in a
+human frame against the human-arms reference ten.
