@@ -95,7 +95,7 @@ def caption(image, text, font, y=None):
     return image
 
 
-CHAT_FLOOR = 1480   # chats run below the content box, clear of the platform caption (floor chat-builds-like-whatsapp)
+CHAT_FLOOR = 1250   # every label and chat sits inside y 250-1250, clear of the TikTok and Instagram caption areas (floor fixed-label-position, Krish 10 Nov)
 
 
 def chat_blocks(blocks, top=510, bottom=CHAT_FLOOR, gap=18):

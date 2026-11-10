@@ -18,7 +18,8 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │   ├── Failed - 2026-11-09_Codex-Creative-Session_Not-for-Publishing/  1gwVjIYoDAJSEshJ4dBFJ5Sq_XL-rG1GW   7 to 9 Nov organic stills; marked failed by Krish
 │   └── Failed - 2026-11-09_Comedy-and-Rain-Session_Archive/           1aqAORdmOUEakMW0o-pJf8SDkPzShJEIG   6 to 9 Nov rain scene; retired, marked failed by Krish
 ├── 03b_Social-Schedule/                                     1AHZLgwj1nHemNJeP56fQU6iTpgIEALzZ   READY. What Codex posts from. Was 05_Social-Library.
-│   ├── 00 README for Codex                (Doc)             1oEvzXZg288gS1DQLKOPln8grw8UYYTi5bnf9RXFVLyE   The one live instructions (10 Nov, v5.4: v5.3 plus 02t: photo posts as videos with Epidemic music built in, posted by Codex everywhere; 02t replaces the 02r photo rows for F30-pepper, F31 to F33, F35 to F37)
+│   ├── 00 README for Codex                (Doc)             1nInH7X3n2YYoHE8vE1JJayAickXvKGmmxjTHwomw1O8   The one live instructions (10 Nov, v5.5: v5.4 plus safe-band file overrides for F34, its three variants, F38 and F41, and a TikTok hold on F40, F42, F43 and F44)
+│   ├── 00 README for Codex (v5.4, superseded 2026-11-10, use the current README)  1oEvzXZg288gS1DQLKOPln8grw8UYYTi5bnf9RXFVLyE   kept
 │   ├── 00 README for Codex (v5.3, superseded 2026-11-10, use the current README)  1dUuSFnL5-fk8Fc3ydmuX9cNfMUdgkauyIQ8ln1-iyEY   kept
 │   ├── 00 README for Codex (v5.2, superseded 2026-11-10, use the current README)  1zlk9mTZIOT34XizHC6xAHKcxXrv1HoRZUIjgnfw86S0   kept
 │   ├── 00 README for Codex (v5.1, superseded 2026-11-10, use the current README)  1MntGhyNnKzkDfJY6aUiXd9_jD5DwOaD3Vqeh2LteRLU   kept; it sent Instagram and Facebook songs to Meta Business Suite, which cannot add them
