@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- F38 and F41 are rebuilt with every label in F38's "4:00 AM · rise" spot and filed to Drive as _v2; floor rule fixed-label-position applies to every reel. (2026-11-10)
 - Photo batch and F28 replacement: three rounds of script judging stalled at 8 (P9, P10 and P12 dropped at 7). P2 was made (0.5 Higgsfield); its script scored 9 but the photo was judged 7. Seven scripts, the F28 diva-beagle clip and the P2 photo are on Krish's board as yes/no. Heartside's Higgsfield share has about 15.6 left; Runway is at 5. (2026-11-10)
 - Instagram and Facebook song reels (24 posts) are Krish's to post from his phone, because Meta's music catalogue is only in the apps. README v5.2 sends Codex to TikTok Studio for TikTok songs, and to Meta Business Suite only for NO SONG rows. Drive Sheet "04 Phone posts" lists each phone post with links, caption, song settings and steps. Nothing is approved in 02r yet, so Codex has scheduled nothing. (2026-11-10)
 - Krish ruled the dogs must look real ("way too perfect and not real", floor real-scruffy-dogs) and the AI label stays off. He asked for F30, F38, F39, F41 and F45 to be remade, and later said "JUST DO IT NOW", so Runway was spent past the Control Center share. In all: Higgsfield 11.5 (settled) and Runway 675 (225 settled in Control Center, 450 spent directly on his word). The Runway account is at 5 and the Control Center share needs reconciling. F38 (judged 8 four times, level with the original) and F41 (8) are on the board as his call. F39 is held at 7 and needs new clips. F45 has stills but no motion (no credits). The F30 decision is on the board. F38 is held in 02q. (2026-11-10)
@@ -68,6 +69,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-10 Krish found F38 labels under Instagram's caption area, so labels now sit in one fixed, visible place.
 - 2026-11-10 the judge loop stopped converging, so Krish's board decides the scripts at 8 rather than more rounds.
 - 2026-11-10 v5.1 wrongly sent Instagram and Facebook songs to Meta Business Suite; Krish ruled "I add songs on my phone".
 - 2026-11-10 dog reels now need real-looking scruffy pets and motion in every beat. Credit spend needs a 9 on the script first. Krish overrode the Runway share cap for these remakes.
@@ -90,7 +92,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-10): make whatever Krish ticks on the board, file it with a new Sheet (02t) and README v5.4, and merge to main.
+- Next (2026-11-10): point Sheet 04 and Doc 04a at the v2 Drive files once they land, and Krish decides whether to repost F38.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
