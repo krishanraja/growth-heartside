@@ -15,6 +15,11 @@ heartside repository.
    discoverability and the call to action, each with the reason a visitor
    would not follow or tap today. Bio, pin and profile changes stay drafts
    for Krish.
+   Check the native public profile after saving: a bio can fit the editor's
+   character limit and still hide its CTA behind "more". The offer and CTA
+   must be visible without expansion at the tested viewport. Record the
+   viewport and any mobile-only link controls; do not infer clickability
+   from a typed domain or call a tool limitation solved by changing copy.
 2. **Walk the journey as a new buyer** (read only; never add a real order):
    - on a phone-sized window and a desktop one;
    - inside Instagram's in-app browser if the signed-in browser offers it;
