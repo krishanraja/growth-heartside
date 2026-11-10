@@ -1,0 +1,3 @@
+Status: everything filed is ready for Codex. All 21 Sprint posts are in one Sheet, 02q (63 rows, verified cell for cell against the source Sheets), three a day from Wed 11 Nov, with F42 on 27 Nov. Each row's notes give the exact song, start, volume and the stop rule. The new README for Codex adds the evening-before song check, and the old Sheets and README are superseded. All 35 media files are confirmed in Posts/. The hold is lifted and the North Star raised to $50,000, both on Krish's board answers.
+Next: Krish types yes in 02q's approved column (63 cells) and runs Codex; wave 3 (F46 onward, 5 reels, stills done) goes through the Codex lane.
+North Star check (2026-11-10): holds. Raised by Krish to $50,000 today.

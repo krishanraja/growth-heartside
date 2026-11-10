@@ -1,5 +1,7 @@
 # Paid boosts: boost the live organic posts, through Ads Manager
 
+**Current rule (Krish, 10 Nov 2026, on the review board):** "No, I will approve boosts of up to $20 per day if you can prove to me with organic reach results that they are the right ones to boost". There is no $3,000 tranche. Each boost is proposed on the board one post at a time, at no more than $20 a day, with that post's organic reach results (views, shares and saves against the sprint median, read on the platform) as the proof. Nothing is boosted without his Yes on that item.
+
 **Status:** ruled by Krish on 4 Nov 2026.
 
 His approvals, in order:
