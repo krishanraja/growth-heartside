@@ -9,79 +9,54 @@ the source; this page is a view of them. Refresh it whenever a Sheet is added. S
 Posts are F28 to F45 plus three chat variants, 21 posts and 63 rows, each on TikTok, Instagram and Facebook five
 minutes apart.
 
-## What stands between this schedule and posting
+## Status, 10 Nov 18:20 UTC: approved, rescheduled, ready for Codex
 
-Every slot below is filed and checked; **none can go out yet**. Each gate is a single tick on Krish's review board
-(https://claude.ai/artifact/A3tFqoYZuYAEdUrziU5wnN):
+Krish answered every board item. The hold is lifted, all 21 posts have his Yes, and on the schedule he wrote
+"Everything needs to go out ASAP." So every post moves to one Sheet, `02q`, three a day from Wed 11 Nov, and
+the Sprint Sheets 02e to 02p are superseded. Krish schedules in Codex himself (never Buffer from an engine
+session). The README for Codex and each row's `notes` give the exact song, start, volume and the stop rule.
 
-1. **`hold-lift`**: his 10 Nov hold, "Make Sure nothing actually gets published yet", is in force.
-2. **`approved = yes`**: no row in any Sheet is approved. Codex posts only approved rows. Either he marks the Sheets, or
-   he ticks Yes on **`decision-board-yes-marks-sheet`**, and every post Yes on the board is then written into its rows.
-3. **One Yes per post** on the board (`post-<id>`): all 21 are there.
+**One step left before Codex can post:** `approved = yes` in `02q`. A safety check refused letting the engine write
+it from his board Yes, so Krish fills the column: select the `approved` column's 63 cells, type `yes`, and fill down.
 
-Smaller open items: `copy-F34-orderby` (keep "Order by Dec 4 for Christmas" in F34's caption), `delete-F33-strays`, and
-the spend items.
+## The schedule (Eastern time), as in 02q
 
-## The schedule as filed (Eastern time)
+TikTok at the time shown, Instagram 5 minutes later, Facebook 10 minutes later.
 
-TT, IG and FB post 0, 5 and 10 minutes after the time shown. "Song" means Codex adds the named track in each app
-(`notes` starting `SONG`); photo posts need no song.
+| Date | 08:00 | 12:30 | 18:00 |
+|---|---|---|---|
+| Wed 11 Nov | F28 80s dance (song) | F34 face-blanket roast (blanket) | F38 4 AM routine (song) |
+| Thu 12 Nov | F29 shoulder bounce (song) | F34-golden (blanket) | F39 gym era (song) |
+| Fri 13 Nov | F37 toilet-roll dachshund (photo) | F34-dachshund (blanket) | F43 9 to 5 (song) |
+| Sat 14 Nov | F36 pillowcase collie (photo) | F34-doodle (blanket) | F41 Christmas shopping (mug, song) |
+| Sun 15 Nov | F44 Sunday reset (10:00, song) | F32 flour ghost (photo) | F35 package frenchie (photo) |
+| Mon 16 Nov | F40 Monday morning (07:30, song) | F30 pumpkin pie (photo) | F45 first day at work (song) |
+| Tue 17 Nov | | F31 gingerbread corgi (photo) | F33 snowman lab (photo) |
+| Fri 27 Nov | | F42 Black Friday haul (12:00, song) | |
 
-| Date | Time | Post | What | Format | Sheet | Sells |
-|---|---|---|---|---|---|---|
-| Thu 12 Nov | 08:00 | F28 | The dog 80s dance (Smalltown Boy) | Reel, song | 02e | |
-| Thu 12 Nov | 12:30 | F29 | The shoulder bounce (Dame Hombro) | Reel, song | 02f | |
-| Thu 12 Nov | 18:00 | F38 | My dog's 4 AM routine | Reel, song | 02p | |
-| Fri 13 Nov | 12:30 | F34 | The face-blanket roast (chat) | Reel, song | 02k | Blanket |
-| Fri 13 Nov | 18:00 | F39 | My dog's gym era | Reel, song | 02p | |
-| Mon 16 Nov | 07:30 | F40 | My dog's Monday morning | Reel, song | 02p | |
-| Tue 17 Nov | 12:30 | F34-golden | Chat: the golden's face blanket | Reel, song | 02n | Blanket |
-| Tue 17 Nov | 18:00 | F43 | My dog's 9 to 5 (WFH) | Reel, song | 02p | |
-| Sat 21 Nov | 12:30 | F30 | The pumpkin pie meme | Photo | 02g | |
-| Sat 21 Nov | 18:00 | F41 | My dog's Christmas shopping | Reel, song | 02p | Mug |
-| Sun 22 Nov | 10:00 | F44 | My dog's Sunday reset | Reel, song | 02p | |
-| Mon 23 Nov | 07:30 | F45 | My dog's first day at work | Reel, song | 02p | |
-| Tue 24 Nov | 12:30 | F37 | The toilet-roll dachshund meme | Photo | 02m | |
-| Thu 26 Nov | 12:30 | F34-dachshund | Chat: the dachshund's portrait blanket | Reel, song | 02n | Blanket |
-| Fri 27 Nov | 12:00 | F42 | My dog's Black Friday haul | Reel, song | 02p | |
-| Sat 28 Nov | 12:30 | F32 | The flour ghost lab meme | Photo | 02i | |
-| Mon 30 Nov | 12:30 | F36 | The pillowcase collie meme | Photo | 02l | |
-| Tue 1 Dec | 12:30 | F34-doodle | Chat: the doodle's hair blanket | Reel, song | 02n | Blanket |
-| Wed 2 Dec | 12:30 | F35 | The package frenchie meme | Photo | 02l | |
-| Sat 12 Dec | 12:30 | F31 | The gingerbread corgi meme | Photo | 02h | |
-| Sat 19 Dec | 12:30 | F33 | The snowman lab meme | Photo | 02j | |
+## Songs, as the rows give them
 
-**What's wrong with it for an aggressive sprint:**
-- **Empty days:** 14, 15, 18, 19, 20 and 25 Nov, 29 Nov and most of December.
-- **Three of the four product posts land late:** the blanket variants on 26 Nov and 1 Dec are within days of the
-  4 Dec Christmas order-by date.
-- **Two seasonal memes land after the order-by date:** F31 on 12 Dec and F33 on 19 Dec.
+No reel was cut to its track (measured by the sessions that made them), so nothing needs a beat match. Durations are
+ffprobe on the filed files.
 
-## Proposed: pull it forward (board item `decision-schedule-pull-forward`)
+| Post | Track | Start | Volume (song / reel) | Length |
+|---|---|---|---|---|
+| F28 | Smalltown Boy, Bronski Beat | platform default (the trend clip) | 100 / 0 | 24.1 s |
+| F29 | Dame Hombro, Bulin 47 | platform default | 100 / 0 | 11.2 s |
+| F34 and its 3 variants | Sneaky Snitch, Kevin MacLeod | 0:00 | 25 / 100 (keep the message sounds) | F34 34.7 s |
+| F38 | Experience, Ludovico Einaudi | 0:00, opening piano | 100 / 0 | 21.7 s |
+| F39 | Eye of the Tiger, Survivor | 0:00, opening riff | 100 / 0 | 17.7 s |
+| F40 | Manic Monday, The Bangles | 0:00 | 100 / 0 | 18.6 s |
+| F41 | All I Want for Christmas Is You, Mariah Carey | platform default; past the slow intro if it lands there | 100 / 0 | 21.6 s |
+| F42 | Material Girl, Madonna | platform default | 100 / 0 | 14.2 s |
+| F43 | 9 to 5, Dolly Parton | 0:00 | 100 / 0 | 16.8 s |
+| F44 | Walking on Sunshine, Katrina and the Waves | 0:00 | 100 / 0 | 14.2 s |
+| F45 | Working for the Weekend, Loverboy | platform default | 100 / 0 | 16.0 s |
 
-Every filed post is live by 2 Dec, two a day where the stock allows. Product posts are spread through the weeks people
-order. Date-bound posts keep their day: F40 and F45 Mondays, F44 Sunday, F42 Black Friday, F30 Thanksgiving week.
-
-| Date | 12:30 | 18:00 |
-|---|---|---|
-| Thu 12 Nov | F29 (and F28 at 08:00, as filed) | F38 |
-| Fri 13 Nov | F34 (blanket) | F39 |
-| Sat 14 Nov | F34-golden (blanket) | F37 |
-| Sun 15 Nov | F36 | F32 |
-| Mon 16 Nov | F40 (07:30, as filed) | F35 |
-| Tue 17 Nov | F34-dachshund (blanket) | F43 |
-| Wed 18 Nov | F34-doodle (blanket) | new: F46 or later |
-| Thu 19 to Fri 20 Nov | new | new |
-| Sat 21 Nov | F31 | F41 (mug) |
-| Sun 22 Nov | F44 (10:00, as filed) | new |
-| Mon 23 Nov | F45 (07:30, as filed) | new |
-| Tue 24 Nov | new | new |
-| Wed 25 Nov | F30 (Thanksgiving eve) | new |
-| Fri 27 Nov | F42 (Black Friday) | new |
-| Tue 1 Dec | F33 | new |
-
-The connectors cannot edit a Sheet they did not create, so on a Yes the filing session writes one new Sheet with the
-new dates (`02q`) and renames the old ones superseded. Nothing else changes: same media, captions, songs and links.
+**The one risk:** business accounts, and Meta Business Suite in a desktop browser, may not offer mainstream songs. The
+README has Codex run a song check the evening before each posting day and stop, never substitute, if a track is
+missing. If the check finds gaps, the engine bakes a licensed Epidemic Sound track into a separate version for those
+rows.
 
 ## Production to fill the gaps (about 20 more posts by 4 Dec)
 
