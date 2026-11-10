@@ -3,6 +3,11 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-10: one review board. Krish: "You need to create a system of review where I can easily just tick yes or no for things that you think are ready. You just keep adding to that board as often as you can, and so do your sub-sessions."
+  - The board is https://claude.ai/artifact/A3tFqoYZuYAEdUrziU5wnN. Sessions add items to its `items` store; only Krish can write `verdicts`. How sessions add items and act on answers is in `docs/REVIEW-BOARD.md`.
+  - Seeded with F34, F28 and F29 for approval, the publishing hold, the F34 order-by line, the two stray F33 files, and the first $3,000 paid tranche.
+  - Ruling (Krish, 2026-11-10): everything ready for Krish goes on the review board as a Yes or No item, added by every session as soon as it is ready.
+
 - 2026-11-10: the dog group chat product post, F34. Krish: "It should feel like a bunch of lads bantering, being hilarious, roasting each other, being best friends, and knowing each other inside out, but talking in dog language as dog personalities. I think it's kind of stupid to have a barking noise in it. I think that messages should build like a WhatsApp message would build." Then: "7, make it more hilarious, drop a "bro" in there, some emojis, mis spellings." Then: "9, file it and lock the structure".
   - `factory/floor.json`: `chat-lads-banter`, `no-novelty-sfx`, `chat-builds-like-whatsapp`. Code enforces the last two: the social-ui chat fills the screen and scrolls, and `lock.py check` refuses any chat sound but the message pop and key click.
   - F34 is locked (`factory/locks/F34.json`) and filed in 03b `Posts/F34/` with `02k` for 13 Nov; `approved` is left for Krish. Its structure, and how to make a variant, is in `docs/briefs/2026-11-10-F34-chat-structure.md`. It is the tier 2 anchor for chat posts, and the panel runs about a point below Krish on them.

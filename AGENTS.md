@@ -50,6 +50,8 @@ below is unchanged. Until the go-live step exists, posting stays with Krish.
 - The engine itself still never posts.
 - Before preparing or posting any social row, read [the channel operating instructions](docs/CHANNEL-TASKS.md#running-the-two-kinds-of-post) and [the Drive ownership map](docs/DRIVE-MAP.md). Keep dog POV and product posts in the same schedule and use the approved row exactly.
 
+**Krish reviews on one board** (Krish, 2026-11-10: "You need to create a system of review where I can easily just tick yes or no for things that you think are ready. You just keep adding to that board as often as you can, and so do your sub-sessions."). Every session puts what is ready for him on the review board and reads his answers back from it: `docs/REVIEW-BOARD.md`.
+
 **The engine learns from every session** (Krish, 2026-11-09: "Ensure that the project documentation and intelligence of the growth repository are automatically augmented"). Before a session that did creative, social or Drive work ends, it records what happened where the next session reads it, in the same commit as the work:
 - every decline or correction from Krish goes into `factory/floor.json` with his exact words, the rule and the check (and to his taste ledger with `report_to_taste_engine`);
 - every engagement test stage and follower check goes into a dated `docs/social/` event file, imported with `growth.py events import` (public brand facts only);
