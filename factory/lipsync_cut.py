@@ -4,11 +4,12 @@
 
 TIMELINE: {"out": path, "font": path to a bold sans (Inter Bold on the build machine),
   "premise": {"text", "y", "size", "until"},            the premise line over shot 1 (sound-off hook)
-  "shots": [{"src": clip.mp4 or still.png, "in", "dur", "speed", "caption", "cap_y", "cap_size"}],
+  "shots": [{"src": clip.mp4 or still.png, "in", "dur", "speed"}],
   "end": {"render": the store's own render, "dur"}}    held unaltered, scaled only, on its own ground colour
 
-Captions are the sung line, white with a black outline, centred inside x108-972; cap_y is chosen shot by shot so
-no word covers a face, the hands or the gag object (floor text-clear-of-faces). speed < 1 slows a trimmed clip so
+No lyric captions, ever (Krish, 2026-11-10: "I don't think we ever need subtitles for videos for song lyrics.";
+floor no-lyric-captions): a shot with a "caption" is refused. The premise line is the only text, placed clear of faces,
+hands and the gag object (floor text-clear-of-faces). speed < 1 slows a trimmed clip so
 only its clean window is used; a .png src gets a slow push-in. The reel is silent: the song is added in the app.
 The end card carries no text (floor no-badges). Build inputs stay out of git (the repository is public).
 """
@@ -16,6 +17,8 @@ import json, os, subprocess, sys, tempfile
 from PIL import Image, ImageDraw, ImageFont
 W, H, FPS = 1080, 1920, 30
 tl = json.load(open(sys.argv[1])); tmp = tempfile.mkdtemp()
+if any(s.get('caption') for s in tl['shots']):
+    sys.exit('refused: a shot carries a caption; lyric subtitles are never used (floor no-lyric-captions)')
 FONT = tl.get('font')
 def font(size): return ImageFont.truetype(FONT, size)
 def wrap(d, text, f, maxw):

@@ -12,7 +12,7 @@
    "grade": "R",
    "mode": "motion",
    "why": "Krish's pick, 10 Nov (\"This is Good\"): a dog in a hoodie with a hidden person's arms, every lyric of a song everyone knows staged literally, one beat a second, lyrics on screen. Reference read: YouTube Short u7s47cIeh6M, 32 s, 18.8M views at read (Apify run tf6hbOlGdAEgbm0Mh). Generated as photoreal shots per lyric line, cut to the track.",
-   "timeline": "0.0-1.5s premise card on the opening scene (\"My dog's ...\"); then one lyric line per 1-2s, each staged literally by the dog with human arms; end on the strongest visual gag held 2s",
+   "timeline": "0.0-1.5s premise line on the opening scene (\"My dog's ...\"), the only on-screen text; then two shots per sung line, 1.5 to 2 s each, each staged literally by the dog with human arms, with a reaction from the dog in every shot; end on a physical gag held 2 s. No lyric captions (Krish, 10 Nov: \"I don't think we ever need subtitles for videos for song lyrics.\"). The song is added in the platform.",
    "comment_prompt": "Which line is your dog? Quote it.",
    "concepts": [
     {

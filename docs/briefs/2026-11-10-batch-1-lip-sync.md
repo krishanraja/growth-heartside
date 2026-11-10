@@ -22,8 +22,8 @@ says; the arms make people look twice; it ends on the biggest visual gag, held.
 - **Signature ending (S12 only).** A hard cut to the store's own mug render held 3 seconds or more. The link and the
   Christmas date (4 December) go in the caption.
 
-Lyrics are staged beat by beat as the song is sung. Each beat below is described in our words; the on-screen line is
-the sung line at that moment.
+Lyrics are staged beat by beat as the song is sung. Each beat below is described in our words. No lyric captions on
+screen (Krish, 10 Nov: "I don't think we ever need subtitles for videos for song lyrics."); only the opening premise line.
 
 ## S12: My dog's Christmas shopping (signature, ends on the real mug)
 

@@ -346,6 +346,20 @@
     "carousel",
     "meme"
    ]
+  },
+  {
+   "id": "no-lyric-captions",
+   "date": "2026-11-10",
+   "made": "Sprint 120 batch 1: seven lip-sync films cut with the sung line on screen in every shot",
+   "words": [
+    "I don't think we ever need subtitles for videos for song lyrics."
+   ],
+   "category": "presentation",
+   "rule": "No song-lyric captions or subtitles on any video. The song is added in the platform and carries itself; the picture stays clear. A premise line is allowed only where the format's proven original earned it.",
+   "check": "review: step through every frame; any on-screen text that repeats a sung lyric holds the cut",
+   "applies_to": [
+    "reel"
+   ]
   }
  ],
  "open_conflicts": [],

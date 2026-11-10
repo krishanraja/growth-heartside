@@ -3,6 +3,10 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-10: no lyric captions. Krish: "I don't think we ever need subtitles for videos for song lyrics."
+  - `factory/floor.json` `no-lyric-captions`; the judges' tier 1 asks it (`factory/bank/anchors.json`); `factory/lipsync_cut.py` refuses a shot caption; the lip-sync franchise, batch brief and plan say so. A premise line is the only text a lip-sync may carry.
+  - Ruling (Krish, 2026-11-10): no song-lyric subtitles on any video.
+
 - 2026-11-10: publishing hold. Krish: "Make Sure nothing actually gets published yet."
   - Checked: Buffer has nothing scheduled, sending or awaiting approval on the Heartside channels. No row in 02, 02c, 02d or the live 02e is marked approved and unposted. The superseded 02e is locked read-only. The production session was told to build and file only: no posting, no approved = yes, no messages to the publishing desk, no boosts.
   - Ruling (Krish, 2026-11-10): nothing is published until Krish lifts the hold.
