@@ -40,3 +40,17 @@ Both filings are on Krish's review board (items post-F35 and post-F36) and went 
 
 Higgsfield 3.00 credits (12 stills at 0.25), booked and settled in two reservations. Session total 148.50. The
 shared Higgsfield balance read 723.1 during batch 6: other sessions draw on the same account.
+
+## Batch 8: F37 filed
+
+| Post | Tier 2 reads | Tier 1 | Result |
+|---|---|---|---|
+| **F37 Toilet-roll tube dachshund**, remade with the roll unspooled down the hall ("He was not in the bathroom.") | 9, 9 | pass | **filed**: rows in `02m` for 24 Nov; board item post-F37 |
+| Plant pot hat with a pot-sized hole (terrier) | 8, 8 | pass | held: the pot reads balanced, not worn |
+| Lampshade hat (pug, tipped lamp) | 8, 8 | pass | held: the classic lampshade meme |
+| Slipper hat (Boston terrier) | 7, 8 | pass | held: a second slipper on the rack muddies it |
+| Tree-skirt cape (Samoyed); stretched sweater (golden) | not judged | | read as costumes a person put on |
+
+Lesson: a remake lifts a near miss when it adds the one consequence the judges named (the unspooled roll took the
+dachshund from 8 and 8 to 9 and 9). Props that look placed rather than worn or taken read as a person's costume.
+Spend: 1.50 Higgsfield credits (6 stills), booked and settled. Session total 150.00.
