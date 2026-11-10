@@ -84,7 +84,8 @@ def main(src, shas, out):
         for plat, off, code, tagp in PLAT:
             cid = f'{code}_ENT_REEL_C{n}_H01_V1_{d.replace("-", "")}'
             row = [''] * len(head)
-            row[i['slot']] = f'{d}_{plus(t, off)}_{plat}'
+            hh, mm = plus(t, off).split(':')
+            row[i['slot']] = f'{d}_{int(hh):02d}:{mm}_{plat}'
             row[i['date_ET']], row[i['time_ET']], row[i['platform']] = d, plus(t, off), plat
             row[i['post_id']], row[i['format']] = pid, 'REEL'
             row[i['media_files']] = f'heartside_{pid}_{slug}_music_reel.mp4'
