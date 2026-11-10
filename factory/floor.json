@@ -434,6 +434,40 @@
    "applies_to": [
     "reel"
    ]
+  },
+  {
+   "id": "every-beat-moves",
+   "date": "2026-11-10",
+   "made": "F48 'Day in the life of a CEO' and F49 'What's in my carry-on' (wave 3), each half stills with a slow push-in and half Runway clips",
+   "words": [
+    "Should be a video, right? ",
+    "This should be a video, right? "
+   ],
+   "category": "presentation",
+   "rule": "A dog-does-dog-things reel is real motion in every beat: each beat is a video clip of the dog doing the thing. A still with a push-in is not a beat. Only the store's product render holds still.",
+   "check": "review: every non-product shot in the timeline is a clip, not a still; code: no shot of kind still in a dog-does-dog-things timeline",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "spend-means-nine",
+   "date": "2026-11-10",
+   "made": "Wave 3 rework, after three reels came back at 8, 8 and 7",
+   "words": [
+    "if you spend credits, nothing must be less than a 9",
+    "Rework these to be at least an 8, and then show me. "
+   ],
+   "category": "bar",
+   "rule": "Anything that costs credits must reach 9 at tier 2. The script is judged before any credit is spent, and only a 9 on paper is generated. The finished piece is judged again, and only a 9 is shown to Krish.",
+   "check": "review: a tier 2 score of 9 on the script recorded before the spend is booked in Control Center; a tier 2 score of 9 on the finished piece before it goes on the board",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme",
+    "card"
+   ]
   }
  ],
  "open_conflicts": [],
