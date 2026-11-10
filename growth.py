@@ -1124,6 +1124,14 @@ def self_test():
         if name.endswith('.md'):
             t(f'codex card {name} has a floor and no live queue', card_errors(open(os.path.join(queue, name), encoding='utf-8').read()) == [])
     t('a card with no floor that names Buffer is refused', len(card_errors('## Goal\nRe-attach the reel in Buffer.\n## Return\nx')) == 2)
+    sys.path.insert(0, os.path.join(HERE, 'factory'))
+    import sprint as _sprint
+    sprints = os.path.join(HERE, 'factory/sprints')
+    for name in sorted(os.listdir(sprints)) if os.path.isdir(sprints) else []:
+        if name.endswith('.json'):
+            t(f'sprint manifest {name} passes factory/sprint.py check', _sprint.errors(json.load(open(os.path.join(sprints, name), encoding='utf-8'))) == [])
+    fr_bank = json.load(open(os.path.join(HERE, 'factory/bank/franchises.json'), encoding='utf-8'))
+    t('the franchise bank keeps creator links out of this public repository', 'http' not in json.dumps(fr_bank))
     drive_map = json.load(open(os.path.join(HERE, 'config/drive-map.json')))
     drive_doc = open(os.path.join(HERE, 'docs/DRIVE-MAP.md'), encoding='utf-8').read()
     t('every folder in config/drive-map.json is in docs/DRIVE-MAP.md, by ID',

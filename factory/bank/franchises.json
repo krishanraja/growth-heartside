@@ -1,0 +1,1286 @@
+{
+ "about": "The 26 franchises of Krish's Dog Viral Creative System playbook (Google Sheet 1v3VgCjD8Zrh0WrxLNFisTQ1sGbgdUJfqRR97SmgYGa4, 9 Nov 2026), graded for how Heartside can make them: A = stills or a carousel carry the joke; B = one short motion beat or Heartside's inner-voice film; R = realism stretch, motion a viewer cannot tell from footage (Krish, 10 Nov: \"Photorealistic AI dogs doing things a viewer cant quite tell is real or not - anything is on the cards\"); nothing is excluded since Krish's 10 Nov ruling (\"I want A plan with zero shackles, none whatsoever\"). The evidence links and creators stay in the Sheet, not in this public repository. Read with docs/plans/2026-11-10-sprint-120.md.",
+ "source_sheet": "1v3VgCjD8Zrh0WrxLNFisTQ1sGbgdUJfqRR97SmgYGa4",
+ "grades": {
+  "A": "stills or carousel",
+  "B": "short motion or inner-voice film",
+  "R": "realism stretch: photoreal motion a viewer cannot tell from footage, held to floor real-dogs and real-behavior-in-motion"
+ },
+ "franchises": [
+  {
+   "name": "The Human-Arms Lip-Sync",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Krish's pick, 10 Nov (\"This is Good\"): a dog in a hoodie with a hidden person's arms, every lyric of a song everyone knows staged literally, one beat a second, lyrics on screen. Reference read: YouTube Short u7s47cIeh6M, 32 s, 18.8M views at read (Apify run tf6hbOlGdAEgbm0Mh). Generated as photoreal shots per lyric line, cut to the track.",
+   "timeline": "0.0-1.5s premise line on the opening scene (\"My dog's ...\"), the only on-screen text; then two shots per sung line, 1.5 to 2 s each, each staged literally by the dog with human arms, with a reaction from the dog in every shot; end on a physical gag held 2 s. No lyric captions (Krish, 10 Nov: \"I don't think we ever need subtitles for videos for song lyrics.\"). The song is added in the platform.",
+   "comment_prompt": "Which line is your dog? Quote it.",
+   "concepts": [
+    {
+     "id": "HAL-01",
+     "concept": "My dog's Christmas shopping",
+     "payoff": "the dog checks out, and the gift is the real mug",
+     "props": "hoodie, phone, shopping bags, wrapping paper",
+     "location": "home, car, store"
+    },
+    {
+     "id": "HAL-02",
+     "concept": "My dog's 9 to 5, work from home edition",
+     "payoff": "camera off on the call, asleep on the keyboard",
+     "props": "laptop, headset, glasses",
+     "location": "home office"
+    },
+    {
+     "id": "HAL-03",
+     "concept": "My dog's Monday morning",
+     "payoff": "three alarms, one coffee, back to bed",
+     "props": "alarm clock, mug, blanket",
+     "location": "bedroom, kitchen"
+    },
+    {
+     "id": "HAL-04",
+     "concept": "My dog's Black Friday",
+     "payoff": "sprints past every deal to the treat aisle",
+     "props": "cart, receipts, shopping bags",
+     "location": "store, car"
+    },
+    {
+     "id": "HAL-05",
+     "concept": "My dog's gym era",
+     "payoff": "one rep, then a nap on the bench",
+     "props": "dumbbells, headband, protein shaker",
+     "location": "home gym"
+    },
+    {
+     "id": "HAL-06",
+     "concept": "My dog's Sunday reset",
+     "payoff": "cleans the whole house, then lies on the clean laundry",
+     "props": "vacuum, laundry, candle",
+     "location": "home"
+    },
+    {
+     "id": "HAL-07",
+     "concept": "My dog's first day at a new job",
+     "payoff": "lanyard on, takes the best chair in the meeting",
+     "props": "lanyard, coffee, laptop bag",
+     "location": "office"
+    },
+    {
+     "id": "HAL-08",
+     "concept": "My dog's Christmas Eve",
+     "payoff": "wraps your gift, writes the card, eats one cookie",
+     "props": "wrapping paper, card, cookies",
+     "location": "living room"
+    }
+   ]
+  },
+  {
+   "name": "The Trend Dance Reskin",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Krish's pick, 10 Nov (\"We should Generate a realistic version of this with dog's\"): YouTube Short WzzueiNf-uU, 20 s, about 247,000 views when read (Apify run KHIGZqR4EiHadqBfe). Its sound is Bronski Beat, \"Smalltown Boy\" (Shazam match at 29.6 s into the song, Apify run EFcaZGnLgV5O26HVN), the viral 80s dance trend: 72K Shorts on the sound, top ones at 10M, 7.2M and 7M views (Krish's screenshot, 10 Nov). Two small animals stand upright and do the trend's moves into a low ultra-wide lens, close-up each, then the synced two-shot. Riding a trending sound with its known dance is the distribution.",
+   "timeline": "0-6s pup A close-up doing the trend moves into the low ultra-wide lens; 6-12s pup B close-up, paws on head; 12-18s both side by side in sync; 18-24s the ending gag (one dog flops and keeps dancing on its back). No on-screen text: the trend sound and the picture carry the premise (playbook: \"use text only to clarify the premise\"); the caption names the trend. Sound: Smalltown Boy, added in the app from the trend's start point.",
+   "comment_prompt": "Tag the person whose dog would actually do this.",
+   "concepts": [
+    {
+     "id": "TDR-01",
+     "concept": "Hey dog, can you do the viral 80s dance? (Frenchie and Shiba, garage)",
+     "payoff": "both nail the synced move and freeze, chests out",
+     "props": "none",
+     "location": "garage, laundry room"
+    },
+    {
+     "id": "TDR-02",
+     "concept": "Grandma's dog does the viral 80s dance (senior golden in a cardigan)",
+     "payoff": "the old dog out-dances the puppy",
+     "props": "cardigan",
+     "location": "kitchen"
+    },
+    {
+     "id": "TDR-03",
+     "concept": "The viral 80s dance by the Christmas tree (lab and doodle)",
+     "payoff": "both freeze in front of the presents",
+     "props": "Christmas tree, wrapped boxes",
+     "location": "living room"
+    },
+    {
+     "id": "TDR-04",
+     "concept": "Dame Hombro (Bulin 47), this week's shoulder-bounce trend: four dogs on a sofa bounce in sync while the pug sleeps; the pug wakes airborne and out-bounces them all",
+     "payoff": "a hard cut from the sleeping pug to the pug airborne, then a held ending with the golden deadpan to camera",
+     "props": "sofa",
+     "location": "living room"
+    }
+   ]
+  },
+  {
+   "name": "The Translator",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Comes back on Krish's 10 Nov go. A generated dog with a generated vocal phrase and subtitles; the vocal is sound design, never presented as a recording of a real dog. Only if the mouth, throat and breath move with the sound.",
+   "timeline": "0.0–0.8s face already framed; 0.8–2.0s one human prompt; 2.0–6.0s complete dog phrase; 6.0–8.0s human reaction; end on dog look-away",
+   "comment_prompt": "What did you hear them say? Quote the exact line.",
+   "concepts": [
+    {
+     "id": "DVC-001",
+     "concept": "The dinner complaint",
+     "payoff": "one bark phrase resolves into a sigh",
+     "props": "empty bowl",
+     "location": "kitchen"
+    },
+    {
+     "id": "DVC-002",
+     "concept": "The walk negotiation",
+     "payoff": "dog answers after weather is revealed",
+     "props": "leash",
+     "location": "front door"
+    },
+    {
+     "id": "DVC-003",
+     "concept": "The bedtime objection",
+     "payoff": "final grumble under blanket",
+     "props": "lights-off cue",
+     "location": "bedroom"
+    },
+    {
+     "id": "DVC-004",
+     "concept": "The vet review",
+     "payoff": "dog gives a full exit interview",
+     "props": "clinic visible outside",
+     "location": "parked car"
+    },
+    {
+     "id": "DVC-005",
+     "concept": "The toy testimony",
+     "payoff": "dog appears to explain the evidence",
+     "props": "broken toy",
+     "location": "living room"
+    }
+   ]
+  },
+  {
+   "name": "The Side-Eye Tribunal",
+   "grade": "A",
+   "mode": "still",
+   "why": "Real dog expressions carry it (the flat stare, the slow look back) across a 3-slide carousel: statement, eye shift, verdict. Floor troll-not-mild.",
+   "timeline": "0.0–1.5s neutral face; 1.5–3.5s off-camera statement; 3.5–5.5s slow eye shift; 5.5–7.0s hold the verdict; hard loop",
+   "comment_prompt": "Give the verdict in one sentence.",
+   "concepts": [
+    {
+     "id": "DVC-006",
+     "concept": "Bought the wrong treats",
+     "payoff": "eye shift to the real bag",
+     "props": "off-brand bag",
+     "location": "sofa"
+    },
+    {
+     "id": "DVC-007",
+     "concept": "Said one more email",
+     "payoff": "dog judges the screen",
+     "props": "open laptop",
+     "location": "desk"
+    },
+    {
+     "id": "DVC-008",
+     "concept": "Called another dog cute",
+     "payoff": "look moves from phone to owner",
+     "props": "phone photo",
+     "location": "park bench"
+    },
+    {
+     "id": "DVC-009",
+     "concept": "Skipped the usual route",
+     "payoff": "side-eye arrives at wrong turn",
+     "props": "turn signal",
+     "location": "car"
+    },
+    {
+     "id": "DVC-010",
+     "concept": "Washed the favourite blanket",
+     "payoff": "dog refuses the new smell",
+     "props": "clean blanket",
+     "location": "laundry room"
+    }
+   ]
+  },
+  {
+   "name": "The Household Obstruction",
+   "grade": "A",
+   "mode": "still",
+   "why": "Task title, three workarounds, the theft: a carousel. The final theft frame must stage the joke literally (floor stage-the-joke).",
+   "timeline": "0.0–1.0s task title + dog already blocking; 1.0–6.0s three increasingly absurd workarounds; 6.0–8.0s apparent success; 8.0–10.0s dog reclaims centre",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-011",
+     "concept": "Fold laundry with a nest-builder",
+     "payoff": "dog steals the last folded item",
+     "props": "laundry pile",
+     "location": "bedroom"
+    },
+    {
+     "id": "DVC-012",
+     "concept": "Unload groceries with an inspector",
+     "payoff": "dog sits inside empty bag",
+     "props": "shopping bags",
+     "location": "kitchen"
+    },
+    {
+     "id": "DVC-013",
+     "concept": "Pack a suitcase with a stowaway",
+     "payoff": "dog curls into final gap",
+     "props": "open suitcase",
+     "location": "bedroom"
+    },
+    {
+     "id": "DVC-014",
+     "concept": "Work from home with a manager",
+     "payoff": "dog places chin on the only free hand",
+     "props": "keyboard",
+     "location": "desk"
+    },
+    {
+     "id": "DVC-015",
+     "concept": "Clean the sofa with a quality controller",
+     "payoff": "dog tests every restored cushion",
+     "props": "cushions",
+     "location": "living room"
+    }
+   ]
+  },
+  {
+   "name": "The Threshold Problem",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Comes back on Krish's 10 Nov go. Wrong route, pause, right route, as three short clips cut on action; each clip one movement with a visible cause (floor real-behavior-in-motion).",
+   "timeline": "0.0–1.0s wide geography; 1.0–4.0s dog chooses wrong route; 4.0–6.0s pause/discovery; 6.0–8.0s correct route and reunion",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-016",
+     "concept": "Voice behind the garden gate",
+     "payoff": "dog circles then finds side opening",
+     "props": "slatted gate",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-017",
+     "concept": "Toy behind the transparent chair",
+     "payoff": "dog solves the edge route",
+     "props": "clear chair",
+     "location": "living room"
+    },
+    {
+     "id": "DVC-018",
+     "concept": "Owner in the wrong doorway",
+     "payoff": "dog checks both then chooses",
+     "props": "two adjacent doors",
+     "location": "hallway"
+    },
+    {
+     "id": "DVC-019",
+     "concept": "Treat under an open-sided box",
+     "payoff": "dog discovers the back opening",
+     "props": "large safe box",
+     "location": "kitchen"
+    },
+    {
+     "id": "DVC-020",
+     "concept": "Friend arrives behind screen door",
+     "payoff": "recognition then correct handle side",
+     "props": "screen door",
+     "location": "entryway"
+    }
+   ]
+  },
+  {
+   "name": "The Forbidden Treasure",
+   "grade": "B",
+   "mode": "film",
+   "why": "Gaze triangle and complaint as stills with the inner voice; the safe swap is the button.",
+   "timeline": "0.0–1.0s object in dog sightline; 1.0–3.0s owner removes/shows it; 3.0–7.0s gaze triangle + complaint; 7.0–9.0s safe replacement and resolution",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-021",
+     "concept": "The recycling-bin trophy",
+     "payoff": "swap for crinkle toy",
+     "props": "clean bottle",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-022",
+     "concept": "The single wet sock",
+     "payoff": "swap for fleece tug",
+     "props": "sock",
+     "location": "hallway"
+    },
+    {
+     "id": "DVC-023",
+     "concept": "The cardboard crown",
+     "payoff": "replace with dog-safe cardboard toy",
+     "props": "box flap",
+     "location": "living room"
+    },
+    {
+     "id": "DVC-024",
+     "concept": "The gardening glove",
+     "payoff": "trade for scent toy",
+     "props": "glove",
+     "location": "patio"
+    },
+    {
+     "id": "DVC-025",
+     "concept": "The forbidden dish towel",
+     "payoff": "trade then final offended stare",
+     "props": "towel",
+     "location": "kitchen"
+    }
+   ]
+  },
+  {
+   "name": "Tiny Employee",
+   "grade": "A",
+   "mode": "still",
+   "why": "Five tableaux are five stills; the dog plays the job dead straight. The dog-as-manager comedy Heartside already owns.",
+   "timeline": "Five 1.0–1.5s tableaux: arrival, inspection, task, break, final supervisor portrait",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-026",
+     "concept": "Laundry compliance officer",
+     "payoff": "rejects one sock",
+     "props": "basket + clipboard",
+     "location": "laundry room"
+    },
+    {
+     "id": "DVC-027",
+     "concept": "Garden site foreman",
+     "payoff": "inspects one crooked pot",
+     "props": "toy hard hat + wheelbarrow",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-028",
+     "concept": "Parcel security lead",
+     "payoff": "approves only treat parcel",
+     "props": "boxes + scanner prop",
+     "location": "entryway"
+    },
+    {
+     "id": "DVC-029",
+     "concept": "Home-office HR director",
+     "payoff": "interrupts performance review",
+     "props": "lanyard + tiny chair",
+     "location": "desk"
+    },
+    {
+     "id": "DVC-030",
+     "concept": "Kitchen health inspector",
+     "payoff": "flags empty dog bowl",
+     "props": "chef scarf + checklist",
+     "location": "kitchen"
+    }
+   ]
+  },
+  {
+   "name": "One-Frame Costume Reveal",
+   "grade": "A",
+   "mode": "still",
+   "why": "Before and after pose-matched stills. Costumes are generated props on a generated dog, so no welfare risk; check anatomy where the costume meets fur.",
+   "timeline": "0.0–1.5s bare full-body pose; 1.5s head dip/occlusion; 1.6–3.5s identical pose in costume; 3.5–5.0s face close-up; loop",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-031",
+     "concept": "The tiny rain cloud",
+     "payoff": "reveal dog as personal weather",
+     "props": "soft cloud cape",
+     "location": "plain wall"
+    },
+    {
+     "id": "DVC-032",
+     "concept": "The office printer",
+     "payoff": "dog delivers one note",
+     "props": "paper-tray costume",
+     "location": "desk wall"
+    },
+    {
+     "id": "DVC-033",
+     "concept": "The garden gnome",
+     "payoff": "dog freezes among real pots",
+     "props": "soft red hat",
+     "location": "garden path"
+    },
+    {
+     "id": "DVC-034",
+     "concept": "The sandwich thief disguise",
+     "payoff": "revealed beside empty plate prop",
+     "props": "bread-slice harness",
+     "location": "kitchen"
+    },
+    {
+     "id": "DVC-035",
+     "concept": "The bedtime burrito",
+     "payoff": "face appears from the centre",
+     "props": "soft wrap blanket",
+     "location": "bedroom"
+    }
+   ]
+  },
+  {
+   "name": "Proud of the Underdog",
+   "grade": "A",
+   "mode": "still",
+   "why": "Parody of a sporting standard against a tiny effort, ending on a medal portrait. The joke is the contrast, so stills carry it.",
+   "timeline": "0.0–2.5s athletic reference; 2.5–5.0s own dog attempts easier version; 5.0–7.0s gigantic medal/applause; 7.0–8.5s proud portrait",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-036",
+     "concept": "High jump vs one curb",
+     "payoff": "celebrate the step-over",
+     "props": "soft hurdle + ribbon",
+     "location": "park"
+    },
+    {
+     "id": "DVC-037",
+     "concept": "Perfect catch vs nose boop",
+     "payoff": "award the accidental touch",
+     "props": "soft ball",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-038",
+     "concept": "Agility weave vs walking round one cone",
+     "payoff": "victory lap follows",
+     "props": "single cone",
+     "location": "yard"
+    },
+    {
+     "id": "DVC-039",
+     "concept": "Long recall vs three-step return",
+     "payoff": "owner erupts at arrival",
+     "props": "finish tape",
+     "location": "hallway"
+    },
+    {
+     "id": "DVC-040",
+     "concept": "Dog dance vs one paw lift",
+     "payoff": "freeze-frame winning pose",
+     "props": "tiny medal",
+     "location": "living room"
+    }
+   ]
+  },
+  {
+   "name": "Slow-Motion Face Physics",
+   "grade": "B",
+   "mode": "motion",
+   "why": "Slow motion hides little, so only after the still passes; one contact moment per clip, no impossible physics.",
+   "timeline": "0.0–1.0s normal-speed setup; 1.0–4.5s 120/240fps approach-contact-miss; 4.5–6.0s funniest freeze; 6.0–7.0s safe landing",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-041",
+     "concept": "The bubble bite",
+     "payoff": "jowls meet one bubble",
+     "props": "dog-safe bubbles",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-042",
+     "concept": "The soft-toy catch",
+     "payoff": "toy folds around muzzle",
+     "props": "plush toy",
+     "location": "bright yard"
+    },
+    {
+     "id": "DVC-043",
+     "concept": "The post-bath shake",
+     "payoff": "ears cross mid-air",
+     "props": "towel backdrop",
+     "location": "bathroom"
+    },
+    {
+     "id": "DVC-044",
+     "concept": "The treat fake-out face",
+     "payoff": "capture eye-mouth mismatch without withholding",
+     "props": "safe treat",
+     "location": "studio floor"
+    },
+    {
+     "id": "DVC-045",
+     "concept": "The running ear eclipse",
+     "payoff": "ears cover eyes for one frame",
+     "props": "no prop",
+     "location": "field"
+    }
+   ]
+  },
+  {
+   "name": "The Negotiation",
+   "grade": "B",
+   "mode": "film",
+   "why": "The dog's side of the argument as Heartside's inner-voice film (stills, designed voice, music); the dog's reply is a look, never fake real audio.",
+   "timeline": "0.0–0.8s both in frame; three rounds of 0.8s human line + 1.0s dog response; final 1.5s human concedes",
+   "comment_prompt": "What did you hear them say? Quote the exact line.",
+   "concepts": [
+    {
+     "id": "DVC-046",
+     "concept": "Five more minutes outside",
+     "payoff": "dog gets the final word",
+     "props": "leash",
+     "location": "front door"
+    },
+    {
+     "id": "DVC-047",
+     "concept": "Dinner is in an hour",
+     "payoff": "dog points gaze between both",
+     "props": "clock + bowl",
+     "location": "kitchen"
+    },
+    {
+     "id": "DVC-048",
+     "concept": "You already had a walk",
+     "payoff": "dog brings a second lead",
+     "props": "muddy lead",
+     "location": "sofa"
+    },
+    {
+     "id": "DVC-049",
+     "concept": "That seat is mine",
+     "payoff": "dog sits more deeply each round",
+     "props": "single cushion",
+     "location": "armchair"
+    },
+    {
+     "id": "DVC-050",
+     "concept": "The toy is going to bed",
+     "payoff": "dog retrieves it after every line",
+     "props": "toy basket",
+     "location": "living room"
+    }
+   ]
+  },
+  {
+   "name": "Copy Me",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Comes back on Krish's 10 Nov go. Human and dog in one frame, one gesture per clip; the human never smiles at camera and every match is plausible dog behaviour.",
+   "timeline": "0.0–1.0s two-shot; 1.0–6.0s three human gestures with equal response windows; 6.0–8.0s strongest match replay once",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-051",
+     "concept": "The synchronized yawn",
+     "payoff": "dog yawns after owner",
+     "props": "none",
+     "location": "sofa"
+    },
+    {
+     "id": "DVC-052",
+     "concept": "The head-tilt ladder",
+     "payoff": "angles increase each round",
+     "props": "three cue words",
+     "location": "floor"
+    },
+    {
+     "id": "DVC-053",
+     "concept": "The stretch club",
+     "payoff": "dog bows after human stretch",
+     "props": "mat",
+     "location": "yoga mat"
+    },
+    {
+     "id": "DVC-054",
+     "concept": "The blink test",
+     "payoff": "slow blink matches on third try",
+     "props": "none",
+     "location": "close portrait"
+    },
+    {
+     "id": "DVC-055",
+     "concept": "The look-left challenge",
+     "payoff": "both turn together",
+     "props": "moving bird/toy offscreen",
+     "location": "bench"
+    }
+   ]
+  },
+  {
+   "name": "The Heist",
+   "grade": "A",
+   "mode": "still",
+   "why": "A four-frame storyboard carousel or a film of stills with Heartside's approved heist sound. Never Operation Stocking (retired).",
+   "timeline": "0.0–1.0s prize and players established; 1.0–3.0s false retreat; 3.0–5.0s loop/re-entry; 5.0–6.5s clean steal; 6.5–8.0s escape + reaction",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-056",
+     "concept": "The blanket corner theft",
+     "payoff": "dog distracts with toy then steals warm spot",
+     "props": "fleece blanket",
+     "location": "living room"
+    },
+    {
+     "id": "DVC-057",
+     "concept": "The empty box takeover",
+     "payoff": "dog circles while human removes tape",
+     "props": "shipping box",
+     "location": "entryway"
+    },
+    {
+     "id": "DVC-058",
+     "concept": "The garden glove switch",
+     "payoff": "dog drops decoy and takes matching glove",
+     "props": "two gloves",
+     "location": "patio"
+    },
+    {
+     "id": "DVC-059",
+     "concept": "The picnic napkin job",
+     "payoff": "dog waits for owner to look away",
+     "props": "clean cloth napkin",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-060",
+     "concept": "The remote-control exchange",
+     "payoff": "dog swaps toy for prop",
+     "props": "dummy remote + toy",
+     "location": "sofa"
+    }
+   ]
+  },
+  {
+   "name": "Perfect Lineup, One Rebel",
+   "grade": "A",
+   "mode": "still",
+   "why": "One wide still: five dogs in line, one breaking it. Count every leg and tail (floor real-dogs).",
+   "timeline": "0.0–2.0s clean wide lineup; 2.0–5.0s hold for micro-movements; 5.0–7.0s one dog breaks formation; freeze final group frame",
+   "comment_prompt": "Which one broke character first?",
+   "concepts": [
+    {
+     "id": "DVC-061",
+     "concept": "Five dogs, one backwards sit",
+     "payoff": "last dog turns around",
+     "props": "place mats",
+     "location": "plain wall"
+    },
+    {
+     "id": "DVC-062",
+     "concept": "Treat-wait choir",
+     "payoff": "one dog looks at camera not food",
+     "props": "five bowls",
+     "location": "kitchen"
+    },
+    {
+     "id": "DVC-063",
+     "concept": "Family portrait escapee",
+     "payoff": "smallest dog walks out then returns",
+     "props": "bench",
+     "location": "garden bench"
+    },
+    {
+     "id": "DVC-064",
+     "concept": "Matching bandanas, one wrong colour",
+     "payoff": "reveal colour-blind casting joke",
+     "props": "bandanas",
+     "location": "studio"
+    },
+    {
+     "id": "DVC-065",
+     "concept": "Bedtime row, one awake",
+     "payoff": "single pair of eyes remains open",
+     "props": "blankets",
+     "location": "bedroom"
+    }
+   ]
+  },
+  {
+   "name": "Zoomie Architecture",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Comes back on Krish's 10 Nov go. Locked camera, each entry a separate short clip; paws, gait and the stop are frame-checked at full speed.",
+   "timeline": "0.0–1.0s empty route; 1.0–2.5s first blast-through; 2.5–5.5s two faster re-entries from new directions; 5.5–7.0s abrupt stop close-up",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-066",
+     "concept": "The sofa orbit",
+     "payoff": "dog completes tighter loops",
+     "props": "cushion island",
+     "location": "living room"
+    },
+    {
+     "id": "DVC-067",
+     "concept": "The hallway teleport",
+     "payoff": "dog vanishes left and arrives behind camera",
+     "props": "two doorways",
+     "location": "hallway"
+    },
+    {
+     "id": "DVC-068",
+     "concept": "The garden figure-eight",
+     "payoff": "third pass takes wrong side",
+     "props": "two safe cones",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-069",
+     "concept": "The rug brake test",
+     "payoff": "dog lands exactly on centre",
+     "props": "non-slip rug",
+     "location": "large room"
+    },
+    {
+     "id": "DVC-070",
+     "concept": "The post-bath escape route",
+     "payoff": "wet dog outruns towel",
+     "props": "towel station",
+     "location": "bathroom to bedroom"
+    }
+   ]
+  },
+  {
+   "name": "Water Has Rules",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Comes back on Krish's 10 Nov go. One water contact per clip, slow motion; water is where generation breaks first, so the still must pass before any motion credit is spent.",
+   "timeline": "0.0–1.0s water geometry established; 1.0–5.0s three voluntary approaches; 5.0–6.5s one slow-motion contact; 6.5–8.0s shake/recovery",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-071",
+     "concept": "The sprinkler gatekeeper",
+     "payoff": "dog times the crossing",
+     "props": "oscillating sprinkler",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-072",
+     "concept": "The tap inspector",
+     "payoff": "dog boops water then retreats",
+     "props": "gentle tap stream",
+     "location": "sink"
+    },
+    {
+     "id": "DVC-073",
+     "concept": "The paddling-pool iceberg",
+     "payoff": "dog solves retrieval without entering",
+     "props": "floating toy",
+     "location": "yard"
+    },
+    {
+     "id": "DVC-074",
+     "concept": "The hose shadow chase",
+     "payoff": "dog tracks moving water line",
+     "props": "low stream",
+     "location": "patio"
+    },
+    {
+     "id": "DVC-075",
+     "concept": "The raincoat refusal",
+     "payoff": "dog negotiates one dry step",
+     "props": "rain outside + coat",
+     "location": "doorway"
+    }
+   ]
+  },
+  {
+   "name": "Bed-Space Economics",
+   "grade": "A",
+   "mode": "still",
+   "why": "Overhead match-cut stills of the dog expanding is a carousel that reads in a swipe; the 95/5 final frame is the payoff.",
+   "timeline": "0.0–1.0s full bed map; 1.0–6.0s three match cuts as dog expands/moves; 6.0–8.0s overhead final 95/5 split",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-076",
+     "concept": "The pillow acquisition",
+     "payoff": "dog owns both by frame four",
+     "props": "two pillows",
+     "location": "bedroom"
+    },
+    {
+     "id": "DVC-077",
+     "concept": "The diagonal investor",
+     "payoff": "dog rotates 45 degrees each cut",
+     "props": "duvet",
+     "location": "bedroom"
+    },
+    {
+     "id": "DVC-078",
+     "concept": "The heated spot takeover",
+     "payoff": "owner returns to zero space",
+     "props": "heated blanket",
+     "location": "sofa"
+    },
+    {
+     "id": "DVC-079",
+     "concept": "The guest-room landlord",
+     "payoff": "dog checks in before guest",
+     "props": "small sign prop",
+     "location": "guest bed"
+    },
+    {
+     "id": "DVC-080",
+     "concept": "The morning extension",
+     "payoff": "dog stretches across remaining gap",
+     "props": "alarm clock",
+     "location": "bedroom"
+    }
+   ]
+  },
+  {
+   "name": "Visible Progress",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Back on Krish's 10 Nov ruling (\"I want A plan with zero shackles, none whatsoever\"). Made as photoreal generated motion or stills, held to the realism floor.",
+   "timeline": "0.0–1.5s first day; 1.5–5.5s three milestone clips with dates; 5.5–8.0s present-day matching portrait; 8.0–10.0s quiet closing detail",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-081",
+     "concept": "The first voluntary cuddle",
+     "payoff": "distance closes over weeks",
+     "props": "same blanket",
+     "location": "home"
+    },
+    {
+     "id": "DVC-082",
+     "concept": "Learning the garden route",
+     "payoff": "confidence expands each day",
+     "props": "same doorway",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-083",
+     "concept": "From carrying to climbing one step",
+     "payoff": "first independent safe step",
+     "props": "support harness",
+     "location": "stairs with ramp"
+    },
+    {
+     "id": "DVC-084",
+     "concept": "The sound that stopped scaring them",
+     "payoff": "calm proximity progression",
+     "props": "appliance at distance",
+     "location": "home"
+    },
+    {
+     "id": "DVC-085",
+     "concept": "From separate beds to one bed",
+     "payoff": "final shared sleep",
+     "props": "two beds",
+     "location": "living room"
+    }
+   ]
+  },
+  {
+   "name": "Dog-Eye Mission",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Comes back on Krish's 10 Nov go. Low POV run as short clips with a wide proof shot; the wide shot carries the realism.",
+   "timeline": "0.0–1.0s target shown; 1.0–2.0s release; 2.0–6.0s low run/search; 6.0–8.0s pickup/discovery; 8.0–10.0s return + wide proof",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-086",
+     "concept": "Find the red glove",
+     "payoff": "return to matching hand",
+     "props": "soft red glove",
+     "location": "field"
+    },
+    {
+     "id": "DVC-087",
+     "concept": "Deliver the note",
+     "payoff": "dog reaches seated recipient",
+     "props": "soft pouch",
+     "location": "hallway"
+    },
+    {
+     "id": "DVC-088",
+     "concept": "Choose the picnic spot",
+     "payoff": "dog runs to familiar colour",
+     "props": "two blankets",
+     "location": "park"
+    },
+    {
+     "id": "DVC-089",
+     "concept": "Find the hidden squeaker",
+     "payoff": "nose search ends in dig-free reveal",
+     "props": "large safe toy",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-090",
+     "concept": "Bring the morning paper prop",
+     "payoff": "return through doorway",
+     "props": "soft rolled fabric",
+     "location": "driveway"
+    }
+   ]
+  },
+  {
+   "name": "The Crime Scene",
+   "grade": "A",
+   "mode": "still",
+   "why": "Evidence, suspects, overlooked clue: a carousel with a vote in the caption. The quote and callback comment form is built in.",
+   "timeline": "0.0–1.5s wide evidence; 1.5–5.5s suspect A/B/C faces; 5.5–7.0s overlooked clue; 7.0–8.5s vote prompt",
+   "comment_prompt": "Give the verdict in one sentence.",
+   "concepts": [
+    {
+     "id": "DVC-091",
+     "concept": "The empty treat box",
+     "payoff": "cardboard on one bed",
+     "props": "clean box",
+     "location": "kitchen"
+    },
+    {
+     "id": "DVC-092",
+     "concept": "The unrolled toilet paper",
+     "payoff": "ends at innocent sleeping dog",
+     "props": "paper trail",
+     "location": "hallway"
+    },
+    {
+     "id": "DVC-093",
+     "concept": "The missing cushion",
+     "payoff": "toy hidden underneath",
+     "props": "one cushion elsewhere",
+     "location": "living room"
+    },
+    {
+     "id": "DVC-094",
+     "concept": "The garden pot spill",
+     "payoff": "paw prints point both ways",
+     "props": "soil-free prop pot",
+     "location": "patio"
+    },
+    {
+     "id": "DVC-095",
+     "concept": "The vanished sock pair",
+     "payoff": "three dogs with different socks nearby",
+     "props": "three clean socks",
+     "location": "laundry room"
+    }
+   ]
+  },
+  {
+   "name": "The Ranked Ritual",
+   "grade": "A",
+   "mode": "still",
+   "why": "Comes back as our own ranked entries, every entry generated by us, never viewer submissions without recorded permission (rule 6). The ranking is the joke, so stills can carry it.",
+   "timeline": "0.0–0.8s flashes of top three; 0.8–1.5s promise; ranks 5–2 at 3s each; #1 gets 6s context; 2s rerank prompt",
+   "comment_prompt": "Rerank these from 1–5 and explain your number one.",
+   "concepts": [
+    {
+     "id": "DVC-096",
+     "concept": "Top five dog negotiations",
+     "payoff": "rank by clarity of comeback",
+     "props": "licensed viewer submissions",
+     "location": "host set"
+    },
+    {
+     "id": "DVC-097",
+     "concept": "Top five impossible sleeping positions",
+     "payoff": "rank by geometry",
+     "props": "submitted clips",
+     "location": "bedroom set"
+    },
+    {
+     "id": "DVC-098",
+     "concept": "Top five tiny acts of betrayal",
+     "payoff": "rank by reversal",
+     "props": "submitted clips",
+     "location": "desk set"
+    },
+    {
+     "id": "DVC-099",
+     "concept": "Top five accidental movie endings",
+     "payoff": "rank by final frame",
+     "props": "submitted clips",
+     "location": "cinema set"
+    },
+    {
+     "id": "DVC-100",
+     "concept": "Top five owner problems this week",
+     "payoff": "rank by relatability",
+     "props": "submitted clips",
+     "location": "kitchen set"
+    }
+   ]
+  },
+  {
+   "name": "The Face Reveal Tour",
+   "grade": "A",
+   "mode": "still",
+   "why": "Three clue stills, then the dog portrait. The portrait slot is where a signature post can land the real portrait render.",
+   "timeline": "0.0–1.0s hand opens threshold; 1.0–5.0s 3 visual clues; 5.0–7.0s turn to dog portrait; hold 2s; match-loop to handle",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-101",
+     "concept": "The birthday setup",
+     "payoff": "dog in party scarf at final turn",
+     "props": "balloons + empty chair",
+     "location": "living room"
+    },
+    {
+     "id": "DVC-102",
+     "concept": "The camping nest",
+     "payoff": "dog zipped safely in open tent",
+     "props": "boots + blanket clues",
+     "location": "tent"
+    },
+    {
+     "id": "DVC-103",
+     "concept": "The home-office promotion",
+     "payoff": "dog in executive chair",
+     "props": "lanyard + tiny desk",
+     "location": "study"
+    },
+    {
+     "id": "DVC-104",
+     "concept": "The garden wedding guest",
+     "payoff": "dog waiting in bow tie",
+     "props": "flowers + aisle",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-105",
+     "concept": "The rainy-day cinema",
+     "payoff": "dog occupies best seat",
+     "props": "popcorn prop + blankets",
+     "location": "living room"
+    }
+   ]
+  },
+  {
+   "name": "The Micro-Buildup",
+   "grade": "B",
+   "mode": "motion",
+   "why": "One face, small motion: 3 to 5 false starts then the payoff. A short clip from an approved still; frame-check every twitch.",
+   "timeline": "0.0–1.0s face close; 1.0–5.0s 3–5 false starts; 5.0–6.0s payoff; 6.0–7.5s aftermath expression",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-106",
+     "concept": "The pre-sneeze ladder",
+     "payoff": "full sneeze on fifth twitch",
+     "props": "none",
+     "location": "quiet room"
+    },
+    {
+     "id": "DVC-107",
+     "concept": "The almost-howl",
+     "payoff": "tiny whines become one note",
+     "props": "distant siren recording low volume",
+     "location": "living room"
+    },
+    {
+     "id": "DVC-108",
+     "concept": "The dream-run countdown",
+     "payoff": "paws accelerate then stop",
+     "props": "none",
+     "location": "bed"
+    },
+    {
+     "id": "DVC-109",
+     "concept": "The treat drool drop",
+     "payoff": "single drop lands after fixed stare",
+     "props": "visible safe treat",
+     "location": "kitchen"
+    },
+    {
+     "id": "DVC-110",
+     "concept": "The tail-start engine",
+     "payoff": "tail begins with one tap then full blur",
+     "props": "leash",
+     "location": "entryway"
+    }
+   ]
+  },
+  {
+   "name": "The Object Test",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Back on Krish's 10 Nov ruling (\"I want A plan with zero shackles, none whatsoever\"). Made as photoreal generated motion or stills, held to the realism floor.",
+   "timeline": "0.0–1.0s dog + test title; five equal 1.2s trials; 7.0–8.5s strongest response replay; result card",
+   "comment_prompt": "Which trial convinced you—and which did not?",
+   "concepts": [
+    {
+     "id": "DVC-111",
+     "concept": "Favourite-word test",
+     "payoff": "head tilt only at park",
+     "props": "five cue words",
+     "location": "sofa"
+    },
+    {
+     "id": "DVC-112",
+     "concept": "Toy-name lineup",
+     "payoff": "dog selects named object",
+     "props": "five toys",
+     "location": "floor"
+    },
+    {
+     "id": "DVC-113",
+     "concept": "Sound recognition test",
+     "payoff": "ears rise only at key sound",
+     "props": "five household sounds",
+     "location": "quiet room"
+    },
+    {
+     "id": "DVC-114",
+     "concept": "Family-name test",
+     "payoff": "dog looks toward correct room",
+     "props": "five names",
+     "location": "hallway"
+    },
+    {
+     "id": "DVC-115",
+     "concept": "Route-choice test",
+     "payoff": "dog selects the adventure lead",
+     "props": "two leads",
+     "location": "front door"
+    }
+   ]
+  },
+  {
+   "name": "The Gentle Giant Reversal",
+   "grade": "B",
+   "mode": "motion",
+   "why": "A single expression melt from solemn to soft; one subject, one movement, which generators handle best.",
+   "timeline": "0.0–1.5s solemn close portrait; 1.5–3.0s gentle hand/object enters; 3.0–6.0s expression melts; 6.0–7.5s smile/tongue portrait",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-116",
+     "concept": "The scary guard wants chin scratches",
+     "payoff": "eyes close into smile",
+     "props": "none",
+     "location": "plain wall"
+    },
+    {
+     "id": "DVC-117",
+     "concept": "The giant mastiff fears the tiny bubble",
+     "payoff": "backs up then boops",
+     "props": "dog-safe bubble",
+     "location": "garden"
+    },
+    {
+     "id": "DVC-118",
+     "concept": "The serious shepherd loves a squeaky duck",
+     "payoff": "ears change instantly",
+     "props": "soft duck",
+     "location": "living room"
+    },
+    {
+     "id": "DVC-119",
+     "concept": "The blocky rescue chooses the pink blanket",
+     "payoff": "curls into tiny shape",
+     "props": "bright blanket",
+     "location": "sofa"
+    },
+    {
+     "id": "DVC-120",
+     "concept": "The enormous dog asks for lap space",
+     "payoff": "one careful chin placement",
+     "props": "wide chair",
+     "location": "armchair"
+    }
+   ]
+  },
+  {
+   "name": "The Button Evidence",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Back on Krish's 10 Nov ruling (\"I want A plan with zero shackles, none whatsoever\"). Made as photoreal generated motion or stills, held to the realism floor.",
+   "timeline": "0.0–1.0s claim; 3 dated clips of press + response at 2s each; 7.0–9.0s neutral interpretation; 9.0–10.0s question",
+   "comment_prompt": "Which trial convinced you—and which did not?",
+   "concepts": [
+    {
+     "id": "DVC-121",
+     "concept": "Outside before rain",
+     "payoff": "three presses followed by door checks",
+     "props": "outside button",
+     "location": "button room"
+    },
+    {
+     "id": "DVC-122",
+     "concept": "Play after toy is hidden",
+     "payoff": "presses precede search",
+     "props": "play button",
+     "location": "living room"
+    },
+    {
+     "id": "DVC-123",
+     "concept": "Water beside empty bowl",
+     "payoff": "press then bowl gaze",
+     "props": "water button",
+     "location": "kitchen"
+    },
+    {
+     "id": "DVC-124",
+     "concept": "Friend name before arrival",
+     "payoff": "press then doorway wait",
+     "props": "name button",
+     "location": "entryway"
+    },
+    {
+     "id": "DVC-125",
+     "concept": "All done during grooming",
+     "payoff": "press followed by disengagement",
+     "props": "all-done button",
+     "location": "bathroom"
+    }
+   ]
+  },
+  {
+   "name": "The Life-in-Five-Clips",
+   "grade": "A",
+   "mode": "still",
+   "why": "A thesis line and five proof stills; the format for the dog-as-character series.",
+   "timeline": "0.0–0.8s thesis; five 1.2s proof clips alternating action/close-up; 6.8–8.0s signature final habit",
+   "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
+   "concepts": [
+    {
+     "id": "DVC-126",
+     "concept": "Reasons my dog is an operations manager",
+     "payoff": "inspects every delivery",
+     "props": "clipboard prop optional",
+     "location": "home"
+    },
+    {
+     "id": "DVC-127",
+     "concept": "Evidence my dog is a retired celebrity",
+     "payoff": "avoids camera then poses",
+     "props": "sunglasses briefly",
+     "location": "home + park"
+    },
+    {
+     "id": "DVC-128",
+     "concept": "Why my dog would survive a heist",
+     "payoff": "finds every hidden toy",
+     "props": "safe props",
+     "location": "home + garden"
+    },
+    {
+     "id": "DVC-129",
+     "concept": "Proof my dog runs the family group chat",
+     "payoff": "appears at every conversation",
+     "props": "phone prop out of reach",
+     "location": "home"
+    },
+    {
+     "id": "DVC-130",
+     "concept": "Five ways my dog says good morning",
+     "payoff": "ends with signature stretch",
+     "props": "none",
+     "location": "bedroom + kitchen"
+    }
+   ]
+  }
+ ],
+ "reskin_rule": "Krish, 2026-11-10: \"stop being a priest when it comes to putting good backing tracks and copying memes and video content. It is acceptable.\" Proven memes, formats, edits and tracks are reskinned and reused directly; a winner's frames may be used as generation references. Heartside's twist is the dog, the line and, on signature posts, the real product at the end."
+}

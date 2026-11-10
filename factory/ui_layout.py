@@ -95,6 +95,24 @@ def caption(image, text, font, y=None):
     return image
 
 
+CHAT_FLOOR = 1480   # chats run below the content box, clear of the platform caption (floor chat-builds-like-whatsapp)
+
+
+def chat_blocks(blocks, top=510, bottom=CHAT_FLOOR, gap=18):
+    """A chat builds as a real one does (Krish, 10 Nov): newest at the bottom, earlier messages stacked
+    above it, the oldest sliding up under the header and cut off by it, as in WhatsApp. No cap."""
+    if blocks and blocks[-1].height > bottom - top:
+        raise ValueError('chat message is too tall; split it into another beat')
+    positioned, y = [], bottom
+    for block in reversed(blocks):
+        y -= block.height
+        if y + block.height <= top:
+            break
+        positioned.append((block, y))
+        y -= gap
+    return list(reversed(positioned))
+
+
 def recent_blocks(blocks, top=510, bottom=1152, gap=22):
     """Newest payoff must fit; never silently disappear below the native UI."""
     visible, room = [], bottom - top
@@ -126,9 +144,11 @@ def chat_screen(blocks, title, avatars, title_font, small_font, paper):
         image.paste(avatar, (int((left + right) / 2 - len(avatars) * 30 + i * 60), 374), avatar)
     label = 'Fictional dog chat'
     draw.text(((left + right - draw.textlength(label, font=small_font)) / 2, 440), label, font=small_font, fill=paper)
-    for block, y in recent_blocks(blocks):
+    for block, y in chat_blocks(blocks):
         if block.width > right - left:
             raise ValueError('chat block crosses the action-rail working boundary')
+        if y < 510:   # scrolled up under the header: show only what is still below it
+            block = block.crop((0, 510 - y, block.width, block.height)); y = 510
         image.paste(block, (left, y), block)
     # No pretend input field, notifications, platform controls or engagement counts.
     return image

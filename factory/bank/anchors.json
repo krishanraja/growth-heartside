@@ -1,0 +1,91 @@
+{
+ "about": "What the Tier 2 taste judge compares against (factory/panel.py). Tens are work Krish locked or picked as the bar; the bad anchors are read live from factory/floor.json, with his exact words, so they are never copied here. Add every new lock and every new decline the day it happens.",
+ "tens": [
+  {
+   "id": "F01-F12 locks",
+   "what": "Krish's twelve locked organic posts (factory/locks/): genre parody, a dog's inner voice, the real product at the end",
+   "why": "his yes on 3 and 4 Nov"
+  },
+  {
+   "id": "F34",
+   "what": "The face-blanket roast: three dog best mates in a group chat that builds like WhatsApp, typing like real mates (\"bro\", emojis, \"u\", \"ur\", misspellings); the shepherd shares his gift for Mom, a real store blanket covered in his own face, and every message roasts, defends or escalates; ends on \"thats a hostage situation 💀\" and the real blanket held 4 s. The ten for every chat post",
+   "why": "Krish, 10 Nov: \"9, file it and lock the structure\". The panel gave its last two drafts 8, so on chat it runs about a point below him"
+  },
+  {
+   "id": "F38-F40 dog routines",
+   "what": "Three silent reels shot as human video formats while a real dog does dog things in every slot, no human arms: F38 \"My dog's 4 AM routine\" (time-and-activity labels: cold plunge is standing in the water bowl, meditation is the poo squat at sunrise, stakeholder alignment is a bark-off with the terrier across the street, then an \"aligned\" flat stare, ending on a loop back to the 4 AM stare labeled day 2); F39 \"My dog's gym era\" (a log carried as the deadlift and chewed on the bench, a ball chase as sprints, belly-up recovery among the gear, a flat stare); F40 \"My dog's Monday morning\" (labels escalating from intermittent fasting to burnout and boundaries over plain dog behavior, ending on a flat stare from under the duvet). The ten for every dog-does-dog-things post",
+   "why": "Krish, 10 Nov: \"Approved of them all\". The panel held all three at 8 (agreement 0 of 3), so on this format it ran at least a point below him: a clean slot-to-behavior mapping with one knowing stare is already a 9 for him"
+  },
+  {
+   "id": "yt:u7s47cIeh6M",
+   "what": "\"My dog's 9 to 5\": a shepherd in a hoodie with a hidden person's arms stages every lyric of Dolly Parton's 9 to 5 literally, one beat a second; 18.8M views when read. Its lyric captions are never copied (Krish, 10 Nov: no lyric subtitles)",
+   "why": "Krish, 10 Nov: \"This is Good\""
+  },
+  {
+   "id": "yt:WzzueiNf-uU",
+   "what": "Two upright kittens do the viral 80s dance to Bronski Beat's Smalltown Boy into a low ultra-wide lens: a close-up each, then a synced two-shot",
+   "why": "Krish, 10 Nov: \"We should Generate a realistic version of this with dog's\""
+  }
+ ],
+ "questions_tier1": [
+  {
+   "id": "anatomy",
+   "floor": "real-dogs",
+   "ask": "Every dog has correct anatomy in every frame shown: four legs, one tail, paws with toes, two eyes and ears in place, no merged or extra limbs, human hands with five fingers. Answer no and name the frame if any frame fails."
+  },
+  {
+   "id": "payoff",
+   "floor": "dumb-stopping",
+   "ask": "With every caption and on-screen word covered, can you state the joke's payoff in one sentence from the pictures alone? Answer yes with the sentence, or no."
+  },
+  {
+   "id": "first-frame",
+   "floor": "dumb-stopping",
+   "ask": "Is the premise readable in frame 1 alone, with the sound off, in under a second?"
+  },
+  {
+   "id": "text-clear",
+   "floor": "text-clear-of-faces",
+   "ask": "No on-screen word covers a dog's eyes, face or the main action in any frame."
+  },
+  {
+   "id": "product",
+   "floor": "real-product",
+   "ask": "No AI-drawn mug, blanket, portrait or card appears; any product shown is a clean store render on a plain ground with no words."
+  },
+  {
+   "id": "continuity",
+   "floor": "generation-continuity",
+   "ask": "The same dog keeps the same coat, markings, collar and clothes across frames, and props do not change or vanish."
+  },
+  {
+   "id": "no-lyrics",
+   "floor": "no-lyric-captions",
+   "ask": "No on-screen text repeats a song lyric in any frame. A single opening premise line is allowed."
+  },
+  {
+   "id": "subtraction",
+   "floor": "no-lyric-captions",
+   "ask": "List every element on screen that is not the dog, its hands or the gag (text, overlays, props that do nothing). Answer yes only if each one earns its place; name any that does not."
+  }
+ ],
+ "tier2_rubric": "Score 1 to 10 against the tens above in the same format. 10: it would beat the matching ten. 9: as good as it. 7 to 8: competent but forgettable. 6 or below: a floor anchor would apply. Name the ten you compared against, the single strongest beat with its frame, and, if below 9, the floor quote Krish would most likely say. Only 9 and above reach Krish. Compare a viral post only with the viral tens (the YouTube picks, and F38 to F40 for any dog-does-dog-things post: a real dog doing real dog things inside a human video format); a product ending is required only on signature posts, never on viral ones. Krish's humour profile (docs/HUMOUR.md) is the anchor for every build: a post that lacks any of the three parts of its core test cannot score 9 or above, however clean its execution.",
+ "humour": {
+  "source": "docs/HUMOUR.md",
+  "why": "Krish, 10 Nov: \"Here's my humor profile. Make sure every build in all the sessions anchors towards this, now and in the future.\"",
+  "core": "an intelligent observation, an utterly stupid premise, and a slightly cruel payoff",
+  "traits": [
+   "deadpan absurdism, played completely straight",
+   "affectionate cruelty: the 'you absolute bastard' laugh, aimed at the dogs (and only at the person's habits with the dog)",
+   "intellectual stupidity: a serious format run with gloriously dumb logic",
+   "escalation with an underlying comic logic, never randomness",
+   "puncturing pretension: the most self-important character undone by their own behavior",
+   "surprise over conventional setups and predictable wordplay"
+  ],
+  "limits": [
+   "not past the funniest point in search of one more escalation",
+   "no jump the viewer cannot follow in the first second",
+   "Heartside rule 5 still binds: no mocking the buyer's body, looks, age, money, job or family; no swearing in public copy"
+  ]
+ }
+}

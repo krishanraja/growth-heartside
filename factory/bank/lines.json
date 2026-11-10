@@ -1571,6 +1571,2049 @@
    "source": "Krish, 2026-11-04 (chat: \"lock\", on the F03 cut)",
    "note": "On-screen label just before the cut to the shepherd's portrait of itself.",
    "text_sha256": "48b812e55f56a66fba2a0582f59e3e6ba355eb50b8909c59a7d40f6619a17202"
+  },
+  {
+   "id": "P04.title",
+   "text": "Mom's gift (top secret)",
+   "role": "chat.title",
+   "kind": "chat",
+   "breeds": [
+    "any"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "81c766df45d9cdf864fc6014abad04075c715f816153562820ed323146a97db3"
+  },
+  {
+   "id": "P04.c01",
+   "text": "code red. delivery van outside",
+   "role": "chat.p04_01",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.c02",
+   "text": "BARK BARK BARK",
+   "role": "chat.p04_02",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.c03",
+   "text": "NO. this one is ours",
+   "role": "chat.p04_03",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c04",
+   "text": "ours??",
+   "role": "chat.p04_04",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c05",
+   "text": "the gift. for Mom. do not scare him off",
+   "role": "chat.p04_05",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c06",
+   "text": "…bark?",
+   "role": "chat.p04_06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c07",
+   "text": "zero barks",
+   "role": "chat.p04_07",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c08",
+   "text": "I physically cannot",
+   "role": "chat.p04_08",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "cut in the 10 Nov rewrite: tier 2 judge, \"the same joke restated four times with no escalation\""
+  },
+  {
+   "id": "P04.c09",
+   "text": "I've barked at him for three years. he'll think something's wrong",
+   "role": "chat.p04_09",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.c10",
+   "text": "she's opening it",
+   "role": "chat.p04_10",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.c11",
+   "text": "she's crying",
+   "role": "chat.p04_11",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.c12",
+   "text": "good crying",
+   "role": "chat.p04_12",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.c13",
+   "text": "ok NOW can I bark",
+   "role": "chat.p04_13",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (storyboard P04, Krish picked it: \"build P04 as the sample\")",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.c03b",
+   "text": "NO. that's Mom's gift in there",
+   "role": "chat.p04_03b",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.c05b",
+   "text": "one bark and he drives off with it",
+   "role": "chat.p04_05b",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.c14",
+   "text": "he's vibrating",
+   "role": "chat.p04_14",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.c15",
+   "text": "he's waving at us. nobody move",
+   "role": "chat.p04_15",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite after the tier 2 judge scored 7: the middle repeated one joke)",
+   "note": "replaced by P04.c15b (\"he's waving. freeze\"): one line, so the driver photo stays on screen above it"
+  },
+  {
+   "id": "P04.c15b",
+   "text": "he's waving. freeze",
+   "role": "chat.p04_15",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 v5: one line, so the driver photo stays on screen above it)",
+   "note": "replaced by the lads-banter rewrite (Krish, 10 Nov: \"It should feel like a bunch of lads bantering\")"
+  },
+  {
+   "id": "P04.b01",
+   "text": "code red. van outside. NOBODY bark",
+   "role": "chat.p04_b01",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.b02",
+   "text": "BARK BARK BARK",
+   "role": "chat.p04_b02",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b03",
+   "text": "frenchie I swear",
+   "role": "chat.p04_b03",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.b04",
+   "text": "it's the same guy. I've barked at him for three years. it's tradition",
+   "role": "chat.p04_b04",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b05",
+   "text": "he waved at me. we're friends now",
+   "role": "chat.p04_b05",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b06",
+   "text": "he waves at everyone doodle. he waved at the bin",
+   "role": "chat.p04_b06",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b07",
+   "text": "so the bin and I are friends too",
+   "role": "chat.p04_b07",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b08",
+   "text": "focus. Mom's gift is in that van. one bark and he takes it back",
+   "role": "chat.p04_b08",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b09",
+   "text": "what did you even get her",
+   "role": "chat.p04_b09",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.b10",
+   "text": "…that's your face",
+   "role": "chat.p04_b10",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.b11",
+   "text": "it's SO many of your face",
+   "role": "chat.p04_b11",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.b12",
+   "text": "so she thinks of me when I'm not there",
+   "role": "chat.p04_b12",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.b13",
+   "text": "you have never once not been there",
+   "role": "chat.p04_b13",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.b14",
+   "text": "you follow her to the bathroom",
+   "role": "chat.p04_b14",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.b15",
+   "text": "and I always will",
+   "role": "chat.p04_b15",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.b16",
+   "text": "she's opening it 😭",
+   "role": "chat.p04_b16",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b17",
+   "text": "she's crying",
+   "role": "chat.p04_b17",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b18",
+   "text": "a dozen of your face at once. I'd cry too",
+   "role": "chat.p04_b18",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.b19",
+   "text": "can I bark now",
+   "role": "chat.p04_b19",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.b20",
+   "text": "one. ONE bark",
+   "role": "chat.p04_b20",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 rewrite as lads banter: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the roast-chain version (judge, 10 Nov: plot-only line)"
+  },
+  {
+   "id": "P04.n01",
+   "text": "ok boys. Mom's gift is on the way. don't embarrass me",
+   "role": "chat.p04_n01",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.n02",
+   "text": "you got her a blanket of you",
+   "role": "chat.p04_n02",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.n03",
+   "text": "I got her a stick",
+   "role": "chat.p04_n03",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.n04",
+   "text": "doodle that's MY stick",
+   "role": "chat.p04_n04",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.n05",
+   "text": "it's Mom's stick now",
+   "role": "chat.p04_n05",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.n06",
+   "text": "same guy every day. it's tradition",
+   "role": "chat.p04_n06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "cut from the mutual-roast version (judge, 10 Nov: tangents bury the face joke; the shepherd never roasts back)"
+  },
+  {
+   "id": "P04.n07",
+   "text": "she's crying 😭",
+   "role": "chat.p04_n07",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 roast chain: Krish, \"It should feel like a bunch of lads bantering\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r01",
+   "text": "who ate the remote",
+   "role": "chat.p04_r01",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r02",
+   "text": "not me",
+   "role": "chat.p04_r02",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r03",
+   "text": "doodle it's in your bed",
+   "role": "chat.p04_r03",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r04",
+   "text": "the remote came to me",
+   "role": "chat.p04_r04",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r05",
+   "text": "someone has to guard her in there",
+   "role": "chat.p04_r05",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r06",
+   "text": "what did YOU get her",
+   "role": "chat.p04_r06",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r07",
+   "text": "I barked at the mailman for her",
+   "role": "chat.p04_r07",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r08",
+   "text": "you do that every day",
+   "role": "chat.p04_r08",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r09",
+   "text": "and every day she's safe",
+   "role": "chat.p04_r09",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r10",
+   "text": "doodle?",
+   "role": "chat.p04_r10",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r11",
+   "text": "I licked her face for 20 minutes",
+   "role": "chat.p04_r11",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r12",
+   "text": "that's a Tuesday",
+   "role": "chat.p04_r12",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r13",
+   "text": "and I found the remote",
+   "role": "chat.p04_r13",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r14",
+   "text": "IN YOUR BED",
+   "role": "chat.p04_r14",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.r15",
+   "text": "good crying",
+   "role": "chat.p04_r15",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 mutual roast: Krish, \"roasting each other, being best friends, and knowing each other inside out\")",
+   "note": "superseded by v10 (Krish scored v9 a 7: \"make it more hilarious\")"
+  },
+  {
+   "id": "P04.s01",
+   "text": "who ate the remote 😤",
+   "role": "chat.p04_s01",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "cdde0b08f0e9fc5f8d6ec6d61a1e7967b03259ceab0efb1c04825ded759b4718"
+  },
+  {
+   "id": "P04.s02",
+   "text": "not me",
+   "role": "chat.p04_s02",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "74c73b87d6293a99c3a487bf89b2bc24357af7fc8e867d1f963e5bf7af7f5d4c"
+  },
+  {
+   "id": "P04.s03",
+   "text": "doodle its in ur bed",
+   "role": "chat.p04_s03",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "a529f42427af117bd44cd7ca2abbc7d00d891e7b1a69ab5a9f8cc58f328d73aa"
+  },
+  {
+   "id": "P04.s04",
+   "text": "the remote came to me 🥺",
+   "role": "chat.p04_s04",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "460798306ffdf3feb4a9c86241855687f8eeeb671c404561cd056f1d1b7025f9"
+  },
+  {
+   "id": "P04.s05",
+   "text": "ok boys. moms gift lands today. act normal",
+   "role": "chat.p04_s05",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "e3cc9b0a2903a24ba91ca5e98b11eedd25fc38d367b40b5bfeecddf036b9fb75"
+  },
+  {
+   "id": "P04.s06",
+   "text": "bro u have never once acted normal",
+   "role": "chat.p04_s06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "e6ee5aa60a9670b2dc3ff9e167789d20766e96f7d98efef13aebdc01c3ec1004"
+  },
+  {
+   "id": "P04.s07",
+   "text": "bro 💀",
+   "role": "chat.p04_s07",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "f6189bb973b19c1cdb9b21a5da5a09472e5074bbca147aead01ed97a7afb70df"
+  },
+  {
+   "id": "P04.s08",
+   "text": "thats ur FACE",
+   "role": "chat.p04_s08",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "3c39744e20b0293339c980eadecccbf97671e3d4783c1cc845542ceeaaa692b4"
+  },
+  {
+   "id": "P04.s09",
+   "text": "its so many of ur face 😍",
+   "role": "chat.p04_s09",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "d1f51086b1f635992011ba3df624f8da603eb05c20f644e73d391c08f6e949df"
+  },
+  {
+   "id": "P04.s10",
+   "text": "u got her a blanket of urself 😭😭",
+   "role": "chat.p04_s10",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "b1bd174b3a9e3f2f8374a179fe2aed34218e344145256b3350f831aed7b16c41"
+  },
+  {
+   "id": "P04.s11",
+   "text": "so she thinks of me when im not there",
+   "role": "chat.p04_s11",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "fb0bd97e3573f1727f1b36df3a07ed2b75d0fe21a1580658bc00d34e34736855"
+  },
+  {
+   "id": "P04.s12",
+   "text": "u have literally never not been there",
+   "role": "chat.p04_s12",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "d5855a80b8325168e7e524c01b56005de0bcf26f0c1261ff87caa721fe2bd960"
+  },
+  {
+   "id": "P04.s13",
+   "text": "u follow her to the bathroom bro",
+   "role": "chat.p04_s13",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")",
+   "note": "cut in v11 (tier 2 on v10: flat middle, mild doodle gift, repeated remote payoff, too many \"bro\"s)"
+  },
+  {
+   "id": "P04.s14",
+   "text": "someone has to guard her in there 🫡",
+   "role": "chat.p04_s14",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "1b8af8178d12657bddab079d8aee7be3086a7e6bfb31c7d0c3fe2d92c49325b0"
+  },
+  {
+   "id": "P04.s15",
+   "text": "wat did U get her",
+   "role": "chat.p04_s15",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "7272dd7e304ae5c78cf78bd81d4ad0cb75c0d32d7c02087545c47bb81e929fcc"
+  },
+  {
+   "id": "P04.s16",
+   "text": "barked at the mailman for her",
+   "role": "chat.p04_s16",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "373cef090cb5d3bcf4756b23348fb07099e7936b3df68986960a05075debc5d7"
+  },
+  {
+   "id": "P04.s17",
+   "text": "u do that every day",
+   "role": "chat.p04_s17",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")",
+   "note": "cut in v11 (tier 2 on v10: flat middle, mild doodle gift, repeated remote payoff, too many \"bro\"s)"
+  },
+  {
+   "id": "P04.s18",
+   "text": "and every day she lives 💪",
+   "role": "chat.p04_s18",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "bfdd63318b84b82c6ff76c07c1d3c6827d28a647504fbdbbcf89a40d81d37604"
+  },
+  {
+   "id": "P04.s19",
+   "text": "doodle?",
+   "role": "chat.p04_s19",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "85462dc166baf80e521141df8ff710fd64ab988825953e74ab0f9a85d3d0019e"
+  },
+  {
+   "id": "P04.s20",
+   "text": "i licked her face for 20 minits",
+   "role": "chat.p04_s20",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")",
+   "note": "cut in v11 (tier 2 on v10: flat middle, mild doodle gift, repeated remote payoff, too many \"bro\"s)"
+  },
+  {
+   "id": "P04.s21",
+   "text": "thats a tuesday",
+   "role": "chat.p04_s21",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")",
+   "note": "cut in v11 (tier 2 on v10: flat middle, mild doodle gift, repeated remote payoff, too many \"bro\"s)"
+  },
+  {
+   "id": "P04.s22",
+   "text": "and i found the remote 🥰",
+   "role": "chat.p04_s22",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")",
+   "note": "cut in v11 (tier 2 on v10: flat middle, mild doodle gift, repeated remote payoff, too many \"bro\"s)"
+  },
+  {
+   "id": "P04.s23",
+   "text": "IN UR BED 😭",
+   "role": "chat.p04_s23",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")",
+   "note": "cut in v11 (tier 2 on v10: flat middle, mild doodle gift, repeated remote payoff, too many \"bro\"s)"
+  },
+  {
+   "id": "P04.s24",
+   "text": "shes crying 😭",
+   "role": "chat.p04_s24",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "0a0c77231524cd71c1be31cb11471f20b708cb18161b35678ffb1a3f6958d46d"
+  },
+  {
+   "id": "P04.s25",
+   "text": "good crying",
+   "role": "chat.p04_s25",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")",
+   "note": "cut in v11 (tier 2 on v10: flat middle, mild doodle gift, repeated remote payoff, too many \"bro\"s)"
+  },
+  {
+   "id": "P04.s26",
+   "text": "bro theres 12 of ur face staring at her. thats a hostage situation 💀",
+   "role": "chat.p04_s26",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 v10: Krish, \"7, make it more hilarious, drop a \\\"bro\\\" in there, some emojis, mis spellings.\")",
+   "note": "cut in v12 (tier 2 on v11: sentiment tail, echoed remote line)"
+  },
+  {
+   "id": "P04.t01",
+   "text": "u bark at him every day and take credit for it",
+   "role": "chat.p04_t01",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "ee3b459c6a14f95a22d8076c40900a9d8c50f06c067df06fc7c74a48749d0e0d"
+  },
+  {
+   "id": "P04.t02",
+   "text": "i sat on her foot so she cant leave 🥰",
+   "role": "chat.p04_t02",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "6adc55f3becfaf1bf7256e1b09198a32006199f526cb5e4981d50bb255889d65"
+  },
+  {
+   "id": "P04.t03",
+   "text": "doodle thats kidnapping",
+   "role": "chat.p04_t03",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "d70e3a63df2db247e3f6b2afa5fa38ee26c7deba581d3daec5baea4ac3c24461"
+  },
+  {
+   "id": "P04.t04",
+   "text": "also ur sitting on the remote rn",
+   "role": "chat.p04_t04",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "940c9f33723e5e6b247748dd80dbdc50cfdff742223a2c2de3bd9ede72118428"
+  },
+  {
+   "id": "P04.t05",
+   "text": "she will never sleep alone again",
+   "role": "chat.p04_t05",
+   "kind": "chat",
+   "breeds": [
+    "shepherd"
+   ],
+   "status": "retired",
+   "source": "proposed by the engine, 2026-11-10 (P04 v11: tier 2 scored v10 an 8; its fixes for the middle, the doodle gift, the remote payoff and the bro count)",
+   "note": "cut in v12 (tier 2 on v11: sentiment tail, echoed remote line)"
+  },
+  {
+   "id": "P04.t06",
+   "text": "u follow her to the bathroom",
+   "role": "chat.p04_t06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "af90cffcf9b55fa0dfa51014aeff0f45958ae0715a2221f17b001d5a8a125079"
+  },
+  {
+   "id": "P04.u01",
+   "text": "no im not 🥺",
+   "role": "chat.p04_u01",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "bb814547936cf63a162bb3315d1e6d0eb80ca5a78755624dd38c46c00d1de3f1"
+  },
+  {
+   "id": "P04.u02",
+   "text": "bro theres like 12 of ur face staring at her. thats a hostage situation 💀",
+   "role": "chat.p04_u02",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12, filed as F34)",
+   "text_sha256": "855a7f70f9a17e9d519797eca4a220c646422a9a6f5698b79cee1dc9585460ef"
+  },
+  {
+   "id": "F34gol.01",
+   "text": "who ate moms sock 😤",
+   "role": "chat.p04_s01",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "64e41286a5f9aae79d04a0c59798b4b49e2f088837f6092e28e0f8874c603bf9"
+  },
+  {
+   "id": "F34gol.02",
+   "text": "not me",
+   "role": "chat.p04_s02",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "74c73b87d6293a99c3a487bf89b2bc24357af7fc8e867d1f963e5bf7af7f5d4c"
+  },
+  {
+   "id": "F34gol.03",
+   "text": "dachshund theres a heel hanging out ur mouth",
+   "role": "chat.p04_s03",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f6375ebfdf54a8a8d1de83b80c6832043a286926ae64ad77deb6d76df9f7c866"
+  },
+  {
+   "id": "F34gol.04",
+   "text": "it was a gift from the floor 🥺",
+   "role": "chat.p04_s04",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "153a6326bf8c1ff383ee75536789784c251bc4dcc242faba897f45fa01f66c4f"
+  },
+  {
+   "id": "F34gol.05",
+   "text": "ok lads. moms present arrives today. play it cool",
+   "role": "chat.p04_s05",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "45f787dfb6ace4e0e5e7faece5a37e1e91bb3b6f6957f13ea761a8e312daea3d"
+  },
+  {
+   "id": "F34gol.06",
+   "text": "bro u cant even play fetch cool",
+   "role": "chat.p04_s06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "01d64c7b82fbffc3350b0dc379fe96f97feb63ce5bf38e3adf26150f7d2647d0"
+  },
+  {
+   "id": "F34gol.07",
+   "text": "bro 💀",
+   "role": "chat.p04_s07",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f6189bb973b19c1cdb9b21a5da5a09472e5074bbca147aead01ed97a7afb70df"
+  },
+  {
+   "id": "F34gol.08",
+   "text": "u copy pasted urself",
+   "role": "chat.p04_s08",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "36388b2033260fa8c57d5214988de917bd472dcd16bd5c8a8f13ad83cce0ed24"
+  },
+  {
+   "id": "F34gol.09",
+   "text": "ur so handsome on a blanket 😍",
+   "role": "chat.p04_s09",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "bf0006c5614267b7f57f896df3a7018bb2518d18086c911a1466c4e9b4d0ab33"
+  },
+  {
+   "id": "F34gol.10",
+   "text": "u made her a shrine to urself 😭😭",
+   "role": "chat.p04_s10",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "799fb4b93d4cc3d391d7b05f71e1429feca621272fc02a31e87da45c6d16cf1a"
+  },
+  {
+   "id": "F34gol.11",
+   "text": "so she can cuddle me when im busy",
+   "role": "chat.p04_s11",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "64ef54f82922d3af13ee38e94c912105d27ab208fcf2b4b9d50a15b701834042"
+  },
+  {
+   "id": "F34gol.12",
+   "text": "ur never busy. u stare at walls",
+   "role": "chat.p04_s12",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "06c5703d79cd30533727f7cbf072a270a8afdf971d4f787875a8e0fa9d68e9a5"
+  },
+  {
+   "id": "F34gol.13",
+   "text": "u lost a fight with a leaf yesterday",
+   "role": "chat.p04_t06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "e21f3119d47b2faaa2397f1fd444d78bb51657da1684cb83f95b43ec3ce9ffc9"
+  },
+  {
+   "id": "F34gol.14",
+   "text": "that leaf knew what it did 🫡",
+   "role": "chat.p04_s14",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "2445738757498bf2c5a19e6ec2253802fae0816b76f79d67853a26d92a6747bd"
+  },
+  {
+   "id": "F34gol.15",
+   "text": "wat did U get her",
+   "role": "chat.p04_s15",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "7272dd7e304ae5c78cf78bd81d4ad0cb75c0d32d7c02087545c47bb81e929fcc"
+  },
+  {
+   "id": "F34gol.16",
+   "text": "i warned the whole street about a van for her",
+   "role": "chat.p04_s16",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "d72baa58b99e78e8b0f594a3122172649254f430626aaf24fe35de77f01f12ca"
+  },
+  {
+   "id": "F34gol.17",
+   "text": "bro it was the guy bringing her shoes",
+   "role": "chat.p04_t01",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "ad062aad96c37d255ce600fbc2e8a499e2b89235ee6749d3d5a047a358bc5e9d"
+  },
+  {
+   "id": "F34gol.18",
+   "text": "and now she knows he exists 💪",
+   "role": "chat.p04_s18",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "206749a62dda0bd8a6a66949ccb3588fe3cf7b3f3b8066cd44edddc63c11d6b8"
+  },
+  {
+   "id": "F34gol.19",
+   "text": "dachshund?",
+   "role": "chat.p04_s19",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "1371e94d269e0ebd991d40f4a0eed69ca75badf9ff86b14160b869875ac98fc4"
+  },
+  {
+   "id": "F34gol.20",
+   "text": "i dug her a hole in the garden 🥰",
+   "role": "chat.p04_t02",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "9d75fec3b8e17c750c4685ecfdf1bd9d5fc6969ea28ba8de9f6ccff1f86d60a8"
+  },
+  {
+   "id": "F34gol.21",
+   "text": "dachshund thats where her tulips were",
+   "role": "chat.p04_t03",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "36e64626af48a57fe96cb04eca132e2e423f6a702aa0d8248b9c540a16b7c413"
+  },
+  {
+   "id": "F34gol.22",
+   "text": "also the other sock is in ur bed rn",
+   "role": "chat.p04_t04",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f81dcc4ba314cc650bd09d9fba4a65e9cec920ec916dd3e4994d1d325af60709"
+  },
+  {
+   "id": "F34gol.23",
+   "text": "thats a different sock 🥺",
+   "role": "chat.p04_u01",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "a150b2bda61c941b7ceb064a7a06c8b06f7ff4bde6b3b2c5f4921d54fdd9a1cd"
+  },
+  {
+   "id": "F34gol.24",
+   "text": "shes crying 😭",
+   "role": "chat.p04_s24",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0a0c77231524cd71c1be31cb11471f20b708cb18161b35678ffb1a3f6958d46d"
+  },
+  {
+   "id": "F34gol.25",
+   "text": "bro shes crying cos this one doesnt shed 💀",
+   "role": "chat.p04_u02",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "note": "closer tightened after the panel read (was: bro finally a version of u that doesnt shed. shes crying from relief 💀)",
+   "text_sha256": "980c8d72a7f449aa06b0b8caee9a4fb0988a424accfaa07cdae80809bf859c76"
+  },
+  {
+   "id": "F34dac.01",
+   "text": "who barked at 3am 😤",
+   "role": "chat.p04_s01",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "54d8d67439ea5f735bee33bbc36d92d576907c48898f61a29700aa4662553f0c"
+  },
+  {
+   "id": "F34dac.02",
+   "text": "not me",
+   "role": "chat.p04_s02",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "74c73b87d6293a99c3a487bf89b2bc24357af7fc8e867d1f963e5bf7af7f5d4c"
+  },
+  {
+   "id": "F34dac.03",
+   "text": "doodle u barked at ur own reflection",
+   "role": "chat.p04_s03",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0e154d91a77a9663abc6be3723aee589371fb7c64a48545165de58d58f69a1bb"
+  },
+  {
+   "id": "F34dac.04",
+   "text": "he started it 🥺",
+   "role": "chat.p04_s04",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "b73c09c71f0e5f5dadd96609673dad9e46eb1f593c7f93fcab36ccd86016ae41"
+  },
+  {
+   "id": "F34dac.05",
+   "text": "gentlemen. moms gift arrives today. discretion is key",
+   "role": "chat.p04_s05",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "1fc6ffb708b62e68cab1397f2ce1aa4d939582d06f1267ea06791864a375ea33"
+  },
+  {
+   "id": "F34dac.06",
+   "text": "bro u announce every leaf that falls",
+   "role": "chat.p04_s06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0b7ed47b119efe4e56144cf237f5ff90d4dfb2b42b57a55413f6d17fd82b4bc7"
+  },
+  {
+   "id": "F34dac.07",
+   "text": "bro 💀",
+   "role": "chat.p04_s07",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f6189bb973b19c1cdb9b21a5da5a09472e5074bbca147aead01ed97a7afb70df"
+  },
+  {
+   "id": "F34dac.08",
+   "text": "u wore a sweater for ur portrait",
+   "role": "chat.p04_s08",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "b220593630f8d57d41e34f39eceeb87d36eeab204ad94dd0487c80d568120048"
+  },
+  {
+   "id": "F34dac.09",
+   "text": "u look so cozy 😍",
+   "role": "chat.p04_s09",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "417e372ec7aa7db86d8bbb5572dbd0f4290b057406abb05d5506397cdb6d3d46"
+  },
+  {
+   "id": "F34dac.10",
+   "text": "u got her a blanket of u in a sweater 😭😭",
+   "role": "chat.p04_s10",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "be5a6f37ef2737e4bc25160b284329cfbde747813249ed693d22427f48dee50d"
+  },
+  {
+   "id": "F34dac.11",
+   "text": "it is an accurate likeness",
+   "role": "chat.p04_s11",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "42e5cd88c5051293ddd6b86899a60a5dcd453f20ea5f1409d71cb7dc7de8df0f"
+  },
+  {
+   "id": "F34dac.12",
+   "text": "bro ur the size of a loaf",
+   "role": "chat.p04_s12",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "1c8c5cc218c79bd038efdbdd6d161670556f6645fc8540f8b495d3a7a46d5344"
+  },
+  {
+   "id": "F34dac.13",
+   "text": "u need a ramp to get on the couch",
+   "role": "chat.p04_t06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "286812317455411dc99b8c93c00bf86d146874ef63e01f2053dc734be1acff8d"
+  },
+  {
+   "id": "F34dac.14",
+   "text": "the ramp is a throne 🫡",
+   "role": "chat.p04_s14",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "36fb819f1d29b327c7205fe70ccaffea586d26e32d06584f5a3cbf149f3116d2"
+  },
+  {
+   "id": "F34dac.15",
+   "text": "wat did U get her",
+   "role": "chat.p04_s15",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "7272dd7e304ae5c78cf78bd81d4ad0cb75c0d32d7c02087545c47bb81e929fcc"
+  },
+  {
+   "id": "F34dac.16",
+   "text": "i yelled at the window for an hour to keep her safe",
+   "role": "chat.p04_s16",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "359a8dfd707b6514541de7fe1f2051d25835c039ea465f63e6b5fdd996ca4b11"
+  },
+  {
+   "id": "F34dac.17",
+   "text": "the van was parked across the street",
+   "role": "chat.p04_t01",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "600a61185707f653200e0c18c18943d0b59b733c7b50a2f1874a21c6cdfe7062"
+  },
+  {
+   "id": "F34dac.18",
+   "text": "and it stayed there 💪",
+   "role": "chat.p04_s18",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "5434fb19c48d0b8e6bdeab03ade1da68ed1ad9bc2ec5a6f8674c7d2d318e71c7"
+  },
+  {
+   "id": "F34dac.19",
+   "text": "doodle?",
+   "role": "chat.p04_s19",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "85462dc166baf80e521141df8ff710fd64ab988825953e74ab0f9a85d3d0019e"
+  },
+  {
+   "id": "F34dac.20",
+   "text": "i licked her ears all morning so they r extra clean 🥰",
+   "role": "chat.p04_t02",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f6a86a8e6757e4fc3066e2d38a17d5586cb055a63ba497c8c33e55b4784d2b08"
+  },
+  {
+   "id": "F34dac.21",
+   "text": "doodle she was asleep",
+   "role": "chat.p04_t03",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "c55bf82a4a8fa7d936fe73c2aa31f013ab65739e55feab466b9608d1bc29cdf5"
+  },
+  {
+   "id": "F34dac.22",
+   "text": "also u barked at the mirror again rn",
+   "role": "chat.p04_t04",
+   "kind": "chat",
+   "breeds": [
+    "dachshund"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "55760e5c9beaffe7000bc9f668bd15a1a61cec9f33a115cb24e0548afbee1168"
+  },
+  {
+   "id": "F34dac.23",
+   "text": "he looked at me first 🥺",
+   "role": "chat.p04_u01",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "8c01d98b486ad1cfef4706f68826413f2499040140ca63c1ddc591d67b83921e"
+  },
+  {
+   "id": "F34dac.24",
+   "text": "shes crying 😭",
+   "role": "chat.p04_s24",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0a0c77231524cd71c1be31cb11471f20b708cb18161b35678ffb1a3f6958d46d"
+  },
+  {
+   "id": "F34dac.25",
+   "text": "bro she can finally fold u 💀",
+   "role": "chat.p04_u02",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "note": "closer tightened after the panel read (was: bro the blanket is bigger than u. shes gonna lose u in it 💀)",
+   "text_sha256": "2d8f1ddc1ece5d2ef5a966a6407333fc8276577f3788e328be9f5b8364905069"
+  },
+  {
+   "id": "F34doo.01",
+   "text": "who ate the couch cushion 😤",
+   "role": "chat.p04_s01",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "4eb6189b36100ed09714503c8bd9afe42122054a8dc6f80b22cbba8a6550c0f2"
+  },
+  {
+   "id": "F34doo.02",
+   "text": "not me",
+   "role": "chat.p04_s02",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "74c73b87d6293a99c3a487bf89b2bc24357af7fc8e867d1f963e5bf7af7f5d4c"
+  },
+  {
+   "id": "F34doo.03",
+   "text": "golden ur covered in foam",
+   "role": "chat.p04_s03",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "e3bd33cdfa5fbd80dd5ec59294d13a271080e4b87d21c740ee0fc2a805e4601c"
+  },
+  {
+   "id": "F34doo.04",
+   "text": "its my winter coat 🥺",
+   "role": "chat.p04_s04",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "71ba72474a8ad4107d81708481767ae24e08f0f8a9500cb945d68e636f14f39f"
+  },
+  {
+   "id": "F34doo.05",
+   "text": "ok fam. moms gift lands today. stay chill",
+   "role": "chat.p04_s05",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "57ab3e0b8118bc11d426b24ff8498c94deb42da204cd759554906f46f5a3a8ab"
+  },
+  {
+   "id": "F34doo.06",
+   "text": "bro u cried at the vacuum this morning",
+   "role": "chat.p04_s06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "adc14a53331188068c9109c0afaf82e61b2efec908e9e036bba4a7f8a1d2f3c8"
+  },
+  {
+   "id": "F34doo.07",
+   "text": "bro 💀",
+   "role": "chat.p04_s07",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f6189bb973b19c1cdb9b21a5da5a09472e5074bbca147aead01ed97a7afb70df"
+  },
+  {
+   "id": "F34doo.08",
+   "text": "u printed ur hair",
+   "role": "chat.p04_s08",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "fad1c44f665e0caec919eb3cbbe5896b2dedc9aadf57a5c8c7d4d579cabfbe5a"
+  },
+  {
+   "id": "F34doo.09",
+   "text": "its so fluffy 😍",
+   "role": "chat.p04_s09",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "3946e42df7bfba99a736be775e7655218fc70c2a8231a0d64c69d6e1a5e77c2c"
+  },
+  {
+   "id": "F34doo.10",
+   "text": "u got her a blanket of ur own blanket 😭😭",
+   "role": "chat.p04_s10",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "b3f1476f5d2d96de4aed5180c2fdb7801b0a778413b3f497d8cb98fcf04a9c67"
+  },
+  {
+   "id": "F34doo.11",
+   "text": "my curls are a gift",
+   "role": "chat.p04_s11",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "31c6bf8a870547275ae79109140cf5aeb80d3911f5c04f2f6cc171f5302c8b2d"
+  },
+  {
+   "id": "F34doo.12",
+   "text": "ur curls ate a tennis ball last week",
+   "role": "chat.p04_s12",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "73790d552e37c69481d5b7cd3ec675d718419ed221c195183e4298755a9a07c0"
+  },
+  {
+   "id": "F34doo.13",
+   "text": "she found it in there tuesday",
+   "role": "chat.p04_t06",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "4fdeede2266fd87a80da221f9196a1099df66659a969513fec918dad6604dc10"
+  },
+  {
+   "id": "F34doo.14",
+   "text": "it was safe in there 🫡",
+   "role": "chat.p04_s14",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "07c777d6cd4c3a059407494891b98d7238195f089501ed25878f99861cf0af93"
+  },
+  {
+   "id": "F34doo.15",
+   "text": "wat did U get her",
+   "role": "chat.p04_s15",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "7272dd7e304ae5c78cf78bd81d4ad0cb75c0d32d7c02087545c47bb81e929fcc"
+  },
+  {
+   "id": "F34doo.16",
+   "text": "i stopped a delivery van from getting her",
+   "role": "chat.p04_s16",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f712a34cd6bc5f2599f2b503392b6fac7b3d55ebabfca0bc31c302658400ca4c"
+  },
+  {
+   "id": "F34doo.17",
+   "text": "bro u fogged up the whole window",
+   "role": "chat.p04_t01",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "9ebb6e62c5f8c1ec43f222da398331bf39c0569f27ac1be0733575990f9f444c"
+  },
+  {
+   "id": "F34doo.18",
+   "text": "and the van left 💪",
+   "role": "chat.p04_s18",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "dbb5e59213d8cd46223475d64740901cb9d8ae66cc7a1bf817f1bf64c93acee6"
+  },
+  {
+   "id": "F34doo.19",
+   "text": "golden?",
+   "role": "chat.p04_s19",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "102d3c9b752103f6063811e7a82d69cf1f5b9311cce9929ec491797009309b0d"
+  },
+  {
+   "id": "F34doo.20",
+   "text": "i brought her my best rock 🥰",
+   "role": "chat.p04_t02",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "211286581e14d1f36c8e9cf64fb424272ec8b66a72df0ef9d5a7712c7b038c96"
+  },
+  {
+   "id": "F34doo.21",
+   "text": "golden that rock is from her garden",
+   "role": "chat.p04_t03",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "59d87ae58e725ffcbc9fbe5e0a65985b269c0b7e340542e2d33caf036fdfeca7"
+  },
+  {
+   "id": "F34doo.22",
+   "text": "also theres foam on ur nose rn",
+   "role": "chat.p04_t04",
+   "kind": "chat",
+   "breeds": [
+    "doodle"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0058d66372a45ed017a6c3132a0d5c69a9a55c36daa97f84a299872cd839eb3f"
+  },
+  {
+   "id": "F34doo.23",
+   "text": "its snow 🥺",
+   "role": "chat.p04_u01",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "fff75072227a9dc97ea0e9d065027258d49145374e834487add62912541d9fef"
+  },
+  {
+   "id": "F34doo.24",
+   "text": "shes crying 😭",
+   "role": "chat.p04_s24",
+   "kind": "chat",
+   "breeds": [
+    "golden"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0a0c77231524cd71c1be31cb11471f20b708cb18161b35678ffb1a3f6958d46d"
+  },
+  {
+   "id": "F34doo.25",
+   "text": "bro she already has a blanket of u. its called the couch 💀",
+   "role": "chat.p04_u02",
+   "kind": "chat",
+   "breeds": [
+    "frenchie"
+   ],
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "note": "closer tightened after the panel read (was: bro ur hair is on every blanket she owns. now the blanket is u 💀)",
+   "text_sha256": "ebbdbef527d208d41046180c3b80736a730b245b7d104c9171a29b4e277ac3a8"
   }
  ]
 }

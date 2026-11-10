@@ -4,7 +4,7 @@ Ruling (Krish, 2026-11-02): "We need to figure out a way of making this reliable
 drift and we don't get weird humor and things that don't make sense once stuff is locked in."
 
     python3 factory/lock.py check  SPEC          static gates (bank, breed fit, renders, copy, lock)
-    python3 factory/lock.py media  SPEC MP4      media gates on the rendered file
+    python3 factory/lock.py media  SPEC MP4      media gates on the rendered file (a still post: its slide folder)
     python3 factory/lock.py brief  SPEC          the sense-check brief for the independent reviewer
     python3 factory/lock.py lock   SPEC --by "Krish's words"   freeze an approved post (interactive only)
     python3 factory/lock.py record SPEC VERDICT [--note ...]   reviewer-pass | reviewer-hold |
@@ -37,6 +37,7 @@ LEDGER = os.environ.get('HEARTSIDE_LEDGER', f'{ROOT}/local/factory/ledger.json')
 LIB = os.path.abspath(os.environ.get('HEARTSIDE_ASSETS', f'{ROOT}/local/assets/library'))
 OUT = os.path.abspath(os.environ.get('HEARTSIDE_OUT', f'{ROOT}/local/media/factory'))
 RAMP_FIRST, RAMP_EVERY, PAUSE_AFTER = 5, 10, 2
+STILL_SIZES = {'4:5': (1080, 1350), '9:16': (1080, 1920)}
 
 
 _G = None
@@ -86,6 +87,9 @@ def uses(spec):
     elif t == 'roast':
         lines += [(spec['title'], spec['breed'])] + [(l, spec['breed']) for l in spec['lines']]
         renders += [(spec['render'], spec['breed'])]
+    elif t == 'still':   # one image or a carousel; the product slide is optional (share posts carry none)
+        lines += [(sl['line'], spec['breed']) for sl in spec['slides'] if sl.get('line')]
+        renders += [(r, spec['breed']) for r in spec.get('end', {}).get('renders', [])]
     elif t == 'film':
         lines += [(s['line'], spec['breed']) for s in spec['shots'] if s.get('line')]
         renders += [(s['render'], spec['breed']) for s in spec['shots'] if s.get('render')]
@@ -100,7 +104,7 @@ def uses(spec):
 def skeleton(spec):
     """The spec with every slot replaced by what it must stay: a line by its role, a render by its
     product type, the cast and breed by their names only. Voiced films keep their lines."""
-    s = copy.deepcopy(spec); voiced = 'voice' in spec
+    s = copy.deepcopy(spec); voiced = 'voice' in spec; still = spec.get('template') == 'still'
     for k in ('id', 'title_note', 'variant_of', 'note', 'text_pos'):   # text placement follows each photo
         s.pop(k, None)
 
@@ -116,6 +120,12 @@ def skeleton(spec):
                     out[k] = ['product:' + RENDERS.get(r, {}).get('product', '?') for r in v]
                 elif k == 'lines' and isinstance(v, list) and not voiced:
                     out[k] = ['role:' + LINES.get(l, {}).get('role', '?') for l in v]
+                elif still and k == 'frame' and isinstance(v, str):   # a still's photo is a slot
+                    out[k] = 'slot:photo'
+                elif k == 'photo' and isinstance(v, str):   # a chat photo message: the picture is a slot, its place is not
+                    out[k] = 'slot:photo'
+                elif still and k in ('text_y', 'focus_y'):   # placement follows each photo (text-clear-of-faces)
+                    continue
                 elif k == 'frames' and isinstance(v, list):   # breed photos are a slot; their count is not
                     out[k] = f'slot:{len(v)} photos'
                 elif k == 'cast':
@@ -154,6 +164,10 @@ def copy_problems(g, text, kind):
     p += [f'UK spelling (use {us})' for rx, us in g.UK if rx.search(text)]
     if g.EMOJI.search(text) and kind != 'chat': p.append('emoji outside a chat bubble')
     return p
+
+
+def _ui_native(spec):
+    return bool(spec.get('ui_profile'))
 
 
 def check(spec, quiet=False):
@@ -195,6 +209,26 @@ def check(spec, quiet=False):
     for fr in spec.get('frames', []):
         if not os.path.exists(f'{LIB}/frames/{fr}'):
             probs.append(f'frame {fr} missing')
+    if spec['template'] == 'chat':
+        for m in spec['messages']:
+            if 'photo' in m and not os.path.exists(f'{LIB}/frames/{m["photo"]}'):
+                probs.append(f'frame {m["photo"]} missing')
+            if _ui_native(spec) and m.get('sfx', 'pop') not in ('pop', 'key'):
+                probs.append(f'sfx {m["sfx"]}: a chat carries only the message pop and key click (floor no-novelty-sfx)')
+            if 'typing' in m and not (_ui_native(spec) and 0 < m['typing'] <= 1.0):
+                probs.append('a typing bubble needs the social-ui profile and at most 1 s')
+            if 'photo' in m and not _ui_native(spec):
+                probs.append(f'photo message {m["photo"]}: only the social-ui profile lays out chat photos')
+    if spec['template'] == 'still':
+        if not 1 <= len(spec.get('slides', [])) <= 10:
+            probs.append('a still post has 1 to 10 photo slides')
+        if spec.get('aspect') not in STILL_SIZES:
+            probs.append('aspect must be one of ' + ', '.join(STILL_SIZES))
+        for sl in spec.get('slides', []):
+            if not os.path.exists(f'{LIB}/frames/{sl.get("frame", "")}'):
+                probs.append(f'frame {sl.get("frame")} missing')
+            if sl.get('style', 'band') not in ('band', 'none'):
+                probs.append(f'slide style {sl.get("style")}: use band (text above the photo) or none')
     if spec['template'] == 'film':
         for s in spec['shots']:
             if s.get('frame') and not os.path.exists(f'{LIB}/frames/{s["frame"]}'):
@@ -260,6 +294,22 @@ def media(spec, mp4):
     return probs
 
 
+def still_media(spec, folder):
+    """The built slides of a still post: every slide present, decodable and the right size."""
+    from PIL import Image
+    probs = []; want = len(spec['slides']) + (1 if spec.get('end', {}).get('renders') else 0)
+    files = sorted(f for f in os.listdir(folder) if re.fullmatch(r'slide-\d\d\.png', f)) if os.path.isdir(folder) else []
+    if len(files) != want: probs.append(f'{len(files)} slides built, {want} expected')
+    for f in files:
+        try:
+            with Image.open(os.path.join(folder, f)) as im:
+                im.load()
+                if im.size != STILL_SIZES.get(spec.get('aspect'), (0, 0)): probs.append(f'{f}: {im.size[0]}x{im.size[1]}, not {spec.get("aspect")}')
+        except Exception as e:
+            probs.append(f'{f}: does not decode ({e.__class__.__name__})')
+    return probs
+
+
 # ---------------------------------------------------------------- review brief
 STANDING = [  # each one was caught by a reviewer on 2 Nov 2026; add new catches here
     'review export plus final platform UI, copy and crop using docs/CREATIVE-UI.md; a paid preview never proves the organic viewer experience',
@@ -290,17 +340,26 @@ def brief(spec):
     t = spec['template']
     if t == 'chat':
         out.append('Cast: ' + ', '.join(f'{k} is a {v}' for k, v in spec['cast'].items()))
-        out += [f"- {spec['cast'][m['who']]}: {resolve(m['line'], spec) if 'line' in m else '[shares a link to ' + m['render'] + ']'}" for m in spec['messages']]
+        def said(m):
+            if 'line' in m: return resolve(m['line'], spec)
+            if 'render' in m: return '[shares a link to ' + m['render'] + ']'
+            return '[sends a photo: ' + m['photo'] + ']'
+        out += [f"- {spec['cast'][m['who']]}: {said(m)}" for m in spec['messages']]
     elif t == 'search':
         out.append(f"The searcher is a {spec['breed']}.")
         out += [f"- searches: {resolve(q['line'], spec)}" + (f" / result: {resolve(q['result'], spec)}" if q.get('result') else '') for q in spec['queries']]
     elif t == 'roast':
         out.append(f"The dog is a {spec['breed']}.")
         out += [f'- {resolve(l, spec)}' for l in [spec['title']] + spec['lines']]
+    elif t == 'still':
+        out.append(f"The dog is a {spec['breed']}. Cover each line and check the photo alone stages it (floor stage-the-joke).")
+        out += [f"- slide {i + 1}: photo {sl['frame']} / line: {resolve(sl['line'], spec) if sl.get('line') else '(none)'}" for i, sl in enumerate(spec['slides'])]
     elif t == 'film':
         out.append(f"The dog is a {spec['breed']}.")
         out += [f"- picture: {s.get('picture', s.get('frame') or 'real render ' + s.get('render', ''))} / line: {resolve(s['line'], spec) if s.get('line') else '(none)'}" for s in spec['shots']]
-    ends = spec['end'].get('renders', [spec.get('end_render', spec.get('render'))])
+    ends = spec.get('end', {}).get('renders', [spec.get('end_render', spec.get('render'))])
+    if t == 'still' and not ends:
+        out.append('- no product slide: a share post'); return '\n'.join(out)
     out.append(f"- ends on: {', '.join(ends)}, moving, with no text" + (f' (answer above it: "{resolve(spec["queries"][-1]["result"], spec)}")' if spec.get('queries') and spec['queries'][-1].get('result') else ''))
     return '\n'.join(out)
 
@@ -339,7 +398,7 @@ def record(spec, verdict, note=''):
 
 def gate(spec, mp4, release=None, review=None):
     probs, warns = check(spec)
-    probs += media(spec, mp4)
+    probs += still_media(spec, mp4) if spec.get('template') == 'still' else media(spec, mp4)
     # A clean export and concept lock do not establish readability inside a platform.
     # Existing approvals remain on record; a fresh release is checked per placement.
     if not release or not review:
@@ -374,7 +433,7 @@ def main():
         print(f"{spec['id']}: {'ready' if not p else str(len(p)) + ' problem(s)'}  fingerprint {fingerprint(spec)[:16]}")
         sys.exit(1 if p else 0)
     if a.cmd == 'media':
-        p = media(spec, a.arg); [print('HOLD:', x) for x in p]; print('media', 'ok' if not p else 'held'); sys.exit(1 if p else 0)
+        p = still_media(spec, a.arg) if spec['template'] == 'still' else media(spec, a.arg); [print('HOLD:', x) for x in p]; print('media', 'ok' if not p else 'held'); sys.exit(1 if p else 0)
     if a.cmd == 'brief':
         print(brief(spec)); return
     if a.cmd == 'lock':
@@ -386,7 +445,8 @@ def main():
         lk = {'id': spec['id'], 'status': 'locked', 'approved_by': a.by, 'fingerprint': fingerprint(spec),
               'master': os.path.relpath(a.spec, HERE), 'template': spec['template'],
               'slots': {'chat': 'cast, lines by role, link render', 'search': 'breed, lines by role, end render',
-                        'roast': 'breed, lines by role, render', 'film': 'end render of the same product and breed'}[spec['template']]}
+                        'roast': 'breed, lines by role, render', 'film': 'end render of the same product and breed',
+                        'still': 'breed, photos, lines by role, end render'}[spec['template']]}
         json.dump(lk, open(f"{HERE}/locks/{spec['id']}.json", 'w'), indent=1, ensure_ascii=False); print('locked', spec['id'], lk['fingerprint'][:16]); return
     if a.cmd == 'record':
         assert a.arg in ('reviewer-pass', 'reviewer-hold', 'krish-approve', 'krish-decline'), a.arg

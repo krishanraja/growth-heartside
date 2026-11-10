@@ -17,7 +17,7 @@ One approved post becomes many by changing only its slots. Nothing else can move
 | `build.py` | Templates: `chat`, `search`, `roast` (carousel plus reel) and `film` (key frames, voice, music). |
 | `lock.py` | The gates, the reviewer brief, the ledger and the trust ramp. |
 
-Assets stay out of git, because the repository is public and the music is licensed. Set `HEARTSIDE_ASSETS` to a folder holding `renders/`, `frames/`, `audio/` and `fonts/`. The ledger goes to `local/factory/ledger.json` (`HEARTSIDE_LEDGER`), and posts go to `local/media/factory` (`HEARTSIDE_OUT`).
+Assets stay out of git, because the repository is public and the music is licensed. Rebuild the library in any session with `python3 factory/fetch_library.py <dir> --shimmer-url <signed Epidemic url>` (sources and checksums in `factory/bank/library-sources.json`); it rebuilt F34 byte for byte on 10 Nov. Set `HEARTSIDE_ASSETS` to a folder holding `renders/`, `frames/`, `audio/` and `fonts/`. The ledger goes to `local/factory/ledger.json` (`HEARTSIDE_LEDGER`), and posts go to `local/media/factory` (`HEARTSIDE_OUT`).
 
 ## How a post goes out
 
@@ -84,3 +84,20 @@ approval of a new taste rule or the corrected artwork.
   them as real customers, testimonials or documentary evidence.
 
 See [the 8 November correction packet](../docs/briefs/2026-11-08-organic-anatomy-correction.md).
+
+## The judging panel (10 November 2026)
+
+Krish asked for a simple panel that holds every output to 10/10 without burning tokens or hours. `factory/panel.py`
+runs it in four tiers:
+
+- **Tier 0: code.** The sprint slot, its spec and its media. Free.
+- **Tier 1: a Haiku sub-agent.** Six yes-or-no floor questions (`bank/anchors.json`) asked of one tiled image of up
+  to four contact sheets (`panel.py batch`). One read per call: three separate reads cost about 142k tokens on
+  10 Nov.
+- **Tier 2: a Sonnet sub-agent.** Scores only Tier 1's survivors against the tens in `bank/anchors.json` and Krish's
+  floor quotes. Only 9 and above reach his review page.
+- **Tier 3: views at 72 hours.**
+
+Every verdict and Krish's own yes or no go to `local/factory/panel.jsonl`; `panel.py agreement` shows how often the
+panel matched him. Below 80%, the anchors are rebuilt before the next batch. Its first live run on 10 Nov failed
+three dance shots on `payoff`: a dance alone is not a joke, so the post gained an ending gag.

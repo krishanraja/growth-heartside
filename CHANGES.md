@@ -3,6 +3,50 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-10: Krish's humour profile anchors every build. Krish: "Here's my humor profile. Make sure every build in all the sessions anchors towards this, now and in the future."
+  - `docs/HUMOUR.md` holds the profile as he supplied it, with how it applies inside Heartside's rules. AGENTS.md sends every session to it before any creative work. The tier 2 judge reads it from `factory/bank/anchors.json` and scores observation, stupid premise and cruel payoff; a piece missing one cannot score 9. Tests cover the brief.
+  - Ruling (Krish, 2026-11-10): every build in every session anchors to Krish's humour profile (docs/HUMOUR.md).
+
+- 2026-11-10: one review board. Krish: "You need to create a system of review where I can easily just tick yes or no for things that you think are ready. You just keep adding to that board as often as you can, and so do your sub-sessions."
+  - The board is https://claude.ai/artifact/A3tFqoYZuYAEdUrziU5wnN. Sessions add items to its `items` store; only Krish can write `verdicts`. How sessions add items and act on answers is in `docs/REVIEW-BOARD.md`.
+  - Seeded with F34, F28 and F29 for approval, the publishing hold, the F34 order-by line, the two stray F33 files, and the first $3,000 paid tranche.
+  - Ruling (Krish, 2026-11-10): everything ready for Krish goes on the review board as a Yes or No item, added by every session as soon as it is ready.
+
+- 2026-11-10: the dog group chat product post, F34. Krish: "It should feel like a bunch of lads bantering, being hilarious, roasting each other, being best friends, and knowing each other inside out, but talking in dog language as dog personalities. I think it's kind of stupid to have a barking noise in it. I think that messages should build like a WhatsApp message would build." Then: "7, make it more hilarious, drop a "bro" in there, some emojis, mis spellings." Then: "9, file it and lock the structure".
+  - `factory/floor.json`: `chat-lads-banter`, `no-novelty-sfx`, `chat-builds-like-whatsapp`. Code enforces the last two: the social-ui chat fills the screen and scrolls, and `lock.py check` refuses any chat sound but the message pop and key click.
+  - F34 is locked (`factory/locks/F34.json`) and filed in 03b `Posts/F34/` with `02k` for 13 Nov; `approved` is left for Krish. Its structure, and how to make a variant, is in `docs/briefs/2026-11-10-F34-chat-structure.md`. It is the tier 2 anchor for chat posts, and the panel runs about a point below Krish on them.
+  - Ruling (Krish, 2026-11-10): F34's chat structure is locked; chat variants change only cast, lines by role and renders.
+  - Numbering race: the volume build filed F33 (the snowman meme) and its 02j about 30 seconds before this post was filed under the same id. This post became F34 in 02k (concept C134). The duplicate 02j is renamed superseded and set read-only. Two stray files (`heartside_F33_face-blanket-roast_*`) sit in `Posts/F33/`, where no row names them; removing them needs Krish's yes.
+
+- 2026-11-10: no lyric captions. Krish: "I don't think we ever need subtitles for videos for song lyrics."
+  - `factory/floor.json` `no-lyric-captions`; the judges' tier 1 asks it (`factory/bank/anchors.json`); `factory/lipsync_cut.py` refuses a shot caption; the lip-sync franchise, batch brief and plan say so. A premise line is the only text a lip-sync may carry.
+  - Ruling (Krish, 2026-11-10): no song-lyric subtitles on any video.
+
+- 2026-11-10: publishing hold. Krish: "Make Sure nothing actually gets published yet."
+  - Checked: Buffer has nothing scheduled, sending or awaiting approval on the Heartside channels. No row in 02, 02c, 02d or the live 02e is marked approved and unposted. The superseded 02e is locked read-only. The production session was told to build and file only: no posting, no approved = yes, no messages to the publishing desk, no boosts.
+  - Ruling (Krish, 2026-11-10): nothing is published until Krish lifts the hold.
+
+- 2026-11-10: publishing for Sprint 120. Krish: "All right get everything ready for publish. For things that need songs you're going to still create the assets and create a handover for Codex to do this in the browser, directly in the platform. I approve the rest."
+  - F28, the dog 80s dance, is filed in 03b `Posts/F28/` through the library lane (both files read back at the manifest's byte sizes) and scheduled in `02e` for 12 Nov: TikTok 8:00, Instagram 8:05, Facebook 8:10 ET. Its song is in `notes`, and `approved` is left for Krish.
+  - The new README for Codex tells it to add each song in the browser, in TikTok Studio and Meta Business Suite, never through Buffer, and to stop with "song unavailable" rather than substitute a song.
+  - "The rest" covers batch one's songs as listed, the first $3,000 paid tranche on 15 Nov on posts that beat 3 times the median, and the North Star recalibration. The recommendation that the engine mark `approved = yes` itself after Krish's daily page was not applied: a safety check refused the rule change, and the first 02e Sheet and README that carried it are superseded. Who marks approval stays Krish's call, to make explicitly.
+  - Ruling (Krish, 2026-11-10): songs are added by Codex in the browser, directly in each platform; the assets are silent, with the song named in the row.
+  - Ruling (Krish, 2026-11-10): the first $3,000 of paid boosts on 15 Nov, only on posts that beat 3 times the sprint median.
+
+- 2026-11-10: Sprint 120 planned and the factory equipped for it. Krish: "Our mission is to produce 20 signature Heartside organic posts, and 100 viral posts that generate 500000 views between them in the next 10 days. First ensure the repository is equipped for this - all asset production will go through your Codex lane, and you have full permission to use Higgsfield and Runway credits as many as needed for final generation", then "Photorealistic AI dogs doing things a viewer cant quite tell is real or not - anything is on the cards, I want absolute Creative Genius but the proven formulas to inform".
+  - The plan is `docs/plans/2026-11-10-sprint-120.md`, proposed and waiting for his yes. The ledger is `factory/sprints/2026-11-S120.json`, checked by `factory/sprint.py`.
+  - The playbook's 26 franchises are graded in `factory/bank/franchises.json`. Ten that need realistic generated motion come back as grade R on his go. Three stay excluded because they would pass fiction off as a real animal's record.
+  - Proven posts inform and are never generation inputs (the re-stage rule). Heartside's own winners are reskinned freely.
+  - New `still` template for memes and carousels: the line sits above the photo, never on it.
+  - Ruling (Krish, 2026-11-10): photorealistic generated dogs a viewer cannot quite tell from real are on the cards, held to the realism floor.
+  - Then, the same day: "stop being a priest when it comes to putting good backing tracks and copying memes and video content. It is acceptable." and "I want A plan with zero shackles, none whatsoever." The re-stage rule is replaced by a reskin rule, every franchise is in play, caps are raised to TikTok 10 and Instagram and Facebook 8 a day for the sprint, and paid fuel on winners is in the plan (spend at his go). `factory/floor.json` `no-priest` records it.
+  - His pick "This is Good" (YouTube Short u7s47cIeh6M, "My dog's 9 to 5") becomes the lead franchise, the human-arms lip-sync: HAL-01 to HAL-08, on day one.
+  - Ruling (Krish, 2026-11-10): proven memes, video formats and backing tracks are reskinned and reused directly; no franchise is excluded on originality grounds.
+  - Krish approved the plan the same day ("Overall I approve the plan") with amendments: "I'm not accepting moving from 50,000 to 5.9K. We need to aim way higher than 5.9K.", "Absolutely raise the caps.", "I've authorised the runway connector.", "The 4th of December is the Christmas date.", "I'm not going to creators until you make a success out of this strategy." and, on audio, "in a TikTok post or an Instagram post, you can pretty much add whatever song you want through the app". The sprint now targets $50,000 profit from orders by 4 Dec, every post goes to all three platforms, every lip-sync names its song, and creators are out until the strategy works.
+  - Ruling (Krish, 2026-11-10): the target is $50,000 profit by Christmas, not the organic ladder's $5,953.
+  - Ruling (Krish, 2026-11-10): 4 December is the Christmas order date.
+  - Ruling (Krish, 2026-11-10): no creator outreach until the sprint's strategy has worked.
+
 - 2026-11-09: three decisions and #42 merged. Krish: "Go with your recommendations, open the PRs and merge #42".
   - Trolling dogs show real dog expressions, never a human smile (`factory/floor.json` `troll-not-mild`; the open conflict is closed).
   - Only `approved = yes` in the Sheet lets Codex post a row. This supersedes the 4 Nov ruling that a chat approval recorded in `notes` counted. AGENTS.md, `docs/CHANNEL-TASKS.md`, `docs/DRIVE-MAP.md`, `factory/send_library.py` and the README for Codex now say so.

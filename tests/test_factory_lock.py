@@ -66,6 +66,26 @@ class LockTest(unittest.TestCase):
         s = load('F06-frenchie'); s['render'] = 'mug-real-lab.jpg'
         self.assertTrue(any('shows a lab' in p for p in self.problems(s)))
 
+    def test_chat_photo_message_needs_its_frame_and_the_social_ui(self):
+        spec = load('F34')
+        photo = next(m['photo'] for m in spec['messages'] if 'photo' in m)
+        self.assertIn(f'frame {photo} missing', self.problems(spec))
+        open(f'{lock.LIB}/frames/{photo}', 'wb').write(b'frame')
+        self.assertNotIn(f'frame {photo} missing', self.problems(spec))
+        legacy = copy.deepcopy(spec); legacy.pop('ui_profile')
+        self.assertTrue(any('only the social-ui profile' in p for p in self.problems(legacy)))
+        swapped = copy.deepcopy(spec)
+        next(m for m in swapped['messages'] if 'photo' in m)['photo'] = 'another.jpg'
+        self.assertEqual(lock.fingerprint(spec), lock.fingerprint(swapped))   # the picture is a slot
+
+    def test_social_ui_chat_refuses_novelty_sfx_and_long_typing(self):
+        spec = load('F34')
+        bark = copy.deepcopy(spec); bark['messages'][1]['sfx'] = 's_barks.mp3'
+        self.assertTrue(any('no-novelty-sfx' in p for p in self.problems(bark)))
+        slow = copy.deepcopy(spec); slow['messages'][1]['typing'] = 2.5
+        self.assertTrue(any('typing bubble' in p for p in self.problems(slow)))
+        self.assertFalse(any('no-novelty-sfx' in p or 'typing bubble' in p for p in self.problems(spec)))
+
     def test_balanced_wrap_never_leaves_a_lone_word(self):
         os.environ.setdefault('HEARTSIDE_ASSETS', self.tmp.name)
         from PIL import ImageDraw, Image, ImageFont

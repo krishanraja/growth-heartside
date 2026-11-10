@@ -1,0 +1,9 @@
+{
+ "id": "F34",
+ "status": "locked",
+ "approved_by": "Krish, 2026-11-10: \"9, file it and lock the structure\" (P04 v12)",
+ "fingerprint": "dabe3d3b9b180cba5ff6681d6478b043d791b4b729b9121dbabc4a0430b4553d",
+ "master": "specs/F34.json",
+ "template": "chat",
+ "slots": "cast, lines by role, link render"
+}
