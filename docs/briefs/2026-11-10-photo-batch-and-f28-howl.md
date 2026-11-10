@@ -60,3 +60,18 @@ start so the falsetto lands when he sits up.
 | P10 | Walk is at 8. He brought your shoes. One of them. | The dog sitting at the front door, lead in his mouth, one sneaker dropped neatly in front of him; a person's slippered feet on the bottom stair |
 | P11 | He is hiding from the vacuum. He believes this is working. | A 90 lb dog with only his head pushed under a small throw cushion on the floor, his whole body and wagging tail in view; the vacuum, switched off, across the room |
 | P12 | Black Friday haul. | The dog lying proudly in the hallway beside his haul laid out in a neat row as if for an unboxing video: a shredded unbranded box flap, popped air pillows, one chewed receipt and a single stolen sock; flat stare |
+
+## Round 2 scores: P2 9; P1, P5, P6, P7, P9, P10, P11 8; F28-howl, P3, P4, P12 7
+
+P2 is made. Round 3 takes the judge's change for each of the rest:
+- P1: "The rule is no dogs on the sofa. His position is that he is mostly a floor dog."
+- P3: "New portion size. He has escalated." The bowl is parked on the slipper, with the kibble bag (unbranded) dragged beside it as evidence.
+- P4: "Family Christmas photo, take 41. He is no longer taking questions." On his back, legs up, the jumper half over his head, one eye open.
+- P5: "The guest room is ready. He has left a one-star review and extended his stay."
+- P6: "He is saying grace. He is saying it very quickly."
+- P7: "You had not opened the cheese yet. He was already downstairs."
+- P9: "The tree has been up for four minutes. He has started his own." Plush or shatterproof baubles only.
+- P10: "Walk is at 8. He brought your shoes. One of them. The other one is his now." The second sneaker's chewed laces show in his bed.
+- P11: "He is hiding from the vacuum. It is not plugged in." The plug and cord are in view; the tail is tucked and still.
+- P12: "Black Friday haul. Everything was free. Most of it was yours."
+- F28-howl: he walks out of frame the moment his falsetto ends, and the song plays on to an empty rug. Line: "He does not do the outro."
