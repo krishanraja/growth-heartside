@@ -1,1 +1,37 @@
-{"F38":{"1_rise_and_day2":"9a64f6a0-d8ae-4604-ba10-2f5acbf738f5","2_cold_plunge":"6cfc31ce-5479-4941-917e-191a4768dd50","3_5k_run":"2a89475b-cd9e-4e2d-ba88-e315ff486f53","4_meditation":"eb8e18b0-94ad-4316-8f03-15722465239e","5_journaling":"ac9d5621-36b8-478f-9d81-29fe6fb8e967","6_8_planning_aligned":"7c20f560-bdaf-4beb-9fa1-5b18d7e4d700","7_stakeholder":"959bc533-454e-4fd6-a743-1b385c472147","9_networking":"c2b59d56-ac47-4070-b02c-7b95a3454300","10_11_deep_work_yawn":"0ab291ae-fd18-4681-8434-3c68bbc7fbc5"}}
+{
+ "F38": {
+  "1_rise_and_day2": "9a64f6a0-d8ae-4604-ba10-2f5acbf738f5",
+  "2_cold_plunge": "6cfc31ce-5479-4941-917e-191a4768dd50",
+  "3_5k_run": "2a89475b-cd9e-4e2d-ba88-e315ff486f53",
+  "4_meditation": "eb8e18b0-94ad-4316-8f03-15722465239e",
+  "5_journaling": "ac9d5621-36b8-478f-9d81-29fe6fb8e967",
+  "6_8_planning_aligned": "7c20f560-bdaf-4beb-9fa1-5b18d7e4d700",
+  "7_stakeholder": "959bc533-454e-4fd6-a743-1b385c472147",
+  "9_networking": "c2b59d56-ac47-4070-b02c-7b95a3454300",
+  "10_11_deep_work_yawn": "0ab291ae-fd18-4681-8434-3c68bbc7fbc5"
+ },
+ "F38_fix": {
+  "8_aligned_stare": "41a304ab-ff98-4029-9e5c-3e1e3c4e8822",
+  "11_yawn": "77431811-cc49-4bfd-8342-c624ef4c2d30"
+ },
+ "F39": {
+  "1_warmup": "c4a45380-ed1a-4a8a-a195-0f49405ae84f",
+  "2_deadlift": "e19fdcf1-d9a7-454a-b21a-9be4d4eeeb1d",
+  "3_bench": "d7adba47-5ca9-449b-a847-7a0a73c471c7",
+  "4_mirror": "2bb47b55-a2f1-40e4-a778-58cf183293ff",
+  "5_6_sprint_ball": "cbe35c5d-89c5-4f55-b0f7-9e6861b22bc9",
+  "7_reps": "214d639c-80d5-41ab-b296-5c0b4f286f27",
+  "8_ropes": "d76424e5-c97b-4896-b26c-b6ffdae39b7c",
+  "9_protein": "e24e5f19-5252-464f-8739-32c40dd4209d",
+  "10_hydration": "0a34c39e-bbaa-43d2-a97b-743414a393eb",
+  "11_12_recovery": "a350e4e9-bd65-4dce-a943-cb337ce28c03"
+ },
+ "F41": {
+  "1_list": "96cfa9df-2d81-4c0e-b114-b2d5f903eaf6",
+  "2_shopping": "23ef77c7-41a4-4bc4-9298-3a2e12d02064",
+  "3_found": "48ff91c3-debc-4474-9226-df5050831eb7",
+  "4_wrapping": "a129a7a5-7bb1-49f5-9bad-89f6259a7ba0",
+  "5_6_quality_no_notes": "d7e626a6-502c-4434-83f2-c1ca1b169ced",
+  "7_real_gift": "10e30554-9fb5-4b3e-a104-f8776bcf45c2"
+ }
+}

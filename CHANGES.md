@@ -531,3 +531,10 @@ use the proven Actions execution path. Secret-list API access is unnecessary.
 - Krish requested the learnings in `Social_Creative_UI_Best_Practices.docx` be hardcoded into the growth engine after seeing organic posts in the platform UI.
 - Shared conservative composition defaults now feed new chat/film and recognition rendering. Release reviews bind the exact export, cover, copy, account, placement, labels and destination, with missing/stale viewer evidence holding new releases and automated proposals.
 - The supplied coordinates remain house defaults, not universal safe zones. Existing locked masters, the 4 November y1440 ruling, approved schedule payloads and paid authority remain unchanged. New versions require their own review.
+
+## 2026-11-10: Runway past the Control Center share for the real-dog remakes
+
+Ruling (Krish, 2026-11-10): "JUST DO IT NOW". After Control Center refused a 450-credit Runway booking as over the
+share (15 left), the engine spent 450 Runway credits directly on the account: 18 Gen-4 Turbo clips (F38 2, F39 10,
+F41 6). The account is now at 5. F45's motion (about 150) waits for credits. The Control Center share needs Krish to
+reconcile it.
