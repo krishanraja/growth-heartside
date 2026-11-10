@@ -194,3 +194,30 @@ Premise line only.
    clip is made.
 3. Clips only for approved stills; each frame-checked; judged with two independent judges before it reaches him.
 4. Spend is reserved in Control Center per wave and settled with the job ids.
+
+---
+
+## First wave: made and judged (10 Nov)
+
+Krish, 10 Nov: "yes to both, start the first wave" (the scripts with about 196 credits, and the time-and-activity
+labels). 196 Higgsfield credits were reserved; 177.25 spent and settled (balance 258.85 to 81.6). Each film had a
+stills-first build, then one cheap stills-only second pass. Two independent Sonnet judges scored every cut.
+
+| Film | Pass 1 | Pass 2 | Spend | What landed with both judges | Held because |
+|---|---|---|---|---|---|
+| 4 AM routine | 8 and 8 | 8 and 8 | 64.50 | the window bark-off into the "aligned" flat stare; sunrise meditation; the day 2 loop | charming swaps rather than a build; in on it at one beat |
+| Gym era | 7 and 8 | 8 and 8 | 57.00 | the log in the jaws and on the bench; the ball sprint; the reps stare | no comic turn (for example dropping the log for the ball); mirror reflection slightly off |
+| Monday morning | 8 and 8 | 8 and 8 | 55.75 | head in the hedge as deep work; the car window; the "boundaries" stare | the middle is a list of familiar behaviors |
+
+No film reached 9, so nothing is filed. They went to Krish on a review page (claude.ai artifact "Dog Routines, Wave
+One") for his own yes or no, because the panel has never been checked against him and one judge asked to cut a beat
+he asked for (the meditation squat).
+
+Observations (not Krish's rulings):
+1. Dog-only motion was far cleaner than the human-arms format: no third hands; the failures were a log passing through
+   legs, a sweatband sprouting a knot, a rope smearing, and a dog rising onto its hind legs at a window, each cut
+   around inside its clean window.
+2. Every judge asked for the same missing piece: a beat where the dog's own behavior undoes the routine (a turn), and
+   more than one knowing flat stare. Script that into the next five films before generation.
+3. Labels did the parody work in the two labelled films; escalating them (fasting, mindful commute, burnout,
+   boundaries) raised no score on its own.
