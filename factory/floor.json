@@ -468,6 +468,23 @@
     "meme",
     "card"
    ]
+  },
+  {
+   "id": "real-scruffy-dogs",
+   "date": "2026-11-10",
+   "made": "Wave 3 dog-does-dog-things stills (F46 to F50, Higgsfield) and the round 3 storyboards",
+   "words": [
+    "The dogs in all these videos look way too perfect and not real, and slightly scruffy enough."
+   ],
+   "category": "generation",
+   "rule": "Generated dogs must look like someone's real pet, shot on the owner's phone. That means slightly scruffy, uneven fur, a bit of mess, ordinary home light, imperfect framing and real household clutter. Never a groomed show dog, studio light, glossy fur or catalogue perfection.",
+   "check": "review: every generated dog frame is read on a contact sheet for 'could be a real pet on a phone' before any motion is made; prompts carry the realism block in docs/briefs/2026-11-10-dog-things-wave-3-rework.md",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
   }
  ],
  "open_conflicts": [],

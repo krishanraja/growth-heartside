@@ -2,3 +2,4 @@ Status: Krish said No to F48 and F49 ("Should be a video, right?") and Yes to re
 Next: book the Runway clips and Higgsfield stills only for the round 2 scripts that score 9, then put them through one Codex card and judge the finished reels. Only 9s go to the board.
 Changed: dog-does-dog-things reels now need real motion in every beat, and every credit spend needs a 9 on the script first.
 North Star check (2026-11-10): holds.
+Status (19:00 UTC): Krish said "The dogs in all these videos look way too perfect and not real, and slightly scruffy enough." This is now floor rule real-scruffy-dogs. Three phone-camera test stills (0.75 Higgsfield, settled) read as real pets. A check of 9 approved covers found F38, F39, F41, F45 and F30 obviously AI. Krish is asked whether to remake them, hold F38 (posts 11 Nov 18:00), and turn on the platforms' AI-generated label.
