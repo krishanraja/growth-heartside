@@ -1,0 +1,3 @@
+Status: The photo batch (F52 onward) and the F28 replacement are in judging. Round 2 scored P2 ("Restructure update: he now reports to the cat.") at 9, and it is made (2 takes, 0.5 Higgsfield, settled), with its images now being judged. The other 11 scripts were 7 to 8 and are in round 3 with sharper lines. Scripts and scores are in docs/briefs/2026-11-10-photo-batch-and-f28-howl.md. Heartside's Higgsfield share has about 15.6 left; Runway is at 5.
+Next: make the round 3 scripts that score 9, file the 9s through the library lane with a new Sheet (02t) and README v5.4 for Codex, then merge to main.
+North Star check (2026-11-10): holds.
