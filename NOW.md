@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- Krish is reposting F38 with the fixed-label v2 cut; the empty stray Posts/F38-real and Posts/F41-real folders are in the Drive bin. (2026-11-10)
 - the fixed-label F38 and F41 v2 cuts sit in Posts/F38 and Posts/F41, the old cuts are renamed SUPERSEDED_, and Sheet 04 and Doc 04a are rebuilt with the v2 links (new IDs in docs/DRIVE-MAP.md). (2026-11-10)
 - Krish approved D as the official Heartside icon. The unchanged raster master, favicon/app exports and ZIP are ready in docs/brand/. Official avatars and conversion bios are live and read back on Instagram, Facebook, TikTok and Pinterest; Facebook cover is replaced. Website implementation is Krish's. (2026-11-10)
 - F38 and F41 are rebuilt with every label in F38's "4:00 AM · rise" spot and filed to Drive as _v2; floor rule fixed-label-position applies to every reel. (2026-11-10)
@@ -96,7 +97,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-10): Krish decides whether to repost F38 and whether to trash the two empty stray folders.
+- Next (2026-11-10): once the F38 repost is live, record it as done in Sheet 04 and add its live address to the schedule.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
