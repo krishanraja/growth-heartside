@@ -125,3 +125,40 @@ posts are compared only with viral tens. No new generation was needed, so this r
 
 Without lyric text, the picture alone has to carry each gag, and two films lost a point. None is at 9, so nothing is
 filed. Other sessions have since filed F29 to F36, so the next free post id must be checked at filing.
+
+## Gag rewrite (Krish approved the spend, 10 Nov)
+
+Krish, 10 Nov: "approve the rewrite spend, get them to 9". 600 Higgsfield credits were reserved in Control Center;
+437.75 were spent and settled (balance 696.6 to 258.85). Seven parallel producers rewrote each film's weak beats
+into new visual payoffs (brief: a surprising consequence per beat, the dog visibly in on it, varied framing, a
+physical ending), then made a second pass on what the first judge named. From the second pass on, two independent
+Sonnet judges scored each cut, one given the shot list and one given only the title.
+
+| Film | v3 | Rewrite, pass 1 | Rewrite, pass 2 (judges) | Spend |
+|---|---|---|---|---|
+| S12 | 8 | 8 | 8 and 7 (cut to 29 s) | 56.0 |
+| HAL-02 | 8 | 8 | 8 and 7 | 55.5 |
+| HAL-03 | 7 | 8 | 8 | 56.0 |
+| HAL-04 | 8 | 8 | 8 and 8 | 73.0 |
+| HAL-05 | 8 | 8 | 8 and 8 | 73.25 |
+| HAL-06 | 7 | 8 | 7 | 66.75 |
+| HAL-07 | 8 | 7 | 8 and 8 | 56.25 |
+
+None reached 9, so nothing was filed and no post id was used. Session total on these seven films: 1,453 Higgsfield
+credits (552.75 first build, 462.5 second pass, 437.75 rewrite).
+
+Lessons (observations, not Krish's rulings):
+1. **The tier 2 sheet read has a ceiling for this format.** The judges see stills, no motion and no song, and compare
+   against a real-footage original timed to a lyric a second. Each fix they asked for was made and the next read
+   found the next thing. A single read swings about a point (HAL-06 fell from 8 to 7 after its fixes; HAL-07 rose
+   from 7 to 8). Use two judges, and treat 8 as the practical ceiling of generated human-arms lip-syncs until Krish's
+   own verdicts calibrate the panel (`panel.py agreement` still has no data).
+2. **What landed with every judge:** a consequence the dog wears (a foam beard, a soaked face, a paw print on the
+   nose, a nose-photo ID badge, coffee lapped off the drip tray). Plain actions (typing, pouring, handshakes) never
+   score, whatever the reaction cut after them.
+3. **S12's structural gap:** the viewer's hands open an empty box of tissue, then a hard cut to a mug showing a
+   different dog. Both judges said the mug is not earned. The fix is in the edit, not more generation: open on the
+   real mug render itself, never a drawn one.
+4. **Kling 3.0 still breaks on contact:** a third hand when two objects touch, a paw morphing into a prop, and
+   camera drift on locked-off prompts. Producers cut around it with clean windows and stills with a push-in.
+5. Producers never typed lyrics this round and no output filter tripped: describe the gag, never the line.
