@@ -39,6 +39,14 @@ A card is built once: the branch `codex/<id>` marks it done. To run it again, us
   badge or label (Krish, 2 Nov: "We never need EXAMPLE badges anywhere"). Generators never touch the product's
   printed design.
 
+## On-screen labels sit in one place
+
+Krish, 2026-11-10: "make sure all captions go where the "4:00 AM - rise" caption is ... dont have them moving
+about all the time and out of visible boundaries". Every on-screen label in a reel is centered at one fixed
+position for the whole reel: the top of the text at y 1450 on a 1080x1920 frame (F38's "4:00 AM · rise"), or
+higher, never lower, one font and size throughout. Never move a label shot by shot to clear a face; recrop or
+pick another frame instead. Floor rule `fixed-label-position`.
+
 ## Claude runs Codex end to end
 
 Krish, 2026-11-09: "the goal is that Claude sessions manage Codex in the future fully and micromanage Codex in

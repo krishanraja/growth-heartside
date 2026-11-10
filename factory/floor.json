@@ -516,6 +516,20 @@
    "applies_to": [
     "reel"
    ]
+  },
+  {
+   "id": "fixed-label-position",
+   "date": "2026-11-10",
+   "made": "F38 '4 AM routine' (real-dog remake): labels placed shot by shot, some low enough to fall under Instagram's caption and buttons",
+   "words": [
+    "just realized that some of the captions (eg\"stakeholder alignment\") in f38 go beneath what is visible in instagram, can you make sure all captions go where the \"4:00 AM - rise\" caption is and redo this? note this feedback for all captions, dont have them moving about all the time and out of visible boundaries"
+   ],
+   "category": "presentation",
+   "rule": "Every on-screen label in a reel sits in one fixed position for the whole reel: the position of F38's '4:00 AM · rise' label (centered, top of the text at y 1450 on a 1080x1920 frame) or higher, never lower, and never moved shot to shot. No label may sit where a platform's caption or buttons cover it.",
+   "check": "code: every label in a timeline has the same anchor, with its top at or above y 1450; review: the contact sheet shows every label in the same place",
+   "applies_to": [
+    "reel"
+   ]
   }
  ],
  "open_conflicts": [],
