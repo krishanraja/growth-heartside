@@ -15,18 +15,18 @@
  },
  "caps": {
   "per_platform_per_day": {
-   "tiktok": 8,
-   "instagram": 6,
-   "facebook": 5
+   "tiktok": 10,
+   "instagram": 8,
+   "facebook": 8
   },
-  "status": "proposed: TikTok 8 and Instagram 6 exceed the 5 a day of the 29 Oct concept-level ruling and need Krish's yes"
+  "status": "Krish, 2026-11-10: \"I want A plan with zero shackles, none whatsoever.\" Raised for the sprint above the 29 Oct 5 a day."
  },
  "rules": {
   "double_down_from_day": 4,
   "winner_multiple": 3,
   "retire_below_multiple": 0.5,
-  "restage": "Proven posts inform; they are never inputs (bank/franchises.json restage_rule).",
-  "read": "72 hours after a post goes live: views per platform from the platform or Buffer analytics, recorded with sprint.py views."
+  "read": "72 hours after a post goes live: views per platform from the platform or Buffer analytics, recorded with sprint.py views.",
+  "reskin": "Proven posts, edits and tracks are reskinned and reused directly (bank/franchises.json reskin_rule)."
  },
  "slots": [
   {
@@ -39,10 +39,10 @@
    "breed": "golden",
    "template": "film",
    "aspect": "9:16",
-   "day": "2026-11-12",
+   "day": "2026-11-17",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -60,8 +60,8 @@
    "aspect": "9:16",
    "day": "2026-11-12",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -80,7 +80,9 @@
    "aspect": "9:16",
    "day": "2026-11-12",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -88,16 +90,17 @@
   {
    "id": "V002",
    "lane": "viral",
-   "franchise": "The Side-Eye Tribunal",
-   "grade": "A",
-   "concept": "DVC-006",
-   "title": "Bought the wrong treats",
-   "mechanism_payoff": "eye shift to the real bag",
+   "franchise": "The Human-Arms Lip-Sync",
+   "grade": "R",
+   "concept": "HAL-02",
+   "title": "My dog's 9 to 5, work from home edition",
+   "mechanism_payoff": "camera off on the call, asleep on the keyboard",
    "breed": "bulldog",
-   "template": "still",
-   "aspect": "4:5",
+   "template": "film",
+   "aspect": "9:16",
    "day": "2026-11-12",
    "platforms": [
+    "tiktok",
     "instagram",
     "facebook"
    ],
@@ -107,17 +110,19 @@
   {
    "id": "V003",
    "lane": "viral",
-   "franchise": "The Household Obstruction",
-   "grade": "A",
-   "concept": "DVC-011",
-   "title": "Fold laundry with a nest-builder",
-   "mechanism_payoff": "dog steals the last folded item",
+   "franchise": "The Human-Arms Lip-Sync",
+   "grade": "R",
+   "concept": "HAL-03",
+   "title": "My dog's Monday morning",
+   "mechanism_payoff": "three alarms, one coffee, back to bed",
    "breed": "frenchie",
-   "template": "still",
+   "template": "film",
    "aspect": "9:16",
    "day": "2026-11-12",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -125,16 +130,17 @@
   {
    "id": "V004",
    "lane": "viral",
-   "franchise": "Tiny Employee",
-   "grade": "A",
-   "concept": "DVC-026",
-   "title": "Laundry compliance officer",
-   "mechanism_payoff": "rejects one sock",
+   "franchise": "The Human-Arms Lip-Sync",
+   "grade": "R",
+   "concept": "HAL-04",
+   "title": "My dog's Black Friday",
+   "mechanism_payoff": "sprints past every deal to the treat aisle",
    "breed": "shepherd",
-   "template": "still",
-   "aspect": "4:5",
+   "template": "film",
+   "aspect": "9:16",
    "day": "2026-11-12",
    "platforms": [
+    "tiktok",
     "instagram",
     "facebook"
    ],
@@ -144,17 +150,18 @@
   {
    "id": "V005",
    "lane": "viral",
-   "franchise": "One-Frame Costume Reveal",
-   "grade": "A",
-   "concept": "DVC-032",
-   "title": "The office printer",
-   "mechanism_payoff": "dog delivers one note",
+   "franchise": "The Human-Arms Lip-Sync",
+   "grade": "R",
+   "concept": "HAL-05",
+   "title": "My dog's gym era",
+   "mechanism_payoff": "one rep, then a nap on the bench",
    "breed": "husky",
-   "template": "still",
+   "template": "film",
    "aspect": "9:16",
    "day": "2026-11-12",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -162,17 +169,17 @@
   {
    "id": "V006",
    "lane": "viral",
-   "franchise": "Proud of the Underdog",
-   "grade": "A",
-   "concept": "DVC-036",
-   "title": "High jump vs one curb",
-   "mechanism_payoff": "celebrate the step-over",
+   "franchise": "The Human-Arms Lip-Sync",
+   "grade": "R",
+   "concept": "HAL-06",
+   "title": "My dog's Sunday reset",
+   "mechanism_payoff": "cleans the whole house, then lies on the clean laundry",
    "breed": "pug",
-   "template": "still",
-   "aspect": "4:5",
+   "template": "film",
+   "aspect": "9:16",
    "day": "2026-11-12",
    "platforms": [
-    "instagram",
+    "tiktok",
     "facebook"
    ],
    "intent": "audience",
@@ -181,13 +188,13 @@
   {
    "id": "V007",
    "lane": "viral",
-   "franchise": "The Heist",
-   "grade": "A",
-   "concept": "DVC-056",
-   "title": "The blanket corner theft",
-   "mechanism_payoff": "dog distracts with toy then steals warm spot",
+   "franchise": "The Human-Arms Lip-Sync",
+   "grade": "R",
+   "concept": "HAL-07",
+   "title": "My dog's first day at a new job",
+   "mechanism_payoff": "lanyard on, takes the best chair in the meeting",
    "breed": "great dane",
-   "template": "still",
+   "template": "film",
    "aspect": "9:16",
    "day": "2026-11-12",
    "platforms": [
@@ -245,7 +252,7 @@
    "aspect": "4:5",
    "day": "2026-11-12",
    "platforms": [
-    "tiktok"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -262,8 +269,8 @@
    "aspect": "9:16",
    "day": "2026-11-13",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -281,8 +288,8 @@
    "aspect": "4:5",
    "day": "2026-11-13",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -301,7 +308,9 @@
    "aspect": "9:16",
    "day": "2026-11-13",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -319,7 +328,9 @@
    "aspect": "9:16",
    "day": "2026-11-13",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -337,7 +348,8 @@
    "aspect": "9:16",
    "day": "2026-11-13",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -356,6 +368,7 @@
    "day": "2026-11-13",
    "platforms": [
     "instagram",
+    "tiktok",
     "facebook"
    ],
    "intent": "audience",
@@ -374,7 +387,8 @@
    "aspect": "9:16",
    "day": "2026-11-13",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -483,7 +497,7 @@
    "aspect": "9:16",
    "day": "2026-11-13",
    "platforms": [
-    "facebook"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -500,8 +514,8 @@
    "aspect": "9:16",
    "day": "2026-11-14",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -519,8 +533,8 @@
    "aspect": "9:16",
    "day": "2026-11-14",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -539,7 +553,9 @@
    "aspect": "9:16",
    "day": "2026-11-14",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -557,7 +573,9 @@
    "aspect": "9:16",
    "day": "2026-11-14",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -575,7 +593,8 @@
    "aspect": "9:16",
    "day": "2026-11-14",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -593,7 +612,8 @@
    "aspect": "9:16",
    "day": "2026-11-14",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -612,6 +632,7 @@
    "day": "2026-11-14",
    "platforms": [
     "instagram",
+    "tiktok",
     "facebook"
    ],
    "intent": "audience",
@@ -630,7 +651,8 @@
    "aspect": "9:16",
    "day": "2026-11-14",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -648,8 +670,7 @@
    "aspect": "4:5",
    "day": "2026-11-14",
    "platforms": [
-    "instagram",
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -703,7 +724,7 @@
    "aspect": "9:16",
    "day": "2026-11-14",
    "platforms": [
-    "instagram"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -721,7 +742,7 @@
    "aspect": "4:5",
    "day": "2026-11-14",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -738,8 +759,8 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -757,8 +778,9 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
+    "tiktok",
     "instagram",
-    "tiktok"
+    "facebook"
    ],
    "intent": "buy",
    "stage": "idea"
@@ -775,8 +797,9 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
+    "tiktok",
     "instagram",
-    "tiktok"
+    "facebook"
    ],
    "intent": "buy",
    "stage": "idea"
@@ -794,7 +817,8 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -812,7 +836,8 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -830,7 +855,8 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -848,7 +874,8 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -866,7 +893,8 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -902,7 +930,7 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
-    "instagram"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -938,7 +966,7 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
-    "facebook"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -952,7 +980,7 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -966,7 +994,7 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -980,7 +1008,7 @@
    "aspect": "9:16",
    "day": "2026-11-15",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -997,8 +1025,8 @@
    "aspect": "4:5",
    "day": "2026-11-16",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -1016,8 +1044,8 @@
    "aspect": "9:16",
    "day": "2026-11-16",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -1036,7 +1064,9 @@
    "aspect": "9:16",
    "day": "2026-11-16",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1054,7 +1084,9 @@
    "aspect": "9:16",
    "day": "2026-11-16",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1072,7 +1104,8 @@
    "aspect": "9:16",
    "day": "2026-11-16",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1090,7 +1123,8 @@
    "aspect": "9:16",
    "day": "2026-11-16",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1108,7 +1142,8 @@
    "aspect": "9:16",
    "day": "2026-11-16",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1181,7 +1216,7 @@
    "aspect": "9:16",
    "day": "2026-11-16",
    "platforms": [
-    "instagram"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1195,7 +1230,7 @@
    "aspect": "9:16",
    "day": "2026-11-16",
    "platforms": [
-    "instagram"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1209,7 +1244,7 @@
    "aspect": "9:16",
    "day": "2026-11-16",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1223,7 +1258,7 @@
    "aspect": "9:16",
    "day": "2026-11-16",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1231,21 +1266,23 @@
   {
    "id": "S12",
    "lane": "signature",
-   "title": "The lean",
-   "premise": "Olympic judges score a lab's lean against its person's leg: form, commitment, total weight transfer.",
-   "payoff": "Three 10s, then the real mug.",
+   "title": "My dog's Christmas shopping",
+   "premise": "A lab in a hoodie, a hidden person's arms doing the hands, shops for its person's gift to a Christmas song everyone knows, every lyric staged literally: list, car, store, checkout, wrapping.",
+   "payoff": "The last lyric lands on the checkout, and the gift is the real mug.",
    "product": "mug",
    "breed": "lab",
-   "template": "still",
-   "aspect": "4:5",
-   "day": "2026-11-17",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-12",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
-   "stage": "idea"
+   "stage": "idea",
+   "franchise": "The Human-Arms Lip-Sync",
+   "concept": "HAL-01"
   },
   {
    "id": "S13",
@@ -1259,8 +1296,8 @@
    "aspect": "9:16",
    "day": "2026-11-17",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -1279,7 +1316,9 @@
    "aspect": "9:16",
    "day": "2026-11-17",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1297,7 +1336,9 @@
    "aspect": "9:16",
    "day": "2026-11-17",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1315,7 +1356,8 @@
    "aspect": "9:16",
    "day": "2026-11-17",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1333,7 +1375,8 @@
    "aspect": "9:16",
    "day": "2026-11-17",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1351,7 +1394,8 @@
    "aspect": "9:16",
    "day": "2026-11-17",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1420,7 +1464,7 @@
    "aspect": "9:16",
    "day": "2026-11-17",
    "platforms": [
-    "instagram"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1434,7 +1478,7 @@
    "aspect": "9:16",
    "day": "2026-11-17",
    "platforms": [
-    "instagram"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1448,7 +1492,7 @@
    "aspect": "9:16",
    "day": "2026-11-17",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1462,7 +1506,7 @@
    "aspect": "9:16",
    "day": "2026-11-17",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1479,8 +1523,8 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -1498,8 +1542,9 @@
    "aspect": "4:5",
    "day": "2026-11-18",
    "platforms": [
+    "tiktok",
     "instagram",
-    "tiktok"
+    "facebook"
    ],
    "intent": "buy",
    "stage": "idea"
@@ -1516,8 +1561,9 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
+    "tiktok",
     "instagram",
-    "tiktok"
+    "facebook"
    ],
    "intent": "buy",
    "stage": "idea"
@@ -1535,7 +1581,8 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1553,7 +1600,8 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1571,7 +1619,8 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1589,7 +1638,8 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1607,7 +1657,8 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1643,7 +1694,7 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
-    "instagram"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1675,7 +1726,7 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
-    "facebook"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1689,7 +1740,7 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1703,7 +1754,7 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1717,7 +1768,7 @@
    "aspect": "9:16",
    "day": "2026-11-18",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1734,8 +1785,8 @@
    "aspect": "9:16",
    "day": "2026-11-19",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -1753,8 +1804,8 @@
    "aspect": "9:16",
    "day": "2026-11-19",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -1773,7 +1824,9 @@
    "aspect": "9:16",
    "day": "2026-11-19",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1791,7 +1844,9 @@
    "aspect": "9:16",
    "day": "2026-11-19",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1809,7 +1864,9 @@
    "aspect": "9:16",
    "day": "2026-11-19",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1827,7 +1884,8 @@
    "aspect": "9:16",
    "day": "2026-11-19",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1845,7 +1903,8 @@
    "aspect": "9:16",
    "day": "2026-11-19",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1900,8 +1959,7 @@
    "aspect": "4:5",
    "day": "2026-11-19",
    "platforms": [
-    "instagram",
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -1915,7 +1973,7 @@
    "aspect": "9:16",
    "day": "2026-11-19",
    "platforms": [
-    "instagram"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1929,7 +1987,7 @@
    "aspect": "9:16",
    "day": "2026-11-19",
    "platforms": [
-    "instagram"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1943,7 +2001,7 @@
    "aspect": "9:16",
    "day": "2026-11-19",
    "platforms": [
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -1960,8 +2018,8 @@
    "aspect": "4:5",
    "day": "2026-11-20",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -1979,8 +2037,8 @@
    "aspect": "9:16",
    "day": "2026-11-20",
    "platforms": [
-    "instagram",
     "tiktok",
+    "instagram",
     "facebook"
    ],
    "intent": "buy",
@@ -1999,7 +2057,9 @@
    "aspect": "9:16",
    "day": "2026-11-20",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -2017,7 +2077,9 @@
    "aspect": "9:16",
    "day": "2026-11-20",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -2035,7 +2097,9 @@
    "aspect": "9:16",
    "day": "2026-11-20",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -2053,7 +2117,9 @@
    "aspect": "9:16",
    "day": "2026-11-20",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -2071,7 +2137,9 @@
    "aspect": "9:16",
    "day": "2026-11-20",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "instagram",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -2089,7 +2157,8 @@
    "aspect": "9:16",
    "day": "2026-11-20",
    "platforms": [
-    "tiktok"
+    "tiktok",
+    "facebook"
    ],
    "intent": "audience",
    "stage": "idea"
@@ -2103,8 +2172,7 @@
    "aspect": "9:16",
    "day": "2026-11-20",
    "platforms": [
-    "instagram",
-    "facebook"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -2118,8 +2186,7 @@
    "aspect": "9:16",
    "day": "2026-11-20",
    "platforms": [
-    "instagram",
-    "facebook"
+    "tiktok"
    ],
    "intent": "audience",
    "stage": "reserved"
@@ -2133,8 +2200,7 @@
    "aspect": "9:16",
    "day": "2026-11-20",
    "platforms": [
-    "instagram",
-    "facebook"
+    "instagram"
    ],
    "intent": "audience",
    "stage": "reserved"

@@ -1,345 +1,363 @@
 {
-  "_about": "The rejection floor: every creative decline Krish has made, in his exact words, with the rule it set and the check that now enforces it. Nothing is briefed, generated, carded to Codex or shown to Krish without first reading `python3 growth.py floor --format <format>` and checking the finished file against it. The same pattern as content-engine's rejection floor (scripts/floor.py). A new decline is added here in the same session it happens, with his words verbatim; a paraphrase stays an observation. Collected on 2026-11-09 from CHANGES.md, docs/briefs/2026-11-02-funny-bar.md, factory/bank/lines.json, heartside codex cards and the claude/runway-motion-batch records.",
-  "formats": [
+ "_about": "The rejection floor: every creative decline Krish has made, in his exact words, with the rule it set and the check that now enforces it. Nothing is briefed, generated, carded to Codex or shown to Krish without first reading `python3 growth.py floor --format <format>` and checking the finished file against it. The same pattern as content-engine's rejection floor (scripts/floor.py). A new decline is added here in the same session it happens, with his words verbatim; a paraphrase stays an observation. Collected on 2026-11-09 from CHANGES.md, docs/briefs/2026-11-02-funny-bar.md, factory/bank/lines.json, heartside codex cards and the claude/runway-motion-batch records.",
+ "formats": [
+  "reel",
+  "still",
+  "carousel",
+  "meme",
+  "comment",
+  "card"
+ ],
+ "entries": [
+  {
+   "id": "voice-personality",
+   "date": "2026-11-02",
+   "made": "18 Higgsfield voice presets for the characters",
+   "words": [
+    "Sounds like a businessman",
+    "Sounds lame and boring"
+   ],
+   "category": "performance",
+   "rule": "Characters speak in designed ElevenLabs voices with a distinct comic personality. A neutral or corporate read fails.",
+   "check": "review: play every read at full length before it reaches Krish; name the character trait it carries",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "music-fits-script",
+   "date": "2026-11-02",
+   "made": "Catch Me, Fool Me Twice and Bug-A-Boo music beds",
+   "words": [
+    "Doesn't match the script."
+   ],
+   "category": "sound",
+   "rule": "Music is chosen for the script's beat and tone, scene by scene, never as a generic upbeat bed.",
+   "check": "review: state in one line how the track's energy matches each beat",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "read-intonation",
+   "date": "2026-11-02",
+   "made": "F05 judge voice read",
+   "words": [
+    "Needs way more intonation and personality. It's so boring."
+   ],
+   "category": "performance",
+   "rule": "Every voice line is performed: pitch, pace and pause carry the joke.",
+   "check": "review: listen at full size; a flat read is redone before review",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "endings-land",
+   "date": "2026-11-02",
+   "made": "F01 ending mix",
+   "words": [
+    "It just ends abruptly"
+   ],
+   "category": "sound",
+   "rule": "A film ends on a resolved beat and a finished music phrase, with the product held at least 3 seconds.",
+   "check": "code: lock.py media (end frame held 3 s); review: the music resolves",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "funny-bar",
+   "date": "2026-11-02",
+   "made": "Wave-1 animatics F01, F02, F04",
+   "words": [
+    "its just not funny",
+    "a lot more humour"
+   ],
+   "category": "joke",
+   "rule": "A laugh every 3 to 4 seconds, and funny with the sound off (docs/briefs/2026-11-02-funny-bar.md).",
+   "check": "review: list the laugh beats with their timestamps; any gap over 4 s or a joke that needs sound is held",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
+  },
+  {
+   "id": "one-status-page",
+   "date": "2026-11-02",
+   "made": "Ten concepts spread across variant boards",
+   "words": [
+    "I'm kind of getting a bit lost amidst all this now and a bit demotivated"
+   ],
+   "category": "process",
+   "rule": "Krish sees one review page per batch, best first, with the floor checks already passed. Never scattered variants.",
+   "check": "process: one 03a session folder, one review page, one decision list",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme",
+    "card"
+   ]
+  },
+  {
+   "id": "no-badges",
+   "date": "2026-11-02",
+   "made": "Finished posts with EXAMPLE badges and a slogan",
+   "words": [
+    "We never need \"EXAMPLE\" badges anywhere",
+    "they should come across like organic social posts"
+   ],
+   "category": "presentation",
+   "rule": "No badge, label, watermark or slogan bar on a post. It reads as an organic post, not an ad.",
+   "check": "code: lock.py STANDING checks; review: look at the final crop",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
+  },
+  {
+   "id": "troll-not-mild",
+   "date": "2026-11-03",
+   "made": "Frenchie roast lines F06.fr1 to fr3",
+   "words": [
+    "These are not funny compared to the dash",
+    "I want images that look like the dog is trolling them"
+   ],
+   "category": "joke",
+   "rule": "A roast has a dog who is visibly in on the joke, shown with real dog expressions that read as trolling (the flat stare, the head tilt, the paw on the thing, the slow look back), never a human smile, grin or side-eye (Krish, 2026-11-09: \"Go with your recommendations\"). A mild line on a neutral dog fails. Retired lines stay retired for that breed.",
+   "check": "code: lock.py check (retired line/breed pairs); review: the image alone shows the troll, with no human facial expression on the dog",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
+  },
+  {
+   "id": "real-product",
+   "date": "2026-11-03",
+   "made": "Homepage mug mockups; a Codex pass that reported ok but smeared the wall and table",
+   "words": [
+    "What's causing the mug mockups to look so crappy on the live site?"
+   ],
+   "category": "product",
+   "rule": "The product is the store's own render, pixels unaltered (AGENTS.md rule 4). A Codex result of ok means its commands ran, never that the picture is right.",
+   "check": "code: lock.py check (renders.json sha256); review: Claude looks at every Codex output at full size before accepting it",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme",
+    "card"
+   ]
+  },
+  {
+   "id": "ten-out-of-ten",
+   "date": "2026-11-04",
+   "made": "The whole posted library",
+   "words": [
+    "Yes, we need them all to be 10 out of 10. Where are your standards?"
+   ],
+   "category": "bar",
+   "rule": "Every asset is scored before Krish sees it; anything below 10 is held with its reason, never shown to fill a slot.",
+   "check": "review: a score and the reason on every asset in the review page",
+   "applies_to": [
     "reel",
     "still",
     "carousel",
     "meme",
     "comment",
     "card"
-  ],
-  "entries": [
-    {
-      "id": "voice-personality",
-      "date": "2026-11-02",
-      "made": "18 Higgsfield voice presets for the characters",
-      "words": [
-        "Sounds like a businessman",
-        "Sounds lame and boring"
-      ],
-      "category": "performance",
-      "rule": "Characters speak in designed ElevenLabs voices with a distinct comic personality. A neutral or corporate read fails.",
-      "check": "review: play every read at full length before it reaches Krish; name the character trait it carries",
-      "applies_to": [
-        "reel"
-      ]
-    },
-    {
-      "id": "music-fits-script",
-      "date": "2026-11-02",
-      "made": "Catch Me, Fool Me Twice and Bug-A-Boo music beds",
-      "words": [
-        "Doesn't match the script."
-      ],
-      "category": "sound",
-      "rule": "Music is chosen for the script's beat and tone, scene by scene, never as a generic upbeat bed.",
-      "check": "review: state in one line how the track's energy matches each beat",
-      "applies_to": [
-        "reel"
-      ]
-    },
-    {
-      "id": "read-intonation",
-      "date": "2026-11-02",
-      "made": "F05 judge voice read",
-      "words": [
-        "Needs way more intonation and personality. It's so boring."
-      ],
-      "category": "performance",
-      "rule": "Every voice line is performed: pitch, pace and pause carry the joke.",
-      "check": "review: listen at full size; a flat read is redone before review",
-      "applies_to": [
-        "reel"
-      ]
-    },
-    {
-      "id": "endings-land",
-      "date": "2026-11-02",
-      "made": "F01 ending mix",
-      "words": [
-        "It just ends abruptly"
-      ],
-      "category": "sound",
-      "rule": "A film ends on a resolved beat and a finished music phrase, with the product held at least 3 seconds.",
-      "check": "code: lock.py media (end frame held 3 s); review: the music resolves",
-      "applies_to": [
-        "reel"
-      ]
-    },
-    {
-      "id": "funny-bar",
-      "date": "2026-11-02",
-      "made": "Wave-1 animatics F01, F02, F04",
-      "words": [
-        "its just not funny",
-        "a lot more humour"
-      ],
-      "category": "joke",
-      "rule": "A laugh every 3 to 4 seconds, and funny with the sound off (docs/briefs/2026-11-02-funny-bar.md).",
-      "check": "review: list the laugh beats with their timestamps; any gap over 4 s or a joke that needs sound is held",
-      "applies_to": [
-        "reel",
-        "still",
-        "carousel",
-        "meme"
-      ]
-    },
-    {
-      "id": "one-status-page",
-      "date": "2026-11-02",
-      "made": "Ten concepts spread across variant boards",
-      "words": [
-        "I'm kind of getting a bit lost amidst all this now and a bit demotivated"
-      ],
-      "category": "process",
-      "rule": "Krish sees one review page per batch, best first, with the floor checks already passed. Never scattered variants.",
-      "check": "process: one 03a session folder, one review page, one decision list",
-      "applies_to": [
-        "reel",
-        "still",
-        "carousel",
-        "meme",
-        "card"
-      ]
-    },
-    {
-      "id": "no-badges",
-      "date": "2026-11-02",
-      "made": "Finished posts with EXAMPLE badges and a slogan",
-      "words": [
-        "We never need \"EXAMPLE\" badges anywhere",
-        "they should come across like organic social posts"
-      ],
-      "category": "presentation",
-      "rule": "No badge, label, watermark or slogan bar on a post. It reads as an organic post, not an ad.",
-      "check": "code: lock.py STANDING checks; review: look at the final crop",
-      "applies_to": [
-        "reel",
-        "still",
-        "carousel",
-        "meme"
-      ]
-    },
-    {
-      "id": "troll-not-mild",
-      "date": "2026-11-03",
-      "made": "Frenchie roast lines F06.fr1 to fr3",
-      "words": [
-        "These are not funny compared to the dash",
-        "I want images that look like the dog is trolling them"
-      ],
-      "category": "joke",
-      "rule": "A roast has a dog who is visibly in on the joke, shown with real dog expressions that read as trolling (the flat stare, the head tilt, the paw on the thing, the slow look back), never a human smile, grin or side-eye (Krish, 2026-11-09: \"Go with your recommendations\"). A mild line on a neutral dog fails. Retired lines stay retired for that breed.",
-      "check": "code: lock.py check (retired line/breed pairs); review: the image alone shows the troll, with no human facial expression on the dog",
-      "applies_to": [
-        "reel",
-        "still",
-        "carousel",
-        "meme"
-      ]
-    },
-    {
-      "id": "real-product",
-      "date": "2026-11-03",
-      "made": "Homepage mug mockups; a Codex pass that reported ok but smeared the wall and table",
-      "words": [
-        "What's causing the mug mockups to look so crappy on the live site?"
-      ],
-      "category": "product",
-      "rule": "The product is the store's own render, pixels unaltered (AGENTS.md rule 4). A Codex result of ok means its commands ran, never that the picture is right.",
-      "check": "code: lock.py check (renders.json sha256); review: Claude looks at every Codex output at full size before accepting it",
-      "applies_to": [
-        "reel",
-        "still",
-        "carousel",
-        "meme",
-        "card"
-      ]
-    },
-    {
-      "id": "ten-out-of-ten",
-      "date": "2026-11-04",
-      "made": "The whole posted library",
-      "words": [
-        "Yes, we need them all to be 10 out of 10. Where are your standards?"
-      ],
-      "category": "bar",
-      "rule": "Every asset is scored before Krish sees it; anything below 10 is held with its reason, never shown to fill a slot.",
-      "check": "review: a score and the reason on every asset in the review page",
-      "applies_to": [
-        "reel",
-        "still",
-        "carousel",
-        "meme",
-        "comment",
-        "card"
-      ]
-    },
-    {
-      "id": "scene-progression",
-      "date": "2026-11-04",
-      "made": "F04 motion version (golden retriever)",
-      "words": [
-        "The golden video chops a bit. It doesn't tell a great narrative story in terms of the scene progression."
-      ],
-      "category": "story",
-      "rule": "A motion edit tells one story in order: set-up, turn, payoff. Each shot cuts on action and follows from the last.",
-      "check": "review: write the shot list as a three-beat story before generating; reject a cut that needs explaining",
-      "applies_to": [
-        "reel"
-      ]
-    },
-    {
-      "id": "generation-continuity",
-      "date": "2026-11-04",
-      "made": "Runway clips held by the engine itself",
-      "words": [],
-      "category": "generation",
-      "rule": "No ear, collar, coat, prop or text may change between frames. Generated text is never used: on-screen words are set in post.",
-      "check": "review: step through the clip at frame level against the first frame",
-      "applies_to": [
-        "reel"
-      ]
-    },
-    {
-      "id": "no-live-queue",
-      "date": "2026-11-04",
-      "made": "A Codex card that re-attached media in Buffer",
-      "words": [
-        "Why have you fucking told it to use Buffer?"
-      ],
-      "category": "process",
-      "rule": "Only the publishing desk touches Buffer or any live queue. A production card never names Buffer, a scheduler or a live post.",
-      "check": "code: codex card lint (codex/README.md, \"Card rules\")",
-      "applies_to": [
-        "card"
-      ]
-    },
-    {
-      "id": "execution-lands",
-      "date": "2026-11-07",
-      "made": "Five organic stills OG-01 to OG-05 (F25 to F27)",
-      "words": [
-        "I actually find 3 and 5 the funniest, but none of them are really hilarious in their execution."
-      ],
-      "category": "joke",
-      "rule": "Krish ranks, not the producer. An idea that is funny on paper still fails if the image does not land it at a glance.",
-      "check": "review: show the idea and the execution separately; never rank for him",
-      "applies_to": [
-        "still",
-        "meme",
-        "carousel"
-      ]
-    },
-    {
-      "id": "stage-the-joke",
-      "date": "2026-11-07",
-      "made": "The cheese concept",
-      "words": [
-        "Me calling him from 3 ft away should be the dog asleep, snoring."
-      ],
-      "category": "concept",
-      "rule": "The picture stages the joke literally: what the caption claims, the dog is visibly doing.",
-      "check": "review: read the caption, then look at the image with the caption covered; the action must match",
-      "applies_to": [
-        "still",
-        "meme",
-        "carousel",
-        "reel"
-      ]
-    },
-    {
-      "id": "real-dogs",
-      "date": "2026-11-08",
-      "made": "Revised organic still batch",
-      "words": [
-        "These dogs look fake and sometimes malformed."
-      ],
-      "category": "generation",
-      "rule": "A generated dog must pass for a photograph: correct anatomy (four legs, one tail, paws, ears, eyes, teeth), real fur texture, real scale and lighting. Review the source and the final crop separately. If generation cannot pass, use real dog photography.",
-      "check": "review: an anatomy and realism record per image (source and crop) before it reaches Krish; one fail holds the image",
-      "applies_to": [
-        "still",
-        "meme",
-        "carousel",
-        "reel"
-      ]
-    },
-    {
-      "id": "text-clear-of-faces",
-      "date": "2026-11-09",
-      "made": "Platform UI editions with title and subtitle boxes (F03 Operation Stocking and other video editions)",
-      "words": [],
-      "said": "Recorded by the publishing desk in 02 Schedule and captions, Results tab: \"CREATIVE HOLD FOR REUSE: Krish rejected title/subtitle boxes covering dog eyes and key action (9 Nov).\" His exact words are not on record.",
-      "category": "presentation",
-      "rule": "On-screen text never covers a dog's eyes, face or the main action in any frame. Clearing the frame border is not acceptance; placement is decided scene by scene.",
-      "check": "review: step through every frame with text on it and record where the eyes and action are; one overlap holds the edition",
-      "applies_to": [
-        "reel",
-        "still",
-        "carousel",
-        "meme"
-      ]
-    },
-    {
-      "id": "dumb-stopping",
-      "date": "2026-11-06",
-      "made": "The comedy and rain session's brief",
-      "words": [
-        "10 times better, more epic, more shareable, hilarious, and dumb-stopping."
-      ],
-      "category": "bar",
-      "rule": "A concept makes sense with no explanation and has an actual visual comic payoff: a surprising consequence, not only a familiar dog behavior. Judge it with the captions covered.",
-      "check": "review: describe the payoff in one sentence without the caption; if it needs the caption or is just a cute behavior, it is held",
-      "applies_to": [
-        "reel",
-        "still",
-        "carousel",
-        "meme"
-      ]
-    },
-    {
-      "id": "real-behavior-in-motion",
-      "date": "2026-11-09",
-      "made": "HeyGen motion of the rain scene (dogs greeting, gate, umbrellas)",
-      "words": [
-        "It looks too fake. The two dogs wouldn't greet each other like that in that kind of gentle way. The gate opens on its own, and the humans just wouldn't be doing what they're doing in this video. It's also unrealistic."
-      ],
-      "category": "generation",
-      "rule": "Motion shows real dog and human behavior and physical causality: a hand opens the gate, hinges, grips, umbrella shafts and leashes behave, dogs greet as dogs do. A still's approval never carries over to its motion.",
-      "check": "review: watch at full speed and frame by frame; name the cause of every movement; no staged sentimental pose or nose-to-nose greeting",
-      "applies_to": [
-        "reel"
-      ]
-    },
-    {
-      "id": "retire-weak-premise",
-      "date": "2026-11-09",
-      "made": "The whole rain scene, after repairs",
-      "words": [
-        "The whole of this scene just feels weak and lame."
-      ],
-      "category": "concept",
-      "rule": "A plausible prop or a better render does not rescue a weak premise. When Krish rejects the scene, retire it; the next round is genuinely different concepts with readable motivation, escalation and a strong final visual, never a repair.",
-      "check": "process: a rejected scene's id goes to retired; no card may name it again",
-      "applies_to": [
-        "reel",
-        "still",
-        "carousel",
-        "meme"
-      ]
-    }
-  ],
-  "open_conflicts": [],
-  "resolved_conflicts": [
-    {
-      "between": [
-        "troll-not-mild",
-        "real-dogs"
-      ],
-      "decided": "2026-11-09",
-      "words": "Go with your recommendations",
-      "decision": "Real dog expressions that read as trolling; never a human smile."
-    }
-  ]
+   ]
+  },
+  {
+   "id": "scene-progression",
+   "date": "2026-11-04",
+   "made": "F04 motion version (golden retriever)",
+   "words": [
+    "The golden video chops a bit. It doesn't tell a great narrative story in terms of the scene progression."
+   ],
+   "category": "story",
+   "rule": "A motion edit tells one story in order: set-up, turn, payoff. Each shot cuts on action and follows from the last.",
+   "check": "review: write the shot list as a three-beat story before generating; reject a cut that needs explaining",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "generation-continuity",
+   "date": "2026-11-04",
+   "made": "Runway clips held by the engine itself",
+   "words": [],
+   "category": "generation",
+   "rule": "No ear, collar, coat, prop or text may change between frames. Generated text is never used: on-screen words are set in post.",
+   "check": "review: step through the clip at frame level against the first frame",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "no-live-queue",
+   "date": "2026-11-04",
+   "made": "A Codex card that re-attached media in Buffer",
+   "words": [
+    "Why have you fucking told it to use Buffer?"
+   ],
+   "category": "process",
+   "rule": "Only the publishing desk touches Buffer or any live queue. A production card never names Buffer, a scheduler or a live post.",
+   "check": "code: codex card lint (codex/README.md, \"Card rules\")",
+   "applies_to": [
+    "card"
+   ]
+  },
+  {
+   "id": "execution-lands",
+   "date": "2026-11-07",
+   "made": "Five organic stills OG-01 to OG-05 (F25 to F27)",
+   "words": [
+    "I actually find 3 and 5 the funniest, but none of them are really hilarious in their execution."
+   ],
+   "category": "joke",
+   "rule": "Krish ranks, not the producer. An idea that is funny on paper still fails if the image does not land it at a glance.",
+   "check": "review: show the idea and the execution separately; never rank for him",
+   "applies_to": [
+    "still",
+    "meme",
+    "carousel"
+   ]
+  },
+  {
+   "id": "stage-the-joke",
+   "date": "2026-11-07",
+   "made": "The cheese concept",
+   "words": [
+    "Me calling him from 3 ft away should be the dog asleep, snoring."
+   ],
+   "category": "concept",
+   "rule": "The picture stages the joke literally: what the caption claims, the dog is visibly doing.",
+   "check": "review: read the caption, then look at the image with the caption covered; the action must match",
+   "applies_to": [
+    "still",
+    "meme",
+    "carousel",
+    "reel"
+   ]
+  },
+  {
+   "id": "real-dogs",
+   "date": "2026-11-08",
+   "made": "Revised organic still batch",
+   "words": [
+    "These dogs look fake and sometimes malformed."
+   ],
+   "category": "generation",
+   "rule": "A generated dog must pass for a photograph: correct anatomy (four legs, one tail, paws, ears, eyes, teeth), real fur texture, real scale and lighting. Review the source and the final crop separately. If generation cannot pass, use real dog photography.",
+   "check": "review: an anatomy and realism record per image (source and crop) before it reaches Krish; one fail holds the image",
+   "applies_to": [
+    "still",
+    "meme",
+    "carousel",
+    "reel"
+   ]
+  },
+  {
+   "id": "text-clear-of-faces",
+   "date": "2026-11-09",
+   "made": "Platform UI editions with title and subtitle boxes (F03 Operation Stocking and other video editions)",
+   "words": [],
+   "said": "Recorded by the publishing desk in 02 Schedule and captions, Results tab: \"CREATIVE HOLD FOR REUSE: Krish rejected title/subtitle boxes covering dog eyes and key action (9 Nov).\" His exact words are not on record.",
+   "category": "presentation",
+   "rule": "On-screen text never covers a dog's eyes, face or the main action in any frame. Clearing the frame border is not acceptance; placement is decided scene by scene.",
+   "check": "review: step through every frame with text on it and record where the eyes and action are; one overlap holds the edition",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
+  },
+  {
+   "id": "dumb-stopping",
+   "date": "2026-11-06",
+   "made": "The comedy and rain session's brief",
+   "words": [
+    "10 times better, more epic, more shareable, hilarious, and dumb-stopping."
+   ],
+   "category": "bar",
+   "rule": "A concept makes sense with no explanation and has an actual visual comic payoff: a surprising consequence, not only a familiar dog behavior. Judge it with the captions covered.",
+   "check": "review: describe the payoff in one sentence without the caption; if it needs the caption or is just a cute behavior, it is held",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
+  },
+  {
+   "id": "real-behavior-in-motion",
+   "date": "2026-11-09",
+   "made": "HeyGen motion of the rain scene (dogs greeting, gate, umbrellas)",
+   "words": [
+    "It looks too fake. The two dogs wouldn't greet each other like that in that kind of gentle way. The gate opens on its own, and the humans just wouldn't be doing what they're doing in this video. It's also unrealistic."
+   ],
+   "category": "generation",
+   "rule": "Motion shows real dog and human behavior and physical causality: a hand opens the gate, hinges, grips, umbrella shafts and leashes behave, dogs greet as dogs do. A still's approval never carries over to its motion.",
+   "check": "review: watch at full speed and frame by frame; name the cause of every movement; no staged sentimental pose or nose-to-nose greeting",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "retire-weak-premise",
+   "date": "2026-11-09",
+   "made": "The whole rain scene, after repairs",
+   "words": [
+    "The whole of this scene just feels weak and lame."
+   ],
+   "category": "concept",
+   "rule": "A plausible prop or a better render does not rescue a weak premise. When Krish rejects the scene, retire it; the next round is genuinely different concepts with readable motivation, escalation and a strong final visual, never a repair.",
+   "check": "process: a rejected scene's id goes to retired; no card may name it again",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
+  },
+  {
+   "id": "no-priest",
+   "date": "2026-11-10",
+   "made": "Sprint 120 plan: a re-stage rule that barred reusing proven posts' media and popular tracks, and three franchises excluded on authenticity grounds",
+   "words": [
+    "And stop being a priest when it comes to putting good backing tracks and copying memes and video content. It is acceptable. Everyone does it. Literally the whole of YouTube is filled with it. All you're going to do is make me be a priest. That's poor and makes no money so fucking stop it.",
+    "I want A plan with zero shackles, none whatsoever."
+   ],
+   "category": "process",
+   "rule": "Proven memes, video formats and popular backing tracks are reskinned and reused directly, including as references for generation. No franchise is excluded on originality or authenticity grounds. The bar is commercial: does it travel and does it sell.",
+   "check": "process: a plan or card that restricts reuse of proven formats, tracks or memes, or excludes a format on originality grounds, is rewritten before it reaches Krish",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
+  }
+ ],
+ "open_conflicts": [],
+ "resolved_conflicts": [
+  {
+   "between": [
+    "troll-not-mild",
+    "real-dogs"
+   ],
+   "decided": "2026-11-09",
+   "words": "Go with your recommendations",
+   "decision": "Real dog expressions that read as trolling; never a human smile."
+  }
+ ]
 }

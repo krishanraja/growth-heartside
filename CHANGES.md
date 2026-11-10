@@ -9,6 +9,9 @@ Newest first. Record his words with the date, then change the job file and
   - Proven posts inform and are never generation inputs (the re-stage rule). Heartside's own winners are reskinned freely.
   - New `still` template for memes and carousels: the line sits above the photo, never on it.
   - Ruling (Krish, 2026-11-10): photorealistic generated dogs a viewer cannot quite tell from real are on the cards, held to the realism floor.
+  - Then, the same day: "stop being a priest when it comes to putting good backing tracks and copying memes and video content. It is acceptable." and "I want A plan with zero shackles, none whatsoever." The re-stage rule is replaced by a reskin rule, every franchise is in play, caps are raised to TikTok 10 and Instagram and Facebook 8 a day for the sprint, and paid fuel on winners is in the plan (spend at his go). `factory/floor.json` `no-priest` records it.
+  - His pick "This is Good" (YouTube Short u7s47cIeh6M, "My dog's 9 to 5") becomes the lead franchise, the human-arms lip-sync: HAL-01 to HAL-08, on day one.
+  - Ruling (Krish, 2026-11-10): proven memes, video formats and backing tracks are reskinned and reused directly; no franchise is excluded on originality grounds.
 
 - 2026-11-09: three decisions and #42 merged. Krish: "Go with your recommendations, open the PRs and merge #42".
   - Trolling dogs show real dog expressions, never a human smile (`factory/floor.json` `troll-not-mild`; the open conflict is closed).

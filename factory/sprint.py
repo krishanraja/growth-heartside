@@ -92,7 +92,7 @@ def errors(m):
             if not f:
                 errs.append(f'{sid}: franchise {s.get("franchise")} is not in bank/franchises.json'); continue
             if f['grade'] == 'C':
-                errs.append(f'{sid}: {f["name"]} is excluded for generated media ({f["why"]})')
+                errs.append(f'{sid}: {f["name"]} is excluded ({f["why"]})')
             if concepts.get(s.get('concept'), {}).get('name') != f['name']:
                 errs.append(f'{sid}: concept {s.get("concept")} is not in {f["name"]}')
             used_concepts[s.get('concept')] += 1

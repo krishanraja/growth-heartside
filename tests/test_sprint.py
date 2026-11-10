@@ -23,10 +23,23 @@ class SprintManifestTest(unittest.TestCase):
         self.assertEqual((lanes.count('signature'), lanes.count('viral')), (20, 100))
         self.assertEqual(m['targets']['views'], 500000)
 
-    def test_an_excluded_franchise_is_refused(self):
+    def test_a_franchise_graded_out_is_refused(self):
+        # Nothing is excluded since Krish's 10 Nov ruling; the mechanism stays for a format he rules out later.
         m = manifest(); s = next(x for x in m['slots'] if x.get('concept'))
-        s['franchise'], s['concept'] = 'Visible Progress', 'DVC-081'
-        self.assertTrue(any('excluded' in e for e in sprint.errors(m)))
+        saved = sprint.franchises
+        def graded_out():
+            fr = saved(); fr[s['franchise']] = dict(fr[s['franchise']], grade='C'); return fr
+        sprint.franchises = graded_out
+        try:
+            self.assertTrue(any('excluded' in e for e in sprint.errors(m)))
+        finally:
+            sprint.franchises = saved
+
+    def test_nothing_is_excluded_and_the_lip_sync_leads(self):
+        fr = sprint.franchises()
+        self.assertFalse([f for f in fr.values() if f['grade'] == 'C'])
+        first = sorted((s for s in manifest()['slots'] if s.get('franchise') == 'The Human-Arms Lip-Sync'), key=lambda s: s['day'])
+        self.assertEqual(first[0]['day'], manifest()['window']['start'])
 
     def test_a_platform_cap_is_enforced(self):
         m = manifest(); day = m['slots'][0]['day']

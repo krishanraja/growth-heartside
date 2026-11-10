@@ -1,13 +1,78 @@
 {
- "about": "The 26 franchises of Krish's Dog Viral Creative System playbook (Google Sheet 1v3VgCjD8Zrh0WrxLNFisTQ1sGbgdUJfqRR97SmgYGa4, 9 Nov 2026), graded for how Heartside can make them: A = stills or a carousel carry the joke; B = one short motion beat or Heartside's inner-voice film; R = realism stretch, motion a viewer cannot tell from footage (Krish, 10 Nov: \"Photorealistic AI dogs doing things a viewer cant quite tell is real or not - anything is on the cards\"); C = excluded, because it would pass fiction off as a real animal's record. The evidence links and creators stay in the Sheet, not in this public repository. Read with docs/plans/2026-11-10-sprint-120.md.",
+ "about": "The 26 franchises of Krish's Dog Viral Creative System playbook (Google Sheet 1v3VgCjD8Zrh0WrxLNFisTQ1sGbgdUJfqRR97SmgYGa4, 9 Nov 2026), graded for how Heartside can make them: A = stills or a carousel carry the joke; B = one short motion beat or Heartside's inner-voice film; R = realism stretch, motion a viewer cannot tell from footage (Krish, 10 Nov: \"Photorealistic AI dogs doing things a viewer cant quite tell is real or not - anything is on the cards\"); nothing is excluded since Krish's 10 Nov ruling (\"I want A plan with zero shackles, none whatsoever\"). The evidence links and creators stay in the Sheet, not in this public repository. Read with docs/plans/2026-11-10-sprint-120.md.",
  "source_sheet": "1v3VgCjD8Zrh0WrxLNFisTQ1sGbgdUJfqRR97SmgYGa4",
  "grades": {
   "A": "stills or carousel",
   "B": "short motion or inner-voice film",
-  "R": "realism stretch: motion a viewer cannot tell from footage, held to floor real-dogs and real-behavior-in-motion; stills must pass before motion credits",
-  "C": "excluded: generated media would pass fiction off as a real animal's record"
+  "R": "realism stretch: photoreal motion a viewer cannot tell from footage, held to floor real-dogs and real-behavior-in-motion"
  },
  "franchises": [
+  {
+   "name": "The Human-Arms Lip-Sync",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Krish's pick, 10 Nov (\"This is Good\"): a dog in a hoodie with a hidden person's arms, every lyric of a song everyone knows staged literally, one beat a second, lyrics on screen. Reference read: YouTube Short u7s47cIeh6M, 32 s, 18.8M views at read (Apify run tf6hbOlGdAEgbm0Mh). Generated as photoreal shots per lyric line, cut to the track.",
+   "timeline": "0.0-1.5s premise card on the opening scene (\"My dog's ...\"); then one lyric line per 1-2s, each staged literally by the dog with human arms; end on the strongest visual gag held 2s",
+   "comment_prompt": "Which line is your dog? Quote it.",
+   "concepts": [
+    {
+     "id": "HAL-01",
+     "concept": "My dog's Christmas shopping",
+     "payoff": "the dog checks out, and the gift is the real mug",
+     "props": "hoodie, phone, shopping bags, wrapping paper",
+     "location": "home, car, store"
+    },
+    {
+     "id": "HAL-02",
+     "concept": "My dog's 9 to 5, work from home edition",
+     "payoff": "camera off on the call, asleep on the keyboard",
+     "props": "laptop, headset, glasses",
+     "location": "home office"
+    },
+    {
+     "id": "HAL-03",
+     "concept": "My dog's Monday morning",
+     "payoff": "three alarms, one coffee, back to bed",
+     "props": "alarm clock, mug, blanket",
+     "location": "bedroom, kitchen"
+    },
+    {
+     "id": "HAL-04",
+     "concept": "My dog's Black Friday",
+     "payoff": "sprints past every deal to the treat aisle",
+     "props": "cart, receipts, shopping bags",
+     "location": "store, car"
+    },
+    {
+     "id": "HAL-05",
+     "concept": "My dog's gym era",
+     "payoff": "one rep, then a nap on the bench",
+     "props": "dumbbells, headband, protein shaker",
+     "location": "home gym"
+    },
+    {
+     "id": "HAL-06",
+     "concept": "My dog's Sunday reset",
+     "payoff": "cleans the whole house, then lies on the clean laundry",
+     "props": "vacuum, laundry, candle",
+     "location": "home"
+    },
+    {
+     "id": "HAL-07",
+     "concept": "My dog's first day at a new job",
+     "payoff": "lanyard on, takes the best chair in the meeting",
+     "props": "lanyard, coffee, laptop bag",
+     "location": "office"
+    },
+    {
+     "id": "HAL-08",
+     "concept": "My dog's Christmas Eve",
+     "payoff": "wraps your gift, writes the card, eats one cookie",
+     "props": "wrapping paper, card, cookies",
+     "location": "living room"
+    }
+   ]
+  },
   {
    "name": "The Translator",
    "grade": "R",
@@ -730,9 +795,9 @@
   },
   {
    "name": "Visible Progress",
-   "grade": "C",
-   "mode": "excluded",
-   "why": "A dated rescue progress story is a documentary claim. Generating it would present fiction as a real dog's history (AGENTS.md rule 3). Stays excluded after Krish's 10 Nov go: it would pass fiction off as a real animal's record.",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Back on Krish's 10 Nov ruling (\"I want A plan with zero shackles, none whatsoever\"). Made as photoreal generated motion or stills, held to the realism floor.",
    "timeline": "0.0–1.5s first day; 1.5–5.5s three milestone clips with dates; 5.5–8.0s present-day matching portrait; 8.0–10.0s quiet closing detail",
    "comment_prompt": "Name the exact moment that got you; avoid generic \"cute\" prompts.",
    "concepts": [
@@ -1000,9 +1065,9 @@
   },
   {
    "name": "The Object Test",
-   "grade": "C",
-   "mode": "excluded",
-   "why": "Claims a real dog recognised words or objects. Generated trials would fake a result. Stays excluded after Krish's 10 Nov go: it would pass fiction off as a real animal's record.",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Back on Krish's 10 Nov ruling (\"I want A plan with zero shackles, none whatsoever\"). Made as photoreal generated motion or stills, held to the realism floor.",
    "timeline": "0.0–1.0s dog + test title; five equal 1.2s trials; 7.0–8.5s strongest response replay; result card",
    "comment_prompt": "Which trial convinced you—and which did not?",
    "concepts": [
@@ -1090,9 +1155,9 @@
   },
   {
    "name": "The Button Evidence",
-   "grade": "C",
-   "mode": "excluded",
-   "why": "Claims a real dog communicates by buttons. Generated evidence would be a false claim. Stays excluded after Krish's 10 Nov go: it would pass fiction off as a real animal's record.",
+   "grade": "R",
+   "mode": "motion",
+   "why": "Back on Krish's 10 Nov ruling (\"I want A plan with zero shackles, none whatsoever\"). Made as photoreal generated motion or stills, held to the realism floor.",
    "timeline": "0.0–1.0s claim; 3 dated clips of press + response at 2s each; 7.0–9.0s neutral interpretation; 9.0–10.0s question",
    "comment_prompt": "Which trial convinced you—and which did not?",
    "concepts": [
@@ -1179,5 +1244,5 @@
    ]
   }
  ],
- "restage_rule": "Proven posts inform; they are never inputs. A concept may copy a proven post's mechanism, timing, framing and beat structure, described in words in the brief. It never feeds another creator's image, video or audio to a generator, traces it, or restyles it, and never reuses their dialogue, costume identity or shot-for-shot edit (the Sheet's own non-negotiable). Heartside's own posts that win are reskinned freely: that is the double-down lane."
+ "reskin_rule": "Krish, 2026-11-10: \"stop being a priest when it comes to putting good backing tracks and copying memes and video content. It is acceptable.\" Proven memes, formats, edits and tracks are reskinned and reused directly; a winner's frames may be used as generation references. Heartside's twist is the dog, the line and, on signature posts, the real product at the end."
 }
