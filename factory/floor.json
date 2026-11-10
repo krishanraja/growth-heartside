@@ -420,6 +420,20 @@
    "applies_to": [
     "reel"
    ]
+  },
+  {
+   "id": "deadpan-labels",
+   "date": "2026-11-10",
+   "made": "Wave 2 dog-does-dog-things reels (9 to 5, Sunday reset, first day at work) cut with a premise line only",
+   "words": [
+    "They look good but I think they need labels, much like the LinkedIn parody video saying what that dog is doing in a deadpan way. If those were included I think these videos would be pretty good. And of course if the audio is solid"
+   ],
+   "category": "presentation",
+   "rule": "Every dog-does-dog-things reel carries a deadpan format label on every shot (a time and the human slot, as in F38), stating plainly what the dog is supposedly doing while it does something else. Labels sit inside y 220 to 1450, never on the eyes, face or the action. The song is chosen and placed so the audio lands.",
+   "check": "review: every shot of a dog-does-dog-things reel has a label; code: label_y between 220 and 1450; review: name the song and its start point in the Schedule notes",
+   "applies_to": [
+    "reel"
+   ]
   }
  ],
  "open_conflicts": [],
