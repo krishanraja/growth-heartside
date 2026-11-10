@@ -4,11 +4,13 @@
 
 TIMELINE: {"out": path, "font": path to a bold sans (Inter Bold on the build machine),
   "premise": {"text", "y", "size", "until"},            the premise line over shot 1 (sound-off hook)
-  "shots": [{"src": clip.mp4 or still.png, "in", "dur", "speed"}],
+  "shots": [{"src": clip.mp4 or still.png, "in", "dur", "speed", "label", "label_y"}],
   "end": {"render": the store's own render, "dur"}}    held unaltered, scaled only, on its own ground colour
 
 No lyric captions, ever (Krish, 2026-11-10: "I don't think we ever need subtitles for videos for song lyrics.";
-floor no-lyric-captions): a shot with a "caption" is refused. The premise line is the only text, placed clear of faces,
+floor no-lyric-captions): a shot with a "caption" is refused.
+A shot may carry a "label": the parodied format's own on-screen text, such as "4:00 AM, cold plunge" (Ruling, Krish,
+2026-11-10: yes to time-and-activity labels on the 4 AM routine and Monday morning films). Never a sung line. The premise line and labels are the only text, placed clear of faces,
 hands and the gag object (floor text-clear-of-faces). speed < 1 slows a trimmed clip so
 only its clean window is used; a .png src gets a slow push-in. The reel is silent: the song is added in the app.
 The end card carries no text (floor no-badges). Build inputs stay out of git (the repository is public).
@@ -40,7 +42,8 @@ def text_png(path, items):
 segs = []; t = 0.0; pre = tl.get('premise')
 for n, s in enumerate(tl['shots']):
     items = []
-    if s.get('caption'): items.append((s['caption'], s.get('cap_y', 1180), s.get('cap_size', 60)))
+    if s.get('label'): items.append((s['label'], s.get('label_y', 200), s.get('label_size', 54)))   # format label, never a lyric
+    keep = list(items)
     if pre and t < pre['until']: items.append((pre['text'], pre.get('y', 300), pre.get('size', 66)))
     png = text_png(f'{tmp}/t{n}.png', items); out = f'{tmp}/s{n:02d}.mp4'
     sp = s.get('speed', 1.0); pts = f",setpts=PTS/{sp}" if sp != 1.0 else ''
@@ -51,7 +54,7 @@ for n, s in enumerate(tl['shots']):
                 f":min(max({H}*{cy}-{H}/{z}/2\\,0)\\,{H}-{H}/{z}),scale={W}:{H}")
     vf = f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}{pts},fps={FPS},setsar=1[v];[v][1:v]overlay=0:0[o]"
     if pre and t < pre['until'] < t + s['dur']:   # premise ends inside this shot: split the overlay in time
-        png2 = text_png(f'{tmp}/u{n}.png', items[:1] if s.get('caption') else [])
+        png2 = text_png(f'{tmp}/u{n}.png', keep)
         vf = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}{pts},fps={FPS},setsar=1[v];"
               f"[v][1:v]overlay=0:0:enable='lt(t,{pre['until']-t:.2f})'[a];[a][2:v]overlay=0:0:enable='gte(t,{pre['until']-t:.2f})'[o]")
         cmd = ['ffmpeg', '-y', '-v', 'error', '-ss', str(s.get('in', 0)), '-t', str(s['dur'] * sp + 0.1), '-i', s['src'], '-loop', '1', '-i', png, '-loop', '1', '-i', png2]
