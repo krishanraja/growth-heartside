@@ -1,4 +1,4 @@
-# Volume build, batches 9 to 13: none filed (10 Nov)
+# Volume build, batches 9 to 15: none filed, budget floor reached (10 Nov)
 
 Brief: `docs/briefs/2026-11-10-volume-build.md`. Hold in force: "Make Sure nothing actually gets published yet." Nothing
 was posted, scheduled live or marked approved. Board verdicts read before each batch: none yet.
@@ -53,6 +53,35 @@ denial, so the four best pictures went back with new lines at no credit cost: "H
 present is ready." 7, 7; "He emptied the vacuum for you." 8, 8; "He saved you one." 8, 7. The line alone moved
 nothing: the judges score the picture.
 
+## Batch 14: motion on the best consequence, 6 and 6
+
+The dust-covered bichon (Kling 3.0 pro, 5 s, silent, from the still) shakes once and ends bright white, with "He
+cleaned up after himself." in the cream band above it (the first cut put the line over its head and was rebuilt).
+Both reads 6: one transformation, about five of 6.6 seconds of dead air, no escalation and no resolved final beat;
+one judge said the leftover dust pile contradicts the line. A rolls eye-roll clip was made and dropped by the producer
+(the eye movement is too small to read). Retired: one gag stretched to a video fails the video bar.
+
+## Batch 15: food on the face, shot as phone photos, none at 9
+
+The prompt asked for an unedited phone photo (imperfect framing, sensor noise, individual hairs, not glossy), and the
+stills read far more photographic. "He helped decorate." (dachshund, icing and sprinkle nose) 8, 7; "The cheese board
+came like this." (golden, cheddar on its nose) 7, 7; "Santa ate the cookies, apparently." (westie, sprinkle beard)
+7, 6, because the cookies sat intact. Dropped by the producer: a second cheese dog (repeat device), the taped corgi
+(still smiling) and a pug whose cheese never rendered.
+
+## The floor
+
+At batch 15 Control Center showed the engine's Higgsfield share at 124.85 of 2,400 remaining for the cycle (provider
+balance 408.85), below the brief's reserve of about 230. Other sessions spent most of the share this cycle; this
+session spent 175.00. Generation stopped there, per the brief. The share resets on 24 Nov.
+
+## Krish's humour profile (arrived after batch 15 was judged)
+
+Krish, 10 Nov: "Here's my humor profile. Make sure every build in all the sessions anchors towards this, now and in
+the future." (`docs/HUMOUR.md`). Its test is an intelligent observation, an utterly stupid premise and a slightly cruel
+payoff. Read against it, the denial meme has the observation (dogs lie badly) and a mild payoff but no stupid premise,
+which matches why it plateaued at 8: the next batch should start from a premise, not from a mess.
+
 ## Lessons (observations, not Krish's rulings)
 
 1. **Remakes of a familiar prop stall at 8.** Pot, slipper and lampshade each had three pictures and never passed.
@@ -66,8 +95,11 @@ nothing: the judges score the picture.
 6. **Judges read a sheet together, so a repeated line template costs every post that uses it.** Vary the line shape
    within a sheet.
 7. **Five batches plateaued at 8.** Stills now score on photographic realism and on a surprising consequence; a
-   consequence that happens (a dust cloud shaken off) may need motion, which batch 14 tests.
+   consequence that happens (a dust cloud shaken off) may need motion, which batch 14 tested: it does not.
+8. **"Unedited iPhone photo, sensor noise, not glossy" lifts realism**, and judges stopped naming the AI look.
+9. **Watch the shared share, not the session's own spend.** Read get_engine_credits before each batch; the brief's
+   1,100 cap for this session was never the binding limit.
 
 ## Spend
 
-Higgsfield 1.50 credits per batch (6 stills each), booked and settled in Control Center. Session total after batch 10: 153.00; batch 11 stills 1.50 more.
+Higgsfield 1.50 credits per batch (6 stills each), booked and settled in Control Center. Batches 9 to 12 and 15: 30 stills, 7.50. Batch 14: 2 Kling clips, 17.50. Session total: 175.00, all settled.
