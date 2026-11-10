@@ -78,7 +78,7 @@
    "grade": "R",
    "mode": "motion",
    "why": "Krish's pick, 10 Nov (\"We should Generate a realistic version of this with dog's\"): YouTube Short WzzueiNf-uU, 20 s, about 247,000 views when read (Apify run KHIGZqR4EiHadqBfe). Its sound is Bronski Beat, \"Smalltown Boy\" (Shazam match at 29.6 s into the song, Apify run EFcaZGnLgV5O26HVN), the viral 80s dance trend: 72K Shorts on the sound, top ones at 10M, 7.2M and 7M views (Krish's screenshot, 10 Nov). Two small animals stand upright and do the trend's moves into a low ultra-wide lens, close-up each, then the synced two-shot. Riding a trending sound with its known dance is the distribution.",
-   "timeline": "0-1s hook card over pup A (\"Hey dog, can you do the viral 80s dance?\"); 1-7s pup A close-up doing the trend moves into the low ultra-wide lens; 7-14s pup B close-up, paws on head; 14-20s both side by side in sync, freeze on the last beat. Sound: Smalltown Boy, added in the app from the trend's start point.",
+   "timeline": "0-6s pup A close-up doing the trend moves into the low ultra-wide lens; 6-12s pup B close-up, paws on head; 12-18s both side by side in sync; 18-24s the ending gag (one dog flops and keeps dancing on its back). No on-screen text: the trend sound and the picture carry the premise (playbook: \"use text only to clarify the premise\"); the caption names the trend. Sound: Smalltown Boy, added in the app from the trend's start point.",
    "comment_prompt": "Tag the person whose dog would actually do this.",
    "concepts": [
     {
