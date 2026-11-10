@@ -105,3 +105,23 @@ by an output filter while writing out song lyrics. Their films were finished by 
 from the old timelines by script. Producers should never type lyric text.
 
 `factory/lipsync_cut.py` gained `zoom`, `cx` and `cy` per shot (a punch-in crop).
+
+## Third read: caption-free cuts (10 Nov)
+
+Ruling (Krish, 10 Nov, floor `no-lyric-captions`): "I don't think we ever need subtitles for videos for song lyrics."
+All seven v2 cuts were re-cut as v3 with only the premise line over shot 1, and `factory/lipsync_cut.py` now refuses
+a shot that carries a caption. The cuts were then judged again at tier 2 against the updated anchors, where viral
+posts are compared only with viral tens. No new generation was needed, so this read cost no credits.
+
+| Film | v2 (lyric text) | v3 (no lyric text) | Judge's main reason |
+|---|---|---|---|
+| S12 | 8 | 8 | close-ups repeat one framing; the gift opening is a soft link to the mug |
+| HAL-02 | 8 | 8 | about 2 s a beat against the reference's 1 s; several pairs are near-static |
+| HAL-04 | 8 | 8 | props listed, not a story; the pile shot's dog does not match the hero |
+| HAL-05 | 8 | 8 | the shaker and stopwatch props do not read at a glance |
+| HAL-07 | 8 | 8 | pairs barely change inside a shot; laughs come every 5 to 6 s |
+| HAL-03 | 8 | 7 | the opening glare never arrives; the hoodie fit drifts between rooms |
+| HAL-06 | 8 | 7 | the reactions repeat one pose; the final sprawl has muddled anatomy |
+
+Without lyric text, the picture alone has to carry each gag, and two films lost a point. None is at 9, so nothing is
+filed. Other sessions have since filed F29 to F36, so the next free post id must be checked at filing.
