@@ -1,0 +1,11 @@
+{
+  "card": "dog-things-wave-3",
+  "ok": false,
+  "problems": [
+    "acceptance failed (1): python3 -c \"import json,subprocess,sys;bad=[];[bad.append(i) for i in ['F46','F47','F48','F49','F50'] if abs(float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0','out/'+i+'.mp4']))-json.load(open('inputs/'+i+'.json'))['total_seconds'])>0.2];print('ok' if not bad else bad);sys.exit(1 if bad else 0)\"\n                   **kwargs).stdout\n                   ^^^^^^^^^\n      File \"/usr/lib/python3.14/subprocess.py\", line 578, in run\n        raise CalledProcessError(retcode, process.args,\n                                 output=stdout, stderr=stderr)\n    subprocess.CalledProcessError: Command '['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', 'out/F46.mp4']' returned non-zero exit status 1."
+  ],
+  "dispatch_code": 0,
+  "host": "Lorimer",
+  "finished_at": "2026-11-10T18:40:21Z",
+  "queued_on": "claude/friendly-clarke-kbmyeq"
+}
