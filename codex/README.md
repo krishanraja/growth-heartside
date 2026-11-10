@@ -54,6 +54,7 @@ there is one record of what was asked and what came back.
 - **From a cloud session**, push the card and the home computer's lane builds it (the five steps below). This
   repository must be listed in content-engine `config/codex-lanes.json` for that; until Krish adds it, a cloud
   session's card waits.
+- **From a cloud session, by Krish** (Krish, 2026-11-10: "Codex can run from a cloud session. You just have to send me the link and give me the code."): push the card, then give Krish its GitHub link and the exact code block to run; he runs it in Codex and the result comes back as the card's result file.
 - Never paste a card into a Codex chat by hand, and never let Codex work outside a card. Work done that way on
   4 to 9 Nov left no record the next session could find.
 

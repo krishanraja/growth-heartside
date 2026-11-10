@@ -256,8 +256,8 @@ me on a contact sheet before any motion; a beat that fails is fixed as a still. 
 the joke: 3 or 4 clips a film, every other beat a still with a push-in (half of F38 to F40 were stills and Krish
 approved them). (3) The judges now hold F38 to F40 as the ten for this format, so they score against what Krish
 approved. **Engines:** Higgsfield Kling 3.0 Pro for 7 clips (S12 and the haul), Runway for 11 (the other three),
-inside its 900-credit share. Codex is not used: its lane does not yet run from a cloud session, and GPT Image stills
-already cost 0.25 on Higgsfield.
+inside its 900-credit share. Codex was not used for wave 2: its stills cost no less than Higgsfield's 0.25, and the remaining spend is realistic dog
+motion. Krish, 10 Nov: "Codex can run from a cloud session. You just have to send me the link and give me the code."
 
 ### 4. My dog's Christmas shopping (signature; ends on the real lab mug) · black lab · about 24 s · 4 clips
 
