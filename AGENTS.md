@@ -120,6 +120,8 @@ gift may be sold in a post, the mug included (Ruling, Krish, 2026-10-29).
 | Display name everywhere | Heartside: Personalized Dog Gifts |
 | The build repository (read only) | https://github.com/krishanraja/heartside |
 
+**Official icon (Krish, 10 Nov 2026):** the geometric winking dachshund holding an envelope, option D, is approved. Its immutable master, exports and approval are in [`docs/brand/official/README.md`](docs/brand/official/README.md). Use this for social avatars. Earlier avatar candidates are historical. This specific approval supersedes the earlier Buddy-image hold for this icon; it does not approve other Buddy renders. Krish owns the website favicon implementation.
+
 The only customer-facing address is krish@heartside.io. Never put any other
 address of Krish's in anything.
 

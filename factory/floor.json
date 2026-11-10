@@ -530,6 +530,37 @@
    "applies_to": [
     "reel"
    ]
+  },
+  {
+   "id": "profile-personality",
+   "date": "2026-11-10",
+   "made": "Heartside social profile icon and bios",
+   "words": [
+    "can you turn focus towards making sure my social media profile pages are 11/10? I feel the icon is boring, I'm not convinced the bio descriptions have much personality either. read growth-heartside repository again freshly"
+   ],
+   "category": "presentation",
+   "rule": "Profiles must show distinctive Heartside personality and explain the follow and gift value. Generic pet-sector icons and descriptive bios alone are insufficient. This is a rejection of the current profile, not approval of a replacement.",
+   "check": "review: read current repo, audit live profiles, show rendered avatar and exact copy before any change; verify current products and circular small-size recognition",
+   "applies_to": [
+    "still",
+    "card"
+   ]
+  },
+  {
+   "id": "avatar-affectionate-gift-giver",
+   "date": "2026-11-10",
+   "made": "Avatar R1 and proposed annoyed revision",
+   "words": [
+    "Yeah maybe it's a bit too cute and polite. Maybe we give it more personality. Feels closer for the bio yes.",
+    "No actually, they have to want to buy you a gift. I don't think we can give them an annoyed look."
+   ],
+   "category": "presentation",
+   "rule": "Give the avatar distinctive personality through affectionate mischief and eager gift-giving pride. Never make it annoyed, disdainful or judgmental toward the recipient. Positive bio direction is not final copy approval.",
+   "check": "review: the dog visibly wants to give the viewer a gift; show rendered revision before lock or application",
+   "applies_to": [
+    "still",
+    "card"
+   ]
   }
  ],
  "open_conflicts": [],

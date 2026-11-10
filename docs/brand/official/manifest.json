@@ -1,0 +1,51 @@
+{
+  "name": "Heartside icon D",
+  "status": "approved",
+  "approval_quote": "D. Make it official and I'll go and implement it as the website favicon, etc.",
+  "date": "2026-11-10",
+  "source": "docs/profile-pages/2026-11-10/logo-d-geometric.png",
+  "source_sha256": "0e74f511e15c651a011d25efecc9378b97c5b3322f12cfd89fba829bc6be8a68",
+  "invariants": [
+    "Original D artwork retained byte for byte as master",
+    "Exports resize only; no redrawing, recoloring or background removal",
+    "Raster source, not vector; burgundy background intentional"
+  ],
+  "files": {
+    "apple-touch-icon.png": {
+      "sha256": "1ecd38852044e38c097341d3aef5153dd7711773892a8956dbe0188884e7aef6",
+      "bytes": 29751
+    },
+    "favicon-16.png": {
+      "sha256": "78cfe84486a3adb1719b60ebb2dadf07c59f5c86ab0804c851bc16fbe052218b",
+      "bytes": 691
+    },
+    "favicon-32.png": {
+      "sha256": "875f7041ff0d75c58a6c0fb7d2c08166ab378010105a968fdfce7da7dd7f12ab",
+      "bytes": 1933
+    },
+    "favicon-48.png": {
+      "sha256": "48c24fc08a4d34d3c989a5b13f21770d36b39006197db372ad1537fcbd76484e",
+      "bytes": 3565
+    },
+    "favicon.ico": {
+      "sha256": "0f8f662f4ecf6e345e1ef0e6a07a296b20c8b950d8b2aa6dfcc9493437f578ec",
+      "bytes": 6243
+    },
+    "heartside-icon-master.png": {
+      "sha256": "0e74f511e15c651a011d25efecc9378b97c5b3322f12cfd89fba829bc6be8a68",
+      "bytes": 1251613
+    },
+    "icon-192.png": {
+      "sha256": "a01b117d48307112e5af6cf441063b9a6182358bf1b3cba1094737b394a2c1ec",
+      "bytes": 33424
+    },
+    "icon-512.png": {
+      "sha256": "3154a7375f9c197cf89f27ef0bf4d81dc35220f021d692bd3215b4b75b2404fe",
+      "bytes": 216885
+    },
+    "social-avatar-1080.png": {
+      "sha256": "dfd95e3ed4c1c3ac2964a8ca22de00244a1c19be72be465e296b783818d7127c",
+      "bytes": 801445
+    }
+  }
+}
