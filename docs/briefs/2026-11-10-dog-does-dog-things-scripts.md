@@ -239,3 +239,98 @@ Recovery is a lifestyle 💀"; "Inbox zero by 8. Burnout by 9:05. Boundaries by 
 **Panel against Krish: 0 of 3.** The judges held all three at 8; Krish approved all three. `panel.py agreement` says
 to rebuild the anchors before the next batch: for this format, the tier 2 anchors under-score real dog behavior in a
 human frame against the human-arms reference ten.
+
+---
+
+## Wave 2: the other five, rescripted for the 9 (10 Nov)
+
+Krish, 10 Nov: "Just figure out a way to do it all now in a way that is going to guarantee the right outputs. With
+minimum Higgs field and Runway credit spend". These replace scripts 4 to 8 above. Each was rewritten against
+`docs/HUMOUR.md` and the approved tens F38 to F40, and carries the two things every judge asked for: a turn where the
+dog's own behavior undoes the routine (the slightly cruel payoff), and at least two knowing flat stares. Premise line
+on shot 1 only (labels stay with F38 and F40). No human arms; people appear only as feet, a blurred figure or an
+off-screen hand.
+
+**How the outputs are guaranteed, cheaply.** (1) Stills first for every beat on Higgsfield at 0.25 each, checked by
+me on a contact sheet before any motion; a beat that fails is fixed as a still. (2) Motion only where the motion is
+the joke: 3 or 4 clips a film, every other beat a still with a push-in (half of F38 to F40 were stills and Krish
+approved them). (3) The judges now hold F38 to F40 as the ten for this format, so they score against what Krish
+approved. **Engines:** Higgsfield Kling 3.0 Pro for 7 clips (S12 and the haul), Runway for 11 (the other three),
+inside its 900-credit share. Codex is not used: its lane does not yet run from a cloud session, and GPT Image stills
+already cost 0.25 on Higgsfield.
+
+### 4. My dog's Christmas shopping (signature; ends on the real lab mug) · black lab · about 24 s · 4 clips
+
+| Beat | What the dog does | Make |
+|---|---|---|
+| The list | Sits staring at the treat cupboard, unmoving | still |
+| Shopping | Nose working along a pet-store shelf of plush toys, tail going | clip |
+| Choosing | Carries the biggest plush out in its jaws, proud (stare 1 at the lens) | still |
+| Wrapping | Shreds the wrapping-paper roll on the floor, paper flying | clip |
+| The turn | Rips open the present it wrapped for you and destuffs the plush, fluff everywhere | clip |
+| Unbothered | Sits in the fluff, flat stare at the lens (stare 2) | still |
+| The real gift | Trots up and drops a small wrapped parcel at your feet, sits, tail thumping | clip |
+| Waiting | Hopeful head tilt, ears up | still |
+| Product | Hard cut to the store's real lab mug render, 3.6 s | real render |
+
+Core: dogs shop for themselves (observation); a dog's Christmas shopping vlog (premise); it destroys your present,
+then the gift it gives you is a mug of its own face (cruel payoff).
+
+### 6. My dog's Black Friday haul · French bulldog · about 17 s · 3 clips
+
+| Beat | What the dog does | Make |
+|---|---|---|
+| The haul | Sits beside a tower of delivery boxes, flat stare (stare 1) | still |
+| Unboxing | Rips a box open with its teeth, cardboard flying | clip |
+| The product | The fancy dog bed from the box lies tossed aside, untouched | still |
+| Packaging | Shakes the packing paper like prey | clip |
+| Try-on | Climbs into the empty box and sits in it, satisfied | clip |
+| Verdict | Asleep in the box, the bed untouched behind it; one eye opens, flat stare (stare 2) | still |
+
+Core: dogs love the box (observation); a haul video (premise); every purchase loses to the packaging (payoff).
+
+### 5. My dog's 9 to 5 (WFH) · Malinois · about 20 s · 4 clips
+
+| Beat | What the dog does | Make |
+|---|---|---|
+| Commute | Flopped on the sofa three steps from the bed | still |
+| Slack ping | The doorbell: barks furiously at the front door | clip |
+| On a call | Lies across the laptop keyboard, chin on the screen edge, flat stare (stare 1) | still |
+| Lunch | Snatches a sandwich off the counter edge and runs | clip |
+| Market research | Glued to the window tracking a squirrel, whining | clip |
+| The turn | The doorbell again at 5: asleep belly-up, it opens one eye, does not move | clip |
+| Logged off | Upside down on the sofa, flat stare at the lens (stare 2) | still |
+
+Core: dogs treat the doorbell as an emergency (observation); a remote worker's day (premise); the one alarm it lives
+for, it now ignores, because it has logged off (payoff).
+
+### 7. My dog's Sunday reset · goldendoodle · about 19 s · 4 clips
+
+| Beat | What the dog does | Make |
+|---|---|---|
+| Before | A tidy bedroom, full laundry basket, the doodle in the doorway, flat stare (stare 1) | still |
+| Declutter | Pulls clothes out of the basket one by one, flinging them | clip |
+| Laundry | Runs off with one sock, looking back | clip |
+| Self-care | Comes in from the garden caked in mud, proud | clip |
+| Fresh sheets | Leaps onto the made white bed and digs a nest, mud on the duvet | clip |
+| After | The room wrecked, asleep in the laundry pile, flat stare from the pile (stare 2) | still |
+
+Core: dogs undo every clean (observation); a cleaning "reset" reel (premise); the reset is the room reset to chaos
+(payoff).
+
+### 8. My dog's first day at work · border collie in a bandana · about 17 s · 3 clips (wave 2 makes 3; budget allows)
+
+| Beat | What the dog does | Make |
+|---|---|---|
+| Arrival | Pulls through the office glass doors, ears up | clip |
+| Meeting the team | Sniffs a row of shoes under the desks, one after another | clip |
+| Office tour | Zoomies down the corridor between desks | clip |
+| Team lunch | Sits beside a desk, puppy eyes at a sandwich (stare 1) | still |
+| First meeting | Asleep under the meeting table on someone's shoe | still |
+| Promoted | Sprawled in the big dog bed in the corner office, flat stare at the lens (stare 2) | still |
+
+Core: office dogs run the office (observation); a first-day vlog (premise); by the end of day one it has the corner
+office (payoff).
+
+**Spend plan:** Higgsfield about 78 of 81.6 (about 60 stills at 0.25, 7 Kling clips); Runway 11 clips, reserved after
+Higgsfield is settled (one reservation at a time), its per-clip cost read from the first clip before the rest run.
