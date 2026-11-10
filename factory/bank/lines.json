@@ -2720,8 +2720,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "64e41286a5f9aae79d04a0c59798b4b49e2f088837f6092e28e0f8874c603bf9"
   },
   {
    "id": "F34gol.02",
@@ -2731,8 +2732,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "74c73b87d6293a99c3a487bf89b2bc24357af7fc8e867d1f963e5bf7af7f5d4c"
   },
   {
    "id": "F34gol.03",
@@ -2742,8 +2744,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f6375ebfdf54a8a8d1de83b80c6832043a286926ae64ad77deb6d76df9f7c866"
   },
   {
    "id": "F34gol.04",
@@ -2753,8 +2756,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "153a6326bf8c1ff383ee75536789784c251bc4dcc242faba897f45fa01f66c4f"
   },
   {
    "id": "F34gol.05",
@@ -2764,8 +2768,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "45f787dfb6ace4e0e5e7faece5a37e1e91bb3b6f6957f13ea761a8e312daea3d"
   },
   {
    "id": "F34gol.06",
@@ -2775,8 +2780,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "01d64c7b82fbffc3350b0dc379fe96f97feb63ce5bf38e3adf26150f7d2647d0"
   },
   {
    "id": "F34gol.07",
@@ -2786,8 +2792,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f6189bb973b19c1cdb9b21a5da5a09472e5074bbca147aead01ed97a7afb70df"
   },
   {
    "id": "F34gol.08",
@@ -2797,8 +2804,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "36388b2033260fa8c57d5214988de917bd472dcd16bd5c8a8f13ad83cce0ed24"
   },
   {
    "id": "F34gol.09",
@@ -2808,8 +2816,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "bf0006c5614267b7f57f896df3a7018bb2518d18086c911a1466c4e9b4d0ab33"
   },
   {
    "id": "F34gol.10",
@@ -2819,8 +2828,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "799fb4b93d4cc3d391d7b05f71e1429feca621272fc02a31e87da45c6d16cf1a"
   },
   {
    "id": "F34gol.11",
@@ -2830,8 +2840,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "64ef54f82922d3af13ee38e94c912105d27ab208fcf2b4b9d50a15b701834042"
   },
   {
    "id": "F34gol.12",
@@ -2841,8 +2852,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "06c5703d79cd30533727f7cbf072a270a8afdf971d4f787875a8e0fa9d68e9a5"
   },
   {
    "id": "F34gol.13",
@@ -2852,8 +2864,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "e21f3119d47b2faaa2397f1fd444d78bb51657da1684cb83f95b43ec3ce9ffc9"
   },
   {
    "id": "F34gol.14",
@@ -2863,8 +2876,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "2445738757498bf2c5a19e6ec2253802fae0816b76f79d67853a26d92a6747bd"
   },
   {
    "id": "F34gol.15",
@@ -2874,8 +2888,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "7272dd7e304ae5c78cf78bd81d4ad0cb75c0d32d7c02087545c47bb81e929fcc"
   },
   {
    "id": "F34gol.16",
@@ -2885,8 +2900,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "d72baa58b99e78e8b0f594a3122172649254f430626aaf24fe35de77f01f12ca"
   },
   {
    "id": "F34gol.17",
@@ -2896,8 +2912,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "ad062aad96c37d255ce600fbc2e8a499e2b89235ee6749d3d5a047a358bc5e9d"
   },
   {
    "id": "F34gol.18",
@@ -2907,8 +2924,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "206749a62dda0bd8a6a66949ccb3588fe3cf7b3f3b8066cd44edddc63c11d6b8"
   },
   {
    "id": "F34gol.19",
@@ -2918,8 +2936,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "1371e94d269e0ebd991d40f4a0eed69ca75badf9ff86b14160b869875ac98fc4"
   },
   {
    "id": "F34gol.20",
@@ -2929,8 +2948,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "9d75fec3b8e17c750c4685ecfdf1bd9d5fc6969ea28ba8de9f6ccff1f86d60a8"
   },
   {
    "id": "F34gol.21",
@@ -2940,8 +2960,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "36e64626af48a57fe96cb04eca132e2e423f6a702aa0d8248b9c540a16b7c413"
   },
   {
    "id": "F34gol.22",
@@ -2951,8 +2972,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f81dcc4ba314cc650bd09d9fba4a65e9cec920ec916dd3e4994d1d325af60709"
   },
   {
    "id": "F34gol.23",
@@ -2962,8 +2984,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "a150b2bda61c941b7ceb064a7a06c8b06f7ff4bde6b3b2c5f4921d54fdd9a1cd"
   },
   {
    "id": "F34gol.24",
@@ -2973,8 +2996,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0a0c77231524cd71c1be31cb11471f20b708cb18161b35678ffb1a3f6958d46d"
   },
   {
    "id": "F34gol.25",
@@ -2984,9 +3008,10 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")",
-   "note": "closer tightened after the panel read (was: bro finally a version of u that doesnt shed. shes crying from relief 💀)"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "note": "closer tightened after the panel read (was: bro finally a version of u that doesnt shed. shes crying from relief 💀)",
+   "text_sha256": "980c8d72a7f449aa06b0b8caee9a4fb0988a424accfaa07cdae80809bf859c76"
   },
   {
    "id": "F34dac.01",
@@ -2996,8 +3021,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "54d8d67439ea5f735bee33bbc36d92d576907c48898f61a29700aa4662553f0c"
   },
   {
    "id": "F34dac.02",
@@ -3007,8 +3033,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "74c73b87d6293a99c3a487bf89b2bc24357af7fc8e867d1f963e5bf7af7f5d4c"
   },
   {
    "id": "F34dac.03",
@@ -3018,8 +3045,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0e154d91a77a9663abc6be3723aee589371fb7c64a48545165de58d58f69a1bb"
   },
   {
    "id": "F34dac.04",
@@ -3029,8 +3057,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "b73c09c71f0e5f5dadd96609673dad9e46eb1f593c7f93fcab36ccd86016ae41"
   },
   {
    "id": "F34dac.05",
@@ -3040,8 +3069,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "1fc6ffb708b62e68cab1397f2ce1aa4d939582d06f1267ea06791864a375ea33"
   },
   {
    "id": "F34dac.06",
@@ -3051,8 +3081,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0b7ed47b119efe4e56144cf237f5ff90d4dfb2b42b57a55413f6d17fd82b4bc7"
   },
   {
    "id": "F34dac.07",
@@ -3062,8 +3093,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f6189bb973b19c1cdb9b21a5da5a09472e5074bbca147aead01ed97a7afb70df"
   },
   {
    "id": "F34dac.08",
@@ -3073,8 +3105,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "b220593630f8d57d41e34f39eceeb87d36eeab204ad94dd0487c80d568120048"
   },
   {
    "id": "F34dac.09",
@@ -3084,8 +3117,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "417e372ec7aa7db86d8bbb5572dbd0f4290b057406abb05d5506397cdb6d3d46"
   },
   {
    "id": "F34dac.10",
@@ -3095,8 +3129,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "be5a6f37ef2737e4bc25160b284329cfbde747813249ed693d22427f48dee50d"
   },
   {
    "id": "F34dac.11",
@@ -3106,8 +3141,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "42e5cd88c5051293ddd6b86899a60a5dcd453f20ea5f1409d71cb7dc7de8df0f"
   },
   {
    "id": "F34dac.12",
@@ -3117,8 +3153,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "1c8c5cc218c79bd038efdbdd6d161670556f6645fc8540f8b495d3a7a46d5344"
   },
   {
    "id": "F34dac.13",
@@ -3128,8 +3165,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "286812317455411dc99b8c93c00bf86d146874ef63e01f2053dc734be1acff8d"
   },
   {
    "id": "F34dac.14",
@@ -3139,8 +3177,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "36fb819f1d29b327c7205fe70ccaffea586d26e32d06584f5a3cbf149f3116d2"
   },
   {
    "id": "F34dac.15",
@@ -3150,8 +3189,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "7272dd7e304ae5c78cf78bd81d4ad0cb75c0d32d7c02087545c47bb81e929fcc"
   },
   {
    "id": "F34dac.16",
@@ -3161,8 +3201,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "359a8dfd707b6514541de7fe1f2051d25835c039ea465f63e6b5fdd996ca4b11"
   },
   {
    "id": "F34dac.17",
@@ -3172,8 +3213,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "600a61185707f653200e0c18c18943d0b59b733c7b50a2f1874a21c6cdfe7062"
   },
   {
    "id": "F34dac.18",
@@ -3183,8 +3225,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "5434fb19c48d0b8e6bdeab03ade1da68ed1ad9bc2ec5a6f8674c7d2d318e71c7"
   },
   {
    "id": "F34dac.19",
@@ -3194,8 +3237,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "85462dc166baf80e521141df8ff710fd64ab988825953e74ab0f9a85d3d0019e"
   },
   {
    "id": "F34dac.20",
@@ -3205,8 +3249,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f6a86a8e6757e4fc3066e2d38a17d5586cb055a63ba497c8c33e55b4784d2b08"
   },
   {
    "id": "F34dac.21",
@@ -3216,8 +3261,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "c55bf82a4a8fa7d936fe73c2aa31f013ab65739e55feab466b9608d1bc29cdf5"
   },
   {
    "id": "F34dac.22",
@@ -3227,8 +3273,9 @@
    "breeds": [
     "dachshund"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "55760e5c9beaffe7000bc9f668bd15a1a61cec9f33a115cb24e0548afbee1168"
   },
   {
    "id": "F34dac.23",
@@ -3238,8 +3285,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "8c01d98b486ad1cfef4706f68826413f2499040140ca63c1ddc591d67b83921e"
   },
   {
    "id": "F34dac.24",
@@ -3249,8 +3297,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0a0c77231524cd71c1be31cb11471f20b708cb18161b35678ffb1a3f6958d46d"
   },
   {
    "id": "F34dac.25",
@@ -3260,9 +3309,10 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")",
-   "note": "closer tightened after the panel read (was: bro the blanket is bigger than u. shes gonna lose u in it 💀)"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "note": "closer tightened after the panel read (was: bro the blanket is bigger than u. shes gonna lose u in it 💀)",
+   "text_sha256": "2d8f1ddc1ece5d2ef5a966a6407333fc8276577f3788e328be9f5b8364905069"
   },
   {
    "id": "F34doo.01",
@@ -3272,8 +3322,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "4eb6189b36100ed09714503c8bd9afe42122054a8dc6f80b22cbba8a6550c0f2"
   },
   {
    "id": "F34doo.02",
@@ -3283,8 +3334,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "74c73b87d6293a99c3a487bf89b2bc24357af7fc8e867d1f963e5bf7af7f5d4c"
   },
   {
    "id": "F34doo.03",
@@ -3294,8 +3346,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "e3bd33cdfa5fbd80dd5ec59294d13a271080e4b87d21c740ee0fc2a805e4601c"
   },
   {
    "id": "F34doo.04",
@@ -3305,8 +3358,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "71ba72474a8ad4107d81708481767ae24e08f0f8a9500cb945d68e636f14f39f"
   },
   {
    "id": "F34doo.05",
@@ -3316,8 +3370,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "57ab3e0b8118bc11d426b24ff8498c94deb42da204cd759554906f46f5a3a8ab"
   },
   {
    "id": "F34doo.06",
@@ -3327,8 +3382,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "adc14a53331188068c9109c0afaf82e61b2efec908e9e036bba4a7f8a1d2f3c8"
   },
   {
    "id": "F34doo.07",
@@ -3338,8 +3394,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f6189bb973b19c1cdb9b21a5da5a09472e5074bbca147aead01ed97a7afb70df"
   },
   {
    "id": "F34doo.08",
@@ -3349,8 +3406,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "fad1c44f665e0caec919eb3cbbe5896b2dedc9aadf57a5c8c7d4d579cabfbe5a"
   },
   {
    "id": "F34doo.09",
@@ -3360,8 +3418,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "3946e42df7bfba99a736be775e7655218fc70c2a8231a0d64c69d6e1a5e77c2c"
   },
   {
    "id": "F34doo.10",
@@ -3371,8 +3430,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "b3f1476f5d2d96de4aed5180c2fdb7801b0a778413b3f497d8cb98fcf04a9c67"
   },
   {
    "id": "F34doo.11",
@@ -3382,8 +3442,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "31c6bf8a870547275ae79109140cf5aeb80d3911f5c04f2f6cc171f5302c8b2d"
   },
   {
    "id": "F34doo.12",
@@ -3393,8 +3454,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "73790d552e37c69481d5b7cd3ec675d718419ed221c195183e4298755a9a07c0"
   },
   {
    "id": "F34doo.13",
@@ -3404,8 +3466,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "4fdeede2266fd87a80da221f9196a1099df66659a969513fec918dad6604dc10"
   },
   {
    "id": "F34doo.14",
@@ -3415,8 +3478,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "07c777d6cd4c3a059407494891b98d7238195f089501ed25878f99861cf0af93"
   },
   {
    "id": "F34doo.15",
@@ -3426,8 +3490,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "7272dd7e304ae5c78cf78bd81d4ad0cb75c0d32d7c02087545c47bb81e929fcc"
   },
   {
    "id": "F34doo.16",
@@ -3437,8 +3502,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "f712a34cd6bc5f2599f2b503392b6fac7b3d55ebabfca0bc31c302658400ca4c"
   },
   {
    "id": "F34doo.17",
@@ -3448,8 +3514,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "9ebb6e62c5f8c1ec43f222da398331bf39c0569f27ac1be0733575990f9f444c"
   },
   {
    "id": "F34doo.18",
@@ -3459,8 +3526,9 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "dbb5e59213d8cd46223475d64740901cb9d8ae66cc7a1bf817f1bf64c93acee6"
   },
   {
    "id": "F34doo.19",
@@ -3470,8 +3538,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "102d3c9b752103f6063811e7a82d69cf1f5b9311cce9929ec491797009309b0d"
   },
   {
    "id": "F34doo.20",
@@ -3481,8 +3550,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "211286581e14d1f36c8e9cf64fb424272ec8b66a72df0ef9d5a7712c7b038c96"
   },
   {
    "id": "F34doo.21",
@@ -3492,8 +3562,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "59d87ae58e725ffcbc9fbe5e0a65985b269c0b7e340542e2d33caf036fdfeca7"
   },
   {
    "id": "F34doo.22",
@@ -3503,8 +3574,9 @@
    "breeds": [
     "doodle"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0058d66372a45ed017a6c3132a0d5c69a9a55c36daa97f84a299872cd839eb3f"
   },
   {
    "id": "F34doo.23",
@@ -3514,8 +3586,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "fff75072227a9dc97ea0e9d065027258d49145374e834487add62912541d9fef"
   },
   {
    "id": "F34doo.24",
@@ -3525,8 +3598,9 @@
    "breeds": [
     "golden"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "text_sha256": "0a0c77231524cd71c1be31cb11471f20b708cb18161b35678ffb1a3f6958d46d"
   },
   {
    "id": "F34doo.25",
@@ -3536,9 +3610,10 @@
    "breeds": [
     "frenchie"
    ],
-   "status": "proposed",
-   "source": "proposed by the engine, 2026-11-10 (F34 chat variant, Krish: \"Yes, build the F34 variants from existing photos\")",
-   "note": "closer tightened after the panel read (was: bro ur hair is on every blanket she owns. now the blanket is u 💀)"
+   "status": "approved",
+   "source": "Krish, 2026-11-10: \"i approve them all\" (F34 chat variants on the review board)",
+   "note": "closer tightened after the panel read (was: bro ur hair is on every blanket she owns. now the blanket is u 💀)",
+   "text_sha256": "ebbdbef527d208d41046180c3b80736a730b245b7d104c9171a29b4e277ac3a8"
   }
  ]
 }
