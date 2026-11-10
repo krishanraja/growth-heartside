@@ -14,6 +14,8 @@ build (Krish: "we will do that after").
 | F29, Dame Hombro shoulder bounce | 7, then 8, then 9, filed | One simple movement per shot; cut on peaks; hard-cut over transitions; end on a sharp held frame |
 | Corgi laundry inspector, backwards pug lineup (stills) | passed first time | Single-moment gags and group poses generate cleanly |
 
+**Humour anchor** (Krish, 10 Nov): every build is written toward `docs/HUMOUR.md`: an intelligent observation, an utterly stupid premise and a slightly cruel payoff. A piece missing one of the three is not done.
+
 ## Build only these formats
 
 1. **Trend dances.** A current trend sound read from dated sources this week, reskinned with dogs. Close-ups, a group

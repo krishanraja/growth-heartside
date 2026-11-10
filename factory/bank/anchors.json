@@ -64,5 +64,23 @@
    "ask": "List every element on screen that is not the dog, its hands or the gag (text, overlays, props that do nothing). Answer yes only if each one earns its place; name any that does not."
   }
  ],
- "tier2_rubric": "Score 1 to 10 against the tens above in the same format. 10: it would beat the matching ten. 9: as good as it. 7 to 8: competent but forgettable. 6 or below: a floor anchor would apply. Name the ten you compared against, the single strongest beat with its frame, and, if below 9, the floor quote Krish would most likely say. Only 9 and above reach Krish. Compare a viral post only with the viral tens (the YouTube picks); a product ending is required only on signature posts, never on viral ones."
+ "tier2_rubric": "Score 1 to 10 against the tens above in the same format. 10: it would beat the matching ten. 9: as good as it. 7 to 8: competent but forgettable. 6 or below: a floor anchor would apply. Name the ten you compared against, the single strongest beat with its frame, and, if below 9, the floor quote Krish would most likely say. Only 9 and above reach Krish. Compare a viral post only with the viral tens (the YouTube picks); a product ending is required only on signature posts, never on viral ones. Krish's humour profile (docs/HUMOUR.md) is the anchor for every build: a post that lacks any of the three parts of its core test cannot score 9 or above, however clean its execution.",
+ "humour": {
+  "source": "docs/HUMOUR.md",
+  "why": "Krish, 10 Nov: \"Here's my humor profile. Make sure every build in all the sessions anchors towards this, now and in the future.\"",
+  "core": "an intelligent observation, an utterly stupid premise, and a slightly cruel payoff",
+  "traits": [
+   "deadpan absurdism, played completely straight",
+   "affectionate cruelty: the 'you absolute bastard' laugh, aimed at the dogs (and only at the person's habits with the dog)",
+   "intellectual stupidity: a serious format run with gloriously dumb logic",
+   "escalation with an underlying comic logic, never randomness",
+   "puncturing pretension: the most self-important character undone by their own behavior",
+   "surprise over conventional setups and predictable wordplay"
+  ],
+  "limits": [
+   "not past the funniest point in search of one more escalation",
+   "no jump the viewer cannot follow in the first second",
+   "Heartside rule 5 still binds: no mocking the buyer's body, looks, age, money, job or family; no swearing in public copy"
+  ]
+ }
 }

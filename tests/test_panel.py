@@ -46,3 +46,16 @@ class PanelTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class HumourAnchorTest(unittest.TestCase):
+    def test_tier2_brief_carries_krish_humour_profile(self):
+        text = panel.brief('tier2', ['x.jpg'])
+        self.assertIn('an intelligent observation, an utterly stupid premise, and a slightly cruel payoff', text)
+        self.assertIn('docs/HUMOUR.md', text)
+        self.assertIn('"humour"', text)
+
+    def test_humour_profile_doc_exists_with_krish_words(self):
+        import os
+        doc = open(os.path.join(os.path.dirname(__file__), '..', 'docs', 'HUMOUR.md'), encoding='utf-8').read()
+        self.assertIn('Make sure every build in all the sessions anchors towards this', doc)

@@ -3,6 +3,10 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-10: Krish's humour profile anchors every build. Krish: "Here's my humor profile. Make sure every build in all the sessions anchors towards this, now and in the future."
+  - `docs/HUMOUR.md` holds the profile as he supplied it, with how it applies inside Heartside's rules. AGENTS.md sends every session to it before any creative work. The tier 2 judge reads it from `factory/bank/anchors.json` and scores observation, stupid premise and cruel payoff; a piece missing one cannot score 9. Tests cover the brief.
+  - Ruling (Krish, 2026-11-10): every build in every session anchors to Krish's humour profile (docs/HUMOUR.md).
+
 - 2026-11-10: one review board. Krish: "You need to create a system of review where I can easily just tick yes or no for things that you think are ready. You just keep adding to that board as often as you can, and so do your sub-sessions."
   - The board is https://claude.ai/artifact/A3tFqoYZuYAEdUrziU5wnN. Sessions add items to its `items` store; only Krish can write `verdicts`. How sessions add items and act on answers is in `docs/REVIEW-BOARD.md`.
   - Seeded with F34, F28 and F29 for approval, the publishing hold, the F34 order-by line, the two stray F33 files, and the first $3,000 paid tranche.

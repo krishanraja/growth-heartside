@@ -12,6 +12,8 @@ A chat variant must keep the master's fingerprint (`python3 factory/lock.py chec
 Everything else is frozen: the beats, their order, timings, typing bubbles, title, sounds and layout. The first five
 variants go to Krish; after that, one in ten (the trust ramp in `factory/lock.py`).
 
+**Humour anchor** (Krish, 10 Nov): every build is written toward `docs/HUMOUR.md`: an intelligent observation, an utterly stupid premise and a slightly cruel payoff. A piece missing one of the three is not done.
+
 ## The beats
 
 | # | Who | Role | F34's line |

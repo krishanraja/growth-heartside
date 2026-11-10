@@ -109,11 +109,14 @@ def brief(tier, sheets):
         out += [f'- {q["id"]} (floor {q["floor"]}): {q["ask"]}' for q in a['questions_tier1']]
     else:
         out.append("You score Heartside social posts against Krish's own bar. " + a['tier2_rubric'])
+        h = a.get('humour')
+        if h:
+            out.append(f"Krish's humour, the anchor for every build ({h['source']}): {h['core']}. Score each part. Traits: " + '; '.join(h['traits']) + '. Limits: ' + '; '.join(h['limits']) + '.')
         out.append('The tens:')
         out += [f'- {t["id"]}: {t["what"]} ({t["why"]})' for t in a['tens']]
         out.append("What Krish rejected, in his words (a post that earns one of these scores 6 or below):")
         out += [f'- {i}: "{w}" -> {r}' for i, w, r in floor_quotes() if w]
-        out.append('Reply as JSON only: {"<sheet>": {"score": N, "compared_to": "...", "best_beat": "...", "floor_risk": "..."}}.')
+        out.append('Reply as JSON only: {"<sheet>": {"score": N, "compared_to": "...", "best_beat": "...", "floor_risk": "...", "humour": {"observation": "...", "stupid_premise": "...", "cruel_payoff": "...", "missing": "..."}}}.')
     out.append('Sheets: ' + ', '.join(sheets))
     return '\n'.join(out)
 
