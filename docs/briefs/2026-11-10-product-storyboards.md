@@ -224,3 +224,15 @@ best-practices document the engine adopted, not from Krish.
 
 Judge's open points on v9: the remote gag should thread through the middle, and two lines only move the plot ("ok boys.
 Mom's gift is on the way. don't embarrass me", "what did you even get her").
+
+### Krish's score and the louder rewrite (10 Nov)
+
+Krish scored v9 a **7**: "7, make it more hilarious, drop a "bro" in there, some emojis, mis spellings." Tier 2 gave the
+same cut a 6, so on chat posts the judge runs about a point below him. His words are added to the `chat-lads-banter`
+floor entry and his taste ledger.
+
+| Version | Tier 2 | What changed |
+|---|---|---|
+| v10, 37 s | 8 | Typed like real mates: "bro", emojis, "u", "ur", "wat", "minits". New closer: "bro theres 12 of ur face staring at her. thats a hostage situation 💀" |
+| v11, 36 s | 8 | The judge's fixes: "u bark at him every day and take credit for it", the doodle "sat on her foot so she cant leave", "doodle thats kidnapping", "also ur sitting on the remote rn", fewer "bro"s |
+| v12, 35 s | not re-judged | The tail now roasts instead of getting sentimental: the doodle answers "no im not 🥺" and changes the subject; "like 12" because the faces on the blanket were not counted |

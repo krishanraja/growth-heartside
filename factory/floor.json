@@ -366,11 +366,12 @@
    "date": "2026-11-10",
    "made": "P04 \"Code red: the delivery van\" sample, v6 (10 Nov): a chat post with real bark sound effects, three messages on screen at a time, and plotting lines with no banter",
    "words": [
-    "It should feel like a bunch of lads bantering, being hilarious, roasting each other, being best friends, and knowing each other inside out, but talking in dog language as dog personalities."
+    "It should feel like a bunch of lads bantering, being hilarious, roasting each other, being best friends, and knowing each other inside out, but talking in dog language as dog personalities.",
+    "7, make it more hilarious, drop a \"bro\" in there, some emojis, mis spellings."
    ],
    "category": "joke",
-   "rule": "A dog group chat is best mates bantering: each dog has a fixed personality, they roast each other, call back to shared history and know each other inside out, in dog terms. Every message either roasts, defends or escalates; a line that only moves the plot along fails.",
-   "check": "review: every line in the script is marked roast, defense, callback or escalation; a chat with a plot-only line, or a dog with no personality the others play off, is held",
+   "rule": "A dog group chat is best mates bantering: each dog has a fixed personality, they roast each other, call back to shared history and know each other inside out, in dog terms. Every message either roasts, defends or escalates; a line that only moves the plot along fails. They type like real mates: a \"bro\", emojis, lowercase, dropped apostrophes and misspellings (\"ur\", \"u\", \"wat\"). Clean, correct punctuation reads as a script.",
+   "check": "review: every line in the script is marked roast, defense, callback or escalation; a chat with a plot-only line, or a dog with no personality the others play off, is held; a chat with no emoji, no slang and textbook spelling is held",
    "applies_to": [
     "reel",
     "still",
