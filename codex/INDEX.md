@@ -5,6 +5,8 @@ Codex end to end". States: queued, built, checked, failed (floor id), shown to K
 
 | Card | Made for | Route | State | Floor checks | Drive (03a session folder) |
 |---|---|---|---|---|---|
+| real-dog-remake-F38-fix3 | F38 pre-dawn grade, labels off faces, longer stare | same | built 10 Nov, judged 8 (4th pass: 'about equal to the old version'); shown to Krish as his call (board post-F38-real) | real-scruffy-dogs, text-clear-of-faces | none until Krish's Yes |
+| real-dog-remake-F38-fix2 | F38 new stare and moving yawn, label shadow | same | built 10 Nov, judged 8 | every-beat-moves | none |
 | real-dog-remake-F38-fix1 | F38 punch-in on the aligned stare, networking and 5K run trims (judge 8) | same | built 10 Nov, judged 8 again: needs 2 new clips (aligned stare from the 4:00 dog, a moving yawn), blocked on the Runway share | real-scruffy-dogs, text-clear-of-faces | none until Krish's Yes |
 | real-dog-remake-F38 | F38 remade with a real-looking golden (Krish: remake all five, hold F38) | Codex CLI in the cloud session; media in the scratchpad | built 10 Nov, judged 8 (sent to fix1) | real-scruffy-dogs, real-dogs, text-clear-of-faces, no-badges, every-beat-moves (shot 11 still, flagged) | none until Krish's Yes |
 | dog-things-wave-3-fix1 | F50 only: rescale the end shot so the Christmas card reads on a phone | same route, same spend | built and checked 10 Nov (scale 0.629, card 960 px wide, other frames byte-identical, acceptance ok) | real-product | as dog-things-wave-3 |
