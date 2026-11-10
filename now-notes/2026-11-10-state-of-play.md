@@ -1,0 +1,4 @@
+Status: Krish approved every row in 02r (M2:M58 = yes) and posted F38 himself. README v5.3 holds F28 (to be redone: two dance trends in two rooms, glitchy) and F34 (Krish posts it later), and has Codex record F38. Codex schedules TikTok song rows in TikTok Studio and every NO SONG row. The 24 Instagram and Facebook song reels are Krish's, from his phone (Sheet 04 and Doc 04a). Credits: Runway account 5; Heartside's Higgsfield share about 16. Of the brief's 120 posts, about 19 are ready. Scripts for the F28 replacement (a beagle howling the falsetto) and a 12-photo batch (F52 onward) are written and go to the judge before any spend.
+Changed: holds on F28 and F34; F38 live; floor rule one-trend-one-scene.
+Next: judge the 13 scripts; make only the 9s (F28-howl about 9 Higgsfield, photos 0.25 each); file them and give Codex a new Sheet and README.
+North Star check (2026-11-10): holds. 19 of 120 posts ready; the credit pools, not the scripts, now limit the volume.
