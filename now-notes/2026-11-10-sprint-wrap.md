@@ -1,3 +1,3 @@
-Status: both Sprint 120 sessions are wrapped into one view, docs/SCHEDULE.md. 21 posts (F28 to F45 and three chat variants) are filed across 11 Sheets, 63 rows, none approved; all 21 are on Krish's review board, with a proposal to pull every post live by 2 Dec. The Drive map now lists 02o, 02p and F38 to F45.
-Next: Krish ticks hold-lift, decision-board-yes-marks-sheet and decision-schedule-pull-forward on the board; then the filing session writes 02q and Codex starts posting the approved rows.
-North Star check (2026-11-10): holds.
+Status: both Sprint 120 sessions are wrapped. docs/SCHEDULE.md shows every filed post (21: F28 to F45 and three chat variants, 63 rows, none approved) and what remains from the brief: 5 of 20 signature and 16 of 100 viral posts filed, 0 views (nothing posted), production not through the Codex lane. Krish's review board is consolidated into five sections (unlock, posts in posting order, spend, his calls, housekeeping), and the sprint manifest tracks the 21 filed posts.
+Next: Krish works through the board from the top; the three unlock ticks start posting from 12 Nov.
+North Star check (2026-11-10): recalibration proposed. The approved sprint targets $50,000 of profit by Christmas, above the $25,000 North Star; it is on the board as decision-north-star-50k for Krish.

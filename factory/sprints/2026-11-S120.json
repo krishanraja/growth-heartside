@@ -53,7 +53,12 @@
     "facebook"
    ],
    "intent": "buy",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "The press conference",
+   "post": "F34-golden",
+   "sheet": "02n",
+   "filed_slot": "2026-11-17",
+   "filed_caption": "He made Mom a blanket of himself. The chat was not supportive 💀"
   },
   {
    "id": "S02",
@@ -72,7 +77,12 @@
     "facebook"
    ],
    "intent": "buy",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "The sitting",
+   "post": "F34-dachshund",
+   "sheet": "02n",
+   "filed_slot": "2026-11-26",
+   "filed_caption": "He called it discretion. The chat called him a loaf 💀"
   },
   {
    "id": "V001",
@@ -92,7 +102,12 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "The recycling-bin trophy",
+   "post": "F28",
+   "sheet": "02e",
+   "filed_slot": "2026-11-12",
+   "filed_caption": "Asked the dogs to do the viral 80s dance. One of them gave it everything."
   },
   {
    "id": "V002",
@@ -112,13 +127,17 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea",
+   "stage": "filed",
    "track": {
     "title": "9 to 5",
     "artist": "Dolly Parton",
     "cue": "The reference's own song, reskinned to working from home: same beat-per-line staging, new gags.",
     "added": "in the app at posting"
-   }
+   },
+   "post": "F43",
+   "sheet": "02p",
+   "filed_slot": "2026-11-17",
+   "filed_caption": "Answers every Slack in under a second. Out of office at 5 sharp 💀"
   },
   {
    "id": "V003",
@@ -138,13 +157,17 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea",
+   "stage": "filed",
    "track": {
     "title": "Manic Monday",
     "artist": "The Bangles",
     "cue": "Snooze, coffee, wrong shoes, back to bed on the hook.",
     "added": "in the app at posting"
-   }
+   },
+   "post": "F40",
+   "sheet": "02p",
+   "filed_slot": "2026-11-16",
+   "filed_caption": "Inbox zero by 8. Burnout by 9:05. Boundaries by 9:06 💀"
   },
   {
    "id": "V004",
@@ -164,13 +187,17 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea",
+   "stage": "filed",
    "track": {
     "title": "Material Girl",
     "artist": "Madonna",
     "cue": "Cart, receipts, sprinting past deals to the treat aisle.",
     "added": "in the app at posting"
-   }
+   },
+   "post": "F42",
+   "sheet": "02p",
+   "filed_slot": "2026-11-27",
+   "filed_caption": "Black Friday haul review. The box won 💀"
   },
   {
    "id": "V005",
@@ -190,13 +217,17 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea",
+   "stage": "filed",
    "track": {
     "title": "Eye of the Tiger",
     "artist": "Survivor",
     "cue": "Training montage: one rep, then a nap on the bench at the drop.",
     "added": "in the app at posting"
-   }
+   },
+   "post": "F39",
+   "sheet": "02p",
+   "filed_slot": "2026-11-13",
+   "filed_caption": "Benched a log. Ate the log. Recovery is a lifestyle 💀"
   },
   {
    "id": "V006",
@@ -216,13 +247,17 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea",
+   "stage": "filed",
    "track": {
     "title": "Walking on Sunshine",
     "artist": "Katrina and the Waves",
     "cue": "Vacuum, laundry, candle, then lies on the clean laundry.",
     "added": "in the app at posting"
-   }
+   },
+   "post": "F44",
+   "sheet": "02p",
+   "filed_slot": "2026-11-22",
+   "filed_caption": "Sunday reset complete. Back to factory settings 💀"
   },
   {
    "id": "V007",
@@ -242,13 +277,17 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea",
+   "stage": "filed",
    "track": {
     "title": "Working for the Weekend",
     "artist": "Loverboy",
     "cue": "Lanyard, coffee, takes the best chair at the meeting.",
     "added": "in the app at posting"
-   }
+   },
+   "post": "F45",
+   "sheet": "02p",
+   "filed_slot": "2026-11-23",
+   "filed_caption": "Day one. Met the team, slept through the meeting, got the corner office 💀"
   },
   {
    "id": "V008",
@@ -268,7 +307,12 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "Five dogs, one backwards sit",
+   "post": "F29",
+   "sheet": "02f",
+   "filed_slot": "2026-11-12",
+   "filed_caption": "Family dance night. The pug was asleep for the first half."
   },
   {
    "id": "V009",
@@ -288,7 +332,12 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "The pillow acquisition",
+   "post": "F38",
+   "sheet": "02p",
+   "filed_slot": "2026-11-12",
+   "filed_caption": "Up at 4. Aligned with stakeholders by 5:32. Asleep by 9. Thought leader 💀"
   },
   {
    "id": "V010",
@@ -308,7 +357,12 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "The empty treat box",
+   "post": "F30",
+   "sheet": "02g",
+   "filed_slot": "2026-11-21",
+   "filed_caption": "The pie was alone for five minutes. He would like you to know nobody touched it."
   },
   {
    "id": "S03",
@@ -327,7 +381,12 @@
     "facebook"
    ],
    "intent": "buy",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "The circle",
+   "post": "F34-doodle",
+   "sheet": "02n",
+   "filed_slot": "2026-12-01",
+   "filed_caption": "He gave Mom a blanket of his own hair. The chat had thoughts 💀"
   },
   {
    "id": "S04",
@@ -366,7 +425,12 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "The dinner complaint",
+   "post": "F31",
+   "sheet": "02h",
+   "filed_slot": "2026-12-12",
+   "filed_caption": "The gingerbread house was left unsupervised for one minute. He says it came without a roof."
   },
   {
    "id": "V012",
@@ -386,7 +450,12 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "The bubble bite",
+   "post": "F32",
+   "sheet": "02i",
+   "filed_slot": "2026-11-28",
+   "filed_caption": "Baking day. He was supervising from the other room, apparently."
   },
   {
    "id": "V013",
@@ -406,7 +475,12 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "Top five dog negotiations",
+   "post": "F33",
+   "sheet": "02j",
+   "filed_slot": "2026-12-19",
+   "filed_caption": "First snow of the year. The snowman lasted twenty minutes. He has no idea what happened."
   },
   {
    "id": "V014",
@@ -426,7 +500,12 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "The birthday setup",
+   "post": "F35",
+   "sheet": "02l",
+   "filed_slot": "2026-12-02",
+   "filed_caption": "Delivery day. He signed for it."
   },
   {
    "id": "V015",
@@ -446,7 +525,12 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "Reasons my dog is an operations manager",
+   "post": "F36",
+   "sheet": "02l",
+   "filed_slot": "2026-11-30",
+   "filed_caption": "Clean sheets day. He would like it noted that he was never on the bed."
   },
   {
    "id": "V016",
@@ -466,7 +550,12 @@
     "facebook"
    ],
    "intent": "audience",
-   "stage": "idea"
+   "stage": "filed",
+   "replaced_idea": "Said one more email",
+   "post": "F37",
+   "sheet": "02m",
+   "filed_slot": "2026-11-24",
+   "filed_caption": "Somebody unrolled the whole roll. He has an alibi."
   },
   {
    "id": "V017",
@@ -585,7 +674,11 @@
     "facebook"
    ],
    "intent": "buy",
-   "stage": "idea"
+   "stage": "filed",
+   "post": "F34",
+   "sheet": "02k",
+   "filed_slot": "2026-11-13",
+   "filed_caption": "He put his own face on Mom's gift. The group chat had notes 💀"
   },
   {
    "id": "S06",
@@ -1394,7 +1487,7 @@
     "facebook"
    ],
    "intent": "buy",
-   "stage": "idea",
+   "stage": "filed",
    "franchise": "The Human-Arms Lip-Sync",
    "concept": "HAL-01",
    "track": {
@@ -1402,7 +1495,11 @@
     "artist": "Mariah Carey",
     "cue": "Opens on the slow intro over the premise card; each line from the first chorus is staged literally; the last line lands on the dog holding out the gift, cut to the real mug.",
     "added": "in the app at posting"
-   }
+   },
+   "post": "F41",
+   "sheet": "02p",
+   "filed_slot": "2026-11-21",
+   "filed_caption": "Did all the Christmas shopping. Quality-controlled your present personally 💀"
   },
   {
    "id": "S13",

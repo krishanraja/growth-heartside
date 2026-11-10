@@ -95,6 +95,30 @@ new dates (`02q`) and renames the old ones superseded. Nothing else changes: sam
 - **Every piece** is written to `docs/HUMOUR.md` and judged at tier 2. Each finished post goes on the board the moment
   it is filed.
 
+## What remains from the original brief (checked 10 Nov)
+
+Krish's brief of 10 Nov:
+> Our mission is to produce 20 signature Heartside organic posts, and 100 viral posts that generate 500000 views
+> between them in the next 10 days ... all asset production will go through your Codex lane ... Produce a plan worthy
+> of a brand that is going to generate $50,000 in profit by Christmas.
+
+| Part of the brief | Status | What closes it |
+|---|---|---|
+| The plan for $50,000 by Christmas | Done and approved (`docs/plans/2026-11-10-sprint-120.md`) | |
+| The repository equipped for the sprint | Done: sprint manifest, judging panel, still and chat templates, lock gates, asset fetch, review board | |
+| 20 signature posts | **5 filed** (F34, its three variants, F41). The portrait and the Christmas card appear in none | Chat variants cost nothing; signature films and stills need credits (board: spend items) |
+| 100 viral posts | **16 filed** | The F46+ dog-does-dog-things wave and more chat variants (board: `spend-runway-dog-things-wave-3`) |
+| 500,000 views by 20 Nov | **0**: nothing has posted; the hold stands and no row is approved | The three unlock ticks on the board, then posting from 12 Nov |
+| All production through the Codex lane | **Not followed**: the sessions generated directly; no Codex card has run | Board: `decision-codex-lane` |
+| Paid fuel, $3,000 from 15 Nov on winners | Waiting | Board: `spend-paid-tranche-1`; needs posts live first |
+| $50,000 vs the North Star | Proposed recalibration, open | Board: `decision-north-star-50k` |
+
+The sprint manifest (`factory/sprints/2026-11-S120.json`) records the 21 filed posts against their slots:
+`python3 factory/sprint.py status factory/sprints/2026-11-S120.json`.
+
+Engine housekeeping, no decision needed: F01's spec has drifted from its lock (`lock.py check` reports drift and a
+missing voice file) and is restored in a later session; the two stray files in `Posts/F33` wait on `delete-F33-strays`.
+
 ## Budget at the snapshot
 
 | Pool | Left | Note |
