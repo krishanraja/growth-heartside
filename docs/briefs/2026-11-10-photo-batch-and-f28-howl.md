@@ -32,3 +32,52 @@ the falsetto ("run away, turn away") lands at 1.5 s, when the howl starts.
 | P10 | He has been ready for the walk since 7:02. | A dog sitting at the front door wearing its harness, the lead in its mouth, a person's slippers on the stairs |
 | P11 | Hiding from the vacuum. Fourth year running. | A big dog wedged behind the sofa, only its back half and tail visible, the vacuum standing in the room |
 | P12 | Black Friday. He got the only thing he wanted. | A dog asleep inside an empty Amazon box in the hallway, packaging everywhere |
+
+## Round 1 (10 Nov): F28-howl 7, P1 to P12 between 5 and 7
+
+No 9s, so nothing was made. The judge's main finding: most are stock memes (the sofa rule, the cat in the bed, the box,
+the jumper, the vacuum). Round 2 takes each rewrite. P8 (the bed and the box) is dropped; P12 keeps the box but as a
+haul format.
+
+## Round 2
+
+**F28-howl.** A real beagle lies bored and flat on the rug through the whole verse, eyes half shut, ignoring the phone
+playing "Smalltown Boy" on the coffee table. On the falsetto he sits up, throws his head back and howls, eyes shut,
+fully committed. When it ends he stops dead, looks straight into the lens and waits, as if for applause, then lies back
+down. Line: "He is only here for his part." Caption: "Sat through the whole verse for this 💀". SYNC: set the song's
+start so the falsetto lands when he sits up.
+
+| Id | Line on the photo | The photo |
+|---|---|---|
+| P1 | The rule is no dogs on the sofa. Technically, one paw is on the floor. | A big dog stretched the full length of the sofa, head on the armrest pillow, the toes of one back paw just touching the rug, flat stare at the lens |
+| P2 | Restructure update: he now reports to the cat. | A large dog lying on the hard floor with only his chin on the edge of his own bed, not daring to get in, eyes rolled up to the lens; a small cat asleep across the middle of the bed |
+| P3 | New portion size. He has submitted his feedback. | The empty steel bowl pushed across the kitchen floor and parked against a person's slippered feet (feet only); the dog sits square behind it, flat stare |
+| P4 | Family Christmas photo, take 41. | The dog in a red jumper gone completely boneless, flat on its side on the rug between two pairs of matching red plaid pajama legs (feet only), one eye open on the lens |
+| P5 | The guest room is ready. He has left a review. | A freshly made guest bed, decorative pillows on the floor, the dog asleep dead center, one pillow torn open beside him with its stuffing in a neat pile, one eye open at the lens |
+| P6 | He was asked to wait for grace. | The dog upright on a dining chair at the Thanksgiving table, napkin at his place, eyes shut, his nose two inches from the turkey, a thread of drool |
+| P7 | Nobody opened the cheese. He was already downstairs. | 2 AM, the kitchen dark, lit by the open fridge; a person's bare feet at the fridge, the dog sitting beside them looking straight up into the lens with a flat, knowing stare |
+| P9 | The tree has been up for four minutes. | The bottom third of the tree stripped bare; every bauble from it piled in the dog's bed across the room; he lies in the middle of the pile, one bauble in his mouth, flat stare |
+| P10 | Walk is at 8. He brought your shoes. One of them. | The dog sitting at the front door, lead in his mouth, one sneaker dropped neatly in front of him; a person's slippered feet on the bottom stair |
+| P11 | He is hiding from the vacuum. He believes this is working. | A 90 lb dog with only his head pushed under a small throw cushion on the floor, his whole body and wagging tail in view; the vacuum, switched off, across the room |
+| P12 | Black Friday haul. | The dog lying proudly in the hallway beside his haul laid out in a neat row as if for an unboxing video: a shredded unbranded box flap, popped air pillows, one chewed receipt and a single stolen sock; flat stare |
+
+## Round 2 scores: P2 9; P1, P5, P6, P7, P9, P10, P11 8; F28-howl, P3, P4, P12 7
+
+P2 is made. Round 3 takes the judge's change for each of the rest:
+- P1: "The rule is no dogs on the sofa. His position is that he is mostly a floor dog."
+- P3: "New portion size. He has escalated." The bowl is parked on the slipper, with the kibble bag (unbranded) dragged beside it as evidence.
+- P4: "Family Christmas photo, take 41. He is no longer taking questions." On his back, legs up, the jumper half over his head, one eye open.
+- P5: "The guest room is ready. He has left a one-star review and extended his stay."
+- P6: "He is saying grace. He is saying it very quickly."
+- P7: "You had not opened the cheese yet. He was already downstairs."
+- P9: "The tree has been up for four minutes. He has started his own." Plush or shatterproof baubles only.
+- P10: "Walk is at 8. He brought your shoes. One of them. The other one is his now." The second sneaker's chewed laces show in his bed.
+- P11: "He is hiding from the vacuum. It is not plugged in." The plug and cord are in view; the tail is tucked and still.
+- P12: "Black Friday haul. Everything was free. Most of it was yours."
+- F28-howl: he walks out of frame the moment his falsetto ends, and the song plays on to an empty rug. Line: "He does not do the outro."
+
+## Round 3 scores: P1, P3, P4, P5, P6, P7, P11, F28-howl 8; P9, P10, P12 7. P2 image: 7 (left) and 6 (right)
+
+Three rounds have stalled at 8: each pass fixes one note, and the next judge finds another. So the scripts at 8 and the
+P2 photo go to Krish's board as his call (`script-P1` to `script-P11`, `script-F28-howl`, `post-P2-cat-restructure`).
+P9, P10 and P12 are dropped at 7. Spend so far: 0.5 Higgsfield (P2).
