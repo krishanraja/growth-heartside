@@ -405,6 +405,21 @@
    "applies_to": [
     "reel"
    ]
+  },
+  {
+   "id": "dog-does-dog-things",
+   "date": "2026-11-10",
+   "made": "Sprint 120 batch 1 human-arms lip-syncs after the gag rewrite (S12, HAL-02 to HAL-07), all held at 7.5 to 8",
+   "words": [
+    "I think the gym era one needs to be funnier in that the dog would be bench pressing a heavy log or doing sprints to chase a tennis ball, or more dog-like things. Its arms need to not be human. In the same way, I think you need to upgrade most of these videos with what a dog would actually be doing. That's the funny bit: a dog's Monday morning is likely to be very different from a human's Monday morning, but the absurdity of it is that we show it as if it's a a human video - but its a dog, doing dog things.",
+    "These need to be really well scripted before they go to video production, given that we've not got too many Higgsfield credits left."
+   ],
+   "category": "concept",
+   "rule": "The joke is the frame, not the costume: shoot it like a human video format (gym montage, morning routine, influencer vlog) while the dog does what a real dog would do in that slot (a log for a barbell, a ball chase for sprints, sniffing for networking). No human arms on a dog. Every beat is scripted and costed before any generation.",
+   "check": "review: for each beat name the human-format slot and the real dog behavior that fills it; any human hand, human-arm prop work or human behavior performed by the dog holds the beat; no video generation until Krish has seen the script",
+   "applies_to": [
+    "reel"
+   ]
   }
  ],
  "open_conflicts": [],
