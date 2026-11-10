@@ -3,6 +3,13 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-10: Sprint 120 planned and the factory equipped for it. Krish: "Our mission is to produce 20 signature Heartside organic posts, and 100 viral posts that generate 500000 views between them in the next 10 days. First ensure the repository is equipped for this - all asset production will go through your Codex lane, and you have full permission to use Higgsfield and Runway credits as many as needed for final generation", then "Photorealistic AI dogs doing things a viewer cant quite tell is real or not - anything is on the cards, I want absolute Creative Genius but the proven formulas to inform".
+  - The plan is `docs/plans/2026-11-10-sprint-120.md`, proposed and waiting for his yes. The ledger is `factory/sprints/2026-11-S120.json`, checked by `factory/sprint.py`.
+  - The playbook's 26 franchises are graded in `factory/bank/franchises.json`. Ten that need realistic generated motion come back as grade R on his go. Three stay excluded because they would pass fiction off as a real animal's record.
+  - Proven posts inform and are never generation inputs (the re-stage rule). Heartside's own winners are reskinned freely.
+  - New `still` template for memes and carousels: the line sits above the photo, never on it.
+  - Ruling (Krish, 2026-11-10): photorealistic generated dogs a viewer cannot quite tell from real are on the cards, held to the realism floor.
+
 - 2026-11-09: three decisions and #42 merged. Krish: "Go with your recommendations, open the PRs and merge #42".
   - Trolling dogs show real dog expressions, never a human smile (`factory/floor.json` `troll-not-mild`; the open conflict is closed).
   - Only `approved = yes` in the Sheet lets Codex post a row. This supersedes the 4 Nov ruling that a chat approval recorded in `notes` counted. AGENTS.md, `docs/CHANNEL-TASKS.md`, `docs/DRIVE-MAP.md`, `factory/send_library.py` and the README for Codex now say so.

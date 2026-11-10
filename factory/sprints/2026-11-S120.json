@@ -1,0 +1,2143 @@
+{
+ "sprint": "2026-11-S120",
+ "about": "Sprint 120: 20 signature posts that end on a real gift and 100 viral posts made to travel, posted 12 to 20 Nov 2026. Plan: docs/plans/2026-11-10-sprint-120.md. Slot stages and checks: factory/sprint.py.",
+ "asked_by": "Krish, 2026-11-10: \"produce 20 signature Heartside organic posts, and 100 viral posts that generate 500000 views between them in the next 10 days\"",
+ "window": {
+  "start": "2026-11-12",
+  "end": "2026-11-20"
+ },
+ "targets": {
+  "views": 500000,
+  "posts": {
+   "signature": 20,
+   "viral": 100
+  }
+ },
+ "caps": {
+  "per_platform_per_day": {
+   "tiktok": 8,
+   "instagram": 6,
+   "facebook": 5
+  },
+  "status": "proposed: TikTok 8 and Instagram 6 exceed the 5 a day of the 29 Oct concept-level ruling and need Krish's yes"
+ },
+ "rules": {
+  "double_down_from_day": 4,
+  "winner_multiple": 3,
+  "retire_below_multiple": 0.5,
+  "restage": "Proven posts inform; they are never inputs (bank/franchises.json restage_rule).",
+  "read": "72 hours after a post goes live: views per platform from the platform or Buffer analytics, recorded with sprint.py views."
+ },
+ "slots": [
+  {
+   "id": "S01",
+   "lane": "signature",
+   "title": "The press conference",
+   "premise": "A golden at a podium of microphones takes questions about the gift it chose for its person; flashbulbs on every pause.",
+   "payoff": "It noses the cloth off and the shot hard-cuts to the real mug.",
+   "product": "mug",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-12",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "S02",
+   "lane": "signature",
+   "title": "The sitting",
+   "premise": "A golden holds a perfect regal pose for its portrait while the household falls apart behind it: the vacuum, the toddler, the cat.",
+   "payoff": "It never blinks; hard cut to the serene real portrait.",
+   "product": "portrait",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-12",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "V001",
+   "lane": "viral",
+   "franchise": "The Forbidden Treasure",
+   "grade": "B",
+   "concept": "DVC-021",
+   "title": "The recycling-bin trophy",
+   "mechanism_payoff": "swap for crinkle toy",
+   "breed": "border collie",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-12",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V002",
+   "lane": "viral",
+   "franchise": "The Side-Eye Tribunal",
+   "grade": "A",
+   "concept": "DVC-006",
+   "title": "Bought the wrong treats",
+   "mechanism_payoff": "eye shift to the real bag",
+   "breed": "bulldog",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-12",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V003",
+   "lane": "viral",
+   "franchise": "The Household Obstruction",
+   "grade": "A",
+   "concept": "DVC-011",
+   "title": "Fold laundry with a nest-builder",
+   "mechanism_payoff": "dog steals the last folded item",
+   "breed": "frenchie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-12",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V004",
+   "lane": "viral",
+   "franchise": "Tiny Employee",
+   "grade": "A",
+   "concept": "DVC-026",
+   "title": "Laundry compliance officer",
+   "mechanism_payoff": "rejects one sock",
+   "breed": "shepherd",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-12",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V005",
+   "lane": "viral",
+   "franchise": "One-Frame Costume Reveal",
+   "grade": "A",
+   "concept": "DVC-032",
+   "title": "The office printer",
+   "mechanism_payoff": "dog delivers one note",
+   "breed": "husky",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-12",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V006",
+   "lane": "viral",
+   "franchise": "Proud of the Underdog",
+   "grade": "A",
+   "concept": "DVC-036",
+   "title": "High jump vs one curb",
+   "mechanism_payoff": "celebrate the step-over",
+   "breed": "pug",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-12",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V007",
+   "lane": "viral",
+   "franchise": "The Heist",
+   "grade": "A",
+   "concept": "DVC-056",
+   "title": "The blanket corner theft",
+   "mechanism_payoff": "dog distracts with toy then steals warm spot",
+   "breed": "great dane",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-12",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V008",
+   "lane": "viral",
+   "franchise": "Perfect Lineup, One Rebel",
+   "grade": "A",
+   "concept": "DVC-061",
+   "title": "Five dogs, one backwards sit",
+   "mechanism_payoff": "last dog turns around",
+   "breed": "beagle",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-12",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V009",
+   "lane": "viral",
+   "franchise": "Bed-Space Economics",
+   "grade": "A",
+   "concept": "DVC-076",
+   "title": "The pillow acquisition",
+   "mechanism_payoff": "dog owns both by frame four",
+   "breed": "doodle",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-12",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V010",
+   "lane": "viral",
+   "franchise": "The Crime Scene",
+   "grade": "A",
+   "concept": "DVC-091",
+   "title": "The empty treat box",
+   "mechanism_payoff": "cardboard on one bed",
+   "breed": "corgi",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-12",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "S03",
+   "lane": "signature",
+   "title": "The circle",
+   "premise": "Two sports commentators call a shepherd's nine-turn circle before it lies down, like the last lap of a final.",
+   "payoff": "It drops, the crowd erupts, cut to the real blanket.",
+   "product": "blanket",
+   "breed": "shepherd",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-13",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "S04",
+   "lane": "signature",
+   "title": "Draft 47",
+   "premise": "A frenchie writes its Christmas card to its person; the floor fills with crumpled drafts, each one a worse line.",
+   "payoff": "Draft 47 is the one: the real card.",
+   "product": "card",
+   "breed": "frenchie",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-13",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "V011",
+   "lane": "viral",
+   "franchise": "The Translator",
+   "grade": "R",
+   "concept": "DVC-001",
+   "title": "The dinner complaint",
+   "mechanism_payoff": "one bark phrase resolves into a sigh",
+   "breed": "lab",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-13",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V012",
+   "lane": "viral",
+   "franchise": "Slow-Motion Face Physics",
+   "grade": "B",
+   "concept": "DVC-041",
+   "title": "The bubble bite",
+   "mechanism_payoff": "jowls meet one bubble",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-13",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V013",
+   "lane": "viral",
+   "franchise": "The Ranked Ritual",
+   "grade": "A",
+   "concept": "DVC-096",
+   "title": "Top five dog negotiations",
+   "mechanism_payoff": "rank by clarity of comeback",
+   "breed": "border collie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-13",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V014",
+   "lane": "viral",
+   "franchise": "The Face Reveal Tour",
+   "grade": "A",
+   "concept": "DVC-101",
+   "title": "The birthday setup",
+   "mechanism_payoff": "dog in party scarf at final turn",
+   "breed": "bulldog",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-13",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V015",
+   "lane": "viral",
+   "franchise": "The Life-in-Five-Clips",
+   "grade": "A",
+   "concept": "DVC-126",
+   "title": "Reasons my dog is an operations manager",
+   "mechanism_payoff": "inspects every delivery",
+   "breed": "frenchie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-13",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V016",
+   "lane": "viral",
+   "franchise": "The Side-Eye Tribunal",
+   "grade": "A",
+   "concept": "DVC-007",
+   "title": "Said one more email",
+   "mechanism_payoff": "dog judges the screen",
+   "breed": "shepherd",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-13",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V017",
+   "lane": "viral",
+   "franchise": "The Household Obstruction",
+   "grade": "A",
+   "concept": "DVC-012",
+   "title": "Unload groceries with an inspector",
+   "mechanism_payoff": "dog sits inside empty bag",
+   "breed": "husky",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-13",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V018",
+   "lane": "viral",
+   "franchise": "Tiny Employee",
+   "grade": "A",
+   "concept": "DVC-027",
+   "title": "Garden site foreman",
+   "mechanism_payoff": "inspects one crooked pot",
+   "breed": "pug",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-13",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V019",
+   "lane": "viral",
+   "franchise": "One-Frame Costume Reveal",
+   "grade": "A",
+   "concept": "DVC-033",
+   "title": "The garden gnome",
+   "mechanism_payoff": "dog freezes among real pots",
+   "breed": "great dane",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-13",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V020",
+   "lane": "viral",
+   "franchise": "Proud of the Underdog",
+   "grade": "A",
+   "concept": "DVC-037",
+   "title": "Perfect catch vs nose boop",
+   "mechanism_payoff": "award the accidental touch",
+   "breed": "beagle",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-13",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V021",
+   "lane": "viral",
+   "franchise": "The Heist",
+   "grade": "A",
+   "concept": "DVC-057",
+   "title": "The empty box takeover",
+   "mechanism_payoff": "dog circles while human removes tape",
+   "breed": "doodle",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-13",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "S05",
+   "lane": "signature",
+   "title": "The group chat",
+   "premise": "Five dogs in a group chat plan what to get their humans; one went quiet because it already ordered.",
+   "payoff": "Its link preview is the real mug.",
+   "product": "mug",
+   "breed": "doodle",
+   "template": "chat",
+   "aspect": "9:16",
+   "day": "2026-11-14",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "S06",
+   "lane": "signature",
+   "title": "The search history",
+   "premise": "A doodle's searches at 2 a.m., trying to work out how to tell its person how it feels with no words.",
+   "payoff": "The last result is the real portrait.",
+   "product": "portrait",
+   "breed": "doodle",
+   "template": "search",
+   "aspect": "9:16",
+   "day": "2026-11-14",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "V022",
+   "lane": "viral",
+   "franchise": "The Threshold Problem",
+   "grade": "R",
+   "concept": "DVC-016",
+   "title": "Voice behind the garden gate",
+   "mechanism_payoff": "dog circles then finds side opening",
+   "breed": "corgi",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-14",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V023",
+   "lane": "viral",
+   "franchise": "The Negotiation",
+   "grade": "B",
+   "concept": "DVC-046",
+   "title": "Five more minutes outside",
+   "mechanism_payoff": "dog gets the final word",
+   "breed": "lab",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-14",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V024",
+   "lane": "viral",
+   "franchise": "Copy Me",
+   "grade": "R",
+   "concept": "DVC-051",
+   "title": "The synchronized yawn",
+   "mechanism_payoff": "dog yawns after owner",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-14",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V025",
+   "lane": "viral",
+   "franchise": "Perfect Lineup, One Rebel",
+   "grade": "A",
+   "concept": "DVC-062",
+   "title": "Treat-wait choir",
+   "mechanism_payoff": "one dog looks at camera not food",
+   "breed": "border collie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-14",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V026",
+   "lane": "viral",
+   "franchise": "Bed-Space Economics",
+   "grade": "A",
+   "concept": "DVC-077",
+   "title": "The diagonal investor",
+   "mechanism_payoff": "dog rotates 45 degrees each cut",
+   "breed": "bulldog",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-14",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V027",
+   "lane": "viral",
+   "franchise": "The Crime Scene",
+   "grade": "A",
+   "concept": "DVC-092",
+   "title": "The unrolled toilet paper",
+   "mechanism_payoff": "ends at innocent sleeping dog",
+   "breed": "frenchie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-14",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V028",
+   "lane": "viral",
+   "franchise": "The Ranked Ritual",
+   "grade": "A",
+   "concept": "DVC-097",
+   "title": "Top five impossible sleeping positions",
+   "mechanism_payoff": "rank by geometry",
+   "breed": "shepherd",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-14",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V029",
+   "lane": "viral",
+   "franchise": "The Face Reveal Tour",
+   "grade": "A",
+   "concept": "DVC-102",
+   "title": "The camping nest",
+   "mechanism_payoff": "dog zipped safely in open tent",
+   "breed": "husky",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-14",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V030",
+   "lane": "viral",
+   "franchise": "The Life-in-Five-Clips",
+   "grade": "A",
+   "concept": "DVC-127",
+   "title": "Evidence my dog is a retired celebrity",
+   "mechanism_payoff": "avoids camera then poses",
+   "breed": "pug",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-14",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V031",
+   "lane": "viral",
+   "franchise": "The Side-Eye Tribunal",
+   "grade": "A",
+   "concept": "DVC-008",
+   "title": "Called another dog cute",
+   "mechanism_payoff": "look moves from phone to owner",
+   "breed": "great dane",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-14",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V032",
+   "lane": "viral",
+   "franchise": "The Household Obstruction",
+   "grade": "A",
+   "concept": "DVC-013",
+   "title": "Pack a suitcase with a stowaway",
+   "mechanism_payoff": "dog curls into final gap",
+   "breed": "beagle",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-14",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "S07",
+   "lane": "signature",
+   "title": "The forecast",
+   "premise": "A dog meteorologist calls the winter: a front of lap-sitting moving in, 100 percent chance through March.",
+   "payoff": "The radar map dissolves into the real blanket.",
+   "product": "blanket",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "S08",
+   "lane": "signature",
+   "title": "The red carpet",
+   "premise": "A frenchie arrives at its own portrait unveiling: paparazzi, velvet rope, one slow look back at the cameras.",
+   "payoff": "The curtain drops on the real framed portrait.",
+   "product": "portrait",
+   "breed": "frenchie",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "instagram",
+    "tiktok"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "S09",
+   "lane": "signature",
+   "title": "The property tour",
+   "premise": "A doodle realtor tours its listings: the sofa, the good chair, your side of the bed.",
+   "payoff": "The master suite is the real blanket.",
+   "product": "blanket",
+   "breed": "doodle",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "instagram",
+    "tiktok"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "V033",
+   "lane": "viral",
+   "franchise": "The Micro-Buildup",
+   "grade": "B",
+   "concept": "DVC-106",
+   "title": "The pre-sneeze ladder",
+   "mechanism_payoff": "full sneeze on fifth twitch",
+   "breed": "doodle",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V034",
+   "lane": "viral",
+   "franchise": "Zoomie Architecture",
+   "grade": "R",
+   "concept": "DVC-066",
+   "title": "The sofa orbit",
+   "mechanism_payoff": "dog completes tighter loops",
+   "breed": "corgi",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V035",
+   "lane": "viral",
+   "franchise": "The Gentle Giant Reversal",
+   "grade": "B",
+   "concept": "DVC-116",
+   "title": "The scary guard wants chin scratches",
+   "mechanism_payoff": "eyes close into smile",
+   "breed": "rottweiler",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V036",
+   "lane": "viral",
+   "franchise": "Water Has Rules",
+   "grade": "R",
+   "concept": "DVC-071",
+   "title": "The sprinkler gatekeeper",
+   "mechanism_payoff": "dog times the crossing",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V037",
+   "lane": "viral",
+   "franchise": "Tiny Employee",
+   "grade": "A",
+   "concept": "DVC-028",
+   "title": "Parcel security lead",
+   "mechanism_payoff": "approves only treat parcel",
+   "breed": "border collie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V038",
+   "lane": "viral",
+   "franchise": "One-Frame Costume Reveal",
+   "grade": "A",
+   "concept": "DVC-034",
+   "title": "The sandwich thief disguise",
+   "mechanism_payoff": "revealed beside empty plate prop",
+   "breed": "bulldog",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-15",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V039",
+   "lane": "viral",
+   "franchise": "Proud of the Underdog",
+   "grade": "A",
+   "concept": "DVC-038",
+   "title": "Agility weave vs walking round one cone",
+   "mechanism_payoff": "victory lap follows",
+   "breed": "frenchie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V040",
+   "lane": "viral",
+   "franchise": "The Heist",
+   "grade": "A",
+   "concept": "DVC-058",
+   "title": "The garden glove switch",
+   "mechanism_payoff": "dog drops decoy and takes matching glove",
+   "breed": "shepherd",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-15",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V041",
+   "lane": "viral",
+   "franchise": "Perfect Lineup, One Rebel",
+   "grade": "A",
+   "concept": "DVC-063",
+   "title": "Family portrait escapee",
+   "mechanism_payoff": "smallest dog walks out then returns",
+   "breed": "husky",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V042",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V043",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V044",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-15",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "S10",
+   "lane": "signature",
+   "title": "Christmas morning cam",
+   "premise": "Three stills of a shepherd watching its person open the gift it sent: anticipation, the held breath, pure pride.",
+   "payoff": "The fourth slide is the real mug.",
+   "product": "mug",
+   "breed": "shepherd",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-16",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "S11",
+   "lane": "signature",
+   "title": "Who sent this",
+   "premise": "A game-show family guesses who sent the gift: grandma, the neighbour, Santa. The golden at the end podium has its paw on the buzzer the whole time.",
+   "payoff": "Buzz; the answer card is the real mug.",
+   "product": "mug",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-16",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "V045",
+   "lane": "viral",
+   "franchise": "The Forbidden Treasure",
+   "grade": "B",
+   "concept": "DVC-022",
+   "title": "The single wet sock",
+   "mechanism_payoff": "swap for fleece tug",
+   "breed": "doodle",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-16",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V046",
+   "lane": "viral",
+   "franchise": "Dog-Eye Mission",
+   "grade": "R",
+   "concept": "DVC-086",
+   "title": "Find the red glove",
+   "mechanism_payoff": "return to matching hand",
+   "breed": "corgi",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-16",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V047",
+   "lane": "viral",
+   "franchise": "Slow-Motion Face Physics",
+   "grade": "B",
+   "concept": "DVC-042",
+   "title": "The soft-toy catch",
+   "mechanism_payoff": "toy folds around muzzle",
+   "breed": "lab",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-16",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V048",
+   "lane": "viral",
+   "franchise": "The Translator",
+   "grade": "R",
+   "concept": "DVC-002",
+   "title": "The walk negotiation",
+   "mechanism_payoff": "dog answers after weather is revealed",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-16",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V049",
+   "lane": "viral",
+   "franchise": "Bed-Space Economics",
+   "grade": "A",
+   "concept": "DVC-078",
+   "title": "The heated spot takeover",
+   "mechanism_payoff": "owner returns to zero space",
+   "breed": "border collie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-16",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V050",
+   "lane": "viral",
+   "franchise": "The Crime Scene",
+   "grade": "A",
+   "concept": "DVC-093",
+   "title": "The missing cushion",
+   "mechanism_payoff": "toy hidden underneath",
+   "breed": "bulldog",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-16",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V051",
+   "lane": "viral",
+   "franchise": "The Ranked Ritual",
+   "grade": "A",
+   "concept": "DVC-098",
+   "title": "Top five tiny acts of betrayal",
+   "mechanism_payoff": "rank by reversal",
+   "breed": "frenchie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-16",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V052",
+   "lane": "viral",
+   "franchise": "The Face Reveal Tour",
+   "grade": "A",
+   "concept": "DVC-103",
+   "title": "The home-office promotion",
+   "mechanism_payoff": "dog in executive chair",
+   "breed": "shepherd",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-16",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V053",
+   "lane": "viral",
+   "franchise": "The Life-in-Five-Clips",
+   "grade": "A",
+   "concept": "DVC-128",
+   "title": "Why my dog would survive a heist",
+   "mechanism_payoff": "finds every hidden toy",
+   "breed": "husky",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-16",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V054",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-16",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V055",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-16",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V056",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-16",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "S12",
+   "lane": "signature",
+   "title": "The lean",
+   "premise": "Olympic judges score a lab's lean against its person's leg: form, commitment, total weight transfer.",
+   "payoff": "Three 10s, then the real mug.",
+   "product": "mug",
+   "breed": "lab",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-17",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "S13",
+   "lane": "signature",
+   "title": "The museum guard",
+   "premise": "A shepherd in a museum will not let a single visitor near one painting, and the painting is of itself.",
+   "payoff": "The real portrait, guarded.",
+   "product": "portrait",
+   "breed": "shepherd",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-17",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "V057",
+   "lane": "viral",
+   "franchise": "The Negotiation",
+   "grade": "B",
+   "concept": "DVC-047",
+   "title": "Dinner is in an hour",
+   "mechanism_payoff": "dog points gaze between both",
+   "breed": "doodle",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-17",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V058",
+   "lane": "viral",
+   "franchise": "The Threshold Problem",
+   "grade": "R",
+   "concept": "DVC-017",
+   "title": "Toy behind the transparent chair",
+   "mechanism_payoff": "dog solves the edge route",
+   "breed": "corgi",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-17",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V059",
+   "lane": "viral",
+   "franchise": "The Micro-Buildup",
+   "grade": "B",
+   "concept": "DVC-107",
+   "title": "The almost-howl",
+   "mechanism_payoff": "tiny whines become one note",
+   "breed": "lab",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-17",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V060",
+   "lane": "viral",
+   "franchise": "Copy Me",
+   "grade": "R",
+   "concept": "DVC-052",
+   "title": "The head-tilt ladder",
+   "mechanism_payoff": "angles increase each round",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-17",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V061",
+   "lane": "viral",
+   "franchise": "The Side-Eye Tribunal",
+   "grade": "A",
+   "concept": "DVC-009",
+   "title": "Skipped the usual route",
+   "mechanism_payoff": "side-eye arrives at wrong turn",
+   "breed": "border collie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-17",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V062",
+   "lane": "viral",
+   "franchise": "The Household Obstruction",
+   "grade": "A",
+   "concept": "DVC-014",
+   "title": "Work from home with a manager",
+   "mechanism_payoff": "dog places chin on the only free hand",
+   "breed": "bulldog",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-17",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V063",
+   "lane": "viral",
+   "franchise": "Tiny Employee",
+   "grade": "A",
+   "concept": "DVC-029",
+   "title": "Home-office HR director",
+   "mechanism_payoff": "interrupts performance review",
+   "breed": "frenchie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-17",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V064",
+   "lane": "viral",
+   "franchise": "One-Frame Costume Reveal",
+   "grade": "A",
+   "concept": "DVC-035",
+   "title": "The bedtime burrito",
+   "mechanism_payoff": "face appears from the centre",
+   "breed": "shepherd",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-17",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V065",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-17",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V066",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-17",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V067",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-17",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V068",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-17",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "S14",
+   "lane": "signature",
+   "title": "The mail room",
+   "premise": "A golden intercepts the delivery at the door and signs for the package with a paw print, alone.",
+   "payoff": "The envelope opens on the real card.",
+   "product": "card",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "S15",
+   "lane": "signature",
+   "title": "Roll call",
+   "premise": "Six breeds each read one line of their Christmas card to their person, each in its own voice.",
+   "payoff": "The real card closes it.",
+   "product": "card",
+   "breed": "doodle",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-18",
+   "platforms": [
+    "instagram",
+    "tiktok"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "S16",
+   "lane": "signature",
+   "title": "The interview",
+   "premise": "A field reporter asks a golden why it chose the blanket. It tested it. Extensively. Every corner.",
+   "payoff": "Cut to the real blanket.",
+   "product": "blanket",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "instagram",
+    "tiktok"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "V069",
+   "lane": "viral",
+   "franchise": "The Gentle Giant Reversal",
+   "grade": "B",
+   "concept": "DVC-117",
+   "title": "The giant mastiff fears the tiny bubble",
+   "mechanism_payoff": "backs up then boops",
+   "breed": "great dane",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V070",
+   "lane": "viral",
+   "franchise": "Zoomie Architecture",
+   "grade": "R",
+   "concept": "DVC-067",
+   "title": "The hallway teleport",
+   "mechanism_payoff": "dog vanishes left and arrives behind camera",
+   "breed": "corgi",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V071",
+   "lane": "viral",
+   "franchise": "The Forbidden Treasure",
+   "grade": "B",
+   "concept": "DVC-023",
+   "title": "The cardboard crown",
+   "mechanism_payoff": "replace with dog-safe cardboard toy",
+   "breed": "lab",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V072",
+   "lane": "viral",
+   "franchise": "Water Has Rules",
+   "grade": "R",
+   "concept": "DVC-072",
+   "title": "The tap inspector",
+   "mechanism_payoff": "dog boops water then retreats",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V073",
+   "lane": "viral",
+   "franchise": "Proud of the Underdog",
+   "grade": "A",
+   "concept": "DVC-039",
+   "title": "Long recall vs three-step return",
+   "mechanism_payoff": "owner erupts at arrival",
+   "breed": "border collie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V074",
+   "lane": "viral",
+   "franchise": "The Heist",
+   "grade": "A",
+   "concept": "DVC-059",
+   "title": "The picnic napkin job",
+   "mechanism_payoff": "dog waits for owner to look away",
+   "breed": "bulldog",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-18",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V075",
+   "lane": "viral",
+   "franchise": "Perfect Lineup, One Rebel",
+   "grade": "A",
+   "concept": "DVC-064",
+   "title": "Matching bandanas, one wrong colour",
+   "mechanism_payoff": "reveal colour-blind casting joke",
+   "breed": "frenchie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V076",
+   "lane": "viral",
+   "franchise": "Bed-Space Economics",
+   "grade": "A",
+   "concept": "DVC-079",
+   "title": "The guest-room landlord",
+   "mechanism_payoff": "dog checks in before guest",
+   "breed": "shepherd",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-18",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V077",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V078",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V079",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V080",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-18",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "S17",
+   "lane": "signature",
+   "title": "The focus group",
+   "premise": "Four dogs behind one-way glass sniff-test three gifts and argue it out like a panel.",
+   "payoff": "The winning gift is the real mug.",
+   "product": "mug",
+   "breed": "frenchie",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-19",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "S18",
+   "lane": "signature",
+   "title": "The reply",
+   "premise": "Its person texts the dog a Christmas list; the dog replies to each item, one by one, unimpressed.",
+   "payoff": "Its final message is the real portrait.",
+   "product": "portrait",
+   "breed": "shepherd",
+   "template": "chat",
+   "aspect": "9:16",
+   "day": "2026-11-19",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "V081",
+   "lane": "viral",
+   "franchise": "Slow-Motion Face Physics",
+   "grade": "B",
+   "concept": "DVC-043",
+   "title": "The post-bath shake",
+   "mechanism_payoff": "ears cross mid-air",
+   "breed": "doodle",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-19",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V082",
+   "lane": "viral",
+   "franchise": "Dog-Eye Mission",
+   "grade": "R",
+   "concept": "DVC-087",
+   "title": "Deliver the note",
+   "mechanism_payoff": "dog reaches seated recipient",
+   "breed": "corgi",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-19",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V083",
+   "lane": "viral",
+   "franchise": "The Negotiation",
+   "grade": "B",
+   "concept": "DVC-048",
+   "title": "You already had a walk",
+   "mechanism_payoff": "dog brings a second lead",
+   "breed": "lab",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-19",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V084",
+   "lane": "viral",
+   "franchise": "The Translator",
+   "grade": "R",
+   "concept": "DVC-003",
+   "title": "The bedtime objection",
+   "mechanism_payoff": "final grumble under blanket",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-19",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V085",
+   "lane": "viral",
+   "franchise": "The Micro-Buildup",
+   "grade": "B",
+   "concept": "DVC-108",
+   "title": "The dream-run countdown",
+   "mechanism_payoff": "paws accelerate then stop",
+   "breed": "border collie",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-19",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V086",
+   "lane": "viral",
+   "franchise": "The Crime Scene",
+   "grade": "A",
+   "concept": "DVC-094",
+   "title": "The garden pot spill",
+   "mechanism_payoff": "paw prints point both ways",
+   "breed": "bulldog",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-19",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V087",
+   "lane": "viral",
+   "franchise": "The Ranked Ritual",
+   "grade": "A",
+   "concept": "DVC-099",
+   "title": "Top five accidental movie endings",
+   "mechanism_payoff": "rank by final frame",
+   "breed": "frenchie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-19",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V088",
+   "lane": "viral",
+   "franchise": "The Face Reveal Tour",
+   "grade": "A",
+   "concept": "DVC-104",
+   "title": "The garden wedding guest",
+   "mechanism_payoff": "dog waiting in bow tie",
+   "breed": "shepherd",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-19",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V089",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-19",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V090",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-19",
+   "platforms": [
+    "instagram"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V091",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-19",
+   "platforms": [
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "S19",
+   "lane": "signature",
+   "title": "The wrapping job",
+   "premise": "A doodle wraps the gift itself: tape on its ears, paper everywhere, the box mostly bitten.",
+   "payoff": "The reveal is the real portrait.",
+   "product": "portrait",
+   "breed": "doodle",
+   "template": "still",
+   "aspect": "4:5",
+   "day": "2026-11-20",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "S20",
+   "lane": "signature",
+   "title": "One for each",
+   "premise": "A golden at the door with a gift in its mouth for each of its two people.",
+   "payoff": "Hard cut to the real mug and the real blanket.",
+   "product": "blanket",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-20",
+   "platforms": [
+    "instagram",
+    "tiktok",
+    "facebook"
+   ],
+   "intent": "buy",
+   "stage": "idea"
+  },
+  {
+   "id": "V092",
+   "lane": "viral",
+   "franchise": "The Threshold Problem",
+   "grade": "R",
+   "concept": "DVC-018",
+   "title": "Owner in the wrong doorway",
+   "mechanism_payoff": "dog checks both then chooses",
+   "breed": "beagle",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-20",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V093",
+   "lane": "viral",
+   "franchise": "The Gentle Giant Reversal",
+   "grade": "B",
+   "concept": "DVC-118",
+   "title": "The serious shepherd loves a squeaky duck",
+   "mechanism_payoff": "ears change instantly",
+   "breed": "great dane",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-20",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V094",
+   "lane": "viral",
+   "franchise": "Zoomie Architecture",
+   "grade": "R",
+   "concept": "DVC-068",
+   "title": "The garden figure-eight",
+   "mechanism_payoff": "third pass takes wrong side",
+   "breed": "corgi",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-20",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V095",
+   "lane": "viral",
+   "franchise": "Water Has Rules",
+   "grade": "R",
+   "concept": "DVC-073",
+   "title": "The paddling-pool iceberg",
+   "mechanism_payoff": "dog solves retrieval without entering",
+   "breed": "lab",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-20",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V096",
+   "lane": "viral",
+   "franchise": "Dog-Eye Mission",
+   "grade": "R",
+   "concept": "DVC-088",
+   "title": "Choose the picnic spot",
+   "mechanism_payoff": "dog runs to familiar colour",
+   "breed": "golden",
+   "template": "film",
+   "aspect": "9:16",
+   "day": "2026-11-20",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V097",
+   "lane": "viral",
+   "franchise": "The Life-in-Five-Clips",
+   "grade": "A",
+   "concept": "DVC-129",
+   "title": "Proof my dog runs the family group chat",
+   "mechanism_payoff": "appears at every conversation",
+   "breed": "border collie",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-20",
+   "platforms": [
+    "tiktok"
+   ],
+   "intent": "audience",
+   "stage": "idea"
+  },
+  {
+   "id": "V098",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-20",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V099",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-20",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  },
+  {
+   "id": "V100",
+   "lane": "viral",
+   "double_down": true,
+   "title": "Reserved: a variant of a post that beat 3x the sprint median at 72 hours",
+   "template": "still",
+   "aspect": "9:16",
+   "day": "2026-11-20",
+   "platforms": [
+    "instagram",
+    "facebook"
+   ],
+   "intent": "audience",
+   "stage": "reserved"
+  }
+ ]
+}

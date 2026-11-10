@@ -1,4 +1,4 @@
-"""Build finished posts from specs: chat, search, roast and film templates.
+"""Build finished posts from specs: chat, search, roast, film and still templates.
 
     HEARTSIDE_ASSETS=... HEARTSIDE_OUT=... python3 factory/build.py factory/specs/F10.json [...]
 
@@ -393,7 +393,13 @@ def film(spec, work):
     return mux(work, spec['id']), total
 
 
-TEMPLATES = {'chat': chat, 'search': search, 'roast': roast, 'film': film}
+def still_post(spec, work):
+    import still
+    folder, n = still.build(spec, work, T, FR, R, bold(F('Karla.ttf', 54 if spec['aspect'] == '4:5' else 50), 800))
+    return folder, n
+
+
+TEMPLATES = {'chat': chat, 'search': search, 'roast': roast, 'film': film, 'still': still_post}
 
 if __name__ == '__main__':
     preview = '--preview' in sys.argv  # build a held post so Krish can judge its proposed lines in place; never posted
