@@ -78,7 +78,7 @@ class SprintManifestTest(unittest.TestCase):
         self.assertEqual(next(x for x in m['slots'] if x['id'] == sid)['stage'], 'script')
 
     def test_specs_come_only_from_approved_still_slots(self):
-        m = manifest(); slot = next(x for x in m['slots'] if x['template'] == 'still' and x.get('concept'))
+        m = manifest(); slot = next(x for x in m['slots'] if x['template'] == 'still' and x.get('concept') and x['stage'] == 'idea')
         slot['slides'] = [{'frame': 'x.png', 'line': 'F10.c01', 'focus_y': 0.4}]
         with tempfile.TemporaryDirectory() as d:
             self.assertEqual(sprint.specs(m, d), [])

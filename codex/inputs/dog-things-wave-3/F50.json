@@ -1,0 +1,46 @@
+{
+ "slug": "christmas-card-take-47",
+ "title": "Christmas card, take 47",
+ "dog": "corgi",
+ "shots": [
+  {
+   "kind": "still",
+   "src": "beats/501.png",
+   "seconds": 2.0,
+   "label": "Take 1"
+  },
+  {
+   "kind": "clip",
+   "src": "clips/502.mp4",
+   "in": 0.3,
+   "seconds": 2.8,
+   "label": "Take 9"
+  },
+  {
+   "kind": "still",
+   "src": "beats/503.png",
+   "seconds": 2.0,
+   "label": "Take 22"
+  },
+  {
+   "kind": "still",
+   "src": "beats/504.png",
+   "seconds": 2.0,
+   "label": "Take 38"
+  },
+  {
+   "kind": "clip",
+   "src": "clips/505.mp4",
+   "in": 0.0,
+   "seconds": 2.4,
+   "label": "Take 47"
+  },
+  {
+   "kind": "product",
+   "src": "heartside-christmas-card.jpg",
+   "seconds": 3.5,
+   "label": null
+  }
+ ],
+ "total_seconds": 14.7
+}

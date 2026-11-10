@@ -3,6 +3,18 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-10: Krish's answers on the review board (all 31 items; verdicts read 18:15 UTC).
+  - Publishing hold lifted (`hold-lift`, Yes). Ruling (Krish, 2026-11-10): the publishing hold of 10 Nov is lifted.
+  - Schedule pulled forward, with his note "Everything needs to go out ASAP." All 21 filed posts are rescheduled three a day (08:00, 12:30, 18:00 ET) from Wed 11 Nov, live by Tue 17 Nov; only F42 (Black Friday haul) keeps 27 Nov. The rows move to one new Sheet, `02q`, and the older Sprint Sheets are marked superseded.
+  - All 21 posts Yes on the board. He also ticked Yes on `decision-board-yes-marks-sheet`. A safety check refused the engine rewriting its own approval rule, so `approved = yes` in the Sheet is still typed by Krish (AGENTS.md unchanged); `02q` carries each board Yes in its notes.
+  - F34 keeps "Order by Dec 4 for Christmas" (`copy-F34-orderby`, Yes): 4 Dec is confirmed for the blanket.
+  - North Star raised to $50,000 by 28 Dec (`decision-north-star-50k`, Yes); `docs/NORTH_STAR.md` updated, past weeks unchanged. Ruling (Krish, 2026-11-10): the North Star number is $50,000 of organic net sales, trailing 4 weeks, by 28 Dec 2026.
+  - Codex lane (`decision-codex-lane`, No): from the next batch, each day's builds go to Codex as one card, checked by Claude before anything reaches Krish. Ruling (Krish, 2026-11-10): new production goes through the Codex lane, one card per day's batch.
+  - Paid boosts: on `spend-paid-tranche-1` his note reads "No, I will approve boosts of up to $20 per day if you can prove to me with organic reach results that they are the right ones to boost". Ruling (Krish, 2026-11-10): no $3,000 tranche; each boost is at most $20 a day, proposed one at a time with the post's organic reach results as proof.
+  - Credits: "added credits, use them wisely" (Higgsfield top-up) and Yes to the Runway wave for F46 onward, "use them wisely".
+  - The two stray face-blanket files in `Posts/F33` were moved to the Drive trash (`delete-F33-strays`, Yes).
+  - Krish, 10 Nov: "You are not to schedule anything in Buffer in this session. I will do that directly in Codex myself. Your job is to get everything 100% ready so that Codex can schedule things without any errors, including when it needs to go outside of Buffer into the social platform directly, select specific music, and make sure it times correctly with the video." Ruling (Krish, 2026-11-10): engine sessions never schedule in Buffer; Krish schedules in Codex, and the engine makes every row error-free for it.
+
 - 2026-11-10: Krish's humour profile anchors every build. Krish: "Here's my humor profile. Make sure every build in all the sessions anchors towards this, now and in the future."
   - `docs/HUMOUR.md` holds the profile as he supplied it, with how it applies inside Heartside's rules. AGENTS.md sends every session to it before any creative work. The tier 2 judge reads it from `factory/bank/anchors.json` and scores observation, stupid premise and cruel payoff; a piece missing one cannot score 9. Tests cover the brief.
   - Ruling (Krish, 2026-11-10): every build in every session anchors to Krish's humour profile (docs/HUMOUR.md).
