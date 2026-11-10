@@ -502,6 +502,20 @@
     "carousel",
     "meme"
    ]
+  },
+  {
+   "id": "one-trend-one-scene",
+   "date": "2026-11-10",
+   "made": "F28 'the dog 80s dance' (Smalltown Boy), a trend-dance reel",
+   "words": [
+    "f28 is super glitchy and needs to be redone, also are you sure its all the dance to one song? looks like two different dance trends might I might be mistaken."
+   ],
+   "category": "performance",
+   "rule": "A trend reel uses one trend, one song and one set from start to end; no second dance or room cut in. Dogs move like dogs: no dog standing on its hind legs doing human choreography, which reads as glitchy AI.",
+   "check": "review: the contact sheet shows one location and one routine throughout; no shot of a dog upright on two legs performing arm moves",
+   "applies_to": [
+    "reel"
+   ]
   }
  ],
  "open_conflicts": [],
