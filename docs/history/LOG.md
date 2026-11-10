@@ -4,6 +4,26 @@ Newest first. Entries are written by the docs steward (see the steward link in
 NOW.md) and by humans doing the same job by hand. Nothing in this file
 describes current behaviour; NOW.md and the state doc do.
 
+## 2026-11-10
+
+- reconciled: fixed the audit findings `too_long`, `recent_too_many` and `where_too_many`; the four closeout notes (2026-11-04, 07, 08, 09) are malformed (headings and free-form lines) and stay for a person.
+- rolled from NOW.md: 2026-11-06 This session concentrates on creative production and verified inspiration. The later 6 November routing clarification supersedes the initial handoff: Scheduling owns paid monitoring and owned-post reporting; Audience Growth owns new-follower acquisition and comment-test outcomes.
+- rolled from NOW.md: 2026-11-04 the passing clips are on a Codex card, docs/briefs/codex/2026-11-04-motion-cut-F01-F07.md, so the locked posts can open on motion instead of a still.
+- rolled from NOW.md: 2026-11-04 factory/build.py and factory/splice.py; factory/bank/lines.json; factory/locks F03, F04, F06-dachshund, F06-lab, F07; factory/specs; factory/motion/F03-labels.json; library/manifest.json; docs/plans/2026-11-04-road-to-ten.md; docs/briefs/codex/2026-11-04-road-to-ten-builds.md; CHANGES.md.
+- rolled from NOW.md: 2026-11-04 Aligned the boost packet to the approved organic slots; verified the four product URLs and proposed a $200 first test with one approval.
+- rolled from NOW.md: 2026-11-04 docs/PAID-BOOSTS.md (organic boosts, gates, the test); docs/boost/2026-11-launch-packet.md; docs/PUBLISHING.md; docs/BOOST-LIBRARY.md and library/manifest.json; factory/audit.py, factory/splice.py and factory/motion/ (motion splices). factory/send_library.py now reads the Windows credential. The live Buffer queue is not edited.
+- rolled from NOW.md: 2026-11-04 Released F10, F11, and the corrected Frenchie reel and slide 3. Closed job C and indexed the final library.
+- rolled from NOW.md: 2026-11-03 all twelve posts locked on Krish's word ("Lock F01, F02 and F04, keep the dachshund"), after a final independent review and its fixes; Drive carries one live Codex README and every older README and 02b are marked superseded (`f41ac27`, `172be13`).
+- rolled from NOW.md: 2026-11-03 Heartside media reaches Drive through content-engine's library lane (content-engine PR #356) instead of a hand-run step, because the existing home-computer lane wrote only into makeyourmindup's library (`873a749`).
+- rolled from NOW.md: 2026-11-03 roasts take the dachshund's blunt, cheeky humour, and slides are troll-meme dog photos, not plain cards (Krish, 3 Nov).
+- rolled from NOW.md: 2026-11-03 the gate matches reviewer and Krish verdicts to the exact post by spec and fingerprint.
+- rolled from NOW.md: 2026-11-02 Krish ruled that F01's swear is bleeped, the dog's inner voice is one voice per breed group, sound-alikes are original voices and licensed genre tracks, and Higgsfield work runs without asking each time (Rulings, Krish, 2026-11-02).
+- rolled from NOW.md: 2026-11-02 the sound bible now says endings dip and fade rather than cut dead (Krish, 2 Nov).
+- rolled from NOW.md: 2026-11-02 Krish's round-4 notes set two rules for every mix: the voice always sits on top of the music, and sound effects fade in rather than hitting abruptly.
+- rolled from NOW.md: 2026-11-02 Krish ruled that emojis and "WTF" are allowed inside on-screen chat mocks only, never in captions, voiceover or gift lines (Ruling, Krish, 2026-11-02).
+- rolled from NOW.md: 2026-11-02 Krish ruled that F01's wink is done by the real dog before a hard cut to the untouched mug, and that ElevenLabs runs without asking (Rulings, Krish, 2026-11-02).
+- condensed in NOW.md "Where it is right now": the 22 Live bullets became 8; the superseded per-day detail of 3 to 9 Nov (Buffer readbacks, review board, UI standard implementation, library lane) is in `CHANGES.md` and the dated files under `docs/audits/`, `docs/briefs/` and `docs/boost/`.
+
 ## 2026-11-06
 
 - rolled from NOW.md (Where it is right now): the seven channel tasks run inside the radar, daily pack, store and report jobs, mapped by `crew/registry.json` (2026-10-30).
