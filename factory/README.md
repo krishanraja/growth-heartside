@@ -17,7 +17,7 @@ One approved post becomes many by changing only its slots. Nothing else can move
 | `build.py` | Templates: `chat`, `search`, `roast` (carousel plus reel) and `film` (key frames, voice, music). |
 | `lock.py` | The gates, the reviewer brief, the ledger and the trust ramp. |
 
-Assets stay out of git, because the repository is public and the music is licensed. Set `HEARTSIDE_ASSETS` to a folder holding `renders/`, `frames/`, `audio/` and `fonts/`. The ledger goes to `local/factory/ledger.json` (`HEARTSIDE_LEDGER`), and posts go to `local/media/factory` (`HEARTSIDE_OUT`).
+Assets stay out of git, because the repository is public and the music is licensed. Rebuild the library in any session with `python3 factory/fetch_library.py <dir> --shimmer-url <signed Epidemic url>` (sources and checksums in `factory/bank/library-sources.json`); it rebuilt F34 byte for byte on 10 Nov. Set `HEARTSIDE_ASSETS` to a folder holding `renders/`, `frames/`, `audio/` and `fonts/`. The ledger goes to `local/factory/ledger.json` (`HEARTSIDE_LEDGER`), and posts go to `local/media/factory` (`HEARTSIDE_OUT`).
 
 ## How a post goes out
 

@@ -1,0 +1,50 @@
+{
+ "about": "Where every file in the factory asset library comes from, so any session can rebuild HEARTSIDE_ASSETS with factory/fetch_library.py. The library itself stays out of git (the repository is public and some audio is licensed). Renders are checked against factory/bank/renders.json.",
+ "renders": "every file in factory/bank/renders.json, from the live store's product images (heartside.io/products/<handle>.json)",
+ "store_products": [
+  "your-dogs-personality-blanket",
+  "your-dogs-portrait",
+  "your-dogs-illustrated-mug",
+  "christmas-card-from-your-dog"
+ ],
+ "fonts": {
+  "Karla.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/karla/Karla%5Bwght%5D.ttf",
+  "CourierPrime.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/courierprime/CourierPrime-Regular.ttf",
+  "Anton.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/anton/Anton-Regular.ttf",
+  "Fraunces.ttf": "https://raw.githubusercontent.com/google/fonts/main/ofl/fraunces/Fraunces%5BSOFT,WONK,opsz,wght%5D.ttf"
+ },
+ "frames": {
+  "p04-frenchie-window.jpg": {
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/hf_20261110_133720_5077c354-1898-46ab-a5b0-bd66209c0347.png",
+   "higgsfield_job": "5077c354-1898-46ab-a5b0-bd66209c0347",
+   "sha256": "9cd237a5b2059e2f0f7949f23de2fe435117f4314c2791d444ba789960275f84",
+   "breed": "frenchie",
+   "what": "a brindle frenchie squished on a fogged window, lips clamped, eyes on a van"
+  },
+  "p04-driver-waves.jpg": {
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/hf_20261110_134006_8295f4b7-6d61-4538-aefc-62968f6033ba.png",
+   "higgsfield_job": "8295f4b7-6d61-4538-aefc-62968f6033ba",
+   "sha256": "97bfdb604296690ca2c66d3e97cb26ad7416d69fb4c484acc93c3242d831e9ea",
+   "breed": "frenchie",
+   "what": "through the window: a delivery driver waving, a box on the step, a brindle frenchie ear in front"
+  },
+  "p04-frenchie-bark.jpg": {
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3EHoG5PVkilXbvUobkwyA3pk0A2/hf_20261110_134006_f6b6b81f-f1db-4e4a-a153-fb9ea8822c6f.png",
+   "higgsfield_job": "f6b6b81f-f1db-4e4a-a153-fb9ea8822c6f",
+   "sha256": "196a2b07cc059b47d1469b7f2cf620d36286e07edc558eac1327eb124a748dcb",
+   "breed": "frenchie",
+   "what": "the same brindle frenchie mid-bark at the window, mouth wide, a van leaving"
+  }
+ },
+ "audio": {
+  "s_shimmer.mp3": {
+   "epidemic_sound_effect": "bf81899c-45a9-4b6f-a006-11c32d2040fd",
+   "title": "Magic, Shimmer, Shing, Ringing Chime",
+   "sha256": "b47fb73e1d213e53e563ccda8e1c6dcdaa848c6953474c737485b0b25a1524e7",
+   "how": "Epidemic Sound connector: DownloadSoundEffect with this id as MP3, then pass the signed url to --shimmer-url"
+  },
+  "m_silent.mp3": {
+   "how": "generated: 60 s of silence (ffmpeg anullsrc); the music is added in the platform"
+  }
+ }
+}

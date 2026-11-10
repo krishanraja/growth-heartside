@@ -47,6 +47,7 @@ variants go to Krish; after that, one in ten (the trust ramp in `factory/lock.py
 
 ## A new variant, step by step
 
+0. Build the asset library: `python3 factory/fetch_library.py <dir> --shimmer-url <url>`, with the url from the Epidemic connector's `DownloadSoundEffect` for `bf81899c-45a9-4b6f-a006-11c32d2040fd` (MP3), and set `HEARTSIDE_ASSETS=<dir>`. Variants stay blankets, because the lock freezes the product type.
 1. Pick the cast, the gift (a product with a store render for the plotter's breed) and the running gag.
 2. Write one line per role, true to each dog's personality, and pass `lock.copy_problems` on every line.
 3. Add the lines to `factory/bank/lines.json` as proposed, tagged for the breed that says them.
