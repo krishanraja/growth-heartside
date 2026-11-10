@@ -1,0 +1,47 @@
+{
+ "slug": "grwm-christmas-photo",
+ "title": "GRWM: Christmas photo day",
+ "dog": "goldendoodle",
+ "shots": [
+  {
+   "kind": "still",
+   "src": "beats/201.png",
+   "seconds": 2.0,
+   "label": "Before"
+  },
+  {
+   "kind": "clip",
+   "src": "clips/202.mp4",
+   "in": 0.3,
+   "seconds": 2.8,
+   "label": "Step 1 · Skincare"
+  },
+  {
+   "kind": "still",
+   "src": "beats/203.png",
+   "seconds": 2.0,
+   "label": "Step 2 · Hydration"
+  },
+  {
+   "kind": "clip",
+   "src": "clips/204.mp4",
+   "in": 0.0,
+   "seconds": 2.2,
+   "label": "Step 3 · Setting spray"
+  },
+  {
+   "kind": "still",
+   "src": "beats/205.png",
+   "seconds": 2.2,
+   "label": "Step 4 · Hair"
+  },
+  {
+   "kind": "product",
+   "src": "doodle-sentimental-portrait.jpg",
+   "seconds": 3.5,
+   "label": null
+  }
+ ],
+ "end_label": "The final look",
+ "total_seconds": 14.7
+}

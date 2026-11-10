@@ -1,0 +1,47 @@
+{
+ "slug": "ceo-day-in-the-life",
+ "title": "Day in the life of a CEO",
+ "dog": "French bulldog",
+ "shots": [
+  {
+   "kind": "still",
+   "src": "beats/301.png",
+   "seconds": 2.0,
+   "label": "6:00 AM · Up before the market"
+  },
+  {
+   "kind": "still",
+   "src": "beats/302.png",
+   "seconds": 2.0,
+   "label": "9:00 AM · Board meeting"
+  },
+  {
+   "kind": "clip",
+   "src": "clips/303.mp4",
+   "in": 0.3,
+   "seconds": 2.8,
+   "label": "11:00 AM · Delegating"
+  },
+  {
+   "kind": "still",
+   "src": "beats/304.png",
+   "seconds": 2.0,
+   "label": "1:00 PM · Due diligence"
+  },
+  {
+   "kind": "still",
+   "src": "beats/305.png",
+   "in": 0.3,
+   "seconds": 2.0,
+   "label": "3:00 PM · Networking"
+  },
+  {
+   "kind": "clip",
+   "src": "clips/306.mp4",
+   "in": 0.3,
+   "seconds": 3.2,
+   "label": "5:00 PM · Golden parachute"
+  }
+ ],
+ "total_seconds": 14.0
+}
