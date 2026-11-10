@@ -79,3 +79,15 @@ Artifact publish / ArtifactData tools specified by docs/REVIEW-BOARD.md are not 
 Downstream owner: this audience-growth session prepares profile conversion; publishing desk/user applies separately approved changes. Existing acquisition shortlist stays unapproved.
 
 
+
+## Revision 3: first reaction pending
+
+Krish's feedback on R1: "Yeah maybe it's a bit too cute and polite. Maybe we give it more personality. Feels closer for the bio yes."
+
+A dry/unimpressed direction was then proposed and initially accepted, but Krish corrected it before review: "No actually, they have to want to buy you a gift. I don't think we can give them an annoyed look." The generation wait for that direction was terminated; no annoyed avatar was adopted or saved as a candidate.
+
+Krish accepted the corrected brief of eager, slightly mischievous pride. This accepts a direction, not the resulting image. R3 is avatar-r3.png: tilted head, loose asymmetric ears, warm attentive gaze, carried envelope. Bio direction is closer, not final publication approval. No live changes.
+
+Full-size review: real canine eyes, ears and muzzle; plausible envelope grip; no human facial expression. At a circular crop the outer ear tips may be clipped, so a wider safe-area export is required if selected. Tiny-size recognition remains unverified. No 11/10 claim.
+
+Reusable rule: Heartside's commercial avatar is an affectionate gift giver. Humour can supply mischief, eagerness and comic pride; annoyance, disdain and judgment toward the recipient undermine the gift premise.

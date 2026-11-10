@@ -545,6 +545,22 @@
     "still",
     "card"
    ]
+  },
+  {
+   "id": "avatar-affectionate-gift-giver",
+   "date": "2026-11-10",
+   "made": "Avatar R1 and proposed annoyed revision",
+   "words": [
+    "Yeah maybe it's a bit too cute and polite. Maybe we give it more personality. Feels closer for the bio yes.",
+    "No actually, they have to want to buy you a gift. I don't think we can give them an annoyed look."
+   ],
+   "category": "presentation",
+   "rule": "Give the avatar distinctive personality through affectionate mischief and eager gift-giving pride. Never make it annoyed, disdainful or judgmental toward the recipient. Positive bio direction is not final copy approval.",
+   "check": "review: the dog visibly wants to give the viewer a gift; show rendered revision before lock or application",
+   "applies_to": [
+    "still",
+    "card"
+   ]
   }
  ],
  "open_conflicts": [],
