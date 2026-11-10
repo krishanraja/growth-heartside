@@ -4,33 +4,52 @@ Krish, 10 Nov, to the batch 1 session: "let the master session know that everyth
 sessions and that it needs to wrap all of this up really clearly for the growth repository to get scheduling
 aggressively."
 
-**Snapshot:** the 11 live Schedule Sheets in `03b_Social-Schedule`, read 10 Nov 2026 at about 17:10 UTC. The Sheets are
+**Snapshot (superseded by the 20:10 UTC section below):** the 11 live Schedule Sheets in `03b_Social-Schedule`, read 10 Nov 2026 at about 17:10 UTC. The Sheets are
 the source; this page is a view of them. Refresh it whenever a Sheet is added. Sheet IDs are in `docs/DRIVE-MAP.md`.
 Posts are F28 to F45 plus three chat variants, 21 posts and 63 rows, each on TikTok, Instagram and Facebook five
 minutes apart.
 
-## Status, 10 Nov 18:20 UTC: approved, rescheduled, ready for Codex
+## Ready to schedule (10 Nov, 20:10 UTC): the next session's runbook
 
-Krish answered every board item. The hold is lifted, all 21 posts have his Yes, and on the schedule he wrote
-"Everything needs to go out ASAP." So every post moves to one Sheet, `02q`, three a day from Wed 11 Nov, and
-the Sprint Sheets 02e to 02p are superseded. Krish schedules in Codex himself (never Buffer from an engine
-session). The README for Codex and each row's `notes` give the exact song, start, volume and the stop rule.
+Krish, 10 Nov: "ensure the next growth session is ready to schedule all of these, even the ones that it will need to
+manually add music to and ensure syncs, direct in the platform". Everything Codex needs is in Drive `03b_Social-Schedule`:
 
-**One step left before Codex can post:** `approved = yes` in `02q`. A safety check refused letting the engine write
-it from his board Yes, so Krish fills the column: select the `approved` column's 63 cells, type `yes`, and fill down.
+- **Sheet `02r Schedule and captions (Sprint 120, all)`** (`17YDMiuC-RqdZt-22R3yK5U81_RlBd8ZhZSJ9GQ01vPk`): 57 rows, 19
+  posts, 11 to 17 Nov plus F42 on 27 Nov. Read back cell by cell: 928 of 928 match. 02q is renamed superseded.
+- **`00 README for Codex`** v5.1 (`1MntGhyNnKzkDfJY6aUiXd9_jD5DwOaD3Vqeh2LteRLU`): post only 02r rows marked
+  `approved = yes`. It has a per-post song table (TRACK, START, VOLUME, SYNC, LENGTH), the click path in TikTok Studio
+  and Meta Business Suite, a sync check to play through before scheduling, the evening-before song check, and the
+  stop rule (never substitute a sound, never post without it). It also says never to use Buffer for song rows and
+  never to switch on the AI label.
+- **Media:** the real-dog F38 and F41 and the F30-pepper slide went through the library lane on 10 Nov (`local/library/2026-11-10-real`,
+  `2026-11-10-pepper`). Each 02r row's notes carry the sha256.
 
-## The schedule (Eastern time), as in 02q
+**What changed from 02q, on Krish's board answers of 10 Nov:**
+- F38 and F41 use the real-dog remakes.
+- F30 is replaced by `F30-pepper` in the same slots. It was judged 8; Krish's `yes` on the row is the decision.
+- F39 and F45 are held out until their real-dog remakes reach 9. They need Runway credits.
 
-TikTok at the time shown, Instagram 5 minutes later, Facebook 10 minutes later.
+**The one step left is Krish's:** type `yes` in the `approved` column of 02r for the rows to post. The engine is not
+allowed to mark it.
+
+**The next session (Codex), per day:**
+1. The evening before: run the song check in README 3a, and add the "Song check" tab.
+2. For each approved row: song rows go direct in TikTok Studio or Meta Business Suite, with the sync check before
+   scheduling. Photo rows (NO SONG) may go through either.
+3. After each post: write status and live_url, and confirm the sound label on the live post.
+
+## The schedule (Eastern time), as in 02r
+
+TikTok posts at the time shown, Instagram 5 minutes later, Facebook 10 minutes later.
 
 | Date | 08:00 | 12:30 | 18:00 |
 |---|---|---|---|
-| Wed 11 Nov | F28 80s dance (song) | F34 face-blanket roast (blanket) | F38 4 AM routine (song) |
-| Thu 12 Nov | F29 shoulder bounce (song) | F34-golden (blanket) | F39 gym era (song) |
+| Wed 11 Nov | F28 80s dance (song) | F34 face-blanket roast (blanket) | F38 4 AM routine, real dog (song) |
+| Thu 12 Nov | F29 shoulder bounce (song) | F34-golden (blanket) | (F39 held) |
 | Fri 13 Nov | F37 toilet-roll dachshund (photo) | F34-dachshund (blanket) | F43 9 to 5 (song) |
-| Sat 14 Nov | F36 pillowcase collie (photo) | F34-doodle (blanket) | F41 Christmas shopping (mug, song) |
+| Sat 14 Nov | F36 pillowcase collie (photo) | F34-doodle (blanket) | F41 Christmas shopping, real dog (mug, song) |
 | Sun 15 Nov | F44 Sunday reset (10:00, song) | F32 flour ghost (photo) | F35 package frenchie (photo) |
-| Mon 16 Nov | F40 Monday morning (07:30, song) | F30 pumpkin pie (photo) | F45 first day at work (song) |
+| Mon 16 Nov | F40 Monday morning (07:30, song) | F30-pepper (photo) | (F45 held) |
 | Tue 17 Nov | | F31 gingerbread corgi (photo) | F33 snowman lab (photo) |
 | Fri 27 Nov | | F42 Black Friday haul (12:00, song) | |
 
@@ -45,13 +64,11 @@ ffprobe on the filed files.
 | F29 | Dame Hombro, Bulin 47 | platform default | 100 / 0 | 11.2 s |
 | F34 and its 3 variants | Sneaky Snitch, Kevin MacLeod | 0:00 | 25 / 100 (keep the message sounds) | F34 34.7 s |
 | F38 | Experience, Ludovico Einaudi | 0:00, opening piano | 100 / 0 | 21.7 s |
-| F39 | Eye of the Tiger, Survivor | 0:00, opening riff | 100 / 0 | 17.7 s |
 | F40 | Manic Monday, The Bangles | 0:00 | 100 / 0 | 18.6 s |
 | F41 | All I Want for Christmas Is You, Mariah Carey | platform default; past the slow intro if it lands there | 100 / 0 | 21.6 s |
 | F42 | Material Girl, Madonna | platform default | 100 / 0 | 14.2 s |
 | F43 | 9 to 5, Dolly Parton | 0:00 | 100 / 0 | 16.8 s |
 | F44 | Walking on Sunshine, Katrina and the Waves | 0:00 | 100 / 0 | 14.2 s |
-| F45 | Working for the Weekend, Loverboy | platform default | 100 / 0 | 16.0 s |
 
 **The one risk:** business accounts, and Meta Business Suite in a desktop browser, may not offer mainstream songs. The
 README has Codex run a song check the evening before each posting day and stop, never substitute, if a track is
