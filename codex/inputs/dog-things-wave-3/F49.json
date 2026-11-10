@@ -1,0 +1,40 @@
+{
+ "slug": "whats-in-my-carry-on",
+ "title": "What's in my carry-on",
+ "dog": "golden retriever",
+ "shots": [
+  {
+   "kind": "still",
+   "src": "beats/405.png",
+   "seconds": 2.0,
+   "label": "Packing for a trip"
+  },
+  {
+   "kind": "still",
+   "src": "beats/401.png",
+   "seconds": 2.0,
+   "label": "Essentials"
+  },
+  {
+   "kind": "clip",
+   "src": "clips/402.mp4",
+   "in": 0.3,
+   "seconds": 2.8,
+   "label": "Snacks"
+  },
+  {
+   "kind": "still",
+   "src": "beats/403.png",
+   "seconds": 2.0,
+   "label": "Comfort item"
+  },
+  {
+   "kind": "clip",
+   "src": "clips/404.mp4",
+   "in": 0.3,
+   "seconds": 3.4,
+   "label": "Nobody's going"
+  }
+ ],
+ "total_seconds": 12.2
+}

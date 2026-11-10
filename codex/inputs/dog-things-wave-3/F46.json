@@ -1,0 +1,53 @@
+{
+ "slug": "what-i-eat-in-a-day",
+ "title": "What I eat in a day",
+ "dog": "beagle",
+ "shots": [
+  {
+   "kind": "still",
+   "src": "beats/101.png",
+   "seconds": 2.0,
+   "label": "7:00 AM · Breakfast"
+  },
+  {
+   "kind": "clip",
+   "src": "clips/102.mp4",
+   "in": 0.3,
+   "seconds": 2.8,
+   "label": "7:02 AM · Second breakfast"
+  },
+  {
+   "kind": "still",
+   "src": "beats/103.png",
+   "seconds": 2.0,
+   "label": "10:00 AM · Fiber"
+  },
+  {
+   "kind": "still",
+   "src": "beats/104.png",
+   "seconds": 2.0,
+   "label": "1:00 PM · Greens"
+  },
+  {
+   "kind": "clip",
+   "src": "clips/105.mp4",
+   "in": 0.3,
+   "seconds": 2.8,
+   "label": "3:30 PM · Supplements"
+  },
+  {
+   "kind": "still",
+   "src": "beats/106.png",
+   "seconds": 2.0,
+   "label": "6:00 PM · Dinner"
+  },
+  {
+   "kind": "clip",
+   "src": "clips/107.mp4",
+   "in": 0.3,
+   "seconds": 3.4,
+   "label": "Calories: confidential"
+  }
+ ],
+ "total_seconds": 17.0
+}
