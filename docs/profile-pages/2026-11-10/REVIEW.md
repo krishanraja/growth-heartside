@@ -91,3 +91,25 @@ Krish accepted the corrected brief of eager, slightly mischievous pride. This ac
 Full-size review: real canine eyes, ears and muzzle; plausible envelope grip; no human facial expression. At a circular crop the outer ear tips may be clipped, so a wider safe-area export is required if selected. Tiny-size recognition remains unverified. No 11/10 claim.
 
 Reusable rule: Heartside's commercial avatar is an affectionate gift giver. Humour can supply mischief, eagerness and comic pride; annoyance, disdain and judgment toward the recipient undermine the gift premise.
+
+## Logo art comparison and conditional execution authority
+
+Krish requested a distinguishable icon, possibly pixel art, with a wink and envelope, then requested multiple art treatments. Four candidates saved: A pixel, B mascot illustration, C linocut-inspired two-tone, D minimal geometric. All retain the affectionate gift-giver. These are raster concept renders, not production vectors or approved logo masters. Generated images contain some tonal variation despite flat-ink prompts; pixel grid uniformity and exact palette compliance are not certified. Clean final export and circular-size proof follow selection. Do not describe conceptual simplification as completed vectorization or a proven small-size test.
+
+Krish's current instruction authorizes completing the social profile rollout once the logo is agreed, including website conversion improvements and native link/CTA features. This supersedes earlier draft-only local instructions for this specific profile task, conditional on that logo agreement. It does not authorize paid subscriptions, new ad spend, changes to the store itself, credential/access expansion or unrelated posting. Do not repeatedly ask permission for routine profile changes after the condition is met. Record actual access limitations and verify public results after each change.
+
+Website preflight this session:
+- TikTok native desktop Edit profile inspected: photo, username, display name, bio with 80-character counter; no Website field. No edits saved. Public profile only displays typed heartside.io. Mobile/business eligibility needs checking; do not promise the desktop editor can add a clickable link. No switch of account type made.
+- Facebook public Links has a clickable tracked heartside.io destination ending #review; Learn more button visible. Its button destination is not yet verified. Treat the fragment as an investigation item, not an automatic deletion.
+- Instagram link title, actual destination behavior and mobile link controls remain to check in the correct Heartside account; previous session was browsing under a personal identity.
+- Pinterest website is visible; claiming the domain would need a separate site-side verification action, not a profile-only change. Draft handoff if not already claimed.
+
+Conversion-first Instagram bio candidate, replacing the follow-first second line (not applied):
+
+> Your dog loves you too. Terrible at shopping, though.
+> Personalized gifts from your dog's photo.
+> Make your dog's gift ↓
+
+One direct Heartside destination with platform/surface tracking takes priority over extra unrelated profile links. Verify the actual landing and preview flow before choosing a deeper destination. Keep campaign reporting, use a clean visible link title where supported, and measure profile visits to website taps plus store sessions and orders. No maximum-click claim can be established from copy alone.
+
+After selection: export approved art with circle-safe margins and compare 32/48/110px; apply matching social avatars, conversion bios, verified native website fields and Facebook action button; render and replace the obsolete Facebook cover with current genuine products; verify each saved public profile and click-through. Continue to real blockers without returning routine decisions to Krish. All other acquisition/posting work remains separate.
