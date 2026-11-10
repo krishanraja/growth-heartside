@@ -42,9 +42,7 @@ class SprintManifestTest(unittest.TestCase):
         self.assertEqual(first[0]['day'], manifest()['window']['start'])
 
     def test_a_platform_cap_is_enforced(self):
-        m = manifest(); day = m['slots'][0]['day']
-        for s in m['slots']:
-            if s['day'] == day: s['platforms'] = ['tiktok']
+        m = manifest(); m['caps']['per_platform_per_day']['tiktok'] = 5
         self.assertTrue(any('the cap is' in e for e in sprint.errors(m)))
 
     def test_a_double_down_before_the_first_read_is_refused(self):
@@ -63,6 +61,14 @@ class SprintManifestTest(unittest.TestCase):
         errs = sprint.errors(m)
         self.assertTrue(any('no approved blanket render' in e for e in errs))
         self.assertTrue(any('dumb-stopping' in e for e in errs))
+
+    def test_a_lip_sync_needs_its_song(self):
+        m = manifest(); s = next(x for x in m['slots'] if x.get('franchise') == 'The Human-Arms Lip-Sync')
+        s.pop('track')
+        self.assertTrue(any('names its song' in e for e in sprint.errors(m)))
+
+    def test_every_post_goes_to_every_platform(self):
+        self.assertTrue(all(sorted(s['platforms']) == ['facebook', 'instagram', 'tiktok'] for s in manifest()['slots']))
 
     def test_advance_moves_one_gate_at_a_time(self):
         m = manifest(); sid = next(x['id'] for x in m['slots'] if x['stage'] == 'idea')

@@ -98,6 +98,10 @@ def errors(m):
             used_concepts[s.get('concept')] += 1
         else:
             errs.append(f'{sid}: lane must be signature or viral')
+        if s.get('franchise') == 'The Human-Arms Lip-Sync' and not (s.get('track') or {}).get('title'):
+            errs.append(f'{sid}: a lip-sync names its song (track title, artist and cue)')
+        if s.get('track') and not all((s['track'].get(k) or '').strip() for k in ('title', 'artist', 'cue')):
+            errs.append(f'{sid}: a track needs its title, artist and cue')
         if s.get('breed') == 'dachshund' and not s.get('breed_ok'):
             errs.append(f'{sid}: no chestnut or red dachshund in a generated frame (it reads as Buddy); pick another breed')
     for c, n in used_concepts.items():
