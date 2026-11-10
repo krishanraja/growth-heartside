@@ -5,6 +5,7 @@ Codex end to end". States: queued, built, checked, failed (floor id), shown to K
 
 | Card | Made for | Route | State | Floor checks | Drive (03a session folder) |
 |---|---|---|---|---|---|
+| real-dog-remake-F39-F41 | F39 and F41 remade with real-looking dogs | Codex CLI in the cloud session | built 10 Nov; F41 judged 8, shown to Krish as his call (board post-F41-real); F39 judged 7, held (needs new clips: one log throughout, a real ball chase, the rope beat) | real-scruffy-dogs, real-product (mug sha checked), text-clear-of-faces | none until Krish's Yes |
 | real-dog-remake-F38-fix3 | F38 pre-dawn grade, labels off faces, longer stare | same | built 10 Nov, judged 8 (4th pass: 'about equal to the old version'); shown to Krish as his call (board post-F38-real) | real-scruffy-dogs, text-clear-of-faces | none until Krish's Yes |
 | real-dog-remake-F38-fix2 | F38 new stare and moving yawn, label shadow | same | built 10 Nov, judged 8 | every-beat-moves | none |
 | real-dog-remake-F38-fix1 | F38 punch-in on the aligned stare, networking and 5K run trims (judge 8) | same | built 10 Nov, judged 8 again: needs 2 new clips (aligned stare from the 4:00 dog, a moving yawn), blocked on the Runway share | real-scruffy-dogs, text-clear-of-faces | none until Krish's Yes |
