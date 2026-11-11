@@ -81,6 +81,15 @@ The full spec is `docs/control-center/ENGINE-PROTOCOL.md`, with the report and d
 - A post proposal reaches Krish's list. Clear appears in `GET decisions` with your digest. A changed caption asks him again.
 - A stale run (no report for 36 hours) shows as stale, never green.
 
+## Krish's instruction and the engine's state (protocol 1.20.0)
+
+Ruling (Krish, 2026-11-11): every growth engine's priorities, obsessions, next steps and outstanding items feed live across Control Centre, and Krish instructs each engine with his next best action, which starts it. Krish: "They are responsible for driving the overall success of each venture, so make sure I can instruct each one with my next best action and have it get going (as well as always understand the current state of play and what's outstanding)." The full spec is `docs/control-center/ENGINE-PROTOCOL.md`, "Krish's instruction and the engine's state (1.20.0)"; what this engine sends is `docs/ENGINE.md`, "Control Center protocol loop".
+
+- He instructs the engine from Control Center (the Engine drawer's Instruct, through the one door). Control Center carries it in the directive as `krish_instruction` and wakes this repository with the same `cc-growth-directive` dispatch, ids only.
+- This run acks it `received`, by id only, and names it in the first activity line. It reads and reports and acts on no words, so a working session on this repository has to take the instruction up; the ack says so.
+- An instruction never authorises a post, send, spend, delete or permission change. Walled work still goes to Krish as a proposal he approves by its `payload_sha256`.
+- His words are never printed, logged, committed or reported: this repository and its Actions logs are public.
+
 ## Prepaid credits (protocol 1.16.0)
 
 Ruling (Krish, 2026-10-29): a growth engine may spend up to its placement share of a tool's prepaid credits each cycle with no per-batch approval, and reports what it made. Krish: "Ultimately, we should be maxing out everything we can possibly max out that we're already paying for." Credits a vendor wipes at its reset are money already lost. The full spec is `docs/control-center/ENGINE-PROTOCOL.md`, "Prepaid credits: spend your share before it is wiped (1.16.0)".

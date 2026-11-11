@@ -1,4 +1,4 @@
-"""Report this engine's work to Control Center through the growth engine protocol 1.0.0.
+"""Report this engine's work to Control Center through the growth engine protocol (1.0.0 to 1.20.0).
 
 One run: journal the attempt, read today's directive, read what the engine
 already has (product truth and the ledger restored from the latest
@@ -15,7 +15,7 @@ import re
 import sqlite3
 from zoneinfo import ZoneInfo
 
-from . import attribution, credits, ledger, offers
+from . import attribution, credits, engine_state, ledger, offers
 from .control_center import CODE, Client, ProtocolError, report_digest, sha256
 
 ENGINE_ID, PRODUCT_SLUG, SLUG, COMMAND = 'growth-heartside', 'heartside', 'heartside', 'directive'
@@ -236,15 +236,20 @@ def latest_decisions(decisions):
     return latest
 
 
-def build_report(*, root, state, db, now, run_id, mode, directive, recommendations, degraded=(), credits_spent=()):
+def build_report(*, root, state, db, now, run_id, mode, directive, recommendations, degraded=(), credits_spent=(),
+                 instruction_seen=False):
     """The report envelope, exactly engine-report.schema.json, sealed with its digest.
 
     `credits_spent` is what this run itself spent of the prepaid share (engine/credits.py); the
     daily credits session records its own spend through Control Center and never here.
+    `instruction_seen` says an earlier live report already acked the directive's krish_instruction
+    as received (engine/engine_state.py); his words never reach the report.
     """
     spent = credits.spent(credits_spent)
-    activity, holds = [], []
     body = (directive or {}).get('directive') or {}
+    # 1.20.0: his instruction's line goes first, by id only.
+    activity, acks = engine_state.instruction_lines(body, now, instruction_seen)
+    holds = []
     action = body.get('next_action') or {}
     if body:
         activity.append(f'Read directive {fit(str(body.get("directive_id")), 80)}, chosen by {fit(str(directive.get("chosen_by")), 20)}: '
@@ -263,6 +268,7 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
         holds.append({'reason': 'Heartside rules changed since growth.py was last updated',
                       'detail': 'No copy is proposed until a person updates growth.py in an interactive session (AGENTS.md, rule 2).'})
     holds += product_holds(state)
+    constraints = [h['reason'] for h in holds]
     if db is not None:
         latest = db.execute('''SELECT status, count(*) AS n FROM (SELECT status, row_number() OVER (PARTITION BY creative_id
           ORDER BY updated_at DESC, rowid DESC) AS rank FROM creatives) WHERE rank=1 GROUP BY status ORDER BY status''').fetchall()
@@ -301,14 +307,20 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
         activity.append('Nothing was rendered, posted, sent, published or spent by this run.')
 
     status = 'degraded' if degraded or db is None else 'held' if holds else 'ready'
-    # Raised only for the field that needs it: 1.16.0 when this run spent credits.
-    report = {'schema_version': credits.VERSION if spent else '1.0.0', 'engine_id': ENGINE_ID, 'product_slug': PRODUCT_SLUG, 'run_id': run_id, 'mode': mode,
+    # 1.20.0 fields only when the served directive says features.engine_state; an ack never goes in holds.
+    current = engine_state.state(root, body, now, constraints, recommendations) if engine_state.serves_state(body) else {}
+    if engine_state.serves_state(body) and acks:
+        current['instruction_acks'] = acks[:engine_state.ACKS_MAX]
+    # Raised only for the field that needs it: 1.20.0 for the engine's state, 1.16.0 when this run spent credits.
+    version = engine_state.VERSION if current else credits.VERSION if spent else '1.0.0'
+    report = {'schema_version': version, 'engine_id': ENGINE_ID, 'product_slug': PRODUCT_SLUG, 'run_id': run_id, 'mode': mode,
               'observed_at': stamp(now), 'source': {'revision': state['sha'], 'captured_at': stamp(dt.datetime.fromisoformat(state['synced_at'].replace('Z', '+00:00')))},
               'status': status, 'objectives': [net_sales(db, now), organic_orders(db, now)],
               'activity': [{'line': fit(line, 500), 'evidence_url': None} for line in activity][:40],
               'proposals': proposals, 'events': events, 'holds': holds[:40]}
     if spent:
         report['credits_spent'] = spent
+    report.update(current)
     report['payload_sha256'] = report_digest(report)
     return report
 
@@ -322,12 +334,15 @@ def directive_day(env):
 
 
 def run_identity(day, mode, env, now):
-    """Stable per engine per day and kind; a rerun or manual run never reuses the dispatch id."""
-    if env.get('GITHUB_EVENT_NAME') == 'repository_dispatch':
-        kind = 'directive'
-    else:
-        run = env.get('GITHUB_RUN_ID', '')
-        kind = 'manual-' + (run if run.isdigit() else now.strftime('%H%M%S'))
+    """One id per wake: the day, the kind and the GitHub run, so a second wake the same day never collides.
+
+    Control Center can wake the engine again the same day when Krish gives it an instruction
+    (protocol 1.20.0), so the daily dispatch carries its GitHub run id too; a rerun of the same
+    run adds -a<n>. The attempt id is the same string.
+    """
+    run = env.get('GITHUB_RUN_ID', '')
+    run = run if run.isdigit() else now.strftime('%H%M%S')
+    kind = ('directive-' if env.get('GITHUB_EVENT_NAME') == 'repository_dispatch' else 'manual-') + run
     attempt = env.get('GITHUB_RUN_ATTEMPT', '1')
     if attempt.isdigit() and int(attempt) > 1:
         kind += f'-a{int(attempt)}'
@@ -454,6 +469,14 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
         expected = env.get('CC_DIRECTIVE_ID', '').strip()
         if directive and expected and directive['directive'].get('directive_id') != expected:
             raise ProtocolError('directive_mismatch')
+        found = engine_state.instruction(((directive or {}).get('directive') or {}))
+        seen = False
+        if found:
+            summary['instruction'] = found  # its id and a digest of the words, never the words
+            try:  # did an earlier live report already receive it? Unknown counts as no.
+                seen = engine_state.received_before(client.recent_reports(10), found['id'])
+            except ProtocolError:
+                seen = False
         phase = 'capture'
         state, degraded = capture(growth)
         database = Path(root) / 'local/engine.sqlite3'
@@ -463,12 +486,15 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
             degraded.append('No engine checkpoint was available, so the ledger could not be read.')
         phase = 'plan'
         report = build_report(root=root, state=state, db=db, now=now, run_id=local['run_id'], mode=mode,
-                              directive=directive, recommendations=recommendations, degraded=degraded)
+                              directive=directive, recommendations=recommendations, degraded=degraded,
+                              instruction_seen=seen)
         phase = 'report'
         summary['delivery'] = deliver(client, report)
         summary.update(status=report['status'], payload_sha256=report['payload_sha256'],
                        objectives={o['key']: o['availability'] for o in report['objectives']},
-                       proposals=[p['proposal_id'] for p in report['proposals']], holds=len(report['holds']))
+                       proposals=[p['proposal_id'] for p in report['proposals']], holds=len(report['holds']),
+                       schema_version=report['schema_version'],
+                       acks=[a['state'] for a in report.get('instruction_acks', [])])
         phase = 'decisions'
         summary['decisions'] = bind_decisions(client.decisions(stamp(now - dt.timedelta(days=7))), report['proposals'])
         summary['attempt'] = finish(root, client, local, 'succeeded', None, 'finish', clock())
@@ -524,5 +550,7 @@ def main(root, growth, action, mode, code=None, env=None):
                       f'- attempt: {outcome.get("status")} {outcome.get("error_code") or ""}\n'
                       f'- report status: {summary.get("status", "not reported")}\n'
                       f'- objectives: {summary.get("objectives", {})}\n- proposals: {len(summary.get("proposals", []))}\n'
+                      f'- Krish\'s instruction: {(summary.get("instruction") or {}).get("id", "none")} '
+                      f'(words sha256 {(summary.get("instruction") or {}).get("words_sha256", "none")}), acks {summary.get("acks", [])}\n'
                       '\nNothing was posted, sent, published or spent.\n')
     return 0 if outcome.get('status') == 'succeeded' and outcome.get('recorded') else 1

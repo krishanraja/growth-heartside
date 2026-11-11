@@ -14,6 +14,7 @@ import unittest
 import urllib.parse
 
 from engine import assets, control_center, ledger, media, protocol
+from engine.engine_state import carries_contact
 from engine.control_center import Client, ProtocolError, canonical, report_digest
 from tests.ui_fixtures import evidence
 
@@ -22,6 +23,7 @@ SCHEMA = json.loads((ROOT / 'docs/control-center/engine-report.schema.json').rea
 EXAMPLE = json.loads((ROOT / 'docs/control-center/engine-report.example.json').read_text())
 TOKEN = 'gen1_' + 'synthetic-test-bearer-' + 'z' * 30
 NOW = dt.datetime(2026, 10, 19, 8, 0, tzinfo=dt.timezone.utc)
+ENGINE_STATE_KEYS = ('priorities', 'obsessions', 'next_steps', 'instruction_acks')
 CID = 'IG_EMO_REEL_C01_H03_V1_20261019'
 REVISION = 'c' * 64
 CAPTION = 'Your dog loves you too. The note on the example portrait is signed Love, Milo.'
@@ -44,9 +46,12 @@ def validate(schema, value, path='$'):
     checks = {'object': lambda v: isinstance(v, dict), 'array': lambda v: isinstance(v, list),
               'string': lambda v: isinstance(v, str), 'null': lambda v: v is None,
               'number': lambda v: isinstance(v, (int, float)) and not isinstance(v, bool),
-              'integer': lambda v: isinstance(v, int) and not isinstance(v, bool)}
+              'integer': lambda v: isinstance(v, int) and not isinstance(v, bool),
+              'boolean': lambda v: isinstance(v, bool)}
     if kinds and not any(checks[k](value) for k in kinds):
         return [f'{path}: wrong type']
+    if 'oneOf' in schema and sum(not validate(branch, value, path) for branch in schema['oneOf']) != 1:
+        errors.append(f'{path}: matches no single oneOf branch')
     if 'const' in schema and value != schema['const']:
         errors.append(f'{path}: not {schema["const"]}')
     if 'enum' in schema and value not in schema['enum']:
@@ -117,6 +122,12 @@ class StandIn:
                     return self.attempt(body)
                 if method == 'POST' and route == 'reports':
                     return self.report(body)
+                if method == 'GET' and route == 'reports':  # ?recent=<n>: own live reports, newest first
+                    n = int(urllib.parse.parse_qs(url.query).get('recent', ['10'])[0])
+                    live = [r for r in reversed(list(stand.reports.values())) if r.get('mode') == 'live'][:n]
+                    return self.reply(200, {'ok': True, 'reports': [
+                        {'run_id': r['run_id'], 'accepted_at': '2026-10-19T08:00:01Z', 'status': r.get('status'),
+                         'activity': r.get('activity', [])} for r in live]})
                 if method == 'GET' and route.startswith('reports/'):
                     run_id = urllib.parse.unquote(route[len('reports/'):])
                     if run_id not in stand.reports:
@@ -139,8 +150,13 @@ class StandIn:
 
             def report(self, report):
                 # Like Control Center: any 1.x the schema lists, and a field newer than the version sent is refused.
-                if report.get('credits_spent') is not None and report.get('schema_version') != '1.16.0':
+                version = tuple(int(p) for p in str(report.get('schema_version', '0.0.0')).split('.'))
+                if report.get('credits_spent') is not None and version < (1, 16, 0):
                     return self.reply(400, {'error': 'schema_version'})
+                if any(k in report for k in ENGINE_STATE_KEYS) and version < (1, 20, 0):
+                    return self.reply(400, {'error': 'schema_version'})
+                if any(carries_contact(x['line']) for k in ENGINE_STATE_KEYS for x in report.get(k, [])):
+                    return self.reply(400, {'error': 'bad_request'})
                 if validate(SCHEMA, report) or self.headers.get('Idempotency-Key') != report.get('run_id'):
                     return self.reply(400, {'error': 'bad_request'})
                 if report_digest(report) != report['payload_sha256']:
@@ -385,7 +401,7 @@ class LoopTests(unittest.TestCase):
                                  'decided_at': '2026-10-19T07:00:00Z', 'payload_sha256': 'f' * 64}]
         code, out = self.main()
         self.assertEqual(code, 0)
-        run_id = 'heartside:2026-10-19:synthetic-directive'
+        run_id = 'heartside:2026-10-19:synthetic-directive-42'
         self.assertEqual(self.statuses(run_id), [('started', None), ('succeeded', None)])
         started, terminal = self.stand.attempts[run_id]
         self.assertNotIn('finished_at', started)
@@ -411,7 +427,7 @@ class LoopTests(unittest.TestCase):
         self.assertEqual(client.read_report(report['run_id'])['payload_sha256'], report['payload_sha256'])
 
     def test_conflict_is_read_back_never_retried_blindly(self):
-        run_id = 'heartside:2026-10-19:synthetic-directive'
+        run_id = 'heartside:2026-10-19:synthetic-directive-42'
         self.stand.reports[run_id] = {'run_id': run_id, 'mode': 'synthetic', 'payload_sha256': 'e' * 64}
         code, _ = self.main()
         self.assertEqual(code, 1)
@@ -423,7 +439,7 @@ class LoopTests(unittest.TestCase):
         self.stand.inactive = True
         code, _ = self.main(mode='live')
         self.assertEqual(code, 1)
-        self.assertEqual(self.statuses('heartside:2026-10-19:directive'), [('started', None), ('failed', 'engine_inactive')])
+        self.assertEqual(self.statuses('heartside:2026-10-19:directive-42'), [('started', None), ('failed', 'engine_inactive')])
 
     def test_unauthorized_is_a_failed_attempt_with_a_code_and_no_token_in_output(self):
         self.env['CONTROL_CENTER_ENGINE_TOKEN'] = TOKEN[:-4] + 'nope'
@@ -439,7 +455,7 @@ class LoopTests(unittest.TestCase):
         self.assertEqual(self.main('start')[0], 0)
         self.assertEqual(self.main('finish', code='checkpoint_restore_failed')[0], 1)
         self.assertEqual(self.main('finish', code='checkpoint_restore_failed')[0], 0)
-        self.assertEqual(self.statuses('heartside:2026-10-19:synthetic-directive'),
+        self.assertEqual(self.statuses('heartside:2026-10-19:synthetic-directive-42'),
                          [('started', None), ('failed', 'checkpoint_restore_failed')])
 
     def test_failed_sync_uses_the_published_snapshot_and_reports_degraded(self):
@@ -467,12 +483,15 @@ class LoopTests(unittest.TestCase):
                 Client(base, TOKEN)
         self.assertNotIn(TOKEN, repr(Client(self.stand.base, TOKEN)))
 
-    def test_run_ids_are_stable_per_day_and_never_reuse_the_dispatch_id(self):
-        env = {'GITHUB_EVENT_NAME': 'repository_dispatch', 'GITHUB_RUN_ATTEMPT': '1'}
-        self.assertEqual(protocol.run_identity('2026-10-19', 'live', env, NOW), 'heartside:2026-10-19:directive')
-        self.assertEqual(protocol.run_identity('2026-10-19', 'live', {**env, 'GITHUB_RUN_ATTEMPT': '2'}, NOW), 'heartside:2026-10-19:directive-a2')
+    def test_run_ids_are_one_per_wake_and_never_reuse_the_dispatch_id(self):
+        env = {'GITHUB_EVENT_NAME': 'repository_dispatch', 'GITHUB_RUN_ID': '42', 'GITHUB_RUN_ATTEMPT': '1'}
+        self.assertEqual(protocol.run_identity('2026-10-19', 'live', env, NOW), 'heartside:2026-10-19:directive-42')
+        self.assertEqual(protocol.run_identity('2026-10-19', 'live', {**env, 'GITHUB_RUN_ATTEMPT': '2'}, NOW), 'heartside:2026-10-19:directive-42-a2')
+        # A second wake the same day (Krish's instruction, protocol 1.20.0) is a new GitHub run, so a new id.
+        self.assertEqual(protocol.run_identity('2026-10-19', 'live', {**env, 'GITHUB_RUN_ID': '43'}, NOW), 'heartside:2026-10-19:directive-43')
         self.assertEqual(protocol.run_identity('2026-10-19', 'live', {'GITHUB_EVENT_NAME': 'workflow_dispatch', 'GITHUB_RUN_ID': '7'}, NOW),
                          'heartside:2026-10-19:manual-7')
+        self.assertTrue(protocol.ID.match(protocol.run_identity('2026-10-19', 'synthetic', {**env, 'GITHUB_RUN_ATTEMPT': '3'}, NOW)))
 
 
 if __name__ == '__main__':

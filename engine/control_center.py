@@ -125,7 +125,7 @@ def _code(status, body):
 
 
 class Client:
-    """The six engine calls. One bearer, one engine, no retries of a write."""
+    """The seven engine calls. One bearer, one engine, no retries of a write."""
 
     def __init__(self, base, token, slug='heartside', opener=None, timeout=20):
         if not token:
@@ -205,6 +205,14 @@ class Client:
     def read_report(self, run_id):
         status, body = self._call('GET', 'reports/' + urllib.parse.quote(run_id, safe=''))
         return self._expect(status, body, allow_missing=True)
+
+    def recent_reports(self, n=10):
+        """This engine's own latest live reports (1.10.0, features.recent_reports): run_id, status and activity only."""
+        status, body = self._call('GET', 'reports?' + urllib.parse.urlencode({'recent': max(1, min(int(n), 10))}))
+        body = self._expect(status, body)
+        if body.get('ok') is not True or not isinstance(body.get('reports'), list):
+            raise ProtocolError('invalid_reports', status)
+        return body['reports']
 
     def decisions(self, since):
         status, body = self._call('GET', 'decisions?' + urllib.parse.urlencode({'since': since}))
