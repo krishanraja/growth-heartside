@@ -1,7 +1,7 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-11-10
+as_of: 2026-11-11
 head: 10e1c3e
 lifecycle: live
 production_url: none
@@ -31,7 +31,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-11-10)
+## Where it is right now (as of 2026-11-11)
 
 <!-- north-star-state {"week_of": "2026-10-26", "week_target": 200, "current": 0, "current_as_of": "2026-10-29", "current_source": "Shopify Admin API orders through growth.py attribution (read-only app), organic posts, trailing 28 days", "urgency": 4, "urgency_reason": "at 0% of this week's target"} --> **North Star number: U4, far behind.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: $0 (measured 29 Oct; the store's only order in the window was fully refunded), against $200 this week, on the way to $25,000 by 28 December 2026. A bold swing every day; work that does not move the number waits.
 
@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- every scheduled reel now keeps its on-screen words inside y 250 to 1250: F40, F42, F43 and F44 are re-cut (v2) by the session that built them, README v5.6 lifts their TikTok hold, and Sheet 04 and Doc 04a are rebuilt with the safe-band links for F34 and its variants, F38 and F40 to F44. (2026-11-11)
 - Instagram, Facebook and TikTok bios strengthened and saved; Pinterest retained after live review. Instagram's final CTA is visible without expanding the 108-character desktop bio. Exact active copy is in docs/profile-pages/2026-11-10/bios-v2.json. (2026-11-10)
 - every on-screen word must sit inside y 250 to 1250 (floor fixed-label-position, after Krish's TikTok check); F38 and F41 are re-cut with labels in a fixed top band, F34 and its three variants are rebuilt with the chat ending at 1250, all filed as v3 or v2 through the library lane, and README v5.5 tells Codex to use them and holds the TikTok rows of F40, F42, F43 and F44. (2026-11-10)
 - Krish is reposting F38 with the fixed-label v2 cut; the empty stray Posts/F38-real and Posts/F41-real folders are in the Drive bin. (2026-11-10)
@@ -101,12 +102,12 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-10): Check the TikTok mobile Edit profile screen for a Website field and Instagram mobile link-title controls, then resume the eight-comment shortlist and three collaboration proposals. Measure website taps and qualified sessions before claiming improved conversion.
+- Next (2026-11-11): Krish judges the few F40 to F44 shots where the fixed label touches a forehead or ear tips; any he names gets a recrop.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Steps 2 and 3 of `docs/GET-GOING.md` may need a credential only Krish can add for a daily Shopify import; the step says to report a hold naming the secret.
-- North Star check (2026-11-10): holds.
+- North Star check (2026-11-11): holds.
 
 ## Read next
 
