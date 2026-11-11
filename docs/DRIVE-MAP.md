@@ -27,7 +27,8 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │   ├── 00 README for Codex (v5.2, superseded 2026-11-10, use the current README)  1zlk9mTZIOT34XizHC6xAHKcxXrv1HoRZUIjgnfw86S0   kept
 │   ├── 00 README for Codex (v5.1, superseded 2026-11-10, use the current README)  1MntGhyNnKzkDfJY6aUiXd9_jD5DwOaD3Vqeh2LteRLU   kept; it sent Instagram and Facebook songs to Meta Business Suite, which cannot add them
 │   ├── 04 Phone posts (Instagram and Facebook songs) (Sheet)  17x8KNYBvRDB9yf8Ozpp0seh1C7NPiix08t8EvIn18ZA   Krish's list: one line per Instagram or Facebook song row in 02r (24), with reel and cover links, caption, TRACK, START, VOLUME, SYNC, LENGTH and app steps; written by the engine, ticked by Krish
-│   ├── 04a Phone posts, Instagram (video link and caption) (Doc)  1TSUUVGybUVM5lm5p3IQKkHeaMK30Zjse0TScL2WeB_E   Krish's phone copy of the 12 Instagram song reels from 04: per post a header (time, song, start), the Drive video link, then the caption
+│   ├── 04a Phone posts, Instagram (video link and caption) (Doc)  1pT_HIgRjTxJCnlWusaAxVTy9Y7bUKUpZpbFkQpGjMLU   Krish's phone copy of the 12 Instagram song reels from 04: per post a header (time, song, start), the Drive video link, then the caption
+│   ├── SUPERSEDED 04a Phone posts (plain-text links) (Doc)  1TSUUVGybUVM5lm5p3IQKkHeaMK30Zjse0TScL2WeB_E   kept
 │   ├── SUPERSEDED 04 Phone posts (before F38 repost) (Sheet)  1b5Ks5IxU7pV0ocn4MCjOY-DN96YZPMDdPjwja6PUAfA   kept
 │   ├── SUPERSEDED 04a Phone posts (before F38 repost) (Doc)  1UgoCMsPQAFodK0brnzbQfTb_6hyJF2Fquf7kzhlM5wc   kept
 │   ├── SUPERSEDED 04 Phone posts (old F28) (Sheet)  1OAgefr0Knh191Z6aDrmYBIKl2Uj3vsJExCUr6BpC9iw   kept
