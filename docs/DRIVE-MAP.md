@@ -18,7 +18,8 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │   ├── Failed - 2026-11-09_Codex-Creative-Session_Not-for-Publishing/  1gwVjIYoDAJSEshJ4dBFJ5Sq_XL-rG1GW   7 to 9 Nov organic stills; marked failed by Krish
 │   └── Failed - 2026-11-09_Comedy-and-Rain-Session_Archive/           1aqAORdmOUEakMW0o-pJf8SDkPzShJEIG   6 to 9 Nov rain scene; retired, marked failed by Krish
 ├── 03b_Social-Schedule/                                     1AHZLgwj1nHemNJeP56fQU6iTpgIEALzZ   READY. What Codex posts from. Was 05_Social-Library.
-│   ├── 00 README for Codex                (Doc)             1QsjlF7AcY3WxpqKmTnHNmkr0YQ5TseUL_S95AEVCrIs   The one live instructions (11 Nov, v5.8: v5.7 plus F28 released as the beagle howl v2 in its 11 Nov slots)
+│   ├── 00 README for Codex                (Doc)             1rIiyzjbnl4AGytiPJfFarV0mzzm3dkyzcIF6zJXKitc   The one live instructions (11 Nov, v5.9: commercial-song TikToks are Krish's, from his phone)
+│   ├── 00 README for Codex (v5.8, superseded 2026-11-11, use the current README)  1QsjlF7AcY3WxpqKmTnHNmkr0YQ5TseUL_S95AEVCrIs   kept
 │   ├── 00 README for Codex (v5.7, superseded 2026-11-11, use the current README)  1yclYWTQSGEMbU3Ml38HdkQpFG6SeNN1GX18WJHx9YRY   kept
 │   ├── 00 README for Codex (v5.6, superseded 2026-11-11, use the current README)  1CRQU4WiyIY6ngCq3Z4oWHggaanDR66y2smL9IR5IVjc   kept
 │   ├── 00 README for Codex (v5.5, superseded 2026-11-10, use the current README)  1nInH7X3n2YYoHE8vE1JJayAickXvKGmmxjTHwomw1O8   kept
@@ -26,8 +27,10 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │   ├── 00 README for Codex (v5.3, superseded 2026-11-10, use the current README)  1dUuSFnL5-fk8Fc3ydmuX9cNfMUdgkauyIQ8ln1-iyEY   kept
 │   ├── 00 README for Codex (v5.2, superseded 2026-11-10, use the current README)  1zlk9mTZIOT34XizHC6xAHKcxXrv1HoRZUIjgnfw86S0   kept
 │   ├── 00 README for Codex (v5.1, superseded 2026-11-10, use the current README)  1MntGhyNnKzkDfJY6aUiXd9_jD5DwOaD3Vqeh2LteRLU   kept; it sent Instagram and Facebook songs to Meta Business Suite, which cannot add them
-│   ├── 04 Phone posts (Instagram and Facebook songs) (Sheet)  17x8KNYBvRDB9yf8Ozpp0seh1C7NPiix08t8EvIn18ZA   Krish's list: one line per Instagram or Facebook song row in 02r (24), with reel and cover links, caption, TRACK, START, VOLUME, SYNC, LENGTH and app steps; written by the engine, ticked by Krish
-│   ├── 04a Phone posts, Instagram (video link and caption) (Doc)  1pT_HIgRjTxJCnlWusaAxVTy9Y7bUKUpZpbFkQpGjMLU   Krish's phone copy of the 12 Instagram song reels from 04: per post a header (time, song, start), the Drive video link, then the caption
+│   ├── 04 Phone posts (Instagram and Facebook songs) (Sheet)  1WeInEQDo3FBJXCvek9jPdQDzs_FYu0wc_wJUxXr_BHk   Krish's list: one line per Instagram or Facebook song row in 02r (24), with reel and cover links, caption, TRACK, START, VOLUME, SYNC, LENGTH and app steps; written by the engine, ticked by Krish
+│   ├── 04a Phone posts, Instagram (video link and caption) (Doc)  1PbD3mxi_yQl1ximXe19m5j-TF8QuzRX1dtJh4vJc7tY   Krish's phone copy of the 12 Instagram song reels from 04: per post a header (time, song, start), the Drive video link, then the caption
+│   ├── SUPERSEDED 04 Phone posts (before phone TikToks) (Sheet)  17x8KNYBvRDB9yf8Ozpp0seh1C7NPiix08t8EvIn18ZA   kept
+│   ├── SUPERSEDED 04a Phone posts (before phone TikToks) (Doc)  1pT_HIgRjTxJCnlWusaAxVTy9Y7bUKUpZpbFkQpGjMLU   kept
 │   ├── SUPERSEDED 04a Phone posts (plain-text links) (Doc)  1TSUUVGybUVM5lm5p3IQKkHeaMK30Zjse0TScL2WeB_E   kept
 │   ├── SUPERSEDED 04 Phone posts (before F38 repost) (Sheet)  1b5Ks5IxU7pV0ocn4MCjOY-DN96YZPMDdPjwja6PUAfA   kept
 │   ├── SUPERSEDED 04a Phone posts (before F38 repost) (Doc)  1UgoCMsPQAFodK0brnzbQfTb_6hyJF2Fquf7kzhlM5wc   kept
