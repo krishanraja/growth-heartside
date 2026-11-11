@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- Krish's phone posts have a one-tap Copy caption page (claude.ai/artifact/3aFjdFNWvHEeMJCKVDERSu) and Doc 04a now has real hyperlinks; the page's source is factory/schedule/phone-posts.html. (2026-11-11)
 - 02t is approved by Krish (M2:M46 yes), so Codex posts the 15 photo reels with music from 13 Nov; F38 v4 is queued at the bottom of Sheet 04 and Doc 04a as Krish's own repost on Wed 18 Nov (TikTok 18:00, Instagram 18:05, Facebook 18:10 ET, new tracked link FB_ENT_REEL_C150_H01_V4_20261118). (2026-11-11)
 - Sheet 04 and Doc 04a now carry F28 as the beagle howl v2, with the new caption and the falsetto sync at 2.7 s, for Krish's 08:05 and 08:10 ET posts today. (2026-11-11)
 - F28 is the beagle howl v2 (howl slowed to hold 2.7 to 7.4 s, on Krish's "the howl might need to be a bit longer"), released by README v5.8 into its 02r slots on Wed 11 Nov: TikTok 08:00 by Codex, Instagram 08:05 and Facebook 08:10 from Krish's phone. (2026-11-11)
@@ -78,6 +79,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-11 Krish found copying captions from the Doc into Instagram fiddly.
 - 2026-11-10 The first 127-character Instagram candidate hid its CTA behind more despite fitting the editor limit. The shorter version passed public readback; the profile-audit acceptance now checks native truncation as well as character count. No website, post, spend or account-type change.
 - 2026-11-10 TikTok's username, caption and stickers start about y 1340, so the y 1450 label spot only worked on Instagram; the chat floor in factory/ui_layout.py moved from 1480 to 1250.
 - 2026-11-10 the library lane filed the v2 cuts into new F38-real and F41-real folders because the manifest named the post F38-real; the manifest post must match the existing Posts folder.
@@ -105,7 +107,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-11): Krish reposts F38 on 18 Nov from his phone list; Codex leaves every F38 row alone.
+- Next (2026-11-11): republish the page whenever Sheet 04 changes.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
