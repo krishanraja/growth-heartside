@@ -524,10 +524,11 @@
    "words": [
     "just realized that some of the captions (eg\"stakeholder alignment\") in f38 go beneath what is visible in instagram, can you make sure all captions go where the \"4:00 AM - rise\" caption is and redo this? note this feedback for all captions, dont have them moving about all the time and out of visible boundaries",
     "Still not really suitable for TikTok. (10 Nov, with a TikTok screenshot: the 5:31 AM label under the username, caption and a text sticker)",
-    "EnSure all captions fit these new rules."
+    "EnSure all captions fit these new rules.",
+    "I think, do one final one with F for F38, with the captions more or less in the middle or just under."
    ],
    "category": "presentation",
-   "rule": "Every on-screen label, caption or chat in a reel sits inside the band y 250 to 1250 of a 1080x1920 frame, clear of TikTok's and Instagram's top bar and their username, caption and sticker area. Labels sit in one fixed place for the whole reel: centered, the top of the text at y 300 (the top band), one font and size. Never move a label shot by shot; recrop instead. Chats end at y 1250 (factory/ui_layout.py CHAT_FLOOR).",
+   "rule": "Every on-screen label, caption or chat in a reel sits inside the band y 250 to 1250 of a 1080x1920 frame, clear of TikTok's and Instagram's top bar and their username, caption and sticker area. Labels sit in one fixed place for the whole reel, centered, one font and size: the top band (text top y 300) by default, or just under the middle (text top about y 1050), which Krish chose for F38 on 11 Nov. Recrop any shot where that spot would cross a dog's eyes or mouth. Never move a label shot by shot; recrop instead. Chats end at y 1250 (factory/ui_layout.py CHAT_FLOOR).",
    "check": "code: every label anchor is the same, with its text between y 250 and 1250; chat blocks end at CHAT_FLOOR 1250. review: a contact sheet with lines at 250 and 1250 shows every frame's text inside them",
    "applies_to": [
     "reel",
