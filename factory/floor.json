@@ -565,6 +565,20 @@
     "still",
     "card"
    ]
+  },
+  {
+   "id": "howl-matches-the-song",
+   "date": "2026-11-11",
+   "made": "F28 beagle howl v1: a 2 s howl under Smalltown Boy's longer falsetto",
+   "words": [
+    "the howl might need to be a bit longer as the sound in the song lasts a bit longer than this"
+   ],
+   "category": "sound",
+   "rule": "When the joke is a dog performing to a specific song, the performance lasts as long as the sung phrase it answers. Time the action against the song before filing, not after.",
+   "check": "review: play the reel with the named song at its start point; the action covers the whole phrase",
+   "applies_to": [
+    "reel"
+   ]
   }
  ],
  "open_conflicts": [],

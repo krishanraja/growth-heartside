@@ -18,7 +18,8 @@ My Drive / Ventures / Active Ventures / Heartside/          1QInHx-RNx9fXYdc0KSv
 │   ├── Failed - 2026-11-09_Codex-Creative-Session_Not-for-Publishing/  1gwVjIYoDAJSEshJ4dBFJ5Sq_XL-rG1GW   7 to 9 Nov organic stills; marked failed by Krish
 │   └── Failed - 2026-11-09_Comedy-and-Rain-Session_Archive/           1aqAORdmOUEakMW0o-pJf8SDkPzShJEIG   6 to 9 Nov rain scene; retired, marked failed by Krish
 ├── 03b_Social-Schedule/                                     1AHZLgwj1nHemNJeP56fQU6iTpgIEALzZ   READY. What Codex posts from. Was 05_Social-Library.
-│   ├── 00 README for Codex                (Doc)             1yclYWTQSGEMbU3Ml38HdkQpFG6SeNN1GX18WJHx9YRY   The one live instructions (11 Nov, v5.7: v5.6 with F38 v4, Krish's final cut with labels just under the middle)
+│   ├── 00 README for Codex                (Doc)             1QsjlF7AcY3WxpqKmTnHNmkr0YQ5TseUL_S95AEVCrIs   The one live instructions (11 Nov, v5.8: v5.7 plus F28 released as the beagle howl v2 in its 11 Nov slots)
+│   ├── 00 README for Codex (v5.7, superseded 2026-11-11, use the current README)  1yclYWTQSGEMbU3Ml38HdkQpFG6SeNN1GX18WJHx9YRY   kept
 │   ├── 00 README for Codex (v5.6, superseded 2026-11-11, use the current README)  1CRQU4WiyIY6ngCq3Z4oWHggaanDR66y2smL9IR5IVjc   kept
 │   ├── 00 README for Codex (v5.5, superseded 2026-11-10, use the current README)  1nInH7X3n2YYoHE8vE1JJayAickXvKGmmxjTHwomw1O8   kept
 │   ├── 00 README for Codex (v5.4, superseded 2026-11-10, use the current README)  1oEvzXZg288gS1DQLKOPln8grw8UYYTi5bnf9RXFVLyE   kept
