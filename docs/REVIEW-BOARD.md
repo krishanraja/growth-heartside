@@ -29,6 +29,7 @@ Never add work below the bar to fill the board. Never add the same thing twice: 
 | Field | What it holds |
 |---|---|
 | `kind` | `post`, `decision`, `spend`, `delete` or `copy` |
+| `group` | Optional, and only one of `unlock`, `posts`, `spend`, `brief`, `house`. Any other value hides the card: the page renders only these five groups (11 Nov, `post-F28-howl` was invisible with `group: "post"`). Leave it out to group by `kind` |
 | `title` | Post id and name, or the decision in a few words |
 | `question` | One plain question he can answer Yes or No |
 | `detail` | What he needs to decide: the caption, the score history, the evidence |
