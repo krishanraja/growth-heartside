@@ -21,3 +21,11 @@ The active account was confirmed through the native View profile link to @yourdo
 The popup was dismissed. The underlying Build trust on TikTok page has an unchecked consent box and disabled Get started button. Continuing agrees to https://www.tiktok.com/legal/terms-of-service and acknowledges https://www.tiktok.com/legal/privacy-policy . No terms accepted and no verification form, document upload or application submission completed. The tab is kept for continuation.
 
 Exact next approval: accept the displayed TikTok terms/privacy acknowledgement for this Mindmaker LLC verification preparation and open the form. Browser-action rules require explicit confirmation at terms acceptance. After that, inspect the United States document choices before requesting or submitting any nonpublic material. User has not yet granted this action-time terms confirmation.
+
+## Consent accepted; user completed submission
+
+Krish explicitly authorized the displayed terms/privacy consent and opening the form. That consent was accepted, and the US form opened. Its accepted document category is IRS-issued evidence showing the EIN, including CP 575, 147C, tax notices or filings. No private identifier or document contents are retained here.
+
+During preparation Krish said "added it already". Native readback then showed MINDMAKER LLC with status Under Review and the company website www.heartside.io. Submission was completed by the user, not claimed as an assistant action. No duplicate upload, edit or submission was made.
+
+The public @yourdoghasnotes profile was checked afterwards: the typed domain remains in the bio, but no clickable heartside.io anchor was present. Verification approval and public website-link activation remain unconfirmed. Keep the application unchanged while under review. On TikTok's decision, check the native status and website-field availability, add the tracked destination when available, and verify the public tap-through. Advanced tools access is distinct from completed verification.
