@@ -132,3 +132,12 @@ missing voice file) and is restored in a later session; the two stray files in `
 | Higgsfield | 8.85 in Heartside's share until 24 Nov; about 320 on the account (Krish) | stills only after the reset or a top-up (board: `spend-higgsfield-share`) |
 | Runway | 980 | Gen-4 Turbo about 25 a clip |
 | Paid boost | $3,000 first tranche, waiting on `spend-paid-tranche-1` | only on posts beating 3x the sprint median |
+
+## Krish's phone posting page (11 Nov)
+
+Krish, 11 Nov: "I find it quite fiddly to use the document and then move into the Instagram app and copy everything one
+by one." Two fixes:
+- **Phone Posts page** (https://claude.ai/artifact/3aFjdFNWvHEeMJCKVDERSu): one card per phone post from Sheet 04, with a
+  Copy caption button, Open video and Open cover links, the song and start point, and a Posted tick kept on his phone.
+  Whenever Sheet 04 changes, rebuild the page from the same rows and republish it to the same URL.
+- **Doc 04a** is built from HTML so every Drive link is a real hyperlink, and it links the page at the top.
