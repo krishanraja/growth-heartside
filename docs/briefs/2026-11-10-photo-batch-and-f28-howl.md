@@ -100,3 +100,11 @@ real dog snapping up; the walk-out passes close to the lens. No text on screen, 
 Filed as `heartside_F28_beagle-howl_reel.mp4` and `_cover.jpg` (the howl) in `Posts/F28` (sha256 57207bf7...,
 fc36c7f2...). F28 stays held in README v5.7 until Krish says yes on the board item `post-F28-howl`.
 Sync for the phone: Smalltown Boy, start it so the "run away" falsetto lands at 2.7 s.
+
+### F28 howl v2 (11 Nov)
+
+Krish said yes on `post-F28-howl`, then: "the howl might need to be a bit longer as the sound in the song lasts a bit
+longer than this". No credits were left for a new clip, so the howl (clip 1.15 to 3.35 s) is slowed to 45% with
+motion-compensated frame blending: it now holds 2.7 to 7.4 s in a 12.1 s reel; the rise and the walk-out stay at
+normal speed. Filed as `heartside_F28_beagle-howl_v2_reel.mp4` (sha256 c3c2dc75...) and `_v2_cover.jpg` (e4b30aca...).
+README v5.8 releases F28 into its 02r slots (Wed 11 Nov 08:00 TikTok by Codex, 08:05 and 08:10 on Krish's phone).
