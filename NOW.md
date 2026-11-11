@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- 02t is approved by Krish (M2:M46 yes), so Codex posts the 15 photo reels with music from 13 Nov; F38 v4 is queued at the bottom of Sheet 04 and Doc 04a as Krish's own repost on Wed 18 Nov (TikTok 18:00, Instagram 18:05, Facebook 18:10 ET, new tracked link FB_ENT_REEL_C150_H01_V4_20261118). (2026-11-11)
 - Sheet 04 and Doc 04a now carry F28 as the beagle howl v2, with the new caption and the falsetto sync at 2.7 s, for Krish's 08:05 and 08:10 ET posts today. (2026-11-11)
 - F28 is the beagle howl v2 (howl slowed to hold 2.7 to 7.4 s, on Krish's "the howl might need to be a bit longer"), released by README v5.8 into its 02r slots on Wed 11 Nov: TikTok 08:00 by Codex, Instagram 08:05 and Facebook 08:10 from Krish's phone. (2026-11-11)
 - the board card post-F28-howl was hidden by an invalid group value; it now shows under Posts with the reel playing inline, and docs/REVIEW-BOARD.md lists the five group values the page renders. (2026-11-11)
@@ -104,7 +105,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-11): Krish posts F28 on Instagram and Facebook from his phone; Codex posts its TikTok row at 08:00 ET.
+- Next (2026-11-11): Krish reposts F38 on 18 Nov from his phone list; Codex leaves every F38 row alone.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
