@@ -2,7 +2,7 @@
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
 as_of: 2026-11-11
-head: 10e1c3e
+head: db6093d
 lifecycle: live
 production_url: none
 state_doc: docs/HANDOFF.md
@@ -63,9 +63,6 @@ Live:
 - The engine restores the social desks' history and Krish's rejections from the repository alone: `growth.py social status` (the two first-follower engagement tests, approved 7 Nov, publication not yet verified; Instagram and Pinterest followers watched, 0 at 8 Nov 17:37 UTC, unknown since) and `growth.py floor` (20 rejections in his words, each with rule and check). `growth.py drive audit` reports 0 errors and 65 warnings on 9 Nov. Codex runs only by card, checked by Claude (`codex/INDEX.md`). (2026-11-09)
 - Drive: creatives iterate in `03a_Social-Production`, release media and schedules live in `03b_Social-Schedule` (was `05_Social-Library`, same ID); map in `docs/DRIVE-MAP.md`. Codex posts only rows Krish marks `approved = yes`. (2026-11-09)
 - Gaps found on 9 Nov, for Krish: no schedule row has `approved = yes` yet all 38 rows were posted on chat approvals; F17 to F24 are live with no schedule row; the publishing desk left four duplicates and three TikTok pairs in Buffer ERROR. Decided the same day ("Go with your recommendations"): only `approved = yes` lets Codex post; `ui-v1`/`ui-v2` editions are retired. PR #42 is merged.
-- Organic comedy batch of 7 to 8 Nov: OG-01/02/04 approved on 7 Nov and produced as F25 to F27 (eight files, hashes read back from Drive). OG-03 Cheese and OG-05 stick were revised and, with the anatomy correction of 8 Nov, remain unapproved and unpublished; the revised five-post batch awaits his decision (`docs/briefs/2026-11-07-five-organic-ready.md`, `docs/briefs/2026-11-08-organic-anatomy-correction.md`).
-- Krish approved the corrected creative board on 6 Nov ("ok, all looks good"); 33 organic placements were restored and verified, 11 per platform, 6 to 8 Nov. The social UI standard now gates new releases (`docs/CREATIVE-UI.md`); native-device evidence is unverified. The USD 25 F10 paid pilot was published 7 Nov 12:45 GMT; delivery was Processing with USD 0 spent at the last readback (`docs/boost/2026-11-05-sandbox.md`).
-- All twelve organic posts (F01 to F07, F10 to F12) are locked by Krish and pass `lock.py gate`; motion versions are filed to Drive. 18 Runway clips are checked: 15 pass, 3 held (`docs/history/2026-11-04-runway-motion-verdicts.md`). Boosts are of live organic posts only; the $250 launch packet waits on his yes (`docs/PAID-BOOSTS.md`).
 - The lock system (joke bank, render catalog, fingerprinted locks, copy, breed, media and drift gates, independent reviewer, 5-then-1-in-10 trust ramp) builds every post from a spec; five channel guides in `docs/CHANNEL-TASKS.md` keep shareable and shop-visit posts in one schedule.
 - Eight scheduled jobs in `automations.json` run on GitHub Actions (`.github/workflows/engine.yml`); Control Center protocol 1.16.0; paid external generation stays off with a zero default budget (`docs/CREDITS-SESSION.md`, `docs/PROVIDERS.md`).
 

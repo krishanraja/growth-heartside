@@ -4,6 +4,13 @@ Newest first. Entries are written by the docs steward (see the steward link in
 NOW.md) and by humans doing the same job by hand. Nothing in this file
 describes current behaviour; NOW.md and the state doc do.
 
+## 2026-11-11
+
+- rolled from NOW.md (Where it is right now): Organic comedy batch of 7 to 8 Nov: OG-01/02/04 approved on 7 Nov and produced as F25 to F27 (eight files, hashes read back from Drive). OG-03 Cheese and OG-05 stick were revised and, with the anatomy correction of 8 Nov, remain unapproved and unpublished; the revised five-post batch awaits his decision (`docs/briefs/2026-11-07-five-organic-ready.md`, `docs/briefs/2026-11-08-organic-anatomy-correction.md`).
+- rolled from NOW.md (Where it is right now): Krish approved the corrected creative board on 6 Nov ("ok, all looks good"); 33 organic placements were restored and verified, 11 per platform, 6 to 8 Nov. The social UI standard now gates new releases (`docs/CREATIVE-UI.md`); native-device evidence is unverified. The USD 25 F10 paid pilot was published 7 Nov 12:45 GMT; delivery was Processing with USD 0 spent at the last readback (`docs/boost/2026-11-05-sandbox.md`).
+- rolled from NOW.md (Where it is right now): All twelve organic posts (F01 to F07, F10 to F12) are locked by Krish and pass `lock.py gate`; motion versions are filed to Drive. 18 Runway clips are checked: 15 pass, 3 held (`docs/history/2026-11-04-runway-motion-verdicts.md`). Boosts are of live organic posts only; the $250 launch packet waits on his yes (`docs/PAID-BOOSTS.md`).
+- reconciled: "Where it is right now" cut to 8 non-fresh bullets. The closeout fold could not run: four notes older than a day (2026-11-04 fixed to the fold format; 07, 08, 09 still have headings, free-form lines and no North Star check line, and 09 has an em dash) stay for a person, as do the five of 2026-11-10 whose check line is not in the fold format.
+
 ## 2026-11-10
 
 - reconciled: fixed the audit findings `too_long`, `recent_too_many` and `where_too_many`; the four closeout notes (2026-11-04, 07, 08, 09) are malformed (headings and free-form lines) and stay for a person.
