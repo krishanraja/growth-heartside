@@ -141,3 +141,11 @@ by one." Two fixes:
   Copy caption button, Open video and Open cover links, the song and start point, and a Posted tick kept on his phone.
   Whenever Sheet 04 changes, rebuild the page from the same rows and republish it to the same URL.
 - **Doc 04a** is built from HTML so every Drive link is a real hyperlink, and it links the page at the top.
+
+## Commercial-song TikToks move to Krish's phone (11 Nov)
+
+Krish, 11 Nov: "I think I need to do the tiktok videos that have specific audio myself in the phone app too". README
+v5.9: the TikTok rows with a commercial song (F28, F40, F42, F43, F41, F44, and the F38 repost) are on his phone list;
+Codex keeps F29's already-scheduled TikTok, the royalty-free F34-variant TikToks, all of 02t and Pinterest. Sheet 04,
+Doc 04a and the Phone Posts page were rebuilt from live 02r, whose F40 and F42 slots had moved forward (F40 to 12 Nov
+06:30 ET, F42 to 13 Nov 06:30 ET). The page shows London time with New York time beside it.
