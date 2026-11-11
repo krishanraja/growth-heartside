@@ -81,3 +81,22 @@ P2 is made. Round 3 takes the judge's change for each of the rest:
 Three rounds have stalled at 8: each pass fixes one note, and the next judge finds another. So the scripts at 8 and the
 P2 photo go to Krish's board as his call (`script-P1` to `script-P11`, `script-F28-howl`, `post-P2-cat-restructure`).
 P9, P10 and P12 are dropped at 7. Spend so far: 0.5 Higgsfield (P2).
+
+## F28 howl, made (11 Nov)
+
+Krish's board answers: `script-F28-howl` yes (10 Nov), `spend-f28-howl-overage` yes (11 Nov). Heartside's
+Higgsfield share had 11.85 left by then, so the spend stayed inside it: one GPT Image 2.6 still (a real, slightly
+scruffy tricolor beagle flat on a worn rug, phone-photo light) and one Kling 3.0 5 s clip from it. Settled 7.75
+credits (still 2c60de7c, clip e7e02788).
+
+The reel, 9.5 s, 1080x1920, silent (the song is added on the phone):
+- 0.0 to 1.5 s: the bored beagle, held with a 2% push-in;
+- 1.5 to 6.5 s: the clip: one beat of lying there, it snaps up, nose to the ceiling, eyes shut, one long howl
+  (about 2.7 to 4.8 s), then trots out of frame right;
+- 6.5 to 9.5 s: the empty rug, 6% push-in, while the song plays on.
+
+Frame check: anatomy holds throughout; the rise from lying to howling is fast, with one blurred frame that reads as a
+real dog snapping up; the walk-out passes close to the lens. No text on screen, so the safe band is not in play.
+Filed as `heartside_F28_beagle-howl_reel.mp4` and `_cover.jpg` (the howl) in `Posts/F28` (sha256 57207bf7...,
+fc36c7f2...). F28 stays held in README v5.7 until Krish says yes on the board item `post-F28-howl`.
+Sync for the phone: Smalltown Boy, start it so the "run away" falsetto lands at 2.7 s.
