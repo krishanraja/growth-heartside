@@ -45,7 +45,7 @@ Krish, 2026-11-10: "make sure all captions go where the "4:00 AM - rise" caption
 about all the time and out of visible boundaries", then, seeing it on TikTok: "Still not really suitable for
 TikTok", and "EnSure all captions fit these new rules". Every on-screen word in a reel (labels, captions, chats)
 sits inside y 250 to 1250 of a 1080x1920 frame: TikTok's username, caption and stickers start about y 1340.
-Labels are centered at one fixed position for the whole reel, the top of the text at y 300, one font and size.
+Labels are centered at one fixed position for the whole reel, one font and size: the top band (text top y 300) by default, or just under the middle (text top about y 1050), Krish's choice for F38 on 11 Nov ("do one final one ... with the captions more or less in the middle or just under").
 Never move a label shot by shot to clear a face; recrop or pick another frame. Floor rule `fixed-label-position`.
 
 ## Claude runs Codex end to end
