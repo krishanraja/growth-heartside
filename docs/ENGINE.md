@@ -312,10 +312,18 @@ publishes or spends.
 | `events` | `creative_published` with the permalink, for each publication recorded in the last 14 days |
 | `holds` | The product constraint from heartside PR 13, read from current product truth: purchase claims while the catalog differs from the canon, then conversion editions until the V3 homepage is public. Also approved creatives that could not be verified |
 | `status` | `degraded` when product sync failed or no checkpoint was available, otherwise `held` when anything is held, otherwise `ready` |
+| `priorities` (1.20.0) | Only when the directive says `features.engine_state`. First this repository's North Star (`docs/NORTH_STAR.md`: the metric, the target and its deadline, this week's rung, and Control Center's own reading and urgency when the directive carries `north_star.own`), then each product constraint the report holds, then each standing recommendation in `recommendations.json`, at most 5 |
+| `obsessions` (1.20.0) | Only Krish's own quoted aims, from `OBSESSIONS` in `engine/engine_state.py`: the North Star sentence (18 Oct) and his two lines of 14 Oct in `AGENTS.md`. Each is sent only while its quote is still in its file, so none is invented or left stale |
+| `next_steps` (1.20.0) | The first unticked step of `docs/GET-GOING.md` (waits on the engine), then each bullet of NOW.md's "What is next and what is waiting on Krish": one that names Krish or asks for a ruling waits on him, a dated `Next (YYYY-MM-DD)` keeps its date, at most 5 |
+| `instruction_acks` (1.20.0) | When the directive carries `krish_instruction` and no earlier live report of this engine received it (`GET reports?recent=10`): one `received` ack, and the first activity line names the instruction by id. This run reads and reports only and acts on no words, so it never sends `started` or `done`; an instruction that reaches a held engine is also acked `blocked` ("Engine held"). The words never leave `engine_state.instruction`: the Actions output shows the id and a SHA-256 digest only |
 
-The run id is `heartside:<London date>:directive` for the daily dispatch,
-`manual-<run id>` for a manual run, with `-a<n>` on a rerun and `synthetic-`
-in front in synthetic mode, so a rerun never collides with the day's report.
+Every 1.20.0 line is one plain line of at most 200 characters (an ack's 280), cut at a whole sentence where it can be, and a line with an address or a phone number is left out (Control Center's own check), so one line never refuses the report. The report is sent at `schema_version` `1.20.0` only when it carries one of these fields; before Control Center serves `features.engine_state`, nothing new is sent. Ruling (Krish, 2026-11-11): every growth engine's priorities, obsessions, next steps and outstanding items feed live across Control Centre, and Krish instructs each engine with his next best action, which starts it.
+
+The run id is `heartside:<London date>:directive-<GitHub run id>` for a
+dispatch (the daily push, or a second wake the same day when Krish gives an
+instruction), `manual-<GitHub run id>` for a manual run, with `-a<n>` on a
+rerun and `synthetic-` in front in synthetic mode, so no wake or rerun ever
+collides with another report. The attempt id is the same string.
 A 409 is read back, never retried. A decision binds to its `payload_sha256`:
 a declined payload is not proposed again, a changed payload goes back to Krish,
 and an approved post still waits for him to post it by hand and record the

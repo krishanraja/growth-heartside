@@ -3,6 +3,10 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-11: Krish asked, in an interactive session: "Ensure the priorities, obsessions, and next steps for all the growth engines are feeding live to this dashboard, and not just in the growth tab. They are responsible for driving the overall success of each venture, so make sure I can instruct each one with my next best action and have it get going (as well as always understand the current state of play and what's outstanding)." then "Get building".
+  - The Control Center loop speaks protocol 1.20.0 where Control Center serves it: it acks his instruction (`krish_instruction`) by id only and reports `priorities`, `obsessions` and `next_steps` from this repository's own files (`engine/engine_state.py`, `docs/ENGINE.md`). Every wake's run id carries its GitHub run id, so a second wake the same day is its own report. No job, schedule or `automations.json` entry changed.
+  - Ruling (Krish, 2026-11-11): every growth engine's priorities, obsessions, next steps and outstanding items feed live across Control Centre, and Krish instructs each engine with his next best action, which starts it.
+
 - 2026-11-10: Krish's answers on the review board (all 31 items; verdicts read 18:15 UTC).
   - Publishing hold lifted (`hold-lift`, Yes). Ruling (Krish, 2026-11-10): the publishing hold of 10 Nov is lifted.
   - Schedule pulled forward, with his note "Everything needs to go out ASAP." All 21 filed posts are rescheduled three a day (08:00, 12:30, 18:00 ET) from Wed 11 Nov, live by Tue 17 Nov; only F42 (Black Friday haul) keeps 27 Nov. The rows move to one new Sheet, `02q`, and the older Sprint Sheets are marked superseded.
