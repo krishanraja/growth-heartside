@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`), 
 
 Live:
 
+- the F28 replacement (a bored beagle who only performs the falsetto howl, then leaves) is made for 7.75 Higgsfield credits inside the share, filed to Posts/F28, and on the board as post-F28-howl; 02t has Krish's board yes but its approved column is still empty. (2026-11-11)
 - F38 v4 is Krish's final cut, with every label fixed just under the middle (text top y 1050) and the deep-work and aligned shots recropped so no label crosses a face; it is filed in Posts/F38, README v5.7 points Codex at it, and Sheet 04 and Doc 04a link it. (2026-11-11)
 - every scheduled reel now keeps its on-screen words inside y 250 to 1250: F40, F42, F43 and F44 are re-cut (v2) by the session that built them, README v5.6 lifts their TikTok hold, and Sheet 04 and Doc 04a are rebuilt with the safe-band links for F34 and its variants, F38 and F40 to F44. (2026-11-11)
 - Instagram, Facebook and TikTok bios strengthened and saved; Pinterest retained after live review. Instagram's final CTA is visible without expanding the 108-character desktop bio. Exact active copy is in docs/profile-pages/2026-11-10/bios-v2.json. (2026-11-10)
@@ -100,7 +101,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-11): Krish posts or reposts F38 from the v4 file.
+- Next (2026-11-11): Krish types yes in 02t's approved column (M2:M46) and answers post-F28-howl.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
