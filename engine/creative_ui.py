@@ -188,20 +188,42 @@ def layout_errors(layout):
         for a in range(len(texty)):
             for b in range(a + 1, len(texty)):
                 x, y = texty[a], texty[b]
-                if (float(x.get('start', 0)) < float(y.get('end', duration)) and float(y.get('start', 0)) < float(x.get('end', duration))
-                        and _overlap(x['box'], y['box'])):
+                xs, xe = float(x.get('start', 0)), float(x.get('end', duration))
+                ys, ye = float(y.get('start', 0)), float(y.get('end', duration))
+                same_time = (xs < ye and ys < xe) or (xs == xe == ys == ye)   # a still slide is one instant
+                if same_time and _overlap(x['box'], y['box']):
                     problems.append(f"{x['role']} and {y['role']} overlap on screen at the same time")
         if duration:
             opening = [e for e in elements if float(e.get('start', 0)) <= 0.05 and e.get('role') not in ('background', 'logo')]
             if not opening:
                 problems.append('frame 1 shows only a background or a logo: open on the story (no logo-only cold open)')
+            if layout.get('ending') not in ('product', 'none'):
+                problems.append("declare how the post ends ('product', or 'none' for a share post)")
             if layout.get('ending') == 'product':
-                last = [e for e in elements if e.get('role') == 'product' and abs(float(e.get('end', duration)) - duration) < 0.1]
-                held = max((duration - float(e.get('start', 0)) for e in last), default=0)
-                if not last:
+                # The product's whole trailing run (a voiced product shot then the end card count together),
+                # less the time speech still runs over it: what is left is the silent end beat.
+                runs = sorted((float(e.get('start', 0)), float(e.get('end', duration))) for e in elements if e.get('role') == 'product')
+                start = duration
+                for a, b in reversed(runs):
+                    if b >= start - 0.1 and a < start:
+                        start = a
+                # The end beat starts at the last change on screen inside that run: speech or words that
+                # end, or words, a mark or a picture that appear. A product reel whose scenes change their
+                # words is not a dead outro; only its final unchanging stretch is the end beat.
+                changes = [start]
+                for e in elements:
+                    if e.get('role') in ('product', 'background'):
+                        continue
+                    a, b = float(e.get('start', 0)), float(e.get('end', duration))
+                    if a > start:
+                        changes.append(a)
+                    if start < b < duration - 0.05:
+                        changes.append(b)
+                held = duration - max(changes)
+                if start >= duration - 0.05:
                     problems.append('the post does not end on the real product')
                 elif not END_HOLD[0] - 0.05 <= held <= END_HOLD[1] + 0.05:
-                    problems.append(f'product end beat {held:.1f} s (want {END_HOLD[0]:.0f} to {END_HOLD[1]:.0f} s: held, never a dead outro)')
+                    problems.append(f'product end beat {held:.1f} s after the last spoken line (want {END_HOLD[0]:.0f} to {END_HOLD[1]:.0f} s: held, never a dead outro)')
     except (ValueError, TypeError, KeyError, AttributeError) as exc:
         problems.append('layout manifest unreadable: ' + str(exc))
     return problems, notes
@@ -270,12 +292,14 @@ def export_errors(info, peak=None):
     elif avg and abs(avg - fps) > 0.5:
         problems.append(f'variable frame rate ({avg:.2f} average against {fps:.2f})')
     for key in ('color_primaries', 'color_transfer', 'color_space'):
-        if video.get(key) not in (None, 'unknown', 'bt709', 'bt470bg', 'smpte170m'):
+        if video.get(key) in (None, 'unknown'):
+            notes.append(f'{key} untagged (players assume BT.709 for HD; the preset tags it)')
+        elif video.get(key) != 'bt709':
             problems.append(f"{key} {video.get(key)} (want BT.709 SDR)")
     duration = float(info.get('format', {}).get('duration') or video.get('duration') or 0)
     rate = float(video.get('bit_rate') or 0) / 1e6
     if rate:
-        if rate > EXPORT['video_mbps'][1] * 1.1:
+        if rate > EXPORT['video_mbps'][1]:
             problems.append(f'video {rate:.1f} Mbps (working default 8 to 12)')
         elif rate < EXPORT['video_mbps'][0] * 0.75:
             notes.append(f'video {rate:.1f} Mbps, under the 8 to 12 working default: fine for still or flat frames; check motion for blocking')
@@ -361,7 +385,7 @@ def errors(root, release, review, today=None):
         exports = release.get('exports')
         if not isinstance(exports, list) or not exports:
             raise ValueError('export, separate cover and transcript must be declared')
-        roles, media_dims = set(), None
+        roles, media_dims, layouts = set(), None, []
         for entry in exports:
             path = local_file(root, entry)
             roles.add(entry['role'])
@@ -379,8 +403,16 @@ def errors(root, release, review, today=None):
                     elif media_dims in FEED and not contained(region, (FEED_INSET, FEED_INSET, dims[0] - FEED_INSET, dims[1] - FEED_INSET)):
                         problems.append(f'critical region {region} breaks the {FEED_INSET} px feed margin')
             if entry['role'] == 'layout':
-                found, _ = layout_errors(json.loads(path.read_text(encoding='utf-8')))
+                lay = json.loads(path.read_text(encoding='utf-8'))
+                found, _ = layout_errors(lay)
                 problems += ['layout: ' + p for p in found]
+                layouts.append(lay)
+        media_sha = {e.get('sha256') for e in exports if e.get('role') == 'media'}
+        for lay in layouts:
+            if media_dims and tuple(lay.get('canvas') or ()) != media_dims:
+                problems.append('the layout manifest is for another canvas than the media export')
+            if lay.get('media_sha256') and lay['media_sha256'] not in media_sha:
+                problems.append('the layout manifest belongs to another file than the media export')
         if not {'media', 'cover', 'transcript', 'layout'} <= roles:
             problems.append("include media, separate cover, corrected transcript (or explicit no-speech transcript) and the renderer's layout manifest")
         devices = release.get('devices')

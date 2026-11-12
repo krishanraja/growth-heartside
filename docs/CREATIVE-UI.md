@@ -19,11 +19,22 @@ The implementation lives in `engine/creative_ui.py`. Its coordinates and export 
 (the corpus marks them HOUSE RULE), not official limits, permanent safe zones, or accessibility certification.
 "The frame is not the canvas the user can read" (corpus, last line).
 
-Every renderer writes a **layout manifest**: each hook, subtitle, label, chat bubble, title, logo and
-product box with its time span, bound to the file's SHA-256. `layout_errors` checks it against the regions
-below and `export_errors` checks the encoded file. `factory/lock.py media` and `gate`, the release check,
-`factory/audit.py` and `codex/check_picture.py` all hold a post that breaks either. A build without a
-manifest (a legacy renderer) cannot pass.
+Every factory and campaign renderer writes a **layout manifest**: each hook, subtitle, label, chat bubble,
+title, logo and product box with its time span, bound to the file's SHA-256. `layout_errors` checks it
+against the regions below; `export_errors` checks the encoded file. What holds what:
+
+- `factory/lock.py media` and `gate`: the manifest (bound to the exact file) and the export preset, for
+  factory reels; `still_media` the same for every slide. A build without a manifest cannot pass. A reviewer
+  pass counts only if it was given under the current profile.
+- The release check (`python -m engine.creative_ui check`): the manifest, its canvas and file binding, and a
+  critical region inside the corpus box. It does not probe the media; the two gates above and
+  `engine/media.py` (which refuses a reel outside the preset) do.
+- `factory/audit.py`: the export preset on any file, including Codex and Drive files.
+- `codex/check_picture.py`: Codex reels have no manifest, so it checks what their timeline records
+  (one fixed `label_box` inside the box, at most 12 words a label, a 3 to 4 s product ending) and the
+  export preset. Captions, chat and product placement in a Codex reel stay with the reviewer.
+- Faces: code cannot see where a face is. Only a 9:16 still records its photo box as critical; everywhere
+  else a person checks faces against the box on the frames.
 
 The reference's Android TikTok examples show search UI over the chat header,
 messages and subtitles under metadata, and poor contrast for white native

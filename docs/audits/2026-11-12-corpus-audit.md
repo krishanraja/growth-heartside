@@ -12,13 +12,14 @@ Every renderer records what it draws (a layout manifest bound to the file's SHA-
 
 | Rule (corpus section) | Where it holds |
 |---|---|
-| Hook, subtitles, labels, chat, faces, product and mark inside x 120 to 820, y 330 to 1180 (3.5) | `layout_errors`, called by `lock.py media`, `lock.py gate`, the release check and `codex/check_picture.py` |
+| Hook, subtitles, labels, chat, product and mark inside x 120 to 820, y 330 to 1180 (3.5) | `layout_errors`, called by `lock.py media`, `lock.py gate` and the release check; for Codex reels `check_picture.py` checks only the recorded `label_box` |
+| Faces inside the box (3.5) | a person, on the frames: code records where a 9:16 still's photo sits, never where a face is |
 | Subtitles 1 or 2 lines, at most 7 words a timed segment, 44 to 64 px (6.1) | the film renderer splits each voice line; `layout_errors` holds a breach |
 | Opening hook at most 12 words (target 3 to 7); frame 1 is never a logo or an empty slate (4.1) | `layout_errors`; search posts open mid-typing |
-| Product end beat 3 to 4 s and moving, never a dead outro (5), keeping Krish's 3 s floor `endings-land` | renderers clamp the hold; `layout_errors` and `check_picture.py` hold it |
+| Product end beat 3 to 4 s after the last spoken line, moving, never a dead outro (5), keeping Krish's 3 s floor `endings-land` | renderers clamp the hold; `layout_errors` measures the product's trailing run from the last change on screen (speech ending, new words, a mark appearing); `check_picture.py` the last shot |
 | Labels in one fixed place (Krish's floor `fixed-label-position`) | `layout_errors`, `check_picture.py` (`label_box`) |
 | Feed slides keep a 70 px design margin (8) | `layout_errors` on every still slide |
-| H.264 yuv420p BT.709, constant frame rate, at most 12 Mbps, AAC 48 kHz stereo, true peak at or under -1 dBTP (10) | `export_errors` in `lock.py media`, `factory/audit.py`, `check_picture.py` |
+| H.264 yuv420p BT.709, constant frame rate, at most 12 Mbps, AAC 48 kHz stereo, true peak at or under -1 dBTP (10) | `export_errors` in `lock.py media`, `engine/media.py` (refuses its own reel), `factory/audit.py`, `check_picture.py` |
 | Cover keeps face and headline inside the central 3:4 crop (7) | inside the critical box by construction; the reviewer brief checks the actual grid |
 | Native preview with UI, captions and description before release (11) | unchanged: the placement review in `docs/CREATIVE-UI.md` |
 
@@ -42,7 +43,7 @@ end chime and music stubbed with silence, so these are proof renders, never rele
 | F11 (search) | **Fails: content** | All seven searches are too long for one readable line inside the box: 645 to 1224 px needed, 560 available at the 40 px floor. The renderer refuses it. Needs shorter lines from Krish or retiring the format. |
 | F10 (chat) | **Fails: Krish's floors** | Layout and export pass, but now that it runs the current profile it breaks `no-novelty-sfx` (a scratch effect on a message) and opens on three bubbles over an empty screen (`chat-builds-like-whatsapp`). Fixing the sound is a content change, so it needs Krish's yes. |
 | F01 (film) | **Fails: drift (pre-existing)** | Its spec no longer matches its lock on the original code too (`9abd142...` against `cdb2099...`, spec edited 4 Nov). A finding for Krish, as before. |
-| F02, F03, F04, F05, F07, F12 (films), F06 roasts | **Not rendered here** | Their frames and voice reads are not in the public library. Locks still match. Under the corpus profile each voice line becomes 7 to 13 timed segments a film (the longest lines run 14 to 16 words), F04's captions at y 200 and y 1300 move to y 330 and y 1020, and every end beat is 4.0 s. Build them where the frames live, then `lock.py gate`. |
+| F02, F03, F04, F05, F07, F12 (films), F06 roasts | **Not rendered here** | Their frames and voice reads are not in the public library. Their locks still match. Under the corpus profile each voice line becomes 7 to 13 timed segments a film (the longest lines run 14 to 16 words), F04's captions at y 200 and y 1300 move to y 330 and y 1020, and every end card holds 4.0 s. F04 and F05 also show the same render under their last voiced line (3.8 s and 5.8 s); the gate measures from the last change on screen, so they pass when the voice ends where the end card starts. Their reviewer passes predate the profile and do not count: each rebuild needs a fresh one. Build them where the frames live, then `lock.py gate`. |
 
 ### Media already filed in Drive 03b (50 post folders, F01 to F59)
 

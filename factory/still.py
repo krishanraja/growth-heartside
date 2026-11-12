@@ -130,6 +130,14 @@ def _layout(aspect):
     return {'profile': REVISION, 'canvas': list(SIZES[aspect]), 'duration': 0, 'elements': []}
 
 
+def _bind(work, n, layout):
+    """Write slide-NN.layout.json bound to the SHA-256 of the slide it describes."""
+    import hashlib
+    with open(f'{work}/slide-{n:02d}.png', 'rb') as fh:
+        layout['media_sha256'] = hashlib.file_digest(fh, 'sha256').hexdigest()
+    json.dump(layout, open(f'{work}/slide-{n:02d}.layout.json', 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+
+
 def build(spec, work, resolve, frames_dir, renders_dir, font):
     """Write slide-01.png ... into `work`, each with its slide-NN.layout.json; returns (folder, slide count)."""
     os.makedirs(work, exist_ok=True)
@@ -146,11 +154,10 @@ def build(spec, work, resolve, frames_dir, renders_dir, font):
         layout = _layout(spec['aspect'])
         im = slide(Image.open(f"{frames_dir}/{sl['frame']}"), text, font, spec['aspect'],
                    sl.get('focus_y', 0.5), sl.get('style', 'band'), layout, first=n == 1)
-        im.save(f'{work}/slide-{n:02d}.png', optimize=True)
-        json.dump(layout, open(f'{work}/slide-{n:02d}.layout.json', 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+        im.save(f'{work}/slide-{n:02d}.png', optimize=True); _bind(work, n, layout)
     for r in spec.get('end', {}).get('renders', [])[:1]:
         n += 1
         layout = _layout(spec['aspect'])
         product_slide(Image.open(f'{renders_dir}/{r}'), spec['aspect'], layout=layout).save(f'{work}/slide-{n:02d}.png', optimize=True)
-        json.dump(layout, open(f'{work}/slide-{n:02d}.layout.json', 'w', encoding='utf-8'), indent=1, ensure_ascii=False)
+        _bind(work, n, layout)
     return work, n

@@ -170,7 +170,8 @@ class CorpusProfileTests(unittest.TestCase):
         self.assertTrue(held((2, {'px': 38})))
         self.assertTrue(held((1, {'text': ' '.join(['word'] * 13)})))
         self.assertTrue(held((1, {'box': [130, 960, 820, 1100], 'start': 2, 'end': 3})))   # two texts collide
-        self.assertTrue(held((3, {'start': 4.0})))                                       # a 6 s dead outro
+        dead = layout(); dead['elements'][0]['end'] = 3.0; dead['elements'][2]['end'] = 3.0; dead['elements'][3]['start'] = 3.0
+        self.assertTrue(ui.layout_errors(dead)[0])                                       # a 7 s silent product outro
         self.assertTrue(held((3, {'start': 8.0})))                                       # under the 3 s floor
         self.assertTrue(held(profile='social-ui-2026-11-06-v1'))
         logo_only = layout(elements=[{'role': 'logo', 'box': [140, 360, 400, 420], 'start': 0, 'end': 1},
@@ -186,7 +187,8 @@ class CorpusProfileTests(unittest.TestCase):
 
     def test_export_preset_holds_wrong_codecs_rates_and_peaks(self):
         good = {'streams': [{'codec_type': 'video', 'codec_name': 'h264', 'pix_fmt': 'yuv420p', 'field_order': 'progressive',
-                             'r_frame_rate': '30/1', 'avg_frame_rate': '30/1', 'color_space': 'bt709', 'bit_rate': '9000000'},
+                             'r_frame_rate': '30/1', 'avg_frame_rate': '30/1', 'color_space': 'bt709', 'color_primaries': 'bt709',
+                             'color_transfer': 'bt709', 'bit_rate': '9000000'},
                             {'codec_type': 'audio', 'codec_name': 'aac', 'sample_rate': '48000', 'channels': 2}],
                 'format': {'duration': '12.0'}}
         self.assertEqual(ui.export_errors(good, -1.5), ([], []))
@@ -254,3 +256,66 @@ class CodexPictureCheckTests(unittest.TestCase):
             self.assertIn('labels move', run(moving)[1])
             dead = copy.deepcopy(good); dead['shots'][1]['seconds'] = 0.5; dead['shots'][2]['seconds'] = 5.0
             self.assertIn('held 3 to 4 seconds', run(dead)[1])
+
+
+class ReviewFindingTests(unittest.TestCase):
+    """Regressions for the independent review of 12 Nov: each was a false pass or a wrong hold."""
+
+    def test_end_beat_counts_the_whole_trailing_product_run_less_speech(self):
+        from tests.ui_fixtures import layout
+        base = layout(duration=13.0)
+        base['elements'][3].update(start=6.5, end=9.0)                       # a voiced product shot...
+        base['elements'][2].update(end=9.0, text='I saw you')                 # ...speech runs over it
+        base['elements'].append({'role': 'product', 'box': [150, 400, 790, 1100], 'start': 9.0, 'end': 13.0})
+        self.assertEqual(ui.layout_errors(base)[0], [])                       # 4 s of silent product
+        silent = copy.deepcopy(base); silent['elements'][2]['end'] = 6.5      # no speech over the first shot
+        self.assertTrue(any('product end beat 6.5 s' in p for p in ui.layout_errors(silent)[0]))
+        cards = {'profile': ui.REVISION, 'canvas': [1080, 1920], 'duration': 10.0, 'ending': 'product', 'elements': [
+            {'role': 'product', 'box': [160, 620, 790, 920], 'start': a, 'end': b} for a, b in ((0, 3), (3, 7), (7, 10))] + [
+            {'role': 'hook' if a == 0 else 'title', 'box': [140, 440, 810, 600], 'start': a, 'end': b, 'text': 'Line'} for a, b in ((0, 3), (3, 7), (7, 10))]}
+        self.assertEqual(ui.layout_errors(cards)[0], [])                     # three product cards whose words change: a 3 s end
+        undeclared = layout(); undeclared.pop('ending')
+        self.assertTrue(any('declare how the post ends' in p for p in ui.layout_errors(undeclared)[0]))
+
+    def test_still_slide_words_collide_even_though_a_slide_is_one_instant(self):
+        still = {'profile': ui.REVISION, 'canvas': [1080, 1350], 'duration': 0, 'elements': [
+            {'role': 'hook', 'box': [90, 90, 990, 220], 'start': 0, 'end': 0, 'text': 'A line'},
+            {'role': 'text', 'box': [90, 150, 990, 260], 'start': 0, 'end': 0, 'text': 'Another'}]}
+        self.assertTrue(any('overlap' in p for p in ui.layout_errors(still)[0]))
+
+    def test_export_preset_is_exactly_twelve_mbps_and_bt709(self):
+        good = {'streams': [{'codec_type': 'video', 'codec_name': 'h264', 'pix_fmt': 'yuv420p', 'r_frame_rate': '30/1',
+                             'avg_frame_rate': '30/1', 'color_space': 'bt709', 'color_primaries': 'bt709', 'color_transfer': 'bt709',
+                             'bit_rate': '11900000'}, {'codec_type': 'audio', 'codec_name': 'aac', 'sample_rate': '48000', 'channels': 2}],
+                'format': {'duration': '12'}}
+        self.assertEqual(ui.export_errors(good, -2)[0], [])
+        fast = copy.deepcopy(good); fast['streams'][0]['bit_rate'] = '12500000'
+        self.assertTrue(ui.export_errors(fast, -2)[0])
+        sd = copy.deepcopy(good); sd['streams'][0]['color_space'] = 'smpte170m'
+        self.assertTrue(ui.export_errors(sd, -2)[0])
+        bare = copy.deepcopy(good); bare['streams'][0].pop('color_space')
+        problems, notes = ui.export_errors(bare, -2)
+        self.assertEqual(problems, []); self.assertTrue(any('untagged' in n for n in notes))
+
+    def test_release_layout_must_belong_to_the_media_export(self):
+        from tests.ui_fixtures import layout
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            release, review = evidence(root)
+            entry = next(e for e in release['exports'] if e['role'] == 'layout')
+            path = root / entry['path']
+            for wrong in (layout(canvas=[1080, 1350]), layout(media_sha256='0' * 64)):
+                path.write_text(json.dumps(wrong)); entry['sha256'] = ui.file_sha(path)
+                self.assertTrue(any('another' in e for e in ui.errors(root, release, {**review, 'binding': ui.digest(release)}, today=TODAY)))
+
+    def test_a_reviewer_pass_from_before_the_profile_does_not_count(self):
+        import lock
+        spec = {'id': 'F99', 'ui_profile': ui.REVISION}
+        old = {'records': [{'lock': 'F99', 'spec': 'F99', 'verdict': 'reviewer-pass', 'fingerprint': lock.fingerprint(spec)}]}
+        new = {'records': [{**old['records'][0], 'ui_profile': ui.REVISION}]}
+        with patch.object(lock, 'check', side_effect=lambda s: ([], [])), patch.object(lock, 'media', return_value=[]), \
+             patch.object(lock, 'ramp', return_value=('ok', 'test')), patch('engine.creative_ui.check_files', return_value=[]):
+            with patch.object(lock, 'ledger', return_value=old):
+                self.assertTrue(any('current profile' in e for e in lock.gate(spec, 'x.mp4', 'r', 'v')[0]))
+            with patch.object(lock, 'ledger', return_value=new):
+                self.assertEqual(lock.gate(spec, 'x.mp4', 'r', 'v')[0], [])

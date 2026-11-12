@@ -157,13 +157,18 @@ class StillTemplateTest(unittest.TestCase):
             self.assertTrue(any('expected' in p for p in lock.still_media(self.spec, out)))
             Image.new('RGB', (1080, 1350)).save(f'{out}/slide-02.png')
             self.assertTrue(any('no layout manifest' in p for p in lock.still_media(self.spec, out)))
+            import hashlib
+            def bind(n, data):
+                data = {**data, 'media_sha256': hashlib.sha256(open(f'{out}/slide-0{n}.png', 'rb').read()).hexdigest()}
+                json.dump(data, open(f'{out}/slide-0{n}.layout.json', 'w'))
+            json.dump(layout, open(f'{out}/slide-01.layout.json', 'w'))   # unbound: belongs to no particular slide
+            self.assertTrue(any('another build' in p for p in lock.still_media(self.spec, out)))
             for n in (1, 2):
-                json.dump(layout, open(f'{out}/slide-0{n}.layout.json', 'w'))
+                bind(n, layout)
             self.assertEqual(lock.still_media(self.spec, out), [])
-            layout['elements'][0]['box'] = [30, 30, 1050, 220]   # the line runs into the feed margin
-            json.dump(layout, open(f'{out}/slide-02.layout.json', 'w'))
+            bind(2, {**layout, 'elements': [{**layout['elements'][0], 'box': [30, 30, 1050, 220]}, layout['elements'][1]]})
             self.assertTrue(any('feed margin' in p for p in lock.still_media(self.spec, out)))
-            layout['elements'][0]['box'] = [90, 90, 990, 220]; json.dump(layout, open(f'{out}/slide-02.layout.json', 'w'))
+            bind(2, layout)
             Image.new('RGB', (1080, 1920)).save(f'{out}/slide-02.png')
             self.assertTrue(any('not 4:5' in p for p in lock.still_media(self.spec, out)))
 

@@ -85,9 +85,11 @@ def wrap_text(draw, text, font, width):
 
 
 def block(draw, text, box, font_path, size, minimum, color):
-    """Draw wrapped copy inside `box`; returns the box the words actually occupy."""
+    """Draw wrapped copy inside `box`; returns the box the words actually occupy (None for no words)."""
     from PIL import ImageFont
     left, top, right, bottom = box
+    if not (text or '').strip():
+        return None
     for current in range(size, minimum - 1, -2):
         font = ImageFont.truetype(str(font_path), current)
         try:
@@ -136,9 +138,10 @@ def card(root, source_assets, scene, size, layout='recognition', record=None, ho
     out.paste(logo, logo_xy, logo)
     marks = [('logo', (logo_xy[0], logo_xy[1], logo_xy[0] + logo.width, logo_xy[1] + logo.height), None)]
     drawn = block(draw, scene['headline'], headline_box, path('display_font'), int(64 * scale), int(64 * scale), '#121010')
-    marks.append(('hook' if hook else 'title', drawn, scene['headline']))
+    if drawn:
+        marks.append(('hook' if hook else 'title', drawn, scene['headline']))
     if picture_box[1] is None:
-        picture_box = (picture_box[0], int(drawn[3]) + 16, picture_box[2], picture_box[3])
+        picture_box = (picture_box[0], int(drawn[3]) + 16 if drawn else headline_box[1], picture_box[2], picture_box[3])
     roles = scene['asset'] if isinstance(scene['asset'], list) else [scene['asset']]
     if len(roles) == 1:
         photo = Image.open(path(roles[0])).convert('RGB')
@@ -153,8 +156,9 @@ def card(root, source_assets, scene, size, layout='recognition', record=None, ho
     at = ((box[0] + box[2] - photo.width) // 2, (box[1] + box[3] - photo.height) // 2)
     out.paste(photo, at)
     marks.append(('product', (at[0], at[1], at[0] + photo.width, at[1] + photo.height), None))
-    marks.append(('text', block(draw, scene['text'], text_box,
-                  path('body_font'), int(54 * scale), int(48 * scale), '#121010'), scene['text']))
+    drawn = block(draw, scene['text'], text_box, path('body_font'), int(54 * scale), int(48 * scale), '#121010')
+    if drawn:
+        marks.append(('text', drawn, scene['text']))
     if record is not None:
         record.extend(marks)
     # Krish, 2 Nov: no Example badges. Product pixels remain unaltered.
@@ -171,7 +175,9 @@ def reel_layout(marks_by_scene, scenes):
                 e['text'] = text
             elements.append(e)
         t += scene['seconds']
-    return {'profile': creative_ui.REVISION, 'canvas': [1080, 1920], 'duration': t, 'elements': elements}
+    last = marks_by_scene[-1] if marks_by_scene else []
+    ending = 'product' if any(role == 'product' for role, _, _ in last) else 'none'
+    return {'profile': creative_ui.REVISION, 'canvas': [1080, 1920], 'duration': t, 'ending': ending, 'elements': elements}
 
 
 def timestamp(seconds):
@@ -286,6 +292,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
         audio_probe = json.loads(subprocess.run(['ffprobe', '-v', 'error', '-show_format', '-of', 'json', str(audio_path)], check=True, capture_output=True).stdout)
         if float(audio_probe['format']['duration']) > duration:
             raise ValueError('narration is longer than the film; adjust the scene timing, never cut off speech')
+        narration_seconds = float(audio_probe['format']['duration'])
         source['narration'] = narration
     revision = ledger.digest({'renderer': VERSION, 'renderer_source': renderer_fingerprint(), 'runtime': runtime_fingerprint(), 'spec': spec, 'day': day.isoformat(), 'assets': source})
     parent = assets.local_path(root, 'local/media/' + creative_id)
@@ -316,7 +323,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
             card(root, source['assets'], scenes[i - 1], (1000, 1500), layout).save(work / filename)
             files[f'pin_{i}'] = filename
         if narration:   # timed cues of at most 7 words, never the whole transcript at once (corpus 6.1)
-            cues = creative_ui.segments(narration['transcript'], 0, duration)
+            cues = creative_ui.segments(narration['transcript'], 0, narration_seconds)   # timed to the voice, not the film
             subtitle_parts = [f'{k}\n{timestamp(a)} --> {timestamp(b)}\n{text}\n' for k, (text, a, b) in enumerate(cues, 1)]
         (work / 'subtitles.srt').write_text('\n'.join(subtitle_parts))
         files['subtitles'] = 'subtitles.srt'
@@ -337,8 +344,10 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
         sound.score(work / 'score.wav', duration, [scenes[0]['seconds'], scenes[0]['seconds'] + scenes[1]['seconds']])
         files['soundtrack'] = 'score.wav'
         audio_args = ['-i', str(assets.local_path(root, narration['path']))] if narration else []
-        audio_filter = (['-filter_complex', '[1:a]volume=0.25[music];[2:a]apad[voice];[music][voice]amix=inputs=2:duration=first:normalize=0[a]', '-map', '0:v', '-map', '[a]']
-                        if narration else ['-map', '0:v', '-map', '1:a'])
+        # A -2.5 dBFS sample ceiling before the 48 kHz AAC encode keeps the true peak under -1 dBTP.
+        limit = 'aresample=48000,alimiter=limit=0.75:attack=2:release=60:level=false'
+        audio_filter = (['-filter_complex', f'[1:a]volume=0.25[music];[2:a]apad[voice];[music][voice]amix=inputs=2:duration=first:normalize=0,{limit}[a]', '-map', '0:v', '-map', '[a]']
+                        if narration else ['-filter_complex', f'[1:a]{limit}[a]', '-map', '0:v', '-map', '[a]'])
         subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-f', 'concat', '-safe', '1',
                         '-i', 'segments.txt', '-i', 'score.wav', *audio_args, *audio_filter,
                         '-t', str(duration), '-c:v', 'copy', *creative_ui.FFMPEG_AUDIO,
@@ -376,6 +385,10 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
         if (video['width'], video['height']) != (1080, 1920) or abs(float(probe['format']['duration']) - duration) > .2:
             raise ValueError('rendered video failed its dimensions or duration check')
         files['reel'] = 'reel.mp4'
+        for name in ('reel.mp4', 'facebook.mp4', 'tiktok.mp4'):   # the corpus export preset, on the files themselves
+            export = creative_ui.media_errors(work / name)[0]
+            if export:
+                raise ValueError(f'{name} fails the export preset: ' + '; '.join(export))
         if narration:
             shutil.copyfile(assets.local_path(root, narration['path']), work / 'narration.wav')
             files['narration'] = 'narration.wav'

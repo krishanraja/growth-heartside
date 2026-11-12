@@ -341,6 +341,7 @@ def still_media(spec, folder):
     from PIL import Image
     from engine.creative_ui import layout_errors
     probs = []; want = len(spec['slides']) + (1 if spec.get('end', {}).get('renders') else 0)
+    import hashlib as _h
     files = sorted(f for f in os.listdir(folder) if re.fullmatch(r'slide-\d\d\.png', f)) if os.path.isdir(folder) else []
     if len(files) != want: probs.append(f'{len(files)} slides built, {want} expected')
     for f in files:
@@ -353,6 +354,9 @@ def still_media(spec, folder):
         try:
             lay = json.load(open(os.path.join(folder, f.replace('.png', '.layout.json')), encoding='utf-8'))
             probs += [f'{f}: {x}' for x in layout_errors(lay)[0]]
+            with open(os.path.join(folder, f), 'rb') as fh:
+                if lay.get('media_sha256') != _h.file_digest(fh, 'sha256').hexdigest():
+                    probs.append(f'{f}: its layout manifest belongs to another build of this slide (rebuild it)')
         except (OSError, ValueError):
             probs.append(f'{f}: no layout manifest from the corpus renderer (rebuild it)')
     return probs
@@ -439,7 +443,8 @@ def ramp(spec):
 
 def record(spec, verdict, note=''):
     d = ledger(); lk, lp = lock_for(spec); lid = lk['id'] if lk else spec['id']
-    d['records'].append({'lock': lid, 'spec': spec['id'], 'verdict': verdict, 'note': note, 'fingerprint': fingerprint(spec)})
+    d['records'].append({'lock': lid, 'spec': spec['id'], 'verdict': verdict, 'note': note, 'fingerprint': fingerprint(spec),
+                         'ui_profile': spec.get('ui_profile')})
     if verdict == 'krish-decline':
         lines, _ = uses(spec)
         d['retired'] += [{'line': l, 'breed': b, 'why': note or 'Krish declined ' + spec['id']} for l, b in lines
@@ -462,9 +467,12 @@ def gate(spec, mp4, release=None, review=None):
         probs += check_files(ROOT, release, review, expected_media=mp4, expected_asset_id=spec['id'])
     # a verdict belongs to the exact post (its spec and fingerprint), whichever lock existed when it was recorded
     rs = [r for r in ledger()['records'] if r['spec'] == spec['id'] and matches(spec, r['fingerprint'])]
-    rv = [r['verdict'] for r in rs if r['verdict'].startswith('reviewer-')]
+    # A reviewer pass covers the frames it looked at: one given before the post moved onto the current
+    # profile (new subtitles, places and timings) does not count. Krish's content verdicts carry over.
+    from engine.creative_ui import REVISION as UI_REVISION
+    rv = [r['verdict'] for r in rs if r['verdict'].startswith('reviewer-') and r.get('ui_profile') == UI_REVISION]
     if not rv or rv[-1] != 'reviewer-pass':
-        probs.append('no independent reviewer pass on this exact post')
+        probs.append('no independent reviewer pass on this exact post under the current profile')
     who, why = ramp(spec)
     kv = [r['verdict'] for r in rs if r['verdict'].startswith('krish-')]
     if who == 'krish' and (not kv or kv[-1] != 'krish-approve'):
