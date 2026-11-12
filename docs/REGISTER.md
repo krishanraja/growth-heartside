@@ -75,19 +75,25 @@ In the Test column, "self-test" means `/home/user/growth-heartside/growth.py` `s
 | 55 | 18–23 Oct | Process rulings: a North Star per repo (bf8b536); human-speed dates moved to agent speed (c51ed5b); next action chosen by rule (ENGINE-PROTOCOL:151); every engine adopts the protocol (PR #3 body); "Get going", no pasted prompts (70d9236); one home per fact and merge the five PRs (89e1ec9); a number, weekly ladder and urgency (72e301f) | n/a | Docs; machine-readable `north-star-state` block in NOW | None |
 | **Docs drift** ||||||
 | 56 | 23 Oct | The CONTROL-CENTER-BRIEF status line still said synthetic-only after the loop went live | 634d789 (PR #20) | Doc | None |
-| 57 | Open | "Seven" jobs in README, HANDOFF and AGENTS (setup steps 4 and 7); AGENTS Autonomy and GET-GOING still say protocol 1.1.0 | Not fixed | NOW flags only README/HANDOFF jobs and GET-GOING | Only file parity is checked (#48) |
+| 57 | 12 Nov | "Seven" jobs in README, HANDOFF and AGENTS (setup steps 4 and 7); AGENTS Autonomy and GET-GOING still said protocol 1.1.0 | 12 Nov (CHANGES) | README, AGENTS and GET-GOING corrected; HANDOFF stays the 17 Oct record and NOW says so | Only file parity is checked (#48) |
 | 58 | 19 Oct | The copied protocol doc linked ADR-038 by a relative path that does not exist here; the link check refused it | 8ba5523 (second commit) | Doc | The link check is not in `check.yml` |
 | 59 | 18–21 Oct | CONTROL-CENTRE-BRIEF superseded (9790ed7, banner); the 12 Oct social plan left heartside POSITIONING §6 (400d62b; PLAYBOOK now cites "the 12 Oct plan") | as listed | Docs | None |
 | 60 | 23 Oct | Harness closeout failed on PR #19 until NOW.md was updated (run 39953878696). Test counts disagree: HANDOFF says 52, the PR #1 body says 45 | 07e12f9–74a2939 | `.claude/hooks/harness-closeout.mjs` | The hook itself |
+| **12 Nov audit** ||||||
+| 61 | 30 Oct to 12 Nov | The day's pack failed every day: the product renders pinned on 29 Oct left the live galleries when heartside rebuilt them (30 and 31 Oct, on Krish's yes), and the runner logged only `ValueError`, so nobody saw why | 12 Nov (CHANGES) | `assets.PRODUCT_IMAGES` re-pinned; `runner.failure_reason`; `protocol.runner_holds`; the run summary in `engine.yml` | `test_engine_runtime::test_a_failed_job_records_the_engine_s_own_reason_and_nothing_else`, `test_protocol::test_a_failed_scheduled_job_is_held_with_the_runner_s_reason`, `test_media::test_an_approved_role_missing_from_the_live_gallery_stops` |
+| 62 | 29 Oct to 12 Nov | Conversion editions held, and the live report said "Conversion editions held until the V3 homepage is public", although the homepage had been the V3 gift journey since 29 Oct: the check read only the 19 Oct chat's marker | 12 Nov (CHANGES) | `growth.v3_homepage`; GET-GOING step 5 ticked | `test_offers::test_the_journey_homepage_is_the_v3_homepage`, `test_protocol::test_product_hold_follows_current_product_truth` |
+| 63 | Latent | A conversion edition of a film that also shows a second gift could never pass the copy check (its alt text names the other gift), so on those days the pack would fail | 12 Nov (CHANGES) | `offers.purchase_campaign` converts single-gift films only | `test_offers::test_a_film_that_shows_two_gifts_stays_an_audience_edition` |
+| 64 | 12 Nov | The report never carried `organic_net_sales_usd`, the North Star number Control Center reads each morning, so its refresh always read unknown | 12 Nov (CHANGES) | `protocol.organic_net_sales` | `test_attribution::test_the_north_star_objective_is_organic_net_sales_over_the_trailing_28_days`, `test_protocol::test_the_report_carries_the_north_star_objective_control_center_reads` |
+| 65 | 4 to 12 Nov | Nine closeout notes broke the fold's format, so the closeout fold failed on every push to main | 12 Nov (CHANGES) | Moved word for word to `docs/history/2026-11-12-closeout-notes-that-never-folded.md` | The fold itself (`.claude/hooks/harness-closeout.mjs`) |
 
 ## B. Themes
 
-- **Product truth drift:** 1–12, 25.
+- **Product truth drift:** 1–12, 25, 62, 63.
 - **Voice and copy:** 5–7, 13–20.
 - **Provenance and media:** 21–27.
 - **Attribution:** 28–30.
-- **Protocol and reporting:** 31–36, 53.
-- **Scheduling and runtime:** 37–48.
+- **Protocol and reporting:** 31–36, 53, 64.
+- **Scheduling and runtime:** 37–48, 61, 65.
 - **Approvals and authority:** 49–55.
 - **Docs drift:** 9, 10, 17, 18, 27, 34, 56–60.
 

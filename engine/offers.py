@@ -173,12 +173,20 @@ def validate_item(item, public_text, state):
 
 
 def purchase_campaign(spec, state):
-    """A ready single-gift conversion draft for the gift the film ends on."""
+    """A ready single-gift conversion draft for the gift the film ends on, or None.
+
+    Only a film that shows that one gift converts. A film that also shows another gift stays an
+    audience edition: its alt text names the other gift, which purchase copy may not do undeclared
+    (validate_item), so a conversion of it could never pass the copy check and the day's pack failed.
+    """
     if not state or not state.get('homepage_v3') or not fresh_store(state):
         return None
     from .assets import PRODUCT_IMAGES
-    last = spec['scenes'][-1]['asset']
-    shown = PRODUCT_IMAGES.get(last[0] if isinstance(last, list) else last, (None,))[0]
+    roles = [r for scene in spec['scenes'] for r in (scene['asset'] if isinstance(scene['asset'], list) else [scene['asset']])]
+    gifts = {PRODUCT_IMAGES.get(r, (None,))[0] for r in roles}
+    shown = PRODUCT_IMAGES.get(roles[-1], (None,))[0] if roles else None
+    if len(gifts) != 1:
+        return None
     gift = next((o for o in catalog(state) if o['id'] == shown
                  and o['kind'] == 'gift' and o['ready']), None)
     if not gift:

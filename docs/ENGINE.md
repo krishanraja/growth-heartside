@@ -1,7 +1,9 @@
 # Running the Heartside growth engine
 
-Implementation lives here. Product, purchase and print work is already handed
-to [heartside PR #13](https://github.com/krishanraja/heartside/pull/13).
+Implementation lives here. Product, purchase and print work belongs to the
+heartside repository; its own `NOW.md`, read live by `python3 growth.py sync`,
+holds its current state (the 17 Oct handoff was
+[heartside PR #13](https://github.com/krishanraja/heartside/pull/13), now history).
 Progress reaches Control Center through the growth engine protocol
 ([brief](CONTROL-CENTER-BRIEF.md), [loop](#control-center-protocol-loop)); packs stay
 for media and copy review.
@@ -39,8 +41,10 @@ does not change any autonomous schedule.
 artifact. Unzip and open `review.html`. No web account or second dashboard is needed.
 
 The seven checked concepts with 28 prewritten hook experiments cover three reusable families: recognition, product
-proof and a question to the audience. Since 29 Oct they show only the live store's current renders, blanket and
-portrait in most concepts and the mug in one; any of them may be sold. Each has native captions, hook
+proof and a question to the audience. They show only the live store's own gallery pictures, blanket and
+portrait in most concepts and the mug in one; any of them may be sold. The pictures were re-pinned on 12 Nov to the
+galleries Krish approved on 30 and 31 Oct: the blanket and the four portrait finishes show one example black
+Labrador, and the two mugs (black and pink) the store's lead example dog. Each has native captions, hook
 metadata, a declared mechanism and an audience intent. Selection falls back to a
 stable seven-day rotation, never an invented trend. An eligible observed
 replication candidate gets a changed opening and hook ID, holding its mechanism
@@ -59,8 +63,10 @@ The logo and typefaces come from the full synced Heartside commit
 (`--heartside-dir /path/to/heartside` reads via `git show SHA:path` without
 executing its code). Product images are the live store's own gallery renders,
 named role by role in `engine/assets.py` (`PRODUCT_IMAGES`), each recorded with
-its source URL and checksum; a blank template or checkout tile is refused.
-No Example badge is added (Krish, 2 Nov). The retired fictional Biscuit entryway
+its source URL and checksum; a blank template or checkout tile is refused. A
+role whose picture has left the live gallery stops the render rather than
+falling back to anything else: that stopped every day's pack from 30 Oct to
+12 Nov, after the galleries were rebuilt. No Example badge is added (Krish, 2 Nov). The retired fictional Biscuit entryway
 scene was removed on 29 October 2026 (Biscuit is retired). Each output has file checksums, native copy digests,
 product SHA and a content-addressed revision. Modified copy/files fail checking;
 failed renders preserve previous output. Renderer source and FFmpeg/Pillow/zlib versions also participate in revision
@@ -69,7 +75,7 @@ A new revision needs fresh human review.
 
 ## Autonomous draft scheduling
 
-The `Heartside draft engine` GitHub Actions workflow checks the seven canonical
+The `Heartside draft engine` GitHub Actions workflow checks the eight canonical
 schedules in `automations.json` every 15 minutes. It is a single serialized writer
 per branch. All scheduling uses `America/New_York`, including daylight saving;
 GitHub can start late. The independent public product sync remains hourly.
@@ -83,9 +89,13 @@ python3 growth.py run --job numbers   # a declared job, still idempotent
 Every job syncs current product canon first. Failed jobs remain retryable, with
 at least 15 minutes between attempts. Independent jobs continue. A two-hour local
 writer lease recovers after a crash; the GitHub job timeout is one hour. Completed
-jobs do not regenerate the same day's creative. Run results and failure types
-are under `local/automation/`, with checked packs and review ZIPs under
-`local/automation/runs/YYYY-MM-DD/`. The runner never contacts Control Centre. A changed product/catalog fingerprint
+jobs do not regenerate the same day's creative. Run results are under
+`local/automation/`, with checked packs and review ZIPs under
+`local/automation/runs/YYYY-MM-DD/`. A failed job keeps its type and, for the
+engine's own checks (a `ValueError`), its reason, cut to the engine's own words
+with any query string, address or token removed (`failure_reason` in
+`engine/runner.py`). The reason shows in the run's summary, and the next
+Control Center report holds the job with it. The runner never contacts Control Centre. A changed product/catalog fingerprint
 or corrected metrics refreshes affected completed jobs; unchanged inputs do not
 repeat production. `run --job NAME --force` is an explicit operator rebuild.
 Previous pack revisions remain in per-job history. The checkpoint excludes
@@ -283,8 +293,10 @@ report without replacing a completed day's creative.
 
 ## Control Center protocol loop
 
-Control Center wakes this repository once a day, at about 06:10 London, with a
-`repository_dispatch` of type `cc-growth-directive`. The
+Control Center wakes this repository once a day, at 05:10 UTC (05:10 London in
+winter, 06:10 in summer), with a `repository_dispatch` of type
+`cc-growth-directive`, and again the same day when Krish gives this engine an
+instruction. The
 [Control Center directive](../.github/workflows/control-center.yml) workflow
 then runs the protocol in
 [docs/control-center/ENGINE-PROTOCOL.md](control-center/ENGINE-PROTOCOL.md).
@@ -307,10 +319,11 @@ publishes or spends.
 | Part of the report | What the engine sends |
 |---|---|
 | `net_sales_usd` | Imported Shopify net sales for the London month to date (on the 1st, the month that closed). `measured` only when imported windows cover every day, `stale` when they stop earlier (the window says where), `missing` with a reason otherwise. Overlapping windows are never added together |
-| `organic_orders` | Always `missing` for now, with the reason: store totals do not show which post caused an order, and creative UTM observations are lifetime snapshots, not weekly windows |
+| `organic_orders` | Orders attributed to organic posts over the trailing 28 London days, from the latest stored reading of `growth.py attribution` ("Organic attribution" below). `measured` for 26 hours after the read, then `stale`; `missing` with the reason until the read-only Shopify app has been read |
+| `organic_net_sales_usd` | The North Star number (`docs/NORTH_STAR.md`): net sales attributed to organic posts over the same trailing 28 London days, from the same reading, in USD, `measured`, `stale` or `missing` exactly as `organic_orders`. Control Center registered it as this engine's objective on 12 Nov and reads it from the latest live report each morning (`docs/control-center/ENGINE-PROTOCOL.md`, "Your own number") |
 | `proposals` | Each recommendation in `recommendations.json` (its `id` is the stable `proposal_id`, `close_event` its close), and each approved creative whose media and caption still match its render manifest as `wall: post`. The caption is `exact_payload`, the platform is `channel`, and `payload_sha256` is the SHA-256 of canonical `{caption, channel, creative_id, revision}`. It expires when the hot media is pruned. No `spend` proposal: the budget is $0 and the engine recommends no boost |
 | `events` | `creative_published` with the permalink, for each publication recorded in the last 14 days |
-| `holds` | The product constraint from heartside PR 13, read from current product truth: purchase claims while the catalog differs from the canon, then conversion editions until the V3 homepage is public. Also approved creatives that could not be verified |
+| `holds` | The product constraint from heartside PR 13, read from current product truth: purchase claims while the catalog differs from the canon, then conversion editions until the V3 homepage is public (the 19 Oct chat or the 29 Oct journey, `v3_homepage` in `growth.py`). With neither held, an activity line says so, linked to heartside.io. Also approved creatives that could not be verified, and each scheduled draft job whose last attempt failed today or yesterday (New York), with the runner's reason |
 | `status` | `degraded` when product sync failed or no checkpoint was available, otherwise `held` when anything is held, otherwise `ready` |
 | `priorities` (1.20.0) | Only when the directive says `features.engine_state`. First this repository's North Star (`docs/NORTH_STAR.md`: the metric, the target and its deadline, this week's rung, and Control Center's own reading and urgency when the directive carries `north_star.own`), then each product constraint the report holds, then each standing recommendation in `recommendations.json`, at most 5 |
 | `obsessions` (1.20.0) | Only Krish's own quoted aims, from `OBSESSIONS` in `engine/engine_state.py`: the North Star sentence (18 Oct) and his two lines of 14 Oct in `AGENTS.md`. Each is sent only while its quote is still in its file, so none is invented or left stale |
@@ -352,7 +365,9 @@ result is invented.
 
 When the gifts and the homepage are public and the catalog is current, the
 scheduled fallback tests a conversion edition every third day for the gift the
-film ends on. It reads the canon's configured price and the live destination;
+film ends on, when the film shows only that gift; a film that also shows
+another gift stays an audience edition that day, because its alt text names
+the other gift and purchase copy may not name a gift it does not declare. It reads the canon's configured price and the live destination;
 the remaining days keep recognition and sharing hypotheses. An authoring session can prepare its own verified purchase spec using
 these same boundaries. For Instagram/TikTok, place the prepared URL in the
 appropriate link surface by hand; a shared bio link does not establish which
@@ -385,5 +400,5 @@ before the draft jobs, at most every six hours.
   client id and secret are repository secrets (names in `engine.yml`), plus
   the store handle variable. A token with any other scope is refused. Without
   them the step prints a hold naming what is missing, and the Control Center
-  report keeps `organic_orders` missing, never zero.
+  report keeps `organic_orders` and `organic_net_sales_usd` missing, never zero.
 

@@ -18,7 +18,7 @@ Written 2026-10-18 by Control Center. This brief **supersedes `docs/CONTROL-CENT
 | `engine_id` | `growth-heartside` |
 | `product_slug` | `heartside` |
 | Aim | Organic posts sell more Heartside gifts than paid ads ever have, and every winning format was found by this engine and approved by Krish in one press. By 2026-12-31 |
-| Objectives | `net_sales_usd`: target 10,000 USD per month (Europe/London, Shopify net sales); `organic_orders`: no target set yet |
+| Objectives | `net_sales_usd`: target 10,000 USD per month (Europe/London, Shopify net sales); `organic_orders`: no target set yet; `organic_net_sales_usd`: net sales attributed to organic posts, trailing 4 weeks (Europe/London), registered on 12 Nov 2026 with a target of 25,000 USD. That is the North Star's target before Krish raised it to 50,000 USD on 10 Nov (`docs/NORTH_STAR.md`); the registry row is Control Center's to change. It is the North Star number Control Center reads from each live report |
 | Cadence | daily |
 | State | Live loop enabled. The first run completed on 2026-10-19; the scheduled 2026-10-23 run succeeded. Use the current protocol and repository workflow for operating details |
 
@@ -36,7 +36,7 @@ The full spec is `docs/control-center/ENGINE-PROTOCOL.md`, with the report and d
 2. `GET {base}/api/growth/engines/heartside/directive` returns today's `next_action`, your objectives with their targets and latest values, his decisions of the last seven days, and the walls.
 3. Do the work, inside the walls. The rule, word for word: "Nothing sends, posts, spends, deletes or changes a permission without a decision from Krish whose payload_sha256 matches what you are about to do."
 4. `POST {base}/api/growth/engines/heartside/reports` with header `Idempotency-Key: {run_id}`. The body is the report envelope:
-   - `schema_version: "1.0.0"`, `engine_id`, `product_slug`, `run_id`, `mode`, `observed_at`, `source`, `status`
+   - `schema_version` (`"1.0.0"` in this original brief; the engine now sends `1.20.0` when the report carries its state, `1.16.0` when the run spent credits, `1.0.0` otherwise), `engine_id`, `product_slug`, `run_id`, `mode`, `observed_at`, `source`, `status`
    - `objectives[]`, `activity[]`, `proposals[]`, `events[]`, `holds[]`
    - `payload_sha256`: the SHA-256 of the canonical JSON without that field, with keys sorted at every depth and no whitespace
 
@@ -50,7 +50,7 @@ The full spec is `docs/control-center/ENGINE-PROTOCOL.md`, with the report and d
 - Unknown is `value: null` with a `reason`, never zero. A measured zero is `0`.
 - `mode: synthetic` is stored and read back but never touches his numbers or his list. Use it to prove your client before Krish switches you on. A live report is refused (409 `engine_inactive`) until he does.
 
-**The wake-up.** Control Center wakes you once a day around 06:10 London with `repository_dispatch` of type `cc-growth-directive`, whose `client_payload` is `{ directive_id, engine_id }` and nothing else. Add that trigger to your workflow. If you do not run on GitHub Actions, pull the directive at the start of your own run instead; it is the same directive.
+**The wake-up.** Control Center wakes you once a day at 05:10 UTC (05:10 London in winter, 06:10 in summer), and again the same day when Krish gives you an instruction (1.20.0), with `repository_dispatch` of type `cc-growth-directive`, whose `client_payload` is `{ directive_id, engine_id }` and nothing else. Add that trigger to your workflow. If you do not run on GitHub Actions, pull the directive at the start of your own run instead; it is the same directive.
 
 ## How your old brief maps
 

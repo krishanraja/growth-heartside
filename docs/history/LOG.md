@@ -7,6 +7,7 @@ describes current behaviour; NOW.md and the state doc do.
 ## 2026-11-12
 
 - reconciled: fixed `too_long`, `recent_too_many` and `where_too_many` (rolled bullets below). The closeout fold refused all nine notes in `now-notes/` (format: only Status:, Changed:, Next: and the exact North Star check line); they stay for a person.
+- by hand: the nine notes the fold refused moved word for word to `docs/history/2026-11-12-closeout-notes-that-never-folded.md`. Each was already superseded by later lines in NOW.md, so none was folded as current, and the fold runs again.
 - rolled from NOW.md (Where it is right now): F28 is the beagle howl v2 (howl slowed to hold 2.7 to 7.4 s, on Krish's "the howl might need to be a bit longer"), released by README v5.8 into its 02r slots on Wed 11 Nov: TikTok 08:00 by Codex, Instagram 08:05 and Facebook 08:10 from Krish's phone. (2026-11-11)
 - rolled from NOW.md (Where it is right now): the board card post-F28-howl was hidden by an invalid group value; it now shows under Posts with the reel playing inline, and docs/REVIEW-BOARD.md lists the five group values the page renders. (2026-11-11)
 - rolled from NOW.md (Where it is right now): the F28 replacement (a bored beagle who only performs the falsetto howl, then leaves) is made for 7.75 Higgsfield credits inside the share, filed to Posts/F28, and on the board as post-F28-howl; 02t has Krish's board yes but its approved column is still empty. (2026-11-11)

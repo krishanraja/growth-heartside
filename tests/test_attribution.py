@@ -131,6 +131,31 @@ class AttributionTests(unittest.TestCase):
         self.assertEqual((objective['value'], objective['availability']), (1, 'measured'))
         self.assertEqual(protocol.organic_orders(db, now + dt.timedelta(days=3))['availability'], 'stale')
 
+    def test_the_north_star_objective_is_organic_net_sales_over_the_trailing_28_days(self):
+        # Control Center reads organic_net_sales_usd from the latest live report (api/_northStarRefresh.ts,
+        # HEARTSIDE_ORGANIC_OBJECTIVE): an amount, measured, over 27 to 29 days ending in the last two days.
+        db = sqlite3.connect(':memory:'); db.row_factory = sqlite3.Row
+        missing = protocol.organic_net_sales(db)
+        self.assertEqual((missing['key'], missing['value'], missing['availability']), ('organic_net_sales_usd', None, 'missing'))
+        self.assertTrue(missing['reason'])
+        self.assertIsNone(protocol.organic_net_sales(None)['value'])
+        # Engine-tagged $129, organic social $45, engine-tagged $45.50 less a $0.50 refund; the paid $59 never counts.
+        orders = [order(visit(CID), amount='129.00'), order(visit(medium=None, referrer='https://l.instagram.com/?u=x'), amount='45.00'),
+                  order(visit(medium='cpc'), amount='59.00'), order(visit(CID), amount='45.50', refunded='0.50')]
+        today = dt.date(2026, 11, 12)
+        start, end = attribution.windows(today)['trailing_28d']
+        attribution.store(db, 'trailing_28d', attribution.aggregate(orders, start, end), observed_at='2026-11-12T05:00:00+00:00')
+        now = dt.datetime(2026, 11, 12, 5, 10, tzinfo=dt.timezone.utc)
+        objective = protocol.organic_net_sales(db, now)
+        self.assertEqual((objective['value'], objective['unit'], objective['availability'], objective['reason']),
+                         (219, 'USD', 'measured', None))
+        self.assertIs(type(objective['value']), int)
+        span = dt.datetime.fromisoformat(objective['window_end']) - dt.datetime.fromisoformat(objective['window_start'])
+        self.assertTrue(dt.timedelta(days=27) <= span <= dt.timedelta(days=29))
+        self.assertLessEqual(now - dt.datetime.fromisoformat(objective['window_end']), dt.timedelta(days=2))
+        self.assertEqual(protocol.organic_net_sales(db, now + dt.timedelta(days=2))['availability'], 'stale')
+        self.assertEqual(db.execute('SELECT count(*) FROM attribution').fetchone()[0], 1)  # read, never written
+
 class DiscountCodeTests(unittest.TestCase):
     # An example registry lives in the tests only; config/codes.json starts empty until Krish switches codes on.
     REGISTRY = {'PRESS301I': 'IG_EMO_C301', 'PRESS': 'TT_EMO_C399'}
