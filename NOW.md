@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- the day's pack renders again (its product pictures re-pinned to heartside's live galleries, and a failed job now keeps its reason and is held in the next Control Center report), conversion editions are no longer held by a stale homepage check, and the daily report carries organic_net_sales_usd, the North Star number Control Center reads. (2026-11-12)
 - the Control Center loop speaks protocol 1.20.0 where Control Center serves it: it acks Krish's instruction (krish_instruction) as received by id only, first in its activity, and reports priorities, obsessions and next_steps from this repository's own files; every wake's run id carries its GitHub run id, so a second wake the same day is its own report. (2026-11-11)
 - Krish posts every commercial-song TikTok (F28, F40, F42, F43, F41, F44, F38 repost) from his phone; README v5.9 tells Codex so, and Sheet 04, Doc 04a and the Phone Posts page are rebuilt from live 02r with London times. (2026-11-11)
 - Krish's phone posts have a one-tap Copy caption page (claude.ai/artifact/3aFjdFNWvHEeMJCKVDERSu) and Doc 04a now has real hyperlinks; the page's source is factory/schedule/phone-posts.html. (2026-11-11)
@@ -55,6 +56,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-12 a docs and bug audit on Krish's question of 12 Nov; the nine closeout notes the fold could not read moved to docs/history, so the fold runs again.
 - 2026-11-11 Krish asked that every growth engine's priorities, obsessions and next steps feed Control Center live and that he can instruct each engine ("Get building", 11 Nov); his words never leave engine/engine_state.py.
 - 2026-11-11 Krish found TikTok's commercial songs can only be added in the phone app.
 - 2026-11-11 Krish found copying captions from the Doc into Instagram fiddly.
@@ -70,7 +72,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-11): the daily report run acts on no words, so an instruction stays received until a working session takes it up; Krish decides how a session reads the open instruction.
+- Next (2026-11-12): confirm the next draft engine run files the day's pack and the 13 Nov 05:10 UTC report carries organic_net_sales_usd with no conversion hold.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
