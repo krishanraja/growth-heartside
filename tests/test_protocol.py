@@ -281,16 +281,21 @@ class ReportTests(unittest.TestCase):
             '2026-10-19/daily-pack': {'status': 'failed', 'attempts': 3, 'error_type': 'ValueError', 'error': reason},
             '2026-10-18/radar': {'status': 'failed', 'attempts': 1, 'error_type': 'OSError'},
             '2026-10-19/numbers': {'status': 'completed', 'attempts': 1},
+            '2026-10-18/numbers': {'status': 'failed', 'attempts': 2, 'error_type': 'ValueError'},
             '2026-10-10/daily-pack': {'status': 'failed', 'attempts': 9, 'error_type': 'ValueError', 'error': 'old'}}))
         report = self.build()
-        failed = [h for h in report['holds'] if h['reason'] == 'A scheduled draft job failed and will retry']
+        failed = [h for h in report['holds'] if h['reason'] == 'A scheduled draft job failed']
         self.assertEqual([h['detail'] for h in failed], [
-            f'daily-pack for 2026-10-19 failed after 3 attempt(s): {reason}',
-            'radar for 2026-10-18 failed after 1 attempt(s): OSError, with no reason recorded'])
+            f'daily-pack for 2026-10-19 failed after 3 attempt(s): {reason}. It retries while the job is due today.',
+            'radar for 2026-10-18 failed after 1 attempt(s): OSError, with no reason recorded. That day is not run again.'])
         self.assertEqual(validate(SCHEMA, report), [])
         self.assertEqual(report['status'], 'held')
+        # A job that completed on a later day is no longer held for an earlier failure.
+        index.write_text(json.dumps({'2026-10-18/daily-pack': {'status': 'failed', 'attempts': 2, 'error_type': 'ValueError'},
+                                     '2026-10-19/daily-pack': {'status': 'completed', 'attempts': 1}}))
+        self.assertFalse(any(h['reason'] == 'A scheduled draft job failed' for h in self.build()['holds']))
         index.write_text('not json')
-        self.assertFalse(any(h['reason'].startswith('A scheduled draft job') for h in self.build()['holds']))
+        self.assertFalse(any(h['reason'] == 'A scheduled draft job failed' for h in self.build()['holds']))
 
     def test_product_hold_follows_current_product_truth(self):
         live = {**STATE, 'store': [{'title': "Your Dog's Portrait", 'available': True, 'prices': [59.0, 119.0]}], 'homepage_v3': False}
