@@ -22,7 +22,9 @@ ENGINE_ID, PRODUCT_SLUG, SLUG, COMMAND = 'growth-heartside', 'heartside', 'heart
 DEFAULT_URL = 'https://controlcenter.krishraja.com'
 LONDON, NEW_YORK = ZoneInfo('Europe/London'), ZoneInfo('America/New_York')
 ATTEMPT_FILE = 'local/control-center/attempt.json'
+RUNNER_INDEX = 'local/automation/index.json'
 PR13 = 'https://github.com/krishanraja/heartside/pull/13'
+STORE_URL = 'https://heartside.io/'
 ID = re.compile(r'^[A-Za-z0-9][A-Za-z0-9:._-]{0,119}$')
 HTTPS = re.compile(r'^https://\S+$')
 MAX_PROPOSALS, MAX_EVENTS = 10, 40
@@ -89,8 +91,12 @@ def net_sales(db, now):
             '(Europe/London). Missing is not zero'}
 
 
-def organic_orders(db=None, now=None):
-    base = {'key': 'organic_orders', 'unit': 'orders', 'timezone': 'Europe/London'}
+def attributed(db, now, base, value):
+    """One objective from the stored trailing-28-day organic attribution reading (engine/attribution.py).
+
+    Reads only: the draft engine (engine.yml, "Read organic attribution") is the only writer. Fresh for
+    26 hours after the read; older is stale, never measured; never read is missing with the reason.
+    """
     reading = attribution.latest(db) if db is not None else None
     if not reading:
         return {**base, 'value': None, 'window_start': None, 'window_end': None, 'availability': 'missing',
@@ -98,12 +104,28 @@ def organic_orders(db=None, now=None):
                           '(scope read_orders) named in docs/ENGINE.md, "Organic attribution"'}
     observed = dt.datetime.fromisoformat(reading['observed_at'].replace('Z', '+00:00'))
     fresh = now is None or now - observed <= dt.timedelta(hours=26)
-    window = {'value': reading['organic']['orders'],
+    window = {'value': value(reading['organic']),
               'window_start': midnight(dt.date.fromisoformat(reading['start'])).isoformat(),
               'window_end': midnight(dt.date.fromisoformat(reading['end'])).isoformat()}
     if fresh:
         return {**base, **window, 'availability': 'measured', 'reason': None}
     return {**base, **window, 'availability': 'stale', 'reason': f'Organic attribution was last read at {reading["observed_at"]}'}
+
+
+def organic_orders(db=None, now=None):
+    return attributed(db, now, {'key': 'organic_orders', 'unit': 'orders', 'timezone': 'Europe/London'},
+                      lambda organic: organic['orders'])
+
+
+def organic_net_sales(db=None, now=None):
+    """The North Star number (docs/NORTH_STAR.md): net sales attributed to organic posts, trailing 28 days.
+
+    Control Center registered it as this engine's objective organic_net_sales_usd on 12 Nov 2026 and reads it
+    from the latest live report each morning (ENGINE-PROTOCOL.md, "Your own number"), so it is reported
+    measured, stale or missing exactly as organic_orders is, from the same stored reading.
+    """
+    return attributed(db, now, {'key': 'organic_net_sales_usd', 'unit': 'USD', 'timezone': 'Europe/London'},
+                      lambda organic: money(organic['net_sales']))
 
 
 # ---------------------------------------------------------------------------
@@ -227,6 +249,41 @@ def product_holds(state):
     return []
 
 
+def runner_holds(root, now):
+    """Scheduled draft jobs whose latest run failed, this New York day or the one before.
+
+    Read from the runner's index in the restored checkpoint (engine/runner.py), never written. Each
+    carries the runner's own reason when it recorded one, so a stopped job shows on Growth > Engines
+    instead of only in an Actions log. Only each job's latest day counts: once the same job has
+    completed on a later day, an earlier failure is no longer held. Today's failure retries while the
+    job is due; a day that has passed is never run again, and its hold says so.
+    """
+    try:
+        history = json.loads((Path(root) / RUNNER_INDEX).read_text())
+    except (OSError, ValueError):
+        return []
+    today = now.astimezone(NEW_YORK).date()
+    latest = {}
+    for key, entry in history.items() if isinstance(history, dict) else ():
+        day, _, job = str(key).partition('/')
+        try:
+            when = dt.date.fromisoformat(day)
+        except ValueError:
+            continue
+        if isinstance(entry, dict) and job and (job not in latest or when > latest[job][0]):
+            latest[job] = (when, entry)
+    holds = []
+    for job, (when, entry) in sorted(latest.items(), key=lambda item: (item[1][0], item[0]), reverse=True):
+        if entry.get('status') != 'failed' or not 0 <= (today - when).days <= 1:
+            continue
+        why = entry.get('error') or f'{entry.get("error_type") or "an error"}, with no reason recorded'
+        after = 'it retries while the job is due today' if when == today else 'that day is not run again'
+        holds.append({'reason': 'A scheduled draft job failed',
+                      'detail': fit(f'{job} for {when} failed after {entry.get("attempts", 1)} attempt(s): {why}. '
+                                    f'{after[0].upper() + after[1:]}.', 1000)})
+    return holds[:3]
+
+
 def latest_decisions(decisions):
     latest = {}
     for d in decisions or []:
@@ -267,8 +324,14 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
     if not state.get('rules_ok'):
         holds.append({'reason': 'Heartside rules changed since growth.py was last updated',
                       'detail': 'No copy is proposed until a person updates growth.py in an interactive session (AGENTS.md, rule 2).'})
-    holds += product_holds(state)
+    product = product_holds(state)
+    holds += product
+    if state.get('rules_ok') and not product:
+        # GET-GOING step 5: the conversion hold releases on its own, saying why, with the evidence.
+        activity.append(('Conversion editions are not held: every canonical gift is live at its approved price and '
+                         'the public homepage is the V3 gift journey.', STORE_URL))
     constraints = [h['reason'] for h in holds]
+    holds += runner_holds(root, now)
     if db is not None:
         latest = db.execute('''SELECT status, count(*) AS n FROM (SELECT status, row_number() OVER (PARTITION BY creative_id
           ORDER BY updated_at DESC, rowid DESC) AS rank FROM creatives) WHERE rank=1 GROUP BY status ORDER BY status''').fetchall()
@@ -315,8 +378,9 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
     version = engine_state.VERSION if current else credits.VERSION if spent else '1.0.0'
     report = {'schema_version': version, 'engine_id': ENGINE_ID, 'product_slug': PRODUCT_SLUG, 'run_id': run_id, 'mode': mode,
               'observed_at': stamp(now), 'source': {'revision': state['sha'], 'captured_at': stamp(dt.datetime.fromisoformat(state['synced_at'].replace('Z', '+00:00')))},
-              'status': status, 'objectives': [net_sales(db, now), organic_orders(db, now)],
-              'activity': [{'line': fit(line, 500), 'evidence_url': None} for line in activity][:40],
+              'status': status, 'objectives': [net_sales(db, now), organic_orders(db, now), organic_net_sales(db, now)],
+              'activity': [{'line': fit(line, 500), 'evidence_url': None} if isinstance(line, str) else
+                           {'line': fit(line[0], 500), 'evidence_url': line[1]} for line in activity][:40],
               'proposals': proposals, 'events': events, 'holds': holds[:40]}
     if spent:
         report['credits_spent'] = spent

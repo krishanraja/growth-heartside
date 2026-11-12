@@ -110,6 +110,16 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = 'krishanraja/heartside'
 BRANCH = 'main'
 STORE = 'https://heartside.io'
+# The public homepage leads into the V3 gift journey: hs3-chat's config marked the chat
+# homepage of 19 Oct, and hs-journey's has marked it since the homepage became the journey
+# on 29 Oct (heartside shopify/templates/index.json, 3df57cc). Either one is V3; reading
+# only the first held conversion editions from 29 Oct to 12 Nov for a public homepage.
+HOMEPAGE_V3_MARKERS = ('data-hs3-config', 'data-hsj-config')
+
+
+def v3_homepage(page):
+    """True when the public homepage is the V3 gift journey, by its section's config marker."""
+    return any(marker in page for marker in HOMEPAGE_V3_MARKERS)
 RAW = 'https://raw.githubusercontent.com/' + REPO
 API = 'https://api.github.com/repos/' + REPO
 BASE = os.environ.get('CONTROL_CENTER_URL', 'https://controlcenter.krishraja.com').rstrip('/')
@@ -553,7 +563,7 @@ def sync(quiet=False):
         products = None
         notes.append(f'the live store did not answer ({getattr(e, "code", e)})')
     try:
-        homepage_v3 = 'data-hs3-config' in http(STORE + '/', accept_json=False)
+        homepage_v3 = v3_homepage(http(STORE + '/', accept_json=False))
     except (urllib.error.URLError, ValueError):
         homepage_v3 = None
         notes.append('the public homepage could not be checked; its purchase links are not verified')
@@ -1346,7 +1356,7 @@ def main():
         if purchase and st:
             try:
                 st = {**st, 'store': store_products(),
-                      'homepage_v3': 'data-hs3-config' in http(STORE + '/', accept_json=False),
+                      'homepage_v3': v3_homepage(http(STORE + '/', accept_json=False)),
                       'synced_at': dt.datetime.now(dt.timezone.utc).isoformat()}
             except (urllib.error.URLError, ValueError, KeyError) as e:
                 catalog_errors.append(f'purchase copy blocked: current public offers could not be confirmed ({e})')

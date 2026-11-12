@@ -6,7 +6,7 @@ import growth
 from engine import offers
 
 
-IMAGES = {'blanket': 'heartside-word-free-blanket-example.png', 'portrait': '6adf25082493a.webp', 'mug': '6ae2d892c1504.webp'}
+IMAGES = {'blanket': 'home-4x5_aaa3bac3.png', 'portrait': 'portrait-black.jpg', 'mug': 'mug-real-golden.jpg'}
 
 
 def state():
@@ -33,7 +33,7 @@ class OfferTests(unittest.TestCase):
     def test_conversion_drafts_sell_the_lead_gift_the_film_ends_on(self):
         from pathlib import Path
         import json
-        spec=json.loads((Path(growth.HERE)/'campaigns/waits-at-the-door.json').read_text())
+        spec=json.loads((Path(growth.HERE)/'campaigns/the-couch-spot.json').read_text())
         ready=state()
         self.assertIsNone(offers.purchase_campaign(spec,ready))
         ready['homepage_v3']=True
@@ -44,6 +44,26 @@ class OfferTests(unittest.TestCase):
         self.assertEqual(spec['intent'],'audience')
         ready['store']=[]
         self.assertIsNone(offers.purchase_campaign(spec,ready))
+
+    def test_a_film_that_shows_two_gifts_stays_an_audience_edition(self):
+        # Its alt text names the second gift, which purchase copy may not do undeclared, so a
+        # conversion of it failed the copy check and stopped the day's pack (the-favorite-person, in a local run for 18 Nov).
+        from pathlib import Path
+        import json
+        ready=state(); ready['homepage_v3']=True
+        for name in ('waits-at-the-door','the-favorite-person','the-early-walker','the-treat-pocket'):
+            spec=json.loads((Path(growth.HERE)/'campaigns'/(name+'.json')).read_text())
+            self.assertIsNone(offers.purchase_campaign(spec,ready), name)
+        for name in ('the-couch-spot','the-other-side','morning-proof'):
+            spec=json.loads((Path(growth.HERE)/'campaigns'/(name+'.json')).read_text())
+            self.assertEqual(offers.purchase_campaign(spec,ready)['intent'],'buy', name)
+
+    def test_the_journey_homepage_is_the_v3_homepage(self):
+        # hs-journey replaced the hs3 chat on heartside's homepage on 29 Oct; reading only the chat's
+        # marker held every conversion edition for a homepage that was already public.
+        self.assertTrue(growth.v3_homepage('<section data-hsj-config="{}"></section>'))
+        self.assertTrue(growth.v3_homepage('<div data-hs3-config></div>'))
+        self.assertFalse(growth.v3_homepage('<main class="classic-home"></main>'))
 
     def test_the_mug_sells_like_any_other_gift(self):
         from pathlib import Path

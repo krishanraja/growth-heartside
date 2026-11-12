@@ -3,14 +3,17 @@
 The organic acquisition engine for [Heartside](https://heartside.io), gifts from
 your dog. Goal: **$10,000 of Shopify net sales in a calendar month**, with low
 paid acquisition cost. This is an operating target, not a revenue guarantee or
-an unconfirmed Christmas delivery promise.
+an unconfirmed Christmas delivery promise. The engine's North Star, and the
+number it chases, is in [docs/NORTH_STAR.md](docs/NORTH_STAR.md): net sales
+attributed to organic posts over the trailing four weeks, which every daily
+report to Control Center carries as `organic_net_sales_usd`.
 
 The engine syncs real product truth, produces native marketing media, packages
 reviewable drafts, keeps creative/evidence history and makes conservative
 experiment recommendations. It never publishes social posts, sends outreach,
 places gifts, confirms printing, changes the store or schedules paid AI requests.
 
-**Start with [the completion handoff](docs/HANDOFF.md).**
+**Start with [NOW.md](NOW.md)** for where the engine is today, then [the 17 Oct completion handoff](docs/HANDOFF.md) for what was delivered and how it was verified.
 
 - [Runbook and current capability limits](docs/ENGINE.md)
 - [Acquisition strategy and 30-day experiment](STRATEGY.md)
@@ -18,7 +21,7 @@ places gifts, confirms printing, changes the store or schedules paid AI requests
 - [Reference corpus: dog datasets, organic growth research and the copywriting corpus](knowledge/README.md), applied to copy in [the copy doctrine](knowledge/COPY-DOCTRINE.md)
 - [Control Center brief: the growth engine protocol](docs/CONTROL-CENTER-BRIEF.md)
 - [Operating instructions](AGENTS.md), [playbook](PLAYBOOK.md), [browser boundary](BROWSER.md)
-- [Product handoff in heartside PR #13](https://github.com/krishanraja/heartside/pull/13)
+- [Heartside's own state](https://github.com/krishanraja/heartside/blob/main/NOW.md), read live (`python3 growth.py now`); the 17 Oct product handoff was [heartside PR #13](https://github.com/krishanraja/heartside/pull/13), now history
 
 ## Produce and review
 
@@ -41,7 +44,7 @@ public gift range. The first campaigns are price-free audience materials.
 ## Scheduled operation
 
 [Heartside draft engine](https://github.com/krishanraja/growth-heartside/actions/workflows/engine.yml)
-checks these seven canonical jobs every 15 minutes on GitHub Actions:
+checks these eight canonical jobs every 15 minutes on GitHub Actions:
 
 | Job | Due in America/New_York |
 |---|---|
@@ -50,11 +53,14 @@ checks these seven canonical jobs every 15 minutes on GitHub Actions:
 | Radar | Daily 06:30 |
 | Daily media pack | Daily 09:00 |
 | Creators | Tuesday 07:00 |
+| Answers library | Wednesday 07:30 |
 | Store and search | Saturday 07:00 |
 | Weekly report | Sunday 07:00 |
 
 IANA timezone conversion handles daylight saving. GitHub may run late. Completed
-jobs are idempotent; failures remain retryable. Checkpoints restore verified
+jobs are idempotent; failures remain retryable, and a failed job keeps the
+engine's own reason in the run summary and in the next Control Center report's
+holds. Checkpoints restore verified
 state between machines and runs. The separate hourly product sync reads
 heartside and fails when its rules change; it commits nothing. Heartside's
 status is read live from its own `NOW.md` (`python3 growth.py now`), never

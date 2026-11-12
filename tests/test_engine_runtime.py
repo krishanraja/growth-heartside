@@ -217,6 +217,32 @@ class RuntimeTests(unittest.TestCase):
             runner.tick(self.root, None, time + dt.timedelta(minutes=32), 'daily-pack')
             self.assertEqual(work.call_count, 1)
 
+    def test_a_failed_job_records_the_engine_s_own_reason_and_nothing_else(self):
+        # From 30 Oct to 12 Nov the day's pack failed every day with only "ValueError" in the log:
+        # the pinned product renders had left the live galleries. The reason is now kept, cut to the
+        # engine's own words, and a provider error keeps its type alone.
+        (self.root / 'automations.json').write_text((ROOT/'automations.json').read_text())
+        time = dt.datetime(2026,10,17,13,0,tzinfo=dt.timezone.utc)
+        reason = ValueError('the approved blanket image is no longer in the live blanket gallery; see '
+                            'https://heartside.io/?dog=Rex&person=Sam for jo@example.com, token gen1_abcdef123')
+        with patch('engine.runner.run_job', side_effect=reason):
+            failed = runner.tick(self.root, None, time, 'daily-pack')['results'][0]
+        self.assertEqual((failed['status'], failed['error_type']), ('failed', 'ValueError'))
+        self.assertTrue(failed['error'].startswith('the approved blanket image is no longer in the live blanket gallery'))
+        for secret in ('Rex', 'Sam', 'jo@example.com', 'gen1_abcdef123'):
+            self.assertNotIn(secret, failed['error'])
+        self.assertIn('https://heartside.io/', failed['error'])
+        stored = json.loads((self.root / 'local/automation/index.json').read_text())['2026-10-17/daily-pack']
+        self.assertEqual(stored['error'], failed['error'])
+        with patch('engine.runner.run_job', side_effect=OSError('HTTP 500 body: {"secret": "x"}')):
+            other = runner.tick(self.root, None, time + dt.timedelta(minutes=16), 'daily-pack')['results'][0]
+        self.assertEqual((other['status'], other['error_type']), ('failed', 'OSError'))
+        self.assertNotIn('error', other)
+        with patch('engine.runner.run_job', return_value={'pack': 'checked'}):
+            done = runner.tick(self.root, None, time + dt.timedelta(minutes=32), 'daily-pack')['results'][0]
+        self.assertEqual(done['status'], 'completed')
+        self.assertNotIn('error', done)
+
 
 if __name__ == '__main__':
     unittest.main()

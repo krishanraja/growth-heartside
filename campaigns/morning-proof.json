@@ -10,19 +10,19 @@
   "mechanism": "Show the real mug, the gift the store recommends, and test whether its morning ritual earns saves and sends.",
   "scenes": [
     {
-      "asset": "mug_front",
+      "asset": "mug_black",
       "seconds": 3,
       "headline": "Your dog on the morning mug.",
       "text": "Painted from your dog's photo."
     },
     {
-      "asset": "mug_back",
+      "asset": "mug_pink",
       "seconds": 4,
       "headline": "Five interior colors to choose from.",
       "text": "Black, dark blue, dark green, pink or red."
     },
     {
-      "asset": "mug_front",
+      "asset": "mug_black",
       "seconds": 3,
       "headline": "Your dog loves you too.",
       "text": "A short note from the dog goes on it too."

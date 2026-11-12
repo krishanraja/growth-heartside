@@ -72,5 +72,7 @@ and for each Codex reel with its timeline, `python3 codex/check_picture.py <reel
 - Content locks keep their approvals: placement is not part of a lock's fingerprint any more, so a rebuilt
   edition under the corpus profile is the same approved post in a new place. Every rebuilt file is a new
   release and still needs the placement review and Krish's `approved = yes` before Codex posts it.
-- Codex posts only rows Krish approved. Whether pre-corpus rows not yet live should wait for rebuilt editions
-  is his call, on the review board (`decision-corpus-hold-queue`).
+- Codex posts only rows Krish approved. The pre-corpus posts already approved and not yet live go out as
+  approved, without recuts (Ruling, Krish, 2026-11-12: "hapy with your recommendation"): their labels sit 30 px
+  above the box, inside the band he checked on TikTok on 10 Nov, and the 16 Nov checkpoint needs them out. The
+  corpus applies to every new build and any rebuilt edition.
