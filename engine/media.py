@@ -12,8 +12,10 @@ from zoneinfo import ZoneInfo
 from . import assets, ledger, sound, offers, creative_ui
 
 
-VERSION = 9
-REQUIRED_ROLES = {'reel', 'cover', 'story_1', 'story_2', 'story_3', 'pin_1', 'pin_2', 'subtitles', 'soundtrack', 'facebook_reel', 'tiktok_reel', 'carousel_1', 'carousel_2', 'carousel_3'}
+VERSION = 10   # 12 Nov corpus profile: geometry, export preset and layout manifests
+REQUIRED_ROLES = {'reel', 'cover', 'story_1', 'story_2', 'story_3', 'pin_1', 'pin_2', 'subtitles', 'soundtrack', 'facebook_reel', 'tiktok_reel', 'carousel_1', 'carousel_2', 'carousel_3',
+                  'reel_layout', 'facebook_reel_layout', 'tiktok_reel_layout'}
+PUSH = 1.02   # the slow push-in on each card scales its words too, so their recorded boxes include it
 
 
 @lru_cache(maxsize=1)
@@ -83,8 +85,11 @@ def wrap_text(draw, text, font, width):
 
 
 def block(draw, text, box, font_path, size, minimum, color):
+    """Draw wrapped copy inside `box`; returns the box the words actually occupy (None for no words)."""
     from PIL import ImageFont
     left, top, right, bottom = box
+    if not (text or '').strip():
+        return None
     for current in range(size, minimum - 1, -2):
         font = ImageFont.truetype(str(font_path), current)
         try:
@@ -95,11 +100,18 @@ def block(draw, text, box, font_path, size, minimum, color):
         if line_height * len(lines) <= bottom - top:
             for i, line in enumerate(lines):
                 draw.text((left, top + i * line_height), line, fill=color, font=font, stroke_width=0)
-            return
+            width = max(draw.textlength(line, font=font) for line in lines)
+            return (left, top, left + width, top + line_height * len(lines))
     raise ValueError('copy does not fit without making the text too small')
 
 
-def card(root, source_assets, scene, size, layout='recognition'):
+def pushed(box, size, zoom=PUSH):
+    """A box as the centre push-in leaves it at its largest."""
+    cx, cy = size[0] / 2, size[1] / 2
+    return (cx - (cx - box[0]) * zoom, cy - (cy - box[1]) * zoom, cx + (box[2] - cx) * zoom, cy + (box[3] - cy) * zoom)
+
+
+def card(root, source_assets, scene, size, layout='recognition', record=None, hook=False):
     from PIL import Image, ImageDraw, ImageOps
     width, height = size
     scale = width / 1080
@@ -109,9 +121,12 @@ def card(root, source_assets, scene, size, layout='recognition'):
     logo = Image.open(path('logo')).convert('RGBA')
     vertical = size == (1080, 1920)
     if vertical:
-        left, _, right, _ = creative_ui.CRITICAL
-        logo_xy, headline_box = (left, 288), (left, 376, right, 536)
-        picture_box, text_box = (left, 552, right, 936), creative_ui.SUBTITLES
+        # Corpus profile: a small mark in the logo region, the hook in the hook region, the real
+        # product and the words inside the critical box; right edges leave room for the push-in.
+        left, right = creative_ui.HOOK[0], 810
+        logo_xy, headline_box = (creative_ui.LOGO[0] + 12, creative_ui.LOGO[1] + 14), (left, 440, right, 680)   # the mark stays in its region at full push-in
+        picture_box = (left + 20, None, right - 20, 924)   # starts under the headline it follows
+        text_box = (creative_ui.SUBTITLES[0], creative_ui.SUBTITLES[1], right, creative_ui.SUBTITLES[3])
     else:
         # Feed/Pin compositions have their own geometry, not a Reels rail overlay.
         left, right = int(width * .1), int(width * .9)
@@ -119,10 +134,14 @@ def card(root, source_assets, scene, size, layout='recognition'):
         headline_box = (left, int(height * .16), right, int(height * .32))
         picture_box = (left, int(height * .34), right, int(height * .72))
         text_box = (left, int(height * .76), right, int(height * .94))
-    logo.thumbnail((int(230 * scale), int(70 * scale)), Image.Resampling.LANCZOS)
+    logo.thumbnail((int(200 * scale), int(56 * scale)) if vertical else (int(230 * scale), int(70 * scale)), Image.Resampling.LANCZOS)
     out.paste(logo, logo_xy, logo)
-    block(draw, scene['headline'], headline_box,
-          path('display_font'), int(64 * scale), int(64 * scale), '#121010')
+    marks = [('logo', (logo_xy[0], logo_xy[1], logo_xy[0] + logo.width, logo_xy[1] + logo.height), None)]
+    drawn = block(draw, scene['headline'], headline_box, path('display_font'), int(64 * scale), int(64 * scale), '#121010')
+    if drawn:
+        marks.append(('hook' if hook else 'title', drawn, scene['headline']))
+    if picture_box[1] is None:
+        picture_box = (picture_box[0], int(drawn[3]) + 16 if drawn else headline_box[1], picture_box[2], picture_box[3])
     roles = scene['asset'] if isinstance(scene['asset'], list) else [scene['asset']]
     if len(roles) == 1:
         photo = Image.open(path(roles[0])).convert('RGB')
@@ -134,11 +153,31 @@ def card(root, source_assets, scene, size, layout='recognition'):
             photo.paste(picture, (index * 700 + (700 - picture.width) // 2, (700 - picture.height) // 2))
     box = picture_box
     photo = ImageOps.contain(photo, (box[2] - box[0], box[3] - box[1]), Image.Resampling.LANCZOS)
-    out.paste(photo, ((box[0] + box[2] - photo.width) // 2, (box[1] + box[3] - photo.height) // 2))
-    block(draw, scene['text'], text_box,
-          path('body_font'), int(54 * scale), int(48 * scale), '#121010')
+    at = ((box[0] + box[2] - photo.width) // 2, (box[1] + box[3] - photo.height) // 2)
+    out.paste(photo, at)
+    marks.append(('product', (at[0], at[1], at[0] + photo.width, at[1] + photo.height), None))
+    drawn = block(draw, scene['text'], text_box, path('body_font'), int(54 * scale), int(48 * scale), '#121010')
+    if drawn:
+        marks.append(('text', drawn, scene['text']))
+    if record is not None:
+        record.extend(marks)
     # Krish, 2 Nov: no Example badges. Product pixels remain unaltered.
     return out
+
+
+def reel_layout(marks_by_scene, scenes):
+    """The layout manifest of a reel built from vertical cards, with every box at its pushed-in size."""
+    elements, t = [{'role': 'background', 'box': [0, 0, 1080, 1920], 'start': 0, 'end': sum(s['seconds'] for s in scenes)}], 0
+    for marks, scene in zip(marks_by_scene, scenes):
+        for role, box, text in marks:
+            e = {'role': role, 'box': [round(v, 1) for v in pushed(box, (1080, 1920))], 'start': t, 'end': t + scene['seconds']}
+            if text:
+                e['text'] = text
+            elements.append(e)
+        t += scene['seconds']
+    last = marks_by_scene[-1] if marks_by_scene else []
+    ending = 'product' if any(role == 'product' for role, _, _ in last) else 'none'
+    return {'profile': creative_ui.REVISION, 'canvas': [1080, 1920], 'duration': t, 'ending': ending, 'elements': elements}
 
 
 def timestamp(seconds):
@@ -253,6 +292,7 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
         audio_probe = json.loads(subprocess.run(['ffprobe', '-v', 'error', '-show_format', '-of', 'json', str(audio_path)], check=True, capture_output=True).stdout)
         if float(audio_probe['format']['duration']) > duration:
             raise ValueError('narration is longer than the film; adjust the scene timing, never cut off speech')
+        narration_seconds = float(audio_probe['format']['duration'])
         source['narration'] = narration
     revision = ledger.digest({'renderer': VERSION, 'renderer_source': renderer_fingerprint(), 'runtime': runtime_fingerprint(), 'spec': spec, 'day': day.isoformat(), 'assets': source})
     parent = assets.local_path(root, 'local/media/' + creative_id)
@@ -269,10 +309,10 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
     parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=parent, prefix='.build-') as work:
         work = Path(work)
-        files, subtitle_parts, elapsed = {}, [], 0
+        files, subtitle_parts, elapsed, marks = {}, [], 0, []
         for i, scene in enumerate(scenes, 1):
-            filename = f'story-{i}.png'
-            card(root, source['assets'], scene, (1080, 1920), layout).save(work / filename)
+            filename = f'story-{i}.png'; marks.append([])
+            card(root, source['assets'], scene, (1080, 1920), layout, record=marks[-1], hook=i == 1).save(work / filename)
             files[f'story_{i}'] = filename
             subtitle_parts.append(f'{i}\n{timestamp(elapsed)} --> {timestamp(elapsed + scene["seconds"])}\n{scene["headline"]}\n{scene["text"]}\n')
             elapsed += scene['seconds']
@@ -282,9 +322,9 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
             filename = f'pin-{i}.png'
             card(root, source['assets'], scenes[i - 1], (1000, 1500), layout).save(work / filename)
             files[f'pin_{i}'] = filename
-        if narration:
-            import textwrap
-            subtitle_parts = [f'1\n{timestamp(0)} --> {timestamp(duration)}\n' + '\n'.join(textwrap.wrap(narration['transcript'], 42)) + '\n']
+        if narration:   # timed cues of at most 7 words, never the whole transcript at once (corpus 6.1)
+            cues = creative_ui.segments(narration['transcript'], 0, narration_seconds)   # timed to the voice, not the film
+            subtitle_parts = [f'{k}\n{timestamp(a)} --> {timestamp(b)}\n{text}\n' for k, (text, a, b) in enumerate(cues, 1)]
         (work / 'subtitles.srt').write_text('\n'.join(subtitle_parts))
         files['subtitles'] = 'subtitles.srt'
         # Animate the approved photograph/card without altering the print design.
@@ -295,8 +335,8 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
             frames = round(scene['seconds'] * 30)
             segment = f'segment-{i}.mp4'
             subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', f'story-{i}.png',
-                            '-vf', f"zoompan=z='1+0.02*on/{frames}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d={frames}:s=1080x1920:fps=30,format=yuv420p",
-                            '-an', '-c:v', 'libx264', '-preset', 'fast', '-crf', '20', '-threads', '2', segment],
+                            '-vf', f"zoompan=z='1+{PUSH - 1:.2f}*on/{frames}':x='iw/2-iw/zoom/2':y='ih/2-ih/zoom/2':d={frames}:s=1080x1920:fps=30,format=yuv420p",
+                            '-an', *creative_ui.FFMPEG_VIDEO, '-threads', '2', segment],
                            cwd=work, check=True, capture_output=True)
             segments.append(f"file '{segment}'")
             elapsed += scene['seconds']
@@ -304,12 +344,16 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
         sound.score(work / 'score.wav', duration, [scenes[0]['seconds'], scenes[0]['seconds'] + scenes[1]['seconds']])
         files['soundtrack'] = 'score.wav'
         audio_args = ['-i', str(assets.local_path(root, narration['path']))] if narration else []
-        audio_filter = (['-filter_complex', '[1:a]volume=0.25[music];[2:a]apad[voice];[music][voice]amix=inputs=2:duration=first:normalize=0[a]', '-map', '0:v', '-map', '[a]']
-                        if narration else ['-map', '0:v', '-map', '1:a'])
+        # A -2.5 dBFS sample ceiling before the 48 kHz AAC encode keeps the true peak under -1 dBTP.
+        limit = 'aresample=48000,alimiter=limit=0.75:attack=2:release=60:level=false'
+        audio_filter = (['-filter_complex', f'[1:a]volume=0.25[music];[2:a]apad[voice];[music][voice]amix=inputs=2:duration=first:normalize=0,{limit}[a]', '-map', '0:v', '-map', '[a]']
+                        if narration else ['-filter_complex', f'[1:a]{limit}[a]', '-map', '0:v', '-map', '[a]'])
         subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-f', 'concat', '-safe', '1',
                         '-i', 'segments.txt', '-i', 'score.wav', *audio_args, *audio_filter,
-                        '-t', str(duration), '-c:v', 'copy', '-c:a', 'aac', '-b:a', '128k',
+                        '-t', str(duration), '-c:v', 'copy', *creative_ui.FFMPEG_AUDIO,
                         '-movflags', '+faststart', 'reel.mp4'], cwd=work, check=True, capture_output=True)
+        (work / 'reel-layout.json').write_text(json.dumps(reel_layout(marks, scenes), indent=1) + '\n')
+        files['reel_layout'] = 'reel-layout.json'
         # Each native film has its own opening card, not just a renamed caption.
         for platform in ('facebook', 'tiktok'):
             hook = spec.get('native_hooks', {}).get(platform, scenes[0]['headline'])
@@ -318,12 +362,19 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
             native_copy = {**pack, 'kind': 'radar', 'items': [public_item('\n'.join('Hook: ' + line for line in hook.splitlines()))]}
             if check_copy(native_copy, state.get('price_points', []), state=state):
                 raise ValueError('native hook fails copy checks')
-            card(root, source['assets'], native_scene, (1080, 1920), layout).save(work / f'{platform}-opening.png')
+            opening = []
+            card(root, source['assets'], native_scene, (1080, 1920), layout, record=opening, hook=True).save(work / f'{platform}-opening.png')
             subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', 'reel.mp4', '-i', f'{platform}-opening.png',
                             '-filter_complex', f"[0:v][1:v]overlay=enable='lt(t,{scenes[0]['seconds']})'[v]",
-                            '-map', '[v]', '-map', '0:a', '-c:v', 'libx264', '-preset', 'fast', '-crf', '20', '-threads', '2',
+                            '-map', '[v]', '-map', '0:a', *creative_ui.FFMPEG_VIDEO, '-threads', '2',
                             '-c:a', 'copy', '-movflags', '+faststart', f'{platform}.mp4'], cwd=work, check=True, capture_output=True)
             files[platform + '_reel'] = platform + '.mp4'
+            # The opening card is overlaid unzoomed; later scenes keep the reel's pushed boxes.
+            native = reel_layout([[]] + marks[1:], scenes)
+            native['elements'] += [{'role': r, 'box': list(b), 'start': 0, 'end': scenes[0]['seconds'], **({'text': x} if x else {})}
+                                   for r, b, x in opening]
+            (work / f'{platform}-layout.json').write_text(json.dumps(native, indent=1) + '\n')
+            files[platform + '_reel_layout'] = f'{platform}-layout.json'
         for i, scene in enumerate(scenes, 1):
             name = f'carousel-{i}.png'
             card(root, source['assets'], scene, (1080, 1350), layout).save(work / name)
@@ -334,6 +385,10 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
         if (video['width'], video['height']) != (1080, 1920) or abs(float(probe['format']['duration']) - duration) > .2:
             raise ValueError('rendered video failed its dimensions or duration check')
         files['reel'] = 'reel.mp4'
+        for name in ('reel.mp4', 'facebook.mp4', 'tiktok.mp4'):   # the corpus export preset, on the files themselves
+            export = creative_ui.media_errors(work / name)[0]
+            if export:
+                raise ValueError(f'{name} fails the export preset: ' + '; '.join(export))
         if narration:
             shutil.copyfile(assets.local_path(root, narration['path']), work / 'narration.wav')
             files['narration'] = 'narration.wav'

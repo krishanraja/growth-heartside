@@ -1,6 +1,7 @@
 {
  "id": "F11",
  "template": "search",
+ "ui_profile": "social-corpus-2026-11-12-v2",
  "breed": "dachshund",
  "music": "m_quirk_brat.mp3",
  "music_level": 0.42,

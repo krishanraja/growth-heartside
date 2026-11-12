@@ -131,7 +131,7 @@ def render_shot(shot, directory):
         consumed += len(beat.split())
         end = round(frames * consumed / total_weight)
         overlays.append((beat, start, end, shot.get('caption_y', 960), 'caption'))
-    overlays.extend((label['text'], label['start_frame'], label['end_frame'], label.get('y', 300), 'label')
+    overlays.extend((label['text'], label['start_frame'], label['end_frame'], label.get('y', 360), 'label')   # the corpus hook region; y 300 is above the box
                     for label in shot.get('labels', []))
     for idx, (text, start, end, y, role) in enumerate(overlays, 1):
         panel = directory / f'panel-{idx}.png'

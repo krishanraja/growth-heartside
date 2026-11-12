@@ -90,6 +90,14 @@
       "repository_path": "knowledge/corpus/external-growth-skills.md",
       "bytes": 5533,
       "sha256": "091b5db8d5c74bfa09e0e4861063e2f409a4492b69f5af913404005f7c14b4b1"
+    },
+    {
+      "original_filename": "social_media_visual_video_best_practices_2026.md",
+      "repository_path": "knowledge/social-media-creative-production-corpus-2026-11-12.md",
+      "bytes": 41002,
+      "sha256": "483cf6c3ed3889e8b57279115fa31f9dc948ddb49e7e858aef3d94a2adeb5c93",
+      "received": "2026-11-12, from Krish in a Claude Code session: \"Ensure all social media posts adhere to these best practices.\"",
+      "applied_in": "engine/creative_ui.py profile social-corpus-2026-11-12-v2; docs/CREATIVE-UI.md"
     }
   ]
 }

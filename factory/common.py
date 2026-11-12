@@ -119,12 +119,13 @@ def _feather(size, r=36):
     return m.filter(ImageFilter.GaussianBlur(r / 2))
 
 
-def product_clip(renders, out_mp4, dur, bg=None, box=(60, 160, W - 60, 1760), overlay=None, end_png=None, fps=30, critical_box=None):
+def product_clip(renders, out_mp4, dur, bg=None, box=(60, 160, W - 60, 1760), overlay=None, end_png=None, fps=30, critical_box=None, record=None):
     """The real store renders, pixels untouched, moving like a phone video. A scene render
     (portrait, blanket) fills the frame with a slow push-in. A mug sits on its own backdrop colour
     with feathered edges, drops in with a small settle, then floats and sways while the camera
     pushes in. No badge, no text (Krish, 2 Nov: organic posts; the mugs should animate).
-    `overlay(img, t)` may draw a caption."""
+    `overlay(img, t)` may draw a caption. With `critical_box` (the corpus profile) the product moves
+    only inside that box and `record['box']` returns the union of every frame's product rectangle."""
     imgs = [Image.open(f'{R}/{p}').convert('RGB') for p in renders]
     scene = len(renders) == 1 and 'mug' not in renders[0] and bg is None
     n = round(dur * fps)
@@ -149,11 +150,17 @@ def product_clip(renders, out_mp4, dur, bg=None, box=(60, 160, W - 60, 1760), ov
         else:
             base = Image.new('RGB', (W, H), tone)
         items = []
-        for img, (x0, y0, x1, y1) in zip(imgs, _layout(len(imgs), box)):
-            p = img.copy(); p.thumbnail((int((x1 - x0) * 0.98), int((y1 - y0) * 0.98)), Image.LANCZOS)
+        inner = (box[0] + 14, box[1] + 14, box[2] - 14, box[3] - 14) if critical_box else box   # room for the sway
+        for img, (x0, y0, x1, y1) in zip(imgs, _layout(len(imgs), inner)):
+            room = 0.98 / 1.1 if critical_box else 0.98   # headroom for the settle overshoot and sway
+            p = img.copy(); p.thumbnail((int((x1 - x0) * room), int((y1 - y0) * room)), Image.LANCZOS)
             p = _cutout(p, _border_color(p))
             items.append((p, ((x0 + x1) // 2, (y0 + y1) // 2)))
-    last = None
+    last = None; drop = 60 if critical_box else 260; union = None
+
+    def seen(rect):
+        nonlocal union
+        union = rect if union is None else (min(union[0], rect[0]), min(union[1], rect[1]), max(union[2], rect[2]), max(union[3], rect[3]))
     for f in range(n):
         t = f / fps
         if scene:
@@ -163,6 +170,7 @@ def product_clip(renders, out_mp4, dur, bg=None, box=(60, 160, W - 60, 1760), ov
             if critical_box:
                 cx, cy = (critical_box[0] + critical_box[2]) / 2, (critical_box[1] + critical_box[3]) / 2
                 frame.paste(im, (round(cx - im.width / 2), round(cy - im.height / 2)))
+                seen((round(cx - im.width / 2), round(cy - im.height / 2), round(cx - im.width / 2) + im.width, round(cy - im.height / 2) + im.height))
             else:
                 frame.paste(im, ((W - im.width) // 2, (H - im.height) // 2 - 60))
         else:
@@ -173,15 +181,21 @@ def product_clip(renders, out_mp4, dur, bg=None, box=(60, 160, W - 60, 1760), ov
                     continue
                 s = (0.82 + 0.18 * _ease_back(p)) * push
                 ang = 1.4 * math.sin(2 * math.pi * t / 3.2 + i) * p
-                dy = (1 - _ease_back(p)) * 260 + 7 * math.sin(2 * math.pi * t / 2.6 + i) * p
+                dy = (1 - _ease_back(p)) * drop + 7 * math.sin(2 * math.pi * t / 2.6 + i) * p
                 im = img.resize((max(1, int(img.width * s)), max(1, int(img.height * s))), Image.BICUBIC).rotate(ang, Image.BICUBIC, expand=True)
                 frame.paste(im, (int(cx - im.width / 2), int(cy - im.height / 2 + dy)), im)
+                visible = im.getchannel('A').getbbox() if im.mode == 'RGBA' else im.getbbox()
+                if visible:
+                    ox, oy = int(cx - im.width / 2), int(cy - im.height / 2 + dy)
+                    seen((ox + visible[0], oy + visible[1], ox + visible[2], oy + visible[3]))
         if overlay:
             frame = overlay(frame, t)
         proc.stdin.write(frame.convert('RGB').tobytes()); last = frame
     proc.stdin.close(); proc.wait()
     if end_png:
         last.save(end_png)
+    if record is not None:
+        record['box'] = union
     return out_mp4
 
 

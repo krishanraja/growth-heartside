@@ -1,19 +1,40 @@
 # Creative inside the platform
 
-Owner: Heartside production and publishing. Adopted 6 November 2026 from Krish's
-`Social_Creative_UI_Best_Practices.docx`, version 1.0. Source SHA-256:
-`d3ae673f2e4ff852954d050b8d514b224a8685d93caa2d1f3855cee509894f95`.
-The supplied document is source material for this implementation, not authority to
-publish, spend, change account settings, or replace a locked master.
+Owner: Heartside production and publishing.
+
+**Current profile: `social-corpus-2026-11-12-v2`** (Krish, 12 Nov 2026: "Ensure all social media posts
+adhere to these best practices."). Source: [the 12 Nov corpus](../knowledge/social-media-creative-production-corpus-2026-11-12.md),
+SHA-256 `483cf6c3ed3889e8b57279115fa31f9dc948ddb49e7e858aef3d94a2adeb5c93`. It supersedes the 6 Nov profile
+`social-ui-2026-11-06-v1`, adopted from Krish's `Social_Creative_UI_Best_Practices.docx` (SHA-256
+`d3ae673f2e4ff852954d050b8d514b224a8685d93caa2d1f3855cee509894f95`); the rest of this page keeps that
+document's review method. Where every existing post stands: [the 12 Nov audit](audits/2026-11-12-corpus-audit.md).
+The corpus is source material, not authority to publish, spend, change account settings or replace a locked master.
 
 ## The rule
 
 Approve **export + platform UI + final copy + crop**, per platform and placement.
 A clean render, paid preview, upload success, or concept lock is not proof of
 organic viewer readability. Organic review does not establish paid eligibility.
-The implementation lives in `engine/creative_ui.py`; profile
-`social-ui-2026-11-06-v1`. Its coordinates and export presets are house choices,
-not official limits, permanent safe zones, or accessibility certification.
+The implementation lives in `engine/creative_ui.py`. Its coordinates and export presets are house choices
+(the corpus marks them HOUSE RULE), not official limits, permanent safe zones, or accessibility certification.
+"The frame is not the canvas the user can read" (corpus, last line).
+
+Every factory and campaign renderer writes a **layout manifest**: each hook, subtitle, label, chat bubble,
+title, logo and product box with its time span, bound to the file's SHA-256. `layout_errors` checks it
+against the regions below; `export_errors` checks the encoded file. What holds what:
+
+- `factory/lock.py media` and `gate`: the manifest (bound to the exact file) and the export preset, for
+  factory reels; `still_media` the same for every slide. A build without a manifest cannot pass. A reviewer
+  pass counts only if it was given under the current profile.
+- The release check (`python -m engine.creative_ui check`): the manifest, its canvas and file binding, and a
+  critical region inside the corpus box. It does not probe the media; the two gates above and
+  `engine/media.py` (which refuses a reel outside the preset) do.
+- `factory/audit.py`: the export preset on any file, including Codex and Drive files.
+- `codex/check_picture.py`: Codex reels have no manifest, so it checks what their timeline records
+  (one fixed `label_box` inside the box, at most 12 words a label, a 3 to 4 s product ending) and the
+  export preset. Captions, chat and product placement in a Codex reel stay with the reviewer.
+- Faces: code cannot see where a face is. Only a 9:16 still records its photo box as critical; everywhere
+  else a person checks faces against the box on the frames.
 
 The reference's Android TikTok examples show search UI over the chat header,
 messages and subtitles under metadata, and poor contrast for white native
@@ -24,27 +45,49 @@ never scale the phone status/navigation bars into a video template.
 
 ## Production defaults
 
-| Use | Starting export | Required surfaces |
+| Use | Export | Required surfaces |
 |---|---|---|
 | Instagram Reel / Story | 1080x1920 | full screen, feed, profile cover; Story stickers/reply region |
-| TikTok video | 1080x1920 | feed, search entry, non-owner; audio art and AI/anchor labels |
-| Facebook Reel | 1080x1920 | mobile feed, Page, opened player; final see-more boundary |
-| Instagram / Facebook image or carousel | 1080x1350 | feed, profile/Page, actual crop of every slide |
+| TikTok video, TikTok photo post | 1080x1920 | feed, search entry, non-owner; audio art and AI/anchor labels; every slide |
+| Facebook Reel / Story | 1080x1920 | mobile feed, Page, opened player; final see-more boundary |
+| Instagram / Facebook image or carousel | 1080x1350 (1080x1080 or 1080x1440 when the layout needs it); one size for every slide | feed, profile/Page, actual crop of every slide |
+| YouTube Short / long-form / thumbnail | 1080x1920 / 1920x1080 / 1280x720 | preparation only: YouTube is not an active Heartside channel |
 | Threads / X image | 1080x1350 (square is an alternative) | timeline, opened media, grouping and link card |
 | Pinterest image | 1000x1500 | home/search card, close-up, Save/control overlap |
-| Pinterest / Threads / X vertical video | 1080x1920 | inline/card and opened viewer separately |
 
 Only Instagram, Facebook and TikTok are active Heartside channels. The remaining
 profiles are preparation guidance, not channel activation or automatic posting.
 Confirm dimensions/features in the actual account and upload tool each campaign.
 
-For 1080x1920 Reels/TikTok, start essential content inside x108–864, y288–1152.
-Start subtitles at y960–1120, within those horizontal bounds. Backgrounds fill
-the canvas; faces, product detail, payoff, mark and hook must stay readable.
-Move subtitles within the content box to protect faces/products. If content
-does not fit, split the beat or recompose the placement; do not shrink to tiny
-type. Test normal, stress (longer text/search/labels/attachments) and expanded
-states. Expansion needs an observed behaviour record, not an unobscured-video pass.
+### Regions on a 1080x1920 canvas (corpus 3.5)
+
+| Region | Box | What goes there |
+|---|---|---|
+| Full bleed | x 0 to 1080, y 0 to 1920 | backgrounds and footage; a crop is allowed |
+| **Critical content** | **x 120 to 820, y 330 to 1180** | every hook, subtitle, label, chat, face, product detail and mark |
+| Opening hook | x 140 to 820, y 360 to 720 | the first words, seen in the first 3 s |
+| Subtitles | x 130 to 820, y 940 to 1160 | timed subtitles; they may move inside the critical box to clear a face or product |
+| Logo or credit | x 140 to 780, y 360 to 940 | only if essential; never bottom right like a watermark |
+| Closing line | x 140 to 820, y 820 to 1150 | a final payoff; no on-screen CTA on organic posts (Krish, 2 Nov) |
+| Cover grid model | y 240 to 1680, full width | the central 3:4 profile-grid crop; a cover that cannot satisfy both this and full screen gets its own cover file |
+
+Feed slides keep a 70 to 100 px design margin (the renderers use 90). On a 9:16 TikTok photo slide the line
+sits in the hook region and the photo inside the critical box, on ink so TikTok's white controls stay visible.
+
+### Words, timing and export
+
+- **Hook:** one claim or question, at most 12 words, 3 to 7 the target; never a paragraph. Frame 1 shows the
+  story (a dog, a payoff, a question), never a logo or an empty chat or search page. A title beat is 0.5 to 1.5 s.
+- **Subtitles:** accurate words, 1 or 2 lines, at most 7 words a timed segment, 44 to 64 px, on a stable
+  dark panel. The film renderer splits each voice line itself (`engine.creative_ui.segments`). One caption
+  system only: a burned-in subtitle plus the platform's auto-captions is a fail.
+- **Ending:** the real product, moving, 3 to 4 s: Krish's floor `endings-land` keeps at least 3 s and the
+  corpus forbids a dead outro. The "one next action" lives in the post description.
+- **Export:** H.264 High, yuv420p, progressive, BT.709 SDR, constant 30 fps (or the source rate, 24 to 60),
+  CRF 18 capped at 12 Mbps (a still or flat frame lands under 8 Mbps; that is a reviewer note, never padded),
+  AAC 48 kHz stereo 192 kbps, true peak at or under -1 dBTP. `FFMPEG_VIDEO` and `FFMPEG_AUDIO` in
+  `engine/creative_ui.py` are the one copy every renderer uses.
+- Keep the clean master, the burned-in edition, the transcript, the cover and the platform copy as separate files.
 
 - Chat: latest two or three messages at most, one payoff per beat, title below
   top UI. Every new message must fit; the renderer rejects a disappearing payoff.
@@ -74,23 +117,23 @@ states. Expansion needs an observed behaviour record, not an unobscured-video pa
   without removing the only accessible caption route. Alt text describes subject,
   action and essential words; it is separate from discovery copy.
 
-`factory/ui_layout.py` supplies the chat and film defaults. Exact locked master
-specifications and matching slot-only variants retain legacy geometry; new
-concepts get this profile. A placement repair of a legacy variant explicitly
-opts in as a new candidate, rather than inheriting its old approval.
-An intentional revision of a locked master sets `ui_profile` to the revision
-above, which changes its fingerprint and requires fresh approval. Never silently
-rewrite `factory/specs`, locks, release hashes or queued posts. In particular,
-the 4 November ruling keeping F01/F02/F03/F05/F12 at y1440 remains recorded.
-Search and roast outputs still need the same placement review; their legacy
-geometry is not certified by the new chat/film helpers.
+`factory/ui_layout.py` supplies the chat, film and photo-card helpers; `factory/still.py` the still and
+carousel slides; `engine/media.py` the campaign cards. **Placement is not content** (12 Nov): `ui_profile`
+is no longer part of a lock's fingerprint, so every factory spec now declares the corpus profile and still
+matches its lock (`lock.fingerprints` also accepts a lock recorded while the profile was in the skeleton).
+A spec with no profile, or the retired 6 Nov one, is held by `lock.py check`. Content changes (words,
+timings, sounds, products) still drift and still need Krish. Never silently rewrite `factory/specs`, locks,
+release hashes or queued posts.
 
-New-profile roast renders now use measured, bounded text and an intact fitted
-product. New-profile film stills move only the picture beneath static subtitles;
-zooming a flattened caption would invalidate its measured bounds. Existing
-locked versions keep their original geometry. `factory/repair_ui.py` makes
-separate editions from hash-bound clean sources, exact bank wording and shot
-boundaries, with frame-count and original audio-bitstream verification.
+This supersedes the 4 November ruling that kept F01, F02, F03, F05 and F12's subtitles at y1440 for any
+**new** edition: Krish's 12 Nov instruction covers all posts, and y1440 sits under TikTok's caption. Their
+live posts are not touched. A film's `cap_y` now only moves its subtitles inside the critical box.
+
+Renderers in the corpus profile move only the clean picture under static words (a zoomed caption would leave
+its measured box); a card's slow push-in is recorded at its largest. A search query that cannot fit one
+readable line (40 px floor) and a chat that cannot show four messages refuse to build: rewrite the line,
+never shrink it. `factory/repair_ui.py` makes separate editions from hash-bound clean sources, exact bank
+wording and shot boundaries, with frame-count and original audio-bitstream verification.
 
 ### Buffer delivery contract (verified 6 Nov)
 
@@ -109,14 +152,13 @@ the current route: use accurate visible copy disclosure, record the unsupported
 native flag honestly, and inspect the platform at release. Source-photo posts
 must not be falsely labelled generated.
 
-New/recomposed specs must declare that profile before locking, so a later lock
-cannot switch a build back to legacy geometry. Create a separately identified
-candidate when changing a locked skeleton; the existing drift guard continues
-to refuse rewriting its original lock. This is a new review, not a slot-only variant.
+Every spec declares the current profile before locking or building. Create a separately identified
+candidate when changing a locked skeleton's content; the drift guard refuses rewriting its original lock.
 
-`engine/media.py` uses the same working region for new vertical recognition cards,
-separate feed/Pin composition, and a new renderer revision. Oversized wording
-fails fitting. Its old Example badge is removed under Krish's existing 2 Nov rule.
+`engine/media.py` renders vertical cards with the mark in the logo region, the hook in the hook region (up
+to three lines), the product beneath it and the scene text in the subtitle band, writes a layout manifest
+per platform reel, and encodes with the export preset (renderer version 10). Oversized wording fails
+fitting. Its old Example badge is removed under Krish's existing 2 Nov rule.
 
 ## Platform copy and traffic
 

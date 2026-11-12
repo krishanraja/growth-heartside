@@ -102,7 +102,10 @@ def main(argv=None):
         with open(f'{t}/list.txt', 'w') as fh:
             fh.writelines(f"file '{p}'\n" for p in parts)
         run(['ffmpeg', '-y', '-f', 'concat', '-safe', '0', '-i', f'{t}/list.txt', '-c', 'copy', f'{t}/video.mp4'])
-        run(['ffmpeg', '-y', '-i', f'{t}/video.mp4', '-i', a.master, '-map', '0:v', '-map', '1:a', '-c', 'copy',
+        # The corpus export preset for the sound: AAC 48 kHz stereo (engine/creative_ui.py).
+        sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        from engine.creative_ui import FFMPEG_AUDIO
+        run(['ffmpeg', '-y', '-i', f'{t}/video.mp4', '-i', a.master, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', *FFMPEG_AUDIO,
              '-shortest', '-movflags', '+faststart', a.out])
     print(a.out)
 

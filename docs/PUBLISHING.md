@@ -15,15 +15,15 @@ the paid preview; preserve existing locked files and approved captions.
 
 | Item | Requirement | Check |
 |---|---|---|
-| Frame | 1080x1920, 9:16, H.264, 30 fps, AAC audio | `factory/lock.py media` |
+| Frame | 1080x1920, 9:16, H.264 yuv420p BT.709, constant 30 fps, at most 12 Mbps, AAC 48 kHz stereo, true peak at or under -1 dBTP (12 Nov corpus, section 10) | `factory/lock.py media`, `factory/audit.py` |
 | Loudness | -18 to -13 LUFS integrated | `factory/lock.py media` |
 | Length | Organic 6 to 60 s, and 15 to 30 s where possible. Paid 15 to 30 s | `factory/audit.py` |
 | First second | Motion, and a legible situation on frame 1: no blank interface, no tiny subject, no 2 s still | `factory/audit.py` `dead_open` |
-| Ending | The real store render for the same breed and coat, on screen for at least the last 3 s | `factory/lock.py media` and a person |
-| Organic working region | New 9:16 compositions start at x108–864, y288–1152; subtitles y960–1120. House defaults, then inspect exact UI | `engine/creative_ui.py`, native review |
+| Ending | The real store render for the same breed and coat, moving, for the last 3 to 4 s: never a dead outro, no on-screen CTA | `factory/lock.py media` and a person |
+| Organic working region | Every 9:16 hook, subtitle, label, chat, face, product and mark inside x 120 to 820, y 330 to 1180; hook y 360 to 720; subtitles y 940 to 1160, 1 or 2 lines, at most 7 words a segment. House rule from the 12 Nov corpus, then inspect the exact UI | the layout manifest in `lock.py media`, native review |
 | Boosted posts | Use the live approved post unchanged; separately inspect paid CTA, labels and exact placements. Organic clearance is insufficient | `docs/PAID-BOOSTS.md`, placement review |
-| Cover | Separate cover composition. Check actual profile grid, Reels tab and feed crops; no assumed permanent crop | Native preview and a person |
-| Sound-off | The joke works muted. Subtitles carry every spoken line | A person |
+| Cover | Separate cover composition. Face and headline inside the central 3:4 crop (y 240 to 1680) and the full-screen box; check actual profile grid, Reels tab and feed crops; no assumed permanent crop | Native preview and a person |
+| Sound-off | The joke works muted. Subtitles carry every spoken line, timed. One caption system only: no platform auto-captions over burned-in subtitles | A person |
 | AI labelling | Photorealistic AI dogs: switch on TikTok's AI-generated content label, and let Meta's "AI info" label stand | At upload |
 | Music | The locked licensed track, organic and paid alike. Krish, 4 Nov: "I have the right license for the post type". Settled, never re-check | None |
 

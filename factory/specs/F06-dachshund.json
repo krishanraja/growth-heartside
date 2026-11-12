@@ -1,6 +1,7 @@
 {
  "id": "F06-dachshund",
  "template": "roast",
+ "ui_profile": "social-corpus-2026-11-12-v2",
  "breed": "dachshund",
  "render": "mug-real-dachshund.jpg",
  "title": "F06.title",

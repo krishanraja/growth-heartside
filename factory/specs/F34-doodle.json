@@ -1,6 +1,7 @@
 {
  "id": "F34-doodle",
  "template": "chat",
+ "ui_profile": "social-corpus-2026-11-12-v2",
  "title": "P04.title",
  "cast": {
   "A": "doodle",
@@ -161,6 +162,5 @@
  },
  "open_with": 5,
  "note": "Chat variant of F34, 10 Nov: the doodle plotter. Proposed lines; built with --preview for Krish.",
- "ui_profile": "social-ui-2026-11-06-v1",
  "variant_of": "F34"
 }

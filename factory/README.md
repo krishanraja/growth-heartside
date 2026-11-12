@@ -31,7 +31,7 @@ Assets stay out of git, because the repository is public and the music is licens
    - shots that end before the voice does;
    - drift from the lock's fingerprint.
 2. `python3 factory/build.py SPEC`. It refuses a held spec. `--preview` builds one anyway, only so Krish can judge proposed lines in place.
-3. `python3 factory/lock.py media SPEC MP4`. This checks the post is 1080x1920 with sound, 6 to 60 seconds long, between -18 and -13 LUFS, and ends on the product card held for at least 3 seconds.
+3. `python3 factory/lock.py media SPEC MP4`. This checks the post is 1080x1920 with sound, 6 to 60 seconds long, between -18 and -13 LUFS, in the export preset of the 12 Nov corpus, ends on the product card held 3 to 4 seconds, and that its layout manifest (written by the renderer, bound to the file's SHA-256) keeps every hook, subtitle, label, chat and product inside the corpus regions (`docs/CREATIVE-UI.md`).
 4. `python3 factory/lock.py brief SPEC` gives an independent reviewer the beats plus the standing checks. The reviewer has never seen the maker's reasoning and looks at the actual frames. Record its verdict with `lock.py record SPEC reviewer-pass` or `reviewer-hold`. When a reviewer catches something new, it joins `STANDING` in `lock.py`.
 5. `python3 factory/lock.py gate SPEC MP4` runs everything above, plus the trust ramp:
    - the first 5 variants of every lock go to Krish, then 1 in 10;
@@ -56,9 +56,9 @@ New lines enter `bank/lines.json` as `proposed`, tagged with their role and bree
 # Platform UI acceptance (6 November 2026)
 
 Read [the creative UI contract](../docs/CREATIVE-UI.md) before each new build.
-Chat and film defaults now use the shared house working region. Exact locked
-masters keep their geometry; opt an intentional revision into
-`ui_profile: social-ui-2026-11-06-v1` and obtain a new approval.
+Every template now renders in the 12 Nov corpus profile (`ui_profile: social-corpus-2026-11-12-v2`), which
+every spec declares. Placement is not part of a lock's fingerprint, so moving a locked post onto the profile
+keeps its approval; a content change still needs a new one.
 `lock.py gate` requires `--release` and `--review` evidence for the specific
 placement. A file-level media audit alone is never release clearance.
 
