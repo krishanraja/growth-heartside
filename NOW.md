@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- The protocol copy and its two schemas in docs/control-center/ are Control Center's at 212379e1 (protocol 1.21.0: the 16 voice-check channels, the 50000 target read from this repository's north-star block, the circle's consent tier); this engine still speaks up to 1.20.0, and the brief says organic_net_sales_usd was registered on 29 Oct with 25000 and that the directive now takes its target from docs/NORTH_STAR.md. (2026-11-12)
 - Every Heartside social post is now built and gated against Krish's 12 Nov creative production corpus (profile social-corpus-2026-11-12-v2: critical box x 120 to 820, y 330 to 1180; subtitles of at most 7 words a segment; a 3 to 4 s moving product end; the export preset), with layout manifests checked by lock.py, factory/audit.py and codex/check_picture.py; F34 and its variants and all seven campaigns pass, F11 (searches too long for the box) and F10 (no-novelty-sfx) are held for Krish, and filed 03b media predates the corpus and is untouched (docs/audits/2026-11-12-corpus-audit.md). (2026-11-12)
 - the day's pack renders again (its product pictures re-pinned to heartside's live galleries, and a failed job now keeps its reason and is held in the next Control Center report), conversion editions are no longer held by a stale homepage check, and the daily report carries organic_net_sales_usd, the North Star number Control Center reads. (2026-11-12)
 - the Control Center loop speaks protocol 1.20.0 where Control Center serves it: it acks Krish's instruction (krish_instruction) as received by id only, first in its activity, and reports priorities, obsessions and next_steps from this repository's own files; every wake's run id carries its GitHub run id, so a second wake the same day is its own report. (2026-11-11)
@@ -57,6 +58,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-12 Krish, 2026-11-12: "make sure everything's a cohesive system and that the project documentation is 100% up to date with absolutely nothing old or misleading left in there".
 - 2026-11-12 Krish, 12 Nov: "Ensure all social media posts adhere to these best practices." Placement left the lock fingerprint, so all 16 factory specs moved onto the profile and keep their locks; Codex labels move from text top y 300 to y 360.
 - 2026-11-12 a docs and bug audit on Krish's question of 12 Nov; the nine closeout notes the fold could not read moved to docs/history, so the fold runs again.
 - 2026-11-11 Krish asked that every growth engine's priorities, obsessions and next steps feed Control Center live and that he can instruct each engine ("Get building", 11 Nov); his words never leave engine/engine_state.py.
