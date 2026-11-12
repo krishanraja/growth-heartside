@@ -1,6 +1,7 @@
 {
  "id": "F02",
  "template": "film",
+ "ui_profile": "social-corpus-2026-11-12-v2",
  "breed": "golden",
  "voice": "vo_F02.mp3",
  "music": "m_quirk_catwalk.mp3",

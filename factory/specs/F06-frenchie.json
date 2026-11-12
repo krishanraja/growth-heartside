@@ -1,6 +1,7 @@
 {
  "id": "F06-frenchie",
  "template": "roast",
+ "ui_profile": "social-corpus-2026-11-12-v2",
  "breed": "frenchie",
  "render": "mug-real-frenchie.jpg",
  "title": "F06.title",

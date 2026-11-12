@@ -43,10 +43,20 @@ A card is built once: the branch `codex/<id>` marks it done. To run it again, us
 
 Krish, 2026-11-10: "make sure all captions go where the "4:00 AM - rise" caption is ... dont have them moving
 about all the time and out of visible boundaries", then, seeing it on TikTok: "Still not really suitable for
-TikTok", and "EnSure all captions fit these new rules". Every on-screen word in a reel (labels, captions, chats)
-sits inside y 250 to 1250 of a 1080x1920 frame: TikTok's username, caption and stickers start about y 1340.
-Labels are centered at one fixed position for the whole reel, one font and size: the top band (text top y 300) by default, or just under the middle (text top about y 1050), Krish's choice for F38 on 11 Nov ("do one final one ... with the captions more or less in the middle or just under").
-Never move a label shot by shot to clear a face; recrop or pick another frame. Floor rule `fixed-label-position`.
+TikTok", and "EnSure all captions fit these new rules". Then, 12 Nov: "Ensure all social media posts adhere to
+these best practices" (the corpus in `knowledge/social-media-creative-production-corpus-2026-11-12.md`), which
+narrows the band: every on-screen word, face and product in a reel sits inside **x 120 to 820, y 330 to 1180** of a
+1080x1920 frame, clear of the top tabs, the right action rail and TikTok's username, caption and stickers.
+Labels are centered between x 140 and 820 at one fixed position for the whole reel, one font and size, at most
+12 words: the top band (text top **y 360**, was y 300 until 12 Nov) by default, or just under the middle (text top
+about y 1050), Krish's choice for F38 on 11 Nov ("do one final one ... with the captions more or less in the
+middle or just under"). Never move a label shot by shot to clear a face; recrop or pick another frame. Floor rule
+`fixed-label-position`.
+
+Every card's timeline records `label_box`: the [x0, y0, x1, y1] the labels were drawn in, in 1080x1920 pixels.
+The final shot is the real product render, moving, for 3 to 4 s. Export with the preset in
+`engine/creative_ui.py` (`FFMPEG_VIDEO`, `FFMPEG_AUDIO`: H.264 yuv420p BT.709, 30 fps, at most 12 Mbps, AAC 48 kHz
+stereo, true peak at or under -1 dBTP). `python3 codex/check_picture.py <reel> <timeline>` holds anything else.
 
 ## Claude runs Codex end to end
 

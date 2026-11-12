@@ -7,15 +7,21 @@ For each .mp4 it checks:
 - size, frame rate and sound;
 - length (6 to 60 s organic, 15 to 30 s with --paid);
 - integrated loudness (-18 to -13 LUFS);
-- a dead first second: a blank interface or a still image for the first 1.5 s.
+- a dead first second: a blank interface or a still image for the first 1.5 s;
+- the 12 Nov corpus export preset (engine/creative_ui.py): H.264 yuv420p progressive BT.709 at a constant
+  24 to 60 fps, at most 12 Mbps, AAC 48 kHz stereo, true peak at or under -1 dBTP.
 
 For each file it checks the library naming rule and records bytes and SHA-256.
 
 With --sheets it writes a 16-frame contact sheet per reel for the person doing the visual check. Sheets are review renders: keep them under local/ and out of git and Drive (docs/CHANNEL-TASKS.md).
 
-It never judges the joke, the product match or the safe zones by eye. Those stay with a person, against the bar in docs/audits/2026-11-04-creative-audit.md. Exit status is 1 when any file fails.
+Safe zones are checked from the renderer's layout manifest by `factory/lock.py media` and
+`codex/check_picture.py`, never inferred from pixels here. It never judges the joke or the product match by eye. Those stay with a person, against the bar in docs/audits/2026-11-04-creative-audit.md. Exit status is 1 when any file fails.
 """
 import hashlib, io, json, os, re, subprocess, sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from engine.creative_ui import media_errors
 
 NAME = re.compile(r'^heartside_[A-Z][0-9]{2,3}(-[a-z0-9]+)*_[a-z0-9]+(-[a-z0-9]+)*_[a-z0-9-]+\.(mp4|jpg)$')
 
@@ -108,6 +114,10 @@ def audit(path, paid=False, sheets=None):
         r['dead_open'] = dead_open(path)
         if r['dead_open']:
             r['problems'].append(f"dead open: {r['dead_open']}")
+        export, notes = media_errors(path)
+        r['problems'] += ['export: ' + x for x in export]
+        if notes:
+            r['notes'] = notes
         if sheets:
             os.makedirs(sheets, exist_ok=True)
             sheet(path, os.path.join(sheets, name.rsplit('.', 1)[0] + '_sheet.jpg'))

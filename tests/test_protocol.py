@@ -241,8 +241,11 @@ class ReportTests(unittest.TestCase):
         path = self.root / 'local/media' / CID / 'rev/payload.bin'
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(b'checked fixture output')
+        from tests.ui_fixtures import layout
+        layout_path = path.parent / 'layout.json'; layout_path.write_text(json.dumps(layout()))
         manifest = {'version': media.VERSION, 'creative_id': CID, 'revision': REVISION, 'copy_sha256': {CID: media.copy_digest(item)},
-                    'files': {role: {'path': str(path.relative_to(self.root)), 'sha256': assets.sha256(path)} for role in media.REQUIRED_ROLES}}
+                    'files': {role: {'path': str(p.relative_to(self.root)), 'sha256': assets.sha256(p)}
+                              for role in media.REQUIRED_ROLES for p in [layout_path if role.endswith('_layout') else path]}}
         (path.parent / 'manifest.json').write_text(json.dumps(manifest))
         ledger.record_render(self.db, CID, REVISION, {'mechanism': 'Recognition opening.'}, manifest)
         ledger.mark(self.db, CID, REVISION, 'approved')
@@ -253,6 +256,7 @@ class ReportTests(unittest.TestCase):
         from engine import creative_ui
         release['alt_text'] = item['alt_text']
         next(e for e in release['exports'] if e['role'] == 'cover').update(manifest['files']['cover'])
+        next(e for e in release['exports'] if e['role'] == 'layout').update(manifest['files']['reel_layout'])
         review['binding'] = creative_ui.digest(release)
         base = self.root / 'local/creative-ui' / REVISION
         (base / (CID + '.release.json')).write_text(json.dumps(release))

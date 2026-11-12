@@ -1,6 +1,7 @@
 {
  "id": "F04",
  "template": "film",
+ "ui_profile": "social-corpus-2026-11-12-v2",
  "breed": "golden",
  "voice": "vo_F04.mp3",
  "music": "m_epic_callwild.mp3",

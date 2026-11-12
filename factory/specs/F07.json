@@ -1,6 +1,7 @@
 {
  "id": "F07",
  "template": "film",
+ "ui_profile": "social-corpus-2026-11-12-v2",
  "breed": "doodle",
  "voice": "vo_F07.mp3",
  "music": "m_elegant_butterfly.mp3",

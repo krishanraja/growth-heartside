@@ -139,18 +139,31 @@ class StillTemplateTest(unittest.TestCase):
     def test_existing_locks_keep_their_fingerprints(self):
         # F01's spec was edited after its lock (3d675d1, 4 Nov) and already drifts on main; that is a
         # finding for Krish, not something the still template may paper over by re-locking.
+        # Every other master moved onto the 12 Nov corpus profile and still matches its lock: placement
+        # is not content (lock.fingerprints).
         already_drifting = {'F01.json'}
         for name in sorted(set(os.listdir(os.path.join(HERE, '..', 'factory', 'locks'))) - already_drifting):
             lk = json.load(open(os.path.join(HERE, '..', 'factory', 'locks', name), encoding='utf-8'))
             spec = json.load(open(os.path.join(HERE, '..', 'factory', lk['master']), encoding='utf-8'))
-            self.assertEqual(lock.fingerprint(spec), lk['fingerprint'], name)
+            self.assertTrue(lock.matches(spec, lk['fingerprint']), name)
 
     def test_built_slides_are_checked_for_count_and_size(self):
+        from engine.creative_ui import REVISION
+        layout = {'profile': REVISION, 'canvas': [1080, 1350], 'duration': 0, 'elements': [
+            {'role': 'hook', 'box': [90, 90, 990, 220], 'start': 0, 'end': 0, 'text': 'A line'},
+            {'role': 'picture', 'box': [0, 256, 1080, 1350], 'start': 0, 'end': 0}]}
         with tempfile.TemporaryDirectory() as out:
             Image.new('RGB', (1080, 1350)).save(f'{out}/slide-01.png')
             self.assertTrue(any('expected' in p for p in lock.still_media(self.spec, out)))
             Image.new('RGB', (1080, 1350)).save(f'{out}/slide-02.png')
+            self.assertTrue(any('no layout manifest' in p for p in lock.still_media(self.spec, out)))
+            for n in (1, 2):
+                json.dump(layout, open(f'{out}/slide-0{n}.layout.json', 'w'))
             self.assertEqual(lock.still_media(self.spec, out), [])
+            layout['elements'][0]['box'] = [30, 30, 1050, 220]   # the line runs into the feed margin
+            json.dump(layout, open(f'{out}/slide-02.layout.json', 'w'))
+            self.assertTrue(any('feed margin' in p for p in lock.still_media(self.spec, out)))
+            layout['elements'][0]['box'] = [90, 90, 990, 220]; json.dump(layout, open(f'{out}/slide-02.layout.json', 'w'))
             Image.new('RGB', (1080, 1920)).save(f'{out}/slide-02.png')
             self.assertTrue(any('not 4:5' in p for p in lock.still_media(self.spec, out)))
 

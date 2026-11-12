@@ -1,6 +1,7 @@
 {
  "id": "F03",
  "template": "film",
+ "ui_profile": "social-corpus-2026-11-12-v2",
  "breed": "shepherd",
  "voice": "vo_F03.mp3",
  "music": "m_spy_young.mp3",

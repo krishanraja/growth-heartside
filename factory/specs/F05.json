@@ -1,6 +1,7 @@
 {
  "id": "F05",
  "template": "film",
+ "ui_profile": "social-corpus-2026-11-12-v2",
  "breed": "frenchie",
  "voice": "vo_F05.mp3",
  "music": "m_court_estim.mp3",

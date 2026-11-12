@@ -14,7 +14,10 @@ drift and we don't get weird humor and things that don't make sense once stuff i
 How it holds:
 1. A lock freezes a post's skeleton: its structure, timings, music, sound, product type and every
    line's role. Its fingerprint is the sha256 of that skeleton. A variant must produce the same
-   fingerprint, so only the slots can change.
+   fingerprint, so only the slots can change. Placement is not content: `ui_profile` stays out of the
+   skeleton, so moving a locked post onto the current corpus profile keeps its approval (Krish,
+   2026-11-12: "Ensure all social media posts adhere to these best practices."), while the media gate
+   holds any build whose layout or export breaks that profile.
 2. Slots: which dog plays which part (cast or breed), which approved line fills a role, which real
    render of the same product type closes it. Voiced films freeze their lines too.
 3. Every line comes from bank/lines.json, approved, and tagged for the breed that says it.
@@ -30,6 +33,8 @@ import argparse, copy, hashlib, importlib.util, json, os, re, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+if ROOT not in sys.path:
+    sys.path.insert(0, ROOT)   # engine.creative_ui, when run as a script
 BANK = json.load(open(f'{HERE}/bank/lines.json', encoding='utf-8'))
 LINES = {l['id']: l for l in BANK['lines']}
 RENDERS = {r['file']: r for r in json.load(open(f'{HERE}/bank/renders.json'))['renders']}
@@ -105,7 +110,7 @@ def skeleton(spec):
     """The spec with every slot replaced by what it must stay: a line by its role, a render by its
     product type, the cast and breed by their names only. Voiced films keep their lines."""
     s = copy.deepcopy(spec); voiced = 'voice' in spec; still = spec.get('template') == 'still'
-    for k in ('id', 'title_note', 'variant_of', 'note', 'text_pos'):   # text placement follows each photo
+    for k in ('id', 'title_note', 'variant_of', 'note', 'text_pos', 'ui_profile'):   # text placement follows each photo; geometry is the profile's
         s.pop(k, None)
 
     def walk(x):
@@ -143,6 +148,21 @@ def skeleton(spec):
 
 def fingerprint(spec):
     return hashlib.sha256(json.dumps(skeleton(spec), sort_keys=True, ensure_ascii=False).encode()).hexdigest()
+
+
+def fingerprints(spec):
+    """Every fingerprint this post may carry: the current one, and the one a lock recorded while
+    `ui_profile` was still part of the skeleton (before 12 Nov), under any profile it then named."""
+    from engine.creative_ui import LEGACY, REVISION
+    out = {fingerprint(spec)}
+    for profile in (*LEGACY, REVISION):
+        s = skeleton(spec); s['ui_profile'] = profile
+        out.add(hashlib.sha256(json.dumps(s, sort_keys=True, ensure_ascii=False).encode()).hexdigest())
+    return out
+
+
+def matches(spec, fp):
+    return fp in fingerprints(spec)
 
 
 def lock_for(spec):
@@ -243,16 +263,16 @@ def check(spec, quiet=False):
         else:
             probs.append(f'voice {spec["voice"]} missing')
     lk, _ = lock_for(spec)
-    from engine.creative_ui import REVISION as UI_REVISION
-    if spec.get('ui_profile') not in (None, UI_REVISION):
-        probs.append('unknown ui_profile: use ' + UI_REVISION)
-    exact_legacy = (lk and lk.get('status') == 'locked' and fingerprint(spec) == lk['fingerprint'])
-    if not exact_legacy and spec.get('ui_profile') != UI_REVISION:
-        probs.append('new/revised specs must declare ui_profile ' + UI_REVISION + ' before locking')
+    from engine.creative_ui import REVISION as UI_REVISION, LEGACY as UI_LEGACY
+    if spec.get('ui_profile') in UI_LEGACY:
+        probs.append(f'drawn under the retired profile {spec["ui_profile"]}: set ui_profile {UI_REVISION} and rebuild (the lock still matches)')
+    elif spec.get('ui_profile') != UI_REVISION:
+        probs.append(('unknown ui_profile: use ' if spec.get('ui_profile') else 'legacy geometry: declare ui_profile ') + UI_REVISION
+                     + ' and rebuild; every post adheres to the 12 Nov corpus (docs/CREATIVE-UI.md)')
     if lk:
         if lk.get('status') == 'paused':
             probs.append(f'lock {lk["id"]} is paused after declines')
-        if fingerprint(spec) != lk['fingerprint']:
+        if not matches(spec, lk['fingerprint']):
             probs.append(f'drift: this post no longer matches lock {lk["id"]} (only slots may change)')
     elif spec.get('variant_of'):
         probs.append(f'variant of {spec["variant_of"]}, which is not locked')
@@ -266,7 +286,26 @@ def probe(mp4):
     return v['width'], v['height'], float(v.get('duration') or j['format']['duration']), bool(a)
 
 
+def layout_problems(spec, mp4, dur):
+    """The renderer's layout manifest for exactly this file, checked against the corpus profile."""
+    from engine.creative_ui import layout_errors
+    path = spec.get('_layout') or f"{OUT}/{spec['id']}/layout.json"
+    try:
+        lay = json.load(open(path, encoding='utf-8'))
+    except (OSError, ValueError):
+        return ['no layout manifest from the corpus renderer: rebuild with ui_profile set (a legacy build cannot pass)']
+    probs = []
+    with open(mp4, 'rb') as fh:
+        if lay.get('media_sha256') != hashlib.file_digest(fh, 'sha256').hexdigest():
+            probs.append('the layout manifest belongs to another build of this post: rebuild')
+    if abs(float(lay.get('duration') or 0) - dur) > 0.25:
+        probs.append(f"layout says {lay.get('duration')} s, the file runs {dur:.1f} s")
+    found, notes = layout_errors(lay)
+    return probs + found
+
+
 def media(spec, mp4):
+    from engine.creative_ui import media_errors
     probs = []
     w, h, dur, has_audio = probe(mp4)
     if (w, h) != (1080, 1920): probs.append(f'{w}x{h}, not 1080x1920')
@@ -275,6 +314,8 @@ def media(spec, mp4):
     out = subprocess.run(['ffmpeg', '-i', mp4, '-af', 'ebur128', '-f', 'null', '-'], capture_output=True, text=True).stderr
     m = re.findall(r'I:\s+(-?[\d.]+) LUFS', out)
     if m and not -18 <= float(m[-1]) <= -13: probs.append(f'loudness {m[-1]} LUFS (want -18 to -13)')
+    probs += ['export: ' + x for x in media_errors(mp4)[0]]
+    probs += layout_problems(spec, mp4, dur)
     # the post must end on the product, on screen for at least the last 3 seconds (it may move)
     end_png = spec.get('_end_png') or f"{OUT}/{spec['id']}/end.png"
     if end_png and os.path.exists(end_png):
@@ -295,8 +336,10 @@ def media(spec, mp4):
 
 
 def still_media(spec, folder):
-    """The built slides of a still post: every slide present, decodable and the right size."""
+    """The built slides of a still post: every slide present, decodable, the right size, and its layout
+    manifest inside the corpus regions."""
     from PIL import Image
+    from engine.creative_ui import layout_errors
     probs = []; want = len(spec['slides']) + (1 if spec.get('end', {}).get('renders') else 0)
     files = sorted(f for f in os.listdir(folder) if re.fullmatch(r'slide-\d\d\.png', f)) if os.path.isdir(folder) else []
     if len(files) != want: probs.append(f'{len(files)} slides built, {want} expected')
@@ -307,14 +350,24 @@ def still_media(spec, folder):
                 if im.size != STILL_SIZES.get(spec.get('aspect'), (0, 0)): probs.append(f'{f}: {im.size[0]}x{im.size[1]}, not {spec.get("aspect")}')
         except Exception as e:
             probs.append(f'{f}: does not decode ({e.__class__.__name__})')
+        try:
+            lay = json.load(open(os.path.join(folder, f.replace('.png', '.layout.json')), encoding='utf-8'))
+            probs += [f'{f}: {x}' for x in layout_errors(lay)[0]]
+        except (OSError, ValueError):
+            probs.append(f'{f}: no layout manifest from the corpus renderer (rebuild it)')
     return probs
 
 
 # ---------------------------------------------------------------- review brief
-STANDING = [  # each one was caught by a reviewer on 2 Nov 2026; add new catches here
+STANDING = [  # each one was caught by a reviewer on 2 Nov 2026 or set by the 12 Nov corpus; add new catches here
     'review export plus final platform UI, copy and crop using docs/CREATIVE-UI.md; a paid preview never proves the organic viewer experience',
     'normal and stress views leave the hook, latest chat payoff, subtitles, face, product and mark readable; expanded panels may temporarily occlude',
     'inspect start, busiest and end frames, full playback, cover crops, non-owner view where required, and native plus baked captions together',
+    'faces, the hook and every word sit inside x 120 to 820, y 330 to 1180: nothing under the right action rail, the top tabs or the bottom caption',
+    'frame 1 is the story (a dog, a payoff, a question), never a logo, an empty chat or an empty search page',
+    'subtitles are 1 or 2 lines, at most 7 words a segment, timed to the voice; only one caption system shows (no platform auto-captions on top)',
+    'the product end beat lasts 3 to 4 s and keeps moving: never a dead outro; no on-screen CTA (it goes in the post description)',
+    'the cover keeps the face and headline inside the central 3:4 crop (y 240 to 1680) as well as the full-screen safe box',
     'one setting and one cast across the post: no shot that jumps to another place or adds a human where the joke has none',
     'no AI-drawn product: no mug, blanket, portrait or card with lettering or a dog painting except the real store render',
     'organic, not an ad: no slogan, URL, price or call to action on screen (a link preview inside a chat may show its domain); links go in the caption',
@@ -408,7 +461,7 @@ def gate(spec, mp4, release=None, review=None):
         from engine.creative_ui import check_files
         probs += check_files(ROOT, release, review, expected_media=mp4, expected_asset_id=spec['id'])
     # a verdict belongs to the exact post (its spec and fingerprint), whichever lock existed when it was recorded
-    rs = [r for r in ledger()['records'] if r['spec'] == spec['id'] and r['fingerprint'] == fingerprint(spec)]
+    rs = [r for r in ledger()['records'] if r['spec'] == spec['id'] and matches(spec, r['fingerprint'])]
     rv = [r['verdict'] for r in rs if r['verdict'].startswith('reviewer-')]
     if not rv or rv[-1] != 'reviewer-pass':
         probs.append('no independent reviewer pass on this exact post')
