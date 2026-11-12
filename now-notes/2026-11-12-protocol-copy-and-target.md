@@ -1,0 +1,4 @@
+Status: The protocol copy and its two schemas in docs/control-center/ are Control Center's at 212379e1 (protocol 1.21.0: the 16 voice-check channels, the 50000 target read from this repository's north-star block, the circle's consent tier); this engine still speaks up to 1.20.0, and the brief says organic_net_sales_usd was registered on 29 Oct with 25000 and that the directive now takes its target from docs/NORTH_STAR.md.
+Changed: Krish, 2026-11-12: "make sure everything's a cohesive system and that the project documentation is 100% up to date with absolutely nothing old or misleading left in there".
+Next: Measure the filed 03b media against the corpus on the home computer (python3 factory/audit.py on the Posts folder), now that Krish ruled the approved pre-corpus posts go out without recuts.
+North Star check (2026-11-12): holds.
