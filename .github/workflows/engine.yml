@@ -131,7 +131,8 @@ jobs:
           with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as out:
               out.write('# Heartside draft engine\n\nNo social publishing, paid generation or Control Centre writes.\n\n')
               for item in result['results']:
-                  out.write(f"- {item['job']}: {item['status']}\n")
+                  # A failed job names the engine's own reason (engine/runner.py, failure_reason).
+                  out.write(f"- {item['job']}: {item['status']}" + (f" ({item['error']})" if item.get('error') else '') + "\n")
               out.write('\nDownload heartside-state, restore state.tgz, then open local/automation/runs/<date>/daily-pack/review.zip.\n')
           sys.exit(1 if failed else 0)
           PY

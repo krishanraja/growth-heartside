@@ -17,6 +17,29 @@ from zoneinfo import ZoneInfo
 
 from . import assets, dashboard, insights, ledger, media, offers, review, retention, social
 
+# A failed job's reason is printed in the public Actions log, so it is cut down to the engine's own words.
+REDACT = (
+    (re.compile(r'(https?://[^\s?#]+)[?#]\S*'), r'\1'),  # a query string can carry a buyer's or dog's name
+    (re.compile(r'[^\s@]+@[^\s@]+\.[a-z]{2,}', re.I), '[address]'),
+    (re.compile(r'\b(?:gen1|shp[a-z]{2}|gh[opsu]|github_pat)_[A-Za-z0-9_]+'), '[token]'),
+)
+
+
+def failure_reason(error):
+    """Why a job failed, in the engine's own words and safe for a public log, or None.
+
+    Only a ValueError carries a reason: this engine raises one for each of its own checks (a product
+    render that left the live gallery, a pack that fails the copy or freshness rules, a STOP), and
+    those name a role, a gift, a rule or a file, never a customer. Any other error keeps its type
+    alone, so a provider's response body or a token is never written down.
+    """
+    if not isinstance(error, ValueError):
+        return None
+    text = ' '.join(str(error).split())
+    for pattern, replacement in REDACT:
+        text = pattern.sub(replacement, text)
+    return text[:500] or None
+
 
 def write_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -216,7 +239,7 @@ def tick(root, growth, now=None, job=None, force=False):
     day = now.astimezone(ZoneInfo(config['timezone'])).date().isoformat()
     names = [Path(a['job']).stem for a in config['automations']]
     if job and job not in names + ['all']:
-        raise ValueError('job must be one of the seven declared jobs or all')
+        raise ValueError('job must be one of the declared jobs in automations.json, or all')
     due = [(name, day) for name in names if job == 'all' or job == name] if job else due_jobs(config, now)
     index = assets.local_path(root, 'local/automation/index.json')
     with lease(root, now):
@@ -263,8 +286,10 @@ def tick(root, growth, now=None, job=None, force=False):
                 result = run_job(root, growth, name, date)
                 history[key].update(status='completed', result=result, completed_at=ledger.now())
             except Exception as error:
-                # Do not serialize arbitrary provider response bodies or tokens.
+                # Never a provider's response body or a token: the type, and the engine's own reason (failure_reason).
                 history[key].update(status='failed', error_type=type(error).__name__)
+                if reason := failure_reason(error):
+                    history[key]['error'] = reason
             write_json(index, history)
             results.append({'job': name, **history[key]})
         retained = retention.prune(root, day)

@@ -15,20 +15,27 @@ SOURCES = {
 }
 
 # The current product renders, read from the live store's own gallery (heartside
-# docs/SYNC.md: live Shopify product records are the current product truth). Each
-# is a Printful mockup with an example dog, reviewed on 29 Oct 2026 at heartside
-# 54b6b0e; every frame that shows one carries an Example label. Blank templates
-# and checkout tiles are never used. A role whose image leaves the gallery stops
-# the render instead of falling back to anything else.
+# docs/SYNC.md: live Shopify product records are the current product truth).
+# Re-pinned on 12 Nov 2026 at heartside 88b8a61 to the gallery pictures Krish
+# approved for the three gift pages on 30 and 31 Oct (heartside
+# docs/history/LOG.md): the Printful mockups pinned on 29 Oct had left the
+# galleries, so every daily pack stopped until then. The blanket and the four
+# portrait finishes show the same example black Labrador, so a film that moves
+# between them keeps one dog; the portrait finishes are Printful's own photos,
+# held up by its model, with the painting composited in. The two mugs show the
+# store's lead example dog. Each is shown whole, its pixels unaltered and with
+# no badge or label (Krish, 2 Nov: "We never need EXAMPLE badges anywhere"),
+# and never as a customer's dog. Blank templates and checkout tiles are never
+# used. A role whose image leaves the gallery stops the render instead of
+# falling back to anything else; the runner records why (engine/runner.py).
 PRODUCT_IMAGES = {
-    'blanket': ('blanket', 'heartside-word-free-blanket-example',
-                'An example of the word-free sherpa blanket, painted with an example dog.'),
-    'portrait_black': ('portrait', '6adf25082493a', 'An example portrait in a black frame, painted with an example dog.'),
-    'portrait_white': ('portrait', '6adf2504bc174', 'An example portrait in a white frame, painted with an example dog.'),
-    'portrait_oak': ('portrait', '6adf250b670c5', 'An example portrait in a red oak frame, painted with an example dog.'),
-    'portrait_unframed': ('portrait', '6ae0433aaaee2', 'An example unframed portrait, painted with an example dog.'),
-    'mug_front': ('mug', '6ae2d892c1504', 'An example illustrated mug with a black interior, painted with an example dog.'),
-    'mug_back': ('mug', '6ae2d897b7ba7', 'The other side of the example mug, with the painting wrapping around.'),
+    'blanket': ('blanket', 'home-4x5', 'A word-free sherpa blanket on a sofa, painted with an example black Labrador.'),
+    'portrait_black': ('portrait', 'portrait-black', 'A portrait in a black frame, painted with an example black Labrador.'),
+    'portrait_white': ('portrait', 'portrait-white', 'A portrait in a white frame, painted with an example black Labrador.'),
+    'portrait_oak': ('portrait', 'portrait-red-oak', 'A portrait in a red oak frame, painted with an example black Labrador.'),
+    'portrait_unframed': ('portrait', 'portrait-unframed', 'An unframed portrait on a wall, painted with an example black Labrador.'),
+    'mug_black': ('mug', 'mug-real-golden', 'An illustrated mug with a black handle and interior, painted with an example golden retriever.'),
+    'mug_pink': ('mug', 'mug-pink', 'The same illustrated mug with a pink handle and interior, one of its five colors.'),
 }
 
 
@@ -111,7 +118,7 @@ def prepare(root, sha, checkout=None, store=None):
         records[role] = {'path': str(destination.relative_to(root)), 'sha256': sha256(destination),
                          'source': live['url'], 'product': live['product'], 'gift': gift, 'heartside_sha': sha,
                          'example': True, 'description': description,
-                         'rights': 'Heartside live product gallery example (a Printful mockup with an example dog); shown only with an Example label'}
+                         'rights': 'Heartside live product gallery picture with an example dog, approved by Krish for the gift page; shown unaltered with no label'}
     manifest = {'heartside_sha': sha, 'assets': records}
     manifest_path.write_text(json.dumps(manifest, indent=2) + '\n')
     return manifest

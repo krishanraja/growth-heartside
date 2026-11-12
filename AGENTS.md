@@ -19,7 +19,7 @@ When Krish says "Get going", or opens a session with no more specific task, foll
 
 ## Autonomy (Ruling, Krish, 2026-10-19)
 
-Krish: "the engine shows me what it is going to do, I approve, it gets up to go-live and asks me to review." This engine runs autonomously under Control Center protocol 1.1.0 (`docs/control-center/ENGINE-PROTOCOL.md`, "Autonomy" and "Amend"), in steps Krish answers on his one list in Control Center:
+Krish: "the engine shows me what it is going to do, I approve, it gets up to go-live and asks me to review." This engine is set to run autonomously under Control Center's growth engine protocol (`docs/control-center/ENGINE-PROTOCOL.md`, a copy of version 1.20.0; its "Autonomy" and "Amend" sections arrived in 1.1.0), in steps Krish answers on his one list in Control Center. The loop is not built yet (`docs/GET-GOING.md`, Step 1): today the daily report proposes and reads his decisions, and he still acts by hand. The steps:
 
 1. **Plan.** Propose what the engine is going to do as `stage: "plan"`, behind a wall (usually `strategy`), with the plan itself in `exact_payload` so he can change it. Wait for his yes.
 2. **Go-live.** Once the plan is approved, build everything up to go-live: the assets, the exact words, the amount. Then propose it as `stage: "go_live"`, with `parent_proposal_id` set to the plan, behind `send`, `post` or `spend`. Nothing goes out yet.
@@ -263,12 +263,18 @@ The engine works independently of that dashboard.
 **Control Center protocol, 19 October.** Krish: "make each engine adopt its
 brief now". Progress now goes through the growth engine protocol in
 `docs/CONTROL-CENTER-BRIEF.md`. `.github/workflows/control-center.yml` runs
-`python3 growth.py cc` when Control Center's daily `cc-growth-directive`
-dispatch arrives: it reports objectives, proposals and holds from the latest
-checkpoint and product truth, and never posts, sends, spends or writes engine
-state. Pack delivery above is unchanged. An approved go-live is taken live by the
-engine's go-live step ("Autonomy" above); anything else he approves he still
-does by hand (rule 1).
+`python3 growth.py cc` when Control Center's `cc-growth-directive` dispatch
+arrives: once a day at 05:10 UTC, and again the same day when Krish gives this
+engine an instruction. From the latest checkpoint and product truth it reports
+the objectives (Heartside's North Star number, `organic_net_sales_usd`, among
+them), proposals and holds, and, since protocol 1.20.0 (11 November), the
+engine's priorities, obsessions and next steps. It acks Krish's instruction as
+received, by its id only, and acts on none of his words: a working session on
+this repository takes the instruction up, and his words are never printed,
+logged or committed (`engine/engine_state.py`). It never posts, sends, spends
+or writes engine state. Pack delivery above is unchanged. An approved go-live
+is taken live by the engine's go-live step ("Autonomy" above) once that step is
+built; anything else he approves he still does by hand (rule 1).
 
 ## The schedule (New York time)
 
@@ -305,7 +311,7 @@ means it. Do exactly this, in order, and nothing else:
 3. **Check the clock.** Run `date +%Z`. The times in `automations.json` are
    New York time. If this computer's time zone is not New York, convert each
    time, and tell Krish which zone you used.
-4. **Create the seven scheduled tasks** from `automations.json`, using the
+4. **Create the eight scheduled tasks** from `automations.json`, using the
    app's own scheduled tasks (Codex and Cowork can both create them from a
    chat). For each entry:
    - name: the entry's `name`;
@@ -325,7 +331,7 @@ means it. Do exactly this, in order, and nothing else:
    there exactly once. Say so plainly, or name what is missing.
 6. **Prove one end to end.** Run the numbers job once now. Confirm it printed
    "stored". Show Krish where the pack is.
-7. **Finish** with one line: "7 automations live. Next sync 05:45 New York.
+7. **Finish** with one line: "8 automations live. Next sync 05:45 New York.
    Packs land in local/packs/ and in each run's final message."
 
 If the app can't create scheduled tasks from a chat, say so in one line.
@@ -342,7 +348,9 @@ All on the machine that runs it, under `local/`, never committed:
 | `local/state/` | The latest sync's input data: the heartside commit, canon and rules fingerprints, the store and offers. Never heartside's status |
 | `local/packs/` | Every pack, as JSON and as readable text |
 | `local/creatives.csv` | The creative record (PLAYBOOK, "Measurement") |
-| `local/engine.sqlite3` | Creative revisions, operator-recorded status and aggregate reporting windows |
+| `local/engine.sqlite3` | Creative revisions, operator-recorded status, aggregate reporting windows and the organic attribution readings (aggregates only) |
+| `local/automation/` | The scheduled runner's index (each job's status, attempts and, on a failure, the engine's own reason), each day's run folder and review bundle |
+| `local/control-center/` | The protocol run's attempt journal, never a token |
 | `local/media/` | Rendered files and their source and checksum manifests |
 | `local/assets/` | Approved product assets from the synced Heartside commit |
 | `local/metrics/` | Aggregate report envelopes, never customer records |
@@ -367,7 +375,7 @@ His latest 17 October instruction overrides the earlier reporting implementation
 interpretation: no actual work in Control Centre; brief only after growth work
 is complete. The earlier draft there is outside this task and remains untouched.
 
-`growth.py run` executes the same seven jobs on GitHub Actions, without a signed-in
+`growth.py run` executes the same eight jobs on GitHub Actions, without a signed-in
 browser, social publishing or paid generation. It uses approved reusable assets,
 current public product truth and imported aggregate evidence. Missing private
 analytics and creator evidence stay missing. Its bounded fallback does not claim

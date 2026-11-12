@@ -1,5 +1,5 @@
 name: Build the Heartside handoff library
-# Manual export only. The seven autonomous schedules remain in engine.yml.
+# Manual export only. The eight scheduled jobs remain in engine.yml.
 on:
   workflow_dispatch:
 permissions:

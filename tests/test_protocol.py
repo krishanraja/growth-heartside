@@ -273,18 +273,57 @@ class ReportTests(unittest.TestCase):
         self.assertTrue(all(p['wall'] == 'none' for p in report['proposals']))
         self.assertNotIn('spend', {p['wall'] for p in report['proposals']})
 
+    def test_a_failed_scheduled_job_is_held_with_the_runner_s_reason(self):
+        index = self.root / 'local/automation/index.json'
+        index.parent.mkdir(parents=True, exist_ok=True)
+        reason = 'the approved blanket image is no longer in the live blanket gallery'
+        index.write_text(json.dumps({
+            '2026-10-19/daily-pack': {'status': 'failed', 'attempts': 3, 'error_type': 'ValueError', 'error': reason},
+            '2026-10-18/radar': {'status': 'failed', 'attempts': 1, 'error_type': 'OSError'},
+            '2026-10-19/numbers': {'status': 'completed', 'attempts': 1},
+            '2026-10-10/daily-pack': {'status': 'failed', 'attempts': 9, 'error_type': 'ValueError', 'error': 'old'}}))
+        report = self.build()
+        failed = [h for h in report['holds'] if h['reason'] == 'A scheduled draft job failed and will retry']
+        self.assertEqual([h['detail'] for h in failed], [
+            f'daily-pack for 2026-10-19 failed after 3 attempt(s): {reason}',
+            'radar for 2026-10-18 failed after 1 attempt(s): OSError, with no reason recorded'])
+        self.assertEqual(validate(SCHEMA, report), [])
+        self.assertEqual(report['status'], 'held')
+        index.write_text('not json')
+        self.assertFalse(any(h['reason'].startswith('A scheduled draft job') for h in self.build()['holds']))
+
     def test_product_hold_follows_current_product_truth(self):
         live = {**STATE, 'store': [{'title': "Your Dog's Portrait", 'available': True, 'prices': [59.0, 119.0]}], 'homepage_v3': False}
         report = self.build(state=live)
         self.assertEqual([h['reason'] for h in report['holds']], ['Conversion editions held until the V3 homepage is public'])
+        self.assertFalse(any(a['evidence_url'] == protocol.STORE_URL for a in report['activity']))
         report = self.build(state={**live, 'homepage_v3': True})
         self.assertEqual((report['holds'], report['status']), ([], 'ready'))
+        released = [a for a in report['activity'] if a['evidence_url'] == protocol.STORE_URL]
+        self.assertEqual(len(released), 1)
+        self.assertIn('V3 gift journey', released[0]['line'])
+        self.assertEqual(validate(SCHEMA, report), [])
 
     def test_no_ledger_is_degraded_not_zero(self):
         report = self.build(db=None)
         self.assertEqual(report['status'], 'degraded')
         self.assertIsNone(report['objectives'][0]['value'])
         self.assertEqual(validate(SCHEMA, report), [])
+
+    def test_the_report_carries_the_north_star_objective_control_center_reads(self):
+        # Control Center reads organic_net_sales_usd (api/_northStarRefresh.ts, HEARTSIDE_ORGANIC_OBJECTIVE).
+        report = self.build()
+        self.assertEqual([o['key'] for o in report['objectives']], ['net_sales_usd', 'organic_orders', 'organic_net_sales_usd'])
+        self.assertEqual((report['objectives'][2]['value'], report['objectives'][2]['availability']), (None, 'missing'))
+        from engine import attribution
+        start, end = attribution.windows(dt.date(2026, 10, 19))['trailing_28d']
+        attribution.store(self.db, 'trailing_28d', attribution.aggregate([], start, end), observed_at='2026-10-19T07:00:00+00:00')
+        report = self.build()
+        north_star = report['objectives'][2]
+        self.assertEqual((north_star['key'], north_star['value'], north_star['unit'], north_star['availability']),
+                         ('organic_net_sales_usd', 0, 'USD', 'measured'))
+        self.assertEqual(validate(SCHEMA, report), [])
+        self.assertEqual(report['payload_sha256'], report_digest(report))
 
     def import_sales(self, start, end, value, observed='2026-10-19T07:00:00Z'):
         ledger.import_report(self.db, {'platform': 'shopify', 'scope': 'store', 'currency': 'USD', 'source': 'Synthetic ShopifyQL',

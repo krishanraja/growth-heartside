@@ -91,7 +91,8 @@ def ad_click(url):
 def load_codes(path=None):
     """The registered code families, {PREFIX: family}, upper-cased. Missing file or no families: an empty registry."""
     try:
-        data = json.load(open(path or CODES, encoding='utf-8'))
+        with open(path or CODES, encoding='utf-8') as handle:
+            data = json.load(handle)
     except FileNotFoundError:
         return {}
     families = data.get('families') or {}

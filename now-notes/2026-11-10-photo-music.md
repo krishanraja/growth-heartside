@@ -1,4 +1,0 @@
-Status: All 15 photo posts are now 8 s videos with licensed Epidemic music built in: the seven in 02r plus eight new ones, F52 to F59. They are filed through the library lane (30 files) and listed in Drive Sheet 02t (45 rows; read back 736 of 736 cells). README v5.4 has Codex post every 02t row on all three platforms and replace the 02r photo rows for those seven posts. The new posts run 18 to 28 Nov, with the guest-room and grace posts around Thanksgiving. The F28 howl clip (10 Higgsfield credits; Heartside's share has 8.1 left) waits for Krish. Its song is the joke, so it would go to his phone list.
-Changed: photo posts go out as music videos that Codex posts everywhere.
-Next: Krish types yes in 02t's approved column; then Codex schedules them.
-North Star check (2026-11-10): holds. About 27 posts are ready of the brief's 120.
