@@ -250,29 +250,37 @@ def product_holds(state):
 
 
 def runner_holds(root, now):
-    """Scheduled draft jobs whose last attempt failed, this New York day or the one before.
+    """Scheduled draft jobs whose latest run failed, this New York day or the one before.
 
     Read from the runner's index in the restored checkpoint (engine/runner.py), never written. Each
     carries the runner's own reason when it recorded one, so a stopped job shows on Growth > Engines
-    instead of only in an Actions log. A job that has since completed is no longer held.
+    instead of only in an Actions log. Only each job's latest day counts: once the same job has
+    completed on a later day, an earlier failure is no longer held. Today's failure retries while the
+    job is due; a day that has passed is never run again, and its hold says so.
     """
     try:
         history = json.loads((Path(root) / RUNNER_INDEX).read_text())
     except (OSError, ValueError):
         return []
     today = now.astimezone(NEW_YORK).date()
-    holds = []
-    for key, entry in sorted(history.items() if isinstance(history, dict) else (), reverse=True):
+    latest = {}
+    for key, entry in history.items() if isinstance(history, dict) else ():
         day, _, job = str(key).partition('/')
         try:
-            age = (today - dt.date.fromisoformat(day)).days
+            when = dt.date.fromisoformat(day)
         except ValueError:
             continue
-        if not isinstance(entry, dict) or entry.get('status') != 'failed' or not 0 <= age <= 1:
+        if isinstance(entry, dict) and job and (job not in latest or when > latest[job][0]):
+            latest[job] = (when, entry)
+    holds = []
+    for job, (when, entry) in sorted(latest.items(), key=lambda item: (item[1][0], item[0]), reverse=True):
+        if entry.get('status') != 'failed' or not 0 <= (today - when).days <= 1:
             continue
         why = entry.get('error') or f'{entry.get("error_type") or "an error"}, with no reason recorded'
-        holds.append({'reason': 'A scheduled draft job failed and will retry',
-                      'detail': fit(f'{job} for {day} failed after {entry.get("attempts", 1)} attempt(s): {why}', 1000)})
+        after = 'it retries while the job is due today' if when == today else 'that day is not run again'
+        holds.append({'reason': 'A scheduled draft job failed',
+                      'detail': fit(f'{job} for {when} failed after {entry.get("attempts", 1)} attempt(s): {why}. '
+                                    f'{after[0].upper() + after[1:]}.', 1000)})
     return holds[:3]
 
 
