@@ -16,7 +16,7 @@ Never ask Krish to paste a prompt or repeat a brief: everything needed is in thi
 
 ## The brief
 
-Read AGENTS.md first and follow it (it records Krish's rulings of 2026-10-19), then docs/NORTH_STAR.md, docs/CONTROL-CENTER-BRIEF.md and docs/control-center/ENGINE-PROTOCOL.md (a copy of protocol 1.20.0). Before you start, say which part of the North Star this work moves.
+Read AGENTS.md first and follow it (it records Krish's rulings of 2026-10-19), then docs/NORTH_STAR.md, docs/CONTROL-CENTER-BRIEF.md and docs/control-center/ENGINE-PROTOCOL.md (a copy of Control Center's protocol 1.21.0 at krishanraja/control-center@212379e1; this engine speaks up to 1.20.0, and 1.21.0 adds only growth-makeyourmindup's inspiration instructions). Before you start, say which part of the North Star this work moves.
 
 Where things stand (2026-10-19): this engine runs the Control Center loop live. Every day at 05:10 UTC Control Center writes this engine a directive and wakes `.github/workflows/control-center.yml` (`python3 growth.py cc start`, `cc run`, `cc finish`) with a `cc-growth-directive` repository_dispatch. The first live run on 2026-10-19 succeeded: it journaled its attempt, read the directive, sent a report, read it back by digest and read Krish's decisions. Control Center then spoke protocol 1.1.0 (read `stage`, `amended`, `exact_payload`, `amount_usd` and `amended_sha256` from decisions). It speaks 1.20.0 now, and accepts any 1.x back: the report goes at `1.20.0` when it carries the engine's state (Step 7), at `1.16.0` when the run spent credits, and at `1.0.0` otherwise (`engine/protocol.py`).
 
