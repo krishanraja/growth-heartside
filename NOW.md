@@ -1,7 +1,7 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-11-12
+as_of: 2026-11-13
 head: 6906156
 lifecycle: live
 production_url: none
@@ -31,7 +31,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-11-12)
+## Where it is right now (as of 2026-11-13)
 
 <!-- north-star-state {"week_of": "2026-11-09", "week_target": 1417, "current": 0, "current_as_of": "2026-11-12", "current_source": "Shopify Admin API orders through growth.py attribution (read-only app), organic posts, trailing 28 days", "urgency": 5, "urgency_reason": "under 40% of the week's target two weeks running (0% now)"} --> **North Star number: U5, stalled.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: $0 (measured 12 Nov by the engine's own attribution read; the store's one order in the window, $45, came direct), against $1,417 this week, on the way to $50,000 by 28 December 2026. Everything else pauses unless it moves the number.
 
@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- Heartside's AI answers are AEO-Engine's, the one AI-answers specialist (Ruling, Krish, 2026-11-12): the daily Control Center run asks AEO once to track the question bank's buyer questions with heartside.io and reads Heartside's standing back (protocol 1.22.0, engine/ai_answers.py); the Wednesday Answers job drafts from AEO's misses and moves, and the monthly hand panel is retired into AEO. The protocol copy in docs/control-center/ is Control Center's at 36df34bc (protocol 1.22.0). (2026-11-13)
 - The protocol copy and its two schemas in docs/control-center/ are Control Center's at 212379e1 (protocol 1.21.0: the 16 voice-check channels, the 50000 target read from this repository's north-star block, the circle's consent tier); this engine still speaks up to 1.20.0, and the brief says organic_net_sales_usd was registered on 29 Oct with 25000 and that the directive now takes its target from docs/NORTH_STAR.md. (2026-11-12)
 - Every Heartside social post is now built and gated against Krish's 12 Nov creative production corpus (profile social-corpus-2026-11-12-v2: critical box x 120 to 820, y 330 to 1180; subtitles of at most 7 words a segment; a 3 to 4 s moving product end; the export preset), with layout manifests checked by lock.py, factory/audit.py and codex/check_picture.py; F34 and its variants and all seven campaigns pass, F11 (searches too long for the box) and F10 (no-novelty-sfx) are held for Krish, and filed 03b media predates the corpus and is untouched (docs/audits/2026-11-12-corpus-audit.md). (2026-11-12)
 - the day's pack renders again (its product pictures re-pinned to heartside's live galleries, and a failed job now keeps its reason and is held in the next Control Center report), conversion editions are no longer held by a stale homepage check, and the daily report carries organic_net_sales_usd, the North Star number Control Center reads. (2026-11-12)
@@ -76,12 +77,12 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-12): Measure the filed 03b media against the corpus on the home computer (python3 factory/audit.py on the Posts folder), now that Krish ruled the approved pre-corpus posts go out without recuts.
+- Next (2026-11-13): After AEO-Engine's research run of Sunday 2026-11-22, run the Wednesday Answers job from AEO's first reading of Heartside.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Step 2 of `docs/GET-GOING.md` (a daily Shopify sales import, so `net_sales_usd` is measured) may need a credential only Krish can add; the step says to report a hold naming the secret.
-- North Star check (2026-11-12): holds.
+- North Star check (2026-11-13): holds.
 
 ## Read next
 

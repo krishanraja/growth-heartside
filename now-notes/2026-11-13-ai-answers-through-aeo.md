@@ -1,3 +1,0 @@
-Status: Heartside's AI answers are AEO-Engine's, the one AI-answers specialist (Ruling, Krish, 2026-11-12): the daily Control Center run asks AEO once to track the question bank's buyer questions with heartside.io and reads Heartside's standing back (protocol 1.22.0, engine/ai_answers.py); the Wednesday Answers job drafts from AEO's misses and moves, and the monthly hand panel is retired into AEO. The protocol copy in docs/control-center/ is Control Center's at 36df34bc (protocol 1.22.0).
-Next: After AEO-Engine's research run of Sunday 2026-11-22, run the Wednesday Answers job from AEO's first reading of Heartside.
-North Star check (2026-11-13): holds.
