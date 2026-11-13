@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 import tempfile
 import uuid
 from zoneinfo import ZoneInfo
@@ -185,6 +186,25 @@ def timestamp(seconds):
     return f'{milliseconds // 3600000:02}:{milliseconds // 60000 % 60:02}:{milliseconds // 1000 % 60:02},{milliseconds % 1000:03}'
 
 
+def scene_problems(scenes, claim_problems=None):
+    """heartside's claims rules on each scene as a viewer reads the frame: the gift it shows, then its words. Over a
+    portrait, "With a short note from the dog." reads as a portrait with a note on it (Ruling, Krish, 2026-10-31:
+    every gift is artwork only, the note comes in the box). claim_problems: growth.claim_problems unless given."""
+    if claim_problems is None:
+        home = str(Path(__file__).resolve().parents[1])  # the repository's growth.py, never a render root
+        if home not in sys.path:
+            sys.path.insert(0, home)
+        import growth
+        claim_problems = growth.claim_problems
+    out = []
+    for n, scene in enumerate(scenes, 1):
+        roles = scene['asset'] if isinstance(scene['asset'], list) else [scene['asset']]
+        gifts = ' and '.join(dict.fromkeys(assets.PRODUCT_IMAGES[r][0] for r in roles))
+        words = f"{gifts} {scene.get('headline') or ''}\n{scene.get('text') or ''}"
+        out += [f'scene {n}: {why}' for why in claim_problems(words)]
+    return out
+
+
 def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=None):
     if not state or not state.get('rules_ok'):
         raise ValueError('sync Heartside and resolve any STOP before producing media')
@@ -200,6 +220,9 @@ def render(root, spec, state, check_copy, checkout=None, day=None, link_builder=
         roles = scene.get('asset') if isinstance(scene.get('asset'), list) else [scene.get('asset')]
         if not 1 <= len(roles) <= 2 or any(r not in assets.PRODUCT_IMAGES for r in roles):
             raise ValueError('each scene must show one or two approved current product renders')
+    in_frame = scene_problems(scenes)
+    if in_frame:
+        raise ValueError('; '.join(in_frame))
     if intent == 'buy':
         declared = spec.get('offers')
         gift = next((o for o in offers.catalog(state) if o['ready'] and o['kind'] == 'gift'
