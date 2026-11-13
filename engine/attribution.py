@@ -40,7 +40,13 @@ API_VERSION = '2026-10'
 SCOPE = 'read_orders'
 ENV = ('HEARTSIDE_SHOP_DOMAIN', 'SHOPIFY_CLIENT_ID', 'SHOPIFY_CLIENT_SECRET')
 CREATIVE_ID = re.compile(r'^(IG|FB|TT|YT|PIN|GG|EM|WEB|CR)_(EMO|ENT|UTIL|PROOF|OFFER)_([A-Z]+)_C(\d{2,3})_H(\d{2,3})_V(\d{1,2})_(\d{8})$')
-TIERS = ('engine', 'organic_social', 'organic_search', 'paid', 'pending', 'direct')
+TIERS = ('engine', 'organic_social', 'organic_search', 'paid', 'unverified', 'pending', 'direct')
+# A Meta visit (a Facebook or Instagram referrer, or an fbclid) with no engine creative id and no code could be an
+# ad click whose link carries no paid tag, so it never counts as organic and never crowns a winner until Krish
+# answers the two ads questions on his board (are Meta ads running; does every ad link carry
+# utm_medium=paid_social). Set this to False only on his answer, recorded as a Ruling in the commit.
+META_UNVERIFIED = True
+META = ('instagram.com', 'facebook.com', 'fb.com', 'fb.me', 'messenger.com')
 ORGANIC = ('engine', 'organic_social')
 SOCIAL = ('instagram.com', 'facebook.com', 'fb.com', 'fb.me', 'tiktok.com', 'pinterest.com', 'pin.it',
           'youtube.com', 'youtu.be', 'threads.net', 'reddit.com', 'linktr.ee')
@@ -52,7 +58,8 @@ AD_CLICK = {'gclid', 'gbraid', 'wbraid', 'msclkid', 'ttclid', 'dclid', 'twclid',
 INTERNAL_TAG = 'hs-internal'
 DEFINITION = ('Net sales are each order\'s subtotal after discounts, less everything refunded, never below zero, '
               'by the London day the order was created. Fully refunded orders are not counted. '
-              'Organic posts = engine-tagged plus organic social.')
+              'Organic posts = engine-tagged plus organic social. A Meta visit with no engine id or code is '
+              'unverified until the ads questions are answered, and never organic.')
 
 # Exactly the fields this module reads. A test holds the query to this list.
 QUERY = '''query Orders($first: Int!, $after: String, $query: String) {
@@ -136,6 +143,8 @@ def classify(order, registry=None):
         match = CREATIVE_ID.match(utm.get('content') or '')
         if match and (utm.get('campaign') or '').startswith('hs_growth_'):
             return 'engine', f'{match.group(1)}_{match.group(2)}_C{match.group(4)}'
+    if META_UNVERIFIED and any(meta_visit(v) for v in visits):
+        return 'unverified', None
     for visit in visits:
         utm = visit.get('utmParameters') or {}
         name = host(visit.get('referrerUrl'))
@@ -148,6 +157,15 @@ def classify(order, registry=None):
     if not journey.get('ready', True):
         return 'pending', None
     return 'direct', None
+
+
+def meta_visit(visit):
+    """True when a visit came from Facebook or Instagram (its referrer, or an fbclid on its landing page)."""
+    name = host(visit.get('referrerUrl'))
+    if any(name == m or name.endswith('.' + m) for m in META):
+        return True
+    query = urllib.parse.urlsplit(visit.get('landingPage') or '').query
+    return any(k.lower() == 'fbclid' for k, _ in urllib.parse.parse_qsl(query, keep_blank_values=True))
 
 
 def counted(order):
@@ -169,10 +187,18 @@ def amount(order):
     return max(Decimal(0), money(order, 'subtotalPriceSet') - money(order, 'totalRefundedSet'))
 
 
+def month_start(today):
+    """The first day of the London month to date; on the 1st, the month that just closed (protocol.month_window)."""
+    first = today.replace(day=1)
+    return (today - dt.timedelta(days=1)).replace(day=1) if first == today else first
+
+
 def windows(today):
-    """The trailing 28 days and the last complete London week (Monday to Monday), as dates."""
+    """The trailing 28 days, the last complete London week (Monday to Monday) and the London month to date, as
+    dates. The month is what Control Center's net_sales_usd reads (engine/protocol.py net_sales)."""
     return {'trailing_28d': (today - dt.timedelta(days=28), today),
-            'last_week': (today - dt.timedelta(days=today.weekday() + 7), today - dt.timedelta(days=today.weekday()))}
+            'last_week': (today - dt.timedelta(days=today.weekday() + 7), today - dt.timedelta(days=today.weekday())),
+            'month': (month_start(today), today)}
 
 
 def aggregate(orders, start, end):
@@ -303,8 +329,9 @@ def run(db, today=None):
         return {'status': 'hold', 'reason': 'HEARTSIDE_SHOP_DOMAIN must be the store\'s .myshopify.com address'}
     previous = latest(db)
     if previous and previous.get('definition') == DEFINITION and dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(
-            previous['observed_at'].replace('Z', '+00:00')) < dt.timedelta(hours=6) and today is None:
-        return {'status': 'current', 'reason': f'read at {previous["observed_at"]}; the next read is due six hours later'}
+            previous['observed_at'].replace('Z', '+00:00')) < dt.timedelta(hours=5) and today is None:
+        # Five hours, so a runner every six hours reads every run (it would skip every other at six).
+        return {'status': 'current', 'reason': f'read at {previous["observed_at"]}; the next read is due five hours later'}
     today = today or dt.datetime.now(ZoneInfo(TIMEZONE)).date()
     spans = windows(today)
     orders = fetch(shop, access_token(shop), min(a for a, _ in spans.values()))

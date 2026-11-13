@@ -29,7 +29,40 @@ class AttributionTests(unittest.TestCase):
         self.assertEqual(attribution.classify(order(last=visit(medium=None), first=visit(CID)))[0], 'engine')
 
     def test_social_referrer_without_tags_is_organic_social(self):
-        self.assertEqual(attribution.classify(order(visit(medium=None, referrer='https://l.instagram.com/?u=x')))[0], 'organic_social')
+        self.assertEqual(attribution.classify(order(visit(medium=None, referrer='https://www.tiktok.com/')))[0], 'organic_social')
+
+    def test_a_meta_visit_with_no_engine_id_or_code_is_unverified_until_the_ads_questions_are_answered(self):
+        # Could be an ad click whose link carries no paid tag: never organic, never a winner, until Krish answers.
+        untagged = order(visit(medium=None, referrer='https://l.instagram.com/?u=x'))
+        fbclid = order(visit(medium='organic', landing='https://heartside.io/?fbclid=abc'))
+        facebook = order(visit(medium=None, referrer='https://m.facebook.com/'))
+        for one in (untagged, fbclid, facebook):
+            self.assertEqual(attribution.classify(one), ('unverified', None))
+        self.assertEqual(attribution.classify(order(visit(CID, referrer='https://l.instagram.com/'))), ('engine', 'IG_EMO_C90'))
+        with mock.patch.object(attribution, 'META_UNVERIFIED', False):
+            self.assertEqual(attribution.classify(untagged)[0], 'organic_social')
+        reading = attribution.aggregate([untagged, order(visit(CID))], dt.date(2026, 10, 1), dt.date(2026, 10, 29))
+        self.assertEqual(reading['tiers']['unverified'], {'orders': 1, 'net_sales': 129.0})
+        self.assertEqual(reading['organic'], {'orders': 1, 'net_sales': 129.0})
+        self.assertEqual(reading['store'], {'orders': 2, 'net_sales': 258.0})
+
+    def test_the_month_window_feeds_net_sales(self):
+        from engine import ledger
+        spans = attribution.windows(dt.date(2026, 11, 13))
+        self.assertEqual(spans['month'], (dt.date(2026, 11, 1), dt.date(2026, 11, 13)))
+        self.assertEqual(attribution.windows(dt.date(2026, 12, 1))['month'], (dt.date(2026, 11, 1), dt.date(2026, 12, 1)))
+        db = ledger.connect(':memory:')  # the engine's own ledger, with its empty metrics table
+        now = dt.datetime(2026, 11, 13, 6, 0, tzinfo=dt.timezone.utc)
+        self.assertEqual(protocol.net_sales(db, now)['availability'], 'missing')
+        orders = [order(visit(CID), amount='129.00', created='2026-11-02T15:00:00Z'),
+                  order(visit(medium='cpc'), amount='59.00', created='2026-11-03T15:00:00Z'),
+                  order(visit(CID), amount='45.00', created='2026-10-30T15:00:00Z')]  # last month: not in it
+        start, end = spans['month']
+        attribution.store(db, 'month', attribution.aggregate(orders, start, end), observed_at='2026-11-13T05:00:00+00:00')
+        sales = protocol.net_sales(db, now)
+        self.assertEqual((sales['value'], sales['availability'], sales['reason']), (188, 'measured', None))
+        self.assertEqual(sales['window_start'][:10], '2026-11-01')
+        self.assertEqual(protocol.net_sales(db, now + dt.timedelta(days=2))['availability'], 'stale')
 
     def test_buffer_s_own_tags_count_as_organic_social(self):
         tagged = visit(medium='social', campaign='buffer')
@@ -140,7 +173,8 @@ class AttributionTests(unittest.TestCase):
         self.assertTrue(missing['reason'])
         self.assertIsNone(protocol.organic_net_sales(None)['value'])
         # Engine-tagged $129, organic social $45, engine-tagged $45.50 less a $0.50 refund; the paid $59 never counts.
-        orders = [order(visit(CID), amount='129.00'), order(visit(medium=None, referrer='https://l.instagram.com/?u=x'), amount='45.00'),
+        orders = [order(visit(CID), amount='129.00'), order(visit(medium=None, referrer='https://www.tiktok.com/'), amount='45.00'),
+                  order(visit(medium=None, referrer='https://l.instagram.com/?u=x'), amount='30.00'),  # unverified
                   order(visit(medium='cpc'), amount='59.00'), order(visit(CID), amount='45.50', refunded='0.50')]
         today = dt.date(2026, 11, 12)
         start, end = attribution.windows(today)['trailing_28d']
@@ -178,7 +212,7 @@ class DiscountCodeTests(unittest.TestCase):
         self.assertEqual(attribution.classify(clicked, self.REGISTRY), ('paid', None))
 
     def test_an_unknown_code_falls_through(self):
-        social = order(visit(medium=None, referrer='https://l.instagram.com/'), discountCodes=['WELCOME10'])
+        social = order(visit(medium=None, referrer='https://www.tiktok.com/'), discountCodes=['WELCOME10'])
         self.assertEqual(attribution.classify(social, self.REGISTRY), ('organic_social', None))
         self.assertEqual(attribution.classify(order(None, discountCodes=['WELCOME10']), self.REGISTRY), ('direct', None))
 

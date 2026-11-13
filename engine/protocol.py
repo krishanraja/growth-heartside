@@ -87,7 +87,20 @@ def net_sales(db, now):
             return {**reading, 'availability': 'measured', 'reason': None}
         return {**reading, 'availability': 'stale',
                 'reason': f'Imported Shopify net sales run only through {last - dt.timedelta(days=1)}; later days are not imported yet'}
-    return {**base, **empty, 'reason': f'No imported Shopify aggregate covers every day from {first} to {end - dt.timedelta(days=1)} '
+    # The month window the attribution read stores from the runner's own read_orders app (engine/attribution.py
+    # windows): every counted order in the London month to date, all tiers. It replaces the import credential
+    # GET-GOING Step 2 waited on. Refunds include any refunded shipping and tax, so it can only understate.
+    month = attribution.latest(db, 'month')
+    if month and month.get('start') == first.isoformat():
+        observed = dt.datetime.fromisoformat(month['observed_at'].replace('Z', '+00:00'))
+        last = dt.date.fromisoformat(month['end'])
+        reading = {**base, 'value': money(month['store']['net_sales']), 'window_start': midnight(first).isoformat(),
+                   'window_end': midnight(last).isoformat()}
+        if last == end and now - observed <= dt.timedelta(hours=26):
+            return {**reading, 'availability': 'measured', 'reason': None}
+        return {**reading, 'availability': 'stale',
+                'reason': f'Shopify orders were last read at {month["observed_at"]}, through {last - dt.timedelta(days=1)}'}
+    return {**base, **empty, 'reason': f'No Shopify reading covers every day from {first} to {end - dt.timedelta(days=1)} '
             '(Europe/London). Missing is not zero'}
 
 
