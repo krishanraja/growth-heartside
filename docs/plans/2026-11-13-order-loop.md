@@ -61,7 +61,8 @@ table is re-run per platform and lane on these readings.
    path, led by the blanket, the portrait and bundles; freeze the day pack, radar, creators and store jobs;
    `engine.yml` every six hours; stop filling Sprint 120's reserved slots ahead of evidence.
 2. **The ads questions:** are Meta ads running for Heartside now; does every ad link carry
-   `utm_medium=paid_social`?
+   `utm_medium=paid_social`; and does no boosted Facebook post carry an engine link in its caption? (A boost
+   reuses the post's link, so its paid clicks arrive with the engine's organic tags.)
 3. **The waiting codes item, amended in place:** family codes on buy rows, aimed at the most-US platform, with
    the bio-link page and the counts-only thank-you survey restored.
 4. **"Link in bio" on TikTok:** hold and re-approve the 02t TikTok rows and phone posts that say it.

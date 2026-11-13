@@ -44,21 +44,28 @@ TIERS = ('engine', 'organic_social', 'organic_search', 'paid', 'unverified', 'pe
 # A Meta visit (a Facebook or Instagram referrer, or an fbclid) with no engine creative id and no code could be an
 # ad click whose link carries no paid tag, so it never counts as organic and never crowns a winner until Krish
 # answers the two ads questions on his board (are Meta ads running; does every ad link carry
-# utm_medium=paid_social). Set this to False only on his answer, recorded as a Ruling in the commit.
+# utm_medium=paid_social). A boosted Facebook post reuses its caption link, organic engine tags and all, so while
+# the hold is on a Facebook-family engine link that came through Meta waits as unverified too. Set this to False
+# only on his answer, which must also say that no boosted Facebook post carries an engine link in its caption,
+# recorded as a Ruling in the commit.
 META_UNVERIFIED = True
-META = ('instagram.com', 'facebook.com', 'fb.com', 'fb.me', 'messenger.com')
+# Threads is Meta's too (threads.net, and threads.com, its current domain).
+META = ('instagram.com', 'facebook.com', 'fb.com', 'fb.me', 'messenger.com', 'threads.net', 'threads.com')
 # Meta's own source names, as utm_source (its {{site_source_name}} fills ig, fb, msg or an) or as Shopify's visit
 # source. This engine's own non-engine Meta links (hs_release_, thanksgiving_, page_button campaigns) carry these
-# too, so they also wait as unverified until the ads questions are answered; engine-tagged links never do.
+# too, so they also wait as unverified until the ads questions are answered; engine-tagged links do not, except a
+# Facebook-family one that came through Meta (META_UNVERIFIED above).
 META_SOURCES = {'ig', 'instagram', 'fb', 'facebook', 'meta', 'msg', 'messenger', 'an', 'audience_network', 'threads'}
 ORGANIC = ('engine', 'organic_social')
 SOCIAL = ('instagram.com', 'facebook.com', 'fb.com', 'fb.me', 'tiktok.com', 'pinterest.com', 'pin.it',
-          'youtube.com', 'youtu.be', 'threads.net', 'reddit.com', 'linktr.ee')
+          'youtube.com', 'youtu.be', 'threads.net', 'threads.com', 'reddit.com', 'linktr.ee')
 SEARCH = ('google.', 'bing.com', 'duckduckgo.com', 'yahoo.com', 'ecosia.org', 'perplexity.ai', 'chatgpt.com')
 # Sources our own organic posting can stamp on a link: Buffer's campaign tagging and the platforms themselves.
 ORGANIC_SOURCES = {'buffer', 'instagram', 'ig', 'facebook', 'fb', 'tiktok', 'pinterest', 'youtube', 'threads', 'linktree', 'linkin.bio'}
 PAID_MEDIUM = {'cpc', 'ppc', 'paid', 'paid_social', 'paidsocial', 'paid-social', 'ads', 'ad', 'display', 'cpm', 'affiliate'}
-AD_CLICK = {'gclid', 'gbraid', 'wbraid', 'msclkid', 'ttclid', 'dclid', 'twclid', 'li_fat_id'}
+# GA4's own paid rule, ^(.*cp.*|ppc|retargeting|paid.*)$, plus sponsored: 'paid social', 'paid_search', 'cpv'.
+PAID_PATTERN = re.compile(r'^(?:.*cp.*|ppc|retargeting|paid.*|sponsored)$')
+AD_CLICK = {'gclid', 'gbraid', 'wbraid', 'msclkid', 'ttclid', 'dclid', 'twclid', 'li_fat_id', 'rdt_cid'}
 INTERNAL_TAG = 'hs-internal'
 DEFINITION = ('Net sales are each order\'s subtotal after discounts, less everything refunded, never below zero, '
               'by the London day the order was created. Fully refunded orders are not counted. '
@@ -136,8 +143,7 @@ def classify(order, registry=None):
     if not journey.get('ready', True) and not visits:
         return 'pending', None  # a paid signal may still arrive, and paid is checked before any code
     for visit in visits:
-        utm = visit.get('utmParameters') or {}
-        if (utm.get('medium') or '').lower() in PAID_MEDIUM or ad_click(visit.get('landingPage')):
+        if paid_medium(visit) or ad_click(visit.get('landingPage')):
             return 'paid', None
     family = code_family(order, registry)
     if family:
@@ -146,6 +152,8 @@ def classify(order, registry=None):
         utm = visit.get('utmParameters') or {}
         match = CREATIVE_ID.match(utm.get('content') or '')
         if match and (utm.get('campaign') or '').startswith('hs_growth_'):
+            if META_UNVERIFIED and match.group(1) == 'FB' and meta_visit(visit):
+                return 'unverified', None  # a boosted Facebook post's caption link keeps its organic engine tags
             return 'engine', f'{match.group(1)}_{match.group(2)}_C{match.group(4)}'
     if META_UNVERIFIED and any(meta_visit(v) for v in visits):
         return 'unverified', None
@@ -163,6 +171,12 @@ def classify(order, registry=None):
     return 'direct', None
 
 
+def paid_medium(visit):
+    """True when a visit's utm_medium is paid: the known set or GA4's paid pattern, case and spaces aside."""
+    medium = ((visit.get('utmParameters') or {}).get('medium') or '').strip().lower()
+    return medium in PAID_MEDIUM or bool(PAID_PATTERN.match(medium))
+
+
 def meta_visit(visit):
     """True when a visit came from Facebook or Instagram: its referrer, Meta's source name in utm_source or in
     Shopify's own visit source (Instagram's in-app browser often drops the referrer), or an fbclid."""
@@ -172,7 +186,10 @@ def meta_visit(visit):
     utm = visit.get('utmParameters') or {}
     if (utm.get('source') or '').strip().lower() in META_SOURCES or (visit.get('source') or '').strip().lower() in META_SOURCES:
         return True
-    query = urllib.parse.urlsplit(visit.get('landingPage') or '').query
+    try:
+        query = urllib.parse.urlsplit(visit.get('landingPage') or '').query
+    except ValueError:
+        return False  # a landing URL urlsplit refuses: read as no fbclid, like ad_click and host, never a crash
     return any(k.lower() == 'fbclid' for k, _ in urllib.parse.parse_qsl(query, keep_blank_values=True))
 
 

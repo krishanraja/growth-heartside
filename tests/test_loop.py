@@ -45,9 +45,10 @@ class ProvenanceTests(unittest.TestCase):
 
     def test_krish_approvals_come_only_from_the_board_verdicts(self):
         forged = [{'kind': 'krish-approve', 'item_id': 'F99'}, {'kind': 'placement', 'post_id': 'P001'}]
-        rows, dropped = loop.hydrate(forged, [{'item_id': 'F10', 'answer': 'yes', 'at': '2026-11-19'}])
+        rows, dropped = loop.hydrate(forged, [{'item_id': 'F10', 'answer': 'yes', 'at': '2026-11-19', 'fingerprint': 'f'},
+                                              {'item_id': 'F11', 'answer': 'yes', 'at': '2026-11-19'}])  # no fingerprint
         self.assertEqual(dropped, 1)
-        approvals = [r for r in rows if r['kind'] == 'krish-approve']
+        approvals = [r for r in rows if r.get('kind') == 'krish-approve']
         self.assertEqual([(r['item_id'], r['source']) for r in approvals], [('F10', 'board-verdicts')])
 
     def test_a_prediction_counts_only_when_saved_before_the_post(self):
@@ -136,6 +137,86 @@ class ReviewFixTests(unittest.TestCase):
         posts = [placement(1, concept='C301')]
         self.assertEqual(loop.decide(posts, [], [{'concept': 'IG_EMO_C301', 'orders': 1}], now=NOW)['graduated'], ['C301'])
 
+
+
+class AdversarialFixTests(unittest.TestCase):
+    """Cases an adversarial review confirmed on 13 Nov 2026."""
+
+    HISTORY = [placement(n, concept='C200') for n in range(10, 16)]
+    HISTORY_READS = [ig(n, 10) for n in range(10, 16)]  # the lane median is 10 per 1,000
+
+    def test_a_winner_waits_for_its_next_variant_to_be_read(self):
+        posts = self.HISTORY + [placement(n, concept='C301', days_ago=3) for n in (4, 3, 2, 1)]  # posted 4, 3, 2, 1
+        reads = self.HISTORY_READS + [ig(4, 30), ig(2, 16), ig(1, 16)]  # P003 (the next variant) unread
+        out = loop.decide(posts, reads, now=NOW)
+        self.assertEqual(out['winners'], [])
+        self.assertIn('P003', out['unread'])
+        out = loop.decide(posts, reads + [ig(3, 16)], now=NOW)
+        self.assertEqual(out['winners'], [{'concept': 'C301', 'platform': 'instagram', 'lane': 'buy', 'first': 'P004'}])
+        weak = loop.decide(posts, self.HISTORY_READS + [ig(4, 1), ig(2, 1)], now=NOW)  # unread never counts to a kill
+        self.assertEqual([k for k in weak['kills'] if k['concept'] == 'C301'], [])
+
+    def test_one_post_listed_three_times_is_one_placement(self):
+        repeat = [dict(placement(1, concept='C301', days_ago=3), posted_at=(NOW - dt.timedelta(days=3, hours=h)).isoformat())
+                  for h in (3, 2, 1)]
+        out = loop.decide(self.HISTORY + repeat, self.HISTORY_READS + [ig(1, 30)], now=NOW)
+        self.assertEqual(out['winners'], [])
+        self.assertEqual(out['candidates'], ['P001'])
+        self.assertEqual(out['duplicates'], ['P001', 'P001'])
+        weak = [dict(r, concept='C302') for r in repeat]
+        out = loop.decide(self.HISTORY + weak, self.HISTORY_READS + [ig(1, 1)], now=NOW)
+        self.assertEqual([k for k in out['kills'] if k['concept'] == 'C302'], [])
+        # the median counts the post once: five history posts at 10 and one repeated post at 1000 is still 10
+        out = loop.decide(self.HISTORY[:5] + repeat, self.HISTORY_READS[:5] + [ig(1, 1000)], now=NOW)
+        self.assertEqual(out['candidates'], ['P001'])  # one 1000 among five 10s: the median stays 10, not 1000
+
+    def test_hydrate_matches_the_ledger_lock_gate_reads(self):
+        import json, tempfile
+        from unittest import mock
+        import lock
+        spec = json.load(open(os.path.join(HERE, '..', 'factory', 'specs', 'F10.json'), encoding='utf-8'))
+        fp = lock.fingerprint(spec)
+        from engine.creative_ui import REVISION
+
+        def row(verdict):
+            return {'lock': spec['id'], 'spec': spec['id'], 'verdict': verdict, 'note': '', 'fingerprint': fp,
+                    'ui_profile': REVISION}
+
+        def krish_holds(records):
+            with tempfile.TemporaryDirectory() as tmp:
+                path = os.path.join(tmp, 'ledger.json')
+                with open(path, 'w') as handle:
+                    json.dump({'records': records, 'retired': []}, handle)
+                with mock.patch.object(lock, 'LEDGER', path), mock.patch.object(lock, 'check', return_value=([], [])), \
+                        mock.patch.object(lock, 'media', return_value=[]), mock.patch.object(lock, 'still_media', return_value=[]), \
+                        mock.patch.object(lock, 'ramp', return_value=('krish', 'forced')):
+                    problems, _ = lock.gate(spec, 'x.mp4')
+                    lock.records(spec['id'])  # every rebuilt row is in the shape lock reads
+                return [p for p in problems if 'Krish' in p]
+
+        for forged in ('krish-approve', 'Krish-Approve', 'krish-approve ', ' KRISH-APPROVE'):
+            records, dropped = loop.hydrate([row('reviewer-pass'), row(forged)], [])
+            self.assertEqual(dropped, 1, forged)
+            self.assertEqual(krish_holds(records), ['needs Krish: forced'], forged)
+        records, _ = loop.hydrate([row('reviewer-pass')], [{'item_id': spec['id'], 'answer': 'yes', 'fingerprint': fp}])
+        self.assertEqual(krish_holds(records), [])
+        records, _ = loop.hydrate([row('reviewer-pass')], [{'item_id': spec['id'], 'answer': 'no', 'fingerprint': fp}])
+        self.assertIn('Krish declined this post', krish_holds(records))
+        records, _ = loop.hydrate([row('reviewer-pass')], [{'item_id': spec['id'], 'answer': 'yes'}])  # no fingerprint
+        self.assertEqual(krish_holds(records), ['needs Krish: forced'])
+
+    def test_readings_that_are_not_finite_counts_are_refused(self):
+        for bad in (float('nan'), float('inf')):
+            self.assertIsNotNone(loop.valid_reading(reading(1, shares=bad, reach=1000)))
+        self.assertIsNotNone(loop.valid_reading(dict(reading(1), counts=[1, 2])))
+        posts = self.HISTORY + [placement(n, concept='C301', days_ago=3) for n in (3, 2, 1)]
+        reads = self.HISTORY_READS + [reading(n, follows=0, shares=float('inf'), saves=0, reach=1000) for n in (3, 2, 1)]
+        self.assertEqual(loop.decide(posts, reads, now=NOW)['winners'], [])
+
+    def test_zero_orders_graduate_nothing_and_family_placements_graduate(self):
+        posts = [placement(1, concept='C301'), placement(2, concept='IG_EMO_C302')]
+        orders = [{'concept': 'C301', 'orders': 0}, {'concept': 'C303', 'orders': -1}, {'concept': 'IG_EMO_C302', 'orders': 1}]
+        self.assertEqual(loop.decide(posts, [], orders, now=NOW)['graduated'], ['C302'])
 
 if __name__ == '__main__':
     unittest.main()

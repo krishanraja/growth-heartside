@@ -133,6 +133,17 @@ class LockTest(unittest.TestCase):
         json.dump(layout(media_sha256='0' * 64), open(lay, 'w'))
         self.assertTrue(any('another build' in p for p in lock.media(spec, mp4)))
 
+    def test_film_lines_run_heartside_claims_rules(self):
+        # Every on-screen line passes growth.claim_problems too: films, stills, roasts, chats and supers.
+        g = lock._growth()
+        for line in ('A hand-painted portrait of your dog.', 'On the mug: "I hear your car first."', 'Take 30% off.',
+                     'It arrives by Christmas.', 'Our Black Friday deal is here.', 'A gallery-quality portrait.'):
+            self.assertNotEqual(lock.copy_problems(g, line, 'headline'), [], line)
+        bank = json.load(open(os.path.join(os.path.dirname(__file__), '..', 'factory', 'bank', 'lines.json'), encoding='utf-8'))
+        for row in bank['lines']:
+            if row.get('status') == 'approved':
+                self.assertEqual(g.claim_problems(row['text']), [], row['id'])
+
     def test_free_text_is_refused(self):
         s = load('F06-frenchie'); s['lines'][0] = 'Some brand new joke.'
         self.assertTrue(any('not in the joke bank' in p for p in self.problems(s)))

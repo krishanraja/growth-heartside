@@ -106,6 +106,8 @@ def net_sales(db, now):
                    'window_start': midnight(first).isoformat(), 'window_end': midnight(last).isoformat()}
         if last == end:
             return {**reading, 'availability': 'measured', 'reason': None}
+        if month and dt.date.fromisoformat(month['window_end'][:10]) >= last:
+            return month  # the runner's own read reaches as far or further, so a shorter import never masks it
         return {**reading, 'availability': 'stale',
                 'reason': f'Imported Shopify net sales run only through {last - dt.timedelta(days=1)}; later days are not imported yet'}
     if month:

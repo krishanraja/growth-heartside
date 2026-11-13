@@ -24,6 +24,7 @@ The rules:
 8. A prediction counts only if it was saved before the placement went live.
 """
 import datetime as dt
+import math
 import statistics
 
 LANES = ('buy', 'viral')
@@ -71,9 +72,13 @@ def valid_reading(reading):
         _when(reading['observed_at'])
     except (TypeError, ValueError):
         return 'unreadable observed_at'
-    for key, value in (reading.get('counts') or {}).items():
-        if value is not None and (isinstance(value, bool) or not isinstance(value, (int, float)) or value < 0):
-            return 'count ' + key + ' is not a whole number or not shown (None)'
+    counts = reading.get('counts') or {}
+    if not isinstance(counts, dict):
+        return 'counts is not a mapping of field to count'
+    for key, value in counts.items():
+        if value is not None and (isinstance(value, bool) or not isinstance(value, (int, float))
+                                  or not math.isfinite(value) or value < 0):
+            return 'count ' + str(key) + ' is not a whole number or not shown (None)'
     return None
 
 
@@ -130,11 +135,12 @@ def concept_orders(orders):
         concept = concept_of(order.get('concept'))
         if tier in COUNTED_TIERS and concept:
             out[concept] = out.get(concept, 0) + int(order.get('orders', 1))
-    return out
+    return {concept: n for concept, n in out.items() if n > 0}  # zero or fewer counted orders graduate nothing
 
 
 def decide(placements, readings_list, orders=(), now=None):
-    """The day's calls: {'baseline', 'candidates', 'winners', 'kills', 'graduated', 'unread', 'rejected'}.
+    """The day's calls: {'baseline', 'zero_median', 'candidates', 'winners', 'kills', 'graduated', 'unread', 'rejected',
+    'duplicates'}; duplicates names a placement row whose (post_id, platform) an earlier row already holds.
 
     placements: [{post_id, platform, lane, concept, posted_at}]; readings_list: reader rows with `hours` 24 or 72
     and `counts`; orders: [{concept, tier, orders}] from the runner's attribution families."""
@@ -142,12 +148,23 @@ def decide(placements, readings_list, orders=(), now=None):
     at24, rejected = latest(readings_list, 24)
     at72, _ = latest(readings_list, 72)  # the same readings, so their rejections are counted once
     readings = {24: at24, 72: at72}
+    # A reading is keyed by (post_id, platform), so it can belong to one placement only: a repeated row (a re-cut
+    # that kept its post_id) is the same placement, the earliest, never a second variant or a second median entry.
+    seen, unique, repeated = set(), [], []
+    for placement in sorted(placements, key=lambda p: _when(p['posted_at'])):
+        key = (placement['post_id'], placement.get('platform'))
+        if key in seen:
+            repeated.append(placement['post_id'])
+            continue
+        seen.add(key)
+        unique.append(placement)
+    placements = unique
     lane_median = medians(placements, readings, now)
     out = {'baseline': [], 'zero_median': [], 'candidates': [], 'winners': [], 'kills': [], 'graduated': [],
-           'unread': [], 'rejected': rejected}
+           'unread': [], 'rejected': rejected, 'duplicates': repeated}
     ratios = {}
     since = now - dt.timedelta(days=WINDOW_DAYS)
-    for placement in sorted(placements, key=lambda p: _when(p['posted_at'])):
+    for placement in placements:  # already in posting order
         if placement.get('lane') not in LANES or placement.get('platform') not in PLATFORMS:
             out['unread'].append(placement['post_id'])
             continue
@@ -158,6 +175,9 @@ def decide(placements, readings_list, orders=(), now=None):
         value = signal(placement['platform'], (reading or {}).get('counts'), placement['lane']) if reading else None
         if value is None:
             out['unread'].append(placement['post_id'])
+            # Kept in its concept's row as None: the next variant cannot be skipped, so a winner waits for it,
+            # and an unread placement never counts toward a kill.
+            ratios.setdefault((placement['concept'], placement['platform'], placement['lane']), []).append((placement, None))
             continue
         key = (placement['platform'], placement['lane'])
         median = lane_median.get(key)
@@ -174,36 +194,49 @@ def decide(placements, readings_list, orders=(), now=None):
     for (concept, platform, lane), rows in ratios.items():
         won = False
         for i, (placement, ratio) in enumerate(rows):
-            if ratio < CANDIDATE[lane]:
+            if ratio is None or ratio < CANDIDATE[lane]:
                 continue
             following = rows[i + 1:i + 3]
-            if len(following) == 2 and all(r >= REPLICATE for _, r in following):
+            if len(following) == 2 and all(r is not None and r >= REPLICATE for _, r in following):
                 out['winners'].append({'concept': concept, 'platform': platform, 'lane': lane,
                                        'first': placement['post_id']})
                 won = True
                 break
-        low = [r for _, r in rows if r < KILL_BELOW]
+        low = [r for _, r in rows if r is not None and r < KILL_BELOW]
         if len(low) >= KILL_COUNT and not won:  # a replicated winner is never killed in the same call
             out['kills'].append({'concept': concept, 'platform': platform, 'lane': lane})
     counted = concept_orders(orders)
-    buy_concepts = {p['concept'] for p in placements if p.get('lane') == 'buy'}
+    buy_concepts = {concept_of(p['concept']) for p in placements if p.get('lane') == 'buy'}
     out['graduated'] = sorted(c for c in counted if c in buy_concepts)
     return out
 
 
+def _krish_row(row):
+    """True when a ledger row speaks for Krish, in lock.record's shape ('verdict') or the board's ('kind'), whatever
+    its case or spacing."""
+    return isinstance(row, dict) and any(str(row.get(k) or '').strip().lower().startswith('krish')
+                                         for k in ('verdict', 'kind'))
+
+
 def hydrate(ledger_rows, board_verdicts):
     """Ledger rows safe to load into local/: every row except a Krish approval or decline, which is rebuilt only
-    from the board's verdicts. Returns (rows, dropped)."""
+    from the board's verdicts. Returns (rows, dropped).
+
+    A rebuilt verdict takes lock.record's shape ({lock, spec, verdict, fingerprint, note}) so lock.gate and
+    lock.records read it, and is rebuilt only when the board verdict carries the fingerprint of the exact post
+    Krish answered: gate matches a verdict on spec plus fingerprint, so no fingerprint is no approval."""
     rows, dropped = [], 0
     for row in ledger_rows or []:
-        if isinstance(row, dict) and row.get('kind') in KRISH_KINDS:
+        if _krish_row(row):
             dropped += 1
             continue
         rows.append(row)
     for verdict in board_verdicts or []:
-        if verdict.get('answer') in ('yes', 'no') and verdict.get('item_id'):
-            rows.append({'kind': 'krish-approve' if verdict['answer'] == 'yes' else 'krish-decline',
-                         'item_id': verdict['item_id'], 'source': 'board-verdicts', 'at': verdict.get('at')})
+        if verdict.get('answer') in ('yes', 'no') and verdict.get('item_id') and verdict.get('fingerprint'):
+            kind = 'krish-approve' if verdict['answer'] == 'yes' else 'krish-decline'
+            rows.append({'lock': verdict.get('lock') or verdict['item_id'], 'spec': verdict['item_id'], 'verdict': kind,
+                         'kind': kind, 'item_id': verdict['item_id'], 'fingerprint': verdict['fingerprint'],
+                         'note': 'board-verdicts', 'source': 'board-verdicts', 'at': verdict.get('at')})
     return rows, dropped
 
 
