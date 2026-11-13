@@ -89,7 +89,7 @@ class DecideTests(unittest.TestCase):
         history = [placement(n, concept='C200') for n in range(10, 16)]
         weak = [placement(n, concept='C301', days_ago=3) for n in (1, 2, 3)]
         out = loop.decide(history + weak, [ig(n, 10) for n in range(10, 16)] + [ig(n, 2) for n in (1, 2, 3)], now=NOW)
-        self.assertEqual(out['kills'], [{'concept': 'C301', 'platform': 'instagram'}])
+        self.assertEqual(out['kills'], [{'concept': 'C301', 'platform': 'instagram', 'lane': 'buy'}])
 
     def test_orders_gate_and_unverified_never_graduates(self):
         posts = [placement(1, concept='C301'), placement(2, concept='C302', lane='viral')]
@@ -103,6 +103,38 @@ class DecideTests(unittest.TestCase):
         self.assertEqual(out['rejected'], 1)
         out = loop.decide([placement(2)], [], now=NOW)
         self.assertEqual(out['unread'], ['P002'])
+
+
+class ReviewFixTests(unittest.TestCase):
+    """Cases a fresh-context review found on 13 Nov 2026."""
+
+    def test_a_zero_median_is_said_not_called_baseline(self):
+        posts = [placement(n, platform='tiktok', concept='C200') for n in range(6)]
+        reads = [reading(n, platform='tiktok', shares=0, views=1000) for n in range(6)]
+        out = loop.decide(posts, reads, now=NOW)
+        self.assertEqual(out['baseline'], [])
+        self.assertEqual(len(out['zero_median']), 6)
+
+    def test_lanes_never_mix_inside_a_concept(self):
+        history = [placement(n, concept='C200') for n in range(10, 16)]
+        viral_history = [placement(n, concept='C201', lane='viral') for n in range(20, 26)]
+        mixed = [placement(1, concept='C301', days_ago=3), placement(2, concept='C301', lane='viral', days_ago=3),
+                 placement(3, concept='C301', lane='viral', days_ago=3)]
+        reads = ([ig(n, 10) for n in range(10, 16)] + [reading(n, hours=72, views=1000) for n in range(20, 26)]
+                 + [ig(1, 2), reading(2, hours=72, views=100), reading(3, hours=72, views=100)])
+        out = loop.decide(history + viral_history + mixed, reads, now=NOW)
+        self.assertEqual([k for k in out['kills'] if k['concept'] == 'C301'], [])  # one weak buy post, two viral
+
+    def test_dates_with_no_zone_are_read_as_utc_and_old_posts_are_not_judged(self):
+        old = dict(placement(1), posted_at='2026-09-01')
+        fresh = dict(placement(2), posted_at='2026-11-19T10:00:00')
+        out = loop.decide([old, fresh], [dict(ig(2, 10), observed_at='2026-11-20T10:00:00')], now=NOW)
+        self.assertNotIn('P001', out['unread'] + out['baseline'] + out['candidates'])
+        self.assertIn('P002', out['baseline'])
+
+    def test_attribution_family_keys_graduate_their_concept(self):
+        posts = [placement(1, concept='C301')]
+        self.assertEqual(loop.decide(posts, [], [{'concept': 'IG_EMO_C301', 'orders': 1}], now=NOW)['graduated'], ['C301'])
 
 
 if __name__ == '__main__':

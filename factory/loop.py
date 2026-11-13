@@ -44,9 +44,16 @@ READER = 'reader'
 
 
 def _when(value):
-    if isinstance(value, dt.datetime):
-        return value if value.tzinfo else value.replace(tzinfo=dt.timezone.utc)
-    return dt.datetime.fromisoformat(str(value).replace('Z', '+00:00'))
+    """An aware datetime; a time with no zone, or a bare date, is read as UTC."""
+    if not isinstance(value, dt.datetime):
+        value = dt.datetime.fromisoformat(str(value).replace('Z', '+00:00'))
+    return value if value.tzinfo else value.replace(tzinfo=dt.timezone.utc)
+
+
+def concept_of(key):
+    """C301 from C301 or from an attribution family such as IG_EMO_C301."""
+    key = str(key or '')
+    return key.rsplit('_', 1)[-1] if '_' in key else key
 
 
 def valid_reading(reading):
@@ -115,11 +122,14 @@ def medians(placements, readings, now):
 
 
 def concept_orders(orders):
-    """{concept: counted orders}; an order counts only in a counted tier, never unverified."""
+    """{concept: counted orders}; an order counts only in a counted tier, never unverified. Attribution's
+    families (IG_EMO_C301) exist only in the engine tier, so a family key with no tier is passed as engine."""
     out = {}
     for order in orders or []:
-        if order.get('tier') in COUNTED_TIERS and order.get('concept'):
-            out[order['concept']] = out.get(order['concept'], 0) + int(order.get('orders', 1))
+        tier = order.get('tier', 'engine' if '_' in str(order.get('concept') or '') else None)
+        concept = concept_of(order.get('concept'))
+        if tier in COUNTED_TIERS and concept:
+            out[concept] = out.get(concept, 0) + int(order.get('orders', 1))
     return out
 
 
@@ -133,39 +143,48 @@ def decide(placements, readings_list, orders=(), now=None):
     at72, _ = latest(readings_list, 72)  # the same readings, so their rejections are counted once
     readings = {24: at24, 72: at72}
     lane_median = medians(placements, readings, now)
-    out = {'baseline': [], 'candidates': [], 'winners': [], 'kills': [], 'graduated': [], 'unread': [],
-           'rejected': rejected}
+    out = {'baseline': [], 'zero_median': [], 'candidates': [], 'winners': [], 'kills': [], 'graduated': [],
+           'unread': [], 'rejected': rejected}
     ratios = {}
+    since = now - dt.timedelta(days=WINDOW_DAYS)
     for placement in sorted(placements, key=lambda p: _when(p['posted_at'])):
         if placement.get('lane') not in LANES or placement.get('platform') not in PLATFORMS:
             out['unread'].append(placement['post_id'])
             continue
+        if not since <= _when(placement['posted_at']) <= now:
+            continue  # judged against today's median only while it is inside the 14-day window
         hours = 24 if placement['lane'] == 'buy' else 72
         reading = readings[hours].get((placement['post_id'], placement['platform']))
         value = signal(placement['platform'], (reading or {}).get('counts'), placement['lane']) if reading else None
         if value is None:
             out['unread'].append(placement['post_id'])
             continue
-        median = lane_median.get((placement['platform'], placement['lane']))
-        if not median:
+        key = (placement['platform'], placement['lane'])
+        median = lane_median.get(key)
+        if median is None:
             out['baseline'].append(placement['post_id'])
             continue
+        if median == 0:
+            out['zero_median'].append(placement['post_id'])  # enough posts, but the lane's median is 0: no ratio
+            continue
         ratio = value / median
-        ratios.setdefault((placement['concept'], placement['platform']), []).append((placement, ratio))
+        ratios.setdefault((placement['concept'], placement['platform'], placement['lane']), []).append((placement, ratio))
         if ratio >= CANDIDATE[placement['lane']]:
             out['candidates'].append(placement['post_id'])
-    for (concept, platform), rows in ratios.items():
+    for (concept, platform, lane), rows in ratios.items():
+        won = False
         for i, (placement, ratio) in enumerate(rows):
-            if ratio < CANDIDATE[placement['lane']]:
+            if ratio < CANDIDATE[lane]:
                 continue
             following = rows[i + 1:i + 3]
             if len(following) == 2 and all(r >= REPLICATE for _, r in following):
-                out['winners'].append({'concept': concept, 'platform': platform, 'lane': placement['lane'],
+                out['winners'].append({'concept': concept, 'platform': platform, 'lane': lane,
                                        'first': placement['post_id']})
+                won = True
                 break
         low = [r for _, r in rows if r < KILL_BELOW]
-        if len(low) >= KILL_COUNT:
-            out['kills'].append({'concept': concept, 'platform': platform})
+        if len(low) >= KILL_COUNT and not won:  # a replicated winner is never killed in the same call
+            out['kills'].append({'concept': concept, 'platform': platform, 'lane': lane})
     counted = concept_orders(orders)
     buy_concepts = {p['concept'] for p in placements if p.get('lane') == 'buy'}
     out['graduated'] = sorted(c for c in counted if c in buy_concepts)

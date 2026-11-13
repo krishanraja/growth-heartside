@@ -47,6 +47,10 @@ TIERS = ('engine', 'organic_social', 'organic_search', 'paid', 'unverified', 'pe
 # utm_medium=paid_social). Set this to False only on his answer, recorded as a Ruling in the commit.
 META_UNVERIFIED = True
 META = ('instagram.com', 'facebook.com', 'fb.com', 'fb.me', 'messenger.com')
+# Meta's own source names, as utm_source (its {{site_source_name}} fills ig, fb, msg or an) or as Shopify's visit
+# source. This engine's own non-engine Meta links (hs_release_, thanksgiving_, page_button campaigns) carry these
+# too, so they also wait as unverified until the ads questions are answered; engine-tagged links never do.
+META_SOURCES = {'ig', 'instagram', 'fb', 'facebook', 'meta', 'msg', 'messenger', 'an', 'audience_network', 'threads'}
 ORGANIC = ('engine', 'organic_social')
 SOCIAL = ('instagram.com', 'facebook.com', 'fb.com', 'fb.me', 'tiktok.com', 'pinterest.com', 'pin.it',
           'youtube.com', 'youtu.be', 'threads.net', 'reddit.com', 'linktr.ee')
@@ -160,9 +164,13 @@ def classify(order, registry=None):
 
 
 def meta_visit(visit):
-    """True when a visit came from Facebook or Instagram (its referrer, or an fbclid on its landing page)."""
+    """True when a visit came from Facebook or Instagram: its referrer, Meta's source name in utm_source or in
+    Shopify's own visit source (Instagram's in-app browser often drops the referrer), or an fbclid."""
     name = host(visit.get('referrerUrl'))
     if any(name == m or name.endswith('.' + m) for m in META):
+        return True
+    utm = visit.get('utmParameters') or {}
+    if (utm.get('source') or '').strip().lower() in META_SOURCES or (visit.get('source') or '').strip().lower() in META_SOURCES:
         return True
     query = urllib.parse.urlsplit(visit.get('landingPage') or '').query
     return any(k.lower() == 'fbclid' for k, _ in urllib.parse.parse_qsl(query, keep_blank_values=True))
@@ -328,13 +336,17 @@ def run(db, today=None):
     if not shop.endswith('.myshopify.com'):
         return {'status': 'hold', 'reason': 'HEARTSIDE_SHOP_DOMAIN must be the store\'s .myshopify.com address'}
     previous = latest(db)
+    london_today = dt.datetime.now(ZoneInfo(TIMEZONE)).date()
     if previous and previous.get('definition') == DEFINITION and dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(
-            previous['observed_at'].replace('Z', '+00:00')) < dt.timedelta(hours=5) and today is None:
-        # Five hours, so a runner every six hours reads every run (it would skip every other at six).
+            previous['observed_at'].replace('Z', '+00:00')) < dt.timedelta(hours=5) and today is None \
+            and previous.get('end') == london_today.isoformat():
+        # Five hours, so a runner every six hours reads every run; and always again once the London day changes,
+        # so the month window never ends yesterday.
         return {'status': 'current', 'reason': f'read at {previous["observed_at"]}; the next read is due five hours later'}
-    today = today or dt.datetime.now(ZoneInfo(TIMEZONE)).date()
+    today = today or london_today
     spans = windows(today)
-    orders = fetch(shop, access_token(shop), min(a for a, _ in spans.values()))
+    # One day early: the query's date is read in the shop's own zone, and aggregate() keeps London days only.
+    orders = fetch(shop, access_token(shop), min(a for a, _ in spans.values()) - dt.timedelta(days=1))
     readings = {}
     for name, (start, end) in spans.items():
         readings[name] = aggregate(orders, start, end)

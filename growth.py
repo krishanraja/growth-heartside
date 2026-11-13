@@ -222,33 +222,65 @@ FAKE_PROOF = [  # SCOPE 10: no invented reviews, sales or approvals
      'claims proof Heartside does not have (no invented reviews, ratings, rankings or customer counts)'),
     (re.compile(r'~~|\bwas \$\d|\bregularly \$\d', re.I), 'a strike-through or "was" price'),
 ]
-# heartside's canon on what the product is and what we may claim (heartside README.md and docs/SELLING.md, "Claims we
-# must not make (yet)"; Ruling, Krish, 2026-10-31: every gift is artwork only, the note comes in the box).
+# heartside's canon on what the product is and what we may claim (heartside README.md and docs/SELLING.md, "Promises
+# we can make" and "Claims we must not make (yet)"; Ruling, Krish, 2026-10-31: every gift is artwork only, the note
+# comes in the box). Each rule is read per sentence.
 GIFT = r'(?:mug|blanket|portrait|print|gift)s?'
+POSSESSIVE = r"(?:(?:a|the|your|their|my|his|her|its)\s+)?(?:(?:dog|dog's|dog\u2019s|pup's|pup\u2019s)\s+)?(?:short\s+|own\s+)?"
+WORDS = r'(?:words?|note|message|quote|poem|text|lines?|letter)'
+IN_THE_BOX = re.compile(r'\bin (?:the|every|each) box\b|packing slip|digital card|\bon (?:a|the) (?:card|slip)\b', re.I)
+WORDS_ON_GIFT = re.compile(
+    r'\bon (?:the|your|a|this|their|my) ' + GIFT + r'\s*[:,\u2014-]\s*["\u201c]'
+    r'|\b' + WORDS + r's?\s+(?:printed|written)\s+on\s+(?:it|(?:the |a |your |their |every |each )?' + GIFT + r')\b'
+    r'|\bprinted (?:with|on) ' + POSSESSIVE + WORDS + r'\b'
+    r'|\b' + GIFT + r'\s+(?:with|carrying)\s+' + POSSESSIVE + WORDS + r'\b'
+    r'|\b' + GIFT + r'\s+that (?:says|reads)\b'
+    r'|\b' + WORDS + r's? on (?:it|them)\b'
+    r'|\b' + GIFT + r' (?:also )?carr(?:y|ies) (?:a |the )?(?:short )?' + WORDS + r'\b', re.I)
+ORDER_BY_DEC4 = re.compile(r'\border(?:ed|s)?\b[^.\n]{0,30}\b(?:by|on) dec(?:ember)?\.? ?4(?:th)?\b', re.I)
+DELIVERY_PROMISE = re.compile(
+    r'\bguarantee[ds]?\b[^.\n]{0,40}\b(?:deliver|arriv|christmas|holiday|in time|ship)'
+    r'|\b(?:arriv(?:es|ing|e)|deliver(?:ed|s|y)|ships?|shipped|get it|be there|under the tree)\s+(?:by|before|in time for|on)\s+'
+    r'(?:christmas|xmas|the holidays?|dec(?:ember)?\.? ?\d{1,2}(?:st|nd|rd|th)?\b)'
+    r'|\bin time for christmas,? guaranteed\b', re.I)
 CLAIMS = [
-    (re.compile(r'\bon (?:the|your|a|this|their) ' + GIFT + r'\s*[:\u2014-]\s*["\u201c]'
-                r'|\b(?:words?|note|message|quote|name|text|poem|letter)s?\s+(?:printed|written)\s+on\b'
-                r'|\bprinted (?:with|on) (?:the |a |your |their )?(?:words?|note|message|quote|name|text|poem)\b'
-                r'|\b' + GIFT + r'\s+(?:with|that says|that reads|carrying)\s+(?:a |the |your |their )?(?:short )?'
-                r'(?:words?|note|message|quote|poem)\b'
-                r'|\b' + GIFT + r' (?:also )?carr(?:y|ies) (?:a |the )?(?:short )?(?:note|message|words?)\b', re.I),
-     'puts words on a gift: every gift is artwork only and the note comes in the box (heartside, Ruling 31 Oct)'),
-    (re.compile(r'\bhand[- ]?made\b|\bmade by hand\b|\bhand[- ]?crafted\b', re.I),
-     'says handmade: Printful prints and ships every gift (heartside SELLING.md)'),
-    (re.compile(r'\b(?:gallery|museum|premium|heirloom|highest|top|professional)[- ](?:quality|grade)\b|\bheirloom\b'
-                r'|\bbuilt to last\b|\blasts? (?:a lifetime|forever|for years)\b|\b(?:dishwasher|microwave)[- ]safe\b'
-                r'|\bfade[- ]?(?:proof|resistant)\b|\bwon\W?t fade\b|\bnever fades?\b', re.I),
+    (re.compile(r'\bhand[- ]?made\b|\bmade by hand\b|\bhand[- ]?crafted\b|\bhand[- ]?painted\b|\bpainted by hand\b', re.I),
+     'says handmade or hand-painted: the painter is an AI artwork system and a person checks it (heartside SELLING.md)'),
+    (re.compile(r'\b(?:gallery|museum|heirloom|highest|top|professional|high)[- ](?:quality|grade)\b|\bheirloom\b'
+                r'|\bpremium (?:sherpa|blanket|print|mug|ceramic|canvas|paper|frame|quality|materials?)\b'
+                r'|\bdurab(?:le|ility)\b|\blong[- ]lasting\b|\bbuilt to last\b|\blasts? (?:a lifetime|forever|for years)\b'
+                r'|\b(?:dishwasher|microwave)[- ]safe\b|\bfade[- ]?(?:proof|resistant)\b'
+                r'|\b(?:colou?rs?|print|ink|painting|portrait|mug|blanket)s? (?:that |which )?(?:won\W?t|will never|never|don\W?t) fades?\b', re.I),
      'claims physical quality heartside has not inspected yet (say "printed and shipped by Printful"; SELLING.md)'),
-    (re.compile(r'\bguarantee[ds]?\b[^.\n]{0,40}\b(?:deliver|arriv|christmas|holiday|in time)'
-                r'|\b(?:arrives?|delivered|get it|there|under the tree)\s+(?:by|before|in time for)\s+(?:christmas|the holidays?|dec(?:ember)?\.? ?2[0-5])\b'
-                r'|\bin time for christmas,? guaranteed\b', re.I),
-     'promises a delivery date: typical times only, and the Christmas line is "order by December 4" (SELLING.md)'),
-    (re.compile(r'\b(?:black friday|cyber monday|holiday|christmas)\s+(?:deal|sale|special|offer|discount|doorbuster)s?\b'
-                r'|\bon sale\b|\bflash sale\b|\bsale ends\b|\bdoorbusters?\b|\bbiggest sale\b', re.I),
+    (re.compile(r'\b(?:black friday|cyber monday|holiday|christmas)\s+(?:deal|sale|special|offer|discount|doorbuster|savings?)s?\b'
+                r'|\b(?:black friday|cyber monday)\b[^.\n]{0,40}(?:\d\s?%|\boff\b|\bsave\b|\bsavings?\b|\bdeal)'
+                r'|(?<!go )(?<!goes )(?<!went )\bon sale\b|\bflash sale\b|\bsale ends\b|\bdoorbusters?\b|\bbiggest sale\b', re.I),
      'deal or sale wording with no live time-limited offer: the bundle saving is permanent, so it is never a deal'),
 ]
-PERCENT_OFF = re.compile(r'\b\d{1,2}\s?%\s*off\b|\bsave \d{1,2}\s?%', re.I)
-BUNDLE = re.compile(r'\b(?:two|three|2|3) (?:or more )?gifts?\b|\bbundle', re.I)
+PERCENT = re.compile(r'(\d{1,3})\s?%')
+BUNDLE = re.compile(r'\b(?:two|three|2|3)\b|\bbundles?\b', re.I)
+BUNDLE_PERCENTS = {'15', '20'}  # two gifts save 15%, three or more save 20% (SELLING.md)
+SENTENCE = re.compile(r'(?<=[.!?\n])\s+')
+
+
+def claim_problems(text):
+    """heartside's claims rules, sentence by sentence (SELLING.md)."""
+    out = []
+    for sentence in SENTENCE.split(text or ''):
+        if WORDS_ON_GIFT.search(sentence) and not IN_THE_BOX.search(sentence):
+            out.append('puts words on a gift: every gift is artwork only and the note comes in the box '
+                       '(heartside, Ruling 31 Oct)')
+        if DELIVERY_PROMISE.search(sentence) and not ORDER_BY_DEC4.search(sentence):
+            out.append('promises a delivery date: typical times only, and the Christmas line is anchored to '
+                       '"order by December 4" (SELLING.md)')
+        percents = PERCENT.findall(sentence)
+        if percents and (set(percents) - BUNDLE_PERCENTS or not BUNDLE.search(sentence)):
+            out.append('a percentage other than the permanent bundle saving (two gifts save 15%, three or more 20%), '
+                       'never a deal')
+    for rx, why in CLAIMS:
+        if rx.search(text or ''):
+            out.append(why)
+    return list(dict.fromkeys(out))
 
 
 # AGENTS.md rule 8: statistics the outside growth skills repeat with no source we can check
@@ -725,12 +757,10 @@ def problems(item, price_points=()):
             out.append(f'it says "{w}", a stock phrase that reads as machine-written')
     if NOT_BUT.search(text):
         out.append('it uses the "it\'s not X, it\'s Y" turn')
-    for rx, why in RETIRED + FAKE_PROOF + CLAIMS:
+    for rx, why in RETIRED + FAKE_PROOF:
         if rx.search(text):
             out.append(why)
-    if PERCENT_OFF.search(text) and not BUNDLE.search(text):
-        out.append('a percentage off with no bundle named: the only saving is the permanent bundle '
-                   '(two gifts save 15%, three or more 20%), never a deal')
+    out += claim_problems(text)
     if SAD.search(text):
         out.append('it touches death, illness, memorials or abandonment (not in version one; never a joke)')
     for rx, us in UK:
@@ -1119,8 +1149,13 @@ def self_test():
     t('a delivery promise is refused', bad('It arrives by Christmas.', 'delivery date'))
     t('"Order by December 4" passes', not bad('Order by December 4 for Christmas.', 'delivery date'))
     t('a Black Friday deal is refused', bad('Our Black Friday deal is here.', 'deal or sale'))
-    t('a bare percentage off is refused', bad('Take 20% off the blanket.', 'percentage off'))
-    t('the bundle saving passes', not bad('Two gifts save 15%.', 'percentage off'))
+    t('a bare percentage off is refused', bad('Take 20% off the blanket.', 'percentage other'))
+    t('an invented bundle discount is refused', bad('Black Friday: 30% off two gifts.', 'percentage other'))
+    t('the bundle saving passes', not bad('Two gifts save 15%. Three or more save 20%.', 'percentage other'))
+    t('the canon Christmas promise passes', not bad('Order by December 4 for delivery by Christmas to a US address.', 'delivery date'))
+    t('the note on the packing slip passes', not bad('The note printed on the packing slip comes in the box.', 'words on a gift'))
+    t('a mug that says something is refused', bad('A mug that says "I saw you eat the cheese."', 'words on a gift'))
+    t('hand-painted is refused', bad('A hand-painted portrait of your dog', 'hand-painted'))
     t('Biscuit, the retired host, is refused', bad('Meet Biscuit, our host', 'Biscuit'))
     t('Buddy, the host, passes', not bad('Buddy asks four questions about your dog.', 'Biscuit'))
     t('the host line prefix Biscuit is refused', bad('Biscuit: Tell me about your dog.', 'Biscuit', 'other'))

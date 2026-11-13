@@ -46,6 +46,30 @@ class AttributionTests(unittest.TestCase):
         self.assertEqual(reading['organic'], {'orders': 1, 'net_sales': 129.0})
         self.assertEqual(reading['store'], {'orders': 2, 'net_sales': 258.0})
 
+    def test_meta_by_utm_or_shopify_source_alone_is_unverified(self):
+        # Instagram's in-app browser often drops the referrer; Meta's {{site_source_name}} fills ig or fb.
+        by_utm = visit(medium='paid_maybe', campaign='x', referrer=None); by_utm['utmParameters']['source'] = 'ig'
+        by_source = visit(medium=None, referrer=None); by_source['source'] = 'facebook'
+        for one in (by_utm, by_source):
+            self.assertEqual(attribution.classify(order(one))[0], 'unverified')
+        tiktok = visit(medium=None, referrer=None); tiktok['source'] = 'tiktok'
+        self.assertNotEqual(attribution.classify(order(tiktok))[0], 'unverified')
+
+    def test_a_fresh_month_read_beats_an_old_partial_import(self):
+        from engine import ledger
+        db = ledger.connect(':memory:')
+        ledger.import_report(db, {'platform': 'shopify', 'scope': 'store', 'currency': 'USD', 'source': 'Synthetic ShopifyQL',
+                                  'observed_at': '2026-11-05T06:00:00Z',
+                                  'period': {'start': '2026-11-01', 'end': '2026-11-05', 'timezone': 'Europe/London'},
+                                  'values': {'net_sales': 1, 'orders': 0}})
+        now = dt.datetime(2026, 11, 13, 6, 0, tzinfo=dt.timezone.utc)
+        self.assertEqual(protocol.net_sales(db, now)['availability'], 'stale')  # the import alone ends on the 5th
+        start, end = attribution.windows(dt.date(2026, 11, 13))['month']
+        attribution.store(db, 'month', attribution.aggregate([order(visit(CID), amount='129.00', created='2026-11-02T15:00:00Z')],
+                                                             start, end), observed_at='2026-11-13T05:00:00+00:00')
+        sales = protocol.net_sales(db, dt.datetime(2026, 11, 13, 6, 0, tzinfo=dt.timezone.utc))
+        self.assertEqual((sales['value'], sales['availability']), (129, 'measured'))
+
     def test_the_month_window_feeds_net_sales(self):
         from engine import ledger
         spans = attribution.windows(dt.date(2026, 11, 13))
