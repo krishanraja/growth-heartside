@@ -544,7 +544,8 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
                 seen = False
         phase = 'capture'
         state, degraded = capture(growth)
-        # 1.22.0: Heartside's AI answers are AEO-Engine's (Ruling, Krish, 2026-11-12); one line, and a request when none is on file.
+        # 1.22.0: Heartside's AI answers are AEO-Engine's (Ruling, Krish, 2026-11-12); one line, a request when none is on
+        # file, a replacing one only when the bank's valid questions outnumber it, and none when unserved or unread.
         answers = ai_answers.sync(client, directive, root)
         database = Path(root) / 'local/engine.sqlite3'
         if database.exists():
