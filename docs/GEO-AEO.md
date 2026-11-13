@@ -36,7 +36,7 @@ Engines merge what they read about "Heartside" from many places. Every surface u
 - **One line:** Gifts from your dog: an illustrated mug, a word-free sherpa blanket, or a portrait, painted from a photo of your dog.
 - **Proof points:**
   - Buddy, Heartside's host, gathers a photo of the dog and a few answers in a short chat;
-  - the mug and the portrait carry a short note from the dog, signed "Love, [dog]" with a paw; the blanket has no words;
+  - every gift is artwork only, with no words printed on it; the short note from the dog, signed "Love, [dog]" with a paw, comes in the box and on a free digital card (heartside, Ruling, Krish, 2026-10-31);
   - a person checks every order before it prints;
   - US only.
 - **Prices:** mug $45, blanket $129, portrait $59 unframed or $119 framed. Live offers: 15% off two gifts and 20% off three or more, and the $29 Artist's touch add-on (heartside `docs/ECONOMICS.md`).

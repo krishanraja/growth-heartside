@@ -222,6 +222,35 @@ FAKE_PROOF = [  # SCOPE 10: no invented reviews, sales or approvals
      'claims proof Heartside does not have (no invented reviews, ratings, rankings or customer counts)'),
     (re.compile(r'~~|\bwas \$\d|\bregularly \$\d', re.I), 'a strike-through or "was" price'),
 ]
+# heartside's canon on what the product is and what we may claim (heartside README.md and docs/SELLING.md, "Claims we
+# must not make (yet)"; Ruling, Krish, 2026-10-31: every gift is artwork only, the note comes in the box).
+GIFT = r'(?:mug|blanket|portrait|print|gift)s?'
+CLAIMS = [
+    (re.compile(r'\bon (?:the|your|a|this|their) ' + GIFT + r'\s*[:\u2014-]\s*["\u201c]'
+                r'|\b(?:words?|note|message|quote|name|text|poem|letter)s?\s+(?:printed|written)\s+on\b'
+                r'|\bprinted (?:with|on) (?:the |a |your |their )?(?:words?|note|message|quote|name|text|poem)\b'
+                r'|\b' + GIFT + r'\s+(?:with|that says|that reads|carrying)\s+(?:a |the |your |their )?(?:short )?'
+                r'(?:words?|note|message|quote|poem)\b'
+                r'|\b' + GIFT + r' (?:also )?carr(?:y|ies) (?:a |the )?(?:short )?(?:note|message|words?)\b', re.I),
+     'puts words on a gift: every gift is artwork only and the note comes in the box (heartside, Ruling 31 Oct)'),
+    (re.compile(r'\bhand[- ]?made\b|\bmade by hand\b|\bhand[- ]?crafted\b', re.I),
+     'says handmade: Printful prints and ships every gift (heartside SELLING.md)'),
+    (re.compile(r'\b(?:gallery|museum|premium|heirloom|highest|top|professional)[- ](?:quality|grade)\b|\bheirloom\b'
+                r'|\bbuilt to last\b|\blasts? (?:a lifetime|forever|for years)\b|\b(?:dishwasher|microwave)[- ]safe\b'
+                r'|\bfade[- ]?(?:proof|resistant)\b|\bwon\W?t fade\b|\bnever fades?\b', re.I),
+     'claims physical quality heartside has not inspected yet (say "printed and shipped by Printful"; SELLING.md)'),
+    (re.compile(r'\bguarantee[ds]?\b[^.\n]{0,40}\b(?:deliver|arriv|christmas|holiday|in time)'
+                r'|\b(?:arrives?|delivered|get it|there|under the tree)\s+(?:by|before|in time for)\s+(?:christmas|the holidays?|dec(?:ember)?\.? ?2[0-5])\b'
+                r'|\bin time for christmas,? guaranteed\b', re.I),
+     'promises a delivery date: typical times only, and the Christmas line is "order by December 4" (SELLING.md)'),
+    (re.compile(r'\b(?:black friday|cyber monday|holiday|christmas)\s+(?:deal|sale|special|offer|discount|doorbuster)s?\b'
+                r'|\bon sale\b|\bflash sale\b|\bsale ends\b|\bdoorbusters?\b|\bbiggest sale\b', re.I),
+     'deal or sale wording with no live time-limited offer: the bundle saving is permanent, so it is never a deal'),
+]
+PERCENT_OFF = re.compile(r'\b\d{1,2}\s?%\s*off\b|\bsave \d{1,2}\s?%', re.I)
+BUNDLE = re.compile(r'\b(?:two|three|2|3) (?:or more )?gifts?\b|\bbundle', re.I)
+
+
 # AGENTS.md rule 8: statistics the outside growth skills repeat with no source we can check
 # (knowledge/corpus/external-growth-skills.md, "Do not quote"). Refused on every line, notes to Krish included.
 DO_NOT_QUOTE = [
@@ -696,9 +725,12 @@ def problems(item, price_points=()):
             out.append(f'it says "{w}", a stock phrase that reads as machine-written')
     if NOT_BUT.search(text):
         out.append('it uses the "it\'s not X, it\'s Y" turn')
-    for rx, why in RETIRED + FAKE_PROOF:
+    for rx, why in RETIRED + FAKE_PROOF + CLAIMS:
         if rx.search(text):
             out.append(why)
+    if PERCENT_OFF.search(text) and not BUNDLE.search(text):
+        out.append('a percentage off with no bundle named: the only saving is the permanent bundle '
+                   '(two gifts save 15%, three or more 20%), never a deal')
     if SAD.search(text):
         out.append('it touches death, illness, memorials or abandonment (not in version one; never a joke)')
     for rx, us in UK:
@@ -1072,13 +1104,23 @@ def self_test():
     t('"must-have" is refused', bad('The must-have gift', 'bans'))
     t('the not-X-but-Y turn is refused', bad("It's not a mug, it's a love letter", "it's not X"))
     t('"written by your dog" is refused', bad('Gifts written by your dog', 'retired'))
-    t('a retired third-person gift line is refused', bad('On the mug: "Steals your side of the bed."', 'third-person'))
+    t('a retired third-person gift line is refused', bad('In the box: "Steals your side of the bed."', 'third-person'))
     t('the retired one-line offer is refused', bad('Personalized posters, ornaments and pillows made from their photo', 'one-line offer'))
-    t("the dog's own voice passes", not bad('On the mug: "I hear your car before anyone else does." Love, Kuku', 'third-person'))
-    t('a worn line is refused', bad('On the mug: "I took your side of the bed, and I am not sorry."', 'worn line'))
+    t("the dog's own voice passes", not bad('In the box: "I hear your car before anyone else does." Love, Kuku', 'third-person'))
+    t('a worn line is refused', bad('In the box: "I took your side of the bed, and I am not sorry."', 'worn line'))
     t('"in this economy" is refused', bad('A gift in this economy', 'worn line'))
     t('stacked fragments are refused', bad('Same stick. Every time.', 'stacked'))
     t('one natural sentence passes', not bad('I keep the couch warm and my eye on you.', 'stacked'))
+    t('words on a gift are refused', bad('On the mug: "I hear your car first." Love, Kuku', 'words on a gift'))
+    t('a portrait that carries a note is refused', bad('The portrait carries a short note from the dog.', 'words on a gift'))
+    t('the note in the box passes', not bad('The note from your dog comes in the box.', 'words on a gift'))
+    t('handmade is refused', bad('A handmade gift from your dog', 'handmade'))
+    t('gallery quality is refused', bad('A gallery-quality portrait', 'physical quality'))
+    t('a delivery promise is refused', bad('It arrives by Christmas.', 'delivery date'))
+    t('"Order by December 4" passes', not bad('Order by December 4 for Christmas.', 'delivery date'))
+    t('a Black Friday deal is refused', bad('Our Black Friday deal is here.', 'deal or sale'))
+    t('a bare percentage off is refused', bad('Take 20% off the blanket.', 'percentage off'))
+    t('the bundle saving passes', not bad('Two gifts save 15%.', 'percentage off'))
     t('Biscuit, the retired host, is refused', bad('Meet Biscuit, our host', 'Biscuit'))
     t('Buddy, the host, passes', not bad('Buddy asks four questions about your dog.', 'Biscuit'))
     t('the host line prefix Biscuit is refused', bad('Biscuit: Tell me about your dog.', 'Biscuit', 'other'))
