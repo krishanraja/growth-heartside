@@ -110,8 +110,10 @@ Each is free. Each needs Krish's logins, so Cowork does the clicks:
 
 ## 6. The recurring job: `jobs/answers.md` (Wednesdays, 07:30 New York)
 
-1. Sync. Pick the two highest-priority `todo` questions from the question bank.
-2. For each, attach the public search suggestions for its seed query (evidence, never volumes).
+**AEO-Engine does the AI-answer research** (Ruling, Krish, 2026-11-12: "AEO-Engine becomes the one specialist that every venture's growth engine calls for its AI-answer work. ... Control Centre's own AI-answer checks and Heartside's separate Answers job fold into AEO."). This engine never asks an AI assistant itself. Its daily Control Center run (`python3 growth.py cc`, `engine/ai_answers.py`) asks AEO once, through the protocol (1.22.0, `POST answers`), to track the question bank's buyer questions (best first, at most 25, naming heartside.io), and reads Heartside's standing back from each directive (`ai_answers`): the questions asked that fortnight, how many cite heartside.io first, the questions another site is cited first on and who, and AEO's moves to win them. That standing is on Heartside's tile in Control Center. What stays here is the writing: the Answers library is Heartside's own pages, in its voice.
+
+1. Sync. Read Heartside's AI answers from the latest directive (`engine/ai_answers.py`, `misses_and_moves`): take the two questions AEO says another site is cited first on, or its moves, and match each to its bank entry (add one, status `todo`, when the bank does not have it). Only when AEO has no reading for Heartside yet, take the two highest-priority `todo` questions from the bank, as before.
+2. For each, attach the public search suggestions for its seed query (evidence, never volumes), and the site AEO says is cited first instead.
 3. An authoring session drafts each answer to the section 4 format. The hosted runner only builds the brief.
 4. Run `python3 growth.py check` on the pack. Every public line starts with `Title:`, `Copy:` or `Headline:`.
 5. Deliver the pack. **Krish approves each answer.**
@@ -123,7 +125,9 @@ Each is free. Each needs Krish's logins, so Cowork does the clicks:
 
 ## 7. Measurement (monthly, first Monday)
 
-1. **The prompt panel:** the same 20 prompts every month from the question bank, Tier 1 first. Ask each in:
+**AI answers are measured by AEO-Engine**, fortnightly, on the bank's questions it was asked to track: the share of questions asked where heartside.io is the first citation, on Perplexity, ChatGPT and Claude, on Heartside's tile in Control Center (Ruling, Krish, 2026-11-12). The monthly hand panel below is retired into it; it is kept here as the record of how it was measured until 12 November 2026, and AEO adds an assistant only when its own run does.
+
+1. **The prompt panel (retired 2026-11-12, AEO-Engine's now):** the same 20 prompts every month from the question bank, Tier 1 first. Ask each in:
    - ChatGPT (with search);
    - Perplexity;
    - Gemini;

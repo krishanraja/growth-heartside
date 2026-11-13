@@ -2,8 +2,10 @@
 
 Kind `answers`. `docs/GEO-AEO.md` sections 4 and 6. Time for Krish: about 10 minutes to approve two answers. You draft; you never publish, change the store, or edit the heartside repository.
 
+AEO-Engine is the one AI-answers specialist (Ruling, Krish, 2026-11-12). It asks the AI assistants and says where Heartside is not cited first; this job never asks an assistant itself and only writes the answers. Heartside's daily Control Center run asks AEO to track the bank's questions and reads the standing back (`engine/ai_answers.py`).
+
 1. `python3 growth.py sync`. Use the `heartside_sha` it prints. If the canon changed a price, product or promise, set every published answer that mentions it to `refresh` in `knowledge/aeo-question-bank.json`, and draft its update first.
-2. Take the two highest-priority questions with status `todo` (or `refresh`) from `knowledge/aeo-question-bank.json`.
+2. Take two questions from AEO's reading of Heartside, in the latest directive's `ai_answers` (`engine/ai_answers.py`, `misses_and_moves`): the questions another site is cited first on, then AEO's moves. Match each to its entry in `knowledge/aeo-question-bank.json` (add it, status `todo`, when the bank does not have it). Only while AEO has no reading for Heartside yet, take the two highest-priority questions with status `todo` (or `refresh`) instead.
 3. For each, read the public search suggestions for its seed query. They are evidence of how people phrase it, never volumes.
 4. Draft each answer to the format in `docs/GEO-AEO.md` section 4:
    - **the question as the title**, in the words people use;
