@@ -40,6 +40,20 @@ SIGNAL = {'instagram': (('follows', 'shares', 'saves'), 'reach'),
           'tiktok': (('shares',), 'views'),
           'facebook': (('clicks',), 'reach')}
 COUNTED_TIERS = ('engine',)
+# Ruling (Krish, 2026-11-13): from 21 Nov, at least two thirds of slots end on the real product with a counted link,
+# led by the blanket, the portrait and bundles (the buy lane). Sprint 120's mix stands until then.
+BUY_LANE_FROM = dt.date(2026, 11, 21)
+BUY_LANE_SHARE = (2, 3)
+BUY_LEAD = ('blanket', 'portrait', 'bundle')
+
+
+def buy_slots(total, day):
+    """The fewest buy-lane slots among `total` on `day`: two thirds, rounded up, from 21 Nov; none required before."""
+    day = day if isinstance(day, dt.date) else dt.date.fromisoformat(str(day)[:10])
+    if day < BUY_LANE_FROM or total <= 0:
+        return 0
+    num, den = BUY_LANE_SHARE
+    return -(-total * num // den)
 KRISH_KINDS = ('krish-approve', 'krish-decline')
 READER = 'reader'
 

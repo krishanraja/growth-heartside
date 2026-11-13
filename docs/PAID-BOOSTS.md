@@ -45,6 +45,8 @@ That is why the test stays at $250.
 
 ## Gates before money moves
 
+- **Hold Meta visits as unverified for the boost's window** (`META_UNVERIFIED = True` in `engine/attribution.py`), set in the same change that records Krish's yes to the boost, and back to False after its end. A boost reuses the post's own link, so its paid clicks can arrive with organic tags (13 Nov 2026).
+
 All must be true in the launch packet.
 
 1. **Music: closed, permanently.** Ruling (Krish, 2026-11-04): "Just use the music. I have the right license for the post type. Mark this as complete permanently." Never raised again.

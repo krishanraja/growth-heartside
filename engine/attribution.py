@@ -48,7 +48,14 @@ TIERS = ('engine', 'organic_social', 'organic_search', 'paid', 'unverified', 'pe
 # the hold is on a Facebook-family engine link that came through Meta waits as unverified too. Set this to False
 # only on his answer, which must also say that no boosted Facebook post carries an engine link in its caption,
 # recorded as a Ruling in the commit.
-META_UNVERIFIED = True
+# Answered 13 Nov 2026 from this repository's own record, as Krish asked ("ask growth repo"): the only Meta ad was
+# the F10 pilot, $25 lifetime, 6 Nov 12:45 to 7 Nov 12:45 GMT, which used the Instagram post (no caption link) and a
+# Shop now button tagged utm_medium=paid_social (docs/boost/2026-11-05-sandbox.md); the four $50 boosts stayed held
+# and the 10 Nov ruling allows only $20-a-day boosts proposed one at a time (CHANGES.md). So no Meta ad runs now and
+# the one that ran was tagged: Meta visits count as organic again. Read from the record, not from Ads Manager. Before
+# any approved boost goes live, this goes back to True for its window (docs/PAID-BOOSTS.md, "Gates before money
+# moves").
+META_UNVERIFIED = False
 # Threads is Meta's too (threads.net, and threads.com, its current domain).
 META = ('instagram.com', 'facebook.com', 'fb.com', 'fb.me', 'messenger.com', 'threads.net', 'threads.com')
 # Meta's own source names, as utm_source (its {{site_source_name}} fills ig, fb, msg or an) or as Shopify's visit

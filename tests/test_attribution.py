@@ -28,9 +28,17 @@ class AttributionTests(unittest.TestCase):
     def test_first_visit_from_a_post_still_counts(self):
         self.assertEqual(attribution.classify(order(last=visit(medium=None), first=visit(CID)))[0], 'engine')
 
+    def test_with_no_meta_ad_running_an_untagged_meta_visit_is_organic(self):
+        # 13 Nov 2026: answered from this repository's record (no Meta ad runs; the one pilot was tagged).
+        self.assertFalse(attribution.META_UNVERIFIED)
+        self.assertEqual(attribution.classify(order(visit(medium=None, referrer='https://l.instagram.com/?u=x')))[0],
+                         'organic_social')
+        self.assertEqual(attribution.classify(order(visit(medium='paid_social', referrer='https://l.instagram.com/')))[0], 'paid')
+
     def test_social_referrer_without_tags_is_organic_social(self):
         self.assertEqual(attribution.classify(order(visit(medium=None, referrer='https://www.tiktok.com/')))[0], 'organic_social')
 
+    @mock.patch.object(attribution, 'META_UNVERIFIED', True)  # the hold, as it runs during a boost's window
     def test_a_meta_visit_with_no_engine_id_or_code_is_unverified_until_the_ads_questions_are_answered(self):
         # Could be an ad click whose link carries no paid tag: never organic, never a winner, until Krish answers.
         untagged = order(visit(medium=None, referrer='https://l.instagram.com/?u=x'))
@@ -46,6 +54,7 @@ class AttributionTests(unittest.TestCase):
         self.assertEqual(reading['organic'], {'orders': 1, 'net_sales': 129.0})
         self.assertEqual(reading['store'], {'orders': 2, 'net_sales': 258.0})
 
+    @mock.patch.object(attribution, 'META_UNVERIFIED', True)  # the hold, as it runs during a boost's window
     def test_meta_by_utm_or_shopify_source_alone_is_unverified(self):
         # Instagram's in-app browser often drops the referrer; Meta's {{site_source_name}} fills ig or fb.
         by_utm = visit(medium='social', campaign='x', referrer=None); by_utm['utmParameters']['source'] = 'ig'
@@ -66,6 +75,7 @@ class AttributionTests(unittest.TestCase):
         reddit_ad = visit(medium=None, referrer='https://www.reddit.com/', landing='https://heartside.io/?rdt_cid=abc')
         self.assertEqual(attribution.classify(order(reddit_ad)), ('paid', None))
 
+    @mock.patch.object(attribution, 'META_UNVERIFIED', True)  # the hold, as it runs during a boost's window
     def test_a_boosted_facebook_engine_link_waits_as_unverified(self):
         # A boost reuses the post's caption link, organic engine tags and all; an fbclid shows it came through Meta.
         fb = 'FB_EMO_REEL_C301_H01_V1_20261029'
@@ -79,6 +89,7 @@ class AttributionTests(unittest.TestCase):
         with mock.patch.object(attribution, 'META_UNVERIFIED', False):
             self.assertEqual(attribution.classify(boosted), ('engine', 'FB_EMO_C301'))
 
+    @mock.patch.object(attribution, 'META_UNVERIFIED', True)  # the hold, as it runs during a boost's window
     def test_threads_is_meta_on_either_domain(self):
         for referrer in ('https://www.threads.net/', 'https://www.threads.com/'):
             untagged = order(visit(medium=None, referrer=referrer))
@@ -253,6 +264,7 @@ class AttributionTests(unittest.TestCase):
         self.assertEqual((objective['value'], objective['availability']), (1, 'measured'))
         self.assertEqual(protocol.organic_orders(db, now + dt.timedelta(days=3))['availability'], 'stale')
 
+    @mock.patch.object(attribution, 'META_UNVERIFIED', True)  # the hold, as it runs during a boost's window
     def test_the_north_star_objective_is_organic_net_sales_over_the_trailing_28_days(self):
         # Control Center reads organic_net_sales_usd from the latest live report (api/_northStarRefresh.ts,
         # HEARTSIDE_ORGANIC_OBJECTIVE): an amount, measured, over 27 to 29 days ending in the last two days.

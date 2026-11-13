@@ -218,5 +218,13 @@ class AdversarialFixTests(unittest.TestCase):
         orders = [{'concept': 'C301', 'orders': 0}, {'concept': 'C303', 'orders': -1}, {'concept': 'IG_EMO_C302', 'orders': 1}]
         self.assertEqual(loop.decide(posts, [], orders, now=NOW)['graduated'], ['C302'])
 
+class BuyLaneTests(unittest.TestCase):
+    def test_two_thirds_of_slots_are_buy_lane_from_21_november(self):
+        self.assertEqual(loop.buy_slots(15, '2026-11-20'), 0)  # Sprint 120's mix stands until then
+        self.assertEqual(loop.buy_slots(15, '2026-11-21'), 10)
+        self.assertEqual(loop.buy_slots(5, dt.date(2026, 11, 30)), 4)
+        self.assertEqual(loop.buy_slots(0, '2026-12-01'), 0)
+
+
 if __name__ == '__main__':
     unittest.main()

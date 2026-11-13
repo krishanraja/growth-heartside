@@ -54,6 +54,13 @@ T0 payments and the last paid checkout; T2 audience country per platform; the st
 the F10 pilot readback; Buffer per-post readings of the 55 placements; Printful's 2026 cut-off. Then section 2's
 table is re-run per platform and lane on these readings.
 
+## Answered on 13 November
+
+Krish: "1. yes. 2. it does. 3. yes. 4. ask growth repo. 5. yes". The till takes money (his word); the buy lane takes
+at least two thirds of slots from 21 November; the ads questions are answered from this repository's record (no
+Meta ad runs now, the one pilot was tagged paid); the target stays at $50,000 with borrowed audiences backed. The
+day-pack freeze and the six-hourly runner were not asked and still wait. Next to ask: creators by rule (ruling 11).
+
 ## The rulings, in order (board items; one Yes or No each)
 
 0. **T0, the till** (a heartside-owned hold): a readback that Shopify Payments takes a real paid checkout.
