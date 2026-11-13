@@ -15,7 +15,7 @@ import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
 
-from . import assets, dashboard, insights, ledger, media, offers, review, retention, social
+from . import ai_answers, assets, dashboard, insights, ledger, media, offers, review, retention, social
 
 # A failed job's reason is printed in the public Actions log, so it is cut down to the engine's own words.
 REDACT = (
@@ -143,6 +143,125 @@ def demand(query='personalized dog gifts'):
         return 'Public search suggestions unavailable. No current search demand, comment or trend claim is inferred. Native social dashboards are unavailable to this runner.'
 
 
+ANSWERS_URL = 'https://heartside.io/blogs/answers/'
+BLOG_PATH = re.compile(r'/blogs/answers/[a-z0-9][a-z0-9_-]*')
+GAP_WORDS = {'no_page': 'Heartside has no page that answers it',
+             'not_retrieved': 'the assistants do not find Heartside\'s page for it',
+             'retrieved_not_cited': 'the assistants read Heartside\'s page but cite another',
+             'cited_not_first': 'Heartside is cited, but not first'}
+
+
+def handle(question):
+    return re.sub(r'[^a-z0-9]+', '-', question.lower()).strip('-')
+
+
+def _passes(growth, state, day, text, creative_id=None):
+    """Whether one draft passes the same check the finished pack must pass (growth.check_pack, the copy linter)."""
+    item = {'platform': 'store', 'text': text, **({'creative_id': creative_id} if creative_id else {})}
+    pack = evidence_pack(state, day, 'answers', 'Answers library: one line checked', [item])
+    return not growth.check_pack(pack, state.get('price_points', []), state=state)
+
+
+def kit_item(kit, match, number, growth, state, day):
+    """One brief from one of AEO's win kits (`match` is its bank row, or None), or None, and how many lines were dropped.
+
+    Every line of the kit's own words is checked alone by the copy linter and dropped, with a count, when it fails:
+    never rewritten, so no word is invented. The kit's title (else its question) is the `Title:` line; without one
+    that passes, the kit is not briefed. The whole brief is checked again, and dropped whole if it still fails, so
+    the pack's own check (and the public log it would write to) never sees a kit's words.
+    """
+    question = kit['question'] or kit['title']
+    creative_id = f'WEB_UTIL_ARTICLE_C{number:02d}_H01_V1_{day.replace("-", "")}'
+    title = next((f'Title: {t}' for t in (kit['title'], kit['question']) if t and _passes(growth, state, day, f'Title: {t}')), None)
+    candidates = [f'Headline: {h}' for h in kit['h2s']]
+    candidates += [f'Capsule rule: {r}' for r in kit['capsule']['rules']]
+    candidates += [f'Capsule must cover: {c}' for c in kit['capsule']['must_cover']]
+    if kit['beat']:
+        candidates.append('Pages to beat (hosts only): ' + ', '.join(b['host'] for b in kit['beat']) + '.')
+    candidates += [f'Site fix for a heartside build session: {f["gate"] or "a site gate"}'
+                   + (f' on {f["host"]}' if f['host'] else '') + f': {f["fix"]}'
+                   for f in kit['site_fixes'] if ai_answers.for_heartside(f)]
+    kept = [c for c in candidates if _passes(growth, state, day, c)]
+    dropped = len(candidates) - len(kept)
+    if not title:
+        return None, dropped + 1
+    gap = GAP_WORDS.get(kit['gap_class'])
+    lines = [title, 'Brief: AEO-Engine\'s win kit for this question' + (f' ({gap})' if gap else '')
+             + '. Draft to docs/GEO-AEO.md section 4 in Heartside\'s own words; the kit is a brief, never copy.']
+    lines += kept
+    lines.append('Link for the one honest mention of Heartside: ' + growth.tracked('https://heartside.io/', creative_id))
+    lines.append(demand(match['seed'] if match and isinstance(match.get('seed'), str) else question))
+    text = '\n'.join(lines)
+    if not _passes(growth, state, day, text, creative_id):
+        return None, dropped + len(lines)
+    target = kit['target']
+    # AEO-Engine suggests `/answers/<slug>` for every new page (62-kits.ts, suggestedPath), a path a Shopify store
+    # cannot serve: Heartside's Answers library is the blog at /blogs/answers/<handle> (jobs/answers.md step 5), so a
+    # suggested path is used only when it is already there, and otherwise the handle is the job's own rule.
+    path = target['suggested_path']
+    url = target['url'] if target['url'] and target['kind'] == 'update_page' else (
+        'https://heartside.io' + path if path and BLOG_PATH.fullmatch(path) else ANSWERS_URL + handle(question))
+    priority = kit['priority']
+    return {'platform': 'store', 'creative_id': creative_id,
+            'target_name': 'Answers library: ' + (match['id'] if match else 'a new question') + ', from AEO-Engine\'s win kit',
+            'target_url': url,
+            'why': ('AEO-Engine\'s win kit' + (f', priority {priority:g}' if priority is not None else '')
+                    + ', taken before bank order (jobs/answers.md step 2).'),
+            'text': text}, dropped
+
+
+def answers_brief(root, growth, state, day, now=None):
+    """The Wednesday Answers brief: two questions, AEO-Engine's win kits first (best priority first), then bank order.
+
+    The hosted runner has no writer: it briefs; an authoring session drafts. Kits come from what the daily Control
+    Center run, or `growth.py cc kits`, kept under gitignored local/ (engine/ai_answers.py); this runner never
+    contacts Control Center. A kit for a placement on another site only (`off_site_only`) is not a page to write
+    here and is passed over, counted. Without kits the brief is the bank's next two questions, as before. The
+    result carries counts and bank ids only, never a kit's words: it is printed in the public Actions log.
+    """
+    bank = json.loads((Path(root) / 'knowledge/aeo-question-bank.json').read_text())
+    rows = [q for q in bank['questions'] if isinstance(q, dict) and isinstance(q.get('question'), str)]
+    numbers = [int(q['id'][1:]) for q in rows if re.fullmatch(r'q\d{2,3}', str(q.get('id')))]
+    fresh = max(numbers, default=0) + 1
+    items, ids, covered, dropped_lines, dropped_kits, off_site = [], [], set(), 0, 0, 0
+    for kit in ai_answers.saved_kits(root, now):
+        if len(items) == 2:
+            break
+        if kit['target']['kind'] == 'off_site_only':
+            off_site += 1  # a placement on another site, not a page of the Answers library
+            continue
+        question = kit['question'] or kit['title']
+        match = next((q for q in rows if ai_answers.question_key(q['question']) == ai_answers.question_key(question)), None)
+        number = int(match['id'][1:]) if match and re.fullmatch(r'q\d{2,3}', str(match.get('id'))) else fresh
+        if number > 999:
+            dropped_kits += 1
+            continue
+        item, dropped = kit_item(kit, match, number, growth, state, day)
+        dropped_lines += dropped
+        if item is None:
+            dropped_kits += 1
+            continue
+        if match:
+            ids.append(match['id'])
+        else:
+            fresh += 1
+        covered.add(ai_answers.question_key(question))
+        items.append(item)
+    used = len(items)
+    nxt = sorted((q for q in rows if q.get('status') in ('todo', 'refresh') and ai_answers.question_key(q['question']) not in covered),
+                 key=lambda q: (q['status'] != 'refresh', q['priority']))[:2 - used]
+    items += [{'platform': 'store', 'target_name': 'Answers library: ' + q['id'],
+               'target_url': ANSWERS_URL + handle(q['question']),
+               'why': 'Next ' + q['status'] + ' question in tier ' + str(q['tier']) + ' (docs/GEO-AEO.md section 4).',
+               'text': 'Title: ' + q['question'] + '\nBrief: draft to docs/GEO-AEO.md section 4, leading to ' + q['leads_to'] + '.\n' + demand(q['seed'])}
+              for q in nxt]
+    headline = ('Answers library: the next two questions to draft, AEO-Engine\'s win kits first' if used
+                else 'Answers library: the next two questions to draft')
+    pack = evidence_pack(state, day, 'answers', headline, items)
+    return pack, {'questions': ids + [q['id'] for q in nxt], 'kits': used, 'kits_dropped': dropped_kits,
+                  'kit_lines_dropped': dropped_lines, 'kits_off_site': off_site, 'published': 0}
+
+
 def run_job(root, growth, job, day):
     # Every job refreshes product truth before doing any work.
     state = growth.sync(quiet=True)
@@ -190,15 +309,7 @@ def run_job(root, growth, job, day):
                  'text': json.dumps(ready, indent=2) + '\nProduct fixes belong in heartside. No store setting was changed.'}])
             result = {'ready_gifts': sum(bool(o['ready']) for o in ready), 'canonical_gifts': len(ready)}
         elif job == 'answers':
-            # The hosted runner has no writer: it briefs the next two questions; an authoring session drafts them.
-            bank = json.loads((Path(root) / 'knowledge/aeo-question-bank.json').read_text())
-            nxt = sorted((q for q in bank['questions'] if q.get('status') in ('todo', 'refresh')), key=lambda q: (q['status'] != 'refresh', q['priority']))[:2]
-            items = [{'platform': 'store', 'target_name': 'Answers library: ' + q['id'],
-                      'target_url': 'https://heartside.io/blogs/answers/' + re.sub(r'[^a-z0-9]+', '-', q['question'].lower()).strip('-'),
-                      'why': 'Next ' + q['status'] + ' question in tier ' + str(q['tier']) + ' (docs/GEO-AEO.md section 4).',
-                      'text': 'Title: ' + q['question'] + '\nBrief: draft to docs/GEO-AEO.md section 4, leading to ' + q['leads_to'] + '.\n' + demand(q['seed'])} for q in nxt]
-            pack = evidence_pack(state, day, 'answers', 'Answers library: the next two questions to draft', items)
-            result = {'questions': [q['id'] for q in nxt], 'published': 0}
+            pack, result = answers_brief(root, growth, state, day)
         elif job == 'creators':
             pack = evidence_pack(state, day, 'partners', 'Creator research handoff, no automated outreach', [
                 {'platform': 'other', 'target_name': 'Creator evidence boundary',
@@ -255,6 +366,9 @@ def tick(root, growth, now=None, job=None, force=False):
             key = date + '/' + name
             prior = history.get(key, {})
             fingerprint = base_fingerprint
+            if name == 'answers' and (kits := ai_answers.saved_kits(root, now)):
+                # Kits that arrive later the same day rebuild the brief; only their digest is in the index.
+                fingerprint = ledger.digest({'source': fingerprint, 'kits': kits})
             if name in {'numbers', 'report'}:
                 with closing(ledger.connect(Path(root) / 'local/engine.sqlite3')) as db:
                     rows = [dict(r) for r in db.execute('SELECT * FROM metrics ORDER BY platform,source,start,end,timezone')]

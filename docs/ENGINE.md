@@ -348,6 +348,17 @@ three `growth.py cc` steps; `CONTROL_CENTER_URL` is a repository variable. The
 client uses HTTPS only, follows no redirect and times out after 20 seconds. It
 never prints, logs or stores the token; failures are codes. With no secret the
 step fails with "CONTROL_CENTER_ENGINE_TOKEN is not set" and makes no request.
+`python3 growth.py cc kits` reads Heartside's AI-answer standing on its own
+(`GET answers`) and keeps AEO-Engine's win kits (proposed 1.23.0,
+`features.ai_answers_detail`) under the gitignored `local/control-center/`,
+outside the checkpoint, for the Wednesday Answers brief. It is read only, prints
+counts, and no workflow runs it yet, so the hosted runner briefs from kits only
+where that read ran first on the same machine (`engine/ai_answers.py`). In
+practice the scheduled Wednesday run in `engine.yml` never sees a kit: the daily
+Control Center run keeps them on its own ephemeral runner. Switching the hosted
+brief on needs `engine.yml` to carry `CONTROL_CENTER_ENGINE_TOKEN` for that one
+read, which is Krish's decision and open; until then a session runs `cc kits`
+before the Wednesday brief (`jobs/answers.md` step 2).
 `python3 -m unittest tests.test_protocol` proves the loop against an in-process
 stand-in; the CLI's default `--mode synthetic` never touches Krish's numbers or list.
 

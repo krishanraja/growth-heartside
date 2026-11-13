@@ -7,6 +7,7 @@ is reduced to a lower_snake code; no body, URL or header leaves this module.
 """
 import datetime as dt
 import hashlib
+import http.client
 import json
 import re
 import socket
@@ -125,7 +126,7 @@ def _code(status, body):
 
 
 class Client:
-    """The seven engine calls. One bearer, one engine, no retries of a write."""
+    """The engine's protocol calls. One bearer, one engine, no retries of a write."""
 
     def __init__(self, base, token, slug='heartside', opener=None, timeout=20):
         if not token:
@@ -221,6 +222,25 @@ class Client:
         if body.get('ok') is not True or not isinstance(body.get('request_id'), str):
             raise ProtocolError('answers_not_recorded', status)
         return body
+
+    def answers_standing(self):
+        """This product's AI-answer standing on its own (GET answers, 1.22.0), or None. Never raises.
+
+        Control Center answers `{ ok, schema_version, read_at, ai_answers, rule }`, where `ai_answers` is the same
+        standing the directive carries; since proposed 1.23.0 (`features.ai_answers_detail`) it may hold AEO's win
+        kits. Anything else, a failure or a malformed body, is None: no kits, never a failed run, and no code or body
+        is kept.
+        """
+        try:
+            status, body = self._call('GET', 'answers')
+        except (ProtocolError, http.client.HTTPException):  # a cut or malformed reply (IncompleteRead, LineTooLong)
+            return None
+        if not 200 <= status < 300 or not isinstance(body, dict) or body.get('ok') is not True:
+            return None
+        block = body.get('ai_answers')
+        if isinstance(block, dict) and 'standing' in block and 'product_slug' not in block:
+            block = block['standing']  # the directive's own `{ standing, rule }` shape, read the same way
+        return block if isinstance(block, dict) else None
 
     def decisions(self, since):
         status, body = self._call('GET', 'decisions?' + urllib.parse.urlencode({'since': since}))
