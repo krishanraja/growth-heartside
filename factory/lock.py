@@ -183,6 +183,7 @@ def copy_problems(g, text, kind):
     p += [why for rx, why in g.FAKE_PROOF if rx.search(text)]
     p += [f'UK spelling (use {us})' for rx, us in g.UK if rx.search(text)]
     if g.EMOJI.search(text) and kind != 'chat': p.append('emoji outside a chat bubble')
+    p += g.claim_problems(text)  # heartside's claims rules (SELLING.md): words on a gift, handmade, quality, delivery, deals
     return p
 
 

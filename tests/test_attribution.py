@@ -28,8 +28,141 @@ class AttributionTests(unittest.TestCase):
     def test_first_visit_from_a_post_still_counts(self):
         self.assertEqual(attribution.classify(order(last=visit(medium=None), first=visit(CID)))[0], 'engine')
 
+    def test_with_no_meta_ad_running_an_untagged_meta_visit_is_organic(self):
+        # 13 Nov 2026: answered from this repository's record (no Meta ad runs; the one pilot was tagged).
+        self.assertFalse(attribution.META_UNVERIFIED)
+        self.assertEqual(attribution.classify(order(visit(medium=None, referrer='https://l.instagram.com/?u=x')))[0],
+                         'organic_social')
+        self.assertEqual(attribution.classify(order(visit(medium='paid_social', referrer='https://l.instagram.com/')))[0], 'paid')
+
     def test_social_referrer_without_tags_is_organic_social(self):
-        self.assertEqual(attribution.classify(order(visit(medium=None, referrer='https://l.instagram.com/?u=x')))[0], 'organic_social')
+        self.assertEqual(attribution.classify(order(visit(medium=None, referrer='https://www.tiktok.com/')))[0], 'organic_social')
+
+    @mock.patch.object(attribution, 'META_UNVERIFIED', True)  # the hold, as it runs during a boost's window
+    def test_a_meta_visit_with_no_engine_id_or_code_is_unverified_until_the_ads_questions_are_answered(self):
+        # Could be an ad click whose link carries no paid tag: never organic, never a winner, until Krish answers.
+        untagged = order(visit(medium=None, referrer='https://l.instagram.com/?u=x'))
+        fbclid = order(visit(medium='organic', landing='https://heartside.io/?fbclid=abc'))
+        facebook = order(visit(medium=None, referrer='https://m.facebook.com/'))
+        for one in (untagged, fbclid, facebook):
+            self.assertEqual(attribution.classify(one), ('unverified', None))
+        self.assertEqual(attribution.classify(order(visit(CID, referrer='https://l.instagram.com/'))), ('engine', 'IG_EMO_C90'))
+        with mock.patch.object(attribution, 'META_UNVERIFIED', False):
+            self.assertEqual(attribution.classify(untagged)[0], 'organic_social')
+        reading = attribution.aggregate([untagged, order(visit(CID))], dt.date(2026, 10, 1), dt.date(2026, 10, 29))
+        self.assertEqual(reading['tiers']['unverified'], {'orders': 1, 'net_sales': 129.0})
+        self.assertEqual(reading['organic'], {'orders': 1, 'net_sales': 129.0})
+        self.assertEqual(reading['store'], {'orders': 2, 'net_sales': 258.0})
+
+    @mock.patch.object(attribution, 'META_UNVERIFIED', True)  # the hold, as it runs during a boost's window
+    def test_meta_by_utm_or_shopify_source_alone_is_unverified(self):
+        # Instagram's in-app browser often drops the referrer; Meta's {{site_source_name}} fills ig or fb.
+        by_utm = visit(medium='social', campaign='x', referrer=None); by_utm['utmParameters']['source'] = 'ig'
+        by_source = visit(medium=None, referrer=None); by_source['source'] = 'facebook'
+        for one in (by_utm, by_source):
+            self.assertEqual(attribution.classify(order(one))[0], 'unverified')
+        tiktok = visit(medium=None, referrer=None); tiktok['source'] = 'tiktok'
+        self.assertNotEqual(attribution.classify(order(tiktok))[0], 'unverified')
+
+    def test_every_paid_medium_spelling_is_paid_even_on_an_engine_link(self):
+        # GA4's paid rule plus sponsored; case and stray spaces aside. Paid is checked before the engine's tags.
+        for medium in ('paid social', 'Paid Social', 'paid_search', 'paid-ig', 'retargeting', 'cpv', 'cpa', 'sponsored', 'cpc '):
+            self.assertEqual(attribution.classify(order(visit(CID, medium=medium))), ('paid', None), medium)
+            tiktok = visit(medium=medium, campaign='x'); tiktok['utmParameters']['source'] = 'tiktok'
+            self.assertEqual(attribution.classify(order(tiktok)), ('paid', None), medium)
+        for medium in ('organic_video', 'organic_social', 'organic_search', 'social', 'email', 'organic'):
+            self.assertFalse(attribution.paid_medium(visit(medium=medium)), medium)
+        reddit_ad = visit(medium=None, referrer='https://www.reddit.com/', landing='https://heartside.io/?rdt_cid=abc')
+        self.assertEqual(attribution.classify(order(reddit_ad)), ('paid', None))
+
+    @mock.patch.object(attribution, 'META_UNVERIFIED', True)  # the hold, as it runs during a boost's window
+    def test_a_boosted_facebook_engine_link_waits_as_unverified(self):
+        # A boost reuses the post's caption link, organic engine tags and all; an fbclid shows it came through Meta.
+        fb = 'FB_EMO_REEL_C301_H01_V1_20261029'
+        boosted = order(visit(fb, landing='https://heartside.io/?fbclid=abc'))
+        from_facebook = order(visit(fb, referrer='https://m.facebook.com/'))
+        for one in (boosted, from_facebook):
+            self.assertEqual(attribution.classify(one), ('unverified', None))
+        self.assertEqual(attribution.classify(order(visit(CID, referrer='https://l.instagram.com/'))), ('engine', 'IG_EMO_C90'))
+        plain = visit(fb); plain['utmParameters']['source'] = 'buffer'  # no Meta signal at all
+        self.assertEqual(attribution.classify(order(plain)), ('engine', 'FB_EMO_C301'))
+        with mock.patch.object(attribution, 'META_UNVERIFIED', False):
+            self.assertEqual(attribution.classify(boosted), ('engine', 'FB_EMO_C301'))
+
+    @mock.patch.object(attribution, 'META_UNVERIFIED', True)  # the hold, as it runs during a boost's window
+    def test_threads_is_meta_on_either_domain(self):
+        for referrer in ('https://www.threads.net/', 'https://www.threads.com/'):
+            untagged = order(visit(medium=None, referrer=referrer))
+            self.assertEqual(attribution.classify(untagged), ('unverified', None), referrer)
+            with mock.patch.object(attribution, 'META_UNVERIFIED', False):
+                self.assertEqual(attribution.classify(untagged), ('organic_social', None), referrer)
+        paid = order(visit(medium='paid_social', referrer='https://www.threads.net/'))
+        self.assertEqual(attribution.classify(paid), ('paid', None))
+
+    def test_a_landing_url_urlsplit_refuses_never_aborts_the_read(self):
+        bad = visit(medium=None, referrer=None, landing='http://[::1')
+        self.assertFalse(attribution.meta_visit(bad))
+        self.assertEqual(attribution.classify(order(bad)), ('direct', None))
+        reading = attribution.aggregate([order(bad), order(visit(CID))], dt.date(2026, 10, 1), dt.date(2026, 10, 29))
+        self.assertEqual(reading['store']['orders'], 2)
+
+    def test_a_fresh_month_read_beats_an_old_partial_import(self):
+        from engine import ledger
+        db = ledger.connect(':memory:')
+        ledger.import_report(db, {'platform': 'shopify', 'scope': 'store', 'currency': 'USD', 'source': 'Synthetic ShopifyQL',
+                                  'observed_at': '2026-11-05T06:00:00Z',
+                                  'period': {'start': '2026-11-01', 'end': '2026-11-05', 'timezone': 'Europe/London'},
+                                  'values': {'net_sales': 1, 'orders': 0}})
+        now = dt.datetime(2026, 11, 13, 6, 0, tzinfo=dt.timezone.utc)
+        self.assertEqual(protocol.net_sales(db, now)['availability'], 'stale')  # the import alone ends on the 5th
+        start, end = attribution.windows(dt.date(2026, 11, 13))['month']
+        attribution.store(db, 'month', attribution.aggregate([order(visit(CID), amount='129.00', created='2026-11-02T15:00:00Z')],
+                                                             start, end), observed_at='2026-11-13T05:00:00+00:00')
+        sales = protocol.net_sales(db, dt.datetime(2026, 11, 13, 6, 0, tzinfo=dt.timezone.utc))
+        self.assertEqual((sales['value'], sales['availability']), (129, 'measured'))
+
+    def test_a_stale_month_read_that_reaches_further_beats_a_shorter_stale_import(self):
+        # The morning read failed, so the month read is 35 hours old: still stale, but it covers Nov 1-11 against an
+        # import that stops on the 4th. The further-reaching reading is reported, labelled stale.
+        from engine import ledger
+        db = ledger.connect(':memory:')
+        ledger.import_report(db, {'platform': 'shopify', 'scope': 'store', 'currency': 'USD', 'source': 'Synthetic ShopifyQL',
+                                  'observed_at': '2026-11-05T06:00:00Z',
+                                  'period': {'start': '2026-11-01', 'end': '2026-11-05', 'timezone': 'Europe/London'},
+                                  'values': {'net_sales': 10, 'orders': 1}})
+        attribution.store(db, 'month', attribution.aggregate([order(visit(CID), amount='510.00', created='2026-11-02T15:00:00Z')],
+                                                             dt.date(2026, 11, 1), dt.date(2026, 11, 12)),
+                          observed_at='2026-11-11T19:00:00+00:00')
+        sales = protocol.net_sales(db, dt.datetime(2026, 11, 13, 6, 0, tzinfo=dt.timezone.utc))
+        self.assertEqual((sales['value'], sales['availability'], sales['window_end'][:10]), (510, 'stale', '2026-11-12'))
+        older = ledger.connect(':memory:')  # an import that reaches further than the month read still wins
+        ledger.import_report(older, {'platform': 'shopify', 'scope': 'store', 'currency': 'USD', 'source': 'Synthetic ShopifyQL',
+                                     'observed_at': '2026-11-12T06:00:00Z',
+                                     'period': {'start': '2026-11-01', 'end': '2026-11-12', 'timezone': 'Europe/London'},
+                                     'values': {'net_sales': 400, 'orders': 3}})
+        attribution.store(older, 'month', attribution.aggregate([order(visit(CID), amount='510.00', created='2026-11-02T15:00:00Z')],
+                                                                dt.date(2026, 11, 1), dt.date(2026, 11, 5)),
+                          observed_at='2026-11-05T06:00:00+00:00')
+        sales = protocol.net_sales(older, dt.datetime(2026, 11, 13, 6, 0, tzinfo=dt.timezone.utc))
+        self.assertEqual((sales['value'], sales['availability']), (400, 'stale'))
+
+    def test_the_month_window_feeds_net_sales(self):
+        from engine import ledger
+        spans = attribution.windows(dt.date(2026, 11, 13))
+        self.assertEqual(spans['month'], (dt.date(2026, 11, 1), dt.date(2026, 11, 13)))
+        self.assertEqual(attribution.windows(dt.date(2026, 12, 1))['month'], (dt.date(2026, 11, 1), dt.date(2026, 12, 1)))
+        db = ledger.connect(':memory:')  # the engine's own ledger, with its empty metrics table
+        now = dt.datetime(2026, 11, 13, 6, 0, tzinfo=dt.timezone.utc)
+        self.assertEqual(protocol.net_sales(db, now)['availability'], 'missing')
+        orders = [order(visit(CID), amount='129.00', created='2026-11-02T15:00:00Z'),
+                  order(visit(medium='cpc'), amount='59.00', created='2026-11-03T15:00:00Z'),
+                  order(visit(CID), amount='45.00', created='2026-10-30T15:00:00Z')]  # last month: not in it
+        start, end = spans['month']
+        attribution.store(db, 'month', attribution.aggregate(orders, start, end), observed_at='2026-11-13T05:00:00+00:00')
+        sales = protocol.net_sales(db, now)
+        self.assertEqual((sales['value'], sales['availability'], sales['reason']), (188, 'measured', None))
+        self.assertEqual(sales['window_start'][:10], '2026-11-01')
+        self.assertEqual(protocol.net_sales(db, now + dt.timedelta(days=2))['availability'], 'stale')
 
     def test_buffer_s_own_tags_count_as_organic_social(self):
         tagged = visit(medium='social', campaign='buffer')
@@ -131,6 +264,7 @@ class AttributionTests(unittest.TestCase):
         self.assertEqual((objective['value'], objective['availability']), (1, 'measured'))
         self.assertEqual(protocol.organic_orders(db, now + dt.timedelta(days=3))['availability'], 'stale')
 
+    @mock.patch.object(attribution, 'META_UNVERIFIED', True)  # the hold, as it runs during a boost's window
     def test_the_north_star_objective_is_organic_net_sales_over_the_trailing_28_days(self):
         # Control Center reads organic_net_sales_usd from the latest live report (api/_northStarRefresh.ts,
         # HEARTSIDE_ORGANIC_OBJECTIVE): an amount, measured, over 27 to 29 days ending in the last two days.
@@ -140,7 +274,8 @@ class AttributionTests(unittest.TestCase):
         self.assertTrue(missing['reason'])
         self.assertIsNone(protocol.organic_net_sales(None)['value'])
         # Engine-tagged $129, organic social $45, engine-tagged $45.50 less a $0.50 refund; the paid $59 never counts.
-        orders = [order(visit(CID), amount='129.00'), order(visit(medium=None, referrer='https://l.instagram.com/?u=x'), amount='45.00'),
+        orders = [order(visit(CID), amount='129.00'), order(visit(medium=None, referrer='https://www.tiktok.com/'), amount='45.00'),
+                  order(visit(medium=None, referrer='https://l.instagram.com/?u=x'), amount='30.00'),  # unverified
                   order(visit(medium='cpc'), amount='59.00'), order(visit(CID), amount='45.50', refunded='0.50')]
         today = dt.date(2026, 11, 12)
         start, end = attribution.windows(today)['trailing_28d']
@@ -178,7 +313,7 @@ class DiscountCodeTests(unittest.TestCase):
         self.assertEqual(attribution.classify(clicked, self.REGISTRY), ('paid', None))
 
     def test_an_unknown_code_falls_through(self):
-        social = order(visit(medium=None, referrer='https://l.instagram.com/'), discountCodes=['WELCOME10'])
+        social = order(visit(medium=None, referrer='https://www.tiktok.com/'), discountCodes=['WELCOME10'])
         self.assertEqual(attribution.classify(social, self.REGISTRY), ('organic_social', None))
         self.assertEqual(attribution.classify(order(None, discountCodes=['WELCOME10']), self.REGISTRY), ('direct', None))
 

@@ -65,12 +65,33 @@ def month_window(now):
     return first, end
 
 
+def month_reading(db, now, base, first, end):
+    """net_sales_usd from the month window the attribution read stores from the runner's own read_orders app
+    (engine/attribution.py windows): every counted order in the London month to date, all tiers. It replaces the
+    import credential GET-GOING Step 2 waited on. Refunds include any refunded shipping and tax, so it can only
+    understate. None when no reading covers this month."""
+    month = attribution.latest(db, 'month')
+    if not month or month.get('start') != first.isoformat():
+        return None
+    observed = dt.datetime.fromisoformat(month['observed_at'].replace('Z', '+00:00'))
+    last = dt.date.fromisoformat(month['end'])
+    reading = {**base, 'value': money(month['store']['net_sales']), 'window_start': midnight(first).isoformat(),
+               'window_end': midnight(last).isoformat()}
+    if last == end and now - observed <= dt.timedelta(hours=26):
+        return {**reading, 'availability': 'measured', 'reason': None}
+    return {**reading, 'availability': 'stale',
+            'reason': f'Shopify orders were last read at {month["observed_at"]}, through {last - dt.timedelta(days=1)}'}
+
+
 def net_sales(db, now):
     first, end = month_window(now)
     base = {'key': 'net_sales_usd', 'unit': 'USD', 'timezone': 'Europe/London'}
     empty = {'value': None, 'window_start': None, 'window_end': None, 'availability': 'missing'}
     if db is None:
         return {**base, **empty, 'reason': 'No engine ledger checkpoint was available to this run, so no Shopify aggregate could be read'}
+    month = month_reading(db, now, base, first, end)
+    if month and month['availability'] == 'measured':
+        return month  # the runner's own read is fresher than any import, so it is read first
     ends = sorted({dt.date.fromisoformat(r['end']) for r in db.execute(
         "SELECT end FROM metrics WHERE platform='shopify' AND timezone='Europe/London' AND start>=? AND end<=?",
         (first.isoformat(), end.isoformat()))}, reverse=True)
@@ -85,9 +106,13 @@ def net_sales(db, now):
                    'window_start': midnight(first).isoformat(), 'window_end': midnight(last).isoformat()}
         if last == end:
             return {**reading, 'availability': 'measured', 'reason': None}
+        if month and dt.date.fromisoformat(month['window_end'][:10]) >= last:
+            return month  # the runner's own read reaches as far or further, so a shorter import never masks it
         return {**reading, 'availability': 'stale',
                 'reason': f'Imported Shopify net sales run only through {last - dt.timedelta(days=1)}; later days are not imported yet'}
-    return {**base, **empty, 'reason': f'No imported Shopify aggregate covers every day from {first} to {end - dt.timedelta(days=1)} '
+    if month:
+        return month
+    return {**base, **empty, 'reason': f'No Shopify reading covers every day from {first} to {end - dt.timedelta(days=1)} '
             '(Europe/London). Missing is not zero'}
 
 

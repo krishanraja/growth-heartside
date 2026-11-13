@@ -40,19 +40,44 @@ API_VERSION = '2026-10'
 SCOPE = 'read_orders'
 ENV = ('HEARTSIDE_SHOP_DOMAIN', 'SHOPIFY_CLIENT_ID', 'SHOPIFY_CLIENT_SECRET')
 CREATIVE_ID = re.compile(r'^(IG|FB|TT|YT|PIN|GG|EM|WEB|CR)_(EMO|ENT|UTIL|PROOF|OFFER)_([A-Z]+)_C(\d{2,3})_H(\d{2,3})_V(\d{1,2})_(\d{8})$')
-TIERS = ('engine', 'organic_social', 'organic_search', 'paid', 'pending', 'direct')
+TIERS = ('engine', 'organic_social', 'organic_search', 'paid', 'unverified', 'pending', 'direct')
+# A Meta visit (a Facebook or Instagram referrer, or an fbclid) with no engine creative id and no code could be an
+# ad click whose link carries no paid tag, so it never counts as organic and never crowns a winner until Krish
+# answers the two ads questions on his board (are Meta ads running; does every ad link carry
+# utm_medium=paid_social). A boosted Facebook post reuses its caption link, organic engine tags and all, so while
+# the hold is on a Facebook-family engine link that came through Meta waits as unverified too. Set this to False
+# only on his answer, which must also say that no boosted Facebook post carries an engine link in its caption,
+# recorded as a Ruling in the commit.
+# Answered 13 Nov 2026 from this repository's own record, as Krish asked ("ask growth repo"): the only Meta ad was
+# the F10 pilot, $25 lifetime, 6 Nov 12:45 to 7 Nov 12:45 GMT, which used the Instagram post (no caption link) and a
+# Shop now button tagged utm_medium=paid_social (docs/boost/2026-11-05-sandbox.md); the four $50 boosts stayed held
+# and the 10 Nov ruling allows only $20-a-day boosts proposed one at a time (CHANGES.md). So no Meta ad runs now and
+# the one that ran was tagged: Meta visits count as organic again. Read from the record, not from Ads Manager. Before
+# any approved boost goes live, this goes back to True for its window (docs/PAID-BOOSTS.md, "Gates before money
+# moves").
+META_UNVERIFIED = False
+# Threads is Meta's too (threads.net, and threads.com, its current domain).
+META = ('instagram.com', 'facebook.com', 'fb.com', 'fb.me', 'messenger.com', 'threads.net', 'threads.com')
+# Meta's own source names, as utm_source (its {{site_source_name}} fills ig, fb, msg or an) or as Shopify's visit
+# source. This engine's own non-engine Meta links (hs_release_, thanksgiving_, page_button campaigns) carry these
+# too, so they also wait as unverified until the ads questions are answered; engine-tagged links do not, except a
+# Facebook-family one that came through Meta (META_UNVERIFIED above).
+META_SOURCES = {'ig', 'instagram', 'fb', 'facebook', 'meta', 'msg', 'messenger', 'an', 'audience_network', 'threads'}
 ORGANIC = ('engine', 'organic_social')
 SOCIAL = ('instagram.com', 'facebook.com', 'fb.com', 'fb.me', 'tiktok.com', 'pinterest.com', 'pin.it',
-          'youtube.com', 'youtu.be', 'threads.net', 'reddit.com', 'linktr.ee')
+          'youtube.com', 'youtu.be', 'threads.net', 'threads.com', 'reddit.com', 'linktr.ee')
 SEARCH = ('google.', 'bing.com', 'duckduckgo.com', 'yahoo.com', 'ecosia.org', 'perplexity.ai', 'chatgpt.com')
 # Sources our own organic posting can stamp on a link: Buffer's campaign tagging and the platforms themselves.
 ORGANIC_SOURCES = {'buffer', 'instagram', 'ig', 'facebook', 'fb', 'tiktok', 'pinterest', 'youtube', 'threads', 'linktree', 'linkin.bio'}
 PAID_MEDIUM = {'cpc', 'ppc', 'paid', 'paid_social', 'paidsocial', 'paid-social', 'ads', 'ad', 'display', 'cpm', 'affiliate'}
-AD_CLICK = {'gclid', 'gbraid', 'wbraid', 'msclkid', 'ttclid', 'dclid', 'twclid', 'li_fat_id'}
+# GA4's own paid rule, ^(.*cp.*|ppc|retargeting|paid.*)$, plus sponsored: 'paid social', 'paid_search', 'cpv'.
+PAID_PATTERN = re.compile(r'^(?:.*cp.*|ppc|retargeting|paid.*|sponsored)$')
+AD_CLICK = {'gclid', 'gbraid', 'wbraid', 'msclkid', 'ttclid', 'dclid', 'twclid', 'li_fat_id', 'rdt_cid'}
 INTERNAL_TAG = 'hs-internal'
 DEFINITION = ('Net sales are each order\'s subtotal after discounts, less everything refunded, never below zero, '
               'by the London day the order was created. Fully refunded orders are not counted. '
-              'Organic posts = engine-tagged plus organic social.')
+              'Organic posts = engine-tagged plus organic social. A Meta visit with no engine id or code is '
+              'unverified until the ads questions are answered, and never organic.')
 
 # Exactly the fields this module reads. A test holds the query to this list.
 QUERY = '''query Orders($first: Int!, $after: String, $query: String) {
@@ -125,8 +150,7 @@ def classify(order, registry=None):
     if not journey.get('ready', True) and not visits:
         return 'pending', None  # a paid signal may still arrive, and paid is checked before any code
     for visit in visits:
-        utm = visit.get('utmParameters') or {}
-        if (utm.get('medium') or '').lower() in PAID_MEDIUM or ad_click(visit.get('landingPage')):
+        if paid_medium(visit) or ad_click(visit.get('landingPage')):
             return 'paid', None
     family = code_family(order, registry)
     if family:
@@ -135,7 +159,11 @@ def classify(order, registry=None):
         utm = visit.get('utmParameters') or {}
         match = CREATIVE_ID.match(utm.get('content') or '')
         if match and (utm.get('campaign') or '').startswith('hs_growth_'):
+            if META_UNVERIFIED and match.group(1) == 'FB' and meta_visit(visit):
+                return 'unverified', None  # a boosted Facebook post's caption link keeps its organic engine tags
             return 'engine', f'{match.group(1)}_{match.group(2)}_C{match.group(4)}'
+    if META_UNVERIFIED and any(meta_visit(v) for v in visits):
+        return 'unverified', None
     for visit in visits:
         utm = visit.get('utmParameters') or {}
         name = host(visit.get('referrerUrl'))
@@ -148,6 +176,28 @@ def classify(order, registry=None):
     if not journey.get('ready', True):
         return 'pending', None
     return 'direct', None
+
+
+def paid_medium(visit):
+    """True when a visit's utm_medium is paid: the known set or GA4's paid pattern, case and spaces aside."""
+    medium = ((visit.get('utmParameters') or {}).get('medium') or '').strip().lower()
+    return medium in PAID_MEDIUM or bool(PAID_PATTERN.match(medium))
+
+
+def meta_visit(visit):
+    """True when a visit came from Facebook or Instagram: its referrer, Meta's source name in utm_source or in
+    Shopify's own visit source (Instagram's in-app browser often drops the referrer), or an fbclid."""
+    name = host(visit.get('referrerUrl'))
+    if any(name == m or name.endswith('.' + m) for m in META):
+        return True
+    utm = visit.get('utmParameters') or {}
+    if (utm.get('source') or '').strip().lower() in META_SOURCES or (visit.get('source') or '').strip().lower() in META_SOURCES:
+        return True
+    try:
+        query = urllib.parse.urlsplit(visit.get('landingPage') or '').query
+    except ValueError:
+        return False  # a landing URL urlsplit refuses: read as no fbclid, like ad_click and host, never a crash
+    return any(k.lower() == 'fbclid' for k, _ in urllib.parse.parse_qsl(query, keep_blank_values=True))
 
 
 def counted(order):
@@ -169,10 +219,18 @@ def amount(order):
     return max(Decimal(0), money(order, 'subtotalPriceSet') - money(order, 'totalRefundedSet'))
 
 
+def month_start(today):
+    """The first day of the London month to date; on the 1st, the month that just closed (protocol.month_window)."""
+    first = today.replace(day=1)
+    return (today - dt.timedelta(days=1)).replace(day=1) if first == today else first
+
+
 def windows(today):
-    """The trailing 28 days and the last complete London week (Monday to Monday), as dates."""
+    """The trailing 28 days, the last complete London week (Monday to Monday) and the London month to date, as
+    dates. The month is what Control Center's net_sales_usd reads (engine/protocol.py net_sales)."""
     return {'trailing_28d': (today - dt.timedelta(days=28), today),
-            'last_week': (today - dt.timedelta(days=today.weekday() + 7), today - dt.timedelta(days=today.weekday()))}
+            'last_week': (today - dt.timedelta(days=today.weekday() + 7), today - dt.timedelta(days=today.weekday())),
+            'month': (month_start(today), today)}
 
 
 def aggregate(orders, start, end):
@@ -302,12 +360,17 @@ def run(db, today=None):
     if not shop.endswith('.myshopify.com'):
         return {'status': 'hold', 'reason': 'HEARTSIDE_SHOP_DOMAIN must be the store\'s .myshopify.com address'}
     previous = latest(db)
+    london_today = dt.datetime.now(ZoneInfo(TIMEZONE)).date()
     if previous and previous.get('definition') == DEFINITION and dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(
-            previous['observed_at'].replace('Z', '+00:00')) < dt.timedelta(hours=6) and today is None:
-        return {'status': 'current', 'reason': f'read at {previous["observed_at"]}; the next read is due six hours later'}
-    today = today or dt.datetime.now(ZoneInfo(TIMEZONE)).date()
+            previous['observed_at'].replace('Z', '+00:00')) < dt.timedelta(hours=5) and today is None \
+            and previous.get('end') == london_today.isoformat():
+        # Five hours, so a runner every six hours reads every run; and always again once the London day changes,
+        # so the month window never ends yesterday.
+        return {'status': 'current', 'reason': f'read at {previous["observed_at"]}; the next read is due five hours later'}
+    today = today or london_today
     spans = windows(today)
-    orders = fetch(shop, access_token(shop), min(a for a, _ in spans.values()))
+    # One day early: the query's date is read in the shop's own zone, and aggregate() keeps London days only.
+    orders = fetch(shop, access_token(shop), min(a for a, _ in spans.values()) - dt.timedelta(days=1))
     readings = {}
     for name, (start, end) in spans.items():
         readings[name] = aggregate(orders, start, end)
