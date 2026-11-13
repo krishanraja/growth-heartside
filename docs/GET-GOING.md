@@ -1,5 +1,9 @@
 # Get going
 
+**Start with `docs/plans/A1.md` (13 November 2026).** It is the one plan for this engine: it consolidates every open step below, the
+Order Loop exhibit, LOOP.md, the review board's waiting items, the Codex queue, Sprint 120 and the briefs, in order. Work it top to
+bottom; the steps below stay as history and as the detail A1 points to.
+
 When Krish opens this repository and says "Get going", this is the work. AGENTS.md says how to use it; this file says what to do. Written 2026-10-19 by Control Center, from this engine's first live reports.
 
 > **Production session next (9 Nov):** a session that makes creative starts from
