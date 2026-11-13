@@ -15,7 +15,7 @@ import re
 import sqlite3
 from zoneinfo import ZoneInfo
 
-from . import attribution, credits, engine_state, ledger, offers
+from . import ai_answers, attribution, credits, engine_state, ledger, offers
 from .control_center import CODE, Client, ProtocolError, report_digest, sha256
 
 ENGINE_ID, PRODUCT_SLUG, SLUG, COMMAND = 'growth-heartside', 'heartside', 'heartside', 'directive'
@@ -294,7 +294,7 @@ def latest_decisions(decisions):
 
 
 def build_report(*, root, state, db, now, run_id, mode, directive, recommendations, degraded=(), credits_spent=(),
-                 instruction_seen=False):
+                 instruction_seen=False, answers=()):
     """The report envelope, exactly engine-report.schema.json, sealed with its digest.
 
     `credits_spent` is what this run itself spent of the prepaid share (engine/credits.py); the
@@ -319,6 +319,7 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
     if body:
         activity += credits.lines(credits.read(body))
     activity += list(degraded)
+    activity += list(answers)
 
     proposals, events = [], []
     if not state.get('rules_ok'):
@@ -543,6 +544,8 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
                 seen = False
         phase = 'capture'
         state, degraded = capture(growth)
+        # 1.22.0: Heartside's AI answers are AEO-Engine's (Ruling, Krish, 2026-11-12); one line, and a request when none is on file.
+        answers = ai_answers.sync(client, directive, root)
         database = Path(root) / 'local/engine.sqlite3'
         if database.exists():
             db = ledger.connect(database)
@@ -550,7 +553,7 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
             degraded.append('No engine checkpoint was available, so the ledger could not be read.')
         phase = 'plan'
         report = build_report(root=root, state=state, db=db, now=now, run_id=local['run_id'], mode=mode,
-                              directive=directive, recommendations=recommendations, degraded=degraded,
+                              directive=directive, recommendations=recommendations, degraded=degraded, answers=answers,
                               instruction_seen=seen)
         phase = 'report'
         summary['delivery'] = deliver(client, report)

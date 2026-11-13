@@ -214,6 +214,14 @@ class Client:
             raise ProtocolError('invalid_reports', status)
         return body['reports']
 
+    def answers_request(self, body):
+        """1.22.0: ask AEO-Engine, the one AI-answers specialist, to track this product's buyer questions (POST answers)."""
+        status, body = self._call('POST', 'answers', body)
+        body = self._expect(status, body)
+        if body.get('ok') is not True or not isinstance(body.get('request_id'), str):
+            raise ProtocolError('answers_not_recorded', status)
+        return body
+
     def decisions(self, since):
         status, body = self._call('GET', 'decisions?' + urllib.parse.urlencode({'since': since}))
         body = self._expect(status, body)
