@@ -545,7 +545,9 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
         phase = 'capture'
         state, degraded = capture(growth)
         # 1.22.0: Heartside's AI answers are AEO-Engine's (Ruling, Krish, 2026-11-12); one line, a request when none is on
-        # file, a replacing one only when the bank's valid questions outnumber it, and none when unserved or unread.
+        # file, a replacing one only when the bank's valid questions outnumber it (or, where the request carries its
+        # digest, differ from it), and none when unserved or unread. With the detail served (proposed 1.23.0), the kits
+        # are kept under local/ and the shipped answers told once per change; the lines carry counts only.
         answers = ai_answers.sync(client, directive, root)
         database = Path(root) / 'local/engine.sqlite3'
         if database.exists():
@@ -589,6 +591,11 @@ def main(root, growth, action, mode, code=None, env=None):
     except ProtocolError as error:
         print(f'Not ready: {error.code}. No request was made.')
         return 1
+    if action == 'kits':
+        # Proposed 1.23.0: AEO-Engine's win kits, read on their own (GET answers) and kept under gitignored local/
+        # for the Wednesday Answers brief. Read only; it prints counts, never a kit's words.
+        print(ai_answers.fetch(client, root))
+        return 0
     now = dt.datetime.now(dt.timezone.utc)
     if action == 'start':
         try:
