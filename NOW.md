@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- One plan now holds everything lined up for this engine: docs/plans/A1.md consolidates the Order Loop exhibit, LOOP.md, GET-GOING's open steps, the review board's waiting items, the Codex queue, Sprint 120, SCHEDULE, PAID-BOOSTS, REGISTER and the briefs, with duplicates merged, stale items closed, and the unbuilt steps (buy lane in production, batch Sheet builder, Day 0 reads, Buffer reader, ledger and registry, test-card reader, autonomy loop) written as briefs. GET-GOING points to it. (2026-11-13)
 - The Order Loop plan is built in its first three steps on branch claude/sharp-knuth-2qb0jp (local; push access not yet added): the claims gate refuses words on a gift, handmade, uninspected quality, delivery promises and deal wording, and corrected four day-pack captions that put a note on the gift; net_sales_usd is measured from the runner's own read through a London-month window; untagged Meta visits are unverified until the ads questions are answered; and factory/loop.py ranks the buy lane on fields each platform shows, with orders as a gate. The exhibit, rulings and test cards are in docs/plans/2026-11-13-order-loop.md. (2026-11-13)
 - Heartside's AI answers are AEO-Engine's, the one AI-answers specialist (Ruling, Krish, 2026-11-12): the daily Control Center run asks AEO once to track the question bank's buyer questions with heartside.io and reads Heartside's standing back (protocol 1.22.0, engine/ai_answers.py); the Wednesday Answers job drafts from AEO's misses and moves, and the monthly hand panel is retired into AEO. The protocol copy in docs/control-center/ is Control Center's at 36df34bc (protocol 1.22.0). (2026-11-13)
 - The protocol copy and its two schemas in docs/control-center/ are Control Center's at 212379e1 (protocol 1.21.0: the 16 voice-check channels, the 50000 target read from this repository's north-star block, the circle's consent tier); this engine still speaks up to 1.20.0, and the brief says organic_net_sales_usd was registered on 29 Oct with 25000 and that the directive now takes its target from docs/NORTH_STAR.md. (2026-11-12)
@@ -78,12 +79,12 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-13): Krish answers ruling 11, creators by rule, and the day-pack freeze with the six-hourly runner; the till, the buy lane, the ads questions and the target were answered on 13 November.
+- Next (2026-11-13): Krish answers D1, creators by rule, on the board; then D2, the freeze of the jobs that never shipped with the runner every six hours.
 - **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Step 2 of `docs/GET-GOING.md` (a daily Shopify sales import, so `net_sales_usd` is measured) may need a credential only Krish can add; the step says to report a hold naming the secret.
-- North Star check (2026-11-13): recalibration proposed. No modelled scenario reaches any rung ($8 base to $838 breakout at 28 December against $50,000), and the $50,000 was copied from Sprint 120's profit target that included paid orders, so the weekly U5 item carries that reconciliation finding beside his 10 November words.
+- North Star check (2026-11-13): recalibration proposed. No modelled scenario reaches a rung ($8 base to $838 breakout at 28 December against $50,000); Krish kept the target on 13 November and backed borrowed audiences, so creators by rule is the next ask.
 
 ## Read next
 
