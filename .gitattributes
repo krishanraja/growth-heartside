@@ -5,3 +5,6 @@ knowledge/copywriting-offers-demand-corpus.md -text
 knowledge/copywriting-offers-demand-corpus-summary.md -text
 knowledge/dog-corpus/** -text
 knowledge/*.docx -text
+
+# Control Center's protocol bundle is kept byte for byte (its hash test and ai-harness pins/bytes); never convert it.
+docs/control-center/** -text
