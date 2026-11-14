@@ -43,6 +43,11 @@ packs apart from makeyourmindup's (see `post` below).
         factory/sprints/ to the slot's creative id on that platform (the
         slot's first platform when none is named).
 
+    python3 growth.py paths SCHEDULE.csv [--codes]
+        Each Schedule row's counted path to an order (tracked link, registered
+        code, tracked profile link, or none), the tracked profile URLs Krish can
+        set, and with --codes a no-discount code draft per uncounted row. Exits
+        non-zero while any row has no counted path. Read only.
     python3 growth.py codes [MANIFEST]
         Drafts the post-family discount code names for a sprint's buy and
         signature slots, as tracking words with no discount, and the
@@ -1585,6 +1590,7 @@ def main():
     sub.add_parser('store')
     lk = sub.add_parser('link'); lk.add_argument('url'); lk.add_argument('creative_id'); lk.add_argument('--platform')
     cd = sub.add_parser('codes'); cd.add_argument('manifest', nargs='?', default=os.path.join(HERE, 'factory/sprints/2026-11-S120.json'))
+    pa = sub.add_parser('paths'); pa.add_argument('schedule'); pa.add_argument('--codes', action='store_true')
     c = sub.add_parser('check'); c.add_argument('file')
     s = sub.add_parser('post'); s.add_argument('file')
     r = sub.add_parser('read'); r.add_argument('--days', type=int, default=7); r.add_argument('--kind')
@@ -1643,6 +1649,22 @@ def main():
             print(codes.render(codes.draft(json.load(open(a.manifest, encoding='utf-8')))))
         except (OSError, ValueError, KeyError) as e:
             sys.exit(f'Not ready: {e}')
+        return
+    if a.cmd == 'paths':
+        from engine import paths
+        try:
+            audited = paths.audit(paths.read_rows(a.schedule))
+        except (OSError, ValueError, KeyError) as e:
+            sys.exit(f'Not ready: {e}')
+        print(paths.render(audited))
+        if a.codes:
+            drafts = paths.code_drafts(audited)
+            print(f'\n{len(drafts)} draft code(s) for uncounted rows, no discount; Krish creates each in Shopify, then a session registers it:')
+            for d in drafts:
+                print(f"  {d['code']:12} {d['family']:14} {d['platform']:10} {d['post_id']}")
+        uncounted = sum(1 for r in audited if r['path'] == 'none')
+        if uncounted:
+            sys.exit(f'{uncounted} row(s) have no counted path: hold them or give them one (engine/paths.py).')
         return
     if a.cmd in ('check', 'post'):
         try:
