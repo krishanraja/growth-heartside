@@ -1,8 +1,8 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-11-13
-head: 6906156
+as_of: 2026-11-14
+head: 97a1a1d
 lifecycle: live
 production_url: none
 state_doc: docs/HANDOFF.md
@@ -31,7 +31,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-11-13)
+## Where it is right now (as of 2026-11-14)
 
 <!-- north-star-state {"week_of": "2026-11-09", "week_target": 1417, "current": 0, "current_as_of": "2026-11-12", "current_source": "Shopify Admin API orders through growth.py attribution (read-only app), organic posts, trailing 28 days", "urgency": 5, "urgency_reason": "under 40% of the week's target two weeks running (0% now)"} --> **North Star number: U5, stalled.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: $0 (measured 12 Nov by the engine's own attribution read; the store's one order in the window, $45, came direct), against $1,417 this week, on the way to $50,000 by 28 December 2026. Everything else pauses unless it moves the number.
 
@@ -43,17 +43,8 @@ Live:
 
 - The daily run now says when the directive does not serve AI answers ("AI answers: not served by today's directive."), which is why no request to AEO-Engine was ever filed: Control Center holds none for Heartside on 13 November. A standing Control Center could not read is never taken as no request on file, and the run re-asks AEO only when the bank's valid questions outgrow the request on file or, once served, the request's digest differs. Once Control Center serves features.ai_answers_detail (proposed protocol 1.23.0; Ruling, Krish, 2026-11-13: AEO's win kits reach him through each venture's own growth engine), `growth.py cc kits` keeps AEO's kits in the gitignored local/control-center/ai-answers.json, the Wednesday Answers brief takes the top two kits before bank order, and published bank rows are told to AEO as shipped, once per change. Logs carry counts only. (2026-11-13)
 - One plan now holds everything lined up for this engine: docs/plans/A1.md consolidates the Order Loop exhibit, LOOP.md, GET-GOING's open steps, the review board's waiting items, the Codex queue, Sprint 120, SCHEDULE, PAID-BOOSTS, REGISTER and the briefs, with duplicates merged, stale items closed, and the unbuilt steps (buy lane in production, batch Sheet builder, Day 0 reads, Buffer reader, ledger and registry, test-card reader, autonomy loop) written as briefs. GET-GOING points to it. (2026-11-13)
-- The Order Loop plan is built in its first three steps on branch claude/sharp-knuth-2qb0jp (local; push access not yet added): the claims gate refuses words on a gift, handmade, uninspected quality, delivery promises and deal wording, and corrected four day-pack captions that put a note on the gift; net_sales_usd is measured from the runner's own read through a London-month window; untagged Meta visits are unverified until the ads questions are answered; and factory/loop.py ranks the buy lane on fields each platform shows, with orders as a gate. The exhibit, rulings and test cards are in docs/plans/2026-11-13-order-loop.md. (2026-11-13)
+- The Order Loop plan is built in its first three steps and merged to main (pull requests #78 and #79): the claims gate refuses words on a gift, handmade, uninspected quality, delivery promises and deal wording, and corrected four day-pack captions that put a note on the gift; net_sales_usd is measured from the runner's own read through a London-month window; untagged Meta visits are unverified until the ads questions are answered; and factory/loop.py ranks the buy lane on fields each platform shows, with orders as a gate. The exhibit, rulings and test cards are in docs/plans/2026-11-13-order-loop.md. (2026-11-13)
 - Heartside's AI answers are AEO-Engine's, the one AI-answers specialist (Ruling, Krish, 2026-11-12): the daily Control Center run asks AEO once to track the question bank's buyer questions with heartside.io and reads Heartside's standing back (protocol 1.22.0, engine/ai_answers.py); the Wednesday Answers job drafts from AEO's misses and moves, and the monthly hand panel is retired into AEO. The protocol copy in docs/control-center/ is Control Center's at 36df34bc (protocol 1.22.0). (2026-11-13)
-- The protocol copy and its two schemas in docs/control-center/ are Control Center's at 212379e1 (protocol 1.21.0: the 16 voice-check channels, the 50000 target read from this repository's north-star block, the circle's consent tier); this engine still speaks up to 1.20.0, and the brief says organic_net_sales_usd was registered on 29 Oct with 25000 and that the directive now takes its target from docs/NORTH_STAR.md. (2026-11-12)
-- Every Heartside social post is now built and gated against Krish's 12 Nov creative production corpus (profile social-corpus-2026-11-12-v2: critical box x 120 to 820, y 330 to 1180; subtitles of at most 7 words a segment; a 3 to 4 s moving product end; the export preset), with layout manifests checked by lock.py, factory/audit.py and codex/check_picture.py; F34 and its variants and all seven campaigns pass, F11 (searches too long for the box) and F10 (no-novelty-sfx) are held for Krish, and filed 03b media predates the corpus and is untouched (docs/audits/2026-11-12-corpus-audit.md). (2026-11-12)
-- the day's pack renders again (its product pictures re-pinned to heartside's live galleries, and a failed job now keeps its reason and is held in the next Control Center report), conversion editions are no longer held by a stale homepage check, and the daily report carries organic_net_sales_usd, the North Star number Control Center reads. (2026-11-12)
-- the Control Center loop speaks protocol 1.20.0 where Control Center serves it: it acks Krish's instruction (krish_instruction) as received by id only, first in its activity, and reports priorities, obsessions and next_steps from this repository's own files; every wake's run id carries its GitHub run id, so a second wake the same day is its own report. (2026-11-11)
-- Krish posts every commercial-song TikTok (F28, F40, F42, F43, F41, F44, F38 repost) from his phone; README v5.9 tells Codex so, and Sheet 04, Doc 04a and the Phone Posts page are rebuilt from live 02r with London times. (2026-11-11)
-- Krish's phone posts have a one-tap Copy caption page (claude.ai/artifact/3aFjdFNWvHEeMJCKVDERSu) and Doc 04a now has real hyperlinks; the page's source is factory/schedule/phone-posts.html. (2026-11-11)
-- 02t is approved by Krish (M2:M46 yes), so Codex posts the 15 photo reels with music from 13 Nov; F38 v4 is queued at the bottom of Sheet 04 and Doc 04a as Krish's own repost on Wed 18 Nov (TikTok 18:00, Instagram 18:05, Facebook 18:10 ET, new tracked link FB_ENT_REEL_C150_H01_V4_20261118). (2026-11-11)
-- Sheet 04 and Doc 04a now carry F28 as the beagle howl v2, with the new caption and the falsetto sync at 2.7 s, for Krish's 08:05 and 08:10 ET posts today. (2026-11-11)
-- Krish approved D as the official Heartside icon. The unchanged raster master, favicon/app exports and ZIP are ready in docs/brand/. Official avatars and conversion bios are live and read back on Instagram, Facebook, TikTok and Pinterest; Facebook cover is replaced. Website implementation is Krish's. (2026-11-10)
 - Eight scheduled jobs in `automations.json` run on GitHub Actions (`.github/workflows/engine.yml`); Control Center protocol 1.20.0; paid external generation stays off with a zero default budget (`docs/CREDITS-SESSION.md`, `docs/PROVIDERS.md`).
 
 Waiting or not measured:
@@ -62,6 +53,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-13 the Order Loop's claims gate now refuses words on a gift, handmade, uninspected quality, delivery promises and deal wording after an adversarial review found the first gate passed whole captions instead of checking each sentence; four day-pack captions that put a note on the gift were corrected (`1a3ae46`, `a0bcede`, `61184ad`).
 - 2026-11-13 Heartside now tells AEO-Engine why it was not asked, re-asks when its bank grows, and reads AEO's win kits once Control Center serves them (Krish, 13 November).
 - 2026-11-12 Krish, 2026-11-12: "make sure everything's a cohesive system and that the project documentation is 100% up to date with absolutely nothing old or misleading left in there".
 - 2026-11-12 Krish, 12 Nov: "Ensure all social media posts adhere to these best practices." Placement left the lock fingerprint, so all 16 factory specs moved onto the profile and keep their locks; Codex labels move from text top y 300 to y 360.
@@ -74,15 +66,11 @@ Waiting or not measured:
 - 2026-11-10 the library lane filed the v2 cuts into new F38-real and F41-real folders because the manifest named the post F38-real; the manifest post must match the existing Posts folder.
 - 2026-11-10 AGENTS points to the official assets. Profile review history, exact approval, asset hashes, live readbacks and link-feature limits are recorded in docs/profile-pages/2026-11-10/ROLLOUT.md. Facebook Learn more retains the verified tracked destination; Buy now would require a new store integration.
 - 2026-11-10 Krish found F38 labels under Instagram's caption area, so labels now sit in one fixed, visible place.
-- 2026-11-10 the judge loop stopped converging, so Krish's board decides the scripts at 8 rather than more rounds.
-- 2026-11-10 v5.1 wrongly sent Instagram and Facebook songs to Meta Business Suite; Krish ruled "I add songs on my phone".
-- 2026-11-10 dog reels now need real-looking scruffy pets and motion in every beat. Credit spend needs a 9 on the script first. Krish overrode the Runway share cap for these remakes.
-- 2026-11-10 02r replaces 02q; F30 becomes F30-pepper (Krish's board Yes); F38 and F41 post as the real-dog remakes.
 
 ## What is next and what is waiting on Krish
 
 - Next (2026-11-13): Krish decides whether the hosted engine.yml Wednesday job may carry the Control Center engine token so it can read kits; until then only a session sees them.
-- **Waiting on Krish:** set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
+- **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Step 2 of `docs/GET-GOING.md` (a daily Shopify sales import, so `net_sales_usd` is measured) may need a credential only Krish can add; the step says to report a hold naming the secret.
