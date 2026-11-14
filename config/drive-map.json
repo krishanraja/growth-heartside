@@ -1,6 +1,11 @@
 {
   "_about": "The machine-readable half of docs/DRIVE-MAP.md, read by `growth.py drive audit` (engine/drive_audit.py). Folders are found by ID, never by name. Krish, 2026-11-03: \"be strict on what goes where as codex tends to sprawl drives quite easily\"; 2026-11-09: \"Make sure the drive is completely up to date and not able to be corrupted or sprawled\". Change a folder here and in docs/DRIVE-MAP.md together; growth.py --self-test checks every ID here appears in the map. A session folder Krish renames with a \"Failed - \" prefix is his mark that its output failed: it stays where it is, its lessons go into factory/floor.json, and nothing in it is reused.",
   "heartside": "1QInHx-RNx9fXYdc0KSvTYRcuGTZHxcVh",
+  "drive_map": {
+    "schema": "drive-map/1",
+    "about": "The roots this engine declares to Control Center (fleet integration I-25). Control Center's daily read of Ventures resolves them by id and serves the folders and file titles under them in the directive as library (protocol 1.35.0); the daily run audits that listing.",
+    "roots": [{ "path": "Ventures/Active Ventures/Heartside", "id": "1QInHx-RNx9fXYdc0KSvTYRcuGTZHxcVh" }]
+  },
   "folders": {
     "1QInHx-RNx9fXYdc0KSvTYRcuGTZHxcVh": {
       "path": "Heartside",

@@ -15,7 +15,7 @@ import re
 import sqlite3
 from zoneinfo import ZoneInfo
 
-from . import ai_answers, attribution, credits, engine_state, ledger, offers
+from . import ai_answers, attribution, credits, drive_library, engine_state, ledger, offers
 from .control_center import CODE, Client, ProtocolError, report_digest, sha256
 
 ENGINE_ID, PRODUCT_SLUG, SLUG, COMMAND = 'growth-heartside', 'heartside', 'heartside', 'directive'
@@ -636,6 +636,8 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
         # digest, differ from it), and none when unserved or unread. With the detail served (1.26.0), the kits
         # are kept under local/ and the shipped answers told once per change; the lines carry counts only.
         answers = ai_answers.sync(client, directive, root)
+        # 1.35.0 (I-25): the Drive listing Control Center serves, audited every run; counts only, unknown never clean.
+        summary['drive'] = drive_library.check(root, directive or {})
         database = Path(root) / 'local/engine.sqlite3'
         if database.exists():
             db = ledger.connect(database)
