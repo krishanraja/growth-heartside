@@ -118,7 +118,8 @@ jobs:
       - name: Read AEO-Engine's win kits for the Wednesday Answers brief
         # Read only; counts only in the log. The token reaches this step only once Krish sets the repository variable
         # ANSWERS_READS_KITS to yes (docs/plans/A1.md). Until then the brief carries a visible hold, never a silent skip.
-        if: ${{ inputs.job == 'answers' || github.event_name == 'schedule' }}
+        # Any start but a push: the schedule, or Control Center's hourly workflow_dispatch with no job named.
+        if: ${{ github.event_name != 'push' }}
         env:
           CONTROL_CENTER_ENGINE_TOKEN: ${{ vars.ANSWERS_READS_KITS == 'yes' && secrets.CONTROL_CENTER_ENGINE_TOKEN || '' }}
           CONTROL_CENTER_URL: ${{ vars.CONTROL_CENTER_URL }}
