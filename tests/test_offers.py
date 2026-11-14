@@ -155,3 +155,20 @@ class OfferTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class StoreJobPackTests(unittest.TestCase):
+    def test_the_saturday_store_pack_passes_its_own_check(self):
+        # 14 Nov 2026: the store job pasted the whole catalog (product records, raw store links) into one draft, which
+        # went over 6,000 characters with untracked heartside.io links, so check_pack refused it four runs running.
+        from engine import runner
+        ready = state()
+        ready['price_points'] = sorted({x for p in ready['store'] for x in p['prices']})
+        items = runner.store_items(offers.catalog(ready))
+        pack = runner.evidence_pack(ready, dt.date.today().isoformat(), 'conversion',
+                                    'Public store readiness and acquisition handoff', items)
+        self.assertEqual(growth.check_pack(pack, ready['price_points'], state=ready), [])
+        text = items[0]['text']
+        self.assertNotIn('heartside.io/products', text)
+        for offer in offers.catalog(ready):
+            self.assertIn(offer['id'], text)

@@ -129,6 +129,24 @@ def evidence_pack(state, day, kind, headline, items):
             'heartside_sha': state['sha'], 'headline': headline, 'items': items}
 
 
+def store_items(ready):
+    """The store job's one item: each canonical gift's readiness in a line, never the raw catalog.
+
+    The catalog's product records carry untracked store links and outgrow the 6,000-character draft limit, which
+    check_pack refuses (14 Nov 2026); the records stay in the engine state, and a line names the gift, not its link.
+    """
+    lines = []
+    for o in ready:
+        cents = o.get('prices_cents') or []
+        prices = ', '.join(f'USD{c / 100:g}' for c in cents) or 'no canonical price'
+        lines.append(f"- {o.get('id')}: {o.get('title') or 'not in the public catalog'}, {prices}, "
+                     f"{'ready' if o.get('ready') else 'not ready'} ({o.get('reason')})")
+    text = ('Product readiness, ' + f"{sum(bool(o.get('ready')) for o in ready)} of {len(ready)} gifts ready:\n"
+            + '\n'.join(lines) + '\nProduct fixes belong in heartside. No store setting was changed.')
+    return [{'platform': 'other', 'target_name': 'Product readiness',
+             'target_url': 'https://github.com/krishanraja/heartside/pull/13', 'text': text}]
+
+
 def demand(query='personalized dog gifts'):
     url = 'https://suggestqueries.google.com/complete/search?' + urllib.parse.urlencode({'client': 'firefox', 'q': query})
     try:
@@ -306,9 +324,7 @@ def run_job(root, growth, job, day):
             result = {'native_comments': 'not_available', 'social_open': [t['test_id'] for t in report['tests'] if t['stage'] not in ('evaluated', 'held', 'cancelled')]}
         elif job == 'store':
             ready = offers.catalog(state)
-            pack = evidence_pack(state, day, 'conversion', 'Public store readiness and acquisition handoff', [
-                {'platform': 'other', 'target_name': 'Product readiness', 'target_url': 'https://github.com/krishanraja/heartside/pull/13',
-                 'text': json.dumps(ready, indent=2) + '\nProduct fixes belong in heartside. No store setting was changed.'}])
+            pack = evidence_pack(state, day, 'conversion', 'Public store readiness and acquisition handoff', store_items(ready))
             result = {'ready_gifts': sum(bool(o['ready']) for o in ready), 'canonical_gifts': len(ready)}
         elif job == 'answers':
             pack, result = answers_brief(root, growth, state, day)
