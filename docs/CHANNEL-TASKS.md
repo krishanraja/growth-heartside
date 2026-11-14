@@ -26,8 +26,9 @@ weeks, $0 of paid ads), never follower counts.
 | meta | Instagram, Facebook (paired) | Sends per reach, then tracked link taps and organic orders | trend-scan and idea-bank in radar (Mondays); reel-script and caption-set in the daily pack; profile-audit in store (Saturdays); platform-truth and channel-plan in the Sunday report |
 | tiktok | TikTok | Shares and saves per view, then profile visits to heartside.io | The same jobs |
 
-No new job and no new automation: the tasks run inside the eight scheduled
-jobs. Concept-level approval, the creative bar and rule 1 are unchanged; the 5
+No new job and no new automation: the tasks run inside the existing jobs. The
+day pack, radar and store jobs are off the schedule since 14 Nov (Krish's ruling),
+so their tasks run when a session names that job. Concept-level approval, the creative bar and rule 1 are unchanged; the 5
 hooks and 5 captions are the alternatives the creative review cites, and the
 rejected ones stay note lines, never public copy.
 

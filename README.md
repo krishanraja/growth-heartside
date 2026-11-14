@@ -44,17 +44,13 @@ public gift range. The first campaigns are price-free audience materials.
 ## Scheduled operation
 
 [Heartside draft engine](https://github.com/krishanraja/growth-heartside/actions/workflows/engine.yml)
-checks these eight canonical jobs every 15 minutes on GitHub Actions:
+checks these four scheduled jobs every 15 minutes on GitHub Actions (the day pack, radar, creators and store jobs are off the schedule since 14 Nov, Krish's ruling, and run only when named):
 
 | Job | Due in America/New_York |
 |---|---|
 | Sync | Daily 05:45 |
 | Numbers | Daily 06:00 |
-| Radar | Daily 06:30 |
-| Daily media pack | Daily 09:00 |
-| Creators | Tuesday 07:00 |
 | Answers library | Wednesday 07:30 |
-| Store and search | Saturday 07:00 |
 | Weekly report | Sunday 07:00 |
 
 IANA timezone conversion handles daylight saving. GitHub may run late. Completed

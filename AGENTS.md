@@ -284,14 +284,16 @@ built; anything else he approves he still does by hand (rule 1).
 |---|---|---|---|
 | Every day 05:45 | Sync with heartside | none | `jobs/sync.md` |
 | Every day 06:00 | Numbers | `numbers` | `jobs/numbers.md` |
-| Every day 06:30 | Radar | `radar` | `jobs/radar.md` |
-| Every day 09:00 | The day's pack | `daily` | `jobs/daily-pack.md` |
-| Tuesday 07:00 | Creators | `partners` | `jobs/creators.md` |
+| Every day 06:30 | Radar (off the schedule since 14 Nov; runs only when named) | `radar` | `jobs/radar.md` |
+| Every day 09:00 | The day's pack (off the schedule since 14 Nov; runs only when named) | `daily` | `jobs/daily-pack.md` |
+| Tuesday 07:00 | Creators (off the schedule since 14 Nov; runs only when named) | `partners` | `jobs/creators.md` |
 | Wednesday 07:30 | The Answers library (two drafts for Krish from AEO-Engine's reading of Heartside, `docs/GEO-AEO.md`; AEO-Engine asks the assistants, never this engine) | `answers` | `jobs/answers.md` |
-| Saturday 07:00 | The store and search | `conversion` | `jobs/store.md` |
+| Saturday 07:00 | The store and search (off the schedule since 14 Nov; runs only when named) | `conversion` | `jobs/store.md` |
 | Sunday 07:00 | The weekly report | `report` | `jobs/report.md` |
 
-The daily pack is due at 09:00 America/New_York. Convert using IANA zones;
+Off the schedule (Ruling, Krish, 2026-11-14, his words: "I agree with everything else", to "stop the daily content pack nobody reads"): the day pack, radar, creators and store jobs never fall due and are not part of `--job all`; `automations.json` lists them under `off_schedule`, and each still runs when named. The four times in the table are kept for when he puts one back.
+
+When the daily pack is run, it is due at 09:00 America/New_York. Convert using IANA zones;
 London is usually five hours ahead, but the daylight-saving transition weeks
 differ. GitHub checks every 15 minutes and may start late. Krish can post in the
 US morning and lunchtime. The report moves posting times once
@@ -313,7 +315,7 @@ means it. Do exactly this, in order, and nothing else:
 3. **Check the clock.** Run `date +%Z`. The times in `automations.json` are
    New York time. If this computer's time zone is not New York, convert each
    time, and tell Krish which zone you used.
-4. **Create the eight scheduled tasks** from `automations.json`, using the
+4. **Create the four scheduled tasks** from `automations.json` (its `automations` list; never one from `off_schedule`), using the
    app's own scheduled tasks (Codex and Cowork can both create them from a
    chat). For each entry:
    - name: the entry's `name`;
@@ -333,7 +335,7 @@ means it. Do exactly this, in order, and nothing else:
    there exactly once. Say so plainly, or name what is missing.
 6. **Prove one end to end.** Run the numbers job once now. Confirm it printed
    "stored". Show Krish where the pack is.
-7. **Finish** with one line: "8 automations live. Next sync 05:45 New York.
+7. **Finish** with one line: "4 automations live. Next sync 05:45 New York.
    Packs land in local/packs/ and in each run's final message."
 
 If the app can't create scheduled tasks from a chat, say so in one line.
@@ -377,7 +379,7 @@ His latest 17 October instruction overrides the earlier reporting implementation
 interpretation: no actual work in Control Centre; brief only after growth work
 is complete. The earlier draft there is outside this task and remains untouched.
 
-`growth.py run` executes the same eight jobs on GitHub Actions, without a signed-in
+`growth.py run` executes the same four scheduled jobs (and an off-schedule job only when named) on GitHub Actions, without a signed-in
 browser, social publishing or paid generation. It uses approved reusable assets,
 current public product truth and imported aggregate evidence. Missing private
 analytics and creator evidence stay missing. Its bounded fallback does not claim

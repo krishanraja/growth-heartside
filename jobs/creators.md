@@ -1,5 +1,7 @@
 # Job: creators (Tuesday)
 
+**Off the schedule since 14 November 2026** (Ruling, Krish, 2026-11-14: "I agree with everything else" to the recommendation "stop the daily content pack nobody reads"). This job never falls due and is not part of `growth.py run --job all`. It runs only when a session or Krish names it: `python3 growth.py run --job creators`.
+
 Kind `partners`. Part 5 in `PLAYBOOK.md`. Time for Krish: about 10 minutes.
 The plan is the canon's (`docs/POSITIONING.md` section 6, part 1, and
 `docs/V3-GIFTS-FROM-YOUR-DOG.md` section 8). Krish approved 20 gifted US

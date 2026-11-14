@@ -3,6 +3,12 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-14: Krish answered the fleet decision list (control-center `docs/audits/2026-11-14-fleet-integration/KRISH-ANSWERS.md`), item 5.6, "Heartside: stop the daily content pack nobody reads", recommended yes; his words, about 17:10 UTC: "I agree with everything else until Batch 6".
+  - The day pack, radar, creators and store jobs come off the schedule. `automations.json` keeps four scheduled jobs (sync, numbers, answers, report) and lists the four under `off_schedule`: never due, not part of `growth.py run --job all`, each still runnable when named (`growth.py run --job daily-pack`). Each job file says so at its top; AGENTS.md, README, `docs/ENGINE.md` and `docs/CHANNEL-TASKS.md` say four scheduled jobs.
+  - Not in this answer, so unchanged: `engine.yml` still checks every 15 minutes (the six-hour cadence in `docs/plans/A1.md` D2 was not asked on 14 Nov). Codex or Cowork scheduled tasks already created on his machine for the four jobs are his to switch off there.
+  - Proved: a tick of `growth.py run --job all` with ffmpeg off the PATH completes sync, numbers, report and answers and attempts none of the four.
+  - Ruling (Krish, 2026-11-14): stop the daily content pack nobody reads; the day pack, radar, creators and store jobs come off the schedule (his words: "I agree with everything else").
+
 - 2026-11-13: Krish answered the Order Loop's first five questions in an interactive session, word for word: "1. yes. 2. it does. 3. yes. 4. ask growth repo. 5. yes".
   - The till: "it does" (Shopify Payments takes a real paid checkout). Recorded as his word, not a readback; heartside's own NOW.md still lists the payments readback as unverified, which a heartside session records.
   - Ruling (Krish, 2026-11-13): from 21 Nov, at least two thirds of slots end on the real product with a counted link, led by the blanket, the portrait and bundles (`factory/loop.py` `buy_slots`). The freeze of the day pack, radar, creators and store jobs, and `engine.yml` every six hours, were not in this question and still wait for his yes.

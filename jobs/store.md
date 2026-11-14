@@ -1,5 +1,7 @@
 # Job: the store and search (Saturday)
 
+**Off the schedule since 14 November 2026** (Ruling, Krish, 2026-11-14: "I agree with everything else" to the recommendation "stop the daily content pack nobody reads"). This job never falls due and is not part of `growth.py run --job all`. It runs only when a session or Krish names it: `python3 growth.py run --job store`.
+
 Kind `conversion`. Parts 2, 4 and 6 in `PLAYBOOK.md`. Time for Krish: about 10
 minutes. Every fix here is a draft: a brief for a heartside build session, or
 exact clicks for Krish. You never change the store, the theme, an app or the

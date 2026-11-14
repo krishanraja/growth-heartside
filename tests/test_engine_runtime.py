@@ -192,16 +192,33 @@ class RuntimeTests(unittest.TestCase):
             self.assertEqual(growth.check_pack(pack), [])
         self.assertEqual(len(experiments), 28)
 
-    def test_scheduling_uses_new_york_dst_and_eight_declared_jobs(self):
+    def test_scheduling_uses_new_york_dst_and_four_declared_jobs(self):
         config = json.loads((ROOT/'automations.json').read_text())
-        before = runner.due_jobs(config, dt.datetime(2026,10,17,12,59,tzinfo=dt.timezone.utc))
-        after = runner.due_jobs(config, dt.datetime(2026,10,17,13,0,tzinfo=dt.timezone.utc))
-        self.assertNotIn(('daily-pack','2026-10-17'), before)
-        self.assertIn(('daily-pack','2026-10-17'), after)
-        winter = runner.due_jobs(config, dt.datetime(2026,11,3,14,0,tzinfo=dt.timezone.utc))
-        self.assertIn(('daily-pack','2026-11-03'), winter)
-        self.assertIn(('creators','2026-11-03'), winter)
-        self.assertEqual(len(config['automations']), 8)
+        before = runner.due_jobs(config, dt.datetime(2026,10,17,9,59,tzinfo=dt.timezone.utc))
+        after = runner.due_jobs(config, dt.datetime(2026,10,17,10,0,tzinfo=dt.timezone.utc))
+        self.assertNotIn(('numbers','2026-10-17'), before)
+        self.assertIn(('numbers','2026-10-17'), after)
+        winter = runner.due_jobs(config, dt.datetime(2026,11,3,11,0,tzinfo=dt.timezone.utc))
+        self.assertIn(('numbers','2026-11-03'), winter)
+        self.assertEqual(len(config['automations']), 4)
+
+    def test_the_unread_day_pack_radar_creators_and_store_are_off_the_schedule(self):
+        # Ruling (Krish, 2026-11-14): stop the daily content pack nobody reads (his words: "I agree with everything else").
+        config = json.loads((ROOT/'automations.json').read_text())
+        off = {'daily-pack', 'radar', 'creators', 'store'}
+        self.assertEqual({Path(a['job']).stem for a in config['off_schedule']}, off)
+        self.assertFalse(off & {Path(a['job']).stem for a in config['automations']})
+        week = [runner.due_jobs(config, dt.datetime(2026,11,16,23,59,tzinfo=dt.timezone.utc) + dt.timedelta(days=d)) for d in range(7)]
+        self.assertFalse(off & {name for due in week for name, _ in due})
+        (self.root / 'automations.json').write_text((ROOT/'automations.json').read_text())
+        time = dt.datetime(2026,11,16,15,0,tzinfo=dt.timezone.utc)
+        with patch('engine.runner.run_job', return_value={'pack': 'checked'}) as work:
+            everything = runner.tick(self.root, None, time, 'all')
+            self.assertFalse(off & {r['job'] for r in everything['results']})
+            on_request = runner.tick(self.root, None, time, 'daily-pack')
+            self.assertEqual([r['job'] for r in on_request['results']], ['daily-pack'])
+        with self.assertRaises(ValueError):
+            runner.tick(self.root, None, time, 'not-a-job')
 
     def test_run_failure_is_retryable_and_completed_jobs_do_not_repeat(self):
         (self.root / 'automations.json').write_text((ROOT/'automations.json').read_text())

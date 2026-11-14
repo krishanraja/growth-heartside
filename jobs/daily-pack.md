@@ -1,5 +1,7 @@
 # Job: the day's pack (every day)
 
+**Off the schedule since 14 November 2026** (Ruling, Krish, 2026-11-14: "I agree with everything else" to the recommendation "stop the daily content pack nobody reads"). This job never falls due and is not part of `growth.py run --job all`. It runs only when a session or Krish names it: `python3 growth.py run --job daily-pack`.
+
 Kind `daily`. Parts 3 and 6 in `PLAYBOOK.md`. Deliver finished media for
 Krish to review and post. Read `docs/ENGINE.md` for the template and limits.
 Read `docs/CREATIVE-UI.md` for the shared working regions and per-platform copy,

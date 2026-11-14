@@ -75,8 +75,10 @@ A new revision needs fresh human review.
 
 ## Autonomous draft scheduling
 
-The `Heartside draft engine` GitHub Actions workflow checks the eight canonical
-schedules in `automations.json` every 15 minutes. It is a single serialized writer
+The `Heartside draft engine` GitHub Actions workflow checks the four scheduled
+jobs in `automations.json` every 15 minutes. The day pack, radar, creators and store
+jobs are under `off_schedule` since 14 Nov (Krish's ruling): never due, not in `--job all`,
+run only when named. It is a single serialized writer
 per branch. All scheduling uses `America/New_York`, including daylight saving;
 GitHub can start late. The independent public product sync remains hourly.
 
