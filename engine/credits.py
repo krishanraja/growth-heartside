@@ -2,7 +2,7 @@
 
 The directive's optional `credits` block names each prepaid pool placed on
 Heartside, its share and what is left of it. Absent means unknown: nothing is
-spent. The spending happens in the daily credits session (jobs/credits.md),
+spent. The spending happens in the credits session (docs/CREDITS-SESSION.md), when its scheduled task is on,
 which reserves and settles each generation through Control Center. The
 unattended runner spends nothing today; when it does, every spend goes through
 `reserve` here, bounded by `remaining_for_you`, and is reported once in
@@ -43,7 +43,7 @@ def lines(pools):
     if not pools:
         return ['The directive places no prepaid credit pool on Heartside.']
     return [f'{p.get("tool") or p["pool"]}: {p["remaining_for_you"]:g} {p.get("unit") or "credits"} left for Heartside, '
-            f'use by {p.get("use_by") or "an unknown day"}; spent by the daily credits session (jobs/credits.md).' for p in pools]
+            f'use by {p.get("use_by") or "an unknown day"}; only the credits session spends it (docs/CREDITS-SESSION.md), when its scheduled task is on.' for p in pools]
 
 
 def allowance(pools, pool):

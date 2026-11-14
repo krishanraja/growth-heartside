@@ -1,5 +1,5 @@
 """AI answers through AEO-Engine, the one specialist (protocol 1.22.0; Ruling, Krish, 2026-11-12), and the detail
-Control Center is asked to serve (proposed 1.23.0, features.ai_answers_detail; Ruling, Krish, 2026-11-13)."""
+Control Center is asked to serve (1.26.0, features.ai_answers_detail; Ruling, Krish, 2026-11-13)."""
 import datetime as dt
 import hashlib
 import http.client
@@ -183,7 +183,7 @@ class AiAnswersTest(unittest.TestCase):
 
 
 # ---------------------------------------------------------------------------
-# Proposed 1.23.0: the request's digest, AEO's win kits and what has shipped.
+# 1.26.0: the request's digest, AEO's win kits and what has shipped.
 # ---------------------------------------------------------------------------
 # The fixed vector: computed in JavaScript as Control Center defines it (q.trim().replace(/\s+/g, ' '), sorted,
 # JSON.stringify, SHA-256 hex), with a tab, double spaces, a no-break space, a byte order mark and non-ASCII.

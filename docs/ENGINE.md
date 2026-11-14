@@ -349,7 +349,7 @@ client uses HTTPS only, follows no redirect and times out after 20 seconds. It
 never prints, logs or stores the token; failures are codes. With no secret the
 step fails with "CONTROL_CENTER_ENGINE_TOKEN is not set" and makes no request.
 `python3 growth.py cc kits` reads Heartside's AI-answer standing on its own
-(`GET answers`) and keeps AEO-Engine's win kits (proposed 1.23.0,
+(`GET answers`) and keeps AEO-Engine's win kits (1.26.0,
 `features.ai_answers_detail`) under the gitignored `local/control-center/`,
 outside the checkpoint, for the Wednesday Answers brief. It is read only, prints
 counts, and no workflow runs it yet, so the hosted runner briefs from kits only

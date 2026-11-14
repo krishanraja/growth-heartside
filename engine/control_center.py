@@ -234,7 +234,7 @@ class Client:
         """This product's AI-answer standing on its own (GET answers, 1.22.0), or None. Never raises.
 
         Control Center answers `{ ok, schema_version, read_at, ai_answers, rule }`, where `ai_answers` is the same
-        standing the directive carries; since proposed 1.23.0 (`features.ai_answers_detail`) it may hold AEO's win
+        standing the directive carries; since 1.26.0 (`features.ai_answers_detail`) it may hold AEO's win
         kits. Anything else, a failure or a malformed body, is None: no kits, never a failed run, and no code or body
         is kept.
         """

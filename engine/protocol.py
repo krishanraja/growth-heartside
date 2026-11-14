@@ -227,6 +227,15 @@ def post_payload_sha256(creative_id, revision, channel, caption):
     return sha256({'caption': caption, 'channel': channel, 'creative_id': creative_id, 'revision': revision})
 
 
+def posting_channels(root):
+    """The channels Krish has approved for posting (config/channels.json). Unreadable means none."""
+    try:
+        data = json.loads((Path(root) / 'config/channels.json').read_text())
+        return {c for c, when in (data.get('posting') or {}).items() if when}
+    except (OSError, ValueError, AttributeError):
+        return set()
+
+
 def post_proposals(root, db, now):
     """Approved creatives whose media and caption still match their render manifest."""
     from . import media, operations, creative_ui
@@ -234,10 +243,15 @@ def post_proposals(root, db, now):
       ORDER BY updated_at DESC, rowid DESC) AS rank FROM creatives) WHERE rank=1 AND status='approved'
       ORDER BY updated_at DESC, creative_id''').fetchall()
     index = caption_index(root) if rows else {}
+    approved = posting_channels(root)
     proposals, holds = [], []
     for row in rows:
         cid, revision = row['creative_id'], row['revision']
         channel, expires = CHANNELS.get(cid.split('_')[0]), expiry(cid)
+        if channel and channel not in approved:
+            holds.append({'reason': 'A post on a channel Krish has not approved for posting is held',
+                          'detail': fit(f'{cid}: {NAMES[channel]} is not in config/channels.json. Only Krish adds a channel.', 500)})
+            continue
         try:
             if not channel or not ID.match('heartside:post:' + cid) or not re.fullmatch(r'[a-f0-9]{64}', revision):
                 raise ValueError('unsupported creative')
@@ -619,7 +633,7 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
         state, degraded = capture(growth)
         # 1.22.0: Heartside's AI answers are AEO-Engine's (Ruling, Krish, 2026-11-12); one line, a request when none is on
         # file, a replacing one only when the bank's valid questions outnumber it (or, where the request carries its
-        # digest, differ from it), and none when unserved or unread. With the detail served (proposed 1.23.0), the kits
+        # digest, differ from it), and none when unserved or unread. With the detail served (1.26.0), the kits
         # are kept under local/ and the shipped answers told once per change; the lines carry counts only.
         answers = ai_answers.sync(client, directive, root)
         database = Path(root) / 'local/engine.sqlite3'
@@ -641,6 +655,7 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
                        objectives={o['key']: o['availability'] for o in report['objectives']},
                        proposals=[p['proposal_id'] for p in report['proposals']], holds=len(report['holds']),
                        schema_version=report['schema_version'],
+                       withdrawn=[w['proposal_id'] for w in report.get('withdrawn', [])],
                        acks=[a['state'] for a in report.get('instruction_acks', [])])
         phase = 'decisions'
         summary['decisions'] = bind_decisions(client.decisions(stamp(now - dt.timedelta(days=7))), report['proposals'])
@@ -671,7 +686,7 @@ def main(root, growth, action, mode, code=None, env=None):
         print(f'Not ready: {error.code}. No request was made.')
         return 1
     if action == 'kits':
-        # Proposed 1.23.0: AEO-Engine's win kits, read on their own (GET answers) and kept under gitignored local/
+        # 1.26.0: AEO-Engine's win kits, read on their own (GET answers) and kept under gitignored local/
         # for the Wednesday Answers brief. Read only; it prints counts, never a kit's words.
         print(ai_answers.fetch(client, root))
         return 0

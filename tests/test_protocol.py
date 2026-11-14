@@ -251,6 +251,8 @@ class ReportTests(unittest.TestCase):
         self.temporary = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary.name)
         self.db = ledger.connect(self.root / 'local/engine.sqlite3')
+        (self.root / 'config').mkdir(exist_ok=True)
+        (self.root / 'config/channels.json').write_text((ROOT / 'config/channels.json').read_text())
 
     def tearDown(self):
         self.db.close()
@@ -398,6 +400,18 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(post['expires_at'], '2026-10-26T04:00:00Z')
         changed = protocol.post_payload_sha256(CID, REVISION, 'instagram', CAPTION + ' Changed.')
         self.assertNotEqual(changed, post['payload_sha256'])
+
+    def test_a_post_on_a_channel_krish_has_not_approved_is_held_not_proposed(self):
+        # 14 Nov: Pinterest is not a posting channel (docs/CHANNEL-TASKS.md), yet nothing stopped an approved pin.
+        self.approve()
+        (self.root / 'config/channels.json').write_text(json.dumps({'posting': {'facebook': '2026-10-19'}}))
+        report = self.build()
+        self.assertEqual(validate(SCHEMA, report), [])
+        self.assertFalse([p for p in report['proposals'] if p['wall'] == 'post'])
+        self.assertTrue(any('not approved for posting' in h['reason'] and CID in h['detail'] for h in report['holds']))
+
+    def test_the_approved_channels_are_the_three_and_never_pinterest_or_threads(self):
+        self.assertEqual(protocol.posting_channels(ROOT), {'instagram', 'facebook', 'tiktok'})
 
     def test_a_tampered_caption_is_held_not_proposed(self):
         item = self.approve()
