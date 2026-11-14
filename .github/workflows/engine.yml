@@ -115,6 +115,16 @@ jobs:
           SHOPIFY_CLIENT_ID: ${{ secrets.SHOPIFY_CLIENT_ID }}
           SHOPIFY_CLIENT_SECRET: ${{ secrets.SHOPIFY_CLIENT_SECRET }}
         run: python3 growth.py attribution || echo "::warning::organic attribution read failed; the report keeps it missing"
+      - name: Read AEO-Engine's win kits for the Wednesday Answers brief
+        # Read only; counts only in the log. The token reaches this step only once Krish sets the repository variable
+        # ANSWERS_READS_KITS to yes (docs/plans/A1.md). Until then the brief carries a visible hold, never a silent skip.
+        if: ${{ inputs.job == 'answers' || github.event_name == 'schedule' }}
+        env:
+          CONTROL_CENTER_ENGINE_TOKEN: ${{ vars.ANSWERS_READS_KITS == 'yes' && secrets.CONTROL_CENTER_ENGINE_TOKEN || '' }}
+          CONTROL_CENTER_URL: ${{ vars.CONTROL_CENTER_URL }}
+        run: |
+          if [ "$(TZ=America/New_York date +%u)" != 3 ] && [ "${{ inputs.job }}" != answers ]; then exit 0; fi
+          python3 growth.py cc kits || echo "::warning::AEO-Engine's kits were not read; the Answers brief says it is held"
       - name: Run due draft jobs
         id: engine
         env:

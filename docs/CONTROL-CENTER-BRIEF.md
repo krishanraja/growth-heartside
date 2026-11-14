@@ -104,7 +104,7 @@ Ruling (Krish, 2026-10-29): a growth engine may spend up to its placement share 
 
 Measured Higgsfield unit costs: a GPT Image still 2.75 credits, a Seedance clip 210.
 
-**Who spends it.** The runner holds no generator keys, so the daily credits session spends the share (`docs/CREDITS-SESSION.md`; Krish, 2026-10-29: "Scheduled sessions"). It is one scheduled Claude session with the Control Center, Higgsfield, Runway and 21st Dev connectors. It reads the share with `get_engine_credits`, and reserves and settles each generation with `reserve_credit_spend` and `settle_credit_spend`, so Control Center takes it off the share without a report. The runner reads the block and reports `credits_spent` only for a spend of its own (`engine/credits.py`), never one the session already recorded.
+**Who spends it.** The runner holds no generator keys, so the credits session spends the share when its scheduled task is on (disabled on purpose since 5 Nov; `docs/CREDITS-SESSION.md`; Krish, 2026-10-29: "Scheduled sessions"). It is one scheduled Claude session with the Control Center, Higgsfield, Runway and 21st Dev connectors. It reads the share with `get_engine_credits`, and reserves and settles each generation with `reserve_credit_spend` and `settle_credit_spend`, so Control Center takes it off the share without a report. The runner reads the block and reports `credits_spent` only for a spend of its own (`engine/credits.py`), never one the session already recorded.
 
 **What to do, every run:**
 

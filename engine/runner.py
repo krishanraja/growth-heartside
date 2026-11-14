@@ -255,11 +255,13 @@ def answers_brief(root, growth, state, day, now=None):
                'why': 'Next ' + q['status'] + ' question in tier ' + str(q['tier']) + ' (docs/GEO-AEO.md section 4).',
                'text': 'Title: ' + q['question'] + '\nBrief: draft to docs/GEO-AEO.md section 4, leading to ' + q['leads_to'] + '.\n' + demand(q['seed'])}
               for q in nxt]
+    held = None if used else ai_answers.kits_hold(root)
     headline = ('Answers library: the next two questions to draft, AEO-Engine\'s win kits first' if used
-                else 'Answers library: the next two questions to draft')
+                else 'Answers library: the next two questions to draft' + (f' (held: {held})' if held else ''))
     pack = evidence_pack(state, day, 'answers', headline, items)
     return pack, {'questions': ids + [q['id'] for q in nxt], 'kits': used, 'kits_dropped': dropped_kits,
-                  'kit_lines_dropped': dropped_lines, 'kits_off_site': off_site, 'published': 0}
+                  'kit_lines_dropped': dropped_lines, 'kits_off_site': off_site, 'published': 0,
+                  'kits_hold': held}
 
 
 def run_job(root, growth, job, day):

@@ -4,6 +4,7 @@ import datetime as dt
 import hashlib
 import http.client
 import io
+from contextlib import redirect_stdout
 import json
 import shutil
 import socket
@@ -559,7 +560,7 @@ class AnswersBriefTest(unittest.TestCase):
     def test_without_kits_the_brief_is_the_banks_next_two_questions_as_before(self):
         pack, result = runner.answers_brief(self.root, self.growth, self.state, self.DAY)
         self.assertEqual([i['target_name'] for i in pack['items']], ['Answers library: q03', 'Answers library: q04'])
-        self.assertEqual(result, {'questions': ['q03', 'q04'], 'kits': 0, 'kits_dropped': 0, 'kit_lines_dropped': 0, 'kits_off_site': 0, 'published': 0})
+        self.assertEqual(result, {'questions': ['q03', 'q04'], 'kits': 0, 'kits_dropped': 0, 'kit_lines_dropped': 0, 'kits_off_site': 0, 'published': 0, 'kits_hold': None})
         self.assertEqual(pack['headline'], 'Answers library: the next two questions to draft')
         self.assertEqual(self.check(pack, [], state=self.state), [])
 
@@ -604,7 +605,7 @@ class AnswersBriefTest(unittest.TestCase):
         self.assertIn('utm_content=WEB_UTIL_ARTICLE_C05_H01_V1_20261118', text)
         # Two kits briefed; the must-have kit dropped (its title and question both fail); the off-site kit passed over;
         # three lines dropped from the mom kit (the H2, the em dash rule and the link fix), plus the dropped kit's title.
-        self.assertEqual(result, {'questions': ['q05'], 'kits': 2, 'kits_dropped': 1, 'kit_lines_dropped': 4, 'kits_off_site': 1, 'published': 0})
+        self.assertEqual(result, {'questions': ['q05'], 'kits': 2, 'kits_dropped': 1, 'kit_lines_dropped': 4, 'kits_off_site': 1, 'published': 0, 'kits_hold': None})
         public = json.dumps(result)
         for word in ('vet', 'mom', 'groomer', 'rival', 'must'):
             self.assertNotIn(word, public)
@@ -637,6 +638,18 @@ class AnswersBriefTest(unittest.TestCase):
         self.assertEqual(self.check(written, [], state=self.state), [])
         self.assertEqual([i['creative_id'] for i in written['items']], ['WEB_UTIL_ARTICLE_C29_H01_V1_20261118', 'WEB_UTIL_ARTICLE_C30_H01_V1_20261118'])
         self.assertTrue((self.root / 'local/packs/2026-11-18-answers.md').exists())
+
+    def test_a_job_without_the_token_holds_visibly_and_a_read_clears_it(self):
+        from engine import protocol
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(protocol.main(self.root, self.growth, 'kits', 'live', env={}), 1)
+        pack, result = runner.answers_brief(self.root, self.growth, self.state, self.DAY)
+        self.assertIn('held: the Control Center engine token is not given to this job', pack['headline'])
+        self.assertIn('token', result['kits_hold'])
+        self.assertEqual(self.check(pack, [], state=self.state), [])
+        ai_answers.clear_kits_hold(self.root)
+        pack, result = runner.answers_brief(self.root, self.growth, self.state, self.DAY)
+        self.assertNotIn('held', pack['headline']); self.assertIsNone(result['kits_hold'])
 
 
 if __name__ == '__main__':
