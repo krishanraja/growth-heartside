@@ -52,6 +52,8 @@ below is unchanged. Until the go-live step exists, posting stays with Krish.
 
 **Krish's humour is the anchor for every build** (Krish, 2026-11-10: "Here's my humor profile. Make sure every build in all the sessions anchors towards this, now and in the future."). Before writing any concept, script, caption or line, read `docs/HUMOUR.md`. Every piece needs its core: an intelligent observation, an utterly stupid premise and a slightly cruel payoff, inside rule 5. The tier 2 judge scores against it, and a piece missing any of the three cannot score 9.
 
+**Asks reach his one list** (Ruling, Krish, 2026-11-14: "I want wave 3 now", I-24). Decision, spend, copy and delete asks go in `review/queue.json` and reach his list in Control Center through the daily run; the board below keeps posts and their media (`docs/REVIEW-BOARD.md`).
+
 **Krish reviews on one board** (Krish, 2026-11-10: "You need to create a system of review where I can easily just tick yes or no for things that you think are ready. You just keep adding to that board as often as you can, and so do your sub-sessions."). Every session puts what is ready for him on the review board and reads his answers back from it: `docs/REVIEW-BOARD.md`.
 
 **The engine learns from every session** (Krish, 2026-11-09: "Ensure that the project documentation and intelligence of the growth repository are automatically augmented"). Before a session that did creative, social or Drive work ends, it records what happened where the next session reads it, in the same commit as the work:
@@ -80,7 +82,8 @@ Read, in this order, before any job:
 3. `PLAYBOOK.md`: the operating system, applied to Heartside, then `docs/ENGINE.md` for production and reporting;
 4. `BROWSER.md`: what you may and may never do in Krish's signed-in browser;
 5. the job's own file in `jobs/`;
-6. what is outstanding and what Krish has rejected: `python3 growth.py social status`
+6. what is outstanding and what Krish has rejected: `python3 growth.py cc queue` (his answers to
+   `review/queue.json`'s asks still to apply, by id), `python3 growth.py social status`
    (engagement tests and first followers, each with its owner and next action;
    in a fresh checkout first `python3 growth.py events import
    docs/social/2026-11-09-engagement-history.json`, which is safe to replay),

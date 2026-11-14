@@ -10,12 +10,22 @@ answers back from the board. It replaces asking him in chat, and the scattered r
 
 ## What goes on it
 
-Only work that has already cleared this repository's bar:
-- a post that the panel judged 9 or above and that is filed (library lane plus its 02 Sheet);
-- a decision only Krish can make: lifting a hold, a ruling, a choice between options;
-- a spend;
-- a deletion;
-- copy that needs his confirmation, such as an order-by date.
+Only work that has already cleared this repository's bar: a post that the panel judged 9 or above and that is
+filed (library lane plus its 02 Sheet), with its media.
+
+**Asks go to his one list, not the board** (I-24; Ruling, Krish, 2026-11-14: "I want wave 3 now"). A decision
+only Krish can make (lifting a hold, a ruling, a choice between options), a spend, a deletion, or copy that needs
+his confirmation (such as an order-by date) is an item in `review/queue.json`: `id` (`heartside:ask:<slug>`),
+`priority`, `kind` (`decision`, `spend`, `copy` or `delete`), `title`, `question`, `on_yes`, `on_no`,
+`amount_usd` (a spend only), `asked_on`, `source`, and `answer` (null until applied). The daily Control Center
+run (05:10 UTC) proposes the open ones behind their wall (`strategy`, or `spend` with its amount), the top
+`per_report` in priority order, reads his decisions back by id bound to the words' hash, stops asking an
+answered one and reports "Answers to apply: N" by id. If his decisions cannot be read it holds
+`decisions_unread` and applies nothing. The runner posts, spends and deletes nothing.
+
+A session applies an answer by doing what `on_yes` or `on_no` says and recording it under the item's `answer`
+(`decision`, `decided_at`, `applied_on`, `where`), with the ruling line in the commit. At session start,
+`python3 growth.py cc queue` lists each answer still to apply.
 
 Never add work below the bar to fill the board. Never add the same thing twice: one item per post id or decision.
 

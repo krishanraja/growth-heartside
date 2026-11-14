@@ -15,7 +15,7 @@ import re
 import sqlite3
 from zoneinfo import ZoneInfo
 
-from . import ai_answers, attribution, credits, engine_state, ledger, offers
+from . import ai_answers, attribution, credits, engine_state, ledger, offers, review_queue
 from .control_center import CODE, Client, ProtocolError, report_digest, sha256
 
 ENGINE_ID, PRODUCT_SLUG, SLUG, COMMAND = 'growth-heartside', 'heartside', 'heartside', 'directive'
@@ -373,13 +373,15 @@ def latest_decisions(decisions):
 
 
 def build_report(*, root, state, db, now, run_id, mode, directive, recommendations, degraded=(), credits_spent=(),
-                 instruction_seen=False, answers=(), capabilities=None):
+                 instruction_seen=False, answers=(), capabilities=None, queue_decisions=None):
     """The report envelope, exactly engine-report.schema.json, sealed with its digest.
 
     `credits_spent` is what this run itself spent of the prepaid share (engine/credits.py); the
     daily credits session records its own spend through Control Center and never here.
     `instruction_seen` says an earlier live report already acked the directive's krish_instruction
     as received (engine/engine_state.py); his words never reach the report.
+    `queue_decisions` is his GET decisions read for review/queue.json's asks (I-24), or None when it
+    could not be read: then the report holds decisions_unread and applies nothing.
     """
     spent = credits.spent(credits_spent)
     body = (directive or {}).get('directive') or {}
@@ -425,6 +427,16 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
         if events:
             activity.append(f'Reported {len(events)} publication(s) Krish recorded in the last 14 days.')
     proposals += recommendation_proposals(recommendations)
+    # I-24: Heartside's asks, walled, in priority order, ahead of everything else on his list.
+    asks = review_queue.load(root)
+    if review_queue.open_items(asks):
+        known = list(body.get('decisions_since') or []) + list(queue_decisions or [])
+        proposals = review_queue.proposals(asks, known, review_queue.per_report(root)) + proposals
+        if queue_decisions is None:
+            holds.append({'reason': 'decisions_unread',
+                          'detail': 'His decisions could not be read, so no answer to a review/queue.json ask is applied this run.'})
+        else:
+            activity.append(review_queue.line(review_queue.to_apply(asks, known)))
     for pid, decision in latest_decisions(body.get('decisions_since')).items():
         current = next((p for p in proposals if p['proposal_id'] == pid), None)
         if current is None:
@@ -645,10 +657,18 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
             served = client.capabilities()
         except ProtocolError:
             served = {}
+        queue_decisions, asks = None, review_queue.load(root)
+        if (start_at := review_queue.since(asks, now)) is not None:
+            try:  # I-24: his answers to the queue's asks, read before the report; unread holds decisions_unread
+                queue_decisions = client.decisions(start_at)
+            except ProtocolError:
+                queue_decisions = None
         phase = 'plan'
         report = build_report(root=root, state=state, db=db, now=now, run_id=local['run_id'], mode=mode,
                               directive=directive, recommendations=recommendations, degraded=degraded, answers=answers,
-                              instruction_seen=seen, capabilities=served)
+                              instruction_seen=seen, capabilities=served, queue_decisions=queue_decisions)
+        if queue_decisions is not None:
+            summary['answers_to_apply'] = [a['id'] for a in review_queue.to_apply(asks, queue_decisions)]
         phase = 'report'
         summary['delivery'] = deliver(client, report)
         summary.update(status=report['status'], payload_sha256=report['payload_sha256'],
@@ -676,6 +696,9 @@ def main(root, growth, action, mode, code=None, env=None):
     token = env.get('CONTROL_CENTER_ENGINE_TOKEN', '').strip()
     base = env.get('CONTROL_CENTER_URL', '').strip() or DEFAULT_URL
     if not token:
+        if action == 'queue':
+            print(review_queue.status(root, None))
+            return 1
         if action == 'kits':  # a visible hold on the Wednesday brief, never a silent fall back to bank order
             ai_answers.hold_kits(root, 'the Control Center engine token is not given to this job, so AEO-Engine\'s kits were not read')
         print('Not ready: CONTROL_CENTER_ENGINE_TOKEN is not set in this environment. No request was made.')
@@ -685,6 +708,16 @@ def main(root, growth, action, mode, code=None, env=None):
     except ProtocolError as error:
         print(f'Not ready: {error.code}. No request was made.')
         return 1
+    if action == 'queue':
+        # I-24, the session start read: each answer to a review/queue.json ask still to apply, by id.
+        try:
+            items = review_queue.load(root)
+            start_at = review_queue.since(items, dt.datetime.now(dt.timezone.utc))
+            print(review_queue.status(root, client.decisions(start_at) if start_at else []))
+        except ProtocolError as error:
+            print(review_queue.status(root, None) + f' ({error.code})')
+            return 1
+        return 0
     if action == 'kits':
         # 1.26.0: AEO-Engine's win kits, read on their own (GET answers) and kept under gitignored local/
         # for the Wednesday Answers brief. Read only; it prints counts, never a kit's words.
