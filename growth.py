@@ -43,6 +43,10 @@ packs apart from makeyourmindup's (see `post` below).
         factory/sprints/ to the slot's creative id on that platform (the
         slot's first platform when none is named).
 
+    python3 growth.py paths SCHEDULE.csv
+        Each Schedule row's counted path to an order (tracked link, registered
+        code, tracked profile link, or none) and the tracked profile URLs Krish
+        can set. Exits non-zero while any row has no counted path. Read only.
     python3 growth.py codes [MANIFEST]
         Drafts the post-family discount code names for a sprint's buy and
         signature slots, as tracking words with no discount, and the
@@ -1585,6 +1589,7 @@ def main():
     sub.add_parser('store')
     lk = sub.add_parser('link'); lk.add_argument('url'); lk.add_argument('creative_id'); lk.add_argument('--platform')
     cd = sub.add_parser('codes'); cd.add_argument('manifest', nargs='?', default=os.path.join(HERE, 'factory/sprints/2026-11-S120.json'))
+    pa = sub.add_parser('paths'); pa.add_argument('schedule')
     c = sub.add_parser('check'); c.add_argument('file')
     s = sub.add_parser('post'); s.add_argument('file')
     r = sub.add_parser('read'); r.add_argument('--days', type=int, default=7); r.add_argument('--kind')
@@ -1643,6 +1648,17 @@ def main():
             print(codes.render(codes.draft(json.load(open(a.manifest, encoding='utf-8')))))
         except (OSError, ValueError, KeyError) as e:
             sys.exit(f'Not ready: {e}')
+        return
+    if a.cmd == 'paths':
+        from engine import paths
+        try:
+            audited = paths.audit(paths.read_rows(a.schedule))
+        except (OSError, ValueError, KeyError) as e:
+            sys.exit(f'Not ready: {e}')
+        print(paths.render(audited))
+        uncounted = sum(1 for r in audited if r['path'] == 'none')
+        if uncounted:
+            sys.exit(f'{uncounted} row(s) have no counted path (engine/paths.py).')
         return
     if a.cmd in ('check', 'post'):
         try:

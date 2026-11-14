@@ -59,3 +59,19 @@ can tie a sale to a post. Either drop "Link in bio" from TikTok captions or add 
 2. Discount or none (the draft says none).
 3. Commission the bio-link page and the survey in a heartside session.
 4. TikTok: add the website link or drop "Link in bio".
+
+## 4. The tracked profile link (added 14 November): one yes counts every "Link in bio" row
+
+Reproduced on 14 November from the 02t Sheet, read only: of its 45 rows, the 30 Instagram and TikTok rows say
+"link in bio" and carry no tracked link or code, while every Facebook row has its own tracked link. Those 30 rows are
+approved and already scheduled, so changing their captions would mean pulling scheduled posts.
+
+The smallest change that counts them all is the profile link itself. `python3 growth.py paths <schedule.csv>` prints a
+tracked profile URL per platform, each under a reserved creative id (`<P>_OFFER_BIO_C900_H01_V1_20261114`). Set as the
+profile's website, every visit it brings lands in the engine tier as family `<P>_OFFER_C900`, so the North Star number
+sees it, at platform level rather than per post. 
+
+- **Instagram:** Krish sets the profile website to the Instagram URL `growth.py paths` prints. Recommended yes.
+- **TikTok:** the same, if the profile offers a website field; otherwise its rows stay uncounted until a code is registered.
+- **Then:** a session records the date in `config/profile-links.json` under `set`, and `growth.py paths` and
+  `factory/schedule/build_02t.py` count those rows from that commit. From then the builder writes that URL in the row's link column.

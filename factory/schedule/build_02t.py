@@ -6,7 +6,10 @@ board". So every photo post, the seven already in 02r and the eight new ones (F5
 with its Epidemic track in it. Codex posts these rows on all three platforms; nothing is added in the app.
 Usage: python3 factory/schedule/build_02t.py 02r.csv shas.json out.csv
 """
-import csv, json, sys
+import csv, json, os, sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from engine import paths  # noqa: E402
 
 TRACKS = {  # post: (title, artist, epidemic id)
     'F30-pepper': ('Sneaky Business', 'J.R. Productions', '8e1d93c8-9023-4371-9492-9ba9b562330e'),
@@ -96,7 +99,8 @@ def main(src, shas, out):
                 row[i['caption']], row[i['link']] = f'{line}\n\n{TAIL}\n{link}', link
             else:
                 row[i['caption']] = f'{line}\n\n{TAIL} Link in bio.\n\n{tags.format(p=tagp)}'
-                row[i['link']] = 'link in bio'
+                # Plumbing only: once Krish has set this profile's link to the tracked profile URL, the row names it.
+                row[i['link']] = paths.profile_url(plat) if plat in paths.set_profiles() else 'link in bio'
             row[i['creative_id']] = cid
             row[i['lock_fingerprint']] = sh[pid][0][:16]
             row[i['notes']] = note(pid, *sh[pid])
