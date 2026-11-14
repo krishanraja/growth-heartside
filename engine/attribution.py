@@ -40,6 +40,9 @@ API_VERSION = '2026-10'
 SCOPE = 'read_orders'
 ENV = ('HEARTSIDE_SHOP_DOMAIN', 'SHOPIFY_CLIENT_ID', 'SHOPIFY_CLIENT_SECRET')
 CREATIVE_ID = re.compile(r'^(IG|FB|TT|YT|PIN|GG|EM|WEB|CR)_(EMO|ENT|UTIL|PROOF|OFFER)_([A-Z]+)_C(\d{2,3})_H(\d{2,3})_V(\d{1,2})_(\d{8})$')
+# A paid order Printful has not shipped within this many days: the order path may be broken (the order workflows
+# keep no successful runs since 10 Nov, so this is the outcome check that still sees them). Counted, never itemised.
+UNFULFILLED_DAYS = 7
 TIERS = ('engine', 'organic_social', 'organic_search', 'paid', 'unverified', 'pending', 'direct')
 # A Meta visit (a Facebook or Instagram referrer, or an fbclid) with no engine creative id and no code could be an
 # ad click whose link carries no paid tag, so it never counts as organic and never crowns a winner until Krish
@@ -84,7 +87,7 @@ QUERY = '''query Orders($first: Int!, $after: String, $query: String) {
   orders(first: $first, after: $after, query: $query, sortKey: CREATED_AT) {
     pageInfo { hasNextPage endCursor }
     nodes {
-      createdAt test cancelledAt tags discountCodes
+      createdAt test cancelledAt tags discountCodes displayFulfillmentStatus
       subtotalPriceSet { shopMoney { amount currencyCode } }
       totalRefundedSet { shopMoney { amount currencyCode } }
       customerJourneySummary {
@@ -238,7 +241,7 @@ def aggregate(orders, start, end):
     zone = ZoneInfo(TIMEZONE)
     registry = load_codes()
     tiers = {t: {'orders': 0, 'net_sales': Decimal(0)} for t in TIERS}
-    families, refunded = {}, 0
+    families, refunded, stuck = {}, 0, 0
     for order in orders:
         if not counted(order):
             continue
@@ -249,6 +252,8 @@ def aggregate(orders, start, end):
         if value <= 0:  # a fully refunded order is not a sale
             refunded += 1
             continue
+        if order.get('displayFulfillmentStatus') == 'UNFULFILLED' and (end - day).days > UNFULFILLED_DAYS:
+            stuck += 1
         tier, family = classify(order, registry)
         tiers[tier]['orders'] += 1
         tiers[tier]['net_sales'] += value
@@ -265,6 +270,7 @@ def aggregate(orders, start, end):
     pair = lambda row: {'orders': row['orders'], 'net_sales': float(row['net_sales'])}
     return {'start': start.isoformat(), 'end': end.isoformat(), 'timezone': TIMEZONE,
             'store': pair(store), 'organic': pair(organic), 'fully_refunded_orders': refunded,
+            'unfulfilled_over_7_days': stuck,
             'tiers': {t: pair(v) for t, v in tiers.items()},
             'families': {f: pair(v) for f, v in sorted(families.items())},
             'definition': DEFINITION}

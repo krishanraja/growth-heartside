@@ -203,8 +203,33 @@ class FakeGrowth:
         return copy.deepcopy(self.state)
 
 
+# A fixture, not the live file: recommendations.json is empty since 14 Nov (its two advice items were withdrawn).
+RECOMMENDATIONS = [
+    {
+        "id": "heartside:rec:product-readiness",
+        "title": "Verify the product before a sales campaign",
+        "why": "The approved gift range differs from the public catalog. Product work is already handed over.",
+        "target_url": "https://github.com/krishanraja/heartside/pull/13",
+        "next_action": "The product owner completes the public gift range and real purchase and print proof, then the engine refreshes readiness. Growth continues with audience materials meanwhile.",
+        "closes_when": "The canonical gifts, prices, purchase flow and print proof agree with the public store. Product evidence stays in heartside.",
+        "close_event": "catalog_ready",
+        "objective_key": "net_sales_usd"
+    },
+    {
+        "id": "heartside:rec:measurement",
+        "title": "Keep measurement evidence current",
+        "why": "Connected analytics in an authoring session do not grant the scheduled runner the same private access. No performance winner can be declared before real publications and observations.",
+        "target_url": "https://github.com/krishanraja/growth-heartside/blob/main/docs/ENGINE.md",
+        "next_action": "Import current verified aggregate Shopify reports and native creative observations through the documented schemas. Configure a licensed provider budget separately before enabling paid generation.",
+        "closes_when": "Current reporting windows and exact published creative revisions have source-backed observations, with missing attribution still explicit.",
+        "close_event": "measurement_current",
+        "objective_key": "organic_orders"
+    }
+]
+
+
 def recommendations():
-    return json.loads((ROOT / 'recommendations.json').read_text())
+    return json.loads(json.dumps(RECOMMENDATIONS))
 
 
 class DigestTests(unittest.TestCase):
@@ -455,7 +480,7 @@ class LoopTests(unittest.TestCase):
         self.assertNotIn('finished_at', started)
         self.assertIn('finished_at', terminal)
         order = [(c[0], c[1].split('?')[0]) for c in self.stand.calls]
-        self.assertEqual(order, [('POST', 'attempts'), ('GET', 'directive'), ('POST', 'reports'),
+        self.assertEqual(order, [('POST', 'attempts'), ('GET', 'directive'), ('GET', 'capabilities'), ('POST', 'reports'),
                                  ('GET', 'reports/' + urllib.parse.quote(run_id, safe='')), ('GET', 'decisions'), ('POST', 'attempts')])
         posted = self.stand.routes('POST', 'reports')[0]
         self.assertEqual(posted[3], run_id)
@@ -463,7 +488,8 @@ class LoopTests(unittest.TestCase):
         self.assertEqual(posted[2]['mode'], 'synthetic')
         summary = json.loads(out)
         self.assertEqual(summary['delivery'], {'replayed': False, 'readback': 'match'})
-        self.assertEqual(summary['decisions'], [{'proposal_id': 'heartside:rec:measurement', 'decision': 'approved', 'binding': 'payload_changed'}])
+        # The live recommendations.json is empty since 14 Nov, so a decision on the withdrawn advice is not in this report.
+        self.assertEqual(summary['decisions'], [{'proposal_id': 'heartside:rec:measurement', 'decision': 'approved', 'binding': 'not_in_this_report'}])
         self.assertEqual((summary['posted'], summary['sent'], summary['spent_usd']), (0, 0, 0))
 
     def test_exact_replay_is_answered_replayed_and_read_back(self):
@@ -544,3 +570,30 @@ class LoopTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class LoopMechanicsTests(unittest.TestCase):
+    """14 Nov: the same two advice proposals were re-sent every day since 19 Oct; a plan could not be sent at all."""
+
+    def test_replaced_proposals_are_withdrawn_only_when_served_and_not_proposed(self):
+        served = {'features': {'withdrawn': True}}
+        taken = protocol.withdrawals(served, [])
+        self.assertEqual({w['proposal_id'] for w in taken}, set(protocol.WITHDRAWN))
+        self.assertTrue(all(0 < len(w['reason']) <= 300 for w in taken))
+        self.assertEqual(protocol.withdrawals({'features': {}}, []), [])
+        self.assertEqual(len(protocol.withdrawals({}, [], {'withdrawn': True})), len(protocol.WITHDRAWN))
+        live = protocol.recommendation_proposals(recommendations())
+        self.assertEqual(protocol.withdrawals(served, live), [])
+
+    def test_the_live_file_proposes_nothing_stale(self):
+        self.assertEqual(json.loads((ROOT / 'recommendations.json').read_text()), [])
+
+    def test_a_plan_goes_behind_its_wall_with_its_words_bound(self):
+        rec = dict(recommendations()[0], wall='strategy', plan='the exact plan')
+        proposal = protocol.recommendation_proposals([rec])[0]
+        self.assertEqual((proposal['stage'], proposal['wall'], proposal['kind'], proposal['exact_payload']),
+                         ('plan', 'strategy', 'prepared', 'the exact plan'))
+        changed = protocol.recommendation_proposals([dict(rec, plan='another plan')])[0]
+        self.assertNotEqual(proposal['payload_sha256'], changed['payload_sha256'])
+        with self.assertRaises(ValueError):
+            protocol.recommendation_proposals([dict(rec, wall='none')])

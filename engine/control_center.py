@@ -196,6 +196,13 @@ class Client:
             raise ProtocolError('invalid_directive', status)
         return body
 
+    def capabilities(self):
+        """The flags this deployment serves this engine (capabilities.features), or {} when it is not answered."""
+        status, body = self._call('GET', 'capabilities')
+        body = self._expect(status, body, allow_missing=True) or {}
+        features = body.get('features')
+        return features if isinstance(features, dict) else {}
+
     def post_report(self, report):
         status, body = self._call('POST', 'reports', report, {'Idempotency-Key': report['run_id']})
         body = self._expect(status, body)
