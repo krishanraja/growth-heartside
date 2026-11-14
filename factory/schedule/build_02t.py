@@ -43,11 +43,6 @@ TAIL = 'Gifts from your dog. Painted lovingly in your style of choice using our 
 PLAT = [('tiktok', 0, 'TT', 'tiktok'), ('instagram', 5, 'IG', 'instagram'), ('facebook', 10, 'FB', None)]
 
 
-PROFILES = paths.set_profiles()
-HOLD = (' HOLD, no counted path: the profile link is not the tracked profile URL, so an order from this post is not '
-        'counted (python3 growth.py paths). Post it only once Krish sets the profile link or registers its code.')
-
-
 def plus(t, m):
     h, mi = map(int, t.split(':')); mi += m
     return f'{h + mi // 60}:{mi % 60:02d}'
@@ -102,15 +97,13 @@ def main(src, shas, out):
                 link = ('https://heartside.io?utm_source=facebook&utm_medium=organic_video&utm_campaign=hs_growth_202611'
                         f'&utm_content={cid}')
                 row[i['caption']], row[i['link']] = f'{line}\n\n{TAIL}\n{link}', link
-            elif plat in PROFILES:  # the profile link is the tracked profile URL, so "Link in bio" is counted
+            else:
                 row[i['caption']] = f'{line}\n\n{TAIL} Link in bio.\n\n{tags.format(p=tagp)}'
-                row[i['link']] = paths.profile_url(plat)
-            else:  # no counted path yet: no "Link in bio" promise, and the row says why it is held
-                row[i['caption']] = f'{line}\n\n{TAIL}\n\n{tags.format(p=tagp)}'
-                row[i['link']] = ''
+                # Plumbing only: once Krish has set this profile's link to the tracked profile URL, the row names it.
+                row[i['link']] = paths.profile_url(plat) if plat in paths.set_profiles() else 'link in bio'
             row[i['creative_id']] = cid
             row[i['lock_fingerprint']] = sh[pid][0][:16]
-            row[i['notes']] = note(pid, *sh[pid]) + ('' if plat == 'facebook' or plat in PROFILES else HOLD)
+            row[i['notes']] = note(pid, *sh[pid])
             new.append(row)
     new.sort(key=lambda r: (r[i['date_ET']], int(r[i['time_ET']].split(':')[0]) * 60 + int(r[i['time_ET']].split(':')[1])))
     w = csv.writer(open(out, 'w', encoding='utf-8', newline=''))
