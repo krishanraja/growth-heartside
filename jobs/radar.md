@@ -1,5 +1,7 @@
 # Job: radar (every day)
 
+**Off the schedule since 14 November 2026** (Ruling, Krish, 2026-11-14: "I agree with everything else" to the recommendation "stop the daily content pack nobody reads"). This job never falls due and is not part of `growth.py run --job all`. It runs only when a session or Krish names it: `python3 growth.py run --job radar`.
+
 Kind `radar`. Part 1 in `PLAYBOOK.md`: demand and the buyer's words. Time for
 Krish: about 5 minutes.
 

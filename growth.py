@@ -1241,9 +1241,10 @@ def doctor():
         print(f'note      purchase-ready gifts: {sum(o["ready"] for o in ready_offers)}/{len(ready_offers)}; run growth.py readiness for details')
     else:
         line(False, 'a sync on this machine', 'run python3 growth.py sync')
-    autos = json.load(open(os.path.join(HERE, 'automations.json')))['automations']
+    autos_config = json.load(open(os.path.join(HERE, 'automations.json')))
+    autos = autos_config['automations'] + autos_config.get('off_schedule', [])
     line(all(os.path.exists(os.path.join(HERE, a['job'])) for a in autos),
-         f'automations.json ({len(autos)} automations, every job file present)', 'a job file named in automations.json is missing')
+         f'automations.json ({len(autos_config["automations"])} scheduled, {len(autos_config.get("off_schedule", []))} off the schedule, every job file present)', 'a job file named in automations.json is missing')
     try:
         os.makedirs(os.path.join(LOCAL, 'packs'), exist_ok=True)
         line(True, 'local/ is writable (packs and lists stay on this machine)')
@@ -1491,7 +1492,11 @@ def self_test():
     t('canon sources that disagree on a price are a conflict', any(o['conflict'] for o in offers.canonical_offers(
         {'docs/ECONOMICS.md': gift, 'README.md': 'The configured retail baseline is $49 mug.'})))
     agents = open(os.path.join(HERE, 'AGENTS.md')).read()
-    autos = json.load(open(os.path.join(HERE, 'automations.json')))['automations']
+    autos_config = json.load(open(os.path.join(HERE, 'automations.json')))
+    autos = autos_config['automations']
+    for off in autos_config.get('off_schedule', []):
+        t(f'off-schedule job "{off["name"]}" names a job that exists', os.path.exists(os.path.join(HERE, off['job'])))
+        t(f'off-schedule job "{off["name"]}" never asks to post', not re.search(r'\b(post|publish|send)\b', off['prompt'], re.I))
     for f in sorted(os.listdir(os.path.join(HERE, 'jobs'))):
         body = open(os.path.join(HERE, 'jobs', f)).read()
         m = re.search(r'Kind `(\w+)`', body)
@@ -1543,7 +1548,7 @@ def self_test():
         t('the social history restores both engagement tests and the two channels still monitored',
           len(_social.status(db)['tests']) == 2 and _social.status(db)['monitor_remaining'] == ['instagram', 'pinterest'])
     crew = json.load(open(os.path.join(HERE, 'crew/registry.json')))['crew']
-    t('crew/registry.json maps each specialist to the seven channel tasks', crew_errors(crew, {a['job'] for a in autos}) == [])
+    t('crew/registry.json maps each specialist to the seven channel tasks', crew_errors(crew, {a['job'] for a in autos + autos_config.get('off_schedule', [])}) == [])
     t('a crew with an unknown task, no signal, an unscheduled job or another platform is refused',
       len(crew_errors([{'id': 'x', 'channels': ['youtube'], 'signal': '', 'tasks': {'viral': {'job': 'jobs/none.md'}}}], set())) == 3)
     vague = {t: {'job': 'jobs/daily-pack.md', 'accomplishes': 'post more'} for t in ('reel-script', 'caption-set', 'channel-plan')}
@@ -1555,7 +1560,7 @@ def self_test():
       'two specialists say the same thing for one task' in crew_errors(
           [{'id': 'a', 'channels': ['tiktok'], 'signal': 's', 'tasks': same}, {'id': 'b', 'channels': ['instagram', 'facebook'], 'signal': 's', 'tasks': same}],
           {'jobs/daily-pack.md'}))
-    t('every job file has an automation', {a['job'] for a in autos} == {f'jobs/{f}' for f in os.listdir(os.path.join(HERE, 'jobs'))})
+    t('every job file is scheduled or listed off the schedule, once', sorted(a['job'] for a in autos + autos_config.get('off_schedule', [])) == sorted(f'jobs/{f}' for f in os.listdir(os.path.join(HERE, 'jobs'))))
     for f in ('PLAYBOOK.md', 'BROWSER.md', 'knowledge/README.md', 'knowledge/organic-pet-commerce-engine.md', 'knowledge/organic-pet-growth-corpus.md',
               'knowledge/COPY-DOCTRINE.md'):
         t(f'{f} exists', os.path.exists(os.path.join(HERE, f)))

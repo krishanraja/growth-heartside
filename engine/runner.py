@@ -367,9 +367,11 @@ def tick(root, growth, now=None, job=None, force=False):
     config = json.loads((Path(root) / 'automations.json').read_text())
     day = now.astimezone(ZoneInfo(config['timezone'])).date().isoformat()
     names = [Path(a['job']).stem for a in config['automations']]
-    if job and job not in names + ['all']:
+    # Jobs taken off the schedule (automations.json off_schedule) never fall due and are not in 'all'; each runs when named.
+    on_request = [Path(a['job']).stem for a in config.get('off_schedule', [])]
+    if job and job not in names + on_request + ['all']:
         raise ValueError('job must be one of the declared jobs in automations.json, or all')
-    due = [(name, day) for name in names if job == 'all' or job == name] if job else due_jobs(config, now)
+    due = [(name, day) for name in names + on_request if job == 'all' and name in names or job == name] if job else due_jobs(config, now)
     index = assets.local_path(root, 'local/automation/index.json')
     with lease(root, now):
         current = growth.sync(quiet=True) if growth else {}

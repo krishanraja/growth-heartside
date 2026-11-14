@@ -1,5 +1,5 @@
 {
-  "_about": "Eight canonical jobs, New York time. GitHub Actions executes a persistent draft-only fallback every 15 minutes and honors these schedules with DST. Connected authoring sessions can follow the richer job prompts. No social publishing, paid generation or Control Centre integration is enabled.",
+  "_about": "Four scheduled jobs, New York time. GitHub Actions executes a persistent draft-only fallback every 15 minutes and honors these schedules with DST. Connected authoring sessions can follow the richer job prompts. No social publishing, paid generation or Control Centre integration is enabled. The jobs under off_schedule never fall due and are not part of --job all; each still runs when named (growth.py run --job <name>).",
   "timezone": "America/New_York",
   "run_in": "this local project (not a new worktree), so every run shares local/ (the sync, the packs, the creative record and the creator list)",
   "access": "network on (github.com, raw.githubusercontent.com, heartside.io and the channels); the signed-in browser when available",
@@ -18,30 +18,6 @@
       "prompt": "Run jobs/numbers.md as AGENTS.md says."
     },
     {
-      "name": "Heartside growth: radar",
-      "schedule": "RRULE:FREQ=DAILY;BYHOUR=6;BYMINUTE=30",
-      "job": "jobs/radar.md",
-      "prompt": "Run jobs/radar.md as AGENTS.md says."
-    },
-    {
-      "name": "Heartside growth: day pack",
-      "schedule": "RRULE:FREQ=DAILY;BYHOUR=9;BYMINUTE=0",
-      "job": "jobs/daily-pack.md",
-      "prompt": "Run jobs/daily-pack.md as AGENTS.md says."
-    },
-    {
-      "name": "Heartside growth: creators",
-      "schedule": "RRULE:FREQ=WEEKLY;BYDAY=TU;BYHOUR=7;BYMINUTE=0",
-      "job": "jobs/creators.md",
-      "prompt": "Run jobs/creators.md as AGENTS.md says."
-    },
-    {
-      "name": "Heartside growth: store and search",
-      "schedule": "RRULE:FREQ=WEEKLY;BYDAY=SA;BYHOUR=7;BYMINUTE=0",
-      "job": "jobs/store.md",
-      "prompt": "Run jobs/store.md as AGENTS.md says."
-    },
-    {
       "name": "Heartside growth: report",
       "schedule": "RRULE:FREQ=WEEKLY;BYDAY=SU;BYHOUR=7;BYMINUTE=0",
       "job": "jobs/report.md",
@@ -52,6 +28,29 @@
       "schedule": "RRULE:FREQ=WEEKLY;BYDAY=WE;BYHOUR=7;BYMINUTE=30",
       "job": "jobs/answers.md",
       "prompt": "Run jobs/answers.md as AGENTS.md says."
+    }
+  ],
+  "off_schedule_ruling": "Ruling (Krish, 2026-11-14): stop the daily content pack nobody reads; the day pack, radar, creators and store jobs come off the schedule (his words: \"I agree with everything else\"). CHANGES.md, 2026-11-14.",
+  "off_schedule": [
+    {
+      "name": "Heartside growth: radar",
+      "job": "jobs/radar.md",
+      "prompt": "Run jobs/radar.md as AGENTS.md says."
+    },
+    {
+      "name": "Heartside growth: day pack",
+      "job": "jobs/daily-pack.md",
+      "prompt": "Run jobs/daily-pack.md as AGENTS.md says."
+    },
+    {
+      "name": "Heartside growth: creators",
+      "job": "jobs/creators.md",
+      "prompt": "Run jobs/creators.md as AGENTS.md says."
+    },
+    {
+      "name": "Heartside growth: store and search",
+      "job": "jobs/store.md",
+      "prompt": "Run jobs/store.md as AGENTS.md says."
     }
   ]
 }
