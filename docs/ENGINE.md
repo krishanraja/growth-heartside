@@ -312,6 +312,10 @@ A manual run from the Actions tab does the same, as `live` or `synthetic`.
    back and compares `payload_sha256`, reads Krish's decisions from the last
    seven days and closes the attempt as `succeeded`, `failed` with a lower_snake
    code, or `unknown` when a write's outcome cannot be read back.
+   Before the report it reads Krish's decisions on `review/queue.json`'s asks (I-24): the open asks go first,
+   behind their wall, in priority order; an ask he answered on its current words is not sent again and is
+   listed as "Answers to apply" by id; decisions it cannot read hold `decisions_unread`. `growth.py cc queue`
+   is the same read for a session's start.
 4. If a step between them fails, `growth.py cc finish` closes the attempt as
    failed with `checkpoint_restore_failed`.
 
