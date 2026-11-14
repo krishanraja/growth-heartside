@@ -1,8 +1,10 @@
 # The daily credits session
 
-Krish pays monthly for credits that Higgsfield, Runway and 21st Dev wipe at each reset. Ruling (Krish, 2026-10-29): this engine may spend up to its share of each pool every cycle with no per-batch approval, and reports what it made. The engine's GitHub runner holds no generator keys, so the spending happens here. One scheduled Claude session runs this file each day, with the Control Center, Higgsfield, Runway and 21st Dev connectors attached (Krish, 2026-10-29: "Scheduled sessions").
+**Status, read live 14 Nov:** the scheduled task that runs this session ("Spend Heartside's prepaid credit share") is disabled on purpose and has not run since 4 November. Nothing spends Heartside's share until Krish turns it back on.
 
-It is not one of the seven jobs in `automations.json`. Control Center's scheduled task runs it, not the Codex or Cowork automations.
+Krish pays monthly for credits that Higgsfield, Runway and 21st Dev wipe at each reset. Ruling (Krish, 2026-10-29): this engine may spend up to its share of each pool every cycle with no per-batch approval, and reports what it made. The engine's GitHub runner holds no generator keys, so the spending happens here. One scheduled Claude session runs this file, when its task is on, with the Control Center, Higgsfield, Runway and 21st Dev connectors attached (Krish, 2026-10-29: "Scheduled sessions").
+
+It is not one of the eight jobs in `automations.json`. Control Center's scheduled task runs it, not the Codex or Cowork automations.
 
 ## Read first
 

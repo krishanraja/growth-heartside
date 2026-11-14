@@ -661,6 +661,8 @@ def main(root, growth, action, mode, code=None, env=None):
     token = env.get('CONTROL_CENTER_ENGINE_TOKEN', '').strip()
     base = env.get('CONTROL_CENTER_URL', '').strip() or DEFAULT_URL
     if not token:
+        if action == 'kits':  # a visible hold on the Wednesday brief, never a silent fall back to bank order
+            ai_answers.hold_kits(root, 'the Control Center engine token is not given to this job, so AEO-Engine\'s kits were not read')
         print('Not ready: CONTROL_CENTER_ENGINE_TOKEN is not set in this environment. No request was made.')
         return 1
     try:

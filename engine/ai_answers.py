@@ -326,6 +326,35 @@ def save(root, found, now=None):
         return False
 
 
+KITS_HOLD = 'local/control-center/kits-hold.json'
+
+
+def hold_kits(root, reason):
+    """Record why this machine could not read AEO's kits, so the Wednesday brief says so instead of silently using
+    bank order. Words only, never a token. Never raises."""
+    try:
+        path = Path(root) / KITS_HOLD
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({'reason': str(reason)[:300]}))
+    except OSError:
+        pass
+
+
+def clear_kits_hold(root):
+    try:
+        (Path(root) / KITS_HOLD).unlink()
+    except OSError:
+        pass
+
+
+def kits_hold(root):
+    """The recorded reason AEO's kits were not read on this machine, or None."""
+    try:
+        return json.loads((Path(root) / KITS_HOLD).read_text()).get('reason') or None
+    except (OSError, ValueError, AttributeError):
+        return None
+
+
 def saved_kits(root, now=None):
     """The kits the last read kept (`save`), or none when there are none, they are over 8 days old, or unreadable."""
     try:
@@ -346,12 +375,16 @@ def fetch(client, root):
     kits`). Read only. One line, counts only. Never raises."""
     s = client.answers_standing()
     if not isinstance(s, dict):
+        hold_kits(root, 'no AI-answer standing could be read from Control Center')
         return 'AI answers: no standing could be read for Heartside, so no kit was kept.'
     if not isinstance(s.get('kits'), list):
+        clear_kits_hold(root)  # read, and Control Center serves no kits yet: not a hold
         return 'AI answers: Control Center does not serve AEO-Engine\'s kits yet, so none was kept.'
     found = kits(s)
     if not save(root, found):
+        hold_kits(root, 'AEO-Engine\'s kits could not be kept on this machine')
         return 'AI answers: AEO-Engine\'s kits could not be kept on this machine.'
+    clear_kits_hold(root)
     return kits_line(found)
 
 
