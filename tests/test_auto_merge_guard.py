@@ -57,6 +57,26 @@ class AutoMergeGuard(unittest.TestCase):
         self.assertIn('-f .github/scripts/auto-merge-pick.jq', wf)
         self.assertIn('isCrossRepository,author,headRepositoryOwner', wf)
 
+    def test_a_merge_starts_the_generated_closeout_fold(self):
+        # A merge made with the Actions token starts no push workflow, so the
+        # generated fold in harness-repository-context.yml never ran after one
+        # and closeout notes waited on main (found 2026-11-14). The merge now
+        # starts closeout-fold.yml, whose fold is the generated job's, word for word.
+        wf = WORKFLOW.read_text(encoding='utf-8')
+        self.assertIn('\n  actions: write\n', wf)
+        self.assertRegex(wf, r'gh pr merge "\$pr"[^\n]*\n[^\n]*\n\s*#[^\n]*\n\s*gh workflow run closeout-fold\.yml -R "\$REPO" --ref main')
+        workflows = ROOT / '.github' / 'workflows'
+        fold = (workflows / 'closeout-fold.yml').read_text(encoding='utf-8')
+        self.assertIn('\non:\n  workflow_dispatch:\n', fold)
+        self.assertIn('concurrency:\n  group: closeout-fold\n  cancel-in-progress: false\n', fold)
+        generated = (workflows / 'harness-repository-context.yml').read_text(encoding='utf-8')
+
+        def steps(text):
+            return text[text.rindex('      - name: Fold closeout notes into NOW.md'):].rstrip()
+
+        self.assertIn('harness-closeout.mjs --fold', steps(generated))
+        self.assertEqual(steps(fold), steps(generated))
+
 
 if __name__ == '__main__':
     unittest.main()

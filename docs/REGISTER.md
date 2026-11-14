@@ -88,6 +88,7 @@ In the Test column, "self-test" means `/home/user/growth-heartside/growth.py` `s
 | 66 | 12 Nov | `net_sales_usd` was missing on every report: it read only imported Shopify windows, and none covers the month | 13 Nov, the attribution read stores the London month (`windows` `month`) and `net_sales` reads it | `protocol.net_sales` | `test_attribution::test_the_month_window_feeds_net_sales` |
 | 67 | Latent | An untagged Facebook or Instagram visit (or an fbclid) counted as organic, though an ad link with no paid tag looks the same | 13 Nov, `unverified` tier until Krish answers the two ads questions (`META_UNVERIFIED`) | `attribution.classify` | `test_attribution::test_a_meta_visit_with_no_engine_id_or_code_is_unverified_until_the_ads_questions_are_answered` |
 | 68 | Latent | The attribution read skipped any run within six hours of the last, so a six-hourly runner would read only every other run | 13 Nov, five hours | `attribution.run` | (timing; read in the runner's log) |
+| 69 | 14 Nov | Closeout notes stopped folding: auto-merge.yml merges with the Actions token, whose push starts no workflow, and the generated fold in `harness-repository-context.yml` runs only on a push, so a merged note waited on main | 14 Nov, `auto-merge.yml` starts `.github/workflows/closeout-fold.yml` on main after each merge | `.github/workflows/closeout-fold.yml` (the generated fold's steps, word for word) | `test_auto_merge_guard::test_a_merge_starts_the_generated_closeout_fold` |
 
 ## B. Themes
 
@@ -96,7 +97,7 @@ In the Test column, "self-test" means `/home/user/growth-heartside/growth.py` `s
 - **Provenance and media:** 21–27.
 - **Attribution:** 28–30.
 - **Protocol and reporting:** 31–36, 53, 64.
-- **Scheduling and runtime:** 37–48, 61, 65.
+- **Scheduling and runtime:** 37–48, 61, 65, 69.
 - **Approvals and authority:** 49–55.
 - **Docs drift:** 9, 10, 17, 18, 27, 34, 56–60.
 
