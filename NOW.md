@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- Heartside's decision, spend, copy and delete asks now reach Krish's one list (I-24). review/queue.json holds the 19 open asks from docs/plans/A1.md; the daily Control Center run proposes the top 3 behind their wall, reads his answers back by id, stops asking an answered one and reports "Answers to apply". The review board keeps posts and their media. (2026-11-14)
 - The day pack, radar, creators and store jobs are off the schedule (Krish, 14 Nov, item 5.6). Four jobs stay scheduled: sync, numbers, answers and the Sunday report; the four run only when named. (2026-11-14)
 - the Saturday store job writes one line per gift (id, title, canonical price, ready or why not) instead of pasting the whole catalog, so its pack passes the engine's own check; it had failed four runs on 14 Nov (over 6,000 characters, untracked store links). (2026-11-14)
 - docs/control-center/ is Control Center's protocol bundle 1.33.0, byte for byte (bundle_sha256 4b7175a8aebbb8979eaefbeea1b7f0f44f2cffa0bbba9cea341da784fe7fde4d), the last protocol version of 14 November. (2026-11-14)
@@ -77,7 +78,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-14): Krish switches off any Codex or Cowork scheduled task on his machine that still runs the day pack, radar, creators or store job.
+- Next (2026-11-14): After the first live Control Center run, a session runs python3 growth.py cc queue and applies each answer it lists.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
