@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- closeout notes now fold into NOW.md after every merge: auto-merge.yml starts .github/workflows/closeout-fold.yml on main by workflow_dispatch, because the merge's own push, made with the Actions token, starts no workflow and the generated fold in harness-repository-context.yml ran only on a push (register row 69). (2026-11-14)
 - config/drive-map.json declares the Heartside root in drive_map (drive-map/1); engine/drive_library.py audits the library Control Center serves in the directive (protocol 1.35.0) with drive_audit.audit on every run, counts only, unknown never clean. Served once Control Center's DRIVE_LIBRARY_PART flag is on. (2026-11-14)
 - our own pull requests (Krish or the Actions bot, branch in this repository, ready, at the commit that passed) now merge themselves when every "check" run on that commit is green (.github/workflows/auto-merge.yml, rule .github/scripts/auto-merge-pick.jq, tested). Forks, drafts and strangers wait for a person. (2026-11-14)
 - Heartside's decision, spend, copy and delete asks now reach Krish's one list (I-24). review/queue.json holds the 19 open asks from docs/plans/A1.md; the daily Control Center run proposes the top 3 behind their wall, reads his answers back by id, stops asking an answered one and reports "Answers to apply". The review board keeps posts and their media. (2026-11-14)
@@ -80,7 +81,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-14): after Control Center's first complete Drive read, confirm a run's summary shows drive.state checked.
+- Next (2026-11-14): after the next auto-merge, read back that closeout-fold.yml ran and now-notes/ is empty on main.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
