@@ -46,13 +46,6 @@ class PathTests(unittest.TestCase):
             tier, family = attribution.classify(order, {})
             self.assertEqual(tier, 'engine', p); self.assertTrue(family.endswith('_OFFER_C900'))
 
-    def test_code_drafts_cover_only_uncounted_rows_and_fit_the_code_shape(self):
-        rows = paths.audit([row('tiktok', TT_CID, 'Link in bio.'), row('facebook', FB_CID, growth.tracked('https://heartside.io', FB_CID))], {}, {})
-        drafts = paths.code_drafts(rows)
-        self.assertEqual([d['code'] for d in drafts], ['HEART171T'])
-        self.assertRegex(drafts[0]['code'], growth.CODE_SHAPE.pattern.strip('\\b'))
-        self.assertTrue(attribution.FAMILY.match(drafts[0]['family']))
-
     def test_the_shipped_profile_config_sets_nothing(self):
         self.assertEqual(paths.set_profiles(), {})
 

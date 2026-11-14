@@ -10,8 +10,7 @@ through a path the attribution read counts:
   none           anything else, including "Link in bio" on a profile whose link is not set, and every TikTok
                  "Link in bio" while TikTok's profile shows no clickable website (docs/briefs/2026-11-10-codes-biolink-survey.md).
 
-Rows whose path is `none` are the ones to hold or fix before they go out: they can sell, but no order they cause is
-counted. Nothing here writes to a Sheet, a store, a profile or config: Krish sets a profile link and creates a code
+A row whose path is `none` can sell, but no order it causes is counted. Nothing here writes to a Sheet, a store, a profile or config: Krish sets a profile link and creates a code
 himself, then records it (rule 1).
 """
 import csv
@@ -93,25 +92,6 @@ def audit(rows, registry=None, profiles=None):
                     'post_id': row.get('post_id') or '', 'creative_id': row.get('creative_id') or '',
                     'path': path, 'detail': why})
     return out
-
-
-def code_drafts(rows):
-    """One no-discount code draft per uncounted row: the word from the post id, the concept number, the platform."""
-    letter = {'tiktok': 'T', 'instagram': 'I', 'facebook': 'F'}
-    out = []
-    for r in rows:
-        cid = r['creative_id']
-        parts = cid.split('_')
-        if r['path'] != 'none' or len(parts) < 4 or r['platform'] not in letter:
-            continue
-        concept = parts[3][1:]
-        out.append({'post_id': r['post_id'], 'platform': r['platform'], 'family': f'{parts[0]}_{parts[1]}_{parts[3]}',
-                    'code': f'HEART{concept}{letter[r["platform"]]}', 'discount': None, 'creative_id': cid})
-    seen, unique = set(), []
-    for d in out:
-        if d['code'] not in seen:
-            seen.add(d['code']); unique.append(d)
-    return unique
 
 
 def render(audited):

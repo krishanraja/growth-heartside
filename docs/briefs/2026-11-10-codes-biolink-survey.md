@@ -69,11 +69,9 @@ approved and already scheduled, so changing their captions would mean pulling sc
 The smallest change that counts them all is the profile link itself. `python3 growth.py paths <schedule.csv>` prints a
 tracked profile URL per platform, each under a reserved creative id (`<P>_OFFER_BIO_C900_H01_V1_20261114`). Set as the
 profile's website, every visit it brings lands in the engine tier as family `<P>_OFFER_C900`, so the North Star number
-sees it, at platform level rather than per post. Codes then add per-post credit where they are worth it.
+sees it, at platform level rather than per post. 
 
 - **Instagram:** Krish sets the profile website to the Instagram URL `growth.py paths` prints. Recommended yes.
-- **TikTok:** the same, if the profile offers a website field; if it does not, the code is the only counted path and
-  `growth.py paths --codes` drafts one no-discount code per uncounted TikTok row.
+- **TikTok:** the same, if the profile offers a website field; otherwise its rows stay uncounted until a code is registered.
 - **Then:** a session records the date in `config/profile-links.json` under `set`, and `growth.py paths` and
-  `factory/schedule/build_02t.py` count those rows from that commit. Until then the builder writes no "Link in bio"
-  promise on a profile whose link is not set, and the row's notes say it is held.
+  `factory/schedule/build_02t.py` count those rows from that commit. From then the builder writes that URL in the row's link column.
