@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- `python3 growth.py paths <schedule.csv>` reports each Schedule row's counted path to an order (tracked link, registered code, tracked profile link, or none) and prints a tracked profile URL per platform under a reserved creative id (`<P>_OFFER_BIO_C900`), which attribution counts in the engine tier. Read on 14 Nov from the 02t Sheet: only the Facebook rows carry a counted path; the Instagram and TikTok rows say "link in bio". `config/profile-links.json` records which profiles Krish has set (none yet), and the 02t builder then names that URL in the link column. No code, caption or post was created. (2026-11-14)
 - The daily run now says when the directive does not serve AI answers ("AI answers: not served by today's directive."), which is why no request to AEO-Engine was ever filed: Control Center holds none for Heartside on 13 November. A standing Control Center could not read is never taken as no request on file, and the run re-asks AEO only when the bank's valid questions outgrow the request on file or, once served, the request's digest differs. Once Control Center serves features.ai_answers_detail (proposed protocol 1.23.0; Ruling, Krish, 2026-11-13: AEO's win kits reach him through each venture's own growth engine), `growth.py cc kits` keeps AEO's kits in the gitignored local/control-center/ai-answers.json, the Wednesday Answers brief takes the top two kits before bank order, and published bank rows are told to AEO as shipped, once per change. Logs carry counts only. (2026-11-13)
 - One plan now holds everything lined up for this engine: docs/plans/A1.md consolidates the Order Loop exhibit, LOOP.md, GET-GOING's open steps, the review board's waiting items, the Codex queue, Sprint 120, SCHEDULE, PAID-BOOSTS, REGISTER and the briefs, with duplicates merged, stale items closed, and the unbuilt steps (buy lane in production, batch Sheet builder, Day 0 reads, Buffer reader, ledger and registry, test-card reader, autonomy loop) written as briefs. GET-GOING points to it. (2026-11-13)
 - The Order Loop plan is built in its first three steps and merged to main (pull requests #78 and #79): the claims gate refuses words on a gift, handmade, uninspected quality, delivery promises and deal wording, and corrected four day-pack captions that put a note on the gift; net_sales_usd is measured from the runner's own read through a London-month window; untagged Meta visits are unverified until the ads questions are answered; and factory/loop.py ranks the buy lane on fields each platform shows, with orders as a gate. The exhibit, rulings and test cards are in docs/plans/2026-11-13-order-loop.md. (2026-11-13)
@@ -69,12 +70,12 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-13): Krish decides whether the hosted engine.yml Wednesday job may carry the Control Center engine token so it can read kits; until then only a session sees them.
+- Next (2026-11-14): Krish sets the Instagram (and, if offered, TikTok) profile website to the URL `growth.py paths` prints; a session then records the date in `config/profile-links.json`.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Step 2 of `docs/GET-GOING.md` (a daily Shopify sales import, so `net_sales_usd` is measured) may need a credential only Krish can add; the step says to report a hold naming the secret.
-- North Star check (2026-11-13): holds.
+- North Star check (2026-11-14): holds.
 
 ## Read next
 
