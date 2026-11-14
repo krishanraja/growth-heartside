@@ -1,0 +1,4 @@
+{
+  "schema": "The channels Krish has approved for posting. The engine proposes a post only on these (engine/protocol.py post_proposals); a creative made for any other channel is held, never put on his list. Only Krish adds a channel: Pinterest and Threads are not posting channels until he says so (docs/CHANNEL-TASKS.md). A session records his word here with the date.",
+  "posting": {"instagram": "2026-10-19", "facebook": "2026-10-19", "tiktok": "2026-10-19"}
+}

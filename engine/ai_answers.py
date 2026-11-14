@@ -1,4 +1,4 @@
-"""AI answers through AEO-Engine, the one specialist (protocol 1.22.0, and proposed 1.23.0 where served).
+"""AI answers through AEO-Engine, the one specialist (protocol 1.22.0, and 1.26.0 where served).
 
 Ruling (Krish, 2026-11-12): "AEO-Engine becomes the one specialist that every
 venture's growth engine calls for its AI-answer work. Each venture's tile
@@ -16,7 +16,7 @@ So this engine never asks an AI assistant itself. Each run:
   names heartside.io, so Control Center can make Heartside's subject;
 - asks again, replacing the request on file, when the bank's valid questions
   are no longer the ones on file. Where the request carries its `digest`
-  (proposed 1.23.0), that means the digest of the bank's list (`digest`,
+  (1.26.0), that means the digest of the bank's list (`digest`,
   Control Center's own definition) differs from it, and this engine's last ask
   was not for exactly that list (the short digest the newest such line in its
   own recent reports carries, read back), so two readings that never meet
@@ -33,8 +33,8 @@ So this engine never asks an AI assistant itself. Each run:
   Control Center could not read the standing, so it never means "no request on
   file", and a request on file is never replaced on a guess.
 
-Where Control Center serves the detail (`features.ai_answers_detail`, proposed
-1.23.0; Ruling, Krish, 2026-11-13: AEO's win kits reach him through each
+Where Control Center serves the detail (`features.ai_answers_detail`,
+1.26.0; Ruling, Krish, 2026-11-13: AEO's win kits reach him through each
 venture's own growth engine), the run also:
 
 - reads AEO's win kits in the standing (`kits`), says how many in one line,
@@ -137,7 +137,7 @@ def clean(text):
 
 
 def digest(texts):
-    """Control Center's `request.digest` of a list of questions (proposed 1.23.0), exactly.
+    """Control Center's `request.digest` of a list of questions (1.26.0), exactly.
 
     Each question trimmed, with internal whitespace collapsed to one space (JavaScript's \\s), sorted by code point,
     serialised as compact JSON with non-ASCII left unescaped (JSON.stringify; json.dumps with separators (',', ':')
@@ -150,7 +150,7 @@ def digest(texts):
 
 
 def on_record(s):
-    """The request on file's `digest`, or None when it carries none (before 1.23.0) or it is not a lowercase SHA-256."""
+    """The request on file's `digest`, or None when it carries none (before 1.26.0) or it is not a lowercase SHA-256."""
     request = s.get('request') if isinstance(s, dict) else None
     value = request.get('digest') if isinstance(request, dict) else None
     return value if isinstance(value, str) and HEX64.match(value) else None
@@ -186,7 +186,7 @@ def served(directive):
 
 def detailed(directive):
     """Whether Control Center serves the standing's detail: kits, the request's digest, and `shipped` and `mode` on
-    `POST answers` (features.ai_answers_detail, proposed 1.23.0). Only a literal true switches it on."""
+    `POST answers` (features.ai_answers_detail, 1.26.0). Only a literal true switches it on."""
     return _features(directive).get('ai_answers_detail') is True
 
 
@@ -215,7 +215,7 @@ def line(s):
 
 
 # ---------------------------------------------------------------------------
-# AEO's win kits (proposed 1.23.0): a brief, never copy. Read loosely, kept small.
+# AEO's win kits (1.26.0): a brief, never copy. Read loosely, kept small.
 # ---------------------------------------------------------------------------
 def _text(value, limit=300):
     """One line of text, whitespace collapsed, or None when it is not a string, is empty or is over the limit."""
@@ -412,7 +412,7 @@ def misses_and_moves(s):
 
 
 # ---------------------------------------------------------------------------
-# What has shipped (proposed 1.23.0): the bank's published answers.
+# What has shipped (1.26.0): the bank's published answers.
 # ---------------------------------------------------------------------------
 def shipped(root):
     """The bank's published answers as AEO's `shipped` declarations, `{question, url, shipped_at}`, best first.
