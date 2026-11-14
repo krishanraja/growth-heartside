@@ -212,12 +212,27 @@ class AttributionTests(unittest.TestCase):
         for leak in ('Kuku', 'Sam', 'dog=', 'instagram.com/p', 'createdAt'):
             self.assertNotIn(leak, text)
 
+    def test_paid_orders_unshipped_over_a_week_are_counted_never_itemised(self):
+        stuck = order(created='2026-10-01T15:00:00Z', displayFulfillmentStatus='UNFULFILLED')
+        fresh = order(created='2026-10-27T15:00:00Z', displayFulfillmentStatus='UNFULFILLED')
+        shipped = order(created='2026-10-01T15:00:00Z', displayFulfillmentStatus='FULFILLED')
+        refunded = order(created='2026-10-01T15:00:00Z', displayFulfillmentStatus='UNFULFILLED', refunded='129.00')
+        reading = attribution.aggregate([stuck, fresh, shipped, refunded], dt.date(2026, 10, 1), dt.date(2026, 10, 29))
+        self.assertEqual(reading['unfulfilled_over_7_days'], 1)
+        import sqlite3
+        from engine import protocol
+        db = sqlite3.connect(':memory:'); db.row_factory = sqlite3.Row
+        self.assertEqual(protocol.order_holds(db), [])
+        attribution.store(db, 'trailing_28d', reading)
+        hold = protocol.order_holds(db)
+        self.assertEqual(len(hold), 1); self.assertIn('1 paid order', hold[0]['detail'])
+
     def test_the_query_asks_for_no_customer_fields(self):
         import re
         body = attribution.QUERY.split('{', 1)[1]
         words = set(re.findall(r'(?<![$\w])([A-Za-z_]\w*)', re.sub(r'\([^)]*\)', '', body)))
         self.assertEqual(words, {'orders', 'pageInfo', 'hasNextPage', 'endCursor', 'nodes', 'createdAt', 'test', 'cancelledAt',
-                                 'tags', 'discountCodes', 'subtotalPriceSet', 'totalRefundedSet', 'shopMoney', 'amount', 'currencyCode',
+                                 'tags', 'discountCodes', 'displayFulfillmentStatus', 'subtotalPriceSet', 'totalRefundedSet', 'shopMoney', 'amount', 'currencyCode',
                                  'customerJourneySummary', 'ready', 'firstVisit', 'lastVisit', 'landingPage', 'referrerUrl',
                                  'source', 'utmParameters', 'medium', 'campaign', 'content'})
 

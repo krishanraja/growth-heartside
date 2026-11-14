@@ -156,7 +156,17 @@ def organic_net_sales(db=None, now=None):
 # ---------------------------------------------------------------------------
 # Proposals, events and holds from what the engine already keeps.
 # ---------------------------------------------------------------------------
+# Proposals this engine sent and has since replaced: taken back from Krish's list when the directive serves
+# features.withdrawn (1.10.0), so a stale ask never sits there again. A decided one is left as it is.
+WITHDRAWN = {
+    'heartside:rec:product-readiness': 'Replaced: the gift range is live at canon prices (growth.py readiness); the next ask is the buy-lane plan.',
+    'heartside:rec:measurement': 'Replaced: organic net sales are measured by the runner since 12 Nov; the next ask is the buy-lane plan.',
+}
+PLAN_WALLS = ('strategy', 'spend', 'send', 'post')
+
+
 def recommendation_proposals(recommendations):
+    """Advice, or a plan behind a wall (stage plan, the plan's exact words in exact_payload, 1.1.0)."""
     out = []
     for rec in recommendations:
         if (not isinstance(rec, dict) or not ID.match(str(rec.get('id', ''))) or not CODE.match(str(rec.get('close_event', '')))
@@ -166,12 +176,27 @@ def recommendation_proposals(recommendations):
         why = rec['why'] + ' Next: ' + rec['next_action']
         if len(rec['title']) > 160 or len(why) > 1000 or len(rec['closes_when']) > 500:
             raise ValueError(f'recommendation {rec["id"]} is longer than the protocol allows')
-        out.append({'proposal_id': rec['id'], 'title': rec['title'], 'why': why, 'kind': 'advice', 'wall': 'none',
-                    'amount_usd': None, 'channel': None, 'objective_key': rec.get('objective_key'), 'exact_payload': None,
-                    'payload_sha256': sha256(payload),
+        plan = rec.get('plan')
+        if plan is not None and (not isinstance(plan, str) or not plan.strip() or len(plan) > 8000 or rec.get('wall') not in PLAN_WALLS):
+            raise ValueError(f'recommendation {rec["id"]}: a plan is its exact words (up to 8000 characters) behind a wall')
+        proposal = {'proposal_id': rec['id'], 'title': rec['title'], 'why': why, 'kind': 'prepared' if plan else 'advice',
+                    'wall': rec['wall'] if plan else 'none', 'amount_usd': None, 'channel': None,
+                    'objective_key': rec.get('objective_key'), 'exact_payload': plan,
+                    'payload_sha256': sha256(dict(payload, plan=plan)) if plan else sha256(payload),
                     'evidence': [{'label': rec['title'], 'url': rec['target_url']}] if HTTPS.match(rec.get('target_url', '')) else [],
-                    'close_condition': {'event': rec['close_event'], 'reference': rec['closes_when']}, 'expires_at': None})
+                    'close_condition': {'event': rec['close_event'], 'reference': rec['closes_when']}, 'expires_at': rec.get('expires_at')}
+        if plan:
+            proposal.update(stage='plan', parent_proposal_id=None)
+        out.append(proposal)
     return out
+
+
+def withdrawals(body, proposals, capabilities=None):
+    """The replaced proposals to take back, only when capabilities (or the directive) serve withdrawn."""
+    if not ((capabilities or {}).get('withdrawn') or engine_state.features(body).get('withdrawn')):
+        return []
+    live = {p['proposal_id'] for p in proposals}
+    return [{'proposal_id': pid, 'reason': reason} for pid, reason in WITHDRAWN.items() if pid not in live]
 
 
 def caption_index(root):
@@ -274,6 +299,21 @@ def product_holds(state):
     return []
 
 
+def order_holds(db):
+    """A paid order Printful has not shipped in a week: the order path may be broken and money is waiting.
+
+    The heartside order workflows keep no successful runs (since 10 Nov), so this outcome count from the runner's
+    own read-only orders read is what still sees them. A count only, never an order."""
+    reading = attribution.latest(db) if db is not None else None
+    stuck = (reading or {}).get('unfulfilled_over_7_days') or 0
+    if not stuck:
+        return []
+    return [{'reason': 'Paid orders not shipped within a week',
+             'detail': fit(f'{stuck} paid order(s) in the trailing 28 days are still unfulfilled more than '
+                           f'{attribution.UNFULFILLED_DAYS} days after they were placed (read {reading.get("observed_at")}). '
+                           'Check the heartside order workflows and Printful in a heartside session.', 500)}]
+
+
 def runner_holds(root, now):
     """Scheduled draft jobs whose latest run failed, this New York day or the one before.
 
@@ -319,7 +359,7 @@ def latest_decisions(decisions):
 
 
 def build_report(*, root, state, db, now, run_id, mode, directive, recommendations, degraded=(), credits_spent=(),
-                 instruction_seen=False, answers=()):
+                 instruction_seen=False, answers=(), capabilities=None):
     """The report envelope, exactly engine-report.schema.json, sealed with its digest.
 
     `credits_spent` is what this run itself spent of the prepaid share (engine/credits.py); the
@@ -358,6 +398,7 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
                          'the public homepage is the V3 gift journey.', STORE_URL))
     constraints = [h['reason'] for h in holds]
     holds += runner_holds(root, now)
+    holds += order_holds(db)
     if db is not None:
         latest = db.execute('''SELECT status, count(*) AS n FROM (SELECT status, row_number() OVER (PARTITION BY creative_id
           ORDER BY updated_at DESC, rowid DESC) AS rank FROM creatives) WHERE rank=1 GROUP BY status ORDER BY status''').fetchall()
@@ -395,19 +436,26 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
     else:
         activity.append('Nothing was rendered, posted, sent, published or spent by this run.')
 
+    taken_back = withdrawals(body, proposals, capabilities)
+    if taken_back:
+        activity.insert(0, 'Took back ' + str(len(taken_back)) + ' replaced proposal(s): ' + ', '.join(w['proposal_id'] for w in taken_back) + '.')
     status = 'degraded' if degraded or db is None else 'held' if holds else 'ready'
     # 1.20.0 fields only when the served directive says features.engine_state; an ack never goes in holds.
     current = engine_state.state(root, body, now, constraints, recommendations) if engine_state.serves_state(body) else {}
     if engine_state.serves_state(body) and acks:
         current['instruction_acks'] = acks[:engine_state.ACKS_MAX]
     # Raised only for the field that needs it: 1.20.0 for the engine's state, 1.16.0 when this run spent credits.
-    version = engine_state.VERSION if current else credits.VERSION if spent else '1.0.0'
+    staged = any(p.get('stage') for p in proposals)
+    version = (engine_state.VERSION if current else credits.VERSION if spent else '1.10.0' if taken_back
+               else '1.1.0' if staged else '1.0.0')
     report = {'schema_version': version, 'engine_id': ENGINE_ID, 'product_slug': PRODUCT_SLUG, 'run_id': run_id, 'mode': mode,
               'observed_at': stamp(now), 'source': {'revision': state['sha'], 'captured_at': stamp(dt.datetime.fromisoformat(state['synced_at'].replace('Z', '+00:00')))},
               'status': status, 'objectives': [net_sales(db, now), organic_orders(db, now), organic_net_sales(db, now)],
               'activity': [{'line': fit(line, 500), 'evidence_url': None} if isinstance(line, str) else
                            {'line': fit(line[0], 500), 'evidence_url': line[1]} for line in activity][:40],
               'proposals': proposals, 'events': events, 'holds': holds[:40]}
+    if taken_back:
+        report['withdrawn'] = taken_back
     if spent:
         report['credits_spent'] = spent
     report.update(current)
@@ -579,10 +627,14 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
             db = ledger.connect(database)
         else:
             degraded.append('No engine checkpoint was available, so the ledger could not be read.')
+        try:  # capabilities name the flags the directive does not carry (withdrawn, 1.10.0); unread means none
+            served = client.capabilities()
+        except ProtocolError:
+            served = {}
         phase = 'plan'
         report = build_report(root=root, state=state, db=db, now=now, run_id=local['run_id'], mode=mode,
                               directive=directive, recommendations=recommendations, degraded=degraded, answers=answers,
-                              instruction_seen=seen)
+                              instruction_seen=seen, capabilities=served)
         phase = 'report'
         summary['delivery'] = deliver(client, report)
         summary.update(status=report['status'], payload_sha256=report['payload_sha256'],
