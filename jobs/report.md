@@ -55,6 +55,9 @@ Kind `report`. Part 7 in `PLAYBOOK.md`. Time for Krish: about 15 minutes.
      line, against `docs/HUMOUR.md`'s three parts and the post's opening shot.
    - Split paid from organic: every boost with its `boost_verdict` (buying intent per paid visit, never reach),
      and any reach outlier with no boost record named as "paid or not unknown: Codex reads Ads Manager".
+   - Run the boost audit, `python3 growth.py ads audit --traffic <the week's sessions by channel>` (the job also
+     writes `ads_audit.json`): each boost against Krish's boost rulings, its evidence coverage, and any traffic
+     burst with no boost on record. Its failures and unknowns go in as proposals, never as actions.
    - Feed it back with no extra press: winners and kills go to next week's concept ranking through the loop's
      existing rules; any change to a rule, a channel's share of effort or a boost is written as a proposal.
    - Show Krish: the report's headline carries the week's one winner and one loser, and the Control Center run

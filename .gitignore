@@ -5,3 +5,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# HyperFrames: its pinned Node modules (npm ci in factory/hyperframes)
+/factory/hyperframes/node_modules/

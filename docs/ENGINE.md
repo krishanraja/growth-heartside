@@ -293,6 +293,22 @@ orders or generates media on their behalf. Report fingerprints include creative
 status and insight observations, so importing evidence refreshes the learning
 report without replacing a completed day's creative.
 
+## Boost audit
+
+`python3 growth.py ads audit [--traffic FILE] [--boosts FILE] [--json]` checks every imported `boost` record
+(`engine/social.py`) against Krish's boost rulings and an optional aggregate sessions file (sessions and cart adds by
+channel and period, read in Shopify analytics), and the Sunday report job writes the same as `ads_audit.json`. Each
+check ends pass, fail, unknown or not applicable, weighted by severity; unknowns lower evidence coverage, never the
+score, and below 60% coverage no score is shown (the method of Claude Ads, re-implemented as code;
+`docs/audits/2026-11-15-hyperframes-and-claude-ads.md`). Diagnostics compare a boost only with Heartside's own other
+boosts. It reads and proposes; it never reaches an ad account.
+
+## Motion templates (HyperFrames)
+
+`factory/hf.py` renders the factory's HTML motion templates with HyperFrames, pinned and without telemetry
+(`factory/hyperframes/README.md`): words from the bank by id, the store render byte for byte, PNG frames into the
+corpus export preset, then `codex/check_picture.py` and `lock.py media` like any post.
+
 ## Control Center protocol loop
 
 Control Center wakes this repository once a day, at 05:10 UTC (05:10 London in

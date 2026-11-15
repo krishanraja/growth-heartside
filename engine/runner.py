@@ -15,7 +15,7 @@ import urllib.parse
 import urllib.request
 from zoneinfo import ZoneInfo
 
-from . import ai_answers, assets, dashboard, insights, ledger, media, offers, review, retention, social
+from . import ad_audit, ai_answers, assets, dashboard, insights, ledger, media, offers, review, retention, social
 
 # A failed job's reason is printed in the public Actions log, so it is cut down to the engine's own words.
 REDACT = (
@@ -313,6 +313,9 @@ def run_job(root, growth, job, day):
             if job == 'report':
                 write_json(out / 'decisions.json', insights.decisions(db))
                 write_json(out / 'social.json', social.status(db))
+                # The boost audit (engine/ad_audit.py): every recorded boost against Krish's boost rulings, with its
+                # evidence coverage; the Sunday report's paid-versus-organic split reads it (jobs/report.md, 4b).
+                write_json(out / 'ads_audit.json', ad_audit.audit(social.rows(db, 'boost')))
             result = {'data_access': 'Imported aggregate ledger only. Native dashboards and the Shopify connector are session capabilities, not credentials in this runner.'}
         elif job == 'radar':
             report = social.status(db)

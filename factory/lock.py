@@ -95,6 +95,9 @@ def uses(spec):
     elif t == 'still':   # one image or a carousel; the product slide is optional (share posts carry none)
         lines += [(sl['line'], spec['breed']) for sl in spec['slides'] if sl.get('line')]
         renders += [(r, spec['breed']) for r in spec.get('end', {}).get('renders', [])]
+    elif t == 'note':   # factory/hf.py: one gift line on the dog's note, then the real render
+        lines += [(spec['line'], spec['breed'])]
+        renders += [(r, spec['breed']) for r in spec['end']['renders']]
     elif t == 'film':
         lines += [(s['line'], spec['breed']) for s in spec['shots'] if s.get('line')]
         renders += [(s['render'], spec['breed']) for s in spec['shots'] if s.get('render')]

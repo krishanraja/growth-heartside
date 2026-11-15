@@ -41,7 +41,10 @@ FIELDS = {
     # One paid boost's results, read by Codex in Krish's signed-in Ads Manager or TikTok Ads Manager (no API reaches
     # them). Aggregates only, never an audience member. Paid never counts toward the organic North Star.
     'boost': {'kind', 'channel', 'at', 'at_precision', 'source', 'post_url', 'creative_id', 'platform', 'window_start',
-              'window_end', 'status', 'spend_usd', 'results', 'organic_before', 'evidence', 'supersedes'},
+              'window_end', 'status', 'spend_usd', 'results', 'organic_before', 'evidence', 'supersedes',
+              # Read with the results so the boost audit (engine/ad_audit.py) can check them: the campaign objective,
+              # the Shop now button's website URL, and the review board item or Krish's words that approved it.
+              'objective', 'destination_url', 'approval'},
 }
 REQUIRED = {'engagement': {'kind', 'test_id', 'stage', 'channel', 'at', 'source'},
             'follower_check': {'kind', 'channel', 'at', 'status', 'source'},
@@ -50,6 +53,7 @@ REQUIRED = {'engagement': {'kind', 'test_id', 'stage', 'channel', 'at', 'source'
             'boost': {'kind', 'channel', 'at', 'source', 'post_url', 'platform', 'window_start', 'window_end', 'status', 'evidence'}}
 CHECK_STATUS = ('verified', 'mismatch', 'unavailable')
 BOOST_PLATFORMS = ('meta', 'tiktok')
+BOOST_OBJECTIVES = ('landing_page_views', 'link_clicks', 'engagement', 'reach', 'video_views', 'sales', 'boost_button', 'other')
 BOOST_RESULTS = ('impressions', 'reach', 'video_views_3s', 'thruplays', 'link_clicks', 'landing_page_views',
                  'add_to_cart', 'checkouts', 'purchases', 'purchase_value_usd', 'follows', 'shares', 'saves')
 
@@ -127,6 +131,14 @@ def validate(record):
                 raise ValueError(f'platform must be one of {BOOST_PLATFORMS}')
             if when(record['window_end']) < when(record['window_start']):
                 raise ValueError('a boost window ends after it starts')
+            if record.get('objective') not in (None, *BOOST_OBJECTIVES):
+                raise ValueError(f'objective is one of {BOOST_OBJECTIVES}')
+            dest = record.get('destination_url')
+            if dest is not None and not (isinstance(dest, str) and dest.startswith('https://') and len(dest) <= 500):
+                raise ValueError('destination_url is the https link the boost sent people to, as Ads Manager shows it')
+            approval = record.get('approval')
+            if approval is not None and not (isinstance(approval, dict) and isinstance(approval.get('words'), str) and approval['words'].strip()):
+                raise ValueError("approval is shaped like an engagement test's: Krish's exact words, by, date, where and scope")
             if record['status'] not in ('counted', 'unavailable'):
                 raise ValueError('a boost reading is counted or unavailable; unavailable is never zero')
             if record['status'] == 'counted':

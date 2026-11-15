@@ -39,6 +39,14 @@ Assets stay out of git, because the repository is public and the music is licens
    - two declines pause the lock.
 6. Only then does the post become a Control Center go-live, under concept-level approval.
 
+## Motion templates rendered by HyperFrames (15 November 2026)
+
+`hf.py` builds the `note` template (the dog's gift line arriving word by word on a paper note, then the real render)
+with HyperFrames, an HTML-to-video renderer pinned in `hyperframes/`. It adds browser type and easing and nothing
+else: the spec carries line ids and a render like any other, `lock.py check` gates it first, and the finished file
+passes `codex/check_picture.py` and `lock.py media` and a pixel check on the product. See
+[`hyperframes/README.md`](hyperframes/README.md).
+
 ## Locking and slots
 
 `lock.py lock SPEC --by "<Krish's words>"` freezes an approved post. Its fingerprint is the sha256 of the post's skeleton: every line is replaced by its role, every render by its product type, and the cast and breed by slot names.

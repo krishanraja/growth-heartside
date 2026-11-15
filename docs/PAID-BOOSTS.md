@@ -137,3 +137,13 @@ spend and the results Ads Manager shows (`impressions`, `reach`, `video_views_3s
 out and the record says so; an unreadable boost is `unavailable`, never zero. Claude checks the file and imports
 it (`growth.py events import`). The Sunday report judges each boost by `boost_verdict`: buying intent per paid
 visit, never reach. Paid results never count toward the organic North Star.
+
+With the results Codex also records, where Ads Manager shows them, the campaign `objective` (`landing_page_views`,
+`link_clicks`, `engagement`, `reach`, `video_views`, `sales`, `boost_button` or `other`), the Shop now button's
+`destination_url`, and the `approval` (Krish's words, by, date, where and scope, shaped like an engagement test's).
+`python3 growth.py ads audit [--traffic <sessions file>]` then checks every boost against the rulings above: his
+Yes, $20 a day, Meta first, the landing-page-views objective, a paid-tagged product link, organic proof, the
+`META_UNVERIFIED` hold while it runs, and buying intent; and, from Shopify's sessions by channel, any traffic burst
+with no boost on record (`engine/ad_audit.py`, `docs/audits/2026-11-15-hyperframes-and-claude-ads.md`). A missing
+field is unknown, never a pass, and lowers the audit's evidence coverage; below 60% it shows no score at all. It
+reads records only and prints proposals for Krish's Yes.
