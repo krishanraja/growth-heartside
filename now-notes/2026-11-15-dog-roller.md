@@ -1,0 +1,3 @@
+Status: generated dog stills now start from the dog roller (factory/dog_roll.py): every attribute rolled outside the model and the prompt sent to the generator untouched, with no breed or setting repeated in a batch or across recent runs, and never a chestnut or red dachshund. `growth.py still roll`, `reserve`, `review` and `check` reserve credits for the exact prompt and hold each still to the floor's still checks, naming the entry and Krish's words (factory/README.md, "Generated dog stills"). Built and tested locally; nothing generated or spent.
+Next: roll the next batch of dog stills with `growth.py still roll`, and put on the review board only those that pass `growth.py still check` at the review stage.
+North Star check (2026-11-15): holds.

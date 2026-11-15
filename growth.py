@@ -72,6 +72,15 @@ packs apart from makeyourmindup's (see `post` below).
 
     python3 growth.py --self-test
 
+    python3 growth.py floor [--format still]
+        What Krish rejected, in his words, and the check each rejection added.
+    python3 growth.py still roll|reserve|review|check
+        A generated dog still: roll its prompt (factory/dog_roll.py, sent to
+        the generator untouched), reserve its credits through the provider
+        ledger, bind the independent review, and check it against the floor
+        before it reaches Krish's review board (factory/README.md,
+        "Generated dog stills"). Nothing here generates or spends.
+
     python3 growth.py readiness
     python3 growth.py render campaigns/waits-at-the-door.json
     python3 growth.py metrics import local/metrics/report.json
@@ -1536,6 +1545,21 @@ def self_test():
     from engine import floor as floor_mod
     t('factory/floor.json is well formed: exact words, a rule and a check for every rejection',
       floor_mod.errors(json.load(open(os.path.join(HERE, 'factory/floor.json'), encoding='utf-8'))) == [])
+    from engine import stills as _stills
+    from factory import dog_roll as _dog_roll
+    _floor, _pools = _stills.load_floor(HERE), _stills.load_pools(HERE)
+    t('the still check and the dog pools name only entries that are in factory/floor.json', bool(_stills.coverage(_floor, _pools)))
+    _rolls = _dog_roll.roll(12, history=None, out=None, pools=_pools, floor_data=_floor)
+    t('a batch of 12 rolled dogs repeats no breed and uses every setting before it repeats one', len({r['attributes']['breed'] for r in _rolls}) == 12
+      and len({r['attributes']['setting'] for r in _rolls}) == len(_pools['settings']))
+    t('a random roll never draws a dachshund (it can read as Buddy)', all(r['attributes']['breed'] != 'dachshund' for r in _rolls))
+    t('every rolled dog prompt passes the floor\'s prompt checks once its script scores 9',
+      all(_stills.check(dict(r, script_score=9), 'prompt', _floor, _pools) == [] for r in _rolls))
+    t('a rolled prompt with no script score is held by spend-means-nine',
+      [f['id'] for f in _stills.check(_rolls[0], 'prompt', _floor, _pools)] == ['spend-means-nine'])
+    _edited = dict(_rolls[0], script_score=9, prompt=_rolls[0]['prompt'].replace('a real pet', 'a stunning pet'))
+    t('an edited rolled prompt is held in Krish\'s words (real-scruffy-dogs)',
+      any(f['id'] == 'real-scruffy-dogs' and 'way too perfect' in f['words'] for f in _stills.check(_edited, 'prompt', _floor, _pools)))
     import tempfile
     from contextlib import closing as _closing
     from engine import ledger as _ledger, operations as _ops, social as _social

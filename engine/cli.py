@@ -6,7 +6,7 @@ from pathlib import Path
 from . import assets, ledger, offers
 
 
-COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library', 'cc', 'attribution', 'examples', 'social', 'drive', 'floor'}
+COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library', 'cc', 'attribution', 'examples', 'social', 'drive', 'floor', 'still'}
 
 
 def add_commands(sub):
@@ -19,6 +19,24 @@ def add_commands(sub):
     drive.add_argument('action', choices=['audit']); drive.add_argument('listing')
     floor = sub.add_parser('floor', help="What Krish rejected and the check each rejection added (factory/floor.json)")
     floor.add_argument('--format', dest='fmt', help='only the entries for one format: reel, still, carousel, meme, comment, card')
+    still = sub.add_parser('still', help='A generated dog still: roll its prompt, reserve its credits, bind its review, check it against the floor (factory/README.md)')
+    steps = still.add_subparsers(dest='step', required=True)
+    from factory import dog_roll
+    dog_roll.add_arguments(steps.add_parser('roll', help='roll real-pet dog still prompts (factory/dog_roll.py)'))
+    res = steps.add_parser('reserve', help='check a roll at the prompt stage, then reserve its prepaid credits (docs/PROVIDERS.md)')
+    res.add_argument('roll', help='a roll id (dog-...) or a roll record file')
+    res.add_argument('--script-score', type=float, required=True, help='the tier 2 score of the script on paper, before any spend')
+    res.add_argument('--by', required=True, help='who made the still (the maker; the reviewer must be someone else)')
+    res.add_argument('--provider', default='higgsfield')
+    res.add_argument('--credits', required=True, help="the provider's own quote for this still, in credits")
+    res.add_argument('--quote-source', required=True); res.add_argument('--quoted-at', required=True, help='ISO time with offset, within 24 hours')
+    res.add_argument('--allocation', required=True, help='the approved allocation or prepaid share it spends from')
+    res.add_argument('--credit-allowance', required=True, help='the credits that allocation approved for this provider')
+    rev = steps.add_parser('review', help="bind the generated file and the independent reviewer's verdicts, then check for the review board")
+    rev.add_argument('roll'); rev.add_argument('file', nargs='?', help='the review file (see --template)')
+    rev.add_argument('--template', action='store_true', help='print the review file to fill in: every verdict the floor is owed')
+    chk = steps.add_parser('check', help="the floor's still checks on one roll; exit 1 names each failure with Krish's words")
+    chk.add_argument('roll'); chk.add_argument('--stage', choices=['prompt', 'review'], default='review')
     events = sub.add_parser('events'); events.add_argument('action', choices=['import']); events.add_argument('file')
     sub.add_parser('reporting-access')
     cc = sub.add_parser('cc', help='Control Center protocol loop: start, run, finish; kits keeps AEO-Engine\'s win kits; queue lists answers to apply (docs/ENGINE.md)')
@@ -141,6 +159,8 @@ def run(args, growth):
         entries = floor.load(root, args.fmt)
         print('\n'.join(floor.lines(entries)))
         return
+    if args.cmd == 'still':
+        return still(args, growth, root)
     if args.cmd == 'events':
         from . import operations
         with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
@@ -218,3 +238,65 @@ def run(args, growth):
             path.parent.mkdir(parents=True, exist_ok=True)
             ledger.backup(db, path)
             print('consistent ledger backup: ' + str(path.relative_to(root)))
+
+
+def still(args, growth, root):
+    """growth.py still roll | reserve | review | check: a generated dog still from its roll to the review board."""
+    from factory import dog_roll
+    from . import providers, stills
+    if args.step == 'roll':
+        dog_roll.run(args)
+        return
+    floor_data, pools = stills.load_floor(root), stills.load_pools(root)
+    if args.step == 'review' and args.template:
+        print(json.dumps(stills.template(floor_data), indent=2, ensure_ascii=False))
+        return
+    given = Path(args.roll)
+    path = given if given.suffix == '.json' else Path(dog_roll.ROLLS) / f'{args.roll}.json'
+    if not path.is_file():
+        raise ValueError(f'no roll record {path}; roll one first (growth.py still roll)')
+    record = json.loads(path.read_text(encoding='utf-8'))
+
+    def save(rec):
+        path.write_text(json.dumps(rec, indent=1, ensure_ascii=False) + '\n', encoding='utf-8')
+
+    def report(failures, stage):
+        if failures:
+            print(f'HELD at the {stage} stage: {record["roll_id"]}')
+            print('\n'.join('  ' + line for line in stills.lines(failures)))
+            raise SystemExit(1)
+        print(f'PASS at the {stage} stage: {record["roll_id"]} meets the floor\'s still checks.')
+
+    if args.step == 'reserve':
+        state = growth.load_state()
+        if not state:
+            raise ValueError('run growth.py sync first: a reservation names the synced heartside commit')
+        record = dict(record, script_score=args.script_score, made_by=args.by)
+        request = {'provider': args.provider, 'credits': args.credits, 'quote_source': args.quote_source,
+                   'quote_observed_at': args.quoted_at, 'allocation': args.allocation}
+        with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
+            try:
+                record, row = stills.reserve(db, record, state['sha'], request, args.credit_allowance, floor_data, pools)
+            except stills.Held as held:
+                report(held.failures, 'prompt')
+        save(record)
+        print(f'Reserved {row["credits_maximum"]} {args.provider} credits as request {row["request_id"]} ({row["status"]}).')
+        print('Next, once each: python3 growth.py provider transition ' + row['request_id'] + ' submitted; generate with the '
+              'record\'s prompt and aspect_ratio exactly; then transition it completed with the receipt.')
+        return
+    if args.step == 'review':
+        if not args.file:
+            raise ValueError('name the review file, or print one to fill in with --template')
+        record = stills.attach(record, json.loads(Path(args.file).read_text(encoding='utf-8')), root)
+        save(record)
+    stage = 'review' if args.step == 'review' else args.stage
+    row = None
+    request_id = (record.get('reservation') or {}).get('request_id')
+    if stage == 'review' and request_id and (root / 'local/engine.sqlite3').exists():
+        with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
+            providers.setup(db)
+            found = db.execute('SELECT * FROM provider_requests WHERE request_id=?', (request_id,)).fetchone()
+            row = dict(found) if found else None
+    report(stills.check(record, stage, floor_data, pools, row, root), stage)
+    if stage == 'review':
+        print('It may go on Krish\'s review board (docs/REVIEW-BOARD.md).')

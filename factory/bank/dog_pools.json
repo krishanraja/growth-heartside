@@ -1,0 +1,291 @@
+{
+ "about": "Everything factory/dog_roll.py can draw for a generated dog still. The aim is a dog that passes for someone's own pet, photographed by its owner on a phone, with no two stills alike (floor real-scruffy-dogs, Krish, 10 Nov: \"way too perfect and not real\"). The roller draws every attribute from here; a session never chooses or rewrites one. Each light is data: what it looks like, the colour cast it gives the phone, and whether a bulb or lamp is itself bright in the frame. Nothing here may name a product (mug, blanket, portrait, card), a human expression, words in the frame, a person, or a chestnut or red dachshund.",
+ "breeds": [
+  {"key": "golden", "label": "golden retriever", "aliases": ["golden retriever"], "coat": "long", "colors": ["medium gold", "pale cream", "deep gold"]},
+  {"key": "lab", "label": "Labrador retriever", "aliases": ["labrador"], "coat": "short", "colors": ["black", "yellow", "chocolate"]},
+  {"key": "shepherd", "label": "German shepherd", "aliases": ["german shepherd"], "coat": "double", "colors": ["black and tan", "sable"]},
+  {"key": "frenchie", "label": "French bulldog", "aliases": ["french bulldog"], "coat": "short", "colors": ["fawn", "brindle", "cream", "black with a white chest patch"]},
+  {"key": "doodle", "label": "goldendoodle", "aliases": ["goldendoodle"], "coat": "curly", "colors": ["apricot", "cream", "chocolate"]},
+  {"key": "border_collie", "label": "border collie", "aliases": ["border collie"], "coat": "long", "colors": ["black and white", "blue merle and white"]},
+  {"key": "bulldog", "label": "English bulldog", "aliases": ["english bulldog"], "coat": "short", "colors": ["white and fawn", "brindle and white"]},
+  {"key": "corgi", "label": "Pembroke Welsh corgi", "aliases": [], "coat": "double", "colors": ["tricolor", "sable and white", "fawn and white"]},
+  {"key": "husky", "label": "Siberian husky", "aliases": ["siberian husky"], "coat": "double", "colors": ["gray and white", "black and white", "agouti"]},
+  {"key": "great_dane", "label": "Great Dane", "aliases": ["great dane"], "coat": "short", "colors": ["fawn with a black mask", "harlequin", "black"]},
+  {"key": "beagle", "label": "beagle", "aliases": [], "coat": "short", "colors": ["tricolor", "lemon and white"]},
+  {"key": "pug", "label": "pug", "aliases": [], "coat": "short", "colors": ["fawn with a black mask", "black"]},
+  {"key": "rottweiler", "label": "rottweiler", "aliases": [], "coat": "short", "colors": ["black and mahogany"]},
+  {"key": "boxer", "label": "boxer", "aliases": [], "coat": "short", "colors": ["fawn with a white chest", "brindle with white socks"]},
+  {"key": "aussie", "label": "Australian shepherd", "aliases": ["australian shepherd"], "coat": "long", "colors": ["blue merle", "black tricolor"]},
+  {"key": "cavalier", "label": "Cavalier King Charles spaniel", "aliases": ["cavalier"], "coat": "silky", "colors": ["Blenheim", "tricolor"]},
+  {"key": "shih_tzu", "label": "shih tzu", "aliases": ["shih tzu"], "coat": "long", "colors": ["gold and white", "black and white"]},
+  {"key": "schnauzer", "label": "miniature schnauzer", "aliases": ["miniature schnauzer"], "coat": "wire", "colors": ["salt and pepper", "black"]},
+  {"key": "pit_mix", "label": "pit bull mix", "aliases": ["pit bull"], "coat": "short", "colors": ["blue-gray with a white chest", "brindle", "white with a brown patch over one eye"]},
+  {"key": "chihuahua", "label": "chihuahua", "aliases": [], "coat": "short", "colors": ["fawn", "black and tan", "cream"]},
+  {"key": "bernese", "label": "Bernese mountain dog", "aliases": ["bernese mountain dog"], "coat": "long", "colors": ["tricolor"]},
+  {"key": "westie", "label": "West Highland white terrier", "aliases": ["west highland terrier"], "coat": "wire", "colors": ["white"]},
+  {"key": "yorkie", "label": "Yorkshire terrier", "aliases": ["yorkshire terrier"], "coat": "silky", "colors": ["blue and tan"]},
+  {"key": "basset", "label": "basset hound", "aliases": ["basset hound"], "coat": "short", "colors": ["tricolor", "lemon and white"]},
+  {"key": "shepherd_mix", "label": "shepherd mix of no obvious breed", "aliases": [], "coat": "double", "colors": ["tan with a dark saddle", "black and tan"]},
+  {"key": "terrier_mix", "label": "scruffy terrier mix", "aliases": [], "coat": "wire", "colors": ["wheaten", "gray and white", "brown and white"]},
+  {"key": "lab_hound_mix", "label": "lab and hound mix", "aliases": [], "coat": "short", "colors": ["black with a white chest blaze", "tan"]},
+  {"key": "chi_terrier_mix", "label": "chihuahua and terrier mix", "aliases": [], "coat": "short", "colors": ["fawn", "black and white"]},
+  {"key": "husky_mix", "label": "husky and shepherd mix", "aliases": [], "coat": "double", "colors": ["gray and cream", "black and tan"]},
+  {"key": "poodle_spaniel_mix", "label": "shaggy poodle and spaniel mix", "aliases": [], "coat": "curly", "colors": ["chocolate", "black", "cream"]},
+  {"key": "beagle_basset_mix", "label": "beagle and basset mix", "aliases": [], "coat": "short", "colors": ["tricolor"]},
+  {"key": "pit_lab_mix", "label": "pit and lab mix", "aliases": [], "coat": "short", "colors": ["black", "brindle"]},
+  {"key": "dachshund", "label": "dachshund", "aliases": [], "coat": "short", "colors": ["black and tan", "silver dapple", "wire-haired wild boar grizzle"], "lock_only": true,
+   "why": "Never rolled at random. A chestnut or red dachshund can read as Buddy, and no Buddy image is approved (factory/lock.py STANDING; factory/sprint.py refuses a dachshund slot without breed_ok). Only a slot that names a dachshund may lock it, and only in these coats."}
+ ],
+ "ages": [
+  ["young, under a year old and a bit gangly", 2],
+  ["young adult", 3],
+  ["adult", 4],
+  ["middle-aged, going gray around the muzzle", 2]
+ ],
+ "builds": ["thin and wiry", "carrying a few extra pounds around the middle", "solid and barrel-chested", "medium-built", "all legs", "small and compact"],
+ "coat_conditions": [
+  {"text": "slightly scruffy and uneven, a few stray hairs sticking up", "coats": ["any"]},
+  {"text": "a bed-head tuft standing up on top of the head", "coats": ["any"]},
+  {"text": "shedding, with loose tufts of undercoat on the flanks and a few hairs on the floor nearby", "coats": ["double", "long"]},
+  {"text": "a flattened, slept-on patch of fur on one side", "coats": ["any"]},
+  {"text": "a small matted clump behind one ear", "coats": ["long", "curly", "silky"]},
+  {"text": "slightly damp and clumped from a walk in the rain", "coats": ["any"]},
+  {"text": "dusty paws and a little dirt on the legs", "coats": ["any"]},
+  {"text": "a cowlick running down the back", "coats": ["short", "double", "wire"]},
+  {"text": "whiskers bent at odd angles", "coats": ["any"]},
+  {"text": "a faint brown tear stain under each eye", "coats": ["long", "silky", "curly", "wire"]},
+  {"text": "a couple of burrs caught in the leg feathering", "coats": ["long"]},
+  {"text": "a few weeks past a grooming, a little overgrown and shapeless", "coats": ["curly", "wire", "long", "silky"]},
+  {"text": "a patch of fur ruffled the wrong way where it was just scratched", "coats": ["any"]},
+  {"text": "a little drool at the corner of the mouth", "coats": ["short"]},
+  {"text": "a few flakes of kibble stuck to the chin", "coats": ["any"]}
+ ],
+ "collars": [
+  "a worn brown leather collar with a scratched, unreadable tag",
+  "a faded red nylon collar",
+  "a frayed navy harness",
+  "a faded bandana tied a little crooked",
+  "no collar",
+  "a reflective orange collar, slightly grubby",
+  "a thin green collar with a dented, unreadable tag"
+ ],
+ "expressions": [
+  "a flat, unblinking stare straight into the lens",
+  "head tilted to one side, looking at the lens",
+  "a slow look back over the shoulder at the lens",
+  "eyes rolled up to the lens without lifting the head",
+  "half-closed eyes, completely unbothered",
+  "ears half back, caught mid-blink",
+  "nose twitching mid-sniff, eyes on the lens",
+  "a blank, patient look at the lens, mouth closed",
+  "the tip of the tongue poking out, eyes on the lens",
+  "looking just past the lens at something off-frame"
+ ],
+ "frames": [
+  "with the whole dog in frame and a bit of space around it",
+  "with the dog a little off-center and part of the tail cut off at the edge",
+  "with the dog's head and front half filling most of the frame",
+  "slightly too wide, the dog smaller in the frame than the owner meant"
+ ],
+ "settings": {
+  "living_room": {
+   "setting": "in a well-used living room",
+   "spots": ["lying across the couch cushions", "curled up in the corner of the couch", "sitting on the rug in front of the couch", "stretched out on the floor between the couch and the coffee table"],
+   "placements": [["held by the owner sitting at the other end of the couch", "about four feet"], ["held by the owner standing over the couch, pointing down", "about three feet"], ["held low by the owner crouched on the rug at the dog's eye level", "about two feet"]],
+   "base": ["a sagging charcoal sectional", "a scuffed tan leather sofa", "a navy fabric sofa covered in dog hair", "an oatmeal couch under a stretched-out slipcover"],
+   "details": ["a TV remote wedged between the cushions", "a chewed rope toy", "dog hair on the cushions", "a phone charger cable", "a half-drunk glass of water on the side table", "a laundry basket of unfolded clothes", "a game controller on the coffee table", "a stack of mail", "a squeaky toy missing an eye", "a tall lamp with a crooked shade"],
+   "beyond": ["half-open blinds on the window", "the kitchen through an open doorway", "one end of a TV on a low console"],
+   "light": [
+    {"look": "gentle afternoon daylight from the window", "cast": "neutral", "bright_source": false},
+    {"look": "a warm table lamp after dark", "cast": "warm", "bright_source": true},
+    {"look": "gray, cloudy-day light", "cast": "cool", "bright_source": false},
+    {"look": "low sun through the blinds throwing bars of light up the wall", "cast": "warm", "bright_source": false}
+   ],
+   "outdoor": false
+  },
+  "kitchen": {
+   "setting": "on the kitchen floor",
+   "spots": ["sitting on the kitchen floor beside its bowl", "lying flat on the cool floor", "sitting by the fridge, waiting", "lying across the kitchen doorway"],
+   "placements": [["held by the owner standing at the counter, pointing down at about 45 degrees", "about four feet"], ["held low by the owner crouched on the floor", "about two feet"], ["held by the owner from the kitchen doorway", "about eight feet"]],
+   "base": ["white cabinets over gray floor tiles", "honey-oak cabinets and a beige vinyl floor", "a cramped rental kitchen with a laminate floor", "dark cabinets over a scuffed plank-look floor"],
+   "details": ["a steel bowl with some kibble left in it", "a water bowl with a splash on the floor around it", "a roll of paper towels", "a tea towel hung over the oven door", "a fridge door crowded with magnets", "a recycling bin", "grocery bags on the counter edge", "a few pieces of kibble scattered on the floor", "a mop leaning in the corner"],
+   "beyond": ["the window above the sink", "a dim hallway through the doorway", "the back door with a pet flap"],
+   "light": [
+    {"look": "low, warm late-day sun coming through the kitchen window", "cast": "warm", "bright_source": false},
+    {"look": "the ceiling bulbs on at night, the windows black", "cast": "warm", "bright_source": true},
+    {"look": "crisp early daylight from the window", "cast": "neutral", "bright_source": false},
+    {"look": "dull gray daylight from the window", "cast": "cool", "bright_source": false}
+   ],
+   "outdoor": false
+  },
+  "bedroom": {
+   "setting": "on an unmade bed in the bedroom",
+   "spots": ["sprawled across the pillows", "curled up in the dent in the middle of the bed", "lying with its head on the pillow and its body under the comforter", "sitting at the foot of the bed"],
+   "placements": [["held by the owner standing in the bedroom doorway", "about seven feet"], ["held by the owner lying on the bed beside the dog", "about two feet"], ["held by the owner standing at the foot of the bed, pointing down", "about four feet"]],
+   "base": ["a crumpled gray comforter", "a tangled white duvet", "a plain black metal bed frame", "a bare mattress and box spring pushed against the wall"],
+   "details": ["pillows shoved sideways", "a charging cable trailing off the nightstand", "an overflowing laundry hamper", "a glass of water by the bed", "a pair of socks on the floor", "a pile of paperbacks by the bed", "dog hair on the sheets", "a hoodie tossed on the end of the bed"],
+   "beyond": ["a window with thin white curtains", "a closet with its door partly open", "the hallway through the open door"],
+   "light": [
+    {"look": "pale early daylight through thin curtains", "cast": "cool", "bright_source": false},
+    {"look": "a bedside lamp on late at night", "cast": "warm", "bright_source": true},
+    {"look": "even, cloudy daylight from one window", "cast": "neutral", "bright_source": false},
+    {"look": "a band of warm afternoon sun lying across the bed", "cast": "warm", "bright_source": false}
+   ],
+   "outdoor": false
+  },
+  "entryway": {
+   "setting": "by the front door in the entryway",
+   "spots": ["sitting right against the front door", "lying across the doormat", "standing by the door with its nose at the gap", "sitting among the shoes"],
+   "placements": [["held by the owner standing in the hallway, pointing down", "about five feet"], ["held low by the owner crouched in the hallway", "about three feet"]],
+   "details": ["a pile of shoes", "a leash hanging on a hook", "a doormat", "an umbrella leaning on the wall", "two delivery boxes", "a jacket dropped on the floor", "a basket of dog toys"],
+   "beyond": ["the front door's frosted glass panel", "a narrow hallway", "a staircase going up"],
+   "light": [
+    {"look": "flat daylight through the door's glass panel", "cast": "neutral", "bright_source": false},
+    {"look": "the hallway's ceiling light on in the evening", "cast": "warm", "bright_source": true},
+    {"look": "cool, cloudy light from a side window", "cast": "cool", "bright_source": false}
+   ],
+   "outdoor": false
+  },
+  "backyard": {
+   "setting": "in the backyard",
+   "spots": ["lying in a muddy patch of the lawn", "sitting on the patio by the back door", "standing in the middle of the lawn, mid-sniff", "lying in the shade by the fence"],
+   "placements": [["held by the owner standing on the patio", "about six feet"], ["held low by the owner crouched on the grass", "about three feet"]],
+   "details": ["a patchy lawn", "a chewed tennis ball", "a garden hose", "a sagging wood fence", "a plastic kiddie pool", "a freshly dug hole", "a pile of raked leaves", "a grill under a cover"],
+   "beyond": ["the sliding glass door of the house", "branches from next door hanging over the fence", "a washed-out white sky"],
+   "light": [
+    {"look": "low golden sun coming from behind and off to one side", "cast": "warm", "bright_source": false},
+    {"look": "harsh noon sun with sharp, dark shadows", "cast": "neutral", "bright_source": false},
+    {"look": "cloudy, shadowless daylight", "cast": "cool", "bright_source": false},
+    {"look": "shade under the patio roof with the yard bright beyond it", "cast": "neutral", "bright_source": false}
+   ],
+   "outdoor": true
+  },
+  "car": {
+   "setting": "in the back seat of a parked car",
+   "spots": ["sitting in the middle of the back seat", "lying across the back seat", "with its head resting on the center console"],
+   "placements": [["held by the owner turned around from the front seat", "about 30 inches"]],
+   "base": ["a small sedan with worn black fabric seats", "an SUV with cracked tan leather seats", "an old hatchback with gray fabric seats", "a minivan with stained beige seats"],
+   "details": ["dog hair all over the seat", "a seatbelt buckle", "a crumpled receipt on the floor", "a plastic water bottle stuffed in the door pocket", "nose smudges on the window", "a chewed toy on the floor mat"],
+   "beyond": ["a supermarket parking lot outside the window", "a quiet street of houses outside the window", "gray concrete garage columns outside the window"],
+   "light": [
+    {"look": "plain midday daylight through the car windows", "cast": "neutral", "bright_source": false},
+    {"look": "warm low sun slanting in through the side window", "cast": "warm", "bright_source": false},
+    {"look": "gray overcast daylight", "cast": "cool", "bright_source": false},
+    {"look": "the dim, humming tube lights of a parking garage", "cast": "fluorescent", "bright_source": true}
+   ],
+   "outdoor": false
+  },
+  "sidewalk": {
+   "setting": "on a sidewalk on a neighborhood walk",
+   "spots": ["stopped dead on the sidewalk, refusing to move", "sniffing the base of a tree", "sitting down at the curb", "lying flat on the warm sidewalk"],
+   "placements": [["held by the owner at waist height, pointing down", "about four feet"], ["held low by the owner crouched on the sidewalk", "about three feet"]],
+   "details": ["a leash running up out of frame", "fallen leaves", "a fire hydrant", "a car parked along the curb", "a poop bag dispenser clipped to the leash", "cracks in the sidewalk", "a lawn edged with weeds"],
+   "beyond": ["a row of houses", "a neighbor's driveway", "a street lined with parked cars"],
+   "light": [
+    {"look": "dull, cloudy daylight", "cast": "cool", "bright_source": false},
+    {"look": "the warm, low sun of late afternoon", "cast": "warm", "bright_source": false},
+    {"look": "hard noon sun and short black shadows", "cast": "neutral", "bright_source": false},
+    {"look": "cool early light before the sun is high", "cast": "cool", "bright_source": false}
+   ],
+   "outdoor": true
+  },
+  "home_office": {
+   "setting": "in a home office",
+   "spots": ["lying under the desk by the chair wheels", "sitting next to the desk chair, staring", "curled up in a dog bed pushed against the desk"],
+   "placements": [["held by the owner sitting at the desk, pointing down under it", "about three feet"], ["held by the owner standing in the doorway", "about seven feet"]],
+   "details": ["a tangle of cables", "a rolling desk chair", "yellow sticky notes along the monitor", "a pair of headphones on the desk", "a takeout coffee cup", "a power strip on the floor", "a chewed pen"],
+   "beyond": ["a shelf of ring binders", "blinds tilted nearly shut", "a jacket hanging off the closet doorknob"],
+   "light": [
+    {"look": "daylight sliced into strips by the blinds", "cast": "neutral", "bright_source": false},
+    {"look": "an evening desk lamp on one side and the blue glow of a monitor on the other", "cast": "mixed", "bright_source": true},
+    {"look": "gray window light on a cloudy day", "cast": "cool", "bright_source": false}
+   ],
+   "outdoor": false
+  },
+  "bathroom": {
+   "setting": "in the bathroom",
+   "spots": ["sitting in the empty bathtub", "lying on the bath mat", "lying on the cool floor by the tub", "sitting by the shower, still wet"],
+   "placements": [["held by the owner standing in the doorway", "about five feet"], ["held by the owner standing over the tub, pointing down", "about three feet"]],
+   "details": ["a shower curtain pushed aside", "a bath mat", "a towel on the floor", "a toilet paper roll", "shampoo bottles with no readable labels", "a hair dryer left plugged in by the sink"],
+   "beyond": ["a little window of frosted glass", "the door open a crack onto the hallway"],
+   "light": [
+    {"look": "warm bulbs above the mirror", "cast": "warm", "bright_source": true},
+    {"look": "soft daylight through frosted glass", "cast": "neutral", "bright_source": false},
+    {"look": "a cold white ceiling light", "cast": "cool", "bright_source": true}
+   ],
+   "outdoor": false
+  },
+  "laundry": {
+   "setting": "in the laundry room",
+   "spots": ["lying in a pile of clean laundry on the floor", "sitting in front of the open dryer", "curled up in an empty laundry basket"],
+   "placements": [["held by the owner standing in the doorway, pointing down", "about five feet"], ["held low by the owner crouched on the floor", "about two feet"]],
+   "details": ["a laundry basket", "the dryer door hanging open", "a detergent bottle with no readable label", "a single sock on the floor", "a drying rack with towels"],
+   "beyond": ["a washer and dryer side by side", "a utility sink", "the kitchen through the doorway"],
+   "light": [
+    {"look": "a bare tube light on the ceiling", "cast": "fluorescent", "bright_source": true},
+    {"look": "light from one small, high window", "cast": "neutral", "bright_source": false}
+   ],
+   "outdoor": false
+  },
+  "porch": {
+   "setting": "on the front porch steps",
+   "spots": ["sitting on the top step, watching the street", "lying across the doormat", "lying on the steps in a patch of sun"],
+   "placements": [["held by the owner standing on the path, pointing up the steps", "about five feet"], ["held by the owner sitting on the step beside the dog", "about two feet"]],
+   "base": ["peeling gray-painted wood steps", "plain poured-concrete steps", "old red-brick steps"],
+   "details": ["a worn welcome mat", "flip-flops kicked off by the door", "a planter of half-dead flowers", "a mailbox screwed to the siding", "an outdoor light beside the door", "a tangle of garden hose beside the steps", "a delivery box by the door"],
+   "beyond": ["a slice of front lawn and the street", "the house across the road", "a car parked out front"],
+   "light": [
+    {"look": "gray, even light from a covered sky", "cast": "cool", "bright_source": false},
+    {"look": "warm low sun late in the day", "cast": "warm", "bright_source": false},
+    {"look": "the porch in shade with the sunny street glaring behind", "cast": "neutral", "bright_source": false},
+    {"look": "cool, clear morning light", "cast": "cool", "bright_source": false}
+   ],
+   "outdoor": true
+  }
+ },
+ "cast_lines": {
+  "warm": "the phone's white balance leaning orange under the warm light, giving the fur a golden tint",
+  "cool": "a white balance on the blue side, so the darker fur reads a little blue-gray",
+  "neutral": "close to neutral white balance, only a touch warm on the coat",
+  "fluorescent": "a faint green tint from the tube light, strongest in the darker areas",
+  "mixed": "two colors of light the phone never quite settles between: one half of the frame warm, the other cool"
+ },
+ "highlights": {
+  "bright_source": ["the bulb itself burned out to a flat white spot", "a small, faint flare from the bulb near the top edge of the frame"],
+  "daylight": ["any window or patch of sky burned out to plain white"],
+  "flicker": "thin bands of flicker running across the frame from the ceiling tubes"
+ },
+ "iphones": ["iPhone 14", "iPhone 16 Pro", "iPhone 12", "iPhone 15", "iPhone 17", "iPhone 13", "iPhone 16"],
+ "artifacts": [
+  "shadows pulled up by the phone's HDR, so the contrast looks a bit flat",
+  "over-sharpened fur and whiskers with slightly crunchy edges",
+  "the darkest patches of fur smudged soft by noise reduction, almost painterly",
+  "{compression} compression showing faint blocks in plain areas such as the wall and floor",
+  "a thin purple fringe on bright edges",
+  "exposure set on the dog, so the brightest parts run hot and the corners go a little dark",
+  "the horizon a degree or two off level",
+  "focus landing just behind the dog, so it is a hair soft",
+  "a small blur on the tail or one paw where it moved",
+  "grainy noise in the shadows",
+  "a small, flat reflection of the room light in the eyes, never a studio catchlight"
+ ],
+ "avoid_base": [
+  {"text": "a dedicated camera's look rather than a phone's", "floor": null},
+  {"text": "background blur of any kind, Portrait mode included", "floor": "real-scruffy-dogs"},
+  {"text": "added grain or a film look", "floor": null},
+  {"text": "a color grade or filter", "floor": null},
+  {"text": "lighting set up for the shot, such as studio lights or a ring light", "floor": "real-scruffy-dogs"},
+  {"text": "fur that looks shampooed, blow-dried or brushed out for a show", "floor": "real-scruffy-dogs"},
+  {"text": "a show ring, catalogue or stock-photo look", "floor": "real-scruffy-dogs"},
+  {"text": "a perfectly balanced, symmetrical composition", "floor": null},
+  {"text": "a tidy, staged room with nothing out of place", "floor": "real-scruffy-dogs"},
+  {"text": "a brand name or logo you could read", "floor": "no-badges"},
+  {"text": "captions, signs, labels, badges, watermarks or any other words in the frame", "floor": "no-badges"},
+  {"text": "extra, missing or fused legs, paws, tails, ears or eyes", "floor": "real-dogs"},
+  {"text": "misshapen paws or toes", "floor": "real-dogs"},
+  {"text": "a human smile, grin, wink or side-eye on the dog", "floor": "troll-not-mild"},
+  {"text": "human arms or hands on the dog, or the dog doing human arm moves", "floor": "dog-does-dog-things"},
+  {"text": "the dog standing upright on its hind legs", "floor": "one-trend-one-scene"},
+  {"text": "any mug, blanket, throw, portrait, framed picture, painting or greeting card", "floor": "real-product"}
+ ]
+}
