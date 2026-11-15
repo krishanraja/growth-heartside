@@ -42,6 +42,8 @@ session, set by Krish on 7 to 9 Nov 2026 (engagement desk handover, 9 Nov). A de
 what it decides goes into this repository's records (`growth.py social status`, `factory/floor.json`,
 `codex/INDEX.md`, `CHANGES.md`), never only into its chat.
 
+Only a Claude session on Krish's own computer sends work to the Publishing, Engagement and Audience threads, so each runs in his Codex Desktop app with his browser attached; production stays on Codex cards from the cloud (Ruling, Krish, 2026-11-15; AGENTS.md, "Where each runs").
+
 | Desk | Owns | Where it runs | Writes |
 |---|---|---|---|
 | Publishing | Scheduling, publishing, delivery verification (cover or thumbnail, caption, call to action), post readings at 24 h, 72 h and 7 days, Ads Manager boost readings. The only writer to Buffer | Codex thread 01a1a23e-de37-74f1-95a8-4a9bed2e756d, visible in Krish's Codex Desktop app | A dated `docs/social/` event file of `post_check`, `boost` and `live_verified` records, which Claude checks, imports and copies into the 02 Sheets `status`, `live_url`, `notes` and `Results` (Ruling, Krish, 2026-11-15: Codex never updates Google Drive) |
