@@ -197,3 +197,61 @@ class FloorAndDrive(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class GoLiveChecksAndBoosts(unittest.TestCase):
+    """Ruling (Krish, 2026-11-15): Codex verifies each approved post went live with the right cover, caption and call
+    to action, and reads paid boost results in his browser; the engine keeps both and judges a boost by buying intent."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.db = ledger.connect(Path(self.tmp.name) / 'local/engine.sqlite3')
+        self.url = 'https://www.instagram.com/reel/EXAMPLE1/'
+
+    def tearDown(self):
+        self.db.close()
+        self.tmp.cleanup()
+
+    def check(self, **extra):
+        body = {'kind': 'post_check', 'channel': 'instagram', 'at': '2026-11-15T12:00:00Z', 'source': 'publishing desk',
+                'post_url': self.url, 'status': 'verified', 'cover_ok': True, 'caption_ok': True, 'cta_ok': True,
+                'evidence': 'native post read back 12:00 UTC'}
+        body.update(extra)
+        return body
+
+    def boost(self, **extra):
+        body = {'kind': 'boost', 'channel': 'instagram', 'at': '2026-11-15T12:00:00Z', 'source': 'Ads Manager read by Codex',
+                'post_url': self.url, 'platform': 'meta', 'window_start': '2026-11-06T12:45:00Z',
+                'window_end': '2026-11-07T12:45:00Z', 'status': 'counted', 'spend_usd': 25,
+                'results': {'landing_page_views': 85, 'add_to_cart': 0}, 'evidence': 'Ads Manager, ad set row'}
+        body.update(extra)
+        return body
+
+    def test_verified_needs_all_three_and_a_mismatch_names_one(self):
+        social.validate(self.check())
+        with self.assertRaises(ValueError):
+            social.validate(self.check(cta_ok=False))
+        social.validate(self.check(status='mismatch', cta_ok=False))
+        with self.assertRaises(ValueError):
+            social.validate(self.check(status='mismatch'))
+        with self.assertRaises(ValueError):
+            social.validate(self.check(post_url='https://example.com/x'))
+
+    def test_a_boost_that_bought_visits_and_no_cart_is_reach_without_interest(self):
+        social.record(self.db, 'b1', self.boost(), '2026-11-15T12:00:00Z')
+        social.record(self.db, 'c1', self.check(status='mismatch', caption_ok=False), '2026-11-15T12:00:00Z')
+        report = social.status(self.db)
+        self.assertEqual(report['boosts'][0]['verdict'], 'reach_without_interest')
+        self.assertEqual(report['boosts'][0]['cost_per_visit_usd'], 0.29)
+        self.assertEqual(len(report['post_checks']['mismatch']), 1)
+        self.assertTrue(any('reach_without_interest' in line for line in social.lines(report)))
+
+    def test_buying_intent_and_unread_boosts(self):
+        self.assertEqual(social.boost_verdict(self.boost(results={'landing_page_views': 40, 'add_to_cart': 2}))['verdict'],
+                         'worth_testing_again')
+        unread = self.boost(status='unavailable')
+        del unread['spend_usd'], unread['results']
+        social.validate(unread)
+        self.assertEqual(social.boost_verdict(unread)['verdict'], 'unmeasured')
+        with self.assertRaises(ValueError):
+            social.validate(self.boost(results={'audience_names': 3}))
