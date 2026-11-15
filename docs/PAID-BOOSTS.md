@@ -62,7 +62,7 @@ All must be true in the launch packet.
 5. **Attribution kept apart.**
    - Boost traffic arrives as `paid_social` and is reported under paid.
    - Residual: someone who sees a boost and later taps the bio link is counted as organic. That cannot be separated, so the Sunday report names it as a limit.
-6. **AI labelling.** Meta's "AI info" label is never hidden or removed.
+6. **AI labelling.** No AI label is switched on or added (floor `no-ai-label`, `AGENTS.md` rule 4). A label Meta sets by itself is left as Meta sets it: removing it is a setting change, which stays with Krish (rule 1).
 7. **A named spend.** Krish says go on the exact packet immediately before launch. The engine never spends (AGENTS.md rule 1).
 
 ## The test

@@ -24,7 +24,7 @@ the paid preview; preserve existing locked files and approved captions.
 | Boosted posts | Use the live approved post unchanged; separately inspect paid CTA, labels and exact placements. Organic clearance is insufficient | `docs/PAID-BOOSTS.md`, placement review |
 | Cover | Separate cover composition. Face and headline inside the central 3:4 crop (y 240 to 1680) and the full-screen box; check actual profile grid, Reels tab and feed crops; no assumed permanent crop | Native preview and a person |
 | Sound-off | The joke works muted. Subtitles carry every spoken line, timed. One caption system only: no platform auto-captions over burned-in subtitles | A person |
-| AI labelling | Photorealistic AI dogs: switch on TikTok's AI-generated content label, and let Meta's "AI info" label stand | At upload |
+| AI labelling | None, for AI dogs and AI people: never switch on TikTok's or Meta's AI-generated setting, and no AI label on screen or in the caption (floor `no-ai-label`, `AGENTS.md` rule 4). A label a platform sets by itself is left as it is; changing it is Krish's (rule 1) | At upload |
 | Music | The locked licensed track, organic and paid alike. Krish, 4 Nov: "I have the right license for the post type". Settled, never re-check | None |
 
 ## 2. Captions (every channel)
@@ -56,7 +56,7 @@ the paid preview; preserve existing locked files and approved captions.
 
 ### TikTok
 
-- **Upload.** Use the TikTok-reviewed edition, separate cover, required AI label and useful hashtags. Check feed/search entry, normal/stress/expanded description and a non-owner view.
+- **Upload.** Use the TikTok-reviewed edition, separate cover and useful hashtags, with the AI-generated setting left off (floor `no-ai-label`). Check feed/search entry, normal/stress/expanded description and a non-owner view.
 - **Sound.** Keep the licensed track. A trending sound only with Krish's yes.
 - **The first second is the whole game.** Start on a dog already doing something legible.
 - **What to read:** completion and shares per 1,000 views against posts of a similar length. Early abandonment means test the first shot.

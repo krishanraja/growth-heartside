@@ -118,7 +118,12 @@
       "amount_usd": null,
       "asked_on": "2026-11-14",
       "source": "docs/plans/A1.md D9",
-      "answer": null
+      "answer": {
+        "decision": "done",
+        "decided_at": "2026-11-15",
+        "applied_on": "2026-11-15",
+        "where": "Settled by his ruling, \"No label, settings included\" (Ruling, Krish, 2026-11-15), without the policy read: AGENTS.md rule 4 and factory/floor.json no-ai-label hold no AI label on any Heartside post, on screen, in captions or in a platform's own AI setting, for AI people and AI dogs alike. A label a platform adds by itself is left as it is."
+      }
     },
     {
       "id": "heartside:ask:d10-commercial-songs",

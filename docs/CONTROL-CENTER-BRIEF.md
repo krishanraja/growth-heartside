@@ -118,5 +118,5 @@ Measured Higgsfield unit costs: a GPT Image still 2.75 credits, a Seedance clip 
 
 - Never past `remaining_for_you`. Never a top-up, a plan change or new money. Any `maximum_usd` above zero is new money and goes through the USD budget and Krish's yes as before.
 - Making is not publishing. Nothing made with credits is posted, published or sent except through this repository's own rules: a post derived from a concept Krish approved goes through the go-live step under concept-level approval (`AGENTS.md`, "Autonomy"), and anything else keeps its own `go_live` proposal behind `post`. The creative bar holds; weak work is held, not proposed.
-- The product on screen is always the real design (`AGENTS.md`, rule 4). Credits buy dogs, rooms and motion, never a drawn product.
+- The product on screen is always the real design (`AGENTS.md`, rule 4). Credits buy dogs, rooms and motion, never a drawn product, and an AI person only with Krish's two yeses under rule 4.
 - This replaces the per-batch spend plan in `docs/briefs/2026-10-22-media-credits.md` for spend inside the share. Spend beyond it still needs his yes.

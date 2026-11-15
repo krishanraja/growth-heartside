@@ -27,7 +27,7 @@ It is not one of the eight jobs in `automations.json`. Control Center's schedule
    4. **Nothing.** If nothing above needs making, make nothing. Never invent work to use credits up.
 4. **Follow the rules for every generation.**
    - **Stills before video.** Motion only for a concept Krish approved, or a still that has tested well.
-   - **The real design.** The product is always the real design. AI makes dogs, rooms and motion, never a drawn product, and never AI "customers" holding or reviewing it.
+   - **The real design.** The product is always the real design. AI makes dogs, rooms and motion, never a drawn product, and never AI "customers" holding or reviewing it. An AI person is made only under rule 4: Krish's yes on that named piece before any generation, his yes on the finished asset before it goes out, and no AI label.
    - **Words.** Heartside's voice rules apply to any words on screen.
    - **A dog still's prompt is rolled, never written.** Use `python3 growth.py still roll` and send its prompt to the generator untouched. Reserve with `growth.py still reserve`, and pass `growth.py still check` before the still reaches the review board (`factory/README.md`, "Generated dog stills").
 5. **Reserve, generate, settle**, once per generation:
