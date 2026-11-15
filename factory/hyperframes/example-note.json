@@ -1,0 +1,9 @@
+{
+ "id": "HF-note-golden",
+ "template": "note",
+ "ui_profile": "social-corpus-2026-11-12-v2",
+ "breed": "golden",
+ "line": "F06.fr6",
+ "end": {"renders": ["golden-sentimental-portrait.jpg"]},
+ "note": "Capability test of the HyperFrames note template, 15 Nov 2026. Not a proposed post: it reaches no review board until it is scored and reviewed like any other."
+}

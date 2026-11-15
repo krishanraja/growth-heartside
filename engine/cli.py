@@ -6,7 +6,7 @@ from pathlib import Path
 from . import assets, ledger, offers
 
 
-COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library', 'cc', 'attribution', 'examples', 'social', 'drive', 'floor', 'still'}
+COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library', 'cc', 'attribution', 'examples', 'social', 'drive', 'floor', 'still', 'ads'}
 
 
 def add_commands(sub):
@@ -15,6 +15,10 @@ def add_commands(sub):
     library = sub.add_parser('library'); library.add_argument('--date'); library.add_argument('--heartside-dir')
     soc = sub.add_parser('social', help='Engagement tests and the first-follower monitor: what is outstanding and who owns it (engine/social.py)')
     soc.add_argument('action', choices=['status']); soc.add_argument('--json', action='store_true')
+    ads = sub.add_parser('ads', help="Audit every recorded boost against Krish's boost rulings, with evidence coverage (engine/ad_audit.py). Reads only.")
+    ads.add_argument('action', choices=['audit']); ads.add_argument('--traffic', help='an aggregate sessions file: sessions by channel and period (docs/PAID-BOOSTS.md)')
+    ads.add_argument('--boosts', help='boost records as JSON (a list, or an events file); default: the ones imported into local/engine.sqlite3')
+    ads.add_argument('--now', help='ISO time to audit at (default: now)'); ads.add_argument('--json', action='store_true')
     drive = sub.add_parser('drive', help="Check a Drive listing against config/drive-map.json (docs/DRIVE-MAP.md)")
     drive.add_argument('action', choices=['audit']); drive.add_argument('listing')
     floor = sub.add_parser('floor', help="What Krish rejected and the check each rejection added (factory/floor.json)")
@@ -148,6 +152,20 @@ def run(args, growth):
         with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
             report = social.status(db)
         print(json.dumps(report, indent=2, ensure_ascii=False) if args.json else '\n'.join(social.lines(report) or ['No social history recorded. Import it: growth.py events import <file>.']))
+        return
+    if args.cmd == 'ads':
+        from . import ad_audit, social
+        import datetime as dt
+        if args.boosts:
+            doc = json.loads(Path(args.boosts).read_text())
+            records = [e.get('record', e) for e in (doc if isinstance(doc, list) else doc.get('events', []))]
+            boosts = [social.validate(dict(r)) for r in records if r.get('kind') == 'boost']
+        else:
+            with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
+                boosts = social.rows(db, 'boost')
+        traffic = json.loads(Path(args.traffic).read_text()) if args.traffic else None
+        report = ad_audit.audit(boosts, traffic, social.when(args.now) if args.now else dt.datetime.now(dt.timezone.utc))
+        print(json.dumps(report, indent=2, ensure_ascii=False) if args.json else '\n'.join(ad_audit.lines(report)))
         return
     if args.cmd == 'drive':
         from . import drive_audit

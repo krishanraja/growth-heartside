@@ -1,0 +1,105 @@
+<!doctype html>
+<!--
+  The note reveal: the dog's gift line arrives word by word on a paper note, a paw signs it, then the real store
+  render holds for 3.5 s with a slow push-in. Every word comes from factory/bank/lines.json and the product from
+  factory/bank/renders.json, resolved and checked by factory/hf.py, which fills the variables below. This file
+  carries no copy of its own: the defaults are placeholders that fail the copy check if they ever reach a render.
+
+  Geometry (engine/creative_ui.py, 12 Nov corpus): the note's words sit in one fixed box, [150, 380, 820, 980],
+  inside the critical box (x 120 to 820, y 330 to 1180), and so does the product at every frame of its push-in.
+  The product is drawn unfiltered (AGENTS.md rule 4: pixels unaltered, it may move); only the backdrop behind it,
+  a separate pre-blurred file, is softened.
+-->
+<html
+  lang="en"
+  data-composition-variables='[
+    { "id": "line", "type": "string", "role": "content", "label": "Gift line", "default": "[line from the bank]" },
+    { "id": "product", "type": "image", "role": "content", "label": "Store render", "default": "assets/product.png" },
+    { "id": "backdrop", "type": "image", "role": "content", "label": "Blurred backdrop", "default": "assets/backdrop.png" }
+  ]'
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces.ttf"); font-weight: 100 900; }
+      :root { --cream: #f6f1e7; --paper: #fffdf8; --ink: #24201b; --stamp: #b8322a; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--cream); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--cream); }
+      .clip { position: absolute; inset: 0; }
+      #note-scene { background: var(--cream); }
+      /* The card holds the words and the paw, so all three tilt together; its height follows the line. */
+      #card {
+        position: absolute; left: 150px; top: 400px; width: 660px; padding: 44px 44px 36px;
+        background: var(--paper); border-radius: 6px;
+        box-shadow: 0 18px 40px rgba(60, 40, 20, 0.16), 0 2px 6px rgba(60, 40, 20, 0.10);
+        transform: rotate(-1.6deg); transform-origin: 330px 240px;
+      }
+      #words {
+        font-family: "Fraunces", serif; font-weight: 420; font-size: 66px; line-height: 1.22;
+        color: var(--ink); letter-spacing: -0.01em;
+      }
+      .w { display: inline-block; white-space: pre; opacity: 0; }
+      #paw { display: block; margin: 18px 0 0 auto; width: 104px; height: 104px; opacity: 0; }
+      #product-scene { background: #14120f; }
+      #backdrop { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      #product {
+        position: absolute; left: 170px; top: 380px; width: 600px; height: 750px;
+        transform-origin: 300px 375px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="note" data-start="0" data-duration="9.1" data-width="1080" data-height="1920">
+      <div id="note-scene" class="clip" data-start="0" data-duration="5.6" data-track-index="0">
+        <div id="card">
+        <div id="words">[line from the bank]</div>
+        <svg id="paw" viewBox="0 0 100 100" aria-hidden="true">
+          <g fill="#b8322a">
+            <ellipse cx="50" cy="66" rx="22" ry="18" />
+            <ellipse cx="22" cy="40" rx="9" ry="12" transform="rotate(-18 22 40)" />
+            <ellipse cx="40" cy="26" rx="9" ry="12" transform="rotate(-6 40 26)" />
+            <ellipse cx="60" cy="26" rx="9" ry="12" transform="rotate(6 60 26)" />
+            <ellipse cx="78" cy="40" rx="9" ry="12" transform="rotate(18 78 40)" />
+          </g>
+        </svg>
+        </div>
+      </div>
+      <div id="product-scene" class="clip" data-start="5.6" data-duration="3.5" data-track-index="1">
+        <img id="backdrop" data-var-src="backdrop" src="assets/backdrop.png" alt="" />
+        <img id="product" data-var-src="product" src="assets/product.png" alt="" />
+      </div>
+    </div>
+    <script>
+      // Split the gift line into words once, at load, from the composition's own variables (deterministic).
+      const vars = window.__hyperframes && typeof window.__hyperframes.getVariables === "function"
+        ? window.__hyperframes.getVariables() : {};
+      const box = document.getElementById("words");
+      const text = (vars.line || box.textContent).trim();
+      box.textContent = "";
+      text.split(/\s+/).forEach((word, i) => {
+        const span = document.createElement("span");
+        span.className = "w";
+        span.textContent = word + " ";
+        box.appendChild(span);
+      });
+      const words = Array.from(box.querySelectorAll(".w"));
+      // The corpus opens on the story (lock.py media: no empty or logo-only first frame), so the first three words
+      // are on the card from frame one and the rest rise in one by one, about a word every 0.16 s.
+      const open = words.slice(0, 3), rest = words.slice(3);
+      const tl = gsap.timeline({ paused: true });
+      tl.set(open, { opacity: 1, y: 0 }, 0);
+      tl.fromTo(rest, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.32, ease: "power3.out", stagger: 0.16 }, 0.25);
+      const signed = 0.25 + rest.length * 0.16 + 0.45;
+      tl.fromTo("#paw", { opacity: 0, scale: 1.6, rotate: -14 }, { opacity: 1, scale: 1, rotate: -8, duration: 0.22, ease: "back.out(2.2)" }, signed);
+      // The product: a hard cut on its first frame at exactly scale 1 and whole-pixel position (hf.py samples it
+      // to check the pixels), then a slow push-in to 1.08, still inside the critical box.
+      tl.fromTo("#product", { scale: 1 }, { scale: 1.08, duration: 3.5, ease: "none" }, 5.6);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["note"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
