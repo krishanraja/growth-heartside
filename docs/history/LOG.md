@@ -4,6 +4,15 @@ Newest first. Entries are written by the docs steward (see the steward link in
 NOW.md) and by humans doing the same job by hand. Nothing in this file
 describes current behaviour; NOW.md and the state doc do.
 
+## 2026-11-15
+
+- reconciled at `44c5a88`: fixed the audit's `recent_too_many` finding; the protocol bundle line now reads 1.38.0 as `docs/control-center/bundle.json` says. Closeout notes were already folded.
+- rolled from NOW.md: 2026-11-10 The first 127-character Instagram candidate hid its CTA behind more despite fitting the editor limit. The shorter version passed public readback; the profile-audit acceptance now checks native truncation as well as character count. No website, post, spend or account-type change.
+- rolled from NOW.md: 2026-11-10 TikTok's username, caption and stickers start about y 1340, so the y 1450 label spot only worked on Instagram; the chat floor in factory/ui_layout.py moved from 1480 to 1250.
+- rolled from NOW.md: 2026-11-10 the library lane filed the v2 cuts into new F38-real and F41-real folders because the manifest named the post F38-real; the manifest post must match the existing Posts folder.
+- rolled from NOW.md: 2026-11-10 AGENTS points to the official assets. Profile review history, exact approval, asset hashes, live readbacks and link-feature limits are recorded in docs/profile-pages/2026-11-10/ROLLOUT.md. Facebook Learn more retains the verified tracked destination; Buy now would require a new store integration.
+- rolled from NOW.md: 2026-11-10 Krish found F38 labels under Instagram's caption area, so labels now sit in one fixed, visible place.
+
 ## 2026-11-14
 
 - reconciled: fixed `recent_too_many`, `where_too_many` and `old_dated_claims`; closeout notes were already folded. Corrected the Order Loop bullet, which said its branch was local, to say it merged (#78, #79).

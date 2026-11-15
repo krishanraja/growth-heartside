@@ -1,8 +1,8 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-11-14
-head: 97a1a1d
+as_of: 2026-11-15
+head: 44c5a88
 lifecycle: live
 production_url: none
 state_doc: docs/HANDOFF.md
@@ -31,7 +31,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-11-14)
+## Where it is right now (as of 2026-11-15)
 
 <!-- north-star-state {"week_of": "2026-11-09", "week_target": 1417, "current": 0, "current_as_of": "2026-11-12", "current_source": "Shopify Admin API orders through growth.py attribution (read-only app), organic posts, trailing 28 days", "urgency": 5, "urgency_reason": "under 40% of the week's target two weeks running (0% now)"} --> **North Star number: U5, stalled.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: $0 (measured 12 Nov by the engine's own attribution read; the store's one order in the window, $45, came direct), against $1,417 this week, on the way to $50,000 by 28 December 2026. Everything else pauses unless it moves the number.
 
@@ -47,7 +47,7 @@ Live:
 - Heartside's decision, spend, copy and delete asks now reach Krish's one list (I-24). review/queue.json holds the 19 open asks from docs/plans/A1.md; the daily Control Center run proposes the top 3 behind their wall, reads his answers back by id, stops asking an answered one and reports "Answers to apply". The review board keeps posts and their media. (2026-11-14)
 - The day pack, radar, creators and store jobs are off the schedule (Krish, 14 Nov, item 5.6). Four jobs stay scheduled: sync, numbers, answers and the Sunday report; the four run only when named. (2026-11-14)
 - the Saturday store job writes one line per gift (id, title, canonical price, ready or why not) instead of pasting the whole catalog, so its pack passes the engine's own check; it had failed four runs on 14 Nov (over 6,000 characters, untracked store links). (2026-11-14)
-- docs/control-center/ is Control Center's protocol bundle 1.33.0, byte for byte (bundle_sha256 4b7175a8aebbb8979eaefbeea1b7f0f44f2cffa0bbba9cea341da784fe7fde4d), the last protocol version of 14 November. (2026-11-14)
+- docs/control-center/ is Control Center's protocol bundle 1.38.0, byte for byte (bundle_sha256 88cbea01da05da34563b79193010def4233aaccb46fb7998451b7fbc5428e71d), the last protocol version of 14 November (`docs/control-center/bundle.json`). (2026-11-14)
 - docs/control-center/ is Control Center's protocol bundle 1.28.0, byte for byte (bundle_sha256 b0dfa0d7aaa10aea0de45fb5f7dcc241c62bef70766f0fed9c6351d69af1b791), with bundle.json and a hash test that fails an edit in place (integration plan I-11). (2026-11-14)
 - The engine now proposes a post only on a channel Krish approved for posting (`config/channels.json`: Instagram, Facebook, TikTok); a creative for Pinterest or any other channel is held with its reason, never put on his list. Before this, `post_proposals` would have turned an approved pin into a go-live, although docs/CHANNEL-TASKS.md says Pinterest is not a posting channel. The pins on Heartside's Pinterest did not come through the engine: Buffer (read 14 Nov) shows four, none queued; the three of 12 and 13 November repeat the Instagram captions, were created outside Buffer, and landed about 26 to 28 minutes after each Instagram post, the pattern of Pinterest's own auto-publish from Instagram, an account setting. Also: the report's credits line names docs/CREDITS-SESSION.md instead of a jobs/credits.md that never existed and no longer claims a daily spend; "proposed 1.23.0" labels read 1.26.0, the version Control Center shipped (behaviour keys on the `ai_answers_detail` flag); the run summary lists what it withdrew. Verified live: a synthetic Control Center run on main at d9ff14b sent no proposals and read back a matching report; the Codex reservation of 10 November is already settled (`not_open`). (2026-11-14)
 - The Wednesday Answers job no longer falls back to bank order in silence when it cannot see AEO-Engine's kits. `engine.yml` gains a read-only step on Wednesdays (or a manual `answers` run) that runs `growth.py cc kits`; the existing Control Center engine token reaches it only once the repository variable `ANSWERS_READS_KITS` is `yes`. Without the token, or when the standing cannot be read, the brief's headline says it is held and why. Docs made true against live state: the Heartside credits scheduled task is disabled on purpose (it last ran 4 November), and GET-GOING names the protocol copy as 1.22.0 at 36df34bc. Re-pinning that copy to Control Center's current head was not possible from this session: it cannot read the control-center repository. (2026-11-14)
@@ -73,11 +73,6 @@ Waiting or not measured:
 - 2026-11-11 Krish asked that every growth engine's priorities, obsessions and next steps feed Control Center live and that he can instruct each engine ("Get building", 11 Nov); his words never leave engine/engine_state.py.
 - 2026-11-11 Krish found TikTok's commercial songs can only be added in the phone app.
 - 2026-11-11 Krish found copying captions from the Doc into Instagram fiddly.
-- 2026-11-10 The first 127-character Instagram candidate hid its CTA behind more despite fitting the editor limit. The shorter version passed public readback; the profile-audit acceptance now checks native truncation as well as character count. No website, post, spend or account-type change.
-- 2026-11-10 TikTok's username, caption and stickers start about y 1340, so the y 1450 label spot only worked on Instagram; the chat floor in factory/ui_layout.py moved from 1480 to 1250.
-- 2026-11-10 the library lane filed the v2 cuts into new F38-real and F41-real folders because the manifest named the post F38-real; the manifest post must match the existing Posts folder.
-- 2026-11-10 AGENTS points to the official assets. Profile review history, exact approval, asset hashes, live readbacks and link-feature limits are recorded in docs/profile-pages/2026-11-10/ROLLOUT.md. Facebook Learn more retains the verified tracked destination; Buy now would require a new store integration.
-- 2026-11-10 Krish found F38 labels under Instagram's caption area, so labels now sit in one fixed, visible place.
 
 ## What is next and what is waiting on Krish
 
