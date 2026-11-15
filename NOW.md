@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- `growth.py check` now holds every caption to a claims table (`python3 growth.py claims`), because any caption can be boosted as it stands: the checks it already ran plus five new rows (the reader's personal circumstances, a guarantee the canon does not state, a dog health claim, another brand, a customer or testimonial Heartside does not have), and no ad field lengths. It refuses a caption that shares an eight-word run with the local swipe file (`local/swipe/swipe.jsonl`, never committed; absent means skipped, and it says so), and checks each set of caption variations: three that differ on angle, hook, length and reader, each naming its swipe entry by id (`docs/PAID-BOOSTS.md`, "Captions a boost may promote"). (2026-11-15)
 - Four stranded branches salvaged into main on Krish's 15 Nov approval: his 29 Oct rulings (Pinterest, socials and shopping tags, Runway) and 31 Oct tool ruling in CHANGES.md, each marked where a newer ruling wins; the Q4 creative strategy, the painting pipeline brief, the socials evidence, the TikTok website-link status and three boost and measurement docs in docs/. (2026-11-15)
 - the branch sweep takes an approved list (branch@sha) on a hand run and deletes each named branch only at that exact commit, skipping and logging anything else; the weekly run is unchanged. Copied from ai-harness's canonical script and workflow. (2026-11-15)
 - Claude starts Codex only through scripts/codex_thread.mjs, focus sprints included: a permanent thread in Krish's Codex Desktop recents, released after every turn so he can type in it too. (2026-11-15)
@@ -84,7 +85,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-15): Read TikTok's verification decision live and, once a Website field exists, add the tracked store link.
+- Next (2026-11-15): start `local/swipe/swipe.jsonl` with a handful of long-running pet gift ads, by paste or at most about ten public ad library pages read signed out, before the next caption set.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
