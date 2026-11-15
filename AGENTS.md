@@ -17,6 +17,10 @@ This repository's North Star is [`docs/NORTH_STAR.md`](docs/NORTH_STAR.md): an a
 When Krish says "Get going", or opens a session with no more specific task, follow `docs/GET-GOING.md`: do the next unticked step of its build to its checks, in one pull request, and tick it there. Keep that file current as the plan changes. Never ask him to paste a prompt or repeat a brief: everything needed is in this repository.
 
 
+## Codex at any point (Ruling, Krish, 2026-11-15)
+
+Claude starts Codex only through scripts/codex_thread.mjs, focus sprints included. `node scripts/codex_thread.mjs open "<message>"` makes a permanent thread in Krish's Codex Desktop recents, titled by its first line; `send <thread> "<message>"` adds one turn and releases the thread so he can type in it too; `read <thread>` prints every turn, his from Desktop included. Never the Codex plugin's long-running server. The script is a copy of content-engine's `scripts/codex_thread.mjs`, which holds the source.
+
 ## Autonomy (Ruling, Krish, 2026-10-19)
 
 Krish: "the engine shows me what it is going to do, I approve, it gets up to go-live and asks me to review." This engine is set to run autonomously under Control Center's growth engine protocol (`docs/control-center/ENGINE-PROTOCOL.md`, a byte-for-byte copy of Control Center's bundle whose version and hash are in `docs/control-center/bundle.json`; its "Autonomy" and "Amend" sections arrived in 1.1.0), in steps Krish answers on his one list in Control Center. The loop is not built yet (`docs/GET-GOING.md`, Step 1): today the daily report proposes and reads his decisions, and he still acts by hand. The steps:
