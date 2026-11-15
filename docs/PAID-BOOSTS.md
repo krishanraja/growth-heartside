@@ -116,7 +116,8 @@ behind it. `python3 growth.py check` holds each one to three things:
   fields.
 - **No copied ad words.** Long-running ads gathered by paste, or from at most about ten public ad library pages read
   signed out, go in `local/swipe/swipe.jsonl`, one entry a line, each with an id like `SW-001` and the ad's copy. It is
-  never committed (`local/` is ignored). A caption that shares an eight-word run with any entry is refused: borrow the
+  never committed (`local/` is ignored). A caption that shares an eight-word run with any entry is flagged as a warning, never refused (Krish, 15
+  November: warn only): borrow the
   pattern, never the words. Proven formats, memes and tracks stay free to reuse (the floor's `no-priest`); this holds
   the words only. With no swipe file the check is skipped, and `check` says so.
 - **Variations that really differ.** Captions written as variations of one post carry
