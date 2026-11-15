@@ -158,6 +158,8 @@ purchase path before increasing production. This is an operating checkpoint,
 not a universal conversion benchmark. Product fixes return as briefs to
 heartside. Changes to live policies and human fulfillment follow that repo.
 
+**Interest versus paid, 15 Nov 2026.** `docs/audits/2026-11-15-interest-vs-paid.md` reads every post and the store: the deadpan alibi family earns the most genuine interest, Instagram is the only social source with a cart add, and no paid visit has yet produced one. Its five proposals wait on Krish's Yes; until then this strategy stands unchanged.
+
 ## The first thirty days
 
 | Period | Acquisition work | Evidence |

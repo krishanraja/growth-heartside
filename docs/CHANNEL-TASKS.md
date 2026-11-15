@@ -44,7 +44,7 @@ what it decides goes into this repository's records (`growth.py social status`, 
 
 | Desk | Owns | Where it runs | Writes |
 |---|---|---|---|
-| Publishing | Scheduling, publishing, delivery verification, post audits. The only writer to Buffer | Codex thread 01a1a23e-de37-74f1-95a8-4a9bed2e756d | 02 Sheets `status`, `live_url`, `notes`, `Results`; social `live_verified` events |
+| Publishing | Scheduling, publishing, delivery verification (cover or thumbnail, caption, call to action), post readings at 24 h, 72 h and 7 days, Ads Manager boost readings. The only writer to Buffer | Codex thread 01a1a23e-de37-74f1-95a8-4a9bed2e756d, visible in Krish's Codex Desktop app | A dated `docs/social/` event file of `post_check`, `boost` and `live_verified` records, which Claude checks, imports and copies into the 02 Sheets `status`, `live_url`, `notes` and `Results` (Ruling, Krish, 2026-11-15: Codex never updates Google Drive) |
 | Engagement | Conversations with existing followers: tests on live posts, prepared for Krish's review | Codex thread 01a1a2b0-42ec-7452-9ffe-f579b0b87937, and the radar job | Social `proposed`, `approved`, `handed_off`, `evaluated` and `follower_check` events |
 | Audience | Reaching new people | Codex thread 01a1a2b0-3d02-7661-8339-73265cc3035b | Proposals for Krish; no outreach outside rule 7 |
 | Production | Ideas, scripts, assets and builds, held to the rejection floor | A Claude session that runs Codex by card (`codex/README.md`) | 03a session folders, `factory/`, `codex/INDEX.md`; locked media to 03b through `send_library.py` |

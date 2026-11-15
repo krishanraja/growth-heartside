@@ -34,10 +34,24 @@ FIELDS = {
                    'outcome', 'supersedes'},
     'follower_check': {'kind', 'channel', 'at', 'at_precision', 'status', 'count', 'source', 'evidence', 'supersedes'},
     'monitor': {'kind', 'channel', 'state', 'at', 'at_precision', 'source', 'evidence', 'supersedes'},
+    # Codex's go-live check of one approved Schedule row (Ruling, Krish, 2026-11-15): the live post read back for its
+    # cover or thumbnail, its caption and its call to action against the approved row. Claude writes the Sheet.
+    'post_check': {'kind', 'channel', 'at', 'at_precision', 'source', 'post_url', 'creative_id', 'schedule_row',
+                   'status', 'cover_ok', 'caption_ok', 'cta_ok', 'evidence', 'supersedes'},
+    # One paid boost's results, read by Codex in Krish's signed-in Ads Manager or TikTok Ads Manager (no API reaches
+    # them). Aggregates only, never an audience member. Paid never counts toward the organic North Star.
+    'boost': {'kind', 'channel', 'at', 'at_precision', 'source', 'post_url', 'creative_id', 'platform', 'window_start',
+              'window_end', 'status', 'spend_usd', 'results', 'organic_before', 'evidence', 'supersedes'},
 }
 REQUIRED = {'engagement': {'kind', 'test_id', 'stage', 'channel', 'at', 'source'},
             'follower_check': {'kind', 'channel', 'at', 'status', 'source'},
-            'monitor': {'kind', 'channel', 'state', 'at', 'source'}}
+            'monitor': {'kind', 'channel', 'state', 'at', 'source'},
+            'post_check': {'kind', 'channel', 'at', 'source', 'post_url', 'status', 'evidence'},
+            'boost': {'kind', 'channel', 'at', 'source', 'post_url', 'platform', 'window_start', 'window_end', 'status', 'evidence'}}
+CHECK_STATUS = ('verified', 'mismatch', 'unavailable')
+BOOST_PLATFORMS = ('meta', 'tiktok')
+BOOST_RESULTS = ('impressions', 'reach', 'video_views_3s', 'thruplays', 'link_clicks', 'landing_page_views',
+                 'add_to_cart', 'checkouts', 'purchases', 'purchase_value_usd', 'follows', 'shares', 'saves')
 
 
 def setup(db):
@@ -61,7 +75,7 @@ def text_sha(text):
 
 def validate(record):
     if not isinstance(record, dict) or record.get('kind') not in FIELDS:
-        raise ValueError('a social record is an engagement, follower_check or monitor record')
+        raise ValueError('a social record is an engagement, follower_check, monitor, post_check or boost record')
     kind = record['kind']
     if not REQUIRED[kind] <= set(record) or not set(record) <= FIELDS[kind]:
         raise ValueError(f'{kind} uses the exact allowlisted fields: {sorted(FIELDS[kind])}')
@@ -96,16 +110,63 @@ def validate(record):
             raise ValueError('a counted follower check carries a whole count')
         if record['status'] == 'unavailable' and 'count' in record:
             raise ValueError('an unavailable check carries no count')
+    elif kind in ('post_check', 'boost'):
+        url = record['post_url']
+        if not (url.startswith('https://') and any(h in url.split('/')[2] for h in HOSTS[record['channel']])):
+            raise ValueError('post_url is the public brand post on the named channel')
+        if kind == 'post_check':
+            if record['status'] not in CHECK_STATUS:
+                raise ValueError(f'a post check is one of {CHECK_STATUS}')
+            flags = [record.get(k) for k in ('cover_ok', 'caption_ok', 'cta_ok')]
+            if record['status'] == 'verified' and flags != [True, True, True]:
+                raise ValueError('verified means the cover, the caption and the call to action each matched the approved row')
+            if record['status'] == 'mismatch' and all(f is True for f in flags):
+                raise ValueError('a mismatch names which of cover_ok, caption_ok or cta_ok failed')
+        else:
+            if record['platform'] not in BOOST_PLATFORMS:
+                raise ValueError(f'platform must be one of {BOOST_PLATFORMS}')
+            if when(record['window_end']) < when(record['window_start']):
+                raise ValueError('a boost window ends after it starts')
+            if record['status'] not in ('counted', 'unavailable'):
+                raise ValueError('a boost reading is counted or unavailable; unavailable is never zero')
+            if record['status'] == 'counted':
+                spend, results = record.get('spend_usd'), record.get('results')
+                if not isinstance(spend, (int, float)) or spend < 0 or not isinstance(results, dict) or not results:
+                    raise ValueError('a counted boost carries spend_usd and the results Ads Manager showed')
+                for k, v in results.items():
+                    if k not in BOOST_RESULTS or not isinstance(v, (int, float)) or v < 0:
+                        raise ValueError(f'boost results are non-negative numbers named from {BOOST_RESULTS}')
+            elif 'spend_usd' in record or 'results' in record:
+                raise ValueError('an unavailable boost reading carries no numbers')
     elif record['state'] not in MONITOR:
         raise ValueError(f'monitor state must be one of {MONITOR}')
     return record
+
+
+def boost_verdict(boost):
+    """What a boost bought, from its own results. Interest is shown by buying intent (add to cart, checkout,
+    purchase), never by paid reach: a boost that bought landing visits and no cart is reach without interest."""
+    if boost.get('status') != 'counted':
+        return {'verdict': 'unmeasured', 'why': 'no reading from Ads Manager yet; Codex reads it in Krish\'s browser'}
+    r, spend = boost['results'], boost['spend_usd']
+    visits = r.get('landing_page_views') or r.get('link_clicks') or 0
+    intent = (r.get('add_to_cart') or 0) + (r.get('checkouts') or 0) + (r.get('purchases') or 0)
+    out = {'spend_usd': spend, 'visits': visits, 'intent_actions': intent,
+           'cost_per_visit_usd': round(spend / visits, 2) if visits else None}
+    if intent:
+        out.update(verdict='worth_testing_again', why=f'{intent} buying action(s) from {visits} paid visit(s)')
+    elif visits >= 50:
+        out.update(verdict='reach_without_interest', why=f'{visits} paid visits and no add to cart, checkout or purchase')
+    else:
+        out.update(verdict='inconclusive', why=f'only {visits} paid visit(s): too few to judge')
+    return out
 
 
 def record(db, event_id, body, recorded_at):
     """Store one validated record. Exact approved text can never change under the same test."""
     setup(db)
     body = validate(body)
-    subject = body.get('test_id') or body['channel']
+    subject = body.get('test_id') or body.get('post_url') or body['channel']
     if body['kind'] == 'engagement' and body.get('text'):
         for row in db.execute("SELECT body FROM social_events WHERE kind='engagement' AND subject=?", (subject,)):
             earlier = json.loads(row['body'])
@@ -184,11 +245,21 @@ def status(db, now=None):
             failures += 1
         channels[c]['consecutive_failures'] = failures
     watching = [c for c, v in channels.items() if v['monitor'] == 'watching']
+    checks = rows(db, 'post_check')
+    latest = {}
+    for r in checks:
+        latest[r['post_url']] = r
+    boosts = [dict(b, **boost_verdict(b)) for b in rows(db, 'boost')]
     return {'tests': list(tests.values()), 'channels': channels, 'monitor_remaining': watching,
+            'post_checks': {'verified': sum(r['status'] == 'verified' for r in latest.values()),
+                            'mismatch': [r for r in latest.values() if r['status'] == 'mismatch'],
+                            'unavailable': [r for r in latest.values() if r['status'] == 'unavailable']},
+            'boosts': boosts,
             'rules': ['Aggregate views, likes or comments never establish what a follower did.',
                       'Follower counts are milestone triggers, not the North Star; sales are.',
                       'An unavailable count is unknown, never zero.',
-                      'One follower is not a rate and not a winner.']}
+                      'One follower is not a rate and not a winner.',
+                      'Paid results never count toward the organic North Star; a boost is judged by buying intent, not reach.']}
 
 
 def lines(report):
@@ -208,6 +279,14 @@ def lines(report):
         last = v['last_successful']
         out.append(f"Followers {c}: monitor {v['monitor']}; current {v['current']}; last successful "
                    + (f"{last['count']} at {last['at']}" if last else 'none') + f"; failed checks in a row {v['consecutive_failures']}")
+    pc = report.get('post_checks') or {}
+    if pc:
+        out.append(f"Go-live checks: {pc['verified']} verified; {len(pc['mismatch'])} mismatched; {len(pc['unavailable'])} unread")
+        for r in pc['mismatch']:
+            bad = [k[:-3] for k in ('cover_ok', 'caption_ok', 'cta_ok') if r.get(k) is not True]
+            out.append(f"  mismatch {r['post_url']}: {', '.join(bad)} differ from the approved row. Claude fixes the Sheet; nothing is re-posted without Krish")
+    for b in report.get('boosts') or []:
+        out.append(f"Boost {b['platform']} {b['post_url']} {b['window_start'][:10]} to {b['window_end'][:10]}: {b['verdict']} ({b['why']})")
     if report['monitor_remaining']:
         out.append('First-follower monitor still watching: ' + ', '.join(report['monitor_remaining']) + '. At the first verified count of 1 or more, bring one engagement test for review.')
     return out

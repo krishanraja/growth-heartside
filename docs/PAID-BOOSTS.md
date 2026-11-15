@@ -102,3 +102,16 @@ How the test runs:
 - **Krish:** says go on the packet.
 
 Nobody edits the posts or the Buffer queue.
+
+## Reading a boost's results (Ruling, Krish, 2026-11-15)
+
+No API or connector reaches Meta Ads Manager, the Instagram and Facebook Boost history or TikTok Promote from this
+engine, so Codex reads them in Krish's signed-in browser, in a session he can watch in his Codex Desktop app, and
+changes nothing there. For every boost or promotion since 1 Oct 2026, on every Heartside account, it records one
+`boost` record (`engine/social.py`): the post's public URL, the platform (`meta` or `tiktok`), the window, the
+spend and the results Ads Manager shows (`impressions`, `reach`, `video_views_3s`, `thruplays`, `link_clicks`,
+`landing_page_views`, `add_to_cart`, `checkouts`, `purchases`, `purchase_value_usd`, `follows`, `shares`,
+`saves`), and the post's organic readings before the boost in `organic_before`. A number it cannot see is left
+out and the record says so; an unreadable boost is `unavailable`, never zero. Claude checks the file and imports
+it (`growth.py events import`). The Sunday report judges each boost by `boost_verdict`: buying intent per paid
+visit, never reach. Paid results never count toward the organic North Star.

@@ -45,6 +45,21 @@ Kind `report`. Part 7 in `PLAYBOOK.md`. Time for Krish: about 15 minutes.
    9. Can the human check keep up with next week's target?
    10. What single constraint limits growth now: attention, traffic, offer,
        conversion, trust, economics or fulfillment?
+4b. **What worked, what did not, and why** (Ruling, Krish, 2026-11-15: "this full closed loop autonomous
+   system must exist where I am shown every week what's working and what's not, but the system automatically
+   incorporates what analyzes why things are working better than others").
+   - Read the week's `post_check` and `boost` records and the 24 h, 72 h and 7 day readings Codex handed in
+     (`growth.py social status`), and `python3 factory/loop.py`'s candidates, winners and kills.
+   - Name the three posts that earned the most genuine interest (sends, saves, follows, comments and average
+     watch time per 1,000 reached, like with like) and the three that earned the least, each with why, in one
+     line, against `docs/HUMOUR.md`'s three parts and the post's opening shot.
+   - Split paid from organic: every boost with its `boost_verdict` (buying intent per paid visit, never reach),
+     and any reach outlier with no boost record named as "paid or not unknown: Codex reads Ads Manager".
+   - Feed it back with no extra press: winners and kills go to next week's concept ranking through the loop's
+     existing rules; any change to a rule, a channel's share of effort or a boost is written as a proposal.
+   - Show Krish: the report's headline carries the week's one winner and one loser, and the Control Center run
+     proposes it as a `check_in` behind `strategy` ("On track?"), with the strategy changes in `exact_payload`.
+   - What needs his browser is read by Codex in a session he can watch, and named as unread until it is.
 5. Then:
    - **Scale, iterate, hold or kill**, for each creative family, channel and
      job, with the evidence. Write each test as a test record and name each
