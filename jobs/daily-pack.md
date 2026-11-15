@@ -53,7 +53,8 @@ observed; `factory/lock.py gate` and automated post proposals enforce the review
      - the source assets from heartside's library;
      - how the real print files appear;
      - what must not appear: AI customers, the product drawn by AI,
-       invented reactions.
+       invented reactions, an AI label, and any AI person without
+       Krish's two yeses (AGENTS.md rule 4).
 
      9:16, with text inside the safe zone. Start every line the public will
      see or hear with `Hook:`, `On screen:`, `Voiceover:`, `Buddy:`,

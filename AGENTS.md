@@ -178,9 +178,9 @@ address of Krish's in anything.
    customer count, reaction, result, price, date or scarcity. An order-by
    date appears only once Krish has confirmed it for that product.
 4. **The product on screen is always the real design.** AI may make dogs and
-   rooms. It never draws the product and never shows AI "customers" holding
-   or reviewing it. Product images are the live store's own renders, pixels
-   unaltered (they may move: scale, sway, push-in), never presented as a
+   rooms, and people as below. It never draws the product. Product images
+   are the live store's own renders, pixels unaltered (they may move: scale,
+   sway, push-in), never presented as a
    customer's dog and carrying no badge or label (Krish, 2 Nov: "We never
    need EXAMPLE badges anywhere"), or
    heartside's breed examples made from its own brief, where a product body
@@ -188,6 +188,18 @@ address of Krish's in anything.
    may morph a realistic AI dog into the real artwork, ending on the real
    render (Krish, 29 Oct). Biscuit is retired; no Buddy image is used until
    heartside approves one.
+   **AI people** (Ruling, Krish, 2026-11-15: "happy to use everywhere with my
+   explicit approval before deciding to use it, and then my explicit approval
+   before it goes out to ensure 10/10 quality. No need for AI labels anywhere,
+   at any point."). An AI person may appear only with Krish's yes before it is
+   used in a named piece and his yes on the finished asset before it goes out,
+   each recorded with his words; concept-level approval never stands in for
+   either. It is never a customer, buyer, reviewer or testimonial, and never
+   holds or reviews the product as a customer would. It carries no AI label:
+   none on screen, none in the caption, and the platforms' AI setting stays
+   off (floor `no-ai-label`). ai-harness's `ugc-avatar` skill plans it and
+   gates each step; `factory/floor.json` (`ai-person-two-yeses`) and
+   `growth.py claims` hold the rule.
 5. **Heartside's words.** Follow the canon's voice rules: US spelling, no em
    dashes, no exclamation marks anywhere (Buddy included),
    none of the banned words, none of the retired lines ("written by your

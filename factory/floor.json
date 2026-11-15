@@ -111,7 +111,7 @@
     "they should come across like organic social posts"
    ],
    "category": "presentation",
-   "rule": "No badge, label, watermark or slogan bar on a post. It reads as an organic post, not an ad.",
+   "rule": "No badge, label, watermark or slogan bar on a post, an AI label included (no-ai-label). It reads as an organic post, not an ad.",
    "check": "code: lock.py STANDING checks; review: look at the final crop",
    "applies_to": [
     "reel",
@@ -491,11 +491,29 @@
    "date": "2026-11-10",
    "made": "The question of turning on TikTok's and Meta's AI-generated label for the realistic dog reels",
    "words": [
-    "no, do not turn on the AI label"
+    "no, do not turn on the AI label",
+    "No need for AI labels anywhere, at any point."
    ],
    "category": "process",
-   "rule": "Heartside posts go out without the platforms' AI-generated label. Codex does not switch it on, and no README or row note asks it to.",
-   "check": "review: no README or Schedule note asks Codex to set an AI-generated label",
+   "rule": "No AI label on a Heartside post, at any point, for AI dogs and AI people alike (Krish, 10 and 15 Nov): none on screen, none in the caption, and the platforms' AI-generated setting is never switched on. Codex does not switch it on, and no README or row note asks it to. A label a platform sets by itself is left as it is; changing it is a setting, which stays with Krish (AGENTS.md rule 1).",
+   "check": "review: no README, Schedule note, caption or frame asks for or carries an AI label; code: still check refuses a record that asks for one",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
+  },
+  {
+   "id": "ai-person-two-yeses",
+   "date": "2026-11-15",
+   "made": "The ruling on AI people in Heartside posts, after the ugc-avatar skill asked for a label on every AI person and kept them out of every venture",
+   "words": [
+    "happy to use everywhere with my explicit approval before deciding to use it, and then my explicit approval before it goes out to ensure 10/10 quality. No need for AI labels anywhere, at any point."
+   ],
+   "category": "process",
+   "rule": "An AI person appears in a post only with Krish's yes before it is used in that named piece and his yes on the finished asset before it goes out, each recorded with his words; concept-level approval never stands in for either. Never a customer, buyer, reviewer or testimonial, never holding or reviewing the product as a customer would, and no AI label (no-ai-label; AGENTS.md rule 4). ai-harness's ugc-avatar plans and gates it.",
+   "check": "review: both yeses, with his words, on the post's Schedule row before it is marked approved, the second bound to the file's sha256; code: growth.py check refuses a caption that presents a customer, review or testimonial (claims row not-a-real-customer)",
    "applies_to": [
     "reel",
     "still",

@@ -108,7 +108,7 @@ history keeps the original wording.
 | UK first, UK spelling | US buyers only; Krish posts from London (the 12 Oct plan) | Writes US English. Never targets the UK unless Krish opens it (see "Becoming the category leader") |
 | A personalized collar, one hero product | Four gifts with the same words, and Biscuit's pick (V3 3) | Treats "a gift from the dog" as the hero. The Morning Mug is the hero object, because V3 8's hero film is the mug. The other three ride along ("same words, four gifts") |
 | Film the making, engraving and packing | Printful prints and ships; nobody at Heartside touches the product | Proof comes from the chat on a phone screen, the words inking in, the real print files on real mockups, and the promise that a person checks every order. Real product photos only once Krish's samples arrive |
-| Real pets and real customers on camera | No customers yet; AI may make dogs and rooms, never the product, never "customers" (HANDOFF 2.4, the 12 Oct plan) | Labels Biscuit as an openly fictional, AI-made character. Shows people only through disclosed creators or permissioned buyers |
+| Real pets and real customers on camera | No customers yet; AI may make dogs and rooms, never the product, never "customers" (HANDOFF 2.4, the 12 Oct plan). AI people only with Krish's two yeses, never as customers, with no AI label (AGENTS.md rule 4, Krish 15 Nov) | Shows real people only through disclosed creators or permissioned buyers |
 | Three master videos a day on five platforms | One Reel a day on Instagram and Facebook, copied to TikTok (the 12 Oct plan), and Krish approves everything in about 20 minutes a day | Drafts one daily concept with native editions. Adds more only when the report shows a winner worth multiplying and Krish's time allows |
 | TikTok is the fastest test bed | TikTok shows a London account's posts mostly to the UK (the 12 Oct plan) | Puts Meta first; TikTok gets copies with low expectations |
 | Paid creator seeding is out of a zero-spend plan | 20 gifted US creators are approved (the 12 Oct plan, V3 8) | Shortlists and drafts each note; Krish approves every gift and sends every message |
@@ -248,7 +248,8 @@ action: "Try it. Link in bio."
 **Production truth.** The product on screen is always the real design
 (HANDOFF rule 4). Composite the real print files onto mockups. AI may make
 rooms and dogs, never the product, and never "customers" holding or
-reviewing it. Biscuit is openly an AI-made character. `growth.py render`
+reviewing it. AI people only under rule 4: Krish's yes before and on the
+finished asset, never as customers, and no AI label. Biscuit is retired. `growth.py render`
 now produces an example audience film, cover, Stories, Pins and subtitles
 from approved v3 mug photos, with silent audio (`docs/ENGINE.md`). The old
 product-repo renderer (`tools/content/reel.py`) still targets the retired

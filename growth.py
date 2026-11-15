@@ -1050,7 +1050,7 @@ AD_CLAIM_WHY = {
     'guarantee': 'states a guarantee: only one heartside\'s canon names may be said, word for word, and a person checks it first (growth.py claims)',
     'dog-health': 'claims a gift helps a dog\'s health or behavior, or that a vet backs it: Heartside sells gifts, never remedies (growth.py claims)',
     'other-brand': 'names or beats another brand: a caption compares the gift with nothing but the dog\'s own life (growth.py claims)',
-    'not-a-real-customer': 'presents a customer, review or testimonial Heartside does not have (AGENTS.md rule 4; growth.py claims)',
+    'not-a-real-customer': 'presents a customer, review or testimonial Heartside does not have, which no AI person ever stands in for (AGENTS.md rule 4; growth.py claims)',
 }
 AD_CLAIMS = [  # (id, the claim, verdict, held by, fails, passes)
     ('price', 'A price', 'Only a live store price or a canon price, or a sum of two', 'code: PRICE (problems)',
@@ -1089,8 +1089,13 @@ AD_CLAIMS = [  # (id, the claim, verdict, held by, fails, passes)
      'Softer than any other blanket brand.', 'Softer than the couch, says the dog.'),
     ('not-a-real-customer', 'A customer, review or testimonial', 'Never one Heartside does not have, and never an AI person as one',
      'code: AD_CLAIM_RULES', 'Real customer photos from dog owners.', 'Made from your own photo.'),
-    ('ai-label', 'The platform\'s AI label on a boost', 'Never hidden or removed (docs/PAID-BOOSTS.md, gate 6)',
-     'review: in Ads Manager, before Krish says go', '', ''),
+    ('ai-label', 'An AI label, organic or boosted', 'Never added or switched on, for AI dogs or AI people (floor no-ai-label; AGENTS.md rule 4). '
+     'One a platform sets by itself is left as it is: changing it is Krish\'s (rule 1)',
+     'review: in the Schedule row and in Ads Manager, before Krish says go', '', ''),
+    ('ai-person', 'An AI person on screen', 'Only with Krish\'s yes before it is used and his yes on the finished asset, each in his words; '
+     'never a customer, buyer, reviewer or testimonial, never holding or reviewing the product as a customer would, and no AI label '
+     '(floor ai-person-two-yeses; AGENTS.md rule 4)',
+     'review: both yeses on the post\'s Schedule row before it is marked approved', '', ''),
     ('gifted', 'A creator\'s gifted post', 'Always disclosed as gifted (rule 7)', 'review: before the creator note goes', '', ''),
 ]
 
@@ -1830,6 +1835,15 @@ def self_test():
         else:
             t(f'claims row {rid} is a review row with no code example', held.startswith('review:') and not fails and not passes)
     t('every new ad rule is a row in the claims table', set(AD_CLAIM_RULES) <= rows and set(AD_CLAIM_RULES) == set(AD_CLAIM_WHY))
+    _floor_ids = {e['id'] for e in json.load(open(os.path.join(HERE, 'factory/floor.json'), encoding='utf-8'))['entries']}
+    _claim = {r[0]: r for r in AD_CLAIMS}
+    t('the claims table and the floor agree on AI labels: the row cites no-ai-label and never asks for one',
+      'no-ai-label' in _floor_ids and 'floor no-ai-label' in _claim['ai-label'][2]
+      and not re.search(r'never (?:hidden|removed)|switch(?:ed)? it on|turn(?:ed)? it on', _claim['ai-label'][2], re.I))
+    t('the claims table and the floor agree on AI people: two yeses, never a customer, no label',
+      'ai-person-two-yeses' in _floor_ids and all(w in _claim['ai-person'][2] for w in ('yes before', 'finished asset', 'never a customer', 'no AI label')))
+    t('a caption presenting a testimonial is refused whoever speaks it',
+      problems({'platform': 'instagram', 'text': 'A testimonial from our presenter: best gift ever.'}, pp) != [])
     t('"not guaranteed" is not a guarantee', ad_claim_problems('Delivery dates are typical, not guaranteed.') == [])
     swipe = [{'id': 'SW-001', 'copy': 'Every morning your cat ignores you and then sits on your laptop like it pays the rent here.'},
              {'id': 'SW-002', 'copy': 'The present your sister will pretend she did not cry over.'}]
