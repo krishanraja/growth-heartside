@@ -85,6 +85,48 @@ approval of a new taste rule or the corrected artwork.
 
 See [the 8 November correction packet](../docs/briefs/2026-11-08-organic-anatomy-correction.md).
 
+## Generated dog stills: the roller and the still check (15 November 2026)
+
+Krish, 10 November 2026: "The dogs in all these videos look way too perfect and not real, and slightly scruffy enough." (floor `real-scruffy-dogs`). Asked plainly for a dog, an image model hands back the same brushed, well-lit pet every time. So a generated dog still's prompt is rolled by `dog_roll.py`, never written by hand. The roller draws every attribute from `bank/dog_pools.json` with the operating system's randomness:
+
+- the breed or mix, coat colour and its real flaws, age, build and collar;
+- the room or yard, where the owner's phone is and how far away;
+- the clutter, the light and its white-balance cast;
+- 3 to 5 iPhone processing artifacts.
+
+Its avoid list blocks the polished look and every floor rule a prompt can break. It keeps no breed or setting twice in a batch, and remembers recent rolls in `local/`. The joke is never rolled: what the dog does is the approved script's beat, passed verbatim.
+
+The route, for every generated dog still:
+
+1. **Read the floor.** `python3 growth.py floor --format still`.
+2. **Script first.** Write the beat against `docs/HUMOUR.md` and score it at tier 2. Only a 9 on paper is generated (floor `spend-means-nine`).
+3. **Roll.** `python3 growth.py still roll --count N [--slot S01 | --breed golden] [--setting kitchen] [--action "<the beat, verbatim>"] [--frame video]`. `--list` shows the breed and setting keys. Send each prompt and its `aspect_ratio` to the generator untouched. To change anything, lock a flag and roll again: an edited prompt fails the check by its SHA-256.
+4. **Reserve.** `python3 growth.py still reserve <roll id> --script-score 9 --by "<the maker>" --credits <the provider's quote> --quote-source "<where it was read>" --quoted-at <ISO time> --allocation "<the approved share>" --credit-allowance <its credits>`. This runs the prompt-stage check first and reserves nothing if the still is held. It then reserves through the provider ledger (`docs/PROVIDERS.md`), with the exact prompt in the brief. In a session with the Control Center connector, the spend is also booked with `reserve_credit_spend` (`docs/CREDITS-SESSION.md`).
+5. **Generate, once.** `python3 growth.py provider transition <request id> submitted`. Generate with the record's prompt and aspect ratio exactly. Then `provider transition <request id> completed --receipt <receipt.json>`.
+6. **Review independently.** A judge who is not the maker reads the still at full size and on a contact sheet.
+   - `python3 growth.py still review <roll id> --template > review.json` prints every verdict the floor is owed.
+   - Answer each with `pass`, `hold` or `n/a` (an `n/a` says why), and add the tier 2 score and its reason.
+   - Then `python3 growth.py still review <roll id> review.json`. It binds the file by its SHA-256 and runs the check.
+7. **Only a pass goes on Krish's review board.** `python3 growth.py still check <roll id>` re-runs the check at any time (`--stage prompt` before the spend).
+
+Every failure names its floor entry and Krish's own words. What the check reads (`engine/stills.py`):
+
+| Floor entry | What code checks |
+|---|---|
+| `real-scruffy-dogs` | The prompt is the roller's, unedited, with its realism block (a phone photo, coat flaws, clutter, 3 to 5 artifacts) and its avoid items. It asks for no polished look, and the credits were reserved for this exact prompt |
+| `real-dogs` | The avoid list guards against extra, missing or merged legs, paws, tails, ears or eyes |
+| `no-badges` | No words, sign, label, logo or watermark asked for in the frame |
+| `real-product` | No mug, blanket, portrait, painting, framed picture or card drawn |
+| `troll-not-mild` | No human smile, grin, wink or side-eye on the dog |
+| `dog-does-dog-things`, `one-trend-one-scene` | No human arms or hands on the dog; nothing upright on its hind legs or choreographed |
+| `no-ai-label` | Nothing in the record asks for the platforms' AI label |
+| `spend-means-nine` | A tier 2 script score of 9 before the spend, and a finished score of 9 before the board |
+| `ten-out-of-ten` | A score and its reason on the still |
+| every still entry whose check is a review | A recorded verdict from a reviewer who is not the maker; a `hold` holds the still |
+| `lock.py` STANDING | No chestnut or red dachshund, and Buddy never drawn |
+
+Every check is keyed to a floor entry that must exist. A new still entry Krish adds to `floor.json` is owed a verdict at once.
+
 ## The judging panel (10 November 2026)
 
 Krish asked for a simple panel that holds every output to 10/10 without burning tokens or hours. `factory/panel.py`

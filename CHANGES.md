@@ -3,6 +3,11 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-15: The dog roller, asked for by Krish in an interactive session. It answers his 10 Nov decline of the generated dogs, "The dogs in all these videos look way too perfect and not real, and slightly scruffy enough." (floor `real-scruffy-dogs`).
+  - A generated dog still's prompt is rolled by `factory/dog_roll.py` from `factory/bank/dog_pools.json`, never written by hand. It rolls the breed or mix, coat flaws, age, setting, phone placement, clutter, light and its cast, and 3 to 5 iPhone artifacts, with an avoid list against the polished look and the floor. No breed or setting repeats in a batch, and recent rolls stay out of the next one. It never draws a chestnut or red dachshund.
+  - `growth.py still roll`, `reserve`, `review` and `check` (`engine/stills.py`) carry a still from its roll to the review board. The credits are reserved through the provider ledger with the exact prompt in the brief, and only after the prompt-stage check. The review owes a verdict on every still entry of the floor, and each failure names the entry and Krish's words. `factory/README.md`, "Generated dog stills", has the route. The `real-scruffy-dogs` check now names the code gate.
+  - No job, schedule or `automations.json` entry changed. Nothing was generated or spent.
+
 - 2026-11-14: Krish answered the fleet decision list (control-center `docs/audits/2026-11-14-fleet-integration/KRISH-ANSWERS.md`), item 5.6, "Heartside: stop the daily content pack nobody reads", recommended yes; his words, about 17:10 UTC: "I agree with everything else until Batch 6".
   - The day pack, radar, creators and store jobs come off the schedule. `automations.json` keeps four scheduled jobs (sync, numbers, answers, report) and lists the four under `off_schedule`: never due, not part of `growth.py run --job all`, each still runnable when named (`growth.py run --job daily-pack`). Each job file says so at its top; AGENTS.md, README, `docs/ENGINE.md` and `docs/CHANNEL-TASKS.md` say four scheduled jobs.
   - Not in this answer, so unchanged: `engine.yml` still checks every 15 minutes (the six-hour cadence in `docs/plans/A1.md` D2 was not asked on 14 Nov). Codex or Cowork scheduled tasks already created on his machine for the four jobs are his to switch off there.

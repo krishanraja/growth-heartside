@@ -11,7 +11,8 @@ answers back from the board. It replaces asking him in chat, and the scattered r
 ## What goes on it
 
 Only work that has already cleared this repository's bar: a post that the panel judged 9 or above and that is
-filed (library lane plus its 02 Sheet), with its media.
+filed (library lane plus its 02 Sheet), with its media. A post built on a generated dog still goes on only once
+each of its stills passes `python3 growth.py still check <roll id>` (`factory/README.md`, "Generated dog stills").
 
 **Asks go to his one list, not the board** (I-24; Ruling, Krish, 2026-11-14: "I want wave 3 now"). A decision
 only Krish can make (lifting a hold, a ruling, a choice between options), a spend, a deletion, or copy that needs

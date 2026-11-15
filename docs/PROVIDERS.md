@@ -78,6 +78,10 @@ and keeps `maximum_usd` at `"0"`, because it spends no new money:
 python3 growth.py provider reserve local/requests/still.json --credit-allowance 110
 ```
 
+A generated dog still is reserved with `python3 growth.py still reserve <roll id>`. That command builds this
+request from the roll, with the roll's exact prompt in the brief, after the floor's prompt-stage check has passed
+(`factory/README.md`, "Generated dog stills").
+
 `--credit-allowance` is the credits the allocation approved for that provider.
 Every reservation under the same allocation counts against it, using actual
 credits once a receipt records them. A prepaid receipt adds `actual_credits`.

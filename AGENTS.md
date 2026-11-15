@@ -94,7 +94,10 @@ Read, in this order, before any job:
    in a fresh checkout first `python3 growth.py events import
    docs/social/2026-11-09-engagement-history.json`, which is safe to replay),
    `python3 growth.py floor --format <what you are making>` before any creative
-   work, and `codex/INDEX.md` before any Codex work.
+   work, and `codex/INDEX.md` before any Codex work. A generated dog still's
+   prompt is rolled with `python3 growth.py still roll`, never written by hand,
+   and passes `growth.py still check` before it reaches the review board
+   (`factory/README.md`, "Generated dog stills").
 
 If nobody named a job, run the one today's schedule (below) says. The source
 documents behind the playbook are in `knowledge/`. Read them when a job needs
