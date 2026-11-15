@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- Claude starts Codex only through scripts/codex_thread.mjs, focus sprints included: a permanent thread in Krish's Codex Desktop recents, released after every turn so he can type in it too. (2026-11-15)
 - A weekly branch sweep (`.github/workflows/branch-sweep.yml`, Sunday 03:17 UTC, and by hand) deletes every remote branch whose work is already on main and lists each branch it keeps with why: unmerged work, an open pull request, protected (Ruling, Krish, 2026-11-15). The script is `.github/scripts/branch_sweep.py`, copied unchanged from ai-harness, which holds the canonical copy. (2026-11-15)
 - generated dog stills now start from the dog roller (factory/dog_roll.py): every attribute rolled outside the model and the prompt sent to the generator untouched, with no breed or setting repeated in a batch or across recent runs, and never a chestnut or red dachshund. `growth.py still roll`, `reserve`, `review` and `check` reserve credits for the exact prompt and hold each still to the floor's still checks, naming the entry and Krish's words (factory/README.md, "Generated dog stills"). Built and tested locally; nothing generated or spent. (2026-11-15)
 - Claude and Codex division written in (Ruling, Krish, 2026-11-15): Codex does the film builds and the social legwork in a session Krish watches in Codex Desktop, records `post_check` (cover, caption, call to action) and `boost` readings as events (`engine/social.py`), and never writes Drive; Claude writes the Sheet. The Sunday report now carries "What worked, what did not, and why" with paid split from organic, shown to Krish as a check-in. First analysis: `docs/audits/2026-11-15-interest-vs-paid.md` (alibi family wins; no paid visit has produced a cart add; the 11 to 13 Nov Facebook traffic burst is not in the boost record). (2026-11-15)
@@ -68,6 +69,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-15 copied from content-engine (krishanraja/content-engine#719), where it was tested live on 15 Nov.
 - 2026-11-13 the Order Loop's claims gate now refuses words on a gift, handmade, uninspected quality, delivery promises and deal wording after an adversarial review found the first gate passed whole captions instead of checking each sentence; four day-pack captions that put a note on the gift were corrected (`1a3ae46`, `a0bcede`, `61184ad`).
 - 2026-11-13 Heartside now tells AEO-Engine why it was not asked, re-asks when its bank grows, and reads AEO's win kits once Control Center serves them (Krish, 13 November).
 - 2026-11-12 Krish, 2026-11-12: "make sure everything's a cohesive system and that the project documentation is 100% up to date with absolutely nothing old or misleading left in there".
@@ -79,7 +81,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-15): roll the next batch of dog stills with `growth.py still roll`, and put on the review board only those that pass `growth.py still check` at the review stage.
+- Next (2026-11-15): Use it for the next focus sprint's Codex work.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
