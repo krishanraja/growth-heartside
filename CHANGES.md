@@ -369,11 +369,61 @@ Newest first. Record his words with the date, then change the job file and
     or plan proposal.
   - No job file or `automations.json` entry changed.
 
+- 2026-10-31: Which tool does which job, and the first concepts. Salvaged on 15 Nov from the unmerged
+  branch `ccr-21e182e5-psq1vi` (Ruling, Krish, 2026-11-15: salvage approved work from stranded branches
+  into main); the plan is `docs/briefs/2026-10-31-q4-creative-strategy.md`.
+  - Concepts C20 to C24 (Send this to the dog mom, Translate your dog, Opened the presents early, Her
+    grandkids have four legs, The wait) approved at concept level on the board. Cadence for the first
+    week: two a day from 1 Nov. Posting: he sees the final videos, then says yes to scheduling that
+    exact batch.
+  - "Higgsfield should be for actual production. Mockup should be done in ChatGPT images through the
+    Codex plugin."
+  - "Runway instead": Runway for the motion on these posts, run once he confirms.
+  - "We have the Content Watcher repository, which is free, so why are you using Higgsfield credits for
+    this?" Reading a reference video goes through `krishanraja/content-watcher` first; a paid analysis
+    only when it cannot read the post.
+  - Superseded since, newer wins: the concepts were reset to finished posts on 2 Nov; Codex ran on his
+    machine through a WSL bridge script then, and now starts only through `scripts/codex_thread.mjs`,
+    with the Claude and Codex split of 15 Nov in AGENTS.md; the Codex card for these concepts was not
+    salvaged because it depends on that bridge.
+
 - 2026-10-30: Channel work runs as the seven channel tasks. Krish asked for each of seven saved Instagram
   growth prompts to be its own task for every specialist, and for a process to the North Star. They are
   defined once in ai-harness `contract/channel-tasks.md`. `crew/registry.json` maps two specialists
   (meta, tiktok) onto them, the radar, daily pack, store and report jobs run them, and
   docs/CHANNEL-TASKS.md holds the weekly loop. No new job, so `automations.json` is unchanged.
+
+- 2026-10-29: Pinterest joins the daily layer. Krish: "yes add pinterest daily, connected it to
+  buffer". Pinterest was to be the fourth platform for the 5-a-day cadence and for concept-level
+  approval. Buffer has the Pinterest business channel `yourdoghasnotes`, with link shortening off and
+  one board, "Gifts from your dog". Salvaged on 15 Nov from the unmerged branch
+  `claude/canva-integration-plan-cpy1p2` (Ruling, Krish, 2026-11-15: salvage approved work from
+  stranded branches into main). Conflict, newer wins: the posting channels are Instagram, Facebook and
+  TikTok (`config/channels.json`), and on 13 Nov Pinterest became a lever that comes to Krish as its
+  own yes, so this entry is history, not a standing instruction.
+
+- 2026-10-29: Socials set up and shoppable where the platforms allow (Cowork session; record in
+  `docs/evidence/2026-10-29-socials-and-shopping-tags.md`, salvaged on 15 Nov from the same branch).
+  - TikTok Shop is held, with no products listed. TikTok's in-app checkout takes no dog photo, and
+    Heartside's painting has to come before checkout. TikTok sells only by sending people to
+    heartside.io, through posts, the bio and ads. Revisit only if a post-purchase photo flow exists
+    and Krish asks. TikTok's bio shows heartside.io as plain text, not a link, so TikTok posts say
+    "heartside.io" on screen or in the caption (where verification stands:
+    `docs/profile-pages/2026-11-11-tiktok-website-eligibility.md`).
+  - Artist's touch stays off every social catalog. It is an add-on and is never tagged on its own.
+  - Pinterest product tags work now, for all three gifts. A test Pin was clicked through to the
+    right page, with Pinterest as the referrer. Instagram and Facebook tags wait on Meta's Commerce
+    review, expected by about 26 November. Until then those posts sell through the bio link and
+    Story link stickers.
+  - TikTok's display name is "Heartside: Gifts from your dog". The full display name is over
+    TikTok's 30-character limit.
+
+- 2026-10-29: Runway allocation. Krish: the prepaid Runway credits that lapse on 7 November are to be
+  mostly used getting Heartside up and running once ad and organic post production starts. The
+  amount stays out of this public repository. Production uses them for the hero films in
+  `docs/briefs/2026-10-29-creative-direction.md`, stills first, and logs each generation's concept
+  and asset. Salvaged on 15 Nov from the same branch; the allocation has since lapsed. The painting
+  pipeline brief to heartside from that day is `docs/briefs/2026-10-29-heartside-painting-pipeline.md`.
 
 - 2026-10-29: Prepaid credits are spent by a daily scheduled session ("Scheduled sessions", Krish's answer on
   who spends them). `docs/CREDITS-SESSION.md` is its playbook; it is not one of the seven jobs, so
