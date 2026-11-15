@@ -56,7 +56,14 @@ packs apart from makeyourmindup's (see `post` below).
     python3 growth.py check PACK.json
         Heartside's house rules on every draft, the creative ids and links,
         and that the pack was written against today's heartside (no canon
-        change since the sync it names). Exit 1 names everything wrong.
+        change since the sync it names). Exit 1 names everything wrong. It
+        also holds every caption to the claims table, refuses one that shares
+        an eight-word run with the local swipe file (local/swipe/swipe.jsonl;
+        absent means skipped, and it says so), and checks each variation set.
+
+    python3 growth.py claims
+        What a caption may claim, given that any caption can be boosted as it
+        stands (docs/PAID-BOOSTS.md, "Captions a boost may promote").
 
     python3 growth.py post PACK.json
         Checks, then stores the pack. Until Control Center keeps a venture
@@ -95,6 +102,9 @@ A pack file:
      "items": [{"platform": "instagram", "creative_id": "IG_EMO_REEL_C01_H03_V1_20261019",
                 "target_url": "", "target_name": "", "why": "...", "text": "..."}],
      "numbers": null, "link": null}
+An item that is one of a set of caption variations also carries
+    "variation": {"set": "<name>", "angle": "...", "hook": "...", "reader": "...", "borrowed": "SW-004"}
+where borrowed is the id of the swipe entry whose pattern it used, never a name.
 
 Kinds: daily, radar, numbers, partners, conversion, report.
 Environment: GITHUB_TOKEN (optional, raises GitHub's read limit),
@@ -901,10 +911,202 @@ def reading(s, texts, commits, pulls, live):
 
 
 # ---------------------------------------------------------------------------
+# Captions a boost may promote. A boost carries the live post unchanged (docs/PAID-BOOSTS.md), so every caption is
+# written as if money may one day sit behind it: held to the claims table below, kept clear of copied ad words, and,
+# when it is one of a set of variations, different from the others in angle, hook, length and reader.
+# ---------------------------------------------------------------------------
+# The swipe file: long-running ads gathered by paste or a handful of public ad library pages read signed out, one
+# JSON object a line ({"id": "SW-001", "copy": "...", ...}). It lives under local/, which git ignores, and is never
+# committed (rule 6). A pattern is borrowed from it, never a sentence. This holds the words only: proven formats,
+# memes and tracks stay free to reuse (factory/floor.json, no-priest).
+SWIPE_FILE = os.path.join(LOCAL, 'swipe', 'swipe.jsonl')
+SWIPE_ID = re.compile(r'^SW-\d{3,}$')
+SWIPE_RUN = 8                    # an eight-word run shared with a swipe entry is copied words
+VARIATION_KEYS = ('set', 'angle', 'hook', 'reader', 'borrowed')
+VARIATIONS = 3                   # a set holds three variations
+LENGTH_STEP = 1.25               # each at least a quarter longer or shorter than each other one
+
+
+def run_words(text):
+    return re.findall(r'[0-9a-z]+', str(text or '').lower())
+
+
+def word_runs(text, n=SWIPE_RUN):
+    tokens = run_words(text)
+    return {tuple(tokens[i:i + n]) for i in range(len(tokens) - n + 1)}
+
+
+def public_text(item):
+    """The words the public sees: every line, except on the internal platforms, where only the marked lines."""
+    text = item.get('text') if isinstance(item.get('text'), str) else ''
+    if item.get('platform') in INTERNAL:
+        text = '\n'.join(line for line in text.splitlines() if PUBLIC_LINE.match(line))
+    return text
+
+
+def load_swipe(path=SWIPE_FILE):
+    """(entries, errors, note). No file means None: the overlap and borrowed-id checks are skipped, and the note says so."""
+    if not os.path.isfile(path):
+        return None, [], f'swipe file: none at {os.path.relpath(path, HERE)}, so the eight-word overlap check and the borrowed-id check were skipped'
+    entries, errors, seen = [], [], set()
+    with open(path, encoding='utf-8') as fh:
+        for number, line in enumerate(fh, 1):
+            if not line.strip():
+                continue
+            try:
+                entry = json.loads(line)
+            except ValueError:
+                errors.append(f'swipe file line {number}: not valid JSON'); continue
+            ident = entry.get('id') if isinstance(entry, dict) else None
+            if not isinstance(ident, str) or not SWIPE_ID.match(ident) or not isinstance(entry.get('copy'), str) or not entry['copy'].strip():
+                errors.append(f'swipe file line {number}: needs an id like SW-001 (never a name) and the ad\'s copy'); continue
+            if ident in seen:
+                errors.append(f'swipe file line {number}: {ident} is used twice'); continue
+            seen.add(ident)
+            entries.append(entry)
+    return entries, errors, f'swipe file: {len(entries)} entries read from {os.path.relpath(path, HERE)}'
+
+
+def swipe_overlap(text, swipe):
+    """The ids of the swipe entries that share an eight-word run with text."""
+    mine = word_runs(text)
+    return [e['id'] for e in swipe or [] if mine & word_runs(e['copy'])] if mine else []
+
+
+def variation_problems(items, swipe=None):
+    """Drafts that carry "variation": {"set", "angle", "hook", "reader", "borrowed"} are one set per name. A set holds
+    three, and each differs from each other one in angle, hook (and its first line), reader and length, and shares no
+    eight-word run with it. borrowed names the swipe entry whose pattern it used, by id only."""
+    errs, sets = [], {}
+    known = None if swipe is None else {e['id'] for e in swipe}
+    for i, item in enumerate(items, 1):
+        if not isinstance(item, dict) or 'variation' not in item:
+            continue
+        v = item['variation']
+        if not isinstance(v, dict):
+            errs.append(f'draft {i}: variation must be an object'); continue
+        missing = [k for k in VARIATION_KEYS if not isinstance(v.get(k), str) or not v[k].strip()]
+        if missing:
+            errs.append(f'draft {i}: variation needs {", ".join(missing)}'); continue
+        if not SWIPE_ID.match(v['borrowed']):
+            errs.append(f'draft {i}: variation borrowed "{v["borrowed"]}" must be a swipe entry id like SW-004, never a name')
+        elif known is not None and v['borrowed'] not in known:
+            errs.append(f'draft {i}: variation borrowed {v["borrowed"]}, which is not in the swipe file')
+        sets.setdefault(v['set'].strip(), []).append((i, public_text(item), v))
+    for name, members in sets.items():
+        if len(members) < VARIATIONS:
+            errs.append(f'variation set "{name}" has {len(members)} draft{"s" if len(members) != 1 else ""}; a set holds {VARIATIONS} that differ')
+        for n, (i, a_text, a) in enumerate(members):
+            for j, b_text, b in members[n + 1:]:
+                pair = f'variation set "{name}", drafts {i} and {j}'
+                for key in ('angle', 'hook', 'reader'):
+                    if run_words(a[key]) == run_words(b[key]):
+                        errs.append(f'{pair}: the same {key}')
+                first_a = run_words(next((l for l in a_text.splitlines() if l.strip()), ''))
+                first_b = run_words(next((l for l in b_text.splitlines() if l.strip()), ''))
+                if first_a == first_b or first_a[:3] == first_b[:3]:
+                    errs.append(f'{pair}: they open the same way; each hook needs its own first line')
+                na, nb = len(run_words(a_text)), len(run_words(b_text))
+                if min(na, nb) == 0 or max(na, nb) < LENGTH_STEP * min(na, nb):
+                    errs.append(f'{pair}: about the same length ({na} and {nb} words); make each at least a quarter longer or shorter')
+                if word_runs(a_text) & word_runs(b_text):
+                    errs.append(f'{pair}: they share an eight-word run, so they are one caption written twice')
+    return errs
+
+
+# What a caption may claim, given that any caption can be boosted as it stands. One row a claim: what Heartside may
+# say, why, and what holds it. A row held by "code: <name>" is enforced by that check in this file (the self-test
+# proves each one refuses its example and passes its counter-example); "review:" rows are checked by a person.
+# Ad field lengths are deliberately absent: a boost promotes the live post, so the caption's own limit (LIMITS) is the
+# only length. Separate ad fields wait until Krish opens a paid test.
+AD_CLAIM_RULES = {
+    'personal-attribute': re.compile(
+        r"\b(?:are you|you'?re|you are|feeling)\s+(?:so\s+|still\s+)?(?:lonely|single|depressed|anxious|broke|divorced|grieving"
+        r"|overweight|sick|unemployed|alone)\b|\byour\s+(?:depression|anxiety|divorce|debt|diagnosis|weight loss)\b", re.I),
+    # Never "full refund": heartside's canon states its cancellation refund, and that line may be quoted as it stands.
+    'guarantee': re.compile(r'\bguarantee[ds]?\b|\bmoney[- ]back\b|\brisk[- ]free\b', re.I),
+    'dog-health': re.compile(
+        r'\bvet[- ](?:approved|recommended|endorsed)\b|\b(?:calms?|soothes?|reduces?|eases?|cures?|treats|helps?(?: with)?)\s+'
+        r'(?:\w+\s+){0,2}?(?:anxiety|stress|arthritis|joint pain)\b', re.I),
+    'other-brand': re.compile(r'\b(?:better|cheaper|nicer|cuter|softer)\s+than\s+(?:any|every|other|the other|their|those)\b'
+                              r'|\bcompetitors?\b', re.I),
+    'not-a-real-customer': re.compile(r'\b(?:verified (?:buyers?|purchases?|reviews?)|real customers?|customer (?:photos?|reviews?|stor(?:y|ies))'
+                                      r'|testimonials?|as seen on)\b', re.I),
+}
+AD_CLAIM_WHY = {
+    'personal-attribute': 'says or suggests it knows the reader\'s personal circumstances (health, body, money, relationships), which a caption that may be boosted never does (growth.py claims)',
+    'guarantee': 'states a guarantee: only one heartside\'s canon names may be said, word for word, and a person checks it first (growth.py claims)',
+    'dog-health': 'claims a gift helps a dog\'s health or behavior, or that a vet backs it: Heartside sells gifts, never remedies (growth.py claims)',
+    'other-brand': 'names or beats another brand: a caption compares the gift with nothing but the dog\'s own life (growth.py claims)',
+    'not-a-real-customer': 'presents a customer, review or testimonial Heartside does not have (AGENTS.md rule 4; growth.py claims)',
+}
+AD_CLAIMS = [  # (id, the claim, verdict, held by, fails, passes)
+    ('price', 'A price', 'Only a live store price or a canon price, or a sum of two', 'code: PRICE (problems)',
+     'The portrait is $31.', 'The portrait is $59.'),
+    ('bundle-saving', 'A percentage saving', 'Only the permanent bundle saving (two gifts save 15%, three or more 20%), never a deal',
+     'code: _percent_problem', 'Take 30% off every mug.', 'Two gifts save 15%.'),
+    ('deal', 'A sale, deal or event offer', 'Never: the bundle saving is permanent', 'code: CLAIMS',
+     'Our Black Friday sale starts now.', 'A gift from your dog, in the dog\'s own words, in the box.'),
+    ('urgency', 'Scarcity or urgency', 'Only a real, confirmed order-by date', 'code: FAKE_PROOF',
+     'Only 3 left, hurry.', 'Order by December 4 for delivery by Christmas to a US address.'),
+    ('delivery', 'A delivery date', 'Only heartside\'s two anchored Christmas lines', 'code: _delivery_promise',
+     'Arrives by December 20.', 'Order by December 4 for delivery by Christmas to a US address.'),
+    ('outside-us', 'Shipping outside the US', 'Never: US addresses only', 'code: OUTSIDE_US',
+     'We ship to Canada too.', 'We ship to US addresses.'),
+    ('proof', 'Reviews, ratings, rankings or counts', 'Never invented', 'code: FAKE_PROOF',
+     'Loved by thousands of dog parents.', 'Made from a photo of your dog.'),
+    ('handmade', 'Handmade or a human artist', 'Never: an AI artwork system paints, a person checks', 'code: CLAIMS',
+     'Each portrait is hand-painted.', 'A person checks every portrait before it prints.'),
+    ('quality', 'Physical quality', 'Never until heartside has inspected it', 'code: CLAIMS',
+     'A premium blanket built to last.', 'Printed and shipped by Printful.'),
+    ('words-on-gift', 'Words printed on a gift', 'Never: every gift is artwork only, the note comes in the box', 'code: WORDS_ON_GIFT',
+     'Your dog\'s message printed on the mug.', 'The note from your dog comes in the box.'),
+    ('was-price', 'A was-price or a strike-through', 'Never', 'code: FAKE_PROOF',
+     'Was $45, now $29.', 'The mug is $29.'),
+    ('code', 'A discount code', 'Only on an intent buy item', 'code: CODE_ASK',
+     'Use code DOG10 at checkout.', 'Find yours at the shop.'),
+    ('statistic', 'An outside statistic', 'Never one with no source we can check', 'code: DO_NOT_QUOTE',
+     'People have an 8-second attention span.', 'Your dog has watched you eat every meal this year.'),
+    ('personal-attribute', 'The reader\'s personal circumstances', 'Never said or suggested', 'code: AD_CLAIM_RULES',
+     'Are you lonely this winter?', 'Your dog knows when you are home.'),
+    ('guarantee', 'A guarantee', 'Only one heartside\'s canon names, word for word', 'code: AD_CLAIM_RULES',
+     'Love it or your money back.', 'Delivery dates are typical, not guaranteed.'),
+    ('dog-health', 'A dog\'s health or behavior', 'Never: a gift, never a remedy', 'code: AD_CLAIM_RULES',
+     'This blanket calms separation anxiety.', 'This blanket is where the dog sleeps now.'),
+    ('other-brand', 'Another brand', 'Never named or beaten', 'code: AD_CLAIM_RULES',
+     'Softer than any other blanket brand.', 'Softer than the couch, says the dog.'),
+    ('not-a-real-customer', 'A customer, review or testimonial', 'Never one Heartside does not have, and never an AI person as one',
+     'code: AD_CLAIM_RULES', 'Real customer photos from dog owners.', 'Made from your own photo.'),
+    ('ai-label', 'The platform\'s AI label on a boost', 'Never hidden or removed (docs/PAID-BOOSTS.md, gate 6)',
+     'review: in Ads Manager, before Krish says go', '', ''),
+    ('gifted', 'A creator\'s gifted post', 'Always disclosed as gifted (rule 7)', 'review: before the creator note goes', '', ''),
+]
+
+
+def ad_claim_problems(text):
+    """The claims-table rows that live only here, sentence by sentence: what an ad may never say."""
+    out = []
+    for sentence in SENTENCE.split(text or ''):
+        for rid, rx in AD_CLAIM_RULES.items():
+            if rx.search(sentence) and not (rid == 'guarantee' and NO_GUARANTEE.search(sentence)):
+                out.append(AD_CLAIM_WHY[rid])
+    return list(dict.fromkeys(out))
+
+
+def render_claims():
+    lines = ['What a Heartside caption may claim. Any caption can be boosted as it stands (docs/PAID-BOOSTS.md),',
+             'so every caption is held to this table. No ad field lengths: a boost promotes the live post, so the',
+             'caption\'s own limit is the only length; separate ad fields wait until Krish opens a paid test.', '']
+    for rid, claim, verdict, held, _, _ in AD_CLAIMS:
+        lines.append(f'{claim}: {verdict}.\n    held by {held}   [{rid}]')
+    return '\n'.join(lines)
+
+
+# ---------------------------------------------------------------------------
 # Checking a pack.
 # ---------------------------------------------------------------------------
-def problems(item, price_points=()):
-    """Every house rule this one draft breaks, in plain words."""
+def problems(item, price_points=(), swipe=None):
+    """Every house rule this one draft breaks, in plain words. swipe: the swipe file's entries, or None when absent."""
     out = []
     text = item.get('text') or ''
     if not isinstance(text, str):
@@ -949,6 +1151,9 @@ def problems(item, price_points=()):
         if rx.search(text):
             out.append(why)
     out += claim_problems(text)
+    out += ad_claim_problems(text)
+    for ident in swipe_overlap(text, swipe):
+        out.append(f'it shares an eight-word run with swipe entry {ident}: borrow its pattern, never its words')
     if SAD.search(text):
         out.append('it touches death, illness, memorials or abandonment (not in version one; never a joke)')
     for rx, us in UK:
@@ -992,7 +1197,7 @@ def problems(item, price_points=()):
     return out
 
 
-def check_pack(pack, price_points=(), state=None):
+def check_pack(pack, price_points=(), state=None, swipe=None):
     errs = []
     if not isinstance(pack, dict):
         return ['pack must be a JSON object']
@@ -1041,13 +1246,14 @@ def check_pack(pack, price_points=(), state=None):
                     errs.append(f'draft {i}: creative_id names a different platform')
                 if match.groups()[-1] != str(pack.get('pack_date', '')).replace('-', ''):
                     errs.append(f'draft {i}: creative_id date differs from pack_date')
-        for p in problems(item, price_points):
+        for p in problems(item, price_points, swipe):
             errs.append(f'draft {i} ({item.get("platform", "?")}): {p}')
         if state is not None and isinstance(item.get('text'), str):
             public = item['text']
             if item.get('platform') in INTERNAL:
                 public = '\n'.join(l for l in public.splitlines() if PUBLIC_LINE.match(l))
             errs += [f'draft {i}: {e}' for e in offers.validate_item(item, public, state)]
+    errs += variation_problems(items, swipe)
     if pack.get('kind') == 'numbers':
         rows = pack.get('numbers')
         if not isinstance(rows, list) or not rows:
@@ -1601,6 +1807,76 @@ def self_test():
     example = json.load(open(os.path.join(HERE, 'docs/control-center/engine-report.example.json')))
     t('the Control Center report digest reproduces the protocol worked example',
       report_digest(example) == example['payload_sha256'] == 'f4351324e84aa1baf6afd1bc4d2ffadb3039ab6399b2309c2717b89a26a0a517')
+    # Captions a boost may promote: the claims table, the swipe-file overlap and the variation sets.
+    pp = [29.0, 45.0, 59.0, 119.0, 129.0]
+    rows = {r[0] for r in AD_CLAIMS}
+    t('every claims-table row has its own id', len(rows) == len(AD_CLAIMS))
+    t('the claims table keeps no ad field lengths', not re.search(r'\b(?:characters?|chars?|max(?:imum)? length)\b', render_claims().split('\n\n', 1)[1], re.I))
+    for rid, claim, verdict, held, fails, passes in AD_CLAIMS:
+        if held.startswith('code:'):
+            t(f'claims row {rid} is held by a check that exists', held.split()[1] in globals())
+            t(f'claims row {rid} refuses its example', problems({'platform': 'instagram', 'text': fails}, pp) != [])
+            t(f'claims row {rid} passes its counter-example', problems({'platform': 'instagram', 'text': passes}, pp) == [])
+        else:
+            t(f'claims row {rid} is a review row with no code example', held.startswith('review:') and not fails and not passes)
+    t('every new ad rule is a row in the claims table', set(AD_CLAIM_RULES) <= rows and set(AD_CLAIM_RULES) == set(AD_CLAIM_WHY))
+    t('"not guaranteed" is not a guarantee', ad_claim_problems('Delivery dates are typical, not guaranteed.') == [])
+    swipe = [{'id': 'SW-001', 'copy': 'Every morning your cat ignores you and then sits on your laptop like it pays the rent here.'},
+             {'id': 'SW-002', 'copy': 'The present your sister will pretend she did not cry over.'}]
+    copied = {'platform': 'instagram', 'text': 'He sits on your laptop like it pays the rent here.'}
+    t('a caption that shares eight words with a swipe entry is refused, naming the entry',
+      any('swipe entry SW-001' in p for p in problems(copied, pp, swipe)))
+    t('seven shared words pass', problems({'platform': 'instagram', 'text': 'He sits on your laptop like it pays for himself.'}, pp, swipe) == [])
+    t('the overlap ignores case and punctuation',
+      any('SW-002' in p for p in problems({'platform': 'instagram', 'text': 'THE present, your sister will pretend she did not cry over.'}, pp, swipe)))
+    t('with no swipe file the overlap check is skipped, never failed', problems(copied, pp, None) == [])
+    t('the swipe file lives under local/, which git ignores', os.path.dirname(SWIPE_FILE).startswith(LOCAL + os.sep))
+    with tempfile.TemporaryDirectory() as tmp:
+        absent = load_swipe(os.path.join(tmp, 'none.jsonl'))
+        t('a missing swipe file is skipped and said', absent[0] is None and absent[1] == [] and 'skipped' in absent[2])
+        path = os.path.join(tmp, 'swipe.jsonl')
+        with open(path, 'w', encoding='utf-8') as fh:
+            fh.write(json.dumps(swipe[0]) + '\nnot json\n' + json.dumps({'id': 'Big Brand', 'copy': 'x'}) + '\n' + json.dumps(swipe[0]) + '\n')
+        read = load_swipe(path)
+        t('a swipe file is read, and a bad line, a name for an id and a reused id are each reported',
+          [e['id'] for e in read[0]] == ['SW-001'] and len(read[1]) == 3 and 'never a name' in read[1][1])
+    var_ids = ['IG_EMO_REEL_C01_H03_V1_20261019', 'IG_ENT_REEL_C01_H04_V1_20261019', 'IG_UTIL_REEL_C01_H05_V1_20261019']
+    var_texts = ['He knocked your coffee over twice this week, and now he wants a gift from you.',
+                 'Gift idea for the friend whose dog runs the house: the dog, painted, on the mug she drinks from every morning.',
+                 'Tag the person this dog owns. The dog has already approved the portrait, which is how it approves everything '
+                 'in that house, from the couch to the good blanket you said was yours.']
+    var_meta = [('the dog takes credit', 'a crime report', 'a gift buyer', 'SW-001'),
+                ('the friend who has everything', 'a plain gift tip', 'someone buying for a friend', 'SW-002'),
+                ('the owner as the joke', 'a direct order', 'a follower who tags friends', 'SW-001')]
+
+    def var_pack(change=None):
+        items = [{'platform': 'instagram', 'creative_id': c, 'text': x,
+                  'variation': {'set': 'mug-roast', 'angle': m[0], 'hook': m[1], 'reader': m[2], 'borrowed': m[3]}}
+                 for c, x, m in zip(var_ids, var_texts, var_meta)]
+        if change:
+            change(items)
+        return {**good, 'items': items}
+
+    def var_errors(change=None, sw=swipe):
+        return check_pack(var_pack(change), pp, swipe=sw)
+    t('three variations that differ in angle, hook, length and reader pass', var_errors() == [])
+    t('two variations are not a set', any('a set holds 3' in e for e in var_errors(lambda items: items.pop())))
+    for key in ('angle', 'hook', 'reader'):
+        t(f'two variations with the same {key} are refused',
+          any(f'the same {key}' in e for e in var_errors(lambda items, k=key: items[2]['variation'].update({k: items[0]['variation'][k].upper()}))))
+    t('two variations that open the same way are refused', any('open the same way' in e for e in var_errors(
+        lambda items: items[1].update(text='He knocked your mug clean off the table and asked for a portrait of himself on the next one, painted.'))))
+    t('variations of about the same length are refused', any('about the same length' in e for e in var_errors(
+        lambda items: items[0].update(text='Your dog knocked the coffee over twice this week and now wants a mug of his own, painted.'))))
+    t('two variations that share eight words are refused', any('share an eight-word run' in e for e in var_errors(
+        lambda items: items[1].update(text=items[1]['text'] + ' The dog has already approved the portrait, which is how it works.'))))
+    t('a name in place of a swipe id is refused', any('never a name' in e for e in var_errors(
+        lambda items: items[0]['variation'].update(borrowed='the big pet brand'))))
+    unknown = lambda items: items[0]['variation'].update(borrowed='SW-099')
+    t('a swipe id the file does not hold is refused', any('SW-099, which is not in the swipe file' in e for e in var_errors(unknown)))
+    t('with no swipe file the borrowed-id check is skipped', var_errors(unknown, None) == [])
+    t('a variation with no reader is refused', any('variation needs reader' in e for e in var_errors(
+        lambda items: items[2]['variation'].pop('reader'))))
     recs = json.load(open(os.path.join(HERE, 'recommendations.json')))
     t('every recommendation has a stable proposal id and close event',
       all(re.fullmatch(r'heartside:rec:[a-z0-9-]+', r.get('id', '')) and re.fullmatch(r'[a-z][a-z0-9_]*', r.get('close_event', '')) for r in recs)
@@ -1623,6 +1899,7 @@ def main():
     s = sub.add_parser('post'); s.add_argument('file')
     r = sub.add_parser('read'); r.add_argument('--days', type=int, default=7); r.add_argument('--kind')
     sub.add_parser('doctor')
+    sub.add_parser('claims', help='What a caption may claim, given that any caption can be boosted as it stands')
     from engine import cli
     cli.add_commands(sub)
     a = ap.parse_args()
@@ -1712,8 +1989,9 @@ def main():
                       'synced_at': dt.datetime.now(dt.timezone.utc).isoformat()}
             except (urllib.error.URLError, ValueError, KeyError) as e:
                 catalog_errors.append(f'purchase copy blocked: current public offers could not be confirmed ({e})')
-        errs = check_pack(pack, (st or {}).get('price_points') or (), state=st)
-        errs += catalog_errors
+        swipe, swipe_errors, swipe_note = load_swipe()
+        errs = check_pack(pack, (st or {}).get('price_points') or (), state=st, swipe=swipe)
+        errs += swipe_errors + catalog_errors
         if isinstance(pack, dict) and (pack.get('kind') == 'daily' or pack.get('production')):
             from engine.media import verify
             errs += verify(Path(HERE), pack.get('production'), pack)
@@ -1722,6 +2000,7 @@ def main():
                 errs += freshness(pack, st, head_sha, raw, docs_listing)
         except (urllib.error.URLError, OSError) as e:
             errs.append(f'could not confirm heartside is unchanged since the sync ({e}); with no answer, nothing passes')
+        print(swipe_note)
         if errs:
             print('Not ready:\n  ' + '\n  '.join(errs))
             sys.exit(1)
@@ -1734,6 +2013,9 @@ def main():
         return
     if a.cmd == 'doctor':
         sys.exit(doctor())
+    if a.cmd == 'claims':
+        print(render_claims())
+        return
     ap.print_help()
 
 

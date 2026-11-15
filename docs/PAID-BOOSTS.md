@@ -103,6 +103,27 @@ How the test runs:
 
 Nobody edits the posts or the Buffer queue.
 
+## Captions a boost may promote
+
+A boost carries the live post unchanged, caption included, so every caption is written as if money may one day sit
+behind it. `python3 growth.py check` holds each one to three things:
+
+- **The claims table.** What a caption may claim, one row a claim, with what holds each row: `python3 growth.py claims`.
+  Most rows are the checks this engine already ran; the new ones refuse a caption that suggests it knows the reader's
+  personal circumstances, states a guarantee heartside's canon does not, claims a gift helps a dog's health, names or
+  beats another brand, or presents a customer, review or testimonial Heartside does not have. The table keeps no ad
+  field lengths: the caption's own platform limit is the only length until Krish opens a paid test with separate ad
+  fields.
+- **No copied ad words.** Long-running ads gathered by paste, or from at most about ten public ad library pages read
+  signed out, go in `local/swipe/swipe.jsonl`, one entry a line, each with an id like `SW-001` and the ad's copy. It is
+  never committed (`local/` is ignored). A caption that shares an eight-word run with any entry is refused: borrow the
+  pattern, never the words. Proven formats, memes and tracks stay free to reuse (the floor's `no-priest`); this holds
+  the words only. With no swipe file the check is skipped, and `check` says so.
+- **Variations that really differ.** Captions written as variations of one post carry
+  `"variation": {"set", "angle", "hook", "reader", "borrowed"}`. A set holds three, and each differs from the others in
+  angle, hook and first line, reader and length (at least a quarter longer or shorter), with no eight-word run in
+  common. `borrowed` names the swipe entry whose pattern it used, by id only, never by the advertiser's name.
+
 ## Reading a boost's results (Ruling, Krish, 2026-11-15)
 
 No API or connector reaches Meta Ads Manager, the Instagram and Facebook Boost history or TikTok Promote from this
