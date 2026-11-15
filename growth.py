@@ -973,6 +973,18 @@ def swipe_overlap(text, swipe):
     return [e['id'] for e in swipe or [] if mine & word_runs(e['copy'])] if mine else []
 
 
+def swipe_warnings(items, swipe=None):
+    """Warnings, never refusals (Ruling, Krish, 2026-11-15: the eight-word check warns only): each draft that shares an
+    eight-word run with a swipe entry, named by the entry's id. None without a swipe file."""
+    out = []
+    for i, item in enumerate(items or []):
+        if isinstance(item, dict) and isinstance(item.get('text'), str):
+            for ident in swipe_overlap(item['text'], swipe):
+                out.append(f'draft {i} ({item.get("platform", "?")}): it shares an eight-word run with swipe entry {ident}: '
+                           'borrow its pattern, never its words')
+    return out
+
+
 def variation_problems(items, swipe=None):
     """Drafts that carry "variation": {"set", "angle", "hook", "reader", "borrowed"} are one set per name. A set holds
     three, and each differs from each other one in angle, hook (and its first line), reader and length, and shares no
@@ -1152,8 +1164,6 @@ def problems(item, price_points=(), swipe=None):
             out.append(why)
     out += claim_problems(text)
     out += ad_claim_problems(text)
-    for ident in swipe_overlap(text, swipe):
-        out.append(f'it shares an eight-word run with swipe entry {ident}: borrow its pattern, never its words')
     if SAD.search(text):
         out.append('it touches death, illness, memorials or abandonment (not in version one; never a joke)')
     for rx, us in UK:
@@ -1824,11 +1834,12 @@ def self_test():
     swipe = [{'id': 'SW-001', 'copy': 'Every morning your cat ignores you and then sits on your laptop like it pays the rent here.'},
              {'id': 'SW-002', 'copy': 'The present your sister will pretend she did not cry over.'}]
     copied = {'platform': 'instagram', 'text': 'He sits on your laptop like it pays the rent here.'}
-    t('a caption that shares eight words with a swipe entry is refused, naming the entry',
-      any('swipe entry SW-001' in p for p in problems(copied, pp, swipe)))
-    t('seven shared words pass', problems({'platform': 'instagram', 'text': 'He sits on your laptop like it pays for himself.'}, pp, swipe) == [])
+    t('a caption that shares eight words with a swipe entry is warned about, naming the entry, and never refused',
+      any('swipe entry SW-001' in w for w in swipe_warnings([copied], swipe)) and problems(copied, pp, swipe) == [])
+    t('seven shared words raise no warning', swipe_warnings([{'platform': 'instagram', 'text': 'He sits on your laptop like it pays for himself.'}], swipe) == [])
     t('the overlap ignores case and punctuation',
-      any('SW-002' in p for p in problems({'platform': 'instagram', 'text': 'THE present, your sister will pretend she did not cry over.'}, pp, swipe)))
+      any('SW-002' in w for w in swipe_warnings([{'platform': 'instagram', 'text': 'THE present, your sister will pretend she did not cry over.'}], swipe)))
+    t('with no swipe file there is no warning', swipe_warnings([copied], None) == [])
     t('with no swipe file the overlap check is skipped, never failed', problems(copied, pp, None) == [])
     t('the swipe file lives under local/, which git ignores', os.path.dirname(SWIPE_FILE).startswith(LOCAL + os.sep))
     with tempfile.TemporaryDirectory() as tmp:
@@ -2001,6 +2012,9 @@ def main():
         except (urllib.error.URLError, OSError) as e:
             errs.append(f'could not confirm heartside is unchanged since the sync ({e}); with no answer, nothing passes')
         print(swipe_note)
+        warned = swipe_warnings(pack.get('items') if isinstance(pack, dict) else [], swipe)
+        if warned:
+            print('Warnings (they do not block):\n  ' + '\n  '.join(warned))
         if errs:
             print('Not ready:\n  ' + '\n  '.join(errs))
             sys.exit(1)
