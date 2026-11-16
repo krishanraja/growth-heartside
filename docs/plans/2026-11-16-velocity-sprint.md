@@ -13,7 +13,7 @@ Live Shopify readings for the last 30 days, taken on 16 Nov:
 
 Krish asked "what do we need to be doing 10x better", then "Do the rest, anything is on the table". The order of work is now:
 
-1. **Landing.** The heartside site gets a social landing route that continues the post the visitor came from. In the same work, testimonials that can't be verified and the EXAMPLE badges come off. This is built in the heartside repository and needs Krish's approval before it goes live. Until it lands, every link points to the product page the post shows, never to the homepage.
+1. **Landing.** The heartside site gets a social landing route that continues the post the visitor came from. In the same work, testimonials that can't be verified and the EXAMPLE badges come off. Built in heartside pull request #153 and merged on 16 Nov (Krish: "Whatever you recommend for the best quality"). It includes the painting-first cut: the painting shows as soon as it is ready and the note's questions follow it, so the landing reaches the painting in 7 taps when it is back by the end of the studio, against 15 before. It goes live only when the guarded theme push runs against the live theme, which Krish runs. Until then, every link points to the product page the post shows, never to the homepage.
 2. **A click path on every channel.**
    - Daily Stories with link stickers.
    - Pins that link straight to product pages.
