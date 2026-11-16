@@ -4,6 +4,25 @@ Krish, 16 Nov: "the main priority as you know is getting more, better posts out 
 
 North Star part this moves: organic posts that reach new US dog owners and send them to heartside.io (link taps and sessions by `utm_content`), the leading signals before `organic_net_sales_usd`.
 
+## Re-weighted, 16 Nov afternoon: reach, click path and landing come before volume
+
+Live Shopify readings for the last 30 days, taken on 16 Nov:
+- Organic posts sent about 10 visits.
+- Social sent 541 sessions, which arrived in two bursts that look paid: 116 on 6 to 7 Nov and 414 on 11 to 13 Nov.
+- Those 541 sessions produced 1 cart add (Instagram). Facebook's 470 sessions produced none.
+
+Krish asked "what do we need to be doing 10x better", then "Do the rest, anything is on the table". The order of work is now:
+
+1. **Landing.** The heartside site gets a social landing route that continues the post the visitor came from. In the same work, testimonials that can't be verified and the EXAMPLE badges come off. This is built in the heartside repository and needs Krish's approval before it goes live. Until it lands, every link points to the product page the post shows, never to the homepage.
+2. **A click path on every channel.**
+   - Daily Stories with link stickers.
+   - Pins that link straight to product pages.
+   - An Instagram bio link to the page for the latest post.
+   - TikTok business verification for a website link. It waits on Krish: which legal entity, and the documents.
+3. **Product first.** Gift-led posts show the real product in frame 1 or by second 2, with a reason to tap (wave 4). The alibi films stay as the reach play.
+4. **Borrowed reach.** Paid shoutouts and collab posts on large US dog accounts, Trial Reels, and boosts only for posts that have already proved themselves organically. The costed options are in `docs/audits/2026-11-16-borrowed-reach.md`. Every spend needs Krish's yes. Paid reach breaks the North Star's "$0 of paid ads" condition, so any order it brings is reported apart from organic.
+5. **Volume.** Volume stays at 20 a day, but only once items 1 to 3 are in place for those posts.
+
 ## Output target
 
 - **Daily volume:** 20 posts a day, 5 per platform.
