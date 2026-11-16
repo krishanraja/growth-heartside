@@ -11,6 +11,12 @@ Newest first. Record his words with the date, then change the job file and
   - Recorded as `AGENTS.md` rule 1's scoped exception, a line under rule 7, and "The 16 to 22 Nov sprint studio" under "Codex at any point". No job, schedule or `automations.json` entry changed.
   - He also noted that some engagement came from paid boosts, so the analysis keeps paid apart from organic.
   - Later the same day Krish set the sprint's priority: "the main priority as you know is getting more, better posts out with more velocity and using all strategies possible to have them gain massive exposure and get traffic to heartside.io - commenting on posts can happen in the background". The plan is `docs/plans/2026-11-16-velocity-sprint.md`. Asked whether Codex may post Stories with link stickers, Trial Reels and in-app sounds natively, he answered "Yes, all three". This is recorded in rule 1's scoped exception as native posting, inside an approved daily batch only.
+  - Later still, the end cards. The store's renders cover only six breeds, so most sprint films ended on a gift showing a different dog (the first one built, d1-alibi-04, was held for that). Krish: "You make the decision on the renters and painters issue for the best possible outcome". Decision: each film's generated dog photo goes through heartside.io's own painter, and the film ends on that dog painted on the real product, captured unaltered from the live flow. The limits:
+    - At most 2 paints per dog and 30 in total, because n8n is near its monthly execution cap until 6 Dec.
+    - Visits are tagged `utm_source=internal-paint` so they never count as organic.
+    - The flow is never taken to checkout or payment.
+    - A painted end card is never presented as a customer's dog.
+  - He also confirmed the LLC is the entity for TikTok business verification ("yes the LLC is correct").
   - Ruling (Krish, 2026-11-16): for 16 to 22 Nov, Codex schedules each daily batch he approves and posts each comment batch he approves, exactly as approved; generation runs on his Higgsfield unlimited plans in a visible local Codex thread.
 
 - 2026-11-15: Krish asked for HyperFrames and Claude Ads to be evaluated in an interactive session: "Improve Heartside's ability to produce effective creative and evaluate advertising performance without increasing operational complexity", and "Integrate only functionality that adds measurable value beyond the existing system." The record is `docs/audits/2026-11-15-hyperframes-and-claude-ads.md`.
