@@ -21,6 +21,8 @@ When Krish says "Get going", or opens a session with no more specific task, foll
 
 Claude starts Codex only through scripts/codex_thread.mjs, focus sprints included. `node scripts/codex_thread.mjs open "<message>"` makes a permanent thread in Krish's Codex Desktop recents, titled by its first line; `send <thread> "<message>"` adds one turn and releases the thread so he can type in it too; `read <thread>` prints every turn, his from Desktop included. Never the Codex plugin's long-running server. The script is a byte-for-byte copy of ai-harness's `scripts/codex_thread.mjs`, the canonical one; change it there first (Ruling, Krish, 2026-11-15).
 
+**The 16 to 22 Nov sprint studio (Ruling, Krish, 2026-11-16).** Krish's Higgsfield unlimited plans can't be reached through the Higgsfield MCP: on 16 Nov it reported unlimited as not available, and its only Kling 3 model is credit-billed. So for this sprint, generation runs in the Higgsfield website from a visible Codex Desktop thread on his PC, opened with `codex_thread.mjs`, in his own signed-in browser (his words: "Yes, local session"). It uses unlimited models only and never spends credits. Krish signs in himself. This is a one-sprint exception to "content production runs on Codex cards, never shown in Desktop". Assembly, checks and the factory gates are unchanged. Cadence for the sprint: 20 posts a day in total, 5 per platform, inside the five-post daily ceiling (his words: "do what is best for max reach if you think 20 is too much").
+
 ## Autonomy (Ruling, Krish, 2026-10-19)
 
 Krish: "the engine shows me what it is going to do, I approve, it gets up to go-live and asks me to review." This engine is set to run autonomously under Control Center's growth engine protocol (`docs/control-center/ENGINE-PROTOCOL.md`, a byte-for-byte copy of Control Center's bundle whose version and hash are in `docs/control-center/bundle.json`; its "Autonomy" and "Amend" sections arrived in 1.1.0), in steps Krish answers on his one list in Control Center. The loop is not built yet (`docs/GET-GOING.md`, Step 1): today the daily report proposes and reads his decisions, and he still acts by hand. The steps:
@@ -155,6 +157,23 @@ address of Krish's in anything.
    with exactly where to click, and stop. `BROWSER.md` has the full line.
    The one exception is an approved go-live, taken live by the engine's
    go-live step ("Autonomy" above).
+   **Scoped exception, the 16 to 22 Nov sprint (Ruling, Krish, 2026-11-16).**
+   Two more exceptions apply, each taken by a Codex desk in a thread Krish
+   can see in Codex Desktop, exactly as approved and once:
+   - **Daily batch:** when Krish says yes to a day's batch in one go (his
+     words: "Approve daily batch"), the Publishing desk schedules exactly
+     that batch into Buffer.
+   - **Comments:** when Krish says yes to a batch of comments on other
+     accounts' public posts (his words: "Approve batches, Codex posts"), the
+     Audience desk posts exactly those comments, each on its approved target,
+     as @yourdoghasnotes.
+   - **Native posting:** for posts inside a daily batch Krish approved, the
+     Publishing desk may post natively in the app instead of through Buffer:
+     Instagram and Facebook Stories with a link sticker to heartside.io,
+     Instagram Trial Reels, and TikTok or Reels posts with an in-app
+     trending sound (his words, to all three: "Yes, all three").
+   None of these covers a like, follow, DM, reply to a person, boost or
+   setting, and none stretches past the batch it names.
 2. **Heartside first, every run.** Your first command is always
    `python3 growth.py sync`. It reads the heartside repository as it is now:
    the commit, what changed, open pull requests, the canon its README tells
@@ -229,7 +248,11 @@ address of Krish's in anything.
 7. **Nothing in bulk.** No mass outreach, no automated DMs, no follow
    chasing. Outreach to strangers is limited to the 20 gifted US creators
    Krish approved, each note written for one named person, citing something
-   they made. Every gift is disclosed (FTC).
+   they made. Every gift is disclosed (FTC). The 16 to 22 Nov comment
+   batches under rule 1's scoped exception are not outreach: each comment is
+   written for one specific public post, with no link, no selling, no
+   template reused, and it goes out only inside a batch Krish approved
+   (Ruling, Krish, 2026-11-16).
 8. **Only real numbers.** A number in a pack is one you read on a page today,
    with where you read it. Missing means "not shown", never a guess.
 9. **Stay in this repository.** Never change heartside, the store, Control
