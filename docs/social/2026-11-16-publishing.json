@@ -1,0 +1,54 @@
+[
+  {
+    "event_id": "publishing:2026-11-16:morning:tiktok:access-unavailable",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "tiktok",
+      "state": "watching",
+      "at": "2026-11-16T08:02:00Z",
+      "at_precision": "minute",
+      "source": "Publishing desk; 16 November 2026 morning heartbeat. Current exact README v6.0 (15 November) read from Drive 1LOd7ftHZAn8dKcDxwXex66ThC0IoIvbelDqeqGKpl1g; 02r, 02t, 04 and phone guide read via service connector.",
+      "evidence": "Codex in-app browser attempt returned \"Browser is not available: iab\". Sunday F56, F57, F44, F32 and F35 plus F55: 6 placements. 02t rows 38,41,8,11,44 are recorded scheduled; 02r row 35 (F44) remains phone-owned and empty. Existing TikTok URLs are scheduler receipts until native live readback. No native media, thumbnail, caption, CTA or sound verification was possible. No post_check/live_verified record is claimed without a verified public post target. No measured metrics, zero values, delivery failure, paid eligibility or spend inferred. No phone slots due 16 November in current 04. No Drive writes, posting or rescheduling performed. Claude should import this access record and resume native checks when the authorized browser is available."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-16:morning:instagram:access-unavailable",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "instagram",
+      "state": "watching",
+      "at": "2026-11-16T08:02:00Z",
+      "at_precision": "minute",
+      "source": "Publishing desk; 16 November 2026 morning heartbeat. Current exact README v6.0 (15 November) read from Drive 1LOd7ftHZAn8dKcDxwXex66ThC0IoIvbelDqeqGKpl1g; 02r, 02t, 04 and phone guide read via service connector.",
+      "evidence": "Codex in-app browser attempt returned \"Browser is not available: iab\". Sunday F56, F57, F44, F32, F55 and F35: 6 placements. 02t rows 39,42,9,45,12 are recorded scheduled; 02r row 36 (F44) remains phone-owned and empty. No native media, thumbnail, caption, CTA or sound verification was possible. No post_check/live_verified record is claimed without a verified public post target. No measured metrics, zero values, delivery failure, paid eligibility or spend inferred. No phone slots due 16 November in current 04. No Drive writes, posting or rescheduling performed. Claude should import this access record and resume native checks when the authorized browser is available."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-16:morning:facebook:access-unavailable",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "facebook",
+      "state": "watching",
+      "at": "2026-11-16T08:02:00Z",
+      "at_precision": "minute",
+      "source": "Publishing desk; 16 November 2026 morning heartbeat. Current exact README v6.0 (15 November) read from Drive 1LOd7ftHZAn8dKcDxwXex66ThC0IoIvbelDqeqGKpl1g; 02r, 02t, 04 and phone guide read via service connector.",
+      "evidence": "Codex in-app browser attempt returned \"Browser is not available: iab\". Sunday F56, F57, F44, F32, F55 and F35: 6 placements. 02t rows 40,43,10,46,13 are recorded scheduled; 02r row 37 (F44) remains phone-owned and empty. Meta boost eligibility, results, approval and spend could not be checked. No native media, thumbnail, caption, CTA or sound verification was possible. No post_check/live_verified record is claimed without a verified public post target. No measured metrics, zero values, delivery failure, paid eligibility or spend inferred. No phone slots due 16 November in current 04. No Drive writes, posting or rescheduling performed. Claude should import this access record and resume native checks when the authorized browser is available."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-16:morning:pinterest:access-unavailable",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "pinterest",
+      "state": "watching",
+      "at": "2026-11-16T08:02:00Z",
+      "at_precision": "minute",
+      "source": "Publishing desk; 16 November 2026 morning heartbeat. Current exact README v6.0 (15 November) read from Drive 1LOd7ftHZAn8dKcDxwXex66ThC0IoIvbelDqeqGKpl1g; 02r, 02t, 04 and phone guide read via service connector.",
+      "evidence": "Codex in-app browser attempt returned \"Browser is not available: iab\". Sunday F56, F57, F32, F55 and F35: 5 previously recorded scheduled placements; fresh native delivery and public URLs unavailable. F44 has no approved finished-soundtrack Pinterest asset in the existing ledger. No native media, thumbnail, caption, CTA or sound verification was possible. No post_check/live_verified record is claimed without a verified public post target. No measured metrics, zero values, delivery failure, paid eligibility or spend inferred. No phone slots due 16 November in current 04. No Drive writes, posting or rescheduling performed. Claude should import this access record and resume native checks when the authorized browser is available."
+    }
+  }
+]
