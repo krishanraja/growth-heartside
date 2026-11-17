@@ -673,6 +673,22 @@
     "carousel",
     "meme"
    ]
+  },
+  {
+   "id": "higgsfield-generator-method",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint: the footage bank ran text-to-video with 3,000-character dog-roll prompts, and a beagle test lost every coat flaw its prompt listed",
+   "words": [
+    "surely you should just generate anchor stills that you are happy with first using codex in 2 min",
+    "yeah I think you need to use the https://github.com/krishanraja/higgsfield-generator properly"
+   ],
+   "category": "generation",
+   "rule": "Generate the way krishanraja/higgsfield-generator's generate skill says. Stills first: an anchor still per set, made from a reference image of the approved dog (image-to-image, Nano Banana Unlimited in the UI), reviewed at full size before any motion. Every shot of a set then runs image-to-video from that set's anchor, so one film is one dog in one room. Prompts stay under about 200 tokens and are phrased positively: an image-to-image prompt says only what changes, an image-to-video prompt says only the motion and camera; never redescribe what the reference or start frame already shows.",
+   "check": "review: every video job in the log names its anchor still; every prompt file is under 200 tokens; no prompt redescribes its reference image",
+   "applies_to": [
+    "reel",
+    "still"
+   ]
   }
  ],
  "open_conflicts": [],
