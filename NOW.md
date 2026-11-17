@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- The humour engine is on call in this repository: `factory/jokelab.py check`, `compare` and `doctor`, with an AGENTS.md rule saying when to consult it. (2026-11-17)
 - The 16 to 22 Nov velocity sprint is running on Krish's second machine (17 Nov). Day 1's four new pieces are built from Kling 3.0 Unlimited clips (credits unchanged at 952.35) and each ends on a blanket painted from the film's own dog by heartside.io's own painter (internal-paint, 8 of 30 paints used). None has cleared the panel yet: tier 2 scored d1-absurd-01 8 (v3) then 7 (v4), d1-warm-02 7, d1-note-01 7; d1-warm-01 has no end card yet. Nothing is on the review board and nothing has been posted, so no organic sale is attributable to the sprint yet. (2026-11-16)
 - Every joke now starts in the joke lab (factory/jokelab.py). It writes about 30 candidates across weighted families led by the alibi family the 15 Nov audit measured, and screens them before any build: retreads of live posts (by wording, by format, and by the writer's own closest-post answer), dressed-up dogs, rule 5 copy, the three-part core and near duplicates. With --live the humour engine reads each through Control Center's humour route. It stops the build loop where the score moves and the words do not, and learns from Krish's verdicts. On the 17 Nov slate it rejects d1-absurd-01 as an F38 retread and shortlists the four concepts he approved. (2026-11-17)
 - HyperFrames and Claude Ads evaluated (docs/audits/2026-11-15-hyperframes-and-claude-ads.md). HyperFrames is integrated narrowly as factory/hf.py and the note template, pinned and without telemetry, and its test render passed every factory gate with the product's pixels intact; Claude Ads is not installed, and its scoring method is re-implemented as engine/ad_audit.py (growth.py ads audit, ads_audit.json in the Sunday report), which caught 6 of 6 seeded boost breaches and, from this repository's own record, flags the 11 to 13 Nov Facebook burst as having no boost on record. (2026-11-15)
@@ -56,6 +57,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-17 factory/jokelab.py, tests/test_jokelab.py, AGENTS.md, factory/README.md, CHANGES.md.
 - 2026-11-16 On 17 Nov the studio resumed from Drive 03a. Codex Desktop holds any thread Krish opens, so codex_thread.mjs send is refused ("active writer") and a script-opened thread cannot reach Desktop's in-app browser; `codex queue --thread <id> --message <text>` hands the turn to Desktop and works (durable fix in ai-harness#280). Nano Banana Pro was not Unlimited, so photoreal shots ran as Kling 3.0 text-to-video from each brief's own prompt (Krish's correction, floor read-unlimited-before-ordering). The painter silently hangs on "Still painting" when a photo is under 700 px tall (Teeinblue validation in the console, no message to the buyer): a heartside store finding. The tier 2 panel has no warm anchor, so sentiment pieces are scored against the humour tens.
 - 2026-11-17 Krish declined d1-absurd-01 on 17 Nov ("No, it's not funny - the post that is already live on this topic is 10x better") and asked for the fix to be built into this repository; the joke, not the pictures, is now what gets iterated.
 - 2026-11-16 the Publishing desk's Sunday check could not run: Codex's in-app browser returned "Browser is not available: iab", so none of the 23 Sunday placements got a native read of media, thumbnail, caption or call to action. Four channel monitor events record the access gap (`docs/social/2026-11-16-publishing.json`) and say plainly that no post_check, metric, zero or delivery failure is inferred; no Drive write or post was made (`7c251e6`).
@@ -72,13 +74,13 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-16): Download the queued Codex takes (d1-warm-02 shot 1 sniff, d1-note-01 shot 1 with a shredded shoe, d1-absurd-01 shot 3 with a duck in the plunge), rebuild and re-judge; put every 9 on the review board with its tracked links (C205 to C208 in local/factory/panel-1117/links-d1-mix.txt).
+- Next (2026-11-17): Run `python3 factory/jokelab.py doctor` on Krish's computer; if the token is not set there, set CONTROL_CENTER_ENGINE_TOKEN from his secret store so local sessions can consult it.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Step 2 of `docs/GET-GOING.md` (a daily Shopify sales import, so `net_sales_usd` is measured) may need a credential only Krish can add; the step says to report a hold naming the secret.
-- North Star check (2026-11-16): holds.
+- North Star check (2026-11-17): holds.
 
 ## Read next
 
