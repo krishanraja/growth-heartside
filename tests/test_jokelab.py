@@ -189,6 +189,78 @@ class JokeLabTest(unittest.TestCase):
         self.assertTrue(ok, notes)
         self.assertIn('reversal', labels['mechanism'])
 
+    # On call: any line, any time, the same reader and the same core (AGENTS.md, "Ask the humour engine").
+    def test_check_passes_flags_and_never_passes_silently(self):
+        lines = ['One dinner roll is unaccounted for.', 'He has asked for a lawyer and a second roll.']
+        seen = {}
+        def reader(c):
+            seen.update(c)
+            return engine_result()
+        o = jokelab.consult(lines, 'caption', 'a real beagle licks butter off his nose', ['posted the day before Thanksgiving'], reader)
+        self.assertEqual(o['status'], 'pass', o)
+        req = jokelab.engine_request(seen)
+        facts = req['context']['provided_facts']
+        self.assertIn('a real beagle', facts[0])
+        self.assertIn('caption', facts[1])
+        self.assertIn('Thanksgiving', facts[2])
+        flat = jokelab.consult(lines, reader=lambda c: engine_result(reading='not_supported'))
+        self.assertEqual(flat['status'], 'flagged')
+        boom = jokelab.consult(lines, reader=lambda c: (_ for _ in ()).throw(TimeoutError('slow')))
+        self.assertEqual(boom['status'], 'unavailable')
+        abstain = jokelab.consult(lines, reader=lambda c: {'comic_reading': None, 'errors': [{'code': 'budget_exhausted'}]})
+        self.assertEqual(abstain['status'], 'unavailable')
+        self.assertIn('budget_exhausted', abstain['reason'])
+        banned = jokelab.consult(['He is obsessed!'], reader=lambda c: engine_result(last_seg='w1'))
+        self.assertEqual(banned['status'], 'flagged', banned)
+        self.assertTrue(banned['copy'])
+
+    def test_check_without_the_engine_says_unavailable_and_exits_2(self):
+        for k in ('CONTROL_CENTER_ENGINE_TOKEN', 'HUMOUR_ENGINE_CC_BEARER'):
+            os.environ.pop(k, None)
+        self.assertEqual(jokelab.consult(['a line'])['status'], 'unavailable')
+        self.assertEqual(jokelab.main(['check', 'One dinner roll is unaccounted for.']), 2)
+
+    def test_compare_names_the_differences_and_leaves_taste_to_krish(self):
+        a = jokelab.consult(['x', 'y'], reader=lambda c: engine_result())
+        b = jokelab.consult(['x', 'z'], reader=lambda c: engine_result(mech=('incongruity', 'understatement')))
+        d = jokelab.compare_consults(a, b)
+        self.assertTrue(any('mechanism' in x and 'reversal' in x and 'understatement' in x for x in d), d)
+        self.assertEqual(jokelab.compare_consults(a, a), [])
+
+    def test_doctor_checks_the_route_without_a_model_call_or_the_token_on_screen(self):
+        class Resp:
+            def __init__(self, body): self.status, self._b = 200, json.dumps(body).encode()
+            def read(self, n=-1): return self._b
+            def __enter__(self): return self
+            def __exit__(self, *a): return False
+        calls = []
+        def opener(features):
+            def open_(req, timeout=None):
+                calls.append((req.get_method(), req.full_url))
+                return Resp({'ok': True, 'features': features})
+            return open_
+        for k in ('CONTROL_CENTER_ENGINE_TOKEN', 'HUMOUR_ENGINE_CC_BEARER', 'CONTROL_CENTER_URL'):
+            os.environ.pop(k, None)
+        ok, lines = jokelab.doctor(opener=opener({'humour': True}))
+        self.assertFalse(ok)
+        self.assertIn('NOT SET', lines[0])
+        os.environ['CONTROL_CENTER_ENGINE_TOKEN'] = 'secret-token-value'
+        try:
+            ok, lines = jokelab.doctor(opener=opener({'humour': True}))
+            off, off_lines = jokelab.doctor(opener=opener({}))
+        finally:
+            os.environ.pop('CONTROL_CENTER_ENGINE_TOKEN', None)
+            os.environ.pop('HUMOUR_ENGINE_CC_BEARER', None)
+        try:
+            import humour_engine  # noqa: F401
+            self.assertTrue(ok, lines)
+        except ImportError:
+            pass
+        self.assertFalse(off)
+        self.assertTrue(any('NOT SERVED' in x for x in off_lines))
+        self.assertTrue(all(m == 'GET' and u.endswith('/api/growth/engines/heartside/capabilities') for m, u in calls), calls)
+        self.assertNotIn('secret-token-value', '\n'.join(lines + off_lines))
+
     def test_polishing_pictures_is_caught(self):
         same = jokelab.words_hash(['4:00 a.m. Up before the sun.'])
         seven = [{'cut': n, 'score': s, 'words_sha': same} for n, s in enumerate([8, 7, 8, 9, 9], 1)]

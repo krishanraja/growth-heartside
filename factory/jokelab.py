@@ -17,6 +17,9 @@ changed pictures, never the words). Each command below closes one of those:
     python3 factory/jokelab.py cut    RUN CAND --score N --words FILE   log a build cut; warns when the score moves but the joke does not
     python3 factory/jokelab.py verdict RUN CAND yes|no "his words"  Krish's verdict, kept where the next brief and ranking read it
     python3 factory/jokelab.py taste                                what his verdicts say so far, by family and by mechanism
+    python3 factory/jokelab.py check "LINE" ... [--surface caption]   on call: the humour engine on any words, any time
+    python3 factory/jokelab.py compare A.txt B.txt                  on call: two versions, and the differences it can see
+    python3 factory/jokelab.py doctor                               is the humour engine reachable from here (no model call)
 
 The order is fixed: brief, screen, tier 2 judge on the script alone (factory/panel.py) for the shortlist only, Krish,
 then the build. No credit is spent on a joke that has not passed its screen and a 9 on the words (floor
@@ -321,7 +324,8 @@ def engine_request(c):
         'request_id': f'jokelab:{c["id"]}',
         'focus_segment_ids': [s['segment_id'] for s in segs],
         'segments': segs,
-        'context': {'provided_facts': [f'On screen, a real dog: {c.get("dog_does", "")}', 'Format: a short vertical social video, words on screen'],
+        'context': {'provided_facts': [f'On screen, a real dog: {c.get("dog_does", "")}', SURFACES.get(c.get('_surface'), SURFACES['line'])]
+                    + [str(x)[:500] for x in (c.get('_context') or [])][:5],
                     'audience_description': 'US dog owners on TikTok and Instagram'},
         'tasks': ['comprehension'],
         'provider_policy': {'allowed_provider_ids': ['controlcenter'], 'allow_external_inference': True},
@@ -329,8 +333,8 @@ def engine_request(c):
     }
 
 
-def engine_reader(transport=None):
-    """The humour engine through Control Center's humour route, on this engine's own bearer. None when unavailable."""
+def _engine_env():
+    """Point humour-engine's Control Center provider at this engine's own bearer. Returns the token or None."""
     token = os.environ.get('CONTROL_CENTER_ENGINE_TOKEN') or os.environ.get('HUMOUR_ENGINE_CC_BEARER')
     if not token:
         return None
@@ -338,6 +342,13 @@ def engine_reader(transport=None):
     os.environ.setdefault('HUMOUR_ENGINE_CC_ENGINE', 'heartside')
     if os.environ.get('CONTROL_CENTER_URL'):
         os.environ.setdefault('HUMOUR_ENGINE_CC_URL', os.environ['CONTROL_CENTER_URL'])
+    return token
+
+
+def engine_reader(transport=None):
+    """The humour engine through Control Center's humour route, on this engine's own bearer. None when unavailable."""
+    if not _engine_env():
+        return None
     try:
         from humour_engine.analysis.core import EngineDeps, analyse
         from humour_engine.contracts.analysis import AnalysisRequest
@@ -350,6 +361,108 @@ def engine_reader(transport=None):
         res = analyse(AnalysisRequest.model_validate(engine_request(c)), deps)
         return json.loads(res.model_dump_json())
     return read
+
+
+# On call: any line, any time (AGENTS.md, "Ask the humour engine"). Same reader, same core, no candidate file.
+SURFACES = {
+    'line': 'Format: a short vertical social video, words on screen',
+    'caption': 'Format: the caption under a short vertical social video',
+    'comment': "Format: a public comment by the brand account under another account's post",
+    'gift_note': 'Format: a short note from the dog to the person it loves, printed card in the gift box',
+}
+
+
+def consult(lines, surface='line', on_screen='', context=(), reader=None):
+    """Read one set of lines against the core. Returns a dict; status is pass, flagged or unavailable."""
+    words = [w.strip() for w in lines if w and w.strip()]
+    c = {'id': 'check', 'words': words, 'dog_does': on_screen or 'nothing stated'}
+    out = {'surface': surface, 'words': words, 'words_sha': words_hash(words), 'copy': _copy_problems(c)}
+    reader = reader if reader is not None else engine_reader()
+    if reader is None:
+        out.update(status='unavailable', reason='humour engine not reachable: run `python3 factory/jokelab.py doctor`')
+        return out
+    try:
+        result = reader({**c, '_surface': surface, '_context': list(context)})
+    except Exception as e:  # noqa: BLE001  a provider or contract failure is never a pass
+        out.update(status='unavailable', reason=f'humour engine failed: {type(e).__name__}')
+        return out
+    ok, notes, labels = triad(result, words)
+    out.update(reading=result.get('comic_reading'), core=ok, notes=notes, labels=labels,
+               errors=[e.get('code') for e in result.get('errors', [])])
+    if ok is None:
+        out['status'] = 'unavailable'
+        out['reason'] = 'no reading: ' + (', '.join(out['errors']) or 'the engine abstained')
+    else:
+        out['status'] = 'pass' if ok and not out['copy'] else 'flagged'
+    return out
+
+
+def render_consult(o, label=None):
+    head = f'{label}: ' if label else ''
+    lines = [f'{head}{o["status"].upper()}  ({o["surface"]}, {len(o["words"])} line(s), {o["words_sha"]})']
+    if o.get('reason'):
+        lines.append(f'  {o["reason"]}')
+    if o.get('reading'):
+        lines.append(f'  reading: {o["reading"]}; core: {"yes" if o.get("core") else "no"}')
+    for k in ('mechanism', 'rhetorical_mode', 'target'):
+        if o.get('labels', {}).get(k):
+            lines.append(f'  {k}: {", ".join(o["labels"][k])}')
+    lines += [f'  - {n}' for n in o.get('notes', [])]
+    lines += [f'  - copy: {p}' for p in o.get('copy', [])]
+    return '\n'.join(lines)
+
+
+def compare_consults(a, b):
+    """Plain differences between two consults, for a choice between variants. Never picks on taste."""
+    diffs = []
+    if a['status'] != b['status']:
+        diffs.append(f'status: A {a["status"]}, B {b["status"]}')
+    if a.get('reading') != b.get('reading'):
+        diffs.append(f'reading: A {a.get("reading")}, B {b.get("reading")}')
+    for k in ('mechanism', 'rhetorical_mode', 'target'):
+        x, y = set(a.get('labels', {}).get(k, [])), set(b.get('labels', {}).get(k, []))
+        if x != y:
+            diffs.append(f'{k}: only A {sorted(x - y) or "-"}, only B {sorted(y - x) or "-"}')
+    if len(a.get('notes', [])) != len(b.get('notes', [])):
+        diffs.append(f'core notes: A {len(a.get("notes", []))}, B {len(b.get("notes", []))}')
+    return diffs
+
+
+def doctor(opener=None):
+    """Is the humour engine reachable from this machine? No model call; never prints the token. Returns (ok, lines)."""
+    lines, ok = [], True
+    token = _engine_env()
+    if token:
+        lines.append('token: CONTROL_CENTER_ENGINE_TOKEN is set')
+    else:
+        ok = False
+        lines.append('token: NOT SET. Set CONTROL_CENTER_ENGINE_TOKEN to this engine\'s Control Center bearer '
+                     '(it is a GitHub Actions secret here; on a computer, the same value from Krish\'s secret store)')
+    try:
+        import humour_engine  # noqa: F401
+        lines.append('package: humour-engine installed')
+    except ImportError:
+        ok = False
+        lines.append('package: NOT INSTALLED. pip install -r requirements-humour-engine.txt')
+    if token:
+        sys.path.insert(0, ROOT)
+        try:
+            from engine.control_center import Client, ProtocolError
+            base = os.environ.get('CONTROL_CENTER_URL', '').strip() or 'https://controlcenter.krishraja.com'
+            features = Client(base, token, opener=opener).capabilities()
+            if features.get('humour'):
+                lines.append('route: Control Center serves the humour route to this engine')
+            else:
+                ok = False
+                lines.append('route: NOT SERVED. Control Center answered, but features.humour is off for this engine')
+        except ProtocolError as e:
+            ok = False
+            lines.append(f'route: UNREACHABLE ({e.code})')
+        except Exception as e:  # noqa: BLE001
+            ok = False
+            lines.append(f'route: UNREACHABLE ({type(e).__name__})')
+    lines.append('ready: the humour engine can be consulted' if ok else 'ready: NO. `check` and `screen --live` will say unavailable, never pass')
+    return ok, lines
 
 
 def screen(candidates, reader=None, now=None):
@@ -540,6 +653,13 @@ def main(argv=None):
     c = sub.add_parser('cut'); c.add_argument('run'); c.add_argument('cand'); c.add_argument('--score', type=float); c.add_argument('--words', required=True)
     v = sub.add_parser('verdict'); v.add_argument('run'); v.add_argument('cand'); v.add_argument('verdict', choices=['yes', 'no']); v.add_argument('words')
     sub.add_parser('taste')
+    ck = sub.add_parser('check', help='consult the humour engine on any line(s), any time')
+    ck.add_argument('lines', nargs='*'); ck.add_argument('--file'); ck.add_argument('--surface', choices=sorted(SURFACES), default='line')
+    ck.add_argument('--on-screen', default=''); ck.add_argument('--context', action='append', default=[]); ck.add_argument('--json', action='store_true')
+    cp = sub.add_parser('compare', help='consult on two variants (files, one line per line)')
+    cp.add_argument('a'); cp.add_argument('b'); cp.add_argument('--surface', choices=sorted(SURFACES), default='line')
+    cp.add_argument('--on-screen', default=''); cp.add_argument('--context', action='append', default=[])
+    sub.add_parser('doctor', help='is the humour engine reachable from here (no model call)')
     a = p.parse_args(argv)
 
     if a.cmd == 'brief':
@@ -577,7 +697,32 @@ def main(argv=None):
               f'(report_to_taste_engine), as AGENTS.md says.\n{taste()}'); return 0
     if a.cmd == 'taste':
         print(taste()); return 0
+    if a.cmd == 'check':
+        lines = list(a.lines) + (_read_lines(a.file) if a.file else [])
+        if not lines:
+            raise SystemExit('check: give the line(s) as arguments or with --file')
+        o = consult(lines, a.surface, a.on_screen, a.context)
+        print(json.dumps(o, ensure_ascii=False, indent=2) if a.json else render_consult(o))
+        return EXIT[o['status']]
+    if a.cmd == 'compare':
+        ca = consult(_read_lines(a.a), a.surface, a.on_screen, a.context)
+        cb = consult(_read_lines(a.b), a.surface, a.on_screen, a.context)
+        print(render_consult(ca, 'A')); print(render_consult(cb, 'B'))
+        d = compare_consults(ca, cb)
+        print('\ndifferences:\n' + ('\n'.join(f'  - {x}' for x in d) if d else '  none the engine can see. The choice is taste: ask Krish.'))
+        return max(EXIT[ca['status']], EXIT[cb['status']])
+    if a.cmd == 'doctor':
+        ok, lines = doctor()
+        print('\n'.join(lines)); return 0 if ok else 2
     return 2
+
+
+EXIT = {'pass': 0, 'flagged': 1, 'unavailable': 2}
+
+
+def _read_lines(path):
+    with open(path, encoding='utf-8') as f:
+        return [line.strip() for line in f if line.strip()]
 
 
 if __name__ == '__main__':

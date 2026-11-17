@@ -155,6 +155,19 @@ Without it, or without the token, `screen` runs the code gates and says so. Runs
 verdicts go to `bank/verdicts.jsonl`, from interactive sessions only. The humour engine holds no taste: Krish's taste is
 `docs/HUMOUR.md`, ai-harness `krish-voice` references/humour.md, the floor and these verdicts.
 
+### On call: `check`, `compare`, `doctor`
+
+The same reader is on call for any words at any time, not only a screened slate (AGENTS.md, "Ask the humour engine
+when in doubt"):
+
+| Command | What it does |
+|---|---|
+| `jokelab.py check "<line>" ... [--file F] --surface line\|caption\|comment\|gift_note --on-screen "<real dog>" [--context "<fact>"] [--json]` | One read: the engine's reading, mechanism, rhetorical mode and target, each core part found or missing, and rule 5 copy problems. Exit 0 pass, 1 flagged, 2 unavailable |
+| `jokelab.py compare A.txt B.txt [--surface ...]` | Two reads, then the differences the engine can see. When it sees none, the choice is taste, and taste is Krish's |
+| `jokelab.py doctor` | Token set, package installed, and Control Center serving `features.humour` to this engine, through `GET capabilities`. No model call, and the token is never printed |
+
+Unavailable is never a pass: no token, no package, a provider failure or an abstention all exit 2 and say why.
+
 ## The judging panel (10 November 2026)
 
 Krish asked for a simple panel that holds every output to 10/10 without burning tokens or hours. `factory/panel.py`

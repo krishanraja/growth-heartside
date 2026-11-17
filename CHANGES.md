@@ -3,6 +3,11 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-17: The humour engine on call. Krish asked "does heartside know to consult with the humour engine as and when it needs to double check things?" and, told it only did inside a joke lab run, said "yes".
+  - `factory/jokelab.py` gains `check` (any lines, on a named surface: line, caption, comment or gift note), `compare` (two versions) and `doctor` (reachability, no model call). Unavailable exits 2 and is never a pass.
+  - `AGENTS.md` says when to consult it: before a caption, comment batch or gift note reaches the review board, after any change of words in a build, and when the judge and the session disagree. `factory/README.md` documents it; `tests/test_jokelab.py` covers each exit and that the token never prints.
+  - No job, schedule or `automations.json` entry changed. Nothing was generated, posted or spent.
+
 - 2026-11-17: The joke lab, after Krish declined d1-absurd-01 ("No, it's not funny - the post that is already live on this topic is 10x better"), explained F38 ("that prior video worked because it was a parody of shameless LinkedIn influencers, but real dog behavior.") and asked whether the session was "actually enhancing the fucking brain of this fucking repository where we fucking produce the fucking videos?", then asked to "build the fix straight into growth-heartside".
   - `factory/jokelab.py`: it writes wide (about 30 candidates across weighted families, led by the alibi family the 15 Nov audit measured). It screens before any build: retreads of live and locked posts, dressed-up dogs, rule 5 copy, the three-part core and near duplicates. It reads each joke with the humour engine through Control Center's humour route. It catches a build loop where the score rises and the words do not, and it learns from his verdicts (`bank/verdicts.jsonl`).
   - `AGENTS.md`, `factory/README.md` and `docs/HUMOUR.md` make it the first step of every joke. `tests/test_jokelab.py` replays the 17 Nov failure: the F38 retread and the dressed-up golden are rejected, and seven cuts on the same words warn.
