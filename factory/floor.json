@@ -415,7 +415,7 @@
     "These need to be really well scripted before they go to video production, given that we've not got too many Higgsfield credits left."
    ],
    "category": "concept",
-   "rule": "The joke is the frame, not the costume: shoot it like a human video format (gym montage, morning routine, influencer vlog) while the dog does what a real dog would do in that slot (a log for a barbell, a ball chase for sprints, sniffing for networking). No human arms on a dog. Every beat is scripted and costed before any generation.",
+   "rule": "The joke is the frame, not the costume: shoot it like a human video format (gym montage, morning routine, influencer vlog) while the dog does what a real dog would do in that slot (a log for a barbell, a ball chase for sprints, sniffing for networking). No human arms on a dog. Every beat is scripted and costed before any generation. Scope since 17 Nov: the photoreal register only; the absurd register may show fully human acts (one-register-never-blurred).",
    "check": "review: for each beat name the human-format slot and the real dog behavior that fills it; any human hand, human-arm prop work or human behavior performed by the dog holds the beat; no video generation until Krish has seen the script",
    "applies_to": [
     "reel"
@@ -530,7 +530,7 @@
     "f28 is super glitchy and needs to be redone, also are you sure its all the dance to one song? looks like two different dance trends might I might be mistaken."
    ],
    "category": "performance",
-   "rule": "A trend reel uses one trend, one song and one set from start to end; no second dance or room cut in. Dogs move like dogs: no dog standing on its hind legs doing human choreography, which reads as glitchy AI.",
+   "rule": "A trend reel uses one trend, one song and one set from start to end; no second dance or room cut in. Dogs move like dogs: no dog standing on its hind legs doing human choreography, which reads as glitchy AI. Scope since 17 Nov: the photoreal register only; the absurd register may show fully human acts (one-register-never-blurred).",
    "check": "review: the contact sheet shows one location and one routine throughout; no shot of a dog upright on two legs performing arm moves",
    "applies_to": [
     "reel"
@@ -605,10 +605,11 @@
    "made": "Day 1 of the 16 to 22 Nov sprint, after the pristine alibi films",
    "words": [
     "I want to nail down how: are we going for obviously AI, or are we going for photorealistic? I want this to feel like dogs making decisions or doing things that humans would do, for example, the parody LinkedIn 'wake up at 4am' inspiration post. If we're going for AI-generated visuals, then it should be comically exaggerated and absurd. Whereas if we're going for photorealism, then it should be dogs behaving like normal dogs, but then the text overlays, the captions, or something else humanizes the dog's behavior. Either way, the motif is always that the dog has a personality and is thinking about stuff in ways you forget as a viewer sometimes.",
-    "i recommend a blend of the above styles, but never a blurring"
+    "i recommend a blend of the above styles, but never a blurring",
+    "Yes, fully human acts"
    ],
    "category": "generation",
-   "rule": "Every piece commits to one register and never mixes them. Photoreal: a scruffy real pet on the owner's phone doing only what a real dog does; the words (labels, caption, the note) supply the human thinking. Absurd: unmistakably staged, comically exaggerated dogs living a human format (the 4am LinkedIn routine); no attempt to pass as real footage. A near-real dog doing a slightly human thing is the blur and fails. Both registers carry the same motif: the dog has a personality and is thinking about things the viewer forgets it can. The sentiment lane is always photoreal. The product end card is the store's real render in both.",
+   "rule": "Every piece commits to one register and never mixes them. Photoreal: a scruffy real pet on the owner's phone doing only what a real dog does; the words (labels, caption, the note) supply the human thinking. Absurd: unmistakably staged, comically exaggerated dogs living a human format (the 4am LinkedIn routine); no attempt to pass as real footage. A near-real dog doing a slightly human thing is the blur and fails. Both registers carry the same motif: the dog has a personality and is thinking about things the viewer forgets it can. The sentiment lane is always photoreal. The product end card is the store's real render in both. In the absurd register the dog may do the human act itself: type at a desk, hold the coffee, stand at the podium, on its hind legs if the scene needs it (Krish, 17 Nov). The photoreal register keeps every real-dog limit.",
    "check": "review: name the piece's register in its brief; tier 1 asks one-register on every contact sheet",
    "applies_to": [
     "reel",
