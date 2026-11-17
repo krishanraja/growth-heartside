@@ -598,6 +598,24 @@
    "applies_to": [
     "reel"
    ]
+  },
+  {
+   "id": "one-register-never-blurred",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint, after the pristine alibi films",
+   "words": [
+    "I want to nail down how: are we going for obviously AI, or are we going for photorealistic? I want this to feel like dogs making decisions or doing things that humans would do, for example, the parody LinkedIn 'wake up at 4am' inspiration post. If we're going for AI-generated visuals, then it should be comically exaggerated and absurd. Whereas if we're going for photorealism, then it should be dogs behaving like normal dogs, but then the text overlays, the captions, or something else humanizes the dog's behavior. Either way, the motif is always that the dog has a personality and is thinking about stuff in ways you forget as a viewer sometimes.",
+    "i recommend a blend of the above styles, but never a blurring"
+   ],
+   "category": "generation",
+   "rule": "Every piece commits to one register and never mixes them. Photoreal: a scruffy real pet on the owner's phone doing only what a real dog does; the words (labels, caption, the note) supply the human thinking. Absurd: unmistakably staged, comically exaggerated dogs living a human format (the 4am LinkedIn routine); no attempt to pass as real footage. A near-real dog doing a slightly human thing is the blur and fails. Both registers carry the same motif: the dog has a personality and is thinking about things the viewer forgets it can. The sentiment lane is always photoreal. The product end card is the store's real render in both.",
+   "check": "review: name the piece's register in its brief; tier 1 asks one-register on every contact sheet",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
   }
  ],
  "open_conflicts": [],

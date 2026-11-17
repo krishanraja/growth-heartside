@@ -39,6 +39,11 @@
    "ask": "Could every dog be someone's real pet filmed on the owner's phone? Answer no and name the frame if any dog looks groomed, glossy, fluffed or catalogue-perfect, or the light looks staged or cinematic rather than ordinary home light (Krish, 17 Nov: \"Do you not think the dogs look too pristine and not realistic enough?\")."
   },
   {
+   "id": "one-register",
+   "floor": "one-register-never-blurred",
+   "ask": "Is the whole piece in one register: either believable phone footage of an ordinary dog doing only dog things, or unmistakably staged, exaggerated absurdity? Answer no and name the frame if a near-real dog does a slightly human thing, or real-looking and staged frames are mixed."
+  },
+  {
    "id": "payoff",
    "floor": "dumb-stopping",
    "ask": "With every caption and on-screen word covered, can you state the joke's payoff in one sentence from the pictures alone? Answer yes with the sentence, or no."
