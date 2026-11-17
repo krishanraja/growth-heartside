@@ -1525,6 +1525,22 @@ def self_test():
         if not cond:
             sys.exit(f'self-test FAILED: {name}')
         n += 1
+    # Skills: Codex reads .agents/skills (the source), Claude Code reads .claude/skills, which holds a real copy of
+    # each, never a symbolic link (the fleet convention in content-engine's scripts/validate-skills.py; Krish,
+    # 2026-11-17: "encode them in to a skill in the repository that all future video production gets right").
+    agent_skills = os.path.join(HERE, '.agents', 'skills')
+    if os.path.isdir(agent_skills):
+        for skill in sorted(os.listdir(agent_skills)):
+            src = os.path.join(agent_skills, skill, 'SKILL.md')
+            if not os.path.isfile(src):
+                continue
+            copy = os.path.join(HERE, '.claude', 'skills', skill, 'SKILL.md')
+            body = open(src, encoding='utf-8').read()
+            t(f'.claude/skills/{skill}/SKILL.md is an exact copy of .agents/skills/{skill}/SKILL.md (cp -r .agents/skills/{skill} .claude/skills/)',
+              os.path.isfile(copy) and open(copy, encoding='utf-8').read() == body)
+            t(f'.agents/skills/{skill}/SKILL.md has name and description frontmatter',
+              body.startswith('---\n') and f'\nname: {skill}\n' in body.split('\n---', 1)[0] + '\n'
+              and '\ndescription: ' in body.split('\n---', 1)[0])
 
     cid = 'IG_EMO_REEL_C01_H03_V1_20261019'
     link = tracked('https://heartside.io/?view=gifts', cid)
