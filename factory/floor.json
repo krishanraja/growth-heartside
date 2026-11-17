@@ -634,6 +634,23 @@
     "carousel",
     "meme"
    ]
+  },
+  {
+   "id": "no-retread-of-live-post",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint: d1-absurd-01 'Rise and grind' (a dog's 4 a.m. influencer routine) scored 9 at the panel, and Krish declined it on the board because F38 'My dog's 4 AM routine' is already live",
+   "words": [
+    "No, it's not funny - the post that is already live on this topic is 10x better"
+   ],
+   "category": "concept",
+   "rule": "Never brief a concept that retreads a post already live on the account. Before writing a brief, check the live posts (Buffer audit, the Schedule) for the same premise or format; a piece on a live premise must be judged against that live post itself, and it reaches Krish only if it is clearly funnier, not merely a different execution. A panel 9 does not override this.",
+   "check": "review: every brief names the closest live post and why this one beats it; tier 2 compares a retread directly with the live post and scores it 7 or below unless it clearly beats it",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
   }
  ],
  "open_conflicts": [],
