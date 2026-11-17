@@ -1,0 +1,54 @@
+[
+  {
+    "event_id": "publishing:2026-11-17:morning:tiktok:access-unavailable",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "tiktok",
+      "state": "watching",
+      "at": "2026-11-17T08:03:00Z",
+      "at_precision": "minute",
+      "source": "Morning Publishing heartbeat. Current exact README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read via Drive connector on 17 Nov 2026.",
+      "evidence": "Codex in-app browser returned \"Browser is not available: iab\". Native publication, media, cover, caption, CTA, sound and metrics checks remain unavailable. No phone slots due today in current 04. The original F34 and all F38 publications remain Krish-owned; F38 repost is dated 18 Nov. No new public URL, measured result, delivery failure, eligibility or spend was established. No Drive edits, scheduling, reposts, boost proposals or spending. Previously recorded statuses remain historical until native readback. Same access blocker as 16 Nov; no new user notification warranted."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-17:morning:instagram:access-unavailable",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "instagram",
+      "state": "watching",
+      "at": "2026-11-17T08:03:00Z",
+      "at_precision": "minute",
+      "source": "Morning Publishing heartbeat. Current exact README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read via Drive connector on 17 Nov 2026.",
+      "evidence": "Codex in-app browser returned \"Browser is not available: iab\". Native publication, media, cover, caption, CTA, sound and metrics checks remain unavailable. No phone slots due today in current 04. The original F34 and all F38 publications remain Krish-owned; F38 repost is dated 18 Nov. No new public URL, measured result, delivery failure, eligibility or spend was established. No Drive edits, scheduling, reposts, boost proposals or spending. Previously recorded statuses remain historical until native readback. Same access blocker as 16 Nov; no new user notification warranted."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-17:morning:facebook:access-unavailable",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "facebook",
+      "state": "watching",
+      "at": "2026-11-17T08:03:00Z",
+      "at_precision": "minute",
+      "source": "Morning Publishing heartbeat. Current exact README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read via Drive connector on 17 Nov 2026.",
+      "evidence": "Codex in-app browser returned \"Browser is not available: iab\". Native publication, media, cover, caption, CTA, sound and metrics checks remain unavailable. No phone slots due today in current 04. The original F34 and all F38 publications remain Krish-owned; F38 repost is dated 18 Nov. No new public URL, measured result, delivery failure, eligibility or spend was established. No Drive edits, scheduling, reposts, boost proposals or spending. Previously recorded statuses remain historical until native readback. Same access blocker as 16 Nov; no new user notification warranted."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-17:morning:pinterest:access-unavailable",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "pinterest",
+      "state": "watching",
+      "at": "2026-11-17T08:03:00Z",
+      "at_precision": "minute",
+      "source": "Morning Publishing heartbeat. Current exact README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read via Drive connector on 17 Nov 2026.",
+      "evidence": "Codex in-app browser returned \"Browser is not available: iab\". Native publication, media, cover, caption, CTA, sound and metrics checks remain unavailable. No phone slots due today in current 04. The original F34 and all F38 publications remain Krish-owned; F38 repost is dated 18 Nov. No new public URL, measured result, delivery failure, eligibility or spend was established. No Drive edits, scheduling, reposts, boost proposals or spending. Previously recorded statuses remain historical until native readback. Same access blocker as 16 Nov; no new user notification warranted."
+    }
+  }
+]
