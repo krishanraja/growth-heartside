@@ -415,7 +415,7 @@
     "These need to be really well scripted before they go to video production, given that we've not got too many Higgsfield credits left."
    ],
    "category": "concept",
-   "rule": "The joke is the frame, not the costume: shoot it like a human video format (gym montage, morning routine, influencer vlog) while the dog does what a real dog would do in that slot (a log for a barbell, a ball chase for sprints, sniffing for networking). No human arms on a dog. Every beat is scripted and costed before any generation.",
+   "rule": "The joke is the frame, not the costume: shoot it like a human video format (gym montage, morning routine, influencer vlog) while the dog does what a real dog would do in that slot (a log for a barbell, a ball chase for sprints, sniffing for networking). No human arms on a dog. Every beat is scripted and costed before any generation. Scope since 17 Nov: the photoreal register only; the absurd register may show fully human acts (one-register-never-blurred).",
    "check": "review: for each beat name the human-format slot and the real dog behavior that fills it; any human hand, human-arm prop work or human behavior performed by the dog holds the beat; no video generation until Krish has seen the script",
    "applies_to": [
     "reel"
@@ -474,11 +474,13 @@
    "date": "2026-11-10",
    "made": "Wave 3 dog-does-dog-things stills (F46 to F50, Higgsfield) and the round 3 storyboards",
    "words": [
-    "The dogs in all these videos look way too perfect and not real, and slightly scruffy enough."
+    "The dogs in all these videos look way too perfect and not real, and slightly scruffy enough.",
+    "Do you not think the dogs look too pristine and not realistic enough? (Krish, 2026-11-17, on the day 1 alibi films)",
+    "all four, but remember to make all dogs look realistic and not just perfect AI dogs, they need to ALL look photorealistic and have real world dog mannerisms and slight scruffiness about them"
    ],
    "category": "generation",
    "rule": "Generated dogs must look like someone's real pet, shot on the owner's phone. That means slightly scruffy, uneven fur, a bit of mess, ordinary home light, imperfect framing and real household clutter. Never a groomed show dog, studio light, glossy fur or catalogue perfection.",
-   "check": "code: growth.py still check (the prompt is factory/dog_roll.py's, unedited, with its realism block and avoid list; the credits were reserved for that exact prompt); review: every generated dog frame is read on a contact sheet for 'could be a real pet on a phone' before any motion is made",
+   "check": "code: growth.py still check (the prompt is factory/dog_roll.py's, unedited, with its realism block and avoid list; the credits were reserved for that exact prompt); review: every generated dog frame is read on a contact sheet for 'could be a real pet on a phone' before any motion is made; the panel's tier 1 asks it as its own question (17 Nov: the day 1 review checked anatomy and text but not realism, and pristine dogs reached Krish)",
    "applies_to": [
     "reel",
     "still",
@@ -529,7 +531,7 @@
     "f28 is super glitchy and needs to be redone, also are you sure its all the dance to one song? looks like two different dance trends might I might be mistaken."
    ],
    "category": "performance",
-   "rule": "A trend reel uses one trend, one song and one set from start to end; no second dance or room cut in. Dogs move like dogs: no dog standing on its hind legs doing human choreography, which reads as glitchy AI.",
+   "rule": "A trend reel uses one trend, one song and one set from start to end; no second dance or room cut in. Dogs move like dogs: no dog standing on its hind legs doing human choreography, which reads as glitchy AI. Scope since 17 Nov: the photoreal register only; the absurd register may show fully human acts (one-register-never-blurred).",
    "check": "review: the contact sheet shows one location and one routine throughout; no shot of a dog upright on two legs performing arm moves",
    "applies_to": [
     "reel"
@@ -596,6 +598,60 @@
    "check": "review: play the reel with the named song at its start point; the action covers the whole phrase",
    "applies_to": [
     "reel"
+   ]
+  },
+  {
+   "id": "one-register-never-blurred",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint, after the pristine alibi films",
+   "words": [
+    "I want to nail down how: are we going for obviously AI, or are we going for photorealistic? I want this to feel like dogs making decisions or doing things that humans would do, for example, the parody LinkedIn 'wake up at 4am' inspiration post. If we're going for AI-generated visuals, then it should be comically exaggerated and absurd. Whereas if we're going for photorealism, then it should be dogs behaving like normal dogs, but then the text overlays, the captions, or something else humanizes the dog's behavior. Either way, the motif is always that the dog has a personality and is thinking about stuff in ways you forget as a viewer sometimes.",
+    "i recommend a blend of the above styles, but never a blurring",
+    "Yes, fully human acts"
+   ],
+   "category": "generation",
+   "rule": "Every piece commits to one register and never mixes them. Photoreal: a scruffy real pet on the owner's phone doing only what a real dog does; the words (labels, caption, the note) supply the human thinking. Absurd: unmistakably staged, comically exaggerated dogs living a human format (the 4am LinkedIn routine); no attempt to pass as real footage. A near-real dog doing a slightly human thing is the blur and fails. Both registers carry the same motif: the dog has a personality and is thinking about things the viewer forgets it can. The sentiment lane is always photoreal. The product end card is the store's real render in both. In the absurd register the dog may do the human act itself: type at a desk, hold the coffee, stand at the podium, on its hind legs if the scene needs it (Krish, 17 Nov). The photoreal register keeps every real-dog limit.",
+   "check": "review: name the piece's register in its brief; tier 1 asks one-register on every contact sheet",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
+  },
+  {
+   "id": "read-unlimited-before-ordering",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint, on the new machine: the studio order asked for Nano Banana Pro stills while only Kling 3.0 was Unlimited",
+   "words": [
+    "its trying to use nano banana instead of bling 3.0 which is unlimited for today - I already told you this, why not even bother to look at what is unlimited in my account?"
+   ],
+   "category": "generation",
+   "rule": "Before writing any generation order, read which models show the Unlimited label in Krish's Higgsfield account today (Codex reads the page, read only) and build the order only on those. When the brief's model is not Unlimited, re-route to the Unlimited one (a photoreal shot 1 runs as Kling 3.0 text-to-video from the brief's own Kling prompt instead of a Nano Banana still) rather than stopping or asking.",
+   "check": "review: every studio order names the Unlimited models read that day, with the time of the read",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
+  },
+  {
+   "id": "no-retread-of-live-post",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint: d1-absurd-01 'Rise and grind' (a dog's 4 a.m. influencer routine) scored 9 at the panel, and Krish declined it on the board because F38 'My dog's 4 AM routine' is already live",
+   "words": [
+    "No, it's not funny - the post that is already live on this topic is 10x better",
+    "that prior video worked because it was a parody of shameless LinkedIn influencers, but real dog behavior."
+   ],
+   "category": "concept",
+   "rule": "Never brief a concept that retreads a post already live on the account. Before writing a brief, check the live posts (Buffer audit, the Schedule) for the same premise or format; a piece on a live premise must be judged against that live post itself, and it reaches Krish only if it is clearly funnier, not merely a different execution. A panel 9 does not override this. What made the live post work: the parody of a pretentious human format lives in the words, and the dog does only real dog things on screen; the gap between the two is the joke. Dressing the dog up to act the format out loses it.",
+   "check": "review: every brief names the closest live post and why this one beats it; tier 2 compares a retread directly with the live post and scores it 7 or below unless it clearly beats it",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
    ]
   }
  ],

@@ -34,6 +34,16 @@
    "ask": "Every dog has correct anatomy in every frame shown: four legs, one tail, paws with toes, two eyes and ears in place, no merged or extra limbs, human hands with five fingers. Answer no and name the frame if any frame fails."
   },
   {
+   "id": "real-pet",
+   "floor": "real-scruffy-dogs",
+   "ask": "Could every dog be someone's real pet filmed on the owner's phone? Answer no and name the frame if any dog looks groomed, glossy, fluffed or catalogue-perfect, or the light looks staged or cinematic rather than ordinary home light (Krish, 17 Nov: \"Do you not think the dogs look too pristine and not realistic enough?\")."
+  },
+  {
+   "id": "one-register",
+   "floor": "one-register-never-blurred",
+   "ask": "Is the whole piece in one register: either believable phone footage of an ordinary dog doing only dog things, or unmistakably staged, exaggerated absurdity? Answer no and name the frame if a near-real dog does a slightly human thing, or real-looking and staged frames are mixed."
+  },
+  {
    "id": "payoff",
    "floor": "dumb-stopping",
    "ask": "With every caption and on-screen word covered, can you state the joke's payoff in one sentence from the pictures alone? Answer yes with the sentence, or no."
@@ -69,7 +79,7 @@
    "ask": "List every element on screen that is not the dog, its hands or the gag (text, overlays, props that do nothing). Answer yes only if each one earns its place; name any that does not."
   }
  ],
- "tier2_rubric": "Score 1 to 10 against the tens above in the same format. 10: it would beat the matching ten. 9: as good as it. 7 to 8: competent but forgettable. 6 or below: a floor anchor would apply. Name the ten you compared against, the single strongest beat with its frame, and, if below 9, the floor quote Krish would most likely say. Only 9 and above reach Krish. Compare a viral post only with the viral tens (the YouTube picks, and F38 to F40 for any dog-does-dog-things post: a real dog doing real dog things inside a human video format); a product ending is required only on signature posts, never on viral ones. Krish's humour profile (docs/HUMOUR.md) is the anchor for every build: a post that lacks any of the three parts of its core test cannot score 9 or above, however clean its execution.",
+ "tier2_rubric": "Score 1 to 10 against the tens above in the same format. 10: it would beat the matching ten. 9: as good as it. 7 to 8: competent but forgettable. 6 or below: a floor anchor would apply. Name the ten you compared against, the single strongest beat with its frame, and, if below 9, the floor quote Krish would most likely say. Only 9 and above reach Krish. Compare a viral post only with the viral tens (the YouTube picks, and F38 to F40 for any dog-does-dog-things post: a real dog doing real dog things inside a human video format); a product ending is required only on signature posts, never on viral ones. Krish's humour profile (docs/HUMOUR.md) is the anchor for every build: a post that lacks any of the three parts of its core test cannot score 9 or above, however clean its execution. Retreads (Ruling, Krish, 2026-11-17: \"No, it's not funny - the post that is already live on this topic is 10x better\"): if the piece reuses the premise or format of a ten or of a post already live, compare it directly with that post and score it 9 only if it is clearly funnier than that post; a retread that dresses the dog up to act the format out, where the ten kept a real dog doing real dog things under the format's words, scores 6. Krish on F38: \"that prior video worked because it was a parody of shameless LinkedIn influencers, but real dog behavior.\"",
  "humour": {
   "source": "docs/HUMOUR.md",
   "why": "Krish, 10 Nov: \"Here's my humor profile. Make sure every build in all the sessions anchors towards this, now and in the future.\"",

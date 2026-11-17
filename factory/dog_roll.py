@@ -136,7 +136,7 @@ def breed_keys(pools, wanted=None):
         return [k for k, b in table.items() if not b.get('lock_only')]
     out = []
     for name in wanted:
-        n = name.strip().lower().replace('-', ' ')
+        n = name.strip().lower().replace('-', ' ').replace('_', ' ')   # keys like terrier_mix match as written
         match = next((k for k, b in table.items() if n in (k.replace('_', ' '), b['label'].lower(), *b['aliases'])), None)
         if not match:
             raise ValueError(f'no breed {name!r} in factory/bank/dog_pools.json (keys: {", ".join(table)}); add it there')
