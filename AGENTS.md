@@ -25,7 +25,7 @@ Claude starts Codex only through scripts/codex_thread.mjs, focus sprints include
 
 ## Video production skills (Krish, 2026-11-17)
 
-Krish: "encode them in to a skill in the repository that all future video production gets right, so we can use lesser models and accomplish higher outputs". Any session that plans, generates, cuts or judges a Heartside film starts with `.claude/skills/heartside-video-production/SKILL.md`, which gives the order of the others:
+Krish: "encode them in to a skill in the repository that all future video production gets right, so we can use lesser models and accomplish higher outputs". Any session that plans, generates, cuts or judges a Heartside film starts with the `heartside-video-production` skill, which gives the order of the others:
 
 | Skill | For |
 |---|---|
@@ -38,7 +38,7 @@ Krish: "encode them in to a skill in the repository that all future video produc
 | `heartside-generation-watch` | watchers, 15-minute check-ins, tab drops, stuck queues |
 | `heartside-assembly-panel-board` | cut.py, the painted end card, the panel, links, the board |
 
-They live in `.claude/skills/` (Claude Code). Codex reads `.agents/skills/`, which holds pointers to the same files. The skills point to the floor, `docs/HUMOUR.md` and `factory/README.md` rather than copying them; a new lesson goes on the floor first, then into the skill that applies it.
+The source is `.agents/skills/<name>/SKILL.md` (Codex reads it). `.claude/skills/<name>/SKILL.md` is a real copy for Claude Code, never a symbolic link: edit the source, then `cp -r .agents/skills/<name> .claude/skills/`. `python growth.py --self-test` fails while a copy differs (the fleet convention, as in content-engine). The skills point to the floor, `docs/HUMOUR.md` and `factory/README.md` rather than copying them; a new lesson goes on the floor first, then into the skill that applies it.
 
 ## Autonomy (Ruling, Krish, 2026-10-19)
 

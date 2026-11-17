@@ -21,6 +21,11 @@ Use these dogs. Never roll a new dog during a timed Unlimited window.
 Krish, 17 Nov: "Hero is good, sidekick should be C". He offered the beagle only "if you can get the beagle to look
 good". It failed the 17 Nov test, so C stays. `local/` lives on Krish's main checkout (`C:\Users\krish\dev\growth-heartside`).
 
+A new dog, outside a timed window only: `python growth.py floor --format still` first (the roller refuses until the
+floor is read), then `python growth.py still roll --count 1 --breed <key> --setting <key> --frame video --json >
+local/factory/roll-<name>.json`. Write long `--action` and `--expression` values into a script file and run that:
+inline shell quoting broke on 17 Nov.
+
 ## Judge the frames, never the prompt
 
 A prompt that lists flaws proves nothing. The 17 Nov beagle prompt asked for a patchy coat, tear stains, a dirt crust,

@@ -28,6 +28,8 @@ orders, checks the results and records the lessons. Codex's report is never proo
    - When Desktop holds the thread (Krish has it open), `send` queues the message for Desktop and says so. That is
      normal, and it is the route that works (ai-harness#280).
    - Fallback only if the script itself fails: `codex queue --thread <thread> --message "$(cat <file>)"`.
+   - Run it as this session's own command (foreground or `run_in_background`), never `--detach` from a throwaway
+     shell: on 17 Nov a detached `open` died with its shell and no thread appeared.
    - If the script fails, report it in one line. Never edit MCP, Claude or Codex settings to work round it (canon).
 3. Confirm delivery within 2 minutes. Look for your first line as a user message in the session file:
    ```bash
@@ -72,7 +74,7 @@ Copy this block and fill it in. Leave nothing out: Codex follows the words liter
 ```
 ORDER <date>-<slug>
 Claude, <date>: <one line of what and why>.
-First read C:\Users\krish\dev\growth-heartside\.claude\skills\heartside-higgsfield-ui\SKILL.md (sections 2 and 4).
+First read C:\Users\krish\dev\growth-heartside\.agents\skills\heartside-higgsfield-ui\SKILL.md (sections 2 and 4).
 Higgsfield website only, <image|video> page, <model> showing the Unlimited label.
 Settings: <1080p>, 9:16, <N> s, audio off, enhance off, <text-to-video|image-to-video|image-to-image>.
 Prompt: paste the whole text of each file untouched.

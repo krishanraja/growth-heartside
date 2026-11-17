@@ -3,7 +3,7 @@
 Status: proposal, for Krish. Not applied to ai-harness: this repository never edits it (Claude is the only writer to
 ai-harness, through its own session).
 From: krishanraja/growth-heartside, 17 Nov 2026, the production-skills session.
-Source in this repository: `.claude/skills/heartside-codex-studio/SKILL.md` and three floor entries:
+Source in this repository: `.agents/skills/heartside-codex-studio/SKILL.md` and three floor entries:
 `codex-orders-end-at-review-points`, `no-file-picker-for-codex` and `share-the-unlimited-slot`.
 
 ## Why it belongs to the fleet
@@ -47,4 +47,4 @@ about Codex Desktop, not about Heartside.
 ## What stays in Heartside
 
 The Higgsfield, anchor-still, dog-realism, joke-lab and assembly skills are Heartside's own, and they stay in
-`.claude/skills/`.
+`.agents/skills/`.

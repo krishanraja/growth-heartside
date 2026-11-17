@@ -85,8 +85,10 @@ Board: https://claude.ai/artifact/A3tFqoYZuYAEdUrziU5wnN. Steps: `docs/REVIEW-BO
 1. Upload the cover and the mp4 to the board's asset store (`Artifact` publish with `asset: true` and the board's url).
 2. Write the item with `ArtifactData` `set` into collection `items`, in the doc's format: the question, `on_yes`,
    `on_no`, the caption, the tracked link and the scores.
-3. Only items, and only 9s. Never write to `verdicts`; only Krish writes those.
-4. Read his answers with `ArtifactData` `list` on `verdicts`. Record each one (`panel.py record`, `jokelab.py verdict`,
+3. The board's player shows a 9:16 film at its own size (`aspect-ratio: 9/16; object-fit: contain`, fixed 17 Nov after
+   Krish: "can you make the video player the same size as the videos"). Keep that CSS when republishing the board.
+4. Only items, and only 9s. Never write to `verdicts`; only Krish writes those.
+5. Read his answers with `ArtifactData` `list` on `verdicts`. Record each one (`panel.py record`, `jokelab.py verdict`,
    and the floor if he says no).
 
 ## Never
