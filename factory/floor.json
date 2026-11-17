@@ -662,6 +662,7 @@
    "words": [
     "are you using teh MCP? you are to use the browser UI only",
     "if you lose access, tell me and I reinstate it",
+    "unlimited usage probably does not apply in the CLI (Krish, 2026-11-17, on the higgsfield-generator CLI)",
     "Okay, you can use the MCP for stuff that doesn't reduce my credits. As you know, I've got unlimited usage of Kling 3.0 for the next few hours, which can only be used in the UI"
    ],
    "category": "process",
@@ -685,6 +686,87 @@
    "category": "generation",
    "rule": "Generate the way krishanraja/higgsfield-generator's generate skill says. Stills first: an anchor still per set, made from a reference image of the approved dog (image-to-image, Nano Banana Unlimited in the UI), reviewed at full size before any motion. Every shot of a set then runs image-to-video from that set's anchor, so one film is one dog in one room. Prompts stay under about 200 tokens and are phrased positively: an image-to-image prompt says only what changes, an image-to-video prompt says only the motion and camera; never redescribe what the reference or start frame already shows.",
    "check": "review: every video job in the log names its anchor still; every prompt file is under 200 tokens; no prompt redescribes its reference image",
+   "applies_to": [
+    "reel",
+    "still"
+   ]
+  },
+  {
+   "id": "codex-orders-end-at-review-points",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint: a 42-job studio order said \"Don't stop to report between sequences\", ran one Codex turn for 3 hours 20 minutes, and four later orders (the replacement bank, the beagle test, the priority shots, the overnight fallback) waited in the queue behind it; a 15-minute hunt for a way to steer the running turn found none",
+   "words": [
+    "you should be able to steer comments (force them through) when you need to otherwise each new message you try just gets backed up in a queue",
+    "what are you doing? you are fucking about now surely"
+   ],
+   "category": "process",
+   "rule": "A queued message reaches Codex only when its current turn ends, and Claude cannot put a message into a running turn; only Krish's Send now in Codex Desktop can. So every studio order ends its turn at a natural review point (at most one set, about 6 jobs) and closes with \"Then end the turn and tell me in one line\"; no order says not to stop or not to pause. The next order is queued as soon as the current one is delivered, never more than one ahead. When a needed order sits in the queue behind a wrong job, Claude tells Krish in one line to press Send now, and spends no more than 5 minutes on any Codex mechanics problem before that line.",
+   "check": "review: every order file in the studio's tools/ ends with an end-the-turn line and holds no 'do not stop' or 'no pauses'; every order's first line appears as a user message in the thread's session file within 2 minutes of sending, or Krish was asked to press Send now",
+   "applies_to": [
+    "reel",
+    "still"
+   ]
+  },
+  {
+   "id": "no-file-picker-for-codex",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint: the anchor-still order told Codex to upload anchors/ref-hero.png and ref-c.png from disk, and the website's system file picker opened on Krish's screen",
+   "words": [
+    "codex opened file upload, expecting an anchor image to be uploaded",
+    "why would you make it do that"
+   ],
+   "category": "process",
+   "rule": "Never order Codex to upload a file from the computer through a website: it opens the system file dialog, which only Krish can handle. Name an image that is already in Higgsfield instead (an earlier upload, or a History card's reuse option, by asset id). Only where none exists may Codex set the page's file input directly, with no dialog.",
+   "check": "review: no studio order asks Codex to upload a local file; every image input in an order names a Higgsfield asset id or says to set the file input directly",
+   "applies_to": [
+    "reel",
+    "still"
+   ]
+  },
+  {
+   "id": "share-the-unlimited-slot",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint: Codex twice asked Krish to pause other ventures' Kling Unlimited jobs that held the account's single Unlimited slot",
+   "words": [
+    "Other jobs must continue",
+    "just get on with it, the other session is producing content too but I am sure you can be co operative"
+   ],
+   "category": "process",
+   "rule": "Higgsfield runs one Unlimited job at a time for the whole account, and Krish's other ventures use the same slot. Heartside waits for the slot to free and submits then; it never asks Krish to pause another session's jobs, and treats their jobs in History as none of its business. Plan the window's clip count with the slot shared.",
+   "check": "review: no studio order or Codex question asks Krish to stop other jobs on the account",
+   "applies_to": [
+    "reel",
+    "still"
+   ]
+  },
+  {
+   "id": "generate-while-the-words-are-written",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint: all Kling work was held until the joke lab's scripts passed, the four writer sub-agents had died unnoticed, and nothing ran in Codex or Higgsfield for most of an Unlimited window",
+   "words": [
+    "I don't see anything running anywhere - here, codex or higgsfield?",
+    "ok, we need to get moving with kling generations now we have 6 hours remaining of use!",
+    "I would rather you used the next 6 hours to generate loads of good videos of dogs behaving regularly but cut in to sequences that look like typical female influencer videos, that we can add hilarious captions over later on. thats just one idea but you get the point. we should be able to generate stuff by the batch that will be usable",
+    "what takes jokes 2 hours to write exactly?"
+   ],
+   "category": "process",
+   "rule": "An Unlimited window is never left idle while words are written. Footage of a real dog doing an ordinary dog thing does not depend on which words win, so it is generated as a bank, set by set, from the first 15 minutes, with the shots that serve 9-scored scripts first; the joke lab runs alongside it. spend-means-nine still gates anything that costs credits. Every sub-agent (writer or judge) gets a file watcher with a 15-minute deadline; a missing file at the deadline means the work is done in the main session at once.",
+   "check": "review: the log shows a generation submitted within 15 minutes of the window opening; every sub-agent launch in the session has a watcher with a deadline",
+   "applies_to": [
+    "reel",
+    "still"
+   ]
+  },
+  {
+   "id": "check-in-every-15-minutes",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint, the overnight Kling run",
+   "words": [
+    "ok, keep checking in on this every 15 min to ensure everything is ok"
+   ],
+   "category": "process",
+   "rule": "While a generation run is going, Claude checks it every 15 minutes on a background timer: the log's new DONE lines, what Codex is doing in its session file, whether the running order is the current one, and the credit balance, which must not move. A dropped tab, a stuck queue or a superseded order is told to Krish in one line; otherwise the check is a one-line count.",
+   "check": "review: the session's background tasks show a 15-minute timer restarted after each check while any order was running",
    "applies_to": [
     "reel",
     "still"
