@@ -3,6 +3,11 @@
 Newest first. Record his words with the date, then change the job file and
 `automations.json` together.
 
+- 2026-11-17: The joke lab, after Krish declined d1-absurd-01 ("No, it's not funny - the post that is already live on this topic is 10x better"), explained F38 ("that prior video worked because it was a parody of shameless LinkedIn influencers, but real dog behavior.") and asked whether the session was "actually enhancing the fucking brain of this fucking repository where we fucking produce the fucking videos?", then asked to "build the fix straight into growth-heartside".
+  - `factory/jokelab.py`: it writes wide (about 30 candidates across weighted families, led by the alibi family the 15 Nov audit measured). It screens before any build: retreads of live and locked posts, dressed-up dogs, rule 5 copy, the three-part core and near duplicates. It reads each joke with the humour engine through Control Center's humour route. It catches a build loop where the score rises and the words do not, and it learns from his verdicts (`bank/verdicts.jsonl`).
+  - `AGENTS.md`, `factory/README.md` and `docs/HUMOUR.md` make it the first step of every joke. `tests/test_jokelab.py` replays the 17 Nov failure: the F38 retread and the dressed-up golden are rejected, and seven cuts on the same words warn.
+  - No job, schedule or `automations.json` entry changed. Nothing was generated, posted or spent.
+
 - 2026-11-16: In an interactive Claude Code session, Krish asked for a full Buffer analysis, a 7-day production run of 10/10 posts, and a visible Codex session placing comments on high-reach dog posts. He answered four questions:
   - **Cadence:** "do what is best for max reach if you think 20 is too much". Set at 20 posts a day in total, 5 per platform, inside the existing five-post daily ceiling.
   - **Publishing:** "Approve daily batch". Each day's 20 go to him as one batch. After his yes, the Publishing desk schedules exactly that batch into Buffer.

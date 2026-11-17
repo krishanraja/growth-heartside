@@ -135,6 +135,26 @@ Every failure names its floor entry and Krish's own words. What the check reads 
 
 Every check is keyed to a floor entry that must exist. A new still entry Krish adds to `floor.json` is owed a verdict at once.
 
+## The joke lab (17 November 2026)
+
+`factory/jokelab.py` decides what joke gets made. The judging panel below decides whether it was made well. On 17 Nov
+one inherited idea, a retread of the live F38, went through seven cuts. The judge score climbed from 7 to 9 on
+pictures alone, and Krish said: "No, it's not funny - the post that is already live on this topic is 10x better". The
+lab closes each step where that went wrong:
+
+| Step | Command | What it stops |
+|---|---|---|
+| Write wide | `jokelab.py brief TOPIC --n 30` | One inherited idea as the whole slate. The brief carries his formula ("the parody is in the words, and the dog does real dog behavior"), the core, the floor's quotes, every live post, and weighted families: alibi, format parody, rule lawyer, status puncture, group roast, literal staging, escalation list. The alibi family leads because it earned 68 to 126 reactions per 1,000 against medians of 29 and 40 (`docs/audits/2026-11-15-interest-vs-paid.md`) |
+| Screen | `jokelab.py screen CANDIDATES.json [--live]` | Retreads of a live or locked post, judged on its real words and pictures. A dog doing a human act outside literal staging. Rule 5 copy breaches, through `growth.py problems`. A missing core part. Near duplicates. A slate under 12 candidates or under 4 families. With `--live`, the humour engine (krishanraja/humour-engine) reads each joke through Control Center's humour route on `CONTROL_CENTER_ENGINE_TOKEN` and rejects it when it finds no supported reading, no stupid premise, no payoff with an edge, or more than one outside reference. It also flags a payoff spent before the last line |
+| Judge the words | `panel.py brief tier2` on the shortlist only | Polishing an idea that is not funny on paper. Only the top four go to the judge |
+| Build, cut by cut | `jokelab.py cut RUN CAND --score N --words FILE` | Exits 1 and warns after three cuts with the same words, or when the score rose and the words did not |
+| Learn | `jokelab.py verdict RUN CAND yes\|no "his words"`, `jokelab.py taste` | Forgetting him. Each verdict moves its family's weight in the next brief and ranking. A family or mechanism becomes a rule only on two or more agreeing verdicts, so one no is never a rule. A no still goes to `floor.json` and his taste ledger as before |
+
+Install for `--live`: `pip install -r requirements-humour.txt && pip install --no-deps -r requirements-humour-engine.txt`.
+Without it, or without the token, `screen` runs the code gates and says so. Runs are kept in `local/jokelab/`. His
+verdicts go to `bank/verdicts.jsonl`, from interactive sessions only. The humour engine holds no taste: Krish's taste is
+`docs/HUMOUR.md`, ai-harness `krish-voice` references/humour.md, the floor and these verdicts.
+
 ## The judging panel (10 November 2026)
 
 Krish asked for a simple panel that holds every output to 10/10 without burning tokens or hours. `factory/panel.py`

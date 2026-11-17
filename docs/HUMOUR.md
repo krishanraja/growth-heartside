@@ -31,6 +31,12 @@ Public copy keeps US spelling and no swearing; the profile's own swearing descri
 
 ---
 
+Every joke starts in the joke lab (`factory/jokelab.py`, 17 Nov). It writes many candidates against this profile, screens out
+retreads and dressed-up dogs before any build, and learns from his verdicts. The humour engine reads each joke's structure
+there; this profile and his verdicts decide whether it is his kind of funny.
+
+---
+
 ## The profile, as Krish supplied it
 
 # Krish’s Humour Profile
