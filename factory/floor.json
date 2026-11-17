@@ -653,6 +653,25 @@
     "carousel",
     "meme"
    ]
+  },
+  {
+   "id": "higgsfield-browser-ui-only",
+   "date": "2026-11-17",
+   "made": "Day 1 of the 16 to 22 Nov sprint: Claude read Higgsfield generation history and balance through the Higgsfield MCP to download Codex's Kling takes",
+   "words": [
+    "are you using teh MCP? you are to use the browser UI only",
+    "if you lose access, tell me and I reinstate it",
+    "Okay, you can use the MCP for stuff that doesn't reduce my credits. As you know, I've got unlimited usage of Kling 3.0 for the next few hours, which can only be used in the UI"
+   ],
+   "category": "process",
+   "rule": "Every Higgsfield generation runs in its website in the visible Codex Desktop browser, because Krish's Unlimited models (Kling 3.0 and the rest) exist only in the UI. The Higgsfield MCP may be used only for calls that never spend credits: reading History and job status, downloading finished takes, reading the balance. Never generate, upscale, edit or run any paid call through it. If the browser loses access to Higgsfield, stop and tell Krish in one line so he can reinstate it.",
+   "check": "review: every Higgsfield MCP call in the session is a read (history, status, balance); the balance before and after the session is unchanged; every generation is logged in log.md as made in the UI on an Unlimited model",
+   "applies_to": [
+    "reel",
+    "still",
+    "carousel",
+    "meme"
+   ]
   }
  ],
  "open_conflicts": [],
