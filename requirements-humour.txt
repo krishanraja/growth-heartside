@@ -1,0 +1,5 @@
+# The humour engine (krishanraja/humour-engine), the fleet's definition of humour, read by factory/jokelab.py --live.
+# Installed without its server and research extras: the joke lab needs only its contracts, core and profiles.
+# pip install -r requirements-humour.txt && pip install --no-deps -r requirements-humour-engine.txt
+pydantic==2.13.5
+PyYAML==6.0.3
