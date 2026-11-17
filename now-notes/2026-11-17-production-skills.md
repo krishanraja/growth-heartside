@@ -1,4 +1,4 @@
 Status: Eight video-production skills are in `.claude/skills/heartside-*`, with Codex pointers in `.agents/skills/`. They were built from the 17 Nov sprint session's transcript, the Codex studio thread and the studio log. `AGENTS.md` points to them, and the floor gains five process entries plus one quote on `higgsfield-browser-ui-only`. A proposal for a fleet Codex-thread skill is in `docs/proposals/`. The self-test passes 325 checks; the one failure is the knowledge `.docx` hash, which was already failing before this work.
 Next: Run the next studio session from `heartside-video-production` with a Sonnet model, and add each failure it hits to the floor and the skill that should have stopped it.
 Changed: .claude/skills/ (8 skills), .agents/skills/ (3 pointers), AGENTS.md (one section), factory/floor.json (5 entries, 1 quote), docs/proposals/2026-11-17-codex-desktop-studio-skill.md. No Drive, Higgsfield, Codex or platform action.
-North Star check (2026-11-17): holds. Cheaper, faster film production serves "every winning format found by this engine", but no sales movement is established by this change.
+North Star check (2026-11-17): holds.
