@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- Auto-merge now merges on either copy of the check workflow (push or pull_request). Before, when the push-event run finished last it was skipped, and a green pull request never merged (growth-heartside #117, growth-makeyourmindup #129 on 17 Nov). (2026-11-17)
 - The humour engine is on call in this repository: `factory/jokelab.py check`, `compare` and `doctor`, with an AGENTS.md rule saying when to consult it. (2026-11-17)
 - The 16 to 22 Nov velocity sprint is running on Krish's second machine (17 Nov). Day 1's four new pieces are built from Kling 3.0 Unlimited clips (credits unchanged at 952.35) and each ends on a blanket painted from the film's own dog by heartside.io's own painter (internal-paint, 8 of 30 paints used). None has cleared the panel yet: tier 2 scored d1-absurd-01 8 (v3) then 7 (v4), d1-warm-02 7, d1-note-01 7; d1-warm-01 has no end card yet. Nothing is on the review board and nothing has been posted, so no organic sale is attributable to the sprint yet. (2026-11-16)
 - Every joke now starts in the joke lab (factory/jokelab.py). It writes about 30 candidates across weighted families led by the alibi family the 15 Nov audit measured, and screens them before any build: retreads of live posts (by wording, by format, and by the writer's own closest-post answer), dressed-up dogs, rule 5 copy, the three-part core and near duplicates. With --live the humour engine reads each through Control Center's humour route. It stops the build loop where the score moves and the words do not, and learns from Krish's verdicts. On the 17 Nov slate it rejects d1-absurd-01 as an F38 retread and shortlists the four concepts he approved. (2026-11-17)
@@ -74,7 +75,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-17): Run `python3 factory/jokelab.py doctor` on Krish's computer; if the token is not set there, set CONTROL_CENTER_ENGINE_TOKEN from his secret store so local sessions can consult it.
+- Next (2026-11-17): Watch the next pull request here merge itself within minutes of its checks going green.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
