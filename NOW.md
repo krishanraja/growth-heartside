@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- Eight video-production skills are in `.agents/skills/heartside-*` (the source, read by Codex), with exact copies in `.claude/skills/` for Claude Code; the self-test now fails while a copy differs. They were built from the 17 Nov sprint session's transcript, the Codex studio thread and the studio log, plus the first skills session's hand-over. `AGENTS.md` points to them, and the floor gains five process entries plus one quote on `higgsfield-browser-ui-only`. A proposal for a fleet Codex-thread skill is in `docs/proposals/`. With the knowledge `.docx` hash check skipped (it was already failing), 341 self-test checks pass. (2026-11-17)
 - Auto-merge now merges on either copy of the check workflow (push or pull_request). Before, when the push-event run finished last it was skipped, and a green pull request never merged (growth-heartside #117, growth-makeyourmindup #129 on 17 Nov). (2026-11-17)
 - The humour engine is on call in this repository: `factory/jokelab.py check`, `compare` and `doctor`, with an AGENTS.md rule saying when to consult it. (2026-11-17)
 - The 16 to 22 Nov velocity sprint is running on Krish's second machine (17 Nov). Day 1's four new pieces are built from Kling 3.0 Unlimited clips (credits unchanged at 952.35) and each ends on a blanket painted from the film's own dog by heartside.io's own painter (internal-paint, 8 of 30 paints used). None has cleared the panel yet: tier 2 scored d1-absurd-01 8 (v3) then 7 (v4), d1-warm-02 7, d1-note-01 7; d1-warm-01 has no end card yet. Nothing is on the review board and nothing has been posted, so no organic sale is attributable to the sprint yet. (2026-11-16)
@@ -58,6 +59,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-17 .agents/skills/ (8 skills, source), .claude/skills/ (8 copies), growth.py (self-test: skill copies match), AGENTS.md (one section), factory/floor.json (5 entries, 1 quote), docs/proposals/2026-11-17-codex-desktop-studio-skill.md. No Drive, Higgsfield, Codex or platform action.
 - 2026-11-17 factory/jokelab.py, tests/test_jokelab.py, AGENTS.md, factory/README.md, CHANGES.md.
 - 2026-11-16 On 17 Nov the studio resumed from Drive 03a. Codex Desktop holds any thread Krish opens, so codex_thread.mjs send is refused ("active writer") and a script-opened thread cannot reach Desktop's in-app browser; `codex queue --thread <id> --message <text>` hands the turn to Desktop and works (durable fix in ai-harness#280). Nano Banana Pro was not Unlimited, so photoreal shots ran as Kling 3.0 text-to-video from each brief's own prompt (Krish's correction, floor read-unlimited-before-ordering). The painter silently hangs on "Still painting" when a photo is under 700 px tall (Teeinblue validation in the console, no message to the buyer): a heartside store finding. The tier 2 panel has no warm anchor, so sentiment pieces are scored against the humour tens.
 - 2026-11-17 Krish declined d1-absurd-01 on 17 Nov ("No, it's not funny - the post that is already live on this topic is 10x better") and asked for the fix to be built into this repository; the joke, not the pictures, is now what gets iterated.
@@ -75,7 +77,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-17): Watch the next pull request here merge itself within minutes of its checks going green.
+- Next (2026-11-17): Run the next studio session from `heartside-video-production` with a Sonnet model, and add each failure it hits to the floor and the skill that should have stopped it.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
