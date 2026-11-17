@@ -23,6 +23,23 @@ Claude starts Codex only through scripts/codex_thread.mjs, focus sprints include
 
 **The 16 to 22 Nov sprint studio (Ruling, Krish, 2026-11-16).** Krish's Higgsfield unlimited plans can't be reached through the Higgsfield MCP: on 16 Nov it reported unlimited as not available, and its only Kling 3 model is credit-billed. So for this sprint, generation runs in the Higgsfield website from a visible Codex Desktop thread on his PC, opened with `codex_thread.mjs`, in his own signed-in browser (his words: "Yes, local session"). It uses unlimited models only and never spends credits. Krish signs in himself. This is a one-sprint exception to "content production runs on Codex cards, never shown in Desktop". Assembly, checks and the factory gates are unchanged. Cadence for the sprint: 20 posts a day in total, 5 per platform, inside the five-post daily ceiling (his words: "do what is best for max reach if you think 20 is too much").
 
+## Video production skills (Krish, 2026-11-17)
+
+Krish: "encode them in to a skill in the repository that all future video production gets right, so we can use lesser models and accomplish higher outputs". Any session that plans, generates, cuts or judges a Heartside film starts with the `heartside-video-production` skill, which gives the order of the others:
+
+| Skill | For |
+|---|---|
+| `heartside-video-production` | start here: setup, the order of work, planning an Unlimited window, recording corrections |
+| `heartside-joke-lab` | where the humour comes from and the joke lab run |
+| `heartside-codex-studio` | sending orders to the Codex Desktop studio thread |
+| `heartside-higgsfield-ui` | Unlimited models in the website only, settings, MCP reads, prompts |
+| `heartside-anchor-stills` | one approved anchor per set, then image-to-video |
+| `heartside-dog-realism` | how the dog must look, the cast, the frame checklist |
+| `heartside-generation-watch` | watchers, 15-minute check-ins, tab drops, stuck queues |
+| `heartside-assembly-panel-board` | cut.py, the painted end card, the panel, links, the board |
+
+The source is `.agents/skills/<name>/SKILL.md` (Codex reads it). `.claude/skills/<name>/SKILL.md` is a real copy for Claude Code, never a symbolic link: edit the source, then `cp -r .agents/skills/<name> .claude/skills/`. `python growth.py --self-test` fails while a copy differs (the fleet convention, as in content-engine). The skills point to the floor, `docs/HUMOUR.md` and `factory/README.md` rather than copying them; a new lesson goes on the floor first, then into the skill that applies it.
+
 ## Autonomy (Ruling, Krish, 2026-10-19)
 
 Krish: "the engine shows me what it is going to do, I approve, it gets up to go-live and asks me to review." This engine is set to run autonomously under Control Center's growth engine protocol (`docs/control-center/ENGINE-PROTOCOL.md`, a byte-for-byte copy of Control Center's bundle whose version and hash are in `docs/control-center/bundle.json`; its "Autonomy" and "Amend" sections arrived in 1.1.0), in steps Krish answers on his one list in Control Center. The loop is not built yet (`docs/GET-GOING.md`, Step 1): today the daily report proposes and reads his decisions, and he still acts by hand. The steps:
