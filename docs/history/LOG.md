@@ -4,6 +4,10 @@ Newest first. Entries are written by the docs steward (see the steward link in
 NOW.md) and by humans doing the same job by hand. Nothing in this file
 describes current behaviour; NOW.md and the state doc do.
 
+## 2026-11-17
+
+- reconciled at `7c251e6`: re-stamped NOW.md, added the 16 Nov Publishing access gap. The closeout note `now-notes/2026-11-16-publishing-morning.md` was not folded (the fold rejected its North Star line); it stays for a person and its content is summarized in NOW.md by hand. Audit: pass.
+
 ## 2026-11-16
 
 - reconciled at `33752d5`: fixed the audit's `too_long` and `where_too_many` findings by rolling the older "Where it is right now" bullets below into this log; kept the six newest-defining ones. Closeout notes were already folded.
