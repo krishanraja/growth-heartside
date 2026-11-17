@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- Every joke now starts in the joke lab (factory/jokelab.py). It writes about 30 candidates across weighted families led by the alibi family the 15 Nov audit measured, and screens them before any build: retreads of live posts (by wording, by format, and by the writer's own closest-post answer), dressed-up dogs, rule 5 copy, the three-part core and near duplicates. With --live the humour engine reads each through Control Center's humour route. It stops the build loop where the score moves and the words do not, and learns from Krish's verdicts. On the 17 Nov slate it rejects d1-absurd-01 as an F38 retread and shortlists the four concepts he approved. (2026-11-17)
 - HyperFrames and Claude Ads evaluated (docs/audits/2026-11-15-hyperframes-and-claude-ads.md). HyperFrames is integrated narrowly as factory/hf.py and the note template, pinned and without telemetry, and its test render passed every factory gate with the product's pixels intact; Claude Ads is not installed, and its scoring method is re-implemented as engine/ad_audit.py (growth.py ads audit, ads_audit.json in the Sunday report), which caught 6 of 6 seeded boost breaches and, from this repository's own record, flags the 11 to 13 Nov Facebook burst as having no boost on record. (2026-11-15)
 - AGENTS.md and docs/CHANNEL-TASKS.md say where each kind of Codex work runs (Ruling, Krish, 2026-11-15): film and still builds are content production, cards built by his PC's lane and never shown in Codex Desktop; the Publishing, Engagement and Audience desks are driven only from a Claude session on his own computer, visible in his Codex Desktop app. (2026-11-15)
 - `AGENTS.md` rule 4 now lets an AI person appear in a Heartside post under Krish's ruling of 15 Nov (Ruling, Krish, 2026-11-15: AI people may be used anywhere, with his explicit yes before one is used and again on the finished asset before it goes out; no AI labels anywhere): his yes before it is used in a named piece and his yes on the finished asset, each with his words, never through concept-level approval; never a customer, buyer, reviewer or testimonial, never holding or reviewing the product as a customer would; no AI label. `factory/floor.json` (`ai-person-two-yeses`, `no-ai-label`, `no-badges`) and `growth.py claims` (`ai-label`, `ai-person`, `not-a-real-customer`) agree, with self-test checks that prove it, and the docs that asked for a platform AI label (`docs/PUBLISHING.md`, `docs/PAID-BOOSTS.md` gate 6) now say never switch one on. The review queue's `d9-ai-label` ask stays open for Krish. (2026-11-15)
@@ -54,6 +55,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-17 Krish declined d1-absurd-01 on 17 Nov ("No, it's not funny - the post that is already live on this topic is 10x better") and asked for the fix to be built into this repository; the joke, not the pictures, is now what gets iterated.
 - 2026-11-16 the Publishing desk's Sunday check could not run: Codex's in-app browser returned "Browser is not available: iab", so none of the 23 Sunday placements got a native read of media, thumbnail, caption or call to action. Four channel monitor events record the access gap (`docs/social/2026-11-16-publishing.json`) and say plainly that no post_check, metric, zero or delivery failure is inferred; no Drive write or post was made (`7c251e6`).
 - 2026-11-15 the audience-comments skill, its taste record (it names people who commented, by handle) and the 7 Nov approval packet were left out: the skill has the session post comments, which rule 1 forbids, and the packet is stale.
 - 2026-11-15 copied from content-engine (krishanraja/content-engine#719), where it was tested live on 15 Nov.
@@ -68,13 +70,13 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-16): resume native verification of the 23 Sunday placements in the visible local Publishing session once Codex's in-app browser is back; record public post checks and exact-window metrics, then import them.
+- Next (2026-11-17): Run the next slot through the joke lab end to end: brief to a sub-agent, screen --live on CONTROL_CENTER_ENGINE_TOKEN, tier 2 on the shortlist's words, Krish's verdicts recorded with jokelab.py verdict.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Step 2 of `docs/GET-GOING.md` (a daily Shopify sales import, so `net_sales_usd` is measured) may need a credential only Krish can add; the step says to report a hold naming the secret.
-- North Star check (2026-11-15): holds.
+- North Star check (2026-11-17): holds.
 
 ## Read next
 
