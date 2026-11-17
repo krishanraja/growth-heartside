@@ -476,10 +476,11 @@
    "words": [
     "The dogs in all these videos look way too perfect and not real, and slightly scruffy enough.",
     "Do you not think the dogs look too pristine and not realistic enough? (Krish, 2026-11-17, on the day 1 alibi films)",
-    "all four, but remember to make all dogs look realistic and not just perfect AI dogs, they need to ALL look photorealistic and have real world dog mannerisms and slight scruffiness about them"
+    "all four, but remember to make all dogs look realistic and not just perfect AI dogs, they need to ALL look photorealistic and have real world dog mannerisms and slight scruffiness about them",
+    "he still looks a bit too perfect in terms of fur, and I cant figure otu what else (Krish, 2026-11-17, on the Kling 3.0 beagle sidekick test, whose prompt listed a patchy coat, tear stains, dirt on the muzzle and burrs)"
    ],
    "category": "generation",
-   "rule": "Generated dogs must look like someone's real pet, shot on the owner's phone. That means slightly scruffy, uneven fur, a bit of mess, ordinary home light, imperfect framing and real household clutter. Never a groomed show dog, studio light, glossy fur or catalogue perfection.",
+   "rule": "Generated dogs must look like someone's real pet, shot on the owner's phone. That means slightly scruffy, uneven fur, a bit of mess, ordinary home light, imperfect framing and real household clutter. Never a groomed show dog, studio light, glossy fur or catalogue perfection. A list of flaws in a text-to-video prompt is not enough: Kling 3.0 rendered a clean, even coat and dropped every listed flaw (17 Nov beagle test). Judge the frames, never the prompt, and in a timed window keep a dog Krish has already passed as real (the hero and sidekick C) rather than rolling a new one.",
    "check": "code: growth.py still check (the prompt is factory/dog_roll.py's, unedited, with its realism block and avoid list; the credits were reserved for that exact prompt); review: every generated dog frame is read on a contact sheet for 'could be a real pet on a phone' before any motion is made; the panel's tier 1 asks it as its own question (17 Nov: the day 1 review checked anatomy and text but not realism, and pristine dogs reached Krish)",
    "applies_to": [
     "reel",
