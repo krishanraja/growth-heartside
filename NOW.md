@@ -41,6 +41,8 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- A full inventory is at docs/inventory/2026-11-18-inventory.html: about 54 posts live, 20,874 views, 12 followers, $0 organic sales, nothing posted since 15 Nov 23:31 UTC, and 11 reels Krish approved in 02r (F28, F34 x4, F40 to F44, F29 on IG and FB) never posted. (2026-11-18)
+- The 8 compile films were judged (best-trained 8, six at 7, copycat 6) and put on Krish's review board at its new link; he said yes to Customs and Alarm and no to the other six. (2026-11-18)
 - The video skills now include what the sprint session learned after PR #126: - Music: ElevenLabs Music v2.5 beds through the MCP, covering the whole film and ending cleanly, Krish's yes before any mix, a silent master kept, and mixing with mix_music.py. - Assembly: the committed cut.py run from the repository root, the end card required by check_picture.py, the tpad argument order, labels that match the picture literally, and Gary's blanket as the only painted card. - Realism: Kling 2.5 Turbo drifts in a clip's last 1 to 2 s, so every take is checked full length on a 0.5 s sheet. - Joke lab: when the humour engine is unavailable on Krish's PC, the board says so, and per-clip captions still pass a check. (2026-11-18)
 - Compile round handed off. Seven captioned films are cut from the locked footage (cp-workday, cp-copycat, cp-walk, cp-leaveit, cp-besttrained, cp-technically, cp-alarm) and pass every cut.py code gate, each ending on the painted blanket. Silent masters are in local/media/studio/, with sha256 in docs/briefs/2026-11-18-compile/built.json. Nine original music beds (22.01 credits; the sprint has used 104.01 of the 150 cap) are generated but not mixed, because Krish asked what music is going on and has not answered (floor music-defines-humour). The committed folder holds films.json, the briefs, a runnable copy of cut.py, the cut commands, music.json, the mixer and HANDOFF.md, which sets out the exact path to Buffer. Not done: panel judging, the humour-engine check (its token is not set), the board, locks, Drive, Schedule rows, Buffer. (2026-11-18)
 - The locked footage is filed so it can be captioned without watching it ("file everything immaculately", Krish, 18 Nov). The committed docs/briefs/2026-11-18-footage/manifest.json gives 21 clips (FG01 to FG20, FG09 in two parts) a beat timeline in seconds, a payoff second, the fault and the usable range, written from timestamped sheets. Its tools build local/footage/ready/ (trimmed past each fault, 1080x1920, 30 fps, silent), a poster at each payoff, timestamped sheets, manifest.csv and INDEX.jpg, and rewrite INVENTORY.md with caption angles and music per clip. b2-v2-c02 is dropped (Gary's eyes turn blue from 3.5 s; FG16 is its retake). Heartside's Drive is not synced on this PC and the connector cannot carry video, so the footage stays in local/footage/ on Krish's PC. (2026-11-18)
@@ -66,6 +68,8 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-18 The only format that broke out is F38's (a real dog under a deadpan routine parody, with a song); a reset (freeze generation, ship the approved backlog, fix attribution) is proposed to Krish.
+- 2026-11-18 The review board moved to https://claude.ai/artifact/6kGmidNyYAnRwiSdzAtcr4, and posts that need a recognisable in-app song go on his phone posts page.
 - 2026-11-18 engine-made recovery plays at U5 for Krish to approve in one press; it moves no sale by itself.
 - 2026-11-18 the assembly and anchor-stills skills gained the end-card and eye-colour lessons.
 - 2026-11-18 the floor gained three rulings (MCP credit route with a cap, Chrome for Higgsfield, orchestrate without babysitting); the film judge now gets the full live list.
@@ -82,13 +86,13 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-18): Set CONTROL_CENTER_ENGINE_TOKEN on Krish's PC so `jokelab.py check` can read captions before the next board batch.
+- Next (2026-11-18): Krish decides the proposed reset.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Step 2 of `docs/GET-GOING.md` (a daily Shopify sales import, so `net_sales_usd` is measured) may need a credential only Krish can add; the step says to report a hold naming the secret.
-- North Star check (2026-11-18): holds.
+- North Star check (2026-11-18): recalibration proposed. The $4,862 rung for this week is at $0 with no posts since 15 Nov, so the plan (not the number) needs Krish's reset.
 
 ## Read next
 
