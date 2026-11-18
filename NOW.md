@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- The heartside-* video skills now carry every failure from the 17 to 18 Nov night run. The changes: - `heartside-codex-studio` maps each exact Codex stop error to its fix. - `heartside-higgsfield-ui` covers the Chrome and MCP credit routes, the model URLs and prices. - The anchor, realism, joke-lab, assembly, watch and entry skills are updated. - `factory/panel.py`'s tier 2 brief now carries every live post, with a test, so a retread like the V005 "gym era" film can no longer score 9 on its words. - The floor gains Krish's new words on realism, check-ins and orchestration. (2026-11-18)
 - The Audience desk's comment craft from the 4 to 7 Nov pilot is on main as the `heartside-audience-comments` skill (source in `.agents/skills`, copy in `.claude/skills`), salvaged from the unmerged branch `codex/audience-comment-skill` without any handle. The 15 Nov salvage left it out because the session then posted itself; the 16 Nov ruling ("Approve batches, Codex posts") now covers comments, so the craft is kept and posting follows rule 1's batch exception. The other eight stranded or merged branches held nothing main lacks and were deleted at their reviewed commits. (2026-11-18)
 - Eight video-production skills are in `.agents/skills/heartside-*` (the source, read by Codex), with exact copies in `.claude/skills/` for Claude Code; the self-test now fails while a copy differs. They were built from the 17 Nov sprint session's transcript, the Codex studio thread and the studio log, plus the first skills session's hand-over. `AGENTS.md` points to them, and the floor gains five process entries plus one quote on `higgsfield-browser-ui-only`. A proposal for a fleet Codex-thread skill is in `docs/proposals/`. With the knowledge `.docx` hash check skipped (it was already failing), 341 self-test checks pass. (2026-11-17)
 - Auto-merge now merges on either copy of the check workflow (push or pull_request). Before, when the push-event run finished last it was skipped, and a green pull request never merged (growth-heartside #117, growth-makeyourmindup #129 on 17 Nov). (2026-11-17)
@@ -60,6 +61,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-18 .agents/skills and .claude/skills (8 heartside skills), factory/panel.py and tests/test_panel.py (the live-post list in the tier 2 brief), factory/floor.json (new words on real-scruffy-dogs, check-in-every-15-minutes, orchestrate-without-babysitting; a realism addendum). No studio, Codex, Higgsfield or board action.
 - 2026-11-18 .agents/skills/heartside-audience-comments/SKILL.md, .claude/skills/heartside-audience-comments/SKILL.md, AGENTS.md (one sentence). Remote branches deleted: ccr-21e182e5-psq1vi, claude/canva-integration-plan-cpy1p2, claude/i25-drive-library, claude/i25-drive-library-v2, codex/dog-things-wave-3, codex/dog-things-wave-3-fix1, codex/tiktok-link-eligibility-20261111, growth/2026-11-16-sprint. No Drive, Codex or platform action.
 - 2026-11-17 .agents/skills/ (8 skills, source), .claude/skills/ (8 copies), growth.py (self-test: skill copies match), AGENTS.md (one section), factory/floor.json (5 entries, 1 quote), docs/proposals/2026-11-17-codex-desktop-studio-skill.md. No Drive, Higgsfield, Codex or platform action.
 - 2026-11-17 factory/jokelab.py, tests/test_jokelab.py, AGENTS.md, factory/README.md, CHANGES.md.
@@ -79,7 +81,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-18): Draft the next Audience desk batch from this skill and record each of Krish's verdicts on the floor.
+- Next (2026-11-18): Run the next studio session from `heartside-video-production` with a Sonnet model, and judge every 9-on-words script again as a film before it reaches the board.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
