@@ -41,6 +41,8 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- Blocked by unchanged native browser availability. Read current README v6.0 and all named schedules; no phone slot due 17 November. Four channel monitor events are recorded for Claude to inspect/import; no live or metric claims. (2026-11-17)
+- Partial. Read current README v6.0 and source schedules. Native browser remains unavailable, so Sunday delivery and boost verification are incomplete. Recorded four channel monitor events for Claude to inspect/import; no Drive or platform mutation. (2026-11-16)
 - The heartside-* video skills carry every failure from the 17 to 18 Nov night run: Codex stop errors mapped to fixes, the Chrome and MCP credit routes, and a tier 2 brief that lists every live post so a retread cannot score 9 on its words (`factory/panel.py`, tested). (2026-11-18)
 - The Audience desk's comment craft from the 4 to 7 Nov pilot is on main as the `heartside-audience-comments` skill (source in `.agents/skills`, copy in `.claude/skills`), salvaged from the unmerged branch `codex/audience-comment-skill` without any handle. The 15 Nov salvage left it out because the session then posted itself; the 16 Nov ruling ("Approve batches, Codex posts") now covers comments, so the craft is kept and posting follows rule 1's batch exception. The other eight stranded or merged branches held nothing main lacks and were deleted at their reviewed commits. (2026-11-18)
 - Eight video-production skills are in `.agents/skills/heartside-*` (the source, read by Codex), with exact copies in `.claude/skills/` for Claude Code; the self-test now fails while a copy differs. They were built from the 17 Nov sprint session's transcript, the Codex studio thread and the studio log, plus the first skills session's hand-over. `AGENTS.md` points to them, and the floor gains five process entries plus one quote on `higgsfield-browser-ui-only`. A proposal for a fleet Codex-thread skill is in `docs/proposals/`. With the knowledge `.docx` hash check skipped (it was already failing), 341 self-test checks pass. (2026-11-17)
@@ -55,6 +57,8 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-17 Added docs/social/2026-11-17-publishing.json only as access evidence, with this closeout. No Drive or platform writes; automation schedules unchanged.
+- 2026-11-16 Updated existing morning and Sunday report automation prompts to honor the v6.0 no-Drive-write boundary, preserving their schedules and expiry. Event file docs/social/2026-11-16-publishing.json uses the existing social monitor schema; no fake post URLs or measured results.
 - 2026-11-18 the heartside video skills, the panel's live-post list and new floor words (real-scruffy-dogs, check-in-every-15-minutes, orchestrate-without-babysitting). No studio, Codex, Higgsfield or board action.
 - 2026-11-18 .agents/skills/heartside-audience-comments/SKILL.md, .claude/skills/heartside-audience-comments/SKILL.md, AGENTS.md (one sentence). Remote branches deleted: ccr-21e182e5-psq1vi, claude/canva-integration-plan-cpy1p2, claude/i25-drive-library, claude/i25-drive-library-v2, codex/dog-things-wave-3, codex/dog-things-wave-3-fix1, codex/tiktok-link-eligibility-20261111, growth/2026-11-16-sprint. No Drive, Codex or platform action.
 - 2026-11-17 the Publishing desk could not read the 23 Sunday placements or the 17 Nov ones: Codex's in-app browser was unavailable. Channel monitor events (`docs/social/2026-11-16-publishing.json`, `docs/social/2026-11-17-publishing.json`) record only the access gap, with no post_check, metric or delivery failure inferred. Both closeout notes stay in `now-notes/` until the fold runs (their North Star lines are now in the fold's form). Next: resume native checks in the visible local Publishing session once browser access returns.
@@ -66,13 +70,13 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-18): Run the next studio session from `heartside-video-production` with a Sonnet model, and judge every 9-on-words script again as a film before it reaches the board.
+- Next (2026-11-17): Resume native delivery and measurement checks in the visible local Publishing session when the authorized in-app browser returns. Preserve holds, avoid duplicates, and let Claude write the Sheets.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Step 2 of `docs/GET-GOING.md` (a daily Shopify sales import, so `net_sales_usd` is measured) may need a credential only Krish can add; the step says to report a hold naming the secret.
-- North Star check (2026-11-18): holds.
+- North Star check (2026-11-17): holds.
 
 ## Read next
 
