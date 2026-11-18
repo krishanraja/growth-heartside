@@ -45,6 +45,19 @@ every step here exists because a session on 17 Nov 2026 skipped it and Krish pai
 
 Words and footage run in parallel, never one after the other (section 3).
 
+**Footage is not gated on the judge** (Ruling, Krish, 2026-11-18; floor `footage-not-gated-on-judge`). After about
+150 scripts, every built film scored 6 to 8 with the model judge and footage stalled waiting for a 9. Krish: "if your
+videos are already innate and they are realistic dogs doing real dog things ... then I'll be able to get them up to
+higher than that, with captions over the top and good music treatment". So a footage round makes one clip per approved
+anchor of real dog behavior, checks each at full size, and locks the inventory before any compile:
+- clips in `local/footage/clips/`, anchors in `local/footage/anchors/`, contact sheets in `local/footage/review/`,
+  prompts in `local/footage/prompts.tsv`;
+- the manifest in `docs/briefs/<date>-footage/INVENTORY.md`: clip, asset id, model, what happens, verdict, usable
+  range, known fault, caption angles, music idea. The 18 Nov round is the model.
+- The 18 Nov round: 13 clips, 0 credits, about 75 minutes on Kling 2.5 Turbo Unlimited at 720p, one job at a time,
+  4 to 5 minutes each (`heartside-higgsfield-ui`, "Kling 2.5 Turbo in Krish's Chrome").
+The compile session adds captions and music; the panel still judges the compiled film before the board.
+
 ## 3. Plan an Unlimited window
 
 Krish's Unlimited plans expire (Kling 3.0 Unlimited ran 16 to 17 Nov only). An idle window is lost output.

@@ -60,6 +60,24 @@ its CLI.
 - The balance never moves. Read it with the MCP `balance` call before and after the session (952.35 on 17 Nov) and
   log both readings.
 
+### Kling 2.5 Turbo in Krish's Chrome (18 Nov, the free fallback)
+
+Kling 3.0's Unlimited switch ran one more free job on the morning of 18 Nov (the bedroom clip, about 07:30Z), then
+opened the pass dialog ($35 a day) on every try. Kling 2.5 Turbo stayed Unlimited. The steps that worked, every clip:
+1. Open `https://higgsfield.ai/ai/video?model=kling-v2-5-turbo`. It opens at 1080p pro ("Generate 6"): click
+   "Change to std for Unlimited" (720p), turn Enhance off, then turn the Unlimited mode switch on (scroll the left
+   panel to see it). The button must read "Generate Unlimited".
+2. Remove the old start image first: hover it, click its X at the top right. Only then `find` the "Start frame"
+   file input and `file_upload` the anchor to it. Uploading into the "Uploaded image" input while an image is in
+   place put the anchor in both the start and end slots; that switches on Start-End mode, which forces 1080p and
+   credits. If both slots fill, remove the end frame's X before anything else.
+3. Wait 8 seconds after the upload before clicking Generate. A Generate click during the upload froze the page; a
+   reload restored the form (anchor and prompt kept) with the Unlimited switch off again.
+4. Click Generate by its coordinate, then confirm the job in MCP `show_generations` (`only_completed: false`). A
+   click by element ref was twice not taken.
+5. Output is 716x1284, 5 s. Takes about 4 to 5 minutes. Identity drifts in the last second more often than
+   Kling 3.0 (a collar vanished from 3.6 s to 4.4 s in the kitchen clip): check the last second at full size.
+
 ## 3. The MCP credit route (only inside Krish's cap)
 
 Krish, 18 Nov: "why dont you just complete this entire task in higgsfield MCP - how many credits will that take", then
