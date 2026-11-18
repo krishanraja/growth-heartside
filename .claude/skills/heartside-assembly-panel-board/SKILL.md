@@ -126,7 +126,7 @@ Concept ids are numbered in order. C201 to C208 were used by 17 Nov, so find the
 
 ## 5. The review board
 
-Board: https://claude.ai/artifact/A3tFqoYZuYAEdUrziU5wnN. Steps: `docs/REVIEW-BOARD.md`.
+Board: https://claude.ai/artifact/6kGmidNyYAnRwiSdzAtcr4. Steps: `docs/REVIEW-BOARD.md`.
 1. Upload the cover and the mp4 to the board's asset store (`Artifact` publish with `asset: true` and the board's url).
 2. Write the item with `ArtifactData` `set` into collection `items`, in the doc's format: the question, `on_yes`,
    `on_no`, the caption, the tracked link and the scores.

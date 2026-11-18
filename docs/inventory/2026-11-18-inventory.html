@@ -1,0 +1,164 @@
+<title>Heartside Content Inventory</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one reading column; a verdict up top, then live / ready-but-unposted / rejected / lying around, then the reset. */
+:root{
+  --bg:#f7f5f2; --surface:#ffffff; --ink:#221d1a; --muted:#6b625b; --line:#e3ddd6;
+  --accent:#9b3b22; --live:#2d6e4a; --live-bg:#e3f0e8; --wait:#8a5a00; --wait-bg:#f8edd6; --dead:#9a3328; --dead-bg:#f6e3df;
+  --display:"Archivo","Segoe UI",system-ui,sans-serif; --body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#181513; --surface:#221e1b; --ink:#f0eae4; --muted:#a69b92; --line:#38312c;
+  --accent:#e28a6c; --live:#86d1a5; --live-bg:#1d3326; --wait:#e9c070; --wait-bg:#3a2e14; --dead:#f19489; --dead-bg:#3b2220; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#181513; --surface:#221e1b; --ink:#f0eae4; --muted:#a69b92; --line:#38312c;
+  --accent:#e28a6c; --live:#86d1a5; --live-bg:#1d3326; --wait:#e9c070; --wait-bg:#3a2e14; --dead:#f19489; --dead-bg:#3b2220; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--body)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px;display:flex;flex-direction:column;gap:28px}
+h1{font:800 clamp(28px,5vw,40px)/1.08 var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+h2{font:700 22px/1.2 var(--display);margin:0;text-wrap:balance}
+h3{font:700 17px/1.3 var(--display);margin:0}
+p{margin:0;max-width:68ch}
+.sub{color:var(--muted)}
+section{display:flex;flex-direction:column;gap:12px}
+.verdict{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.verdict ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.num{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+.num b{display:block;font:700 26px/1.1 var(--display);font-variant-numeric:tabular-nums}
+.num span{font-size:13px;color:var(--muted)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:600 12px/1.2 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg)}
+td.n{font-family:var(--mono);font-size:13px;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;font:600 12px/1 var(--body);padding:4px 8px;border-radius:999px;white-space:nowrap}
+.live{background:var(--live-bg);color:var(--live)} .wait{background:var(--wait-bg);color:var(--wait)} .dead{background:var(--dead-bg);color:var(--dead)}
+.hot{color:var(--accent);font-weight:700}
+code{font-family:var(--mono);font-size:13px}
+ol.reset{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;max-width:70ch}
+.note{font-size:14px;color:var(--muted)}
+</style>
+<div class="wrap">
+<header style="display:flex;flex-direction:column;gap:8px">
+  <h1>Heartside content inventory</h1>
+  <p class="sub">Everything made for Heartside since 12 October, what is live, what is ready but was never posted, and what is lying around. Read from Buffer, the three channels, the Schedule Sheets, Drive and this machine on 18 Nov 2026, 15:25 to 15:45 UTC.</p>
+</header>
+
+<section class="verdict">
+  <h2>The short version</h2>
+  <ul>
+    <li><b>Organic sales: $0.</b> The store's one order in the window ($45) came direct. The engine cannot even measure attribution right now: the read-only Shopify app credentials are missing.</li>
+    <li><b>About 54 distinct posts are live</b> across TikTok, Instagram and Facebook (134 Buffer sends, plus Pinterest copies). Total audience: <b>2 TikTok followers, 3 on Instagram, 7 on Facebook.</b></li>
+    <li><b>Almost everything sits at the algorithm's floor</b> (TikTok 250 to 300 views, Instagram 100 to 150). <b>Three posts broke out</b>, and they share one format: a real dog under a deadpan human-routine parody.</li>
+    <li><b>Nothing has been posted since 15 Nov, 23:31 UTC.</b> Buffer's queue is empty. The 16 to 22 Nov sprint, meant to run at 20 posts a day, has published zero.</li>
+    <li><b>11 reels you approved were never posted.</b> They needed a song added in the app on your phone. They include F34 (the chat roast you called a 10) and the F40 to F44 routine series, which is the same format as the one post that worked.</li>
+    <li><b>The 16 to 18 Nov studio made 23 films and 21 clips.</b> The panel scored them 6 to 9; you rejected 7 of the 8 you saw. None is live.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>What we set out to do</h2>
+  <p><b>North Star:</b> $50,000 of net sales from organic posts (trailing 4 weeks, $0 paid) by 28 Dec. This week's rung is $4,862; we are at $0, urgency U5.</p>
+  <p><b>Sprint 120 (approved 10 Nov):</b> 20 signature posts and 100 viral posts, 500,000 views between them, 12 to 20 Nov. <b>Velocity sprint (16 to 22 Nov):</b> 20 posts a day, 5 per platform.</p>
+  <div class="nums">
+    <div class="num"><b>$0</b><span>organic sales, of $4,862 this week</span></div>
+    <div class="num"><b>20,874</b><span>views on all posts, all channels (of 500,000)</span></div>
+    <div class="num"><b>12</b><span>followers across three channels</span></div>
+    <div class="num"><b>0</b><span>posts since 15 Nov, of ~60 planned</span></div>
+  </div>
+  <p class="note">The views figure is the sum of the per-post counts each channel's grid shows today: TikTok 7,953 (39 posts), Instagram 7,377 (27 reels), Facebook 5,544 (27 reels, with 1.2K and 1.7K read as 1,200 and 1,700). F38 alone is 4,416 of it on TikTok and Instagram. Facebook's grid order could not be matched to captions post by post, so Facebook appears only in totals.</p>
+</section>
+
+<section>
+  <h2>What is live, and what worked</h2>
+  <p>The three posts that broke out, in views today:</p>
+  <div class="tbl"><table>
+    <tr><th>Post</th><th>Format</th><th>TikTok</th><th>Instagram</th><th>Facebook</th></tr>
+    <tr><td><b>F38</b> "Up at 4. Aligned with stakeholders by 5:32. Asleep by 9. Thought leader"</td><td>Real golden, 4 AM routine parody, posted by you with a song</td><td class="n hot">2,314</td><td class="n hot">2,102</td><td class="n">one of 1.2K / 1.7K</td></tr>
+    <tr><td><b>F56</b> "Guests arrive Wednesday. He has already checked in."</td><td>Photo post, baked music, 15 Nov</td><td class="n">283</td><td class="n hot">1,620</td><td class="n">one of 1.2K / 1.7K</td></tr>
+    <tr><td><b>F10</b> "Your dog is in a group chat about your Christmas present"</td><td>Chat reel, 4 Nov</td><td class="n">8</td><td class="n hot">1,098</td><td class="n">not matched</td></tr>
+  </table></div>
+  <p>Everything else live, by batch:</p>
+  <div class="tbl"><table>
+    <tr><th>Batch</th><th>Posts</th><th>Where</th><th>Typical views</th></tr>
+    <tr><td>12 Oct launch stills (no captions)</td><td class="n">5</td><td>Facebook, 1 on Instagram and TikTok</td><td>not shown</td></tr>
+    <tr><td>3 to 8 Nov, F01 to F12: roasts, heist, court of the couch, art critic, head of security, search history, coffee mug</td><td class="n">12</td><td>all three</td><td>TikTok 50 to 145; Instagram 9 to 150</td></tr>
+    <tr><td>6 to 8 Nov, F13 to F24 Thanksgiving stills ("The family is here", "A polite smile", "Get up for four seconds")</td><td class="n">~12</td><td>all three; 5 TikToks show 0 views and 3 failed in Buffer</td><td>0 to 143</td></tr>
+    <tr><td>12 to 15 Nov, F30 to F37 and F52 to F59: real-dog photo posts with baked Epidemic music</td><td class="n">16</td><td>all three plus Pinterest</td><td>TikTok 250 to 300; Instagram 92 to 138</td></tr>
+    <tr><td>F29 "Family dance night"</td><td class="n">1</td><td>TikTok only</td><td class="n">283</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>Ready and approved, never posted</h2>
+  <p>Locked in Drive <code>03b_Social-Schedule/Posts</code>, with Schedule rows you marked <code>approved = yes</code> in 02r. Each one needs a song added in the app, so each sits on your phone posts page. None of them reached any channel.</p>
+  <div class="tbl"><table>
+    <tr><th>Post</th><th>What it is</th><th>Song in the row</th><th>Status</th></tr>
+    <tr><td>F34</td><td>Face-blanket group-chat roast (your 10 for chat posts)</td><td>Sneaky Snitch</td><td><span class="pill wait">approved, unposted</span></td></tr>
+    <tr><td>F34-golden, -dachshund, -doodle</td><td>The same roast, three more breeds</td><td>Sneaky Snitch</td><td><span class="pill wait">approved, unposted</span></td></tr>
+    <tr><td>F40</td><td>"Inbox zero by 8. Burnout by 9:05" (Monday morning)</td><td>Manic Monday</td><td><span class="pill wait">approved, unposted</span></td></tr>
+    <tr><td>F41</td><td>"Did all the Christmas shopping" (ends on the real mug)</td><td>All I Want for Christmas Is You</td><td><span class="pill wait">approved, unposted</span></td></tr>
+    <tr><td>F42</td><td>"Black Friday haul review. The box won"</td><td>Material Girl</td><td><span class="pill wait">approved, unposted</span></td></tr>
+    <tr><td>F43</td><td>"Answers every Slack in under a second" (9 to 5)</td><td>9 to 5</td><td><span class="pill wait">approved, unposted</span></td></tr>
+    <tr><td>F44</td><td>"Sunday reset complete. Back to factory settings"</td><td>Walking on Sunshine</td><td><span class="pill wait">approved, unposted</span></td></tr>
+    <tr><td>F28</td><td>Beagle howl to the 80s falsetto</td><td>Smalltown Boy</td><td><span class="pill wait">approved, unposted</span></td></tr>
+    <tr><td>F29</td><td>Family dance night (pug)</td><td>Dame Hombro</td><td><span class="pill wait">TikTok only</span></td></tr>
+  </table></div>
+  <p>Also locked in Drive with no live post: F39 gym era (the panel later found it retreads a live post), F45 first day at work, the F25 to F27 date-night, rain and forced-friendship stills (still Buffer drafts from 7 Nov), and F30 pumpkin pie still.</p>
+</section>
+
+<section>
+  <h2>Made, judged, not posted (16 to 18 Nov studio)</h2>
+  <p>On this machine in <code>local/media/studio/</code> (23 films) and <code>local/footage/ready/</code> (21 clips, FG01 to FG20), with a copy of the earlier part in Drive <code>03a/2026-11-16_Claude-Velocity-Sprint-Studio_Not-for-Publishing</code>.</p>
+  <div class="tbl"><table>
+    <tr><th>Films</th><th>Panel</th><th>Your verdict</th></tr>
+    <tr><td>Customs (st-v2-c07)</td><td class="n">7</td><td><span class="pill live">yes</span></td></tr>
+    <tr><td>Your alarm (cp-alarm)</td><td class="n">7</td><td><span class="pill live">yes</span> "passable, not enjoyable"</td></tr>
+    <tr><td>Workday, copycat, walk, leave it, technically on the floor, best-trained</td><td class="n">6 to 8</td><td><span class="pill dead">no</span> "boring as fuck"; "food disappears like AI"; "that dog wouldn't lay like that"</td></tr>
+    <tr><td>d1-absurd-01</td><td class="n">9</td><td><span class="pill dead">no</span></td></tr>
+    <tr><td>14 more cuts: d1-alibi-03, -04, -18, d1-note-01, d1-warm-02, d2-alibi-05, V045, st-bowl-c18, -c18b, -c27, st-ch-14, st-gy-09, st-yoga-c09, st-v2-c02, st-v2-c07b</td><td class="n">6 to 8</td><td>never shown to you (below the 9 bar)</td></tr>
+  </table></div>
+  <p class="note">Higgsfield credits on record: 952.35 at the start of the 17 Nov session, 837.34 now (115 spent there; 104.01 against the 150 cap since 18 Nov). The roughly $500 of model tokens you mention is not recorded in this repository.</p>
+</section>
+
+<section>
+  <h2>What is lying around</h2>
+  <div class="tbl"><table>
+    <tr><th>Where</th><th>Video</th><th>Images</th><th>Size</th><th>What it is</th></tr>
+    <tr><td>Drive <code>03b_Social-Schedule/Posts</code></td><td class="n">66</td><td class="n">134</td><td class="n">695 MB</td><td>Locked posts F01 to F59 (some ids unused). The library to post from</td></tr>
+    <tr><td>Drive <code>02_Imagery/Product-Examples</code></td><td class="n">0</td><td class="n">384</td><td class="n">868 MB</td><td>Real product renders and breed examples: the only product art posts may show</td></tr>
+    <tr><td>Drive <code>03a/2026-11-16 Velocity Sprint Studio</code></td><td class="n">32</td><td class="n">148</td><td class="n">402 MB</td><td>17 Nov Kling takes and engine copies; working files, never posted</td></tr>
+    <tr><td>Drive <code>03a/Failed 2026-11-09 sessions</code></td><td class="n">4</td><td class="n">8</td><td class="n">39 MB</td><td>Failed Codex and comedy sessions, archived</td></tr>
+    <tr><td>Drive <code>09_OLD</code></td><td class="n">0</td><td class="n">64</td><td class="n">45 MB</td><td>Retired Biscuit art, old product scenes, poster template, ornament (on hold)</td></tr>
+    <tr><td>This PC <code>local/media/studio</code></td><td class="n">56</td><td class="n">340</td><td class="n">794 MB</td><td>The 23 sprint films, their mixes, sheets and covers</td></tr>
+    <tr><td>This PC <code>local/footage</code></td><td class="n">46</td><td class="n">78</td><td class="n">505 MB</td><td>21 raw Kling clips, 21 ready clips, 13 anchor stills, 9 music beds</td></tr>
+    <tr><td>This PC <code>local/factory</code>, <code>paint</code>, <code>assets</code></td><td class="n">8</td><td class="n">157</td><td class="n">210 MB</td><td>Judge sheets, painted end cards, store renders</td></tr>
+  </table></div>
+  <p class="note">Codex is writing the file-by-file list (path, size, length, checksum) to <code>local/inventory/2026-11-18/files.csv</code> and <code>folders.csv</code>. Its thread in Codex Desktop: "Heartside inventory, 18 Nov: list every creative made since the start".</p>
+</section>
+
+<section>
+  <h2>What the evidence says</h2>
+  <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;max-width:70ch">
+    <li><b>One format has worked:</b> a real dog doing a real dog thing, under a deadpan human-routine parody, with a recognisable song. F38 drew about 4,400 views on TikTok and Instagram, 8 to 20 times the floor.</li>
+    <li><b>The ready versions of that format were never posted.</b> F40 to F44 and the F34 roasts were built, judged, approved and filed by 13 Nov, then stalled on the in-app song step.</li>
+    <li><b>The last 3 days went to new generation instead.</b> 23 new films, none live, and you rejected the ones you saw as boring or visibly AI.</li>
+    <li><b>Posting volume without reach does nothing.</b> 16 baked-music photo posts each landed at 100 to 300 views. 12 followers after ~54 posts means nobody is converting to the profile, let alone the store.</li>
+    <li><b>Sales cannot be traced yet.</b> Attribution needs the Shopify read app (<code>HEARTSIDE_SHOP_DOMAIN</code>, <code>SHOPIFY_CLIENT_ID</code>, <code>SHOPIFY_CLIENT_SECRET</code>).</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Proposed reset, for you to decide</h2>
+  <ol class="reset">
+    <li><b>Freeze generation.</b> No new Higgsfield or Kling work and no new films until the approved backlog is live and read at 72 hours.</li>
+    <li><b>Ship the 11 approved reels this week</b>, two a day across the three channels, starting with F40, F43 and F34. Either you add the song on your phone (about 3 minutes each, from the phone posts page), or you approve the Publishing desk posting natively with the in-app sound under the sprint's native-posting exception.</li>
+    <li><b>Repost F38 and F56</b> on fresh days, and post Customs and Alarm (your two yeses) with in-app songs.</li>
+    <li><b>Make the next builds only F38-format remakes</b> from footage that already exists (real dog, deadpan routine labels, one recognisable song), and judge them on 72-hour views, not the model panel.</li>
+    <li><b>Fix the money path</b> before more content: the Shopify read app for attribution, and a check that the bio link lands on a product page that converts.</li>
+  </ol>
+</section>
+</div>

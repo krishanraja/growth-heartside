@@ -854,6 +854,51 @@
    "applies_to": [
     "reel"
    ]
+  },
+  {
+   "id": "labels-on-plain-footage-are-boring",
+   "date": "2026-11-18",
+   "made": "Seven compile films cut from plain real-dog clips (lying down, waiting, sleeping) with deadpan labels and generated music beds, judged 6 to 8 by the panel",
+   "words": [
+    "It's fucking boring.",
+    "No, it's boring as fuck.",
+    "It's passable. It's not enjoyable."
+   ],
+   "category": "joke",
+   "rule": "Ruling (Krish, 2026-11-18): a real dog lying, waiting or sleeping under deadpan labels is boring, whatever the music. A film needs the dog to do something visibly funny on camera; labels and music cannot supply the joke.",
+   "check": "review: cover the labels and mute it: if the footage alone does not make a stranger smile, do not cut it.",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "ai-tells-in-dog-footage",
+   "date": "2026-11-18",
+   "made": "cp-besttrained and cp-walk, cut from Kling footage",
+   "words": [
+    "No, the food disappears like AI and the dog looks aorund like AI.",
+    "That dog wouldn't lay like that. It's not realistic."
+   ],
+   "category": "generation",
+   "rule": "Ruling (Krish, 2026-11-18): any AI tell in motion (food vanishing, aimless AI head-turning, a pose a real dog would not hold) rejects the clip, however the stills look.",
+   "check": "review: watch every take at full speed and frame by frame for objects appearing or disappearing, eyes and head drifting without cause, and poses held unnaturally; one tell holds the clip.",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "influencer-parody-is-the-series",
+   "date": "2026-11-18",
+   "made": "16 to 18 Nov: the 17 Nov retread ruling on one 4 AM routine remake was applied to the whole F38 format (the floor said 'same premise or format', the joke lab rejected any timestamped routine, the panel scored real-dog routine parodies 6 to 7 as F38 retreads), so the sessions moved off the only format that had broken out and built label-over-passive-footage films instead",
+   "words": [
+    "why didn't we stick to the plan of having realistic dogs doing realistic dog behaviors, but then cut into a way that hilariously parodies the common stereotypes of cringy human influencers? here was one of my favourites we made"
+   ],
+   "category": "concept",
+   "rule": "Ruling (Krish, 2026-11-18): realistic dogs doing realistic dog things, cut to parody a cringey human influencer stereotype, is the house series, not a retread. The retread rule (no-retread-of-live-post) bars the same trope again (another 4 AM morning routine), never the format. Each film takes a different stereotype from his lists and is built as F38 was: 8 to 11 shots, each a distinct, active real-dog behaviour (paw in the water bowl, zoomies, shredded paper, barking at the window, sniffing another dog, belly-up, a yawn) relabelled as one ritual of that stereotype, one dog throughout, ending on a loop or turn.",
+   "check": "review: before a build: name the stereotype, confirm no live post uses that same stereotype, and write the shot list as behaviour-to-ritual pairs where every shot shows the dog visibly doing something; a film whose shots are mostly the dog lying still is held.",
+   "applies_to": [
+    "reel"
+   ]
   }
  ],
  "open_conflicts": [],
