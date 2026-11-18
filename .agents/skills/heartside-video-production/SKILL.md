@@ -24,7 +24,9 @@ every step here exists because a session on 17 Nov 2026 skipped it and Krish pai
 5. Find the studio folder (`<STUDIO>`). For the 16 to 22 Nov sprint it is `~/.scratch/heartside-studio-2026-11-16/`.
    Its Drive copy is `H:\My Drive\Ventures\Active Ventures\Heartside\03a_Social-Production\2026-11-16_Claude-Velocity-Sprint-Studio_Not-for-Publishing\`.
    Start only from a complete copy: if Drive is still syncing, say so and wait.
-6. Work on the day's branch, never on `main`. A sub-session you start must be cut from that same branch
+6. If a skill was merged during your session, it is not in your skill list yet: read its `.agents/skills/<name>/SKILL.md`
+   file directly.
+7. Work on the day's branch, never on `main`. A sub-session you start must be cut from that same branch
    (`start_session` with `source_branch: <day branch>`). On 17 Nov one was cut from `main`, missed the day's floor
    entries, and failed to start.
 
@@ -34,7 +36,7 @@ every step here exists because a session on 17 Nov 2026 skipped it and Krish pai
 |---|---|---|
 | Words | `heartside-joke-lab` | a script scores 9 on its words alone, or the concept is shelved |
 | Footage plan | this skill, section 3 | the set list, the dogs and the priority order are written |
-| Unlimited check | `heartside-higgsfield-ui` | Codex has read today's Unlimited models, with the time |
+| Unlimited check | `heartside-higgsfield-ui` | Codex has read today's Unlimited models, with the time; if none, Krish's credit cap is set |
 | Anchor stills | `heartside-anchor-stills` | one approved anchor per set, checked at full size |
 | Dog check | `heartside-dog-realism` | every anchor and take passes the realism list |
 | Orders to Codex | `heartside-codex-studio` | each order is confirmed delivered in the session file |
@@ -94,6 +96,9 @@ like some sort of teacher's pet, but are you actually enhancing the fucking brai
 fucking produce the fucking videos?" A lesson becomes a floor entry, a fix to a tool, or a line in one of these skills.
 
 ## 5. Talking to Krish
+
+Orchestration is yours, not his (floor `orchestrate-without-babysitting`). Krish, 18 Nov: "ok its back - get going to
+full autonomous completion, i have babysat you way too much".
 
 - Message him only when he must act or decide, or when a clip lands that he asked to see. Give him one line for a
   blocked tab or a stuck order (`heartside-generation-watch`).

@@ -7,7 +7,8 @@ description: How a Heartside dog must look (a real, slightly scruffy pet on the 
 
 Floor rules: `real-scruffy-dogs`, `real-dogs`, `one-register-never-blurred`, `real-behavior-in-motion`,
 `dog-does-dog-things`. Read their words with `python growth.py floor --format reel`. Krish has said this four times,
-the last on 17 Nov: "he still looks a bit too perfect in terms of fur, and I cant figure otu what else".
+the last on 17 Nov: "he still looks a bit too perfect in terms of fur, and I cant figure otu what else". Then, going
+to sleep: "I need you to have incredibly high standards and keep reworking until you're happy with the realism".
 
 ## The cast (17 Nov sprint)
 
@@ -60,6 +61,10 @@ What a real pet shows. Pass only if most are true:
 - [ ] imperfect framing: off-centre, horizon a little off;
 - [ ] real dog timing: it wanders off-line, ignores the camera, turns away, sniffs, scratches, flops.
 
+Motion (video takes, frame by frame):
+- [ ] no head morphs as the dog turns toward the lens, above all while another dog passes behind (`b2-gy-04`, 3.4 s);
+- [ ] a real behaviour stays a dog's behaviour: no prop that names a human activity (yoga mat, desk, podium) under it.
+
 Consistency (`generation-continuity`):
 - [ ] the same dog as the reference: coat colour, markings, build, collar;
 - [ ] no collar, ear or coat change between frames.
@@ -74,7 +79,10 @@ Register (`one-register-never-blurred`):
 2. If the dog itself fails, do not re-prompt it with more listed flaws: Kling ignores them. Go back to a passed
    reference frame and an anchor still (`heartside-anchor-stills`).
 3. If two takes fail on the same tell, change the scene: light, viewpoint or action. Not the adjective list.
-4. Show Krish a frame strip only for a casting decision: a new dog, or a swap. Ask one question, "beagle or C?"
+4. When Krish asks "Do the two dogs look like real-life dogs or AI dogs?", answer dog by dog, honestly, from the
+   frames. On 17 Nov the terrier passed and C did not, because C was posed: centred, square-on, staring, groomed.
+   The fixes for a posed dog are in `heartside-anchor-stills`, step 2.
+5. Show Krish a frame strip only for a casting decision: a new dog, or a swap. Ask one question, "beagle or C?"
    style, with the deadline it must be answered by.
 
 ## Never

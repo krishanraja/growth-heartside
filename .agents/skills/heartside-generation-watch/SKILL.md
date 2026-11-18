@@ -22,15 +22,14 @@ Find a new day's file with `ls -t ~/.codex/sessions/*/*/*/rollout-*<thread id>*.
 Foreground `sleep` is blocked in Claude Code. A plain `sleep` chain does not work. Use an `until` loop with
 `run_in_background: true`, and give every loop a deadline, so a missed pattern can never hang forever.
 
-1. Wait for a job's DONE line, or 15 minutes:
+1. The one watcher to run while Codex works: it wakes on a new DONE line **or** a Codex turn end, or at 15 minutes.
+   On 17 Nov a watcher keyed only on log lines missed Codex stopping for 13 minutes, and Krish asked "codex is doing
+   nothing right now?".
    ```bash
-   n=$(grep -c " | DONE" $S/log.md); end=$(( $(date +%s)+900 )); until [ "$(grep -c ' | DONE' $S/log.md)" -gt $n ] || [ $(date +%s) -ge $end ]; do sleep 20; done; date -u +%H:%M:%SZ; tail -3 $S/log.md
+   n=$(grep -c " | DONE" $S/log.md); t=$(grep -c '"task_complete"' $F); end=$(( $(date +%s)+900 )); until [ "$(grep -c ' | DONE' $S/log.md)" -gt $n ] || [ "$(grep -c '"task_complete"' $F)" -gt $t ] || [ $(date +%s) -ge $end ]; do sleep 20; done; date -u +%H:%M:%SZ; tail -3 $S/log.md
    ```
-2. Wait for Codex's turn to end. Count `task_complete`, not DONE lines. On 17 Nov a watcher keyed only on DONE lines
-   missed Codex stopping on a dropped tab.
-   ```bash
-   n=$(grep -c '"task_complete"' $F); end=$(( $(date +%s)+900 )); until [ "$(grep -c '"task_complete"' $F)" -gt $n ] || [ $(date +%s) -ge $end ]; do sleep 20; done; date -u +%H:%M:%SZ
-   ```
+2. When it wakes on a turn end, read the exact error before anything else (`heartside-codex-studio`, "When a turn
+   stops"), fix or route around it, and queue the next order. Codex is never left idle.
 3. The 15-minute check-in timer. Restart it after every check:
    ```bash
    end=$(( $(date +%s)+900 )); until [ $(date +%s) -ge $end ]; do sleep 20; done; echo "15-min check due"
@@ -57,7 +56,7 @@ Foreground `sleep` is blocked in Claude Code. A plain `sleep` chain does not wor
 3. Is the right order running? Compare the job ids in the newest DONE lines with your latest order. If Codex is running
    a superseded order, follow `heartside-codex-studio`, "When an order is stuck".
 4. Credits: MCP `balance`. It must equal the session's opening reading.
-5. Download what landed (`heartside-higgsfield-ui`, section 3) and check it (`heartside-dog-realism`).
+5. Download what landed (`heartside-higgsfield-ui`, section 4) and check it (`heartside-dog-realism`).
 6. Restart the 15-minute timer.
 7. Tell Krish only what needs him, or a one-line all clear if he asked for check-ins:
    "Checked at HH:MMZ: <n> of <planned> done, <job> generating, credits unchanged."
@@ -76,6 +75,8 @@ Report the three counts, the shots still owed to scripts scoring 9, and the clip
 | Signal | Meaning | Do |
 |---|---|---|
 | Codex: "tab disconnected", "unresponsive", "browser access was lost" | the in-app browser lost Higgsfield | Tell Krish in one line: "Higgsfield dropped in Codex's browser; please reattach it." Then wait. Floor: `higgsfield-browser-ui-only`, "if you lose access, tell me and I reinstate it". |
+| A Codex turn ended with an error | see the table in `heartside-codex-studio`, "When a turn stops" | Do its fix in one step: never re-send an unchanged order (floor `orchestrate-without-babysitting`). |
+| Several turns in a row stop at once, overnight | the PC is asleep or locked, or the Escape flag stuck | Read the tool output. The Escape flag needs Krish to quit and reopen Codex Desktop. Before he leaves, ask him to keep the PC awake and unlocked. |
 | Generate shows a number ("8.75") instead of Unlimited | Unlimited dropped or lapsed | Codex stops correctly. Ask Codex to read the model list, then follow Krish's fallback order (`heartside-higgsfield-ui`). |
 | A click with no History entry | the job may or may not exist | Check History with the MCP read. Never retry blind. |
 | No new DONE line in 30 minutes, Codex turn still open | a stall inside the turn | Read the session file; if Codex is stuck on the page, tell Krish in one line. |

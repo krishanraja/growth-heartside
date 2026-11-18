@@ -48,6 +48,18 @@ lived-in home, nothing else in the frame. Vertical 9:16.
 
 For two dogs, add "and the <sidekick description> from image 2" and attach reference 2.
 
+What made an anchor read as real on 17 and 18 Nov (floor `real-scruffy-dogs`):
+- The second dog lies off to one side, partly cut off by the frame edge, with a flattened or muddy patch. Never ask
+  it to "sit beside" or "watch": it comes back centred, square-on, staring at the lens, groomed (charity t1 and t2,
+  rejected).
+- Ask for a low, slightly crooked angle and "half cut off by the frame". The best anchor of the night (charity,
+  `b4ce2b0a`) had wet patchy concrete, a crooked low angle and the sidekick half out of frame.
+- Props are tipped over or half out of frame. A toy laid out in the centre, or a teddy set upright, reads as a
+  product shot (reviewer t1, rejected).
+- Ordinary daylight. Orange "sun" streaks read as painted on (bedroom t2b, rejected); plain morning light passed.
+- No prop that names a human activity (a yoga mat, a desk, a podium). It turns a real play-bow into a staged human
+  pose; the waitlist film scored 9 on its words and 6 as a film because of the mat. Let the words carry the format.
+
 Before sending, check every prompt:
 - [ ] under 900 characters (`wc -c`);
 - [ ] one light source only, and no second light line anywhere;
@@ -57,14 +69,19 @@ Before sending, check every prompt:
 
 ## Step 3: order the anchors
 
-- Nano Banana with the Unlimited label (not Nano Banana Pro), image page, 9:16, image-to-image. Use the references
-  from step 1, by asset id.
+- Nano Banana with the Unlimited label (not Nano Banana Pro), image page at its model URL, 9:16, image-to-image. Use
+  the references from step 1, by asset id.
+- Finish every prompt file before the order is queued: Codex reads the files when its turn starts.
+- If Codex's browser cannot run, make the anchors through the MCP instead, as Nano Banana Pro at 2K (2 credits each),
+  only inside a cap Krish names (`heartside-higgsfield-ui`, section 3). Krish, 17 Nov: "Can you just create the anchor
+  frames/anchor dogs in Runway or Higgsfield MCP because I feel like we could just create really good-quality anchor
+  images pretty quickly with that route?"
 - 2 takes per set, one job at a time. Log each as `anc-<set> | t<N> | DONE asset <id> | Nano Banana Unlimited`.
 - End the turn when the takes are logged. Do not restart any video queue in the same order.
 
 ## Step 4: pick the anchor
 
-1. Download each take (`heartside-higgsfield-ui`, section 3) and open it at full size with the Read tool.
+1. Download each take (`heartside-higgsfield-ui`, section 4) and open it at full size with the Read tool.
 2. Check it against `heartside-dog-realism`, plus:
    - [ ] the same dog as the reference: coat, markings, collar, build;
    - [ ] no object or body part the prompt did not ask for (17 Nov `anc-gr` t1 and t2: a phone and a hand);
@@ -80,12 +97,16 @@ Before sending, check every prompt:
 
 1. Each shot is Kling (Unlimited) image-to-video with the anchor as its start image. Reuse the anchor's own Higgsfield
    asset; never upload it.
-2. The prompt is motion only (`<STUDIO>/bank2/i2v/`): what the dog does, the camera ("Handheld phone, a slight natural
-   drift, no zoom"), and "Real dog weight and timing." Under 300 characters.
-3. A later shot that must continue the last one starts from that clip's last frame. Extract it with
+2. The prompt is motion only (`<STUDIO>/bank2/i2v/`): what the dog does, the camera ("Handheld, a slight natural
+   drift, no zoom"; never the word "phone"), and "Real dog weight and timing." Under 300 characters.
+3. Only the first shot of a film starts from the anchor. If every shot starts from it, each cut resets the dogs to the
+   same pose (18 Nov). Either make two longer takes per film, or start each later shot from the previous clip's last
+   frame. Extract that frame with
    `ffmpeg -sseof -0.1 -i <clip> -frames:v 1 <STUDIO>/stills/<id>_s<N>_start.png`, then let Codex reuse it via History,
-   not an upload.
-4. Every video line in the log names its anchor:
+   not an upload. A clip forced between two set frames (start and end) warps most, so make two takes of it.
+4. Check every head turn frame by frame. Kling 3.0 morphed the terrier's head as it turned toward the lens while the
+   other dog passed behind (`b2-gy-04`, from 3.4 s). Trim before the morph rather than re-running the clip.
+5. Every video line in the log names its anchor:
    `b2-<set>-NN | DONE asset <id> | Kling 3.0 Unlimited | from anc-<set>_t<N>`.
 
 ## Stop conditions
