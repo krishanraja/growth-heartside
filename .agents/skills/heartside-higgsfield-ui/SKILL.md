@@ -100,6 +100,19 @@ Krish, 18 Nov: "why dont you just complete this entire task in higgsfield MCP - 
    by another route.
 6. The best anchor of 17 Nov came this way: Nano Banana Pro 2K, charity set (asset `b4ce2b0a`).
 
+### Music beds (MCP, on credits, inside the cap)
+
+Floor `music-defines-humour`. Krish, 18 Nov: "what music are you adding? this will define the humour score
+substantialy".
+1. Show Krish each film's music in one line (style, where it stops or switches, why it is funny) and wait for his
+   answer before generating or mixing.
+2. Original beds: MCP `generate_audio` with model `elevenlabs_music_v2_5`, `force_instrumental: true`,
+   `use_unlim: false`. About 2.18 credits per 15 s (14 beds cost 22.01 on 18 Nov). There is no Suno model on this
+   account.
+3. A bed covers the whole film, end card included. Ask for the film's full length plus 1 s, and end the prompt with
+   "with a clean ending". On 18 Nov 5 of 9 beds came back too short and had to be made again.
+4. Check each bed's length with `ffprobe` before mixing (`heartside-assembly-panel-board`, section 1).
+
 ## 4. Downloading takes (Claude, MCP read plus curl)
 
 1. Get the job: MCP `show_generation_by_ids` with `jobs: [{"index": 0, "job_id": "<asset uuid>"}]`. Or use

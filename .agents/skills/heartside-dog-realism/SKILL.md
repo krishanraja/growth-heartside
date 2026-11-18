@@ -63,7 +63,14 @@ What a real pet shows. Pass only if most are true:
 
 Motion (video takes, frame by frame):
 - [ ] no head morphs as the dog turns toward the lens, above all while another dog passes behind (`b2-gy-04`, 3.4 s);
-- [ ] a real behaviour stays a dog's behaviour: no prop that names a human activity (yoga mat, desk, podium) under it.
+- [ ] a real behaviour stays a dog's behaviour: no prop that names a human activity (yoga mat, desk, podium) under it;
+- [ ] the last 1 to 2 s still show the same dog. Kling 2.5 Turbo drifts at the end of a clip: the collar vanished in
+      kitchen (3.6 to 4.4 s) and copycat (2 to 4.5 s), Doug's leg retracted in one-toe (2.3 to 3.0 s), and
+      `b2-v2-c02` turned Gary's eyes blue from 3.5 s although the prompt named dark brown eyes.
+
+Check every take over its full length, not three frames: `python docs/briefs/2026-11-18-footage/tools/sheet.py
+<clip> <sheet.jpg>` gives a timestamped frame every 0.5 s. Record the usable range and the fault in the round's
+manifest, and cut the fault out of the clip in `ready/`.
 
 Consistency (`generation-continuity`):
 - [ ] the same dog as the reference: coat colour, markings, build, collar;

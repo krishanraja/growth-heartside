@@ -70,9 +70,13 @@ Set up first: `export PYTHONIOENCODING=utf-8` (without it, `jokelab.py` crashes 
      from 7 to 9 on a retread, and Krish declined it.
 7. **Gate.** Only a 9 on the words goes forward. Below 9: write a new round with a different mechanism. Do not polish
    the same lines. After two rounds capped at 8 for one structural reason, shelve the concept and say why in one line.
-8. **Check the line, if the tool exists.** Run `python factory/jokelab.py --help`. If it lists `check`, run
+8. **Check the line with the humour engine.** Run `python factory/jokelab.py doctor` first. Then
    `python factory/jokelab.py check "<line>" --surface caption --on-screen "<what the dog does>"` before a caption goes
-   on the board.
+   on the board. On Krish's PC on 18 Nov, `doctor` reported `CONTROL_CENTER_ENGINE_TOKEN` unset, so `check` returned
+   unavailable (exit 2). Say so on the board item; never treat exit 2 as a pass. The tier 2 judge is then the check.
+   - Captions for compiled films (18 Nov ruling, floor `footage-not-gated-on-judge`) are written per clip from its
+     beat timeline and payoff second in the round's `INVENTORY.md`. They still go through `check` or the tier 2
+     judge before the board.
 9. **Krish.** Put the 9s to him with the footage plan. Record each verdict, his words exact:
    `python factory/jokelab.py verdict <run> <cand> yes|no "<his words>"`.
 10. **Build cuts.** For every cut of a built film, log
