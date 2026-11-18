@@ -51,13 +51,21 @@ Set up first: `export PYTHONIOENCODING=utf-8` (without it, `jokelab.py` crashes 
    - Always pass `--run` with a unique name. Without it, runs are named by the second, and two screens in the same
      second overwrite each other (17 Nov).
    - No token: the screen runs its code gates and says so. Report that in one line and go on. Never fake a live read.
+   - The screen's retread gate compares wording, so it misses a retread of a premise in new words. On 18 Nov it passed
+     the gym script with "closest live post: none" while V005 "My dog's gym era" was live. The tier 2 judge, which now
+     carries every live post, is the real retread check.
 5. **Shortlist.** `python factory/jokelab.py show <run>`. The ranker takes the top 4 by family weight and over-weights
    the alibi family. Add each writer's own top pick to the judge set if the ranker left it out. On 17 Nov
    "Didn't see you there" scored 9 only because it was added this way.
-6. **Judge the words alone.** Write each shortlisted script to `local/jokelab/words-<cand>.md`: the lines, the shot
-   list and the closest live post. Nothing else.
+6. **Judge the words alone.** Write each shortlisted script to `local/jokelab/words-<cand>.md`: the lines, a plain
+   description of what is on screen in each shot (the setting and any prop), and the closest live post. Nothing else.
    - `python factory/panel.py brief tier2 local/jokelab/words-<cand>.md` gives the Sonnet judge's prompt; run it as a
-     sub-agent.
+     sub-agent. The brief carries every live post from `jokelab.live_posts()` (45 on 18 Nov). Check that it lists
+     `V005` before you trust a score. On 18 Nov, before panel.py carried the list, a retread of V005 "gym era" scored 9
+     on its words and 7 as a film. Re-judge any script scored without the list.
+   - A 9 on the words is provisional. The film is judged again as a film (`heartside-assembly-panel-board`, section
+     3), and only that score counts. The waitlist script scored 9 on its words and 6 as a film: the yoga mat staged
+     the dog's play-bow as a human pose, and the judge read the format as F38's.
    - Add no session notes, no excuses, no "fully human acts are allowed". On 17 Nov notes like that talked the judge
      from 7 to 9 on a retread, and Krish declined it.
 7. **Gate.** Only a 9 on the words goes forward. Below 9: write a new round with a different mechanism. Do not polish
@@ -74,6 +82,14 @@ Set up first: `export PYTHONIOENCODING=utf-8` (without it, `jokelab.py` crashes 
 ## Writing rules the screen will not catch
 
 - One script, one stereotype, one register (`one-register-never-blurred`).
+- The words carry the format. Never put a prop that names a human activity (yoga mat, desk, podium) under a real
+  dog's behaviour.
+- The caption goes through this lab with the labels, never written at the cut. On 18 Nov a caption written at
+  assembly ("The investigation is ongoing. The suspect is napping.") fought the labels.
+- Each label fits two lines on screen. If a line is longer, split it across two beats with the words unchanged, and
+  give the shot the time to read both halves.
+- Treat "nature documentary over a real dog" as a known risk: the judge called it "the Attenborough dog thing
+  everyone does". It needs a payoff only this footage can give.
 - Every label states plainly what the dog is supposedly doing (`deadpan-labels`), and the footage shows the dog doing
   it (`stage-the-joke`).
 - The cruel payoff lands on the owner's habits, never their body, looks, age, money, job or family (AGENTS.md rule 5).

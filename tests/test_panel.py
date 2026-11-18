@@ -20,6 +20,15 @@ class PanelTest(unittest.TestCase):
         self.assertIn('yt:u7s47cIeh6M', t2)
         self.assertIn('These dogs look fake and sometimes malformed.', t2)
 
+    def test_tier2_brief_carries_every_live_post(self):
+        # 18 Nov: a retread of the live V005 "gym era" scored 9 on words because the judge never saw it.
+        import jokelab
+        t2 = panel.brief('tier2', ['a.png'])
+        for i, _ in jokelab.live_posts():
+            self.assertIn(f'- {i}: ', t2)
+        self.assertIn('V005', t2)
+        self.assertNotIn('UNREAD', t2)
+
     def test_an_image_sheet_is_the_picture_scaled(self):
         with tempfile.TemporaryDirectory() as d:
             Image.new('RGB', (2000, 3000)).save(f'{d}/a.png')
