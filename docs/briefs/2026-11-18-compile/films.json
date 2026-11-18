@@ -1,0 +1,327 @@
+{
+ "note": "Compile round, 18 Nov. Footage from docs/briefs/2026-11-18-footage/manifest.json (ready/ clips). Labels burned at the fixed top band by the studio's cut.py; music is an original ElevenLabs Music bed generated through the Higgsfield MCP. Each film also has a silent master for an in-app trending sound.",
+ "films": [
+  {
+   "id": "cp-workday",
+   "title": "Gary's workday",
+   "premise": "Owners say their dog had a busy day. Gary's day, logged like a job, is four kinds of lying down, and Doug knows it.",
+   "observation": "owners describe a dog's day as busy",
+   "stupid": "the dog keeps office hours",
+   "cruel": "his coworker has seen the timesheet",
+   "shots": [
+    [
+     "FG11",
+     0.5,
+     3.5
+    ],
+    [
+     "FG10",
+     1.5,
+     3.5
+    ],
+    [
+     "FG06",
+     1.0,
+     3.5
+    ],
+    [
+     "FG04",
+     0.0,
+     4.0
+    ]
+   ],
+   "labels": [
+    [
+     0.0,
+     3.5,
+     "9:00 am. Gary starts work."
+    ],
+    [
+     3.5,
+     7.0,
+     "10:30. Deep in the files."
+    ],
+    [
+     7.0,
+     10.5,
+     "1:00 pm. A short break."
+    ],
+    [
+     10.5,
+     12.5,
+     "3:00. Overtime."
+    ],
+    [
+     12.5,
+     14.5,
+     "Doug has seen his timesheet."
+    ]
+   ],
+   "end": true,
+   "caption": "He says it was a long day.",
+   "music": "mellow office lounge music, soft electric piano and brushed drums, easy and slightly smug, instrumental, no vocals"
+  },
+  {
+   "id": "cp-copycat",
+   "title": "Doug copies Gary",
+   "premise": "The younger dog copies everything the older one does, until the older one starts acting like he is under surveillance.",
+   "observation": "a second dog copies the first",
+   "stupid": "copying turns into an investigation",
+   "cruel": "Gary is being watched in his own home",
+   "shots": [
+    [
+     "FG08",
+     2.0,
+     3.0
+    ],
+    [
+     "FG05",
+     0.0,
+     3.5
+    ],
+    [
+     "FG03",
+     1.0,
+     4.0
+    ],
+    [
+     "FG13",
+     0.0,
+     4.5
+    ]
+   ],
+   "labels": [
+    [
+     0.0,
+     3.0,
+     "Doug copies everything Gary does."
+    ],
+    [
+     3.0,
+     6.5,
+     "Gary now sleeps under supervision."
+    ],
+    [
+     6.5,
+     10.5,
+     "Gary has started hiding things."
+    ],
+    [
+     10.5,
+     15.0,
+     "Doug has started taking notes."
+    ]
+   ],
+   "end": true,
+   "caption": "Gary would like some privacy.",
+   "music": "sneaky spy surveillance theme, pizzicato strings and muted trumpet, tiptoeing, instrumental, no vocals"
+  },
+  {
+   "id": "cp-walk",
+   "title": "The walk he begged for",
+   "premise": "The dog begs for a walk and lies down two minutes in, but rides in the car anywhere, happily, without a single question.",
+   "observation": "dogs beg for walks and then refuse to walk",
+   "stupid": "the car is the walk he wanted",
+   "cruel": "he never asks where the car is going",
+   "shots": [
+    [
+     "FG01",
+     0.0,
+     5.0
+    ],
+    [
+     "FG02",
+     0.0,
+     5.0
+    ]
+   ],
+   "labels": [
+    [
+     0.0,
+     2.5,
+     "The walk he begged for."
+    ],
+    [
+     2.5,
+     5.0,
+     "Minute two."
+    ],
+    [
+     5.0,
+     7.5,
+     "The car, going who knows where."
+    ],
+    [
+     7.5,
+     10.0,
+     "He has never once asked."
+    ]
+   ],
+   "end": true,
+   "caption": "He has strong opinions about walking.",
+   "music": "slow mournful solo cello for five seconds, then a bright sunny acoustic guitar road-trip groove, instrumental, no vocals"
+  },
+  {
+   "id": "cp-leaveit",
+   "title": "Leave it",
+   "premise": "We taught him leave it, and he did, by lying on it.",
+   "observation": "every owner teaches leave it",
+   "stupid": "he obeys the words exactly",
+   "cruel": "the treat is still right there between his paws, and he dares you to ask",
+   "shots": [
+    [
+     "FG07",
+     0.0,
+     3.4
+    ],
+    [
+     "FG03",
+     0.0,
+     5.0
+    ]
+   ],
+   "labels": [
+    [
+     0.0,
+     3.4,
+     "We taught him leave it."
+    ],
+    [
+     3.4,
+     6.4,
+     "He left it."
+    ],
+    [
+     6.4,
+     9.4,
+     "He is keeping it company."
+    ]
+   ],
+   "hold_last": 1.0,
+   "end": true,
+   "caption": "Technically a good boy.",
+   "music": "tense jazzy heist theme, walking double bass and snare brushes, sly, instrumental, no vocals"
+  },
+  {
+   "id": "cp-besttrained",
+   "title": "Best-trained dog (recut)",
+   "premise": "The owner is proud the doodle was trained to wait before eating; the terrier was not, and is eating his dinner.",
+   "observation": "owners brag about training a dog to wait at its bowl",
+   "stupid": "obedience is the winning strategy",
+   "cruel": "the praise lands on the trained dog's sorrowful stare while the other one eats",
+   "shots": [
+    [
+     "FG17",
+     0.0,
+     5.0
+    ],
+    [
+     "FG14",
+     1.5,
+     3.5
+    ]
+   ],
+   "labels": [
+    [
+     0.0,
+     2.4,
+     "We trained him to wait before he eats."
+    ],
+    [
+     2.4,
+     5.0,
+     "Gary was not trained."
+    ],
+    [
+     5.0,
+     7.8,
+     "He's still waiting."
+    ],
+    [
+     7.8,
+     9.5,
+     "Our best-trained dog."
+    ]
+   ],
+   "hold_last": 1.0,
+   "end": true,
+   "caption": "Patience is a virtue. Gary disagrees.",
+   "music": "pompous proud brass marching band, ceremonial, instrumental, no vocals"
+  },
+  {
+   "id": "cp-technically",
+   "title": "Technically on the floor",
+   "premise": "House rule: no dogs on the sofa. Doug keeps one paw on the floor, and Gary checks.",
+   "observation": "house rules about the sofa",
+   "stupid": "one paw on the floor counts as the floor",
+   "cruel": "Gary, who follows the rule, is the one left on the rug",
+   "shots": [
+    [
+     "FG09a",
+     0.0,
+     2.3
+    ],
+    [
+     "FG09b",
+     0.0,
+     2.0
+    ]
+   ],
+   "labels": [
+    [
+     0.0,
+     2.0,
+     "House rule: no dogs on the sofa."
+    ],
+    [
+     2.0,
+     5.3,
+     "Doug is technically on the floor."
+    ]
+   ],
+   "hold_last": 1.0,
+   "end": true,
+   "caption": "The rule did not say how much of the dog.",
+   "music": "light game show thinking music with a ticking clock, playful, instrumental, no vocals"
+  },
+  {
+   "id": "cp-alarm",
+   "title": "Your alarm",
+   "premise": "Your alarm goes off; the dog watches you, decides it was for you, and goes back to sleep.",
+   "observation": "the dog stays in bed when you get up",
+   "stupid": "the alarm only applies to you",
+   "cruel": "he closes his eyes on you",
+   "shots": [
+    [
+     "FG12",
+     0.0,
+     5.0
+    ]
+   ],
+   "labels": [
+    [
+     0.0,
+     2.2,
+     "Your alarm went off."
+    ],
+    [
+     2.2,
+     6.0,
+     "He has decided it was for you."
+    ]
+   ],
+   "hold_last": 1.0,
+   "end": true,
+   "caption": "Five more minutes, for him.",
+   "music": "soft sleepy music box lullaby, gentle, instrumental, no vocals"
+  }
+ ],
+ "music_only": [
+  {
+   "id": "st-v2-c07",
+   "title": "Customs",
+   "src": "local/media/studio/st-v2-c07/st-v2-c07.mp4",
+   "music": "tense airport customs inspection drone, low strings and a single ticking pulse, deadpan, instrumental, no vocals"
+  }
+ ]
+}

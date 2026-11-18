@@ -1,0 +1,77 @@
+{
+ "built": "2026-11-18",
+ "films": [
+  {
+   "id": "cp-workday",
+   "title": "Gary's workday",
+   "master": "local/media/studio/cp-workday/cp-workday.mp4",
+   "sheet": "local/media/studio/cp-workday/sheet.png",
+   "seconds": 17.5,
+   "bytes": 20231716,
+   "sha256": "b3787437517b95069bd740147364207337664d76892b299ad97d118b755d2160"
+  },
+  {
+   "id": "cp-copycat",
+   "title": "Doug copies Gary",
+   "master": "local/media/studio/cp-copycat/cp-copycat.mp4",
+   "sheet": "local/media/studio/cp-copycat/sheet.png",
+   "seconds": 18.0,
+   "bytes": 16379486,
+   "sha256": "a2c6e5ccf883336e0a56ed504e9509dca8e4676f2f5862301571d3769e7f0866"
+  },
+  {
+   "id": "cp-walk",
+   "title": "The walk he begged for",
+   "master": "local/media/studio/cp-walk/cp-walk.mp4",
+   "sheet": "local/media/studio/cp-walk/sheet.png",
+   "seconds": 13.0,
+   "bytes": 16672531,
+   "sha256": "b4a60a613eef896dcde19c77d6f875391b60b99b71e2909ecb8a3fa2c0e33e73"
+  },
+  {
+   "id": "cp-leaveit",
+   "title": "Leave it",
+   "master": "local/media/studio/cp-leaveit/cp-leaveit.mp4",
+   "sheet": "local/media/studio/cp-leaveit/sheet.png",
+   "seconds": 12.4,
+   "bytes": 9604784,
+   "sha256": "50585f44b3a110d9dd41b5481f389c09fa60778eb441207642e988c28d86b39f"
+  },
+  {
+   "id": "cp-besttrained",
+   "title": "Best-trained dog (recut)",
+   "master": "local/media/studio/cp-besttrained/cp-besttrained.mp4",
+   "sheet": "local/media/studio/cp-besttrained/sheet.png",
+   "seconds": 12.5,
+   "bytes": 8414012,
+   "sha256": "bab8a3bbaf0d74b1684bd279dd307cc435a448bf7818ef5ae7aadea767815728"
+  },
+  {
+   "id": "cp-technically",
+   "title": "Technically on the floor",
+   "master": "local/media/studio/cp-technically/cp-technically.mp4",
+   "sheet": "local/media/studio/cp-technically/sheet.png",
+   "seconds": 8.3,
+   "bytes": 4994316,
+   "sha256": "94796dc618f520e29b0ba0f6bd6ccf206fb38bf67abad30eb4a8e2dedf054e93"
+  },
+  {
+   "id": "cp-alarm",
+   "title": "Your alarm",
+   "master": "local/media/studio/cp-alarm/cp-alarm.mp4",
+   "sheet": "local/media/studio/cp-alarm/sheet.png",
+   "seconds": 9.0,
+   "bytes": 3948133,
+   "sha256": "0937517f7b400db771f5219050e671496933ebdf81ac7675fc3e1a0913ac1294"
+  },
+  {
+   "id": "st-v2-c07",
+   "title": "Customs",
+   "master": "local/media/studio/st-v2-c07/st-v2-c07.mp4",
+   "sheet": "local/media/studio/st-v2-c07/sheet.png",
+   "seconds": 9.0,
+   "bytes": 5368412,
+   "sha256": "af9098fbf3f92243a0c51eda51fe6a7445910764d4d78845a245890d3d75945c"
+  }
+ ]
+}

@@ -2,7 +2,7 @@
 
 Status on 18 Nov, 02:50 UTC. Six films were cut and judged. None reached 9, so none is on the review board. The best is `st-bowl-c18` at 8. This file is the next session's starting point: what exists, where it is, what each film scored and why, the suggested captions and music, and what to make next.
 
-The footage for the next compile is locked in [`../2026-11-18-footage/INVENTORY.md`](../2026-11-18-footage/INVENTORY.md) (18 Nov, 13 new clips plus the usable earlier ones).
+The compile round (7 films cut 18 Nov, music pending Krish) is handed off in [`../2026-11-18-compile/HANDOFF.md`](../2026-11-18-compile/HANDOFF.md). The footage for it is locked in [`../2026-11-18-footage/INVENTORY.md`](../2026-11-18-footage/INVENTORY.md) (18 Nov, 13 new clips plus the usable earlier ones).
 
 Read first: `.claude/skills/heartside-video-production/SKILL.md` (the skills were upgraded from this night's failures), and the floor entries `mcp-credit-route-with-cap`, `chrome-or-machine-for-higgsfield` and `orchestrate-without-babysitting`.
 
