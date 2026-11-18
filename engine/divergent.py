@@ -441,7 +441,7 @@ def recovery(*, root, growth, client, body, features, state, organic, north_star
 OPS = ('map', 'provoke', 'challenge', 'diverge', 'score', 'record')
 GENERATING = ('map', 'provoke', 'challenge', 'diverge')  # model calls: refused while Krish holds the engine
 OP_TIMEOUTS = {'diverge': DIVERGE_TIMEOUT, 'provoke': 120, 'challenge': 120, 'map': 90}
-LANE = re.compile(r'^[a-z0-9][a-z0-9_-]{0,39}$')
+LANE = re.compile(r'^[a-z0-9][a-z0-9-]{0,39}$')  # Control Center's namespace rule: lowercase letters, digits and hyphens
 
 
 class Refused(Exception):

@@ -410,3 +410,11 @@ class AtWill(unittest.TestCase):
         self.assertEqual(run.returncode, 2)
         self.assertEqual(run.stdout, '')
         self.assertIn('not consulted', run.stderr)
+
+
+class LaneMatchesControlCenter(unittest.TestCase):
+    def test_underscore_lane_is_refused_locally_as_control_center_would(self):
+        from engine import divergent as d
+        self.assertIsNone(d.LANE.match('my_lane'))
+        self.assertIsNotNone(d.LANE.match('jokes'))
+        self.assertIsNotNone(d.LANE.match('u5-plays'))
