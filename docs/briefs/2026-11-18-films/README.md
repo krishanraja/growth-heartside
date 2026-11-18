@@ -37,6 +37,31 @@ Both "Customs" and "Adjacent" are real-looking and clean at full size. The foota
 
 The next round should start from the gift: a script where the dog's own face on the blanket, mug or portrait is the payoff, with three or four beats that escalate to it.
 
+## Gift-led rounds (18 Nov, late morning): shelved at 8
+
+After round 2, Krish said "Yes, start it" to a round that starts from the gift. Two joke lab rounds followed (`local/jokelab/cand-gift.json`, `cand-gift2.json`). Each judge set had ten scripts, judged as described films against every live post. No credits were spent, because nothing scored 9.
+
+| Round | Rule for the gift | Best scores | Strongest scripts |
+|---|---|---|---|
+| Gift 1 | the reveal of the dog's own face on the gift is the payoff | one 8, three 7s | "Now hiring": "Must be able to lie down." / "Must be already lying down." / "Position filled." then the blanket |
+| Gift 2 | a surprising dog action on screen causes the gift | seven 8s | burying a treat on tile, then the blanket "takes it"; "I am not furniture"; the lump under a throw, "He is the blanket."; sleep-running on bare boards |
+
+The judge's reason was the same every time: deadpan labels over a real dog doing real dog things is the F38 to F40 format, and a script that is not clearly funnier than those live posts cannot score 9. A face-on-the-blanket reveal also reads as F34. Two gift rounds capped at 8 for one reason, so the approach is shelved under `heartside-joke-lab` step 7.
+
+### What the day shows
+
+Across the night and the four rounds that followed, about 150 scripts went through the joke lab:
+- every 9 on a script came from describing the film, not from building it;
+- every built film landed at 6 to 8.
+
+The model judge holds the live posts as the tens, so the format those posts own caps everything near it.
+
+Krish is the real bar, and he has not seen any of these. The fastest way to learn whether the judge is too harsh or right is his verdict on the strongest 8s:
+- **Films:** `st-bowl-c18` "Best-trained dog" and `st-v2-c07` "Customs".
+- **Scripts:** gift 2's c05, c14 and c15.
+
+Record each verdict with `python factory/jokelab.py verdict` and check `python factory/panel.py agreement`. Below 80% agreement, the judge's anchors need rebuilding before another round.
+
 ## If Krish wants one compiled anyway: `st-bowl-c18`
 
 The strongest film, 8 at tier 2, legible in one second with the sound off. Compile notes:
