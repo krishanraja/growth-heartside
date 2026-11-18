@@ -1,4 +1,4 @@
 Status: Partial. Read current README v6.0 and source schedules. Native browser remains unavailable, so Sunday delivery and boost verification are incomplete. Recorded four channel monitor events for Claude to inspect/import; no Drive or platform mutation.
 Next: Resume native verification of the 23 Sunday placements in the visible local Publishing session once Codex in-app browser access is restored; record public post checks and exact-window metrics, then Claude imports and updates Sheets.
 Changed: Updated existing morning and Sunday report automation prompts to honor the v6.0 no-Drive-write boundary, preserving their schedules and expiry. Event file docs/social/2026-11-16-publishing.json uses the existing social monitor schema; no fake post URLs or measured results.
-North Star check (2026-11-16): holds. This preserves delivery and measurement integrity for organic-sales learning; no sales movement established.
+North Star check (2026-11-16): holds.
