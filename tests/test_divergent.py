@@ -4,8 +4,10 @@ Dormant until Control Center serves features.divergent: no call, no error, one q
 spark becomes one plan behind strategy with its provenance evidence, after this engine's own copy and claims checks;
 a 429 or 503 is a quiet line; the joke lab's screen rejects a rejected_archive candidate.
 """
+import argparse
 import copy
 import datetime as dt
+import io
 import json
 import os
 from pathlib import Path
@@ -267,3 +269,144 @@ class Record(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class AtWillStub(Stub):
+    """Served by default; directive() answers a held or unheld engine, or raises."""
+
+    def __init__(self, answer=None, error=None, served=True, held=False, directive_error=None):
+        super().__init__(answer or {'ok': True, 'runId': 'dvg_at_will'}, error, {'divergent': served})
+        self.held, self.directive_error, self.directive_reads = held, directive_error, 0
+
+    def directive(self, date=None):
+        self.directive_reads += 1
+        if self.directive_error:
+            raise self.directive_error
+        return {'ok': True, 'directive': body(5, self.held)}
+
+
+class AtWill(unittest.TestCase):
+    """growth.py divergent <op>: the body each op builds, the namespace, the exit codes and the hold."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.root = Path(self.tmp.name)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def file(self, name, text):
+        path = self.root / name
+        path.write_text(text, encoding='utf-8')
+        return str(path)
+
+    def args(self, **kw):
+        base = dict(problem=None, context=None, idea=None, ideas_file=None, obvious_file=None, items_file=None,
+                    cliche=None, count=None, target=None, temperament=None, lane=None, judge=False)
+        base.update(kw)
+        return argparse.Namespace(**base)
+
+    def consult(self, op, client, **kw):
+        out, err = io.StringIO(), io.StringIO()
+        code = divergent.consult(op, self.args(**kw), growth, client=client, out=out, err=err, root=self.root,
+                                 today=dt.date(2026, 11, 18))
+        return code, out.getvalue(), err.getvalue()
+
+    def test_each_op_builds_the_contract_body(self):
+        banned = divergent.banned_words(growth)
+        ideas = self.file('ideas.json', json.dumps(['A dog that files taxes', 'A dog that reviews mugs']))
+        obvious = self.file('obvious.txt', 'Dog in a sweater\n\nDog with a mug\n')
+        items = self.file('items.txt', 'The caption that went live\n')
+        cases = {
+            'map': (dict(problem='P', context='C'), {'op': 'map', 'problem': 'P', 'context': 'C', 'namespace': 'growth-heartside'}),
+            'provoke': (dict(problem='P', count=4, cliche=['Post more', 'Run ads'], target='content', temperament='wild'),
+                        {'op': 'provoke', 'problem': 'P', 'count': 4, 'cliches': ['Post more', 'Run ads'], 'target': 'content',
+                         'temperament': 'wild', 'bannedWords': banned, 'namespace': 'growth-heartside'}),
+            'challenge': (dict(problem='P', idea='I'), {'op': 'challenge', 'problem': 'P', 'idea': 'I', 'namespace': 'growth-heartside'}),
+            'diverge': (dict(problem='P', context='C'), {'op': 'diverge', 'problem': 'P', 'context': 'C', 'bannedWords': banned,
+                                                         'namespace': 'growth-heartside'}),
+            'score': (dict(problem='P', ideas_file=ideas, obvious_file=obvious, judge=True),
+                      {'op': 'score', 'problem': 'P', 'ideas': ['A dog that files taxes', 'A dog that reviews mugs'],
+                       'obvious': ['Dog in a sweater', 'Dog with a mug'], 'bannedWords': banned, 'judge': True,
+                       'namespace': 'growth-heartside'}),
+            'record': (dict(items_file=items), {'op': 'record', 'items': ['The caption that went live'],
+                                                'label': 'at will 2026-11-18', 'namespace': 'growth-heartside'}),
+        }
+        for op, (kw, expected) in cases.items():
+            with self.subTest(op=op):
+                stub = AtWillStub(answer={'ok': True, 'results': [{'status': 'accepted'}] * 2} if op == 'score' else None)
+                code, out, _ = self.consult(op, stub, **kw)
+                self.assertEqual(code, 0)
+                self.assertEqual(stub.calls[0][0], expected)
+                self.assertEqual(len(stub.calls), 1)  # never retried
+                self.assertTrue(json.loads(out)['ok'])
+        self.assertEqual(divergent._marker(self.root).get('last_diverge_day'), '2026-11-18')  # the daily report skips
+
+    def test_banned_words_are_this_engines_own_lists(self):
+        self.assertEqual(set(divergent.banned_words(growth)), set(growth.BANNED) | set(growth.SLOP))
+
+    def test_lane_sets_the_namespace_and_a_bad_lane_is_refused(self):
+        stub = AtWillStub()
+        self.assertEqual(self.consult('map', stub, problem='P', lane='jokes')[0], 0)
+        self.assertEqual(stub.calls[0][0]['namespace'], 'growth-heartside:jokes')
+        stub = AtWillStub()
+        code, _, err = self.consult('map', stub, problem='P', lane='Bad Lane!')
+        self.assertEqual((code, stub.calls), (2, []))
+        self.assertIn('--lane', err)
+
+    def test_score_exits_1_when_anything_is_flagged(self):
+        ideas = self.file('ideas.txt', 'one\ntwo\n')
+        stub = AtWillStub(answer={'ok': True, 'results': [{'status': 'accepted'}, {'status': 'rejected_archive'}]})
+        code, out, _ = self.consult('score', stub, problem='P', ideas_file=ideas)
+        self.assertEqual(code, 1)
+        self.assertEqual(json.loads(out)['results'][1]['status'], 'rejected_archive')
+
+    def test_refusals_caps_and_uncalibrated_exit_2_with_the_reason_on_stderr(self):
+        for error in (ProtocolError('daily_diverge_cap_reached', 429), ProtocolError('embedder_uncalibrated', 503),
+                      ProtocolError('connection_failed')):
+            with self.subTest(code=error.code):
+                stub = AtWillStub(error=error)
+                code, out, err = self.consult('provoke', stub, problem='P')
+                self.assertEqual((code, out), (2, ''))
+                self.assertIn(error.code, err)
+                self.assertEqual(len(stub.calls), 1)
+
+    def test_held_refuses_generating_ops_but_score_and_record_run(self):
+        for op in divergent.GENERATING:
+            with self.subTest(op=op):
+                stub = AtWillStub(held=True)
+                code, _, err = self.consult(op, stub, problem='P', idea='I')
+                self.assertEqual((code, stub.calls), (2, []))
+                self.assertIn('holds this engine', err)
+        self.assertEqual(divergent._marker(self.root), {})
+        stub = AtWillStub(held=True, answer={'ok': True, 'results': [{'status': 'accepted'}]})
+        self.assertEqual(self.consult('score', stub, problem='P', ideas_file=self.file('i.txt', 'one'))[0], 0)
+        stub = AtWillStub(held=True)
+        self.assertEqual(self.consult('record', stub, items_file=self.file('r.txt', 'live words'))[0], 0)
+        self.assertEqual(stub.directive_reads, 0)
+
+    def test_an_unread_directive_never_generates(self):
+        stub = AtWillStub(directive_error=ProtocolError('connection_failed'))
+        code, _, err = self.consult('diverge', stub, problem='P')
+        self.assertEqual((code, stub.calls), (2, []))
+        self.assertIn('hold could not be ruled out', err)
+
+    def test_not_served_is_exit_2_with_no_call(self):
+        stub = AtWillStub(served=False)
+        code, out, err = self.consult('score', stub, problem='P', ideas_file=self.file('i.txt', 'one'))
+        self.assertEqual((code, out, stub.calls), (2, '', []))
+        self.assertIn('not served', err)
+        out, err = io.StringIO(), io.StringIO()  # no token in the environment: no client, no call
+        code = divergent.consult('map', self.args(problem='P'), growth, env={}, out=out, err=err)
+        self.assertEqual((code, out.getvalue()), (2, ''))
+        self.assertIn('no Control Center engine token', err.getvalue())
+
+    def test_the_command_line_reaches_consult(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            env = dict(os.environ, CONTROL_CENTER_ENGINE_TOKEN='')
+            import subprocess
+            run = subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), '..', 'growth.py'), 'divergent',
+                                  'map', '--problem', 'P'], capture_output=True, text=True, env=env, cwd=tmp)
+        self.assertEqual(run.returncode, 2)
+        self.assertEqual(run.stdout, '')
+        self.assertIn('not consulted', run.stderr)

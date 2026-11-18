@@ -7,7 +7,7 @@ from pathlib import Path
 from . import assets, ledger, offers
 
 
-COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library', 'cc', 'attribution', 'examples', 'social', 'drive', 'floor', 'still', 'ads'}
+COMMANDS = {'readiness', 'assets', 'render', 'metrics', 'creatives', 'ledger', 'dashboard', 'reporting-access', 'run', 'snapshot', 'insights', 'provider', 'bundle', 'events', 'library', 'cc', 'attribution', 'examples', 'social', 'drive', 'floor', 'still', 'ads', 'divergent'}
 
 
 def add_commands(sub):
@@ -42,6 +42,14 @@ def add_commands(sub):
     rev.add_argument('--template', action='store_true', help='print the review file to fill in: every verdict the floor is owed')
     chk = steps.add_parser('check', help="the floor's still checks on one roll; exit 1 names each failure with Krish's words")
     chk.add_argument('roll'); chk.add_argument('--stage', choices=['prompt', 'review'], default='review')
+    dv = sub.add_parser('divergent', help='Consult divergent-thinker at will through Control Center; prints its JSON, writes nothing to his list (docs/ENGINE.md)')
+    dv.add_argument('op', choices=['map', 'provoke', 'challenge', 'diverge', 'score', 'record'])
+    dv.add_argument('--problem', help='the problem (every op but record)'); dv.add_argument('--context')
+    dv.add_argument('--idea', help='the idea to attack (challenge)'); dv.add_argument('--ideas-file', help='score: a JSON list or one idea per line')
+    dv.add_argument('--obvious-file', help='score: the obvious answers, a JSON list or one per line'); dv.add_argument('--items-file', help='record: what shipped, a JSON list or one per line')
+    dv.add_argument('--cliche', action='append', help='a move to steer away from (repeatable; provoke, diverge)'); dv.add_argument('--count', type=int)
+    dv.add_argument('--target'); dv.add_argument('--temperament'); dv.add_argument('--lane', help='namespace growth-heartside:<lane>')
+    dv.add_argument('--judge', action='store_true', help='score: ask for the judge too')
     events = sub.add_parser('events'); events.add_argument('action', choices=['import']); events.add_argument('file')
     sub.add_parser('reporting-access')
     cc = sub.add_parser('cc', help='Control Center protocol loop: start, run, finish; kits keeps AEO-Engine\'s win kits; queue lists answers to apply (docs/ENGINE.md)')
@@ -180,6 +188,9 @@ def run(args, growth):
         return
     if args.cmd == 'still':
         return still(args, growth, root)
+    if args.cmd == 'divergent':
+        from . import divergent
+        raise SystemExit(divergent.consult(args.op, args, growth, root=root))
     if args.cmd == 'events':
         from . import operations
         from . import divergent

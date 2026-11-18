@@ -94,6 +94,15 @@ Exit 0 is a pass, 1 is flagged (fix the line or say why not on the board), 2 is 
 
 **divergent-thinker for recovery plays and the screen** (dormant until Control Center serves `features.divergent`). At U4 or U5 with nothing proposed, the daily report asks divergent-thinker once for three recovery plays, holds any that fail this engine's copy, claims and consent checks, and proposes the best one as a plan behind `strategy`; the joke lab's screen and `events import` use its zero-call `score` and `record`. It never posts, sends or spends: `docs/ENGINE.md`, "Consulting divergent-thinker".
 
+**Consult divergent-thinker at will.** Any session here may ask it directly, not only at those triggers: `python3 growth.py divergent <op> --problem "..."` (`map`, `provoke`, `challenge`, `diverge`, `score`, `record`; `--lane <name>` files it under `growth-heartside:<name>`). Reach for it when:
+- a concept or brief keeps returning the same family of jokes or plays: `map` (1 call) to see the obvious, then `provoke` (2 calls, about $0.15);
+- before committing a campaign angle: `challenge --idea "..."` (3 calls);
+- a joke or caption feels like a retread: `score --ideas-file` (free), exit 1 means something was flagged;
+- after anything goes live: `record --items-file` (free);
+- only for a real reset, `diverge` (about 25 calls, about $1.30, one a day for this engine, shared with the daily report). At U4 and U5 the daily report already does it.
+
+It prints Control Center's JSON; exit 2 means not served, held (only `score` and `record` run while Krish holds the engine), unreachable, capped or uncalibrated, with the reason on stderr, and it never retries. The walls hold: a result is for the session to read, never written to his list; a spark reaches Krish only through the normal proposal path after this repository's copy, claims and consent checks, and nothing posts, sends or spends. Krish's own Claude sessions can use the Control Center connector tools `divergent_score`, `divergent_record` and `divergent_run` with namespace `growth-heartside`.
+
 **Asks reach his one list** (Ruling, Krish, 2026-11-14: "I want wave 3 now", I-24). Decision, spend, copy and delete asks go in `review/queue.json` and reach his list in Control Center through the daily run; the board below keeps posts and their media (`docs/REVIEW-BOARD.md`).
 
 **Krish reviews on one board** (Krish, 2026-11-10: "You need to create a system of review where I can easily just tick yes or no for things that you think are ready. You just keep adding to that board as often as you can, and so do your sub-sessions."). Every session puts what is ready for him on the review board and reads his answers back from it: `docs/REVIEW-BOARD.md`.

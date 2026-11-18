@@ -433,3 +433,138 @@ def recovery(*, root, growth, client, body, features, state, organic, north_star
     elif chosen is None:
         out['activity'].append('No divergent-thinker spark passed this engine\'s checks, so none is proposed.')
     return out
+
+
+# ---------------------------------------------------------------------------
+# At will: `growth.py divergent <op>`, for any session in this repository.
+# ---------------------------------------------------------------------------
+OPS = ('map', 'provoke', 'challenge', 'diverge', 'score', 'record')
+GENERATING = ('map', 'provoke', 'challenge', 'diverge')  # model calls: refused while Krish holds the engine
+OP_TIMEOUTS = {'diverge': DIVERGE_TIMEOUT, 'provoke': 120, 'challenge': 120, 'map': 90}
+LANE = re.compile(r'^[a-z0-9][a-z0-9_-]{0,39}$')
+
+
+class Refused(Exception):
+    """An at-will call that does not go out: the one-line reason goes to stderr and the command exits 2."""
+
+
+def read_list(path):
+    """A JSON list of strings, or one item per non-blank line."""
+    text = Path(path).read_text(encoding='utf-8')
+    try:
+        value = json.loads(text)
+    except ValueError:
+        value = None
+    if isinstance(value, list):
+        return [' '.join(str(v).split()) for v in value if str(v).strip()]
+    if value is not None:
+        raise Refused(f'{path} is JSON but not a list')
+    return [' '.join(line.split()) for line in text.splitlines() if line.strip()]
+
+
+def namespace_for(lane):
+    if lane is None:
+        return NAMESPACE
+    if not LANE.match(lane):
+        raise Refused('--lane takes lowercase letters, digits, - and _ (up to 40)')
+    return f'{NAMESPACE}:{lane}'
+
+
+def at_will_body(op, args, growth, today=None):
+    """The request body for one at-will op, from the parsed command line. Raises Refused on a usage problem."""
+    if op not in OPS:
+        raise Refused(f'unknown op {op}')
+    get = lambda name: getattr(args, name, None)  # noqa: E731
+    problem = ' '.join(str(get('problem') or '').split())
+    if op != 'record' and not problem:
+        raise Refused(f'{op} needs --problem')
+    body = {'op': op, 'namespace': namespace_for(get('lane'))}
+    if op != 'record':
+        body['problem'] = problem
+    if op in ('map', 'provoke', 'challenge', 'diverge') and get('context'):
+        body['context'] = get('context')
+    if op == 'challenge':
+        idea = ' '.join(str(get('idea') or '').split())
+        if not idea:
+            raise Refused('challenge needs --idea')
+        body['idea'] = idea[:IDEA_CHARS]
+    if op in ('provoke', 'diverge'):
+        if get('count') is not None:
+            body['count'] = int(get('count'))
+        if get('cliche'):
+            body['cliches'] = _strings(get('cliche'), OBVIOUS_MAX, OBVIOUS_CHARS)
+        for name in ('target', 'temperament'):
+            if get(name):
+                body[name] = get(name)
+    if op in ('score', 'provoke', 'diverge'):
+        body['bannedWords'] = banned_words(growth)
+    if op == 'score':
+        if not get('ideas_file'):
+            raise Refused('score needs --ideas-file')
+        ideas = [i[:IDEA_CHARS] for i in read_list(get('ideas_file'))]
+        if not ideas or len(ideas) > IDEAS_MAX:
+            raise Refused(f'score takes 1 to {IDEAS_MAX} ideas; {get("ideas_file")} has {len(ideas)}')
+        body['ideas'] = ideas
+        if get('obvious_file'):
+            body['obvious'] = _strings(read_list(get('obvious_file')), OBVIOUS_MAX, OBVIOUS_CHARS)
+        if get('judge'):
+            body['judge'] = True
+    if op == 'record':
+        if not get('items_file'):
+            raise Refused('record needs --items-file')
+        items = _strings(read_list(get('items_file')), RECORD_MAX, IDEA_CHARS)
+        if not items:
+            raise Refused(f'{get("items_file")} has no items')
+        body['items'] = items
+        body['label'] = f'at will {(today or dt.date.today()).isoformat()}'
+    return body
+
+
+def is_held(client):
+    """True when today's directive says Krish holds this engine. Raises Refused when it cannot be read."""
+    from . import engine_state
+    try:
+        directive = client.directive()
+    except ProtocolError as error:
+        raise Refused(f'divergent-thinker not consulted: the directive was unread ({error.code}), so a hold could not '
+                      'be ruled out.') from None
+    return engine_state.held((directive or {}).get('directive') or {})
+
+
+def consult(op, args, growth, client=None, env=None, out=None, err=None, root=None, today=None):
+    """Run one at-will op. Prints Control Center's JSON to `out` and returns the exit code: 0 ok, 1 when score flags
+    any idea (status not accepted), 2 when not served, held, unreachable, capped, uncalibrated or misused (the reason
+    on `err`). Never retries, never writes to Krish's list."""
+    import sys
+    out, err = out or sys.stdout, err or sys.stderr
+    try:
+        body = at_will_body(op, args, growth, today)
+        if client is None:
+            client, note = served_client(env)
+            if client is None:
+                raise Refused(note)
+        else:
+            try:
+                features = client.capabilities()
+            except ProtocolError as error:
+                raise Refused(f'divergent-thinker not consulted: Control Center capabilities unread ({error.code}).') from None
+            if not served(features):
+                raise Refused(NOT_SERVED)
+        if op in GENERATING and is_held(client):
+            raise Refused(f'Krish holds this engine, so only score and record run; {op} was not asked.')
+        if op == 'diverge' and root is not None:
+            _mark(root, (today or dt.datetime.now(dt.timezone.utc).date()).isoformat())  # the daily report then skips it
+        try:
+            answer = call(client, body, timeout=OP_TIMEOUTS.get(op, SCORE_TIMEOUT))
+        except ProtocolError as error:
+            raise Refused(f'divergent-thinker refused or was unreachable ({error.code}'
+                          + (f', HTTP {error.status}' if error.status else '') + ').') from None
+    except (Refused, OSError, ValueError) as error:
+        print(str(error), file=err)
+        return 2
+    print(json.dumps(answer, indent=2, ensure_ascii=False), file=out)
+    if op == 'score':
+        results = answer.get('results') if isinstance(answer, dict) else None
+        if not isinstance(results, list) or any(not isinstance(r, dict) or r.get('status') != 'accepted' for r in results):
+            return 1
+    return 0

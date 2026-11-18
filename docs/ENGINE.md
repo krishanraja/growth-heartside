@@ -410,6 +410,26 @@ one activity line and never fails the run. Nothing here posts, sends or spends: 
 go-live and goes back to him ("Autonomy" in `AGENTS.md`). `python3 -m unittest tests.test_divergent` proves it
 against stubs and the local stand-in.
 
+**At will.** Any session can consult it directly with `python3 growth.py divergent <op> [options]` (`consult` in
+`engine/divergent.py`), on the same served check and bearer:
+
+| Op | Options | Cost |
+|---|---|---|
+| `map` | `--problem`, `--context` | 1 model call |
+| `provoke` | `--problem`, `--context`, `--count`, `--cliche` (repeatable), `--target`, `--temperament` | 2 calls, about $0.15 |
+| `challenge` | `--problem`, `--idea`, `--context` | 3 calls |
+| `diverge` | as `provoke` | About 25 calls, about $1.30, one a day for this engine (it writes the daily marker, so the report skips that day) |
+| `score` | `--problem`, `--ideas-file` (JSON list or one per line, up to 100), `--obvious-file`, `--judge` | Free with `--obvious-file` |
+| `record` | `--items-file` | Free |
+
+`--lane <name>` sets the namespace to `growth-heartside:<name>` (default `growth-heartside`). `bannedWords` is always
+`growth.py`'s `BANNED` and `SLOP`. It prints Control Center's JSON and exits 0, or 1 when `score` flags any idea
+(status not `accepted`), or 2 when the route is not served, the engine is held (only `score` and `record` run then;
+the directive is read first, and an unread directive never generates), Control Center is unreachable, a cap (429) or
+the embedder (503) refuses, or the command is misused, with the reason on stderr. It never retries and never writes
+to Krish's list: a spark becomes a proposal only through the normal path and its walls. Control Center caps this engine
+at 20 quick calls and $5 a day.
+
 ## Verified conversion media
 
 The renderer also accepts `intent: buy` with one declared unit of a live gift,
