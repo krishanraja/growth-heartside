@@ -115,6 +115,8 @@ Source: `krishanraja/higgsfield-generator`, `higgsfield-generate/references/prom
 
 - Kling 3.0: 12 to 15 minutes a job on the evening of 17 Nov (7 minutes in the morning). Nano Banana: about 5 minutes.
 - Nano Banana outputs 768x1344.
+- Kling 3.0 cannot fake one object hitting another: a branch against bridge rails passed straight through the posts
+  (18 Nov). Plan shots where only the dog moves things it can really move.
 - The Codex in-app browser sometimes cannot attach to the image page while the video page works (17 Nov 15:49). If so,
   run the shot as Kling text-to-video, or wait for Krish to reattach.
 

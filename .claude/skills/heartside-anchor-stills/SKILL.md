@@ -104,9 +104,12 @@ Before sending, check every prompt:
    frame. Extract that frame with
    `ffmpeg -sseof -0.1 -i <clip> -frames:v 1 <STUDIO>/stills/<id>_s<N>_start.png`, then let Codex reuse it via History,
    not an upload. A clip forced between two set frames (start and end) warps most, so make two takes of it.
-4. Check every head turn frame by frame. Kling 3.0 morphed the terrier's head as it turned toward the lens while the
+4. Plan the shot that stages the joke: the visible consequence, or a reaction shot from the dog the joke lands on
+   (`heartside-joke-lab`, writing rules). Never plan object-on-object physics: in the 18 Nov bridge test Kling 3.0
+   snapped a branch horizontal and passed it straight through both rail posts. Don't spend on a stick against rails.
+5. Check every head turn frame by frame. Kling 3.0 morphed the terrier's head as it turned toward the lens while the
    other dog passed behind (`b2-gy-04`, from 3.4 s). Trim before the morph rather than re-running the clip.
-5. Every video line in the log names its anchor:
+6. Every video line in the log names its anchor:
    `b2-<set>-NN | DONE asset <id> | Kling 3.0 Unlimited | from anc-<set>_t<N>`.
 
 ## Stop conditions

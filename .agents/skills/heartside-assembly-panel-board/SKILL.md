@@ -26,7 +26,14 @@ python cut.py gate <id>                                   # re-run every gate on
   If a label covers the dog's face, recrop the shot with `--frame` and leave the label where it is.
 - A take can be a path to a bank clip (`s1=<STUDIO>/kling3/b2-rv-06.mp4`), so bank footage cuts without renaming.
 - The end card is the store's own render or a painted product, pixels unaltered, held 3 to 4 seconds. Use
-  `--ground plain` for a cream ground behind it.
+  `--ground plain` for a cream ground behind it. On 18 Nov both tiers flagged every film's end card (the painted
+  blanket on plain cream) as bolted on. Give the product a reason to be there: the blanket shows the film's own dog,
+  or the product sits in the dog's world in the last shot. Never add a line that only sells: "Gary also got the
+  blanket." scored 7 against 8 without it.
+- When a look lands at the very end of a clip, hold the last frame for 1 s before the cut:
+  `ffmpeg -v error -i <clip> -vf tpad=stop_mode=clone:stop_duration=1 <clip-held>.mp4`, then pass the held clip as the
+  take (`s2=<path>`). Time each label against the frame where the look actually lands (read it on the contact sheet),
+  never against the prompt.
 - A label longer than two lines fails the gate. Split it across two beats with the words unchanged, never reword it
   at the cut. The caption comes from the joke lab with the labels; never write one at assembly.
 - Fonts missing (Karla): `python factory/fetch_library.py local/assets/library` from the repository, then rebuild.
@@ -61,8 +68,9 @@ count every paint in `<STUDIO>/log-painter.md`.
    Any no sends it back with the failing frame.
 3. Tier 2, Sonnet sub-agent, only on tier 1 survivors: `python factory/panel.py brief tier2 <sheet>`. The brief
    carries every live post; confirm it lists `V005` before you trust the score. Judge the film as a film even when
-   its words scored 9: on 18 Nov the gym film fell to 7 (it retread the live V005 "gym era") and the waitlist film to
-   6 (the yoga mat made a real play-bow read as a staged pose).
+   its words scored 9: on 18 Nov the gym film fell to 7 (it retread the live V005 "gym era"), the waitlist film to 6
+   (the yoga mat made a real play-bow read as a staged pose), and three more to 6, 6 and 8 because the joke lived only
+   in the labels. The film judge wants a visible consequence, or a reaction shot from the dog the joke lands on.
 4. Give the judge the brief and the sheet only. Add no context that excuses anything: "fully human acts are allowed"
    moved a retread from 7 to 9 on 17 Nov, and Krish declined it.
 5. Record both (three arguments: slot, tier, verdict):
