@@ -914,6 +914,38 @@
    "applies_to": [
     "reel"
    ]
+  },
+  {
+   "id": "premium-end-card",
+   "date": "2026-11-18",
+   "made": "The influencer-parody films ended on the painted blanket render, small and off-centre on a plain cream ground, with no brand mark or call to action",
+   "words": [
+    "videos are great, I think the final frame just needs to be a lot more premium and have the heartside icon on it with a \"your dog's gifts for you, link in bio\" type CTA?"
+   ],
+   "category": "presentation",
+   "rule": "Ruling (Krish, 2026-11-18): a film's end card is premium and branded: the official icon's burgundy ground, the approved icon unaltered, the store's painted render centred and untouched (scale and push-in only), and a short serif line with a LINK IN BIO call to action, all inside the critical box (docs/briefs/2026-11-18-influencer/endcard.py).",
+   "check": "review: the last frame shows the official icon, the real render centred, and a call to action naming the bio link; nothing outside the critical box",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
+   "id": "volume-week-via-connector",
+   "date": "2026-11-18",
+   "made": "Buffer's queue had been empty since 15 Nov; 11 approved reels waited on songs Krish was to add in the app",
+   "words": [
+    "get these scheduled with buffer for the next 3 days starting now on all channels",
+    "volume and performance is critical",
+    "Public files + connector (Recommended)"
+   ],
+   "category": "process",
+   "rule": "Ruling (Krish, 2026-11-18): for the week of 18 to 25 Nov, Claude schedules 15 posts a day (5 per platform on TikTok, Instagram and Facebook) through the Buffer connector, from media hosted as a public GitHub release on growth-heartside, approved in chat as one batch. Approved reels whose in-app song could not be added get a cleared Epidemic track baked in; still memes come from Codex's built-in image generation (realistic only) under the house meme layout (factory/meme.py).",
+   "check": "process: every scheduled post is in local/publish/plan.json with its Buffer id; Buffer readback shows 105 scheduled posts for the week",
+   "applies_to": [
+    "reel",
+    "meme",
+    "still"
+   ]
   }
  ],
  "open_conflicts": [],
