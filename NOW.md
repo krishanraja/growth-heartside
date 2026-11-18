@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- Two gift-led joke lab rounds ("Yes, start it", Krish, 18 Nov) topped out at 8 as described films (seven 8s in round 2); shelved under heartside-joke-lab step 7 for the same reason as the picture-first rounds: labels over real dog behaviour read as live F38 to F40. No credits spent. All four rounds' judged scripts are filed in docs/briefs/2026-11-18-films/ with the handoff. (2026-11-18)
 - A second, picture-first round ("New round", Krish, 18 Nov) produced two scripts at 9 as described films; built through the Higgsfield MCP, they scored 8 and 7 as films, and the approach is shelved after two rounds capped at 8 for one reason: the product card is cold and disconnected, and a single beat is thin. Filed in docs/briefs/2026-11-18-films/README.md; 58 of the 150-credit cap used. (2026-11-18)
 - The 02:35Z lessons of the night run are now in the video skills: - the picture must stage the joke, and a 9 on the words is a shortlist, not a forecast; - the end card needs a reason to be there, with no sales-only line; - a look that lands at a clip's end gets the last frame held for 1 s, with labels timed to it; - Kling cannot fake object-on-object physics. They are in `heartside-joke-lab`, `heartside-assembly-panel-board`, `heartside-anchor-stills` and `heartside-higgsfield-ui`. (2026-11-18)
 - The 17 to 18 Nov sprint night made the anchor-still footage bank and cut six films; none reached 9 (best: st-bowl-c18 at 8), so nothing went on the review board. Everything is filed in docs/briefs/2026-11-18-films/README.md: the films, the scores and why, suggested captions and music, every Higgsfield asset id with its verdict, and the credits (25 of a 150 cap through the MCP after Kling 3.0 Unlimited closed). (2026-11-18)
@@ -75,7 +76,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-18): brief a joke lab round that starts from the gift, where the dog's own face on the blanket, mug or portrait is the payoff, with three or four escalating beats.
+- Next (2026-11-18): Krish judges the strongest 8s himself (films st-bowl-c18 and st-v2-c07; gift 2 scripts c05, c14, c15) so the model judge can be recalibrated against his verdicts.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
