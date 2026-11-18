@@ -58,6 +58,16 @@ SPRINTS = f'{HERE}/sprints'
 FAMILIES = {
     'alibi': {'prior': 3.0, 'what': 'the evidence first (the crime scene in frame), then the deadpan denial or inflated '
                                     'human explanation ("He has an alibi.", "He would like it noted...")'},
+    # Ruling (Krish, 2026-11-18): realistic dogs doing realistic dog things, cut to parody a cringey human influencer
+    # stereotype, is the house series. F38 (4 AM routine) drew 2,314 TikTok and 2,102 Instagram views against a floor of
+    # 100 to 300; nothing else came close. Each film takes a stereotype no live post has used (floor
+    # influencer-parody-is-the-series).
+    'influencer_parody': {'prior': 3.5, 'what': 'a cringey human influencer stereotype (5 AM hustle routine, day in the '
+                                                'life of doing very little, aesthetic sadness, humblebrag, toxic positivity '
+                                                'walk-and-talk, engagement bait, "obsessed" product push, fake relatable '
+                                                'transition, main character in public, over-performed relationship) cut '
+                                                'from 8 to 11 shots, each a distinct active real dog behavior relabelled as '
+                                                'one ritual of that stereotype'},
     'format_parody': {'prior': 2.5, 'what': 'the words parody a self-important human format (LinkedIn post, memo, policy, '
                                             'press statement, TED talk) while the dog does an ordinary real dog thing'},
     'rule_lawyer': {'prior': 2.0, 'what': 'the dog has read the rule very carefully and obeys its letter while destroying '
@@ -80,15 +90,31 @@ HUMAN_ACT = re.compile(r'\b(hoodie|vest|suit|tie|glasses|sunglasses|laptop|typ(?
                        r'drinks? coffee|lifts? weights|human arms?|wears?|wearing|dressed)\b', re.I)
 TOKEN = re.compile(r"[a-z0-9']+")
 
-# The format a live post owns. Wording can differ completely while the premise is the same (17 Nov: "4:00 a.m. Up before
-# the sun." against F38's "Up at 4. Aligned with stakeholders by 5:32"), so a format is matched on its shape.
+# The premise a live post owns. Wording can differ completely while the premise is the same (17 Nov: "4:00 a.m. Up before
+# the sun." against F38's "Up at 4. Aligned with stakeholders by 5:32"), so a premise is matched on its subject.
+# Ruling (Krish, 2026-11-18): the retread rule bars the same stereotype again, never the format. Timestamped labels over a
+# real dog are the house series (floor influencer-parody-is-the-series); only a stereotype a live or locked post already
+# used is a retread. Add a row here whenever a new stereotype goes live.
+TAKEN_STEREOTYPES = {
+    'F38': ('the 4 AM / morning routine', r'\b(4|5|four|five) ?a\.?m\.?\b|morning routine|rise and grind|up before (the sun|dawn)|cold plunge'),
+    'F40': ('the Monday morning', r'\bmonday\b'),
+    'F41': ('the Christmas shopping trip', r'christmas shopping'),
+    'F42': ('the Black Friday haul review', r'black friday|\bhaul\b'),
+    'F43': ('the 9 to 5 work-from-home day', r'\b9 ?to ?5\b|nine to five|work from home|\bwfh\b|\bslack\b|out of office'),
+    'F44': ('the Sunday reset', r'sunday reset|factory settings'),
+    'V005': ('the gym era', r'\bgym\b'),
+}
+
+
+def _mentions(pattern):
+    return lambda c: bool(re.search(pattern, candidate_text(c), re.I))
+
+
 FORMAT_SIGNATURES = {
-    'F38-F40 dog routines': ('a timestamped routine', lambda c: sum(bool(re.match(r'\s*\d{1,2}(:\d{2})?\s*(a\.?m\.?|p\.?m\.?|\.|,)', w, re.I))
-                                                                     for w in c.get('words') or []) >= 2
-                             or bool(re.search(r"\b(4|four) ?a\.?m\.? routine|morning routine\b", candidate_text(c), re.I))),
-    'F34': ('a dogs\' group chat', lambda c: bool(re.search(r'group chat|whatsapp|\bchat\b', candidate_text(c) + ' ' + c.get('dog_does', ''), re.I))
+    **{live_id: (f'{what}, the stereotype of', _mentions(pattern)) for live_id, (what, pattern) in TAKEN_STEREOTYPES.items()},
+    'F34': ('a dogs\' group chat, the format of', lambda c: bool(re.search(r'group chat|whatsapp|\bchat\b', candidate_text(c) + ' ' + c.get('dog_does', ''), re.I))
             and c.get('family') != 'group_roast'),
-    'yt:u7s47cIeh6M': ('a song staged literally with human arms', lambda c: bool(re.search(r'9 to 5|hidden (person|human)|human arms', c.get('dog_does', ''), re.I))),
+    'yt:u7s47cIeh6M': ('a song staged literally with human arms, the format of', lambda c: bool(re.search(r'9 to 5|hidden (person|human)|human arms', c.get('dog_does', ''), re.I))),
 }
 
 
@@ -256,7 +282,7 @@ def gates(c, live, kept):
         retread.append(f'its words are close to live post {best[1]} (similarity {best[0]:.2f})')
     for live_id, (shape, match) in FORMAT_SIGNATURES.items():
         if match(c):
-            retread.append(f'it uses {shape}, the format of live post {live_id}')
+            retread.append(f'it uses {shape} live post {live_id}')
     declared = (c.get('closest_live_post') or 'none').strip()
     if declared.lower() not in ('none', 'no', 'n/a', ''):
         retread.append(f'its writer named live post {declared} as its closest')

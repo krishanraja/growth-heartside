@@ -16,9 +16,12 @@ traps that cost 17 Nov about 5 hours.
 3. The floor's joke and concept entries: `python growth.py floor --format reel`.
 4. What he has said yes and no to: `python factory/jokelab.py taste`.
 5. The families that earn: alibi leads (`docs/audits/2026-11-15-interest-vs-paid.md`).
-6. The live posts. A new piece must not retread one (`no-retread-of-live-post`). F38 "My dog's 4 AM routine" owns
-   "LinkedIn parody over a real dog". On 17 Nov 121 LinkedIn scripts all capped at 8 against it. Do not brief that
-   format again unless the brief names how it beats F38.
+6. The live posts. A new piece must not retread one's premise (`no-retread-of-live-post`): the same stereotype again,
+   such as another 4 AM routine. The format is not a retread (Ruling, Krish, 2026-11-18, floor
+   `influencer-parody-is-the-series`): realistic dogs doing realistic dog things, cut to parody a cringey human
+   influencer stereotype, is the house series and the only format that has broken out (F38). Brief it on a stereotype
+   no live post has used (the screen's `TAKEN_STEREOTYPES` lists the used ones), as 8 to 11 distinct, active dog
+   behaviors each relabelled as one ritual of that stereotype.
 7. Fresh territory Krish named on 17 Nov, one stereotype per set:
    - the fake candid routine;
    - the "OMG I'm obsessed" reviewer;
