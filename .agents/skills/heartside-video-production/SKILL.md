@@ -50,10 +50,14 @@ Words and footage run in parallel, never one after the other (section 3).
 videos are already innate and they are realistic dogs doing real dog things ... then I'll be able to get them up to
 higher than that, with captions over the top and good music treatment". So a footage round makes one clip per approved
 anchor of real dog behavior, checks each at full size, and locks the inventory before any compile:
-- clips in `local/footage/clips/`, anchors in `local/footage/anchors/`, contact sheets in `local/footage/review/`,
-  prompts in `local/footage/prompts.tsv`;
-- the manifest in `docs/briefs/<date>-footage/INVENTORY.md`: clip, asset id, model, what happens, verdict, usable
-  range, known fault, caption angles, music idea. The 18 Nov round is the model.
+- raw takes in `local/footage/clips/`, anchors in `local/footage/anchors/`, prompts in `local/footage/prompts.tsv`;
+- the committed `docs/briefs/<date>-footage/manifest.json` is the source of truth: per clip an id, a slug
+  (`<setting>_<action>`), the source and its usable in and out, a beat timeline in seconds, the payoff second, the
+  fault, the poster second and the Higgsfield asset id. Write the beats from a timestamped sheet
+  (`tools/sheet.py`), never from memory, so nobody has to watch a clip to caption it.
+- `tools/build_ready.py` then cuts `local/footage/ready/FGxx_<slug>.mp4` (trimmed past the fault, 1080x1920, 30 fps,
+  silent), a poster at the payoff, a timestamped sheet, `manifest.csv` and `INDEX.jpg`; `tools/write_inventory.py`
+  writes `INVENTORY.md` with the caption angles and music ideas. The 18 Nov round is the model.
 - The 18 Nov round: 13 clips, 0 credits, about 75 minutes on Kling 2.5 Turbo Unlimited at 720p, one job at a time,
   4 to 5 minutes each (`heartside-higgsfield-ui`, "Kling 2.5 Turbo in Krish's Chrome").
 The compile session adds captions and music; the panel still judges the compiled film before the board.
