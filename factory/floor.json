@@ -899,6 +899,21 @@
    "applies_to": [
     "reel"
    ]
+  },
+  {
+   "id": "pin-both-ends",
+   "date": "2026-11-18",
+   "made": "Test clip 1, Kling 3.0 pro from one approved start still: as Gary turned, his face became a groomed schnauzer and his collar vanished after 2.5 s. Test clip 2, the same shot with a matching end still made from the same reference: he stayed the same scruffy dog throughout",
+   "words": [
+    "generate the missing shots, but do not generate shitty AI looking dogs, you should have proper anchor still images that keep things consistent. test first before wasting all my credits again",
+    "Yes, cap 200"
+   ],
+   "category": "generation",
+   "rule": "Ruling (Krish, 2026-11-18): every generated clip is pinned at both ends: a start still and an end still of the same dog in the same room, the end still made from the start still (image-to-image), then Kling 3.0 pro image-to-video with both. One test clip first, checked frame by frame, before any batch. The MCP credit cap for the 16 missing influencer-parody shots is 200.",
+   "check": "process: no clip is generated without an end still made from its own start still; each still is checked at size for a groomed face, a missing collar or a brand logo before its clip is ordered; each clip's sheet (a frame every 0.5 s) is checked before it is used",
+   "applies_to": [
+    "reel"
+   ]
   }
  ],
  "open_conflicts": [],

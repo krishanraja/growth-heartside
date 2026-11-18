@@ -1,0 +1,14 @@
+id,file,film,label,dogs,start_still,end_still,model,usable_in,usable_out,faults,verdict
+t02,TEST2-gary-texture.mp4,I am obsessed,the texture,Gary,anchors/lump.png,anchors/end-texture-t2.png,Kling 3.0 pro pinned,0.0,5.0,darker tail tip flicks top left 0.5-3.0 s,pass
+c01,c01-wake.mp4,A day in my life,a day in my life,Gary,anchors2/s01.png,anchors2/e01.png,Kling 3.0 pro pinned,0.0,5.0,Gary reads slightly more border-terrier than in the living-room clips,pass
+c02,c02-bag.mp4,A day in my life,grabbing my order,Gary,anchors2/s02.png,anchors2/e02.png,Kling 3.0 pro pinned,0.0,5.0,none seen,pass
+c03,c03-water.mp4,A day in my life,hydration,Gary,anchors2/s03.png,anchors2/e03.png,Kling 3.0 pro pinned,0.0,5.0,none seen,pass
+c04,c04-rugflop.mp4,A day in my life,getting my steps in,Gary,anchors2/s04.png,anchors2/e04.png,Kling 3.0 pro pinned,2.5,5.0,1.5-2.0 s face turns groomed white while trotting at the lens; use only the flop,partial
+c05,c05-box.mp4,I am obsessed,unboxing,Gary,anchors2/s05b.png,anchors2/e05.png,Kling 3.0 pro pinned,0.0,5.0,none seen,pass
+c06,c06-dougpaw.mp4,I am obsessed,my partner wants one,Gary + Doug,anchors2/s06.png,anchors2/e06.png,Kling 3.0 pro pinned,0.0,5.0,none seen,pass
+c07,c07-tug.mp4,Yes we're that couple,he always lets me win,Gary + Doug,anchors2/s07.png,anchors2/e07b.png,Kling 3.0 pro pinned,0.0,2.5,2.5-5 s Gary turns into a white-faced groomed schnauzer in the scramble,partial (retake running)
+c08,c08-backtoback.mp4,Yes we're that couple,space is healthy,Gary + Doug,anchors2/s08.png,,Kling 3.0 pro start only,0.0,5.0,none seen,pass
+c09,c09-chew.mp4,Yes we're that couple,he still surprises me,Gary + Doug,anchors2/s09.png,anchors2/e09.png,Kling 3.0 pro pinned,0.0,5.0,none seen,pass
+c10,c10-sofastare.mp4,Yes we're that couple,our podcast drops Friday,Gary + Doug,anchors2/s10.png,,Kling 3.0 pro start only,0.0,3.0,Doug's face shifts as he turns at 3 s,pass to 3 s
+c11,c11-roll.mp4,I am obsessed,obsessed with the fit,Gary,anchors/end-texture-t2.png,anchors2/e11roll.png,Kling 3.0 pro pinned,0.0,5.0,motion blur mid-roll 2.0-2.5 s,pass
+c07b,c07b-tug.mp4,Yes we're that couple,he always lets me win,Gary + Doug,anchors2/s07.png,anchors2/e07b.png,Kling 3.0 pro pinned (calmer retake),0.0,1.5,from 2.0 s Gary lightens into a white groomed schnauzer again; the end still itself reads lighter than Gary,fail
