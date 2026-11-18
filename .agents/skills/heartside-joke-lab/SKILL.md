@@ -84,6 +84,12 @@ Set up first: `export PYTHONIOENCODING=utf-8` (without it, `jokelab.py` crashes 
 - One script, one stereotype, one register (`one-register-never-blurred`).
 - The words carry the format. Never put a prop that names a human activity (yoga mat, desk, podium) under a real
   dog's behaviour.
+- The picture stages the joke too (floor `stage-the-joke`). Every script names its visible consequence, or a reaction
+  shot from the dog the joke lands on. On 18 Nov three scripts that scored 9 on their words scored 6, 6 and 8 as films:
+  "nature documentary", "Speak now" and "Best-trained dog". The judges read deadpan labels over a real dog as F38's
+  family, and asked for the joke to happen on screen. A 9 on the words is a shortlist, not a forecast.
+- Any end-card line ties the product to the joke, or there is none. "Gary also got the blanket." read as a sales
+  non-sequitur and scored 7 against 8 without it.
 - The caption goes through this lab with the labels, never written at the cut. On 18 Nov a caption written at
   assembly ("The investigation is ongoing. The suspect is napping.") fought the labels.
 - Each label fits two lines on screen. If a line is longer, split it across two beats with the words unchanged, and
