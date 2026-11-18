@@ -40,6 +40,8 @@ Krish: "encode them in to a skill in the repository that all future video produc
 
 The source is `.agents/skills/<name>/SKILL.md` (Codex reads it). `.claude/skills/<name>/SKILL.md` is a real copy for Claude Code, never a symbolic link: edit the source, then `cp -r .agents/skills/<name> .claude/skills/`. `python growth.py --self-test` fails while a copy differs (the fleet convention, as in content-engine). The skills point to the floor, `docs/HUMOUR.md` and `factory/README.md` rather than copying them; a new lesson goes on the floor first, then into the skill that applies it.
 
+One skill outside video: the Audience desk drafts every comment on another account's public post with `heartside-audience-comments`, which holds Krish's verdicts from the 4 to 7 Nov comment pilot.
+
 ## Autonomy (Ruling, Krish, 2026-10-19)
 
 Krish: "the engine shows me what it is going to do, I approve, it gets up to go-live and asks me to review." This engine is set to run autonomously under Control Center's growth engine protocol (`docs/control-center/ENGINE-PROTOCOL.md`, a byte-for-byte copy of Control Center's bundle whose version and hash are in `docs/control-center/bundle.json`; its "Autonomy" and "Amend" sections arrived in 1.1.0), in steps Krish answers on his one list in Control Center. The loop is not built yet (`docs/GET-GOING.md`, Step 1): today the daily report proposes and reads his decisions, and he still acts by hand. The steps:
