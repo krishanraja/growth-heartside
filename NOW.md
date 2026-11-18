@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- The engine can consult divergent-thinker through Control Center, dormant until Control Center serves `features.divergent` (control-center PR 963, merged 18 Nov). At U4 or U5 with nothing proposed, the live daily report asks it once a day for three recovery plays, holds any that fail this engine's copy, claims and consent checks (strangers' photos and AI art pitched into communities are walls, from the 18 Nov live run), and proposes the best one as a plan behind `strategy` with a `divergent-thinker spark <rank>, run <runId>` evidence item; the others stay in the activity. The joke lab's screen rejects `rejected_gravity` and `rejected_archive` candidates through its zero-call `score`, and `events import` records what went live. Until the flag is on, nothing is called and each place says so in one line (`engine/divergent.py`, `docs/ENGINE.md`, "Consulting divergent-thinker"). Any session can also consult it at will with `python3 growth.py divergent <op>` (`map`, `provoke`, `challenge`, `diverge`, `score`, `record`): it prints Control Center's JSON, exits 1 when `score` flags an idea and 2 when not served, held, capped or unreachable, and never writes to his list. (2026-11-18)
 - Two gift-led joke lab rounds ("Yes, start it", Krish, 18 Nov) topped out at 8 as described films (seven 8s in round 2); shelved under heartside-joke-lab step 7 for the same reason as the picture-first rounds: labels over real dog behaviour read as live F38 to F40. No credits spent. All four rounds' judged scripts are filed in docs/briefs/2026-11-18-films/ with the handoff. (2026-11-18)
 - A second, picture-first round ("New round", Krish, 18 Nov) produced two scripts at 9 as described films; built through the Higgsfield MCP, they scored 8 and 7 as films, and the approach is shelved after two rounds capped at 8 for one reason: the product card is cold and disconnected, and a single beat is thin. Filed in docs/briefs/2026-11-18-films/README.md; 58 of the 150-credit cap used. (2026-11-18)
 - The 02:35Z lessons of the night run are now in the video skills: - the picture must stage the joke, and a 9 on the words is a shortlist, not a forecast; - the end card needs a reason to be there, with no sales-only line; - a look that lands at a clip's end gets the last frame held for 1 s, with labels timed to it; - Kling cannot fake object-on-object physics. They are in `heartside-joke-lab`, `heartside-assembly-panel-board`, `heartside-anchor-stills` and `heartside-higgsfield-ui`. (2026-11-18)
@@ -61,6 +62,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-18 engine-made recovery plays at U5 for Krish to approve in one press; it moves no sale by itself.
 - 2026-11-18 the assembly and anchor-stills skills gained the end-card and eye-colour lessons.
 - 2026-11-18 the floor gained three rulings (MCP credit route with a cap, Chrome for Higgsfield, orchestrate without babysitting); the film judge now gets the full live list.
 - 2026-11-17 Added docs/social/2026-11-17-publishing.json only as access evidence, with this closeout. No Drive or platform writes; automation schedules unchanged.
@@ -76,7 +78,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-18): Krish judges the strongest 8s himself (films st-bowl-c18 and st-v2-c07; gift 2 scripts c05, c14, c15) so the model judge can be recalibrated against his verdicts.
+- Next (2026-11-18): once Control Center's deploy is live, run `python3 growth.py cc run --mode live` from the Actions tab and read the report's divergent lines and the one plan on his list.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
