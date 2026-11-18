@@ -27,6 +27,8 @@ python cut.py gate <id>                                   # re-run every gate on
 - A take can be a path to a bank clip (`s1=<STUDIO>/kling3/b2-rv-06.mp4`), so bank footage cuts without renaming.
 - The end card is the store's own render or a painted product, pixels unaltered, held 3 to 4 seconds. Use
   `--ground plain` for a cream ground behind it.
+- A label longer than two lines fails the gate. Split it across two beats with the words unchanged, never reword it
+  at the cut. The caption comes from the joke lab with the labels; never write one at assembly.
 - Fonts missing (Karla): `python factory/fetch_library.py local/assets/library` from the repository, then rebuild.
 
 ## 2. The painted end card (heartside.io painter, Claude in Chrome)
@@ -42,13 +44,14 @@ count every paint in `<STUDIO>/log-painter.md`.
    - use a fresh tab, because sessionStorage is per tab.
    Otherwise the painter reuses the last dog (17 Nov).
 3. Upload a dog frame at least 700 px tall. Under 700 px the painter hangs with no error. Recut the frame to
-   1080x900 or larger.
+   1080x900 or larger, with only this dog in it: the painter asks for "just your dog, no other dogs", so crop out any
+   second dog.
 4. Follow the painter's steps: Make one for my dog, the photo, Painterly, a tone, a spot, blanket only, Start painting,
    the questions, see it painted.
 5. Copy the `customers/uploads` print URL. Never add to cart.
 6. Composite it, from `local/paint`:
    `python <STUDIO>/tools/paint_composite.py <id> <dog> blanket <base layer url> <print url>`. Crop (150,85,905,970) and
-   update the JSON record.
+   update the JSON record beside the image: `cut.py gate` checks for that painter record.
 
 ## 3. Judge it (the panel)
 
@@ -56,14 +59,22 @@ count every paint in `<STUDIO>/log-painter.md`.
 2. Tier 1, Haiku sub-agent: up to 4 sheets in one image
    (`python factory/panel.py batch <sheets...> --out <png>`), prompt from `python factory/panel.py brief tier1 <png>`.
    Any no sends it back with the failing frame.
-3. Tier 2, Sonnet sub-agent, only on tier 1 survivors: `python factory/panel.py brief tier2 <sheet>`.
+3. Tier 2, Sonnet sub-agent, only on tier 1 survivors: `python factory/panel.py brief tier2 <sheet>`. The brief
+   carries every live post; confirm it lists `V005` before you trust the score. Judge the film as a film even when
+   its words scored 9: on 18 Nov the gym film fell to 7 (it retread the live V005 "gym era") and the waitlist film to
+   6 (the yoga mat made a real play-bow read as a staged pose).
 4. Give the judge the brief and the sheet only. Add no context that excuses anything: "fully human acts are allowed"
    moved a retread from 7 to 9 on 17 Nov, and Krish declined it.
 5. Record both (three arguments: slot, tier, verdict):
    `python factory/panel.py record <id> tier1 tier1-pass` (or `tier1-fail`) and
    `python factory/panel.py record <id> tier2 tier2-<N> --score <N> --note "<best beat; floor risk>"`.
-6. Before believing any judge's fault, open the frames it names at full size. Contact-sheet thumbnails produced false
-   faults on 17 Nov (a "fake" painted blanket, a "second head") next to real ones.
+6. Before believing any judge's fault, open the frames it names at full size. Tier 1 (Haiku) is often wrong from
+   thumbnails: on 18 Nov, 6 of 7 faults it named on the gym film were false. Its usual false faults:
+   - one dog occluding another, read as "merged bodies";
+   - a play-bow read as "a human pose";
+   - the store painter's real blanket read as "generated art";
+   - a payoff called "only in the captions" when the dog visibly does it.
+   A fault that holds at full size is real. On 17 Nov there was a real merged extra head beside the false ones.
 7. The tier 2 judge varies by about 1 point. A 9 that rests on one beat, or that the judge's own `floor_risk` says Krish
    would reject, is an 8: hold it.
 8. Every cut gets `python factory/jokelab.py cut <run> <cand> --score N --words <file>`. When it exits 1, stop cutting.

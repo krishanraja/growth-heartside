@@ -1,24 +1,27 @@
 ---
 name: heartside-higgsfield-ui
-description: The Higgsfield rules for Heartside generation - Unlimited models only, in the website through Codex, never credits; which settings keep a job Unlimited; what the MCP may read; how to download takes; how to write prompts the generator skill's way. Use before writing any Higgsfield order or touching the Higgsfield MCP.
+description: The Higgsfield rules for Heartside generation - Unlimited models in the website through Codex first, Krish's Chrome when Codex's browser fails, the MCP on credits only inside a cap Krish names; model URLs and settings that keep a job Unlimited; MCP prices; downloads; prompts the generator skill's way. Use before writing any Higgsfield order or touching the Higgsfield MCP.
 ---
 
 # Higgsfield on Krish's Unlimited plans
 
-The rules live on the floor: `higgsfield-browser-ui-only`, `read-unlimited-before-ordering` and
-`higgsfield-generator-method`. This skill turns them into steps.
+The rules live on the floor: `higgsfield-browser-ui-only`, `read-unlimited-before-ordering`,
+`higgsfield-generator-method`, `chrome-or-machine-for-higgsfield` and `mcp-credit-route-with-cap`. This skill turns
+them into steps.
 
-## The three routes, and the only one that generates
+## The routes, in order
 
 | Route | Use it for | Never for |
 |---|---|---|
-| The website, clicked by Codex in Krish's browser (`heartside-codex-studio`) | every generation | n/a |
-| The Higgsfield MCP | reads that never spend credits: `balance`, `show_generations`, `show_generation_by_ids` | generating, upscaling, editing, any paid call |
-| The `higgsfield` CLI (`krishanraja/higgsfield-generator`) | nothing in Heartside production | everything: it runs on credits |
+| 1. The website, clicked by Codex in Krish's attached browser (`heartside-codex-studio`) | every Unlimited generation | n/a |
+| 2. The website in Krish's Chrome (Claude in Chrome), when Codex's browser cannot reach Higgsfield | the same Unlimited-only jobs. Read the Generate button's cost before every click | any job whose Generate button shows credits |
+| 3. The Higgsfield MCP, generating | only when the Unlimited window has closed or no browser works, on credits, inside a cap Krish names for that run | any run without his cap; any job not quoted first |
+| The Higgsfield MCP, reading | `balance`, `show_generations`, `show_generation_by_ids`, cost quotes | n/a |
+| The `higgsfield` CLI | nothing in Heartside production | everything: it never sees Unlimited |
 
 Krish's words: "you are to use the browser UI only"; "Okay, you can use the MCP for stuff that doesn't reduce my
 credits. As you know, I've got unlimited usage of Kling 3.0 for the next few hours, which can only be used in the UI";
-"unlimited usage probably does not apply in the CLI". The generator skill is used for its method (section 4), never
+"unlimited usage probably does not apply in the CLI". The generator skill is used for its method (section 5), never
 its CLI.
 
 ## 1. Read today's Unlimited models first
@@ -36,9 +39,14 @@ its CLI.
    - Kling 2.5 Turbo Unlimited runs May 2026 to May 2027 (log, 16 Nov preflight).
    - Krish's fallback: "continue with the rest on kling 2.5 after midnight when kling 3.0 expires. or any other model I
      have unlimited usage of".
+   - Kling 3.0 Unlimited closed by 02:00Z on 18 Nov. In Chrome it then showed 30 credits a clip at default settings.
    - These change. Read them again every day; never order from this list.
 
-## 2. Settings that keep a job Unlimited
+## 2. Model URLs and settings that keep a job Unlimited
+
+- Open the model by its URL, never through the menus: images at `https://higgsfield.ai/ai/image?model=nano_banana`,
+  video at `https://higgsfield.ai/ai/video?model=kling3_0`. A narrow tab shows the mobile layout, which hides the
+  Unlimited control; the URL fixes it, and failing that, a viewport of at least 1440x900 and a reload.
 
 - The video page opens on a default model (Seedance) and Kling 3.0 opens at 4K and 16:9. Both are paid. Every order
   states: the model, 1080p (or 720p), 9:16, the duration, audio off, enhance off.
@@ -52,7 +60,29 @@ its CLI.
 - The balance never moves. Read it with the MCP `balance` call before and after the session (952.35 on 17 Nov) and
   log both readings.
 
-## 3. Downloading takes (Claude, MCP read plus curl)
+## 3. The MCP credit route (only inside Krish's cap)
+
+Krish, 18 Nov: "why dont you just complete this entire task in higgsfield MCP - how many credits will that take", then
+"go with a cap of 150, but make sure you do a small test to ensure the big run will be successful".
+
+1. Quote every job first (`get_cost` or `estimate_video_cost`) and give Krish a table: job, model, credits each,
+   count, total. Wait for his cap.
+2. Prices quoted on 17 and 18 Nov:
+   - Nano Banana: 1 credit.
+   - Nano Banana Pro at 2K: 2 credits.
+   - GPT Image 2.6: 0.25 credits at low quality, 2.75 at high 2K.
+   - Kling 3.0 pro, 1080p, 5 s, no sound: 8.75 credits.
+   The MCP cannot use Unlimited (`unlim.available` is false).
+3. Test small: one still, check it at full size, then one clip, check it. Only then run the rest.
+4. Log every paid job with its credits and a running total against the cap. Read `balance` before and after. The
+   account is shared: on 18 Nov 7 credits went that no Heartside job spent, so record only your own jobs, and say so
+   when the balance and your log differ.
+5. Claude Code's auto-mode check sometimes blocks an MCP `generate_image` or `generate_video` call, with no reason
+   given. Never work round it. Tell Krish in one line that he can allow those two tools in his settings, and carry on
+   by another route.
+6. The best anchor of 17 Nov came this way: Nano Banana Pro 2K, charity set (asset `b4ce2b0a`).
+
+## 4. Downloading takes (Claude, MCP read plus curl)
 
 1. Get the job: MCP `show_generation_by_ids` with `jobs: [{"index": 0, "job_id": "<asset uuid>"}]`. Or use
    `show_generations` (type video, `only_completed: true`) for the recent list.
@@ -61,7 +91,7 @@ its CLI.
 3. Log it: `echo "$(date -u +%H:%M:%SZ) | Claude | downloaded <file> (<uuid8>)" >> <STUDIO>/log.md`.
 4. Look at it at full size before calling it good (`heartside-dog-realism`).
 
-## 4. Prompts, the generator skill's way
+## 5. Prompts, the generator skill's way
 
 Source: `krishanraja/higgsfield-generator`, `higgsfield-generate/references/prompt-engineering.md`.
 
@@ -77,10 +107,11 @@ Source: `krishanraja/higgsfield-generator`, `higgsfield-generate/references/prom
 - Name only what should be in the frame. Nano Banana draws every object you name. "Phone held at the foot of the bed"
   put a phone, and a hand, in both 17 Nov bedroom anchors (`anc-gr` t1 and t2, rejected).
   - Describe the viewpoint ("seen from the foot of the bed", "seen from the dog's height"), never the device.
-  - Never write "phone", "camera", "tripod" or "charger" in an image prompt.
+  - Never write "phone", "camera", "tripod", "charger" or "hand" in any prompt, a motion prompt included: say
+    "Handheld, a slight natural drift", never "Handheld phone".
 - Count the length: `wc -c <prompt file>`. Over 900 characters is rewritten before it is sent.
 
-## 5. Facts for planning
+## 6. Facts for planning
 
 - Kling 3.0: 12 to 15 minutes a job on the evening of 17 Nov (7 minutes in the morning). Nano Banana: about 5 minutes.
 - Nano Banana outputs 768x1344.
@@ -89,7 +120,7 @@ Source: `krishanraja/higgsfield-generator`, `higgsfield-generate/references/prom
 
 ## Never
 
-- Never generate, upscale or edit through the MCP or the CLI.
+- Never generate through the MCP without Krish's cap for that run, and never through the CLI.
 - Never turn on an Unlimited switch that opens a purchase dialog, and never buy a pass.
 - Never submit while the Generate button shows a number.
 - Never retry an unverified click without checking History.

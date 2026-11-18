@@ -39,33 +39,50 @@ orders, checks the results and records the lessons. Codex's report is never proo
 
 ## How a queued message is delivered (the rule that cost 17 Nov the most)
 
-Floor: `codex-orders-end-at-review-points`, `no-file-picker-for-codex`, `share-the-unlimited-slot`.
+Floor: `codex-orders-end-at-review-points`, `orchestrate-without-babysitting`, `no-file-picker-for-codex`,
+`share-the-unlimited-slot`.
 
-A queued message runs only when Codex's current turn ends. Nothing Claude can run puts a message into a running turn:
-- `turn/steer` exists, but only on Desktop's own app-server, behind a private pipe;
-- the daemon that `codex app-server proxy` reaches does not load the thread.
+- A message queued while Codex is between turns runs at once. A message queued during a running turn waits until that
+  turn ends. Nothing Claude can run puts a message into a running turn: `turn/steer` exists only on Desktop's own
+  app-server, and the daemon `codex app-server proxy` reaches does not load the thread. Only Krish's "Send now" forces
+  it.
+- So:
+  1. Every order ends its turn at a natural review point: at most one set, or about 6 jobs (about 90 minutes of
+     Kling). End every order with "Then end the turn and tell me in one line."
+  2. Never write "do not stop to report between sets", "no pauses" or "keep going until all N are done". On 17 Nov a
+     42-job order with "Don't stop to report between sequences" ran one turn for 3 hours 20 minutes. Four later orders
+     sat behind it, and Codex kept generating a bank Claude had already replaced.
+  3. Never leave Codex idle. Queue the next order the moment a turn ends, never more than one order ahead.
+  4. A change of plan goes in the next order, written to make sense after the current turn ends ("This replaces X.
+     Do not run X.").
+- **Codex reads a prompt file when its turn starts.** An edit made after that runs only on later turns. On 17 Nov it
+  pasted the old text for `anc-gr` t1b and `anc-rv` t2. Finish every prompt file before you queue the order, or paste
+  the exact prompt inside the order.
 
-Only Krish can force a queued message in, by pressing "Send now" on it in Codex Desktop. So:
+## When a turn stops: read the exact error first
 
-1. Every order ends its turn at a natural review point: at most one set, or about 6 jobs (about 90 minutes of Kling).
-   End every order with: "Then end the turn and tell me in one line."
-2. Never write "do not stop to report between sets", "no pauses" or "keep going until all N are done". On 17 Nov a
-   42-job order with "Don't stop to report between sequences" ran one turn for 3 hours 20 minutes. Four later orders
-   sat in the queue behind it, and Codex kept generating a bank Claude had already replaced.
-3. Keep the line moving by queueing the next order straight after the current one is delivered, never more than one
-   order ahead. Two or more queued orders mean a correction waits behind all of them.
-4. A change of plan goes in the next order, not as an interruption: write it so it still makes sense after the current
-   turn ends ("This replaces X. Do not run X.").
+Krish, 18 Nov: "its stopped jut waiting for you because you are doing a fucking poor job of orchestrating codex", and
+"ok its back - get going to full autonomous completion, i have babysat you way too much".
 
-## When an order is stuck
+1. Read the tool output, not Codex's summary. Codex's summary of an error is not the error. The last few tool outputs:
+   `grep -o '"output":"[^"]\{0,300\}' <session file> | tail -5`
+2. Find the string in this table and do its fix in one step. Never re-send an unchanged order into the same error.
+3. Ask Krish only for a physical action that only he can take. Name exactly what to click, once.
 
-- If the order has not landed after 10 minutes and a wrong job is running, tell Krish in one line:
-  "In the Codex studio thread, press Send now on my queued message '<first line>'."
-- Do not investigate steering, app-server, sqlite queues or process trees. On 17 Nov a 15-minute detour into steering
-  produced nothing usable. Krish: "what are you doing? you are fucking about now surely". Krish expects messages to be
-  forced through ("you should be able to steer comments (force them through) when you need to otherwise each new
-  message you try just gets backed up in a queue"). Today the only way is his Send now, so ask him for it in one line.
-- Any Codex mechanics problem gets 5 minutes, then one line to Krish, then back to the work.
+| Exact error, or what Codex reports | What it means | Fix |
+|---|---|---|
+| "Computer Use was stopped by the user with the physical Escape key" (or "stopped with Escape") | An Escape key press on the PC sets a flag that sticks: every later turn fails on its first `cua.getState()` in 0.03 s. Re-queuing, or unlocking the PC, does not clear it (17 to 18 Nov). | One line to Krish: "Quit Codex Desktop completely, tray included, reopen it and reattach Higgsfield." Then send one order, not the backlog, and check its first submission lands. |
+| "Timed out waiting for the Browser webview to attach for this browser-use page." | After a Desktop restart, the tab attached before the restart is stale. | Order a new in-app tab at the model URL (`heartside-higgsfield-ui`, section 2). If it fails twice, use another route: Krish's Chrome (floor `chrome-or-machine-for-higgsfield`), or the MCP inside a cap (floor `mcp-credit-route-with-cap`). |
+| A fresh tab Codex opened "disconnected" | A new tab opened mid-session drops (17 Nov 23:06). | Use the tab Krish attached; never `createBrowserTab` while that tab works. |
+| No Nano Banana Unlimited control; the page looks like a phone | A narrow tab gets Higgsfield's mobile layout. | Navigate the same tab to the model URL; if needed, set the viewport to at least 1440x900 and reload. |
+| Generate shows a number ("8.75", "30") | Unlimited has closed for that model. | Submit nothing. Read the model list for Krish's fallback; if there is none, use the MCP credit route inside a cap he names. |
+| Generate clicked, but nothing new in History | The job may or may not exist. | Read History through the MCP before any retry. |
+| "Higgsfield tab is disconnected" or "unresponsive" | The browser lost Higgsfield. | One line to Krish: "Higgsfield dropped in Codex's browser; please reattach it." Then send the order again at once. |
+| Codex says "cannot reach Desktop's in-app browser" | The thread is not the one Krish attached. | Send to the attached studio thread only. |
+
+Overnight runs need the PC awake and unlocked, and nobody pressing keys on it. Check this with Krish before he leaves
+the PC, never after the first stop. Any other Codex mechanics problem gets 5 minutes, then one line to Krish
+("what are you doing? you are fucking about now surely", 17 Nov).
 
 ## Every order contains
 
@@ -74,37 +91,33 @@ Copy this block and fill it in. Leave nothing out: Codex follows the words liter
 ```
 ORDER <date>-<slug>
 Claude, <date>: <one line of what and why>.
-First read C:\Users\krish\dev\growth-heartside\.agents\skills\heartside-higgsfield-ui\SKILL.md (sections 2 and 4).
-Higgsfield website only, <image|video> page, <model> showing the Unlimited label.
+First read C:\Users\krish\dev\growth-heartside\.agents\skills\heartside-higgsfield-ui\SKILL.md (sections 2 and 5).
+Use the Higgsfield tab Krish attached, at <model URL>. Higgsfield website only, <model> showing the Unlimited label.
 Settings: <1080p>, 9:16, <N> s, audio off, enhance off, <text-to-video|image-to-video|image-to-image>.
-Prompt: paste the whole text of each file untouched.
+Prompt: paste the whole text of each file untouched (the files are final).
 Inputs: <for image jobs: which existing Higgsfield upload or History card to reuse, by asset id>.
 Jobs, one at a time, submit the next as soon as History shows the last one done:
 1. <prompt file> -> log as "<id> | s<N> | t<N> | DONE asset <uuid> | <model> Unlimited", save to <path>.
 Check the Unlimited label at the Generate button before every click. If it shows a number (credits), or the tab is
 disconnected, submit nothing and tell me in one line. Never credits, never buy a pass, never the Higgsfield connected
-tool. If a click's acceptance is unverified, say so; do not click again.
+tool. If a click's acceptance is unverified, say so; do not click again. If a tool call fails, quote its exact error.
 Then end the turn and tell me in one line.
 ```
 
 ## Never ask Codex to
 
-- **Upload a file from this computer through the website.** It opens the system file picker on Krish's screen. Krish,
-  17 Nov: "codex opened file upload, expecting an anchor image to be uploaded", then "why would you make it do that".
-  Instead, name an image already in Higgsfield: an earlier upload, or a History card's reuse option, by asset id. If
-  none exists, have Codex set the page's file input directly ("storage upload only", the way the 17 Nov shot 2 start
-  stills went in). Never the dialog.
-- **Generate through Higgsfield's connected tool or the API.** On 17 Nov at 12:29 Codex tried "Higgsfield's connected
-  tool", which rejected an Unlimited Kling job. Unlimited exists only in the website (`higgsfield-browser-ui-only`).
-- **Ask Krish to pause other jobs on the account.** The Unlimited slot is shared with his other ventures. Krish, to
-  Codex on 17 Nov: "Other jobs must continue", then "just get on with it, the other session is producing content too
-  but I am sure you can be co operative". Codex waits for the slot to free, then submits.
+- **Upload a file from this computer through the website.** It opens the system file picker on Krish's screen.
+  Krish, 17 Nov: "why would you make it do that". Name an image already in Higgsfield (an upload, or a History card's
+  reuse option, by asset id). If none exists, have Codex set the page's file input directly. Never the dialog.
+- **Generate through Higgsfield's connected tool or the API.** On 17 Nov Codex tried "Higgsfield's connected tool".
+  Credit generation is Claude's, through the MCP inside Krish's cap (`mcp-credit-route-with-cap`).
+- **Ask Krish to pause other jobs on the account.** Krish: "Other jobs must continue".
 - **Pick a model, a take or a dog.** Claude picks from the files, at full size.
-- **Run a Codex card for Higgsfield.** A card's Codex cannot reach Krish's signed-in browser; only the Desktop thread
-  can. Cards are for builds (`codex/README.md`).
+- **Run a Codex card for Higgsfield.** A card's Codex cannot reach Krish's signed-in browser.
 
 ## After each turn
 
-1. Read the turn end: `last_agent_message` of the newest `task_complete` in the session file.
+1. Read the turn end: `last_agent_message` of the newest `task_complete` in the session file. On a stop, read the
+   exact error (the section above).
 2. Check it against `<STUDIO>/log.md`. Every claimed job needs its DONE line and asset id.
-3. Update `codex/INDEX.md` if the order was a card.
+3. Queue the next order now. Update `codex/INDEX.md` if the order was a card.
