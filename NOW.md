@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- A second, picture-first round ("New round", Krish, 18 Nov) produced two scripts at 9 as described films; built through the Higgsfield MCP, they scored 8 and 7 as films, and the approach is shelved after two rounds capped at 8 for one reason: the product card is cold and disconnected, and a single beat is thin. Filed in docs/briefs/2026-11-18-films/README.md; 58 of the 150-credit cap used. (2026-11-18)
 - The 02:35Z lessons of the night run are now in the video skills: - the picture must stage the joke, and a 9 on the words is a shortlist, not a forecast; - the end card needs a reason to be there, with no sales-only line; - a look that lands at a clip's end gets the last frame held for 1 s, with labels timed to it; - Kling cannot fake object-on-object physics. They are in `heartside-joke-lab`, `heartside-assembly-panel-board`, `heartside-anchor-stills` and `heartside-higgsfield-ui`. (2026-11-18)
 - The 17 to 18 Nov sprint night made the anchor-still footage bank and cut six films; none reached 9 (best: st-bowl-c18 at 8), so nothing went on the review board. Everything is filed in docs/briefs/2026-11-18-films/README.md: the films, the scores and why, suggested captions and music, every Higgsfield asset id with its verdict, and the credits (25 of a 150 cap through the MCP after Kling 3.0 Unlimited closed). (2026-11-18)
 - Blocked by unchanged native browser availability. Read current README v6.0 and all named schedules; no phone slot due 17 November. Four channel monitor events are recorded for Claude to inspect/import; no live or metric claims. (2026-11-17)
@@ -59,6 +60,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-18 the assembly and anchor-stills skills gained the end-card and eye-colour lessons.
 - 2026-11-18 the floor gained three rulings (MCP credit route with a cap, Chrome for Higgsfield, orchestrate without babysitting); the film judge now gets the full live list.
 - 2026-11-17 Added docs/social/2026-11-17-publishing.json only as access evidence, with this closeout. No Drive or platform writes; automation schedules unchanged.
 - 2026-11-16 Updated existing morning and Sunday report automation prompts to honor the v6.0 no-Drive-write boundary, preserving their schedules and expiry. Event file docs/social/2026-11-16-publishing.json uses the existing social monitor schema; no fake post URLs or measured results.
@@ -73,7 +75,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-18): Make the next films with a planned reaction shot or visible consequence in the picture, and the product placed in the dog's world.
+- Next (2026-11-18): brief a joke lab round that starts from the gift, where the dog's own face on the blanket, mug or portrait is the payoff, with three or four escalating beats.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
