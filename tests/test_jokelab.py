@@ -68,7 +68,7 @@ class JokeLabTest(unittest.TestCase):
                        dog_does='a golden retriever stands in its water bowl at dawn')
         rec = jokelab.screen([retread] + [cand(i) for i in range(2, 4)])
         r = [x for x in rec['rejected'] if x['id'] == 'c01']
-        self.assertTrue(r and any('format of live post F38' in why for why in r[0]['reasons']), rec['rejected'])
+        self.assertTrue(r and any('stereotype of live post F38' in why for why in r[0]['reasons']), rec['rejected'])
 
     def test_a_premise_retread_is_caught_even_with_new_words(self):
         # 17 Nov: completely different wording, same premise as F38 (timestamped routine labels).
@@ -78,9 +78,18 @@ class JokeLabTest(unittest.TestCase):
         argued = cand(3, closest='F34', beats_live='the gift reveal lands as a crime confession, which F34 never had')
         rec = jokelab.screen([d1, named, argued])
         reasons = {x['id']: ' '.join(x['reasons']) for x in rec['rejected']}
-        self.assertIn('format of live post F38', reasons.get('c01', ''))
+        self.assertIn('stereotype of live post F38', reasons.get('c01', ''))
         self.assertIn('writer named live post F34', reasons.get('c02', ''))
         self.assertNotIn('c03', reasons)
+
+    def test_a_new_stereotype_in_the_routine_format_is_not_a_retread(self):
+        # Ruling (Krish, 2026-11-18): the influencer-parody format is the house series; only a used stereotype is a retread.
+        sad = cand(1, family='influencer_parody', title='Healing era',
+                   words=['6:00 pm. Healing era.', '6:01 pm. Protecting my peace.', '6:02 pm. Found a sock.'],
+                   dog_does='a scruffy terrier sulks at a rainy window, sighs, then zooms off with a sock')
+        rec = jokelab.screen([sad] + [cand(i) for i in range(2, 4)])
+        reasons = {x['id']: ' '.join(x['reasons']) for x in rec['rejected']}
+        self.assertNotIn('retread', reasons.get('c01', ''))
 
     def test_a_dressed_up_dog_is_rejected_outside_literal_staging(self):
         dressed = cand(1, dog_does='a golden retriever in a fleece vest types on a laptop')
