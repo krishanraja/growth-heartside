@@ -3,7 +3,9 @@
 Krish, 10 Nov: "You need to create a system of review where I can easily just tick yes or no for things that you
 think are ready. You just keep adding to that board as often as you can, and so do your sub-sessions."
 
-**The board:** https://claude.ai/artifact/A3tFqoYZuYAEdUrziU5wnN (private to Krish; "Heartside Review Board").
+**The board:** https://claude.ai/artifact/6kGmidNyYAnRwiSdzAtcr4 (private to Krish; "Heartside Review Board"). Krish gave this link on 18 Nov 2026; the earlier one (`A3tFqoYZuYAEdUrziU5wnN`) no longer opens from his account.
+
+**His phone posts:** https://claude.ai/artifact/17LFXNcX9QMnGGQJjLuKem ("Heartside Phone Posts"). Krish, 18 Nov: "here is the board of posts I am supposed to do myself (AI cannot add specific recognisable music to a post, I need to do that in app". A locked post whose sound is a recognisable track he adds in the app goes there, with its reel and cover links, caption, track, start, volume and sync, once its Schedule row exists. It is a static page: a session updates its `POSTS` list and republishes it.
 
 Every session working on this repository adds what it thinks is ready, as soon as it is ready, and reads Krish's
 answers back from the board. It replaces asking him in chat, and the scattered review pages.

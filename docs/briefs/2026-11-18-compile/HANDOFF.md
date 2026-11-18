@@ -78,7 +78,7 @@ The rules are in `AGENTS.md` ("Autonomy", rule 1 with the 16 to 22 Nov scoped ex
    - confirm the tier 2 brief lists `V005` and the full live list;
    - record each score with `panel.py record`;
    - check every named fault at full size before believing it.
-4. **Board.** Put the films Krish allowed (step 1) on the review board, https://claude.ai/artifact/A3tFqoYZuYAEdUrziU5wnN, as `docs/REVIEW-BOARD.md` says:
+4. **Board.** Put the films Krish allowed (step 1) on the review board, https://claude.ai/artifact/6kGmidNyYAnRwiSdzAtcr4, as `docs/REVIEW-BOARD.md` says:
    - upload the mp4 and a cover to the board's asset store;
    - `ArtifactData set` an item in `items` with the question, the caption, the tracked link (`python growth.py link "<landing url>&hook=<hook>" <CREATIVE_ID>`; find the next free creative id in `local/creatives.csv` and the Schedule) and the scores.
    - Read his verdicts from `verdicts`; never write there.
@@ -99,3 +99,12 @@ The rules are in `AGENTS.md` ("Autonomy", rule 1 with the 16 to 22 Nov scoped ex
    - **Claude's part.** Import its `docs/social/` event file (`growth.py events import`) and write `status`, `live_url`, `notes` and `Results` in the Sheet.
    - **Buffer MCP.** This session has a Buffer MCP connected (`create_post` and others). The 15 Nov ruling makes the Publishing desk the only writer to Buffer, so do not use it unless Krish rules otherwise in his own words.
 9. **Learn.** Read each post at 24 hours, 72 hours and 7 days (`docs/CHANNEL-TASKS.md`, "Publish once; learn from the result"). Record every verdict of Krish's on the floor and in his taste ledger.
+
+## Progress, 18 Nov afternoon (publishing session)
+
+- Step 1 answered. Music: Krish, "I want to hear the audio with the video to make sure its good first". Review board: "Yes, all 8 regardless" of the judge score.
+- Step 2: `mix_music.py` run for all 8 (beds as proposed in `music.json`); `<film>_music.mp4` sit beside the silent masters, which are kept. Sent to Krish to hear. Music is still not approved.
+- Step 3: judged. Tier 1 (Haiku) faults checked at full size: "AI-drawn blanket" false on all 8 (the painter's real blanket); Customs' first frame and copycat's "frozen frames" false. Tier 2 (Sonnet; every brief listed V005): cp-besttrained 8; cp-workday, cp-walk, cp-leaveit, cp-technically, cp-alarm, st-v2-c07 7; cp-copycat 6. Recorded in `local/factory/panel.jsonl`. Workday's retread of the live 9 to 5 posts (V002, F43; V003) is real. On Windows, `panel.py brief` needs `PYTHONIOENCODING=utf-8` (an emoji in the live list).
+- Tracked links: concepts C209 to C216 in film order, one creative id per platform, in `local/factory/panel-2026-11-18/links-compile.txt`. Confirm the concept numbers against the 02t Schedule before filing.
+- Step 4: all 8 are on the review board (doc ids `post-<film>`), each playing its music mix, with caption, scores, best beat, faults and links. The humour engine is unavailable (no `CONTROL_CENTER_ENGINE_TOKEN`), said on each card.
+- Next: read `verdicts` on the board; for each Yes, step 5 (post id F60 onward). A post Krish adds a recognisable track to in the app also goes on his phone posts page (`docs/REVIEW-BOARD.md`).
