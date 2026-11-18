@@ -1,7 +1,4 @@
-# 2026-11-18: full content inventory and proposed reset
-
-Status: Krish rejected 6 of the 8 compile films (yes on Customs and Alarm). A full inventory (Buffer, the three channels, the Schedule Sheets, Drive, this PC) is in `docs/inventory/2026-11-18-inventory.html` and published to him at https://claude.ai/artifact/6xTb4ZycdbjqGEnmBXmQLT. About 54 distinct posts are live with 20,874 views in total and 12 followers; organic sales are $0. Nothing has posted since 15 Nov 23:31 UTC. 11 reels he approved in 02r (F28, F34 x4, F40 to F44, F29 on IG and FB) were never posted. The only breakout format is F38's (a real dog under a deadpan routine parody, with a song).
-
-Next: Krish decides the proposed reset (freeze generation, ship the 11 approved reels, repost F38 and F56, attribution app).
-
-North Star check (2026-11-18): holds; recalibration of the plan proposed to Krish, not the number.
+Status: A full inventory is at docs/inventory/2026-11-18-inventory.html: about 54 posts live, 20,874 views, 12 followers, $0 organic sales, nothing posted since 15 Nov 23:31 UTC, and 11 reels Krish approved in 02r (F28, F34 x4, F40 to F44, F29 on IG and FB) never posted.
+Changed: The only format that broke out is F38's (a real dog under a deadpan routine parody, with a song); a reset (freeze generation, ship the approved backlog, fix attribution) is proposed to Krish.
+Next: Krish decides the proposed reset.
+North Star check (2026-11-18): recalibration proposed. The $4,862 rung for this week is at $0 with no posts since 15 Nov, so the plan (not the number) needs Krish's reset.
