@@ -99,6 +99,8 @@ Before sending, check every prompt:
    asset; never upload it.
 2. The prompt is motion only (`<STUDIO>/bank2/i2v/`): what the dog does, the camera ("Handheld, a slight natural
    drift, no zoom"; never the word "phone"), and "Real dog weight and timing." Under 300 characters.
+   Where the dog looks into the lens, name its eye colour ("his dark brown eyes"): on 18 Nov Kling turned the
+   terrier's eyes icy blue on the exact frame of the payoff, and the retake with the colour named held it.
 3. Only the first shot of a film starts from the anchor. If every shot starts from it, each cut resets the dogs to the
    same pose (18 Nov). Either make two longer takes per film, or start each later shot from the previous clip's last
    frame. Extract that frame with

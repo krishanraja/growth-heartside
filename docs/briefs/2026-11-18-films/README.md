@@ -19,6 +19,24 @@ Every film is 9:16 1080p with silent picture; the music is added in the app. Pat
 
 The pattern across all six: a script that scores 9 on its words dropped 1 to 3 points as a film. The film judge reads any human format carried in deadpan labels over a real dog as live F38's family, and wants the picture itself to stage the joke. The painted blanket on a plain cream card was flagged as disconnected on every film.
 
+## Round 2 (18 Nov, morning): picture-first scripts, then shelved
+
+After the night's films, Krish said "New round". Two joke lab rounds of about 30 scripts each followed (`local/jokelab/cand-visual.json`, `cand-visual2.json`). Each script had to land with every word covered, through a visible consequence or a reaction shot. Every premise a live post owns was banned. Round 1's best scored 8 as a described film. In round 2, two scored 9, were built on the same patio through the MCP, and judged as films:
+
+| Film | Script | Described | Film (tier 2) | Brief |
+|---|---|---|---|---|
+| `st-v2-c07` | "Customs.": the terrier does the greeting sniff at the doodle's tail while the doodle eats from the bowl, then stares into the lens | 9 | 8 | [st-v2-c07.md](st-v2-c07.md) |
+| `st-v2-c07b` | as above, plus "Nothing to declare." on the stare | 9 | 7 | [st-v2-c07b.md](st-v2-c07b.md) |
+| `st-v2-c02` | "He is not near the bowl." / "He is adjacent.": the terrier belly-creeps until his nose is on the rim, then stares into the lens | 9 | 7 | [st-v2-c02.md](st-v2-c02.md) |
+
+Shelved under `heartside-joke-lab` step 7, after two rounds capped at 8 as films for one structural reason. Every film judge named the same two gaps:
+1. The product card is cold and disconnected from the joke. The live posts that land with a product, F34 and S01, make the dog's own face on the gift part of the story.
+2. A single beat with no escalation is thin.
+
+Both "Customs" and "Adjacent" are real-looking and clean at full size. The footage is fine; the structure is not.
+
+The next round should start from the gift: a script where the dog's own face on the blanket, mug or portrait is the payoff, with three or four beats that escalate to it.
+
 ## If Krish wants one compiled anyway: `st-bowl-c18`
 
 The strongest film, 8 at tier 2, legible in one second with the sound off. Compile notes:
@@ -57,7 +75,7 @@ The painted end card (the store's own painter, the film's terrier, paint 9 of 30
 
 ## Credits
 
-Kling 3.0 Unlimited closed at about 01:00 UTC on 18 Nov. After that, Krish moved the last shots to the Higgsfield MCP on credits ("go with a cap of 150, but make sure you do a small test"). The balance went from 941.35 to 916.35, so 25 credits were spent against the 150 cap. The logged quotes totalled 21.5: the charges ran about 3.5 over the estimates, so quote with a margin. Earlier, on 17 Nov, two MCP anchor images cost 4. The balance also fell by 7 credits that no logged job accounts for; check the account's transactions.
+Kling 3.0 Unlimited closed at about 01:00 UTC on 18 Nov. After that, Krish moved the last shots to the Higgsfield MCP on credits ("go with a cap of 150, but make sure you do a small test"). The balance went from 941.35 to 916.35, so 25 credits were spent against the 150 cap. Round 2 then took it to 883.35 (33 more), so 58 of the 150 cap in all. The logged quotes totalled 21.5: the charges ran about 3.5 over the estimates, so quote with a margin. Earlier, on 17 Nov, two MCP anchor images cost 4. The balance also fell by 7 credits that no logged job accounts for; check the account's transactions.
 
 ## What to make next
 
