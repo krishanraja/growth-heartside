@@ -30,6 +30,11 @@ python cut.py gate <id>                                   # re-run every gate on
   blanket on plain cream) as bolted on. Give the product a reason to be there: the blanket shows the film's own dog,
   or the product sits in the dog's world in the last shot. Never add a line that only sells: "Gary also got the
   blanket." scored 7 against 8 without it.
+- Two visual rounds on 18 Nov proved the end card is structural, not polish. Five built films whose scripts scored 9
+  as described films came out at 7 or 8, and every film judge named the same two gaps: the product card is cold and
+  disconnected from the joke, and a single beat with no escalation is thin. The live posts that land with a product
+  (F34, S01) make the dog's own face on the gift part of the story. Before cutting, the script must say why the gift is
+  in the film; if it cannot, shelve the script rather than cut it.
 - When a look lands at the very end of a clip, hold the last frame for 1 s before the cut:
   `ffmpeg -v error -i <clip> -vf tpad=stop_mode=clone:stop_duration=1 <clip-held>.mp4`, then pass the held clip as the
   take (`s2=<path>`). Time each label against the frame where the look actually lands (read it on the contact sheet),
