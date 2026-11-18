@@ -15,7 +15,7 @@ import re
 import sqlite3
 from zoneinfo import ZoneInfo
 
-from . import ai_answers, attribution, credits, drive_library, engine_state, ledger, offers, review_queue
+from . import ai_answers, attribution, credits, divergent as divergent_thinker, drive_library, engine_state, ledger, offers, review_queue
 from .control_center import CODE, Client, ProtocolError, report_digest, sha256
 
 ENGINE_ID, PRODUCT_SLUG, SLUG, COMMAND = 'growth-heartside', 'heartside', 'heartside', 'directive'
@@ -373,7 +373,7 @@ def latest_decisions(decisions):
 
 
 def build_report(*, root, state, db, now, run_id, mode, directive, recommendations, degraded=(), credits_spent=(),
-                 instruction_seen=False, answers=(), capabilities=None, queue_decisions=None):
+                 instruction_seen=False, answers=(), capabilities=None, queue_decisions=None, divergent=None):
     """The report envelope, exactly engine-report.schema.json, sealed with its digest.
 
     `credits_spent` is what this run itself spent of the prepaid share (engine/credits.py); the
@@ -382,6 +382,8 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
     as received (engine/engine_state.py); his words never reach the report.
     `queue_decisions` is his GET decisions read for review/queue.json's asks (I-24), or None when it
     could not be read: then the report holds decisions_unread and applies nothing.
+    `divergent` is what consulting divergent-thinker gave this run (engine/divergent.py, `recovery`): its one
+    recovery plan and its lines, or None when it was not consulted.
     """
     spent = credits.spent(credits_spent)
     body = (directive or {}).get('directive') or {}
@@ -427,6 +429,9 @@ def build_report(*, root, state, db, now, run_id, mode, directive, recommendatio
         if events:
             activity.append(f'Reported {len(events)} publication(s) Krish recorded in the last 14 days.')
     proposals += recommendation_proposals(recommendations)
+    if divergent:  # recovery plays at U4 and U5, only when nothing else is proposed (run() decides)
+        proposals += list(divergent.get('proposals') or [])
+        activity += list(divergent.get('activity') or [])
     # I-24: Heartside's asks, walled, in priority order, ahead of everything else on his list.
     asks = review_queue.load(root)
     if review_queue.open_items(asks):
@@ -669,6 +674,16 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
         report = build_report(root=root, state=state, db=db, now=now, run_id=local['run_id'], mode=mode,
                               directive=directive, recommendations=recommendations, degraded=degraded, answers=answers,
                               instruction_seen=seen, capabilities=served, queue_decisions=queue_decisions)
+        if not report['proposals']:
+            # The protocol's step 5: nothing proposed, so at U4 or U5 ask divergent-thinker for recovery plays
+            # (engine/divergent.py). Dormant until capabilities serve features.divergent; never fails the run.
+            consulted = recovery_plays(root, growth, client, directive, served, state, report, mode, now)
+            if consulted['proposals'] or consulted['activity']:
+                summary['divergent'] = [p['proposal_id'] for p in consulted['proposals']]
+                report = build_report(root=root, state=state, db=db, now=now, run_id=local['run_id'], mode=mode,
+                                      directive=directive, recommendations=recommendations, degraded=degraded,
+                                      answers=answers, instruction_seen=seen, capabilities=served,
+                                      queue_decisions=queue_decisions, divergent=consulted)
         if queue_decisions is not None:
             summary['answers_to_apply'] = [a['id'] for a in review_queue.to_apply(asks, queue_decisions)]
         phase = 'report'
@@ -691,6 +706,19 @@ def run(root, growth, client, mode, env, recommendations, now=None, clock=None):
         if db is not None:
             db.close()
     return summary
+
+
+def recovery_plays(root, growth, client, directive, served, state, report, mode, now):
+    """divergent-thinker's recovery plays for an empty report, or nothing. Any failure is a line, never a failed run."""
+    body = (directive or {}).get('directive') or {}
+    organic = next((o for o in report['objectives'] if o['key'] == 'organic_net_sales_usd'), None)
+    try:
+        return divergent_thinker.recovery(
+            root=root, growth=growth, client=client, body=body, features=served, state=state, organic=organic,
+            north_star=engine_state.north_star_line(root, body, now), held=engine_state.held(body), mode=mode, now=now,
+            price_points=state.get('price_points') or (), recent_reports=lambda: client.recent_reports(10))
+    except (ProtocolError, ValueError, KeyError, TypeError, AttributeError, OSError) as error:
+        return {'proposals': [], 'activity': [f'divergent-thinker was not consulted ({getattr(error, "code", type(error).__name__)}).']}
 
 
 def main(root, growth, action, mode, code=None, env=None):

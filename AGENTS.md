@@ -92,6 +92,8 @@ below is unchanged. Until the go-live step exists, posting stays with Krish.
 - when the model judge and your own read disagree, or a line feels clever but you cannot say why it is funny.
 Exit 0 is a pass, 1 is flagged (fix the line or say why not on the board), 2 is unavailable: never treat 2 as a pass, say so on the board. Run `python3 factory/jokelab.py doctor` first in a session that will consult it; it checks the token, the package and that Control Center serves the humour route, with no model call. Each call costs about half a cent and Control Center caps this engine at 200 a day.
 
+**divergent-thinker for recovery plays and the screen** (dormant until Control Center serves `features.divergent`). At U4 or U5 with nothing proposed, the daily report asks divergent-thinker once for three recovery plays, holds any that fail this engine's copy, claims and consent checks, and proposes the best one as a plan behind `strategy`; the joke lab's screen and `events import` use its zero-call `score` and `record`. It never posts, sends or spends: `docs/ENGINE.md`, "Consulting divergent-thinker".
+
 **Asks reach his one list** (Ruling, Krish, 2026-11-14: "I want wave 3 now", I-24). Decision, spend, copy and delete asks go in `review/queue.json` and reach his list in Control Center through the daily run; the board below keeps posts and their media (`docs/REVIEW-BOARD.md`).
 
 **Krish reviews on one board** (Krish, 2026-11-10: "You need to create a system of review where I can easily just tick yes or no for things that you think are ready. You just keep adding to that board as often as you can, and so do your sub-sessions."). Every session puts what is ready for him on the review board and reads his answers back from it: `docs/REVIEW-BOARD.md`.

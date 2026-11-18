@@ -1,6 +1,7 @@
 """Commands share the existing growth.py entrypoint and local/ boundary."""
 from contextlib import closing
 import json
+import sys
 from pathlib import Path
 
 from . import assets, ledger, offers
@@ -181,8 +182,13 @@ def run(args, growth):
         return still(args, growth, root)
     if args.cmd == 'events':
         from . import operations
+        from . import divergent
+        events = json.loads(Path(args.file).read_text())
         with closing(ledger.connect(root / 'local/engine.sqlite3')) as db:
-            print(json.dumps(operations.apply(root, db, json.loads(Path(args.file).read_text())), indent=2))
+            results = operations.apply(root, db, events)
+        print(json.dumps(results, indent=2))
+        # What went live goes to divergent-thinker's archive (record, zero model calls) once Control Center serves it.
+        print(divergent.record_live(root, events, results), file=sys.stderr)
         return
     state = growth.load_state()
     if args.cmd in ('assets', 'readiness', 'render', 'dashboard') and not state:
