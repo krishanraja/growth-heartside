@@ -827,6 +827,20 @@
    ]
   },
   {
+   "id": "music-defines-humour",
+   "date": "2026-11-18",
+   "made": "The 18 Nov compile round generated a music bed per film (ElevenLabs Music v2.5 through the Higgsfield MCP) and started mixing before Krish had heard what music was proposed",
+   "words": [
+    "what music are you adding? this will define the humour score substantialy"
+   ],
+   "category": "process",
+   "rule": "Music is part of the joke, not polish. Before any mix, show Krish each film's proposed music in one line (style, where it stops or switches, why it is funny) and wait for his answer; keep a silent master of every film for an in-app trending sound. A bed covers the whole film including the end card, and a stop point lands on the reaction shot.",
+   "check": "review: every mixed film has a music line Krish answered, recorded in the round's music.json status; a silent master exists beside every mix",
+   "applies_to": [
+    "reel"
+   ]
+  },
+  {
    "id": "footage-not-gated-on-judge",
    "date": "2026-11-18",
    "made": "Across the 17 to 18 Nov sprint, about 150 scripts went through the joke lab and every built film scored 6 to 8 with the model judge, so no footage was produced past the first films while the session waited for a 9",
