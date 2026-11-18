@@ -1,7 +1,7 @@
 ---
 repo: krishanraja/growth-heartside
 product: Heartside growth engine
-as_of: 2026-11-17
+as_of: 2026-11-18
 head: 7c251e6
 lifecycle: live
 production_url: none
@@ -31,7 +31,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-11-17)
+## Where it is right now (as of 2026-11-18)
 
 <!-- north-star-state {"week_of": "2026-11-09", "week_target": 1417, "current": 0, "current_as_of": "2026-11-12", "current_source": "Shopify Admin API orders through growth.py attribution (read-only app), organic posts, trailing 28 days", "urgency": 5, "urgency_reason": "under 40% of the week's target two weeks running (0% now)"} --> **North Star number: U5, stalled.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: $0 (measured 12 Nov by the engine's own attribution read; the store's one order in the window, $45, came direct), against $1,417 this week, on the way to $50,000 by 28 December 2026. Everything else pauses unless it moves the number.
 
@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- The Audience desk's comment craft from the 4 to 7 Nov pilot is on main as the `heartside-audience-comments` skill (source in `.agents/skills`, copy in `.claude/skills`), salvaged from the unmerged branch `codex/audience-comment-skill` without any handle. The 15 Nov salvage left it out because the session then posted itself; the 16 Nov ruling ("Approve batches, Codex posts") now covers comments, so the craft is kept and posting follows rule 1's batch exception. The other eight stranded or merged branches held nothing main lacks and were deleted at their reviewed commits. (2026-11-18)
 - Eight video-production skills are in `.agents/skills/heartside-*` (the source, read by Codex), with exact copies in `.claude/skills/` for Claude Code; the self-test now fails while a copy differs. They were built from the 17 Nov sprint session's transcript, the Codex studio thread and the studio log, plus the first skills session's hand-over. `AGENTS.md` points to them, and the floor gains five process entries plus one quote on `higgsfield-browser-ui-only`. A proposal for a fleet Codex-thread skill is in `docs/proposals/`. With the knowledge `.docx` hash check skipped (it was already failing), 341 self-test checks pass. (2026-11-17)
 - Auto-merge now merges on either copy of the check workflow (push or pull_request). Before, when the push-event run finished last it was skipped, and a green pull request never merged (growth-heartside #117, growth-makeyourmindup #129 on 17 Nov). (2026-11-17)
 - The humour engine is on call in this repository: `factory/jokelab.py check`, `compare` and `doctor`, with an AGENTS.md rule saying when to consult it. (2026-11-17)
@@ -59,6 +60,7 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-18 .agents/skills/heartside-audience-comments/SKILL.md, .claude/skills/heartside-audience-comments/SKILL.md, AGENTS.md (one sentence). Remote branches deleted: ccr-21e182e5-psq1vi, claude/canva-integration-plan-cpy1p2, claude/i25-drive-library, claude/i25-drive-library-v2, codex/dog-things-wave-3, codex/dog-things-wave-3-fix1, codex/tiktok-link-eligibility-20261111, growth/2026-11-16-sprint. No Drive, Codex or platform action.
 - 2026-11-17 .agents/skills/ (8 skills, source), .claude/skills/ (8 copies), growth.py (self-test: skill copies match), AGENTS.md (one section), factory/floor.json (5 entries, 1 quote), docs/proposals/2026-11-17-codex-desktop-studio-skill.md. No Drive, Higgsfield, Codex or platform action.
 - 2026-11-17 factory/jokelab.py, tests/test_jokelab.py, AGENTS.md, factory/README.md, CHANGES.md.
 - 2026-11-16 On 17 Nov the studio resumed from Drive 03a. Codex Desktop holds any thread Krish opens, so codex_thread.mjs send is refused ("active writer") and a script-opened thread cannot reach Desktop's in-app browser; `codex queue --thread <id> --message <text>` hands the turn to Desktop and works (durable fix in ai-harness#280). Nano Banana Pro was not Unlimited, so photoreal shots ran as Kling 3.0 text-to-video from each brief's own prompt (Krish's correction, floor read-unlimited-before-ordering). The painter silently hangs on "Still painting" when a photo is under 700 px tall (Teeinblue validation in the console, no message to the buyer): a heartside store finding. The tier 2 panel has no warm anchor, so sentiment pieces are scored against the humour tens.
@@ -77,13 +79,13 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-17): Run the next studio session from `heartside-video-production` with a Sonnet model, and add each failure it hits to the floor and the skill that should have stopped it.
+- Next (2026-11-18): Draft the next Audience desk batch from this skill and record each of Krish's verdicts on the floor.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Step 2 of `docs/GET-GOING.md` (a daily Shopify sales import, so `net_sales_usd` is measured) may need a credential only Krish can add; the step says to report a hold naming the secret.
-- North Star check (2026-11-17): holds.
+- North Star check (2026-11-18): holds.
 
 ## Read next
 
