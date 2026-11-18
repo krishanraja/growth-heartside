@@ -1,0 +1,1080 @@
+[
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F35:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706826863389216030",
+      "creative_id": "F35",
+      "schedule_row": "02t row 11",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":274,\"likes\":16,\"shares\":1,\"saves\":0,\"comments\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F35:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/Dfx692vHAZm/",
+      "creative_id": "F35",
+      "schedule_row": "02t row 12",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native detail label: Original audio. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":92,\"viewers\":80,\"likes\":3,\"shares\":0,\"saves\":0,\"comments\":0,\"follows\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F35:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1436823424745766/",
+      "creative_id": "F35",
+      "schedule_row": "02t row 13",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":293,\"viewers\":271,\"reactions\":3,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F35:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916103086417/",
+      "creative_id": "F35",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 12",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F55:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706840970347777310",
+      "creative_id": "F55",
+      "schedule_row": "02t row 44",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":258,\"likes\":7,\"shares\":1,\"saves\":0,\"comments\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F55:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/DfxmTvfDZk0/",
+      "creative_id": "F55",
+      "schedule_row": "02t row 45",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native detail label: Original audio. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":113,\"viewers\":104,\"likes\":10,\"shares\":0,\"saves\":0,\"comments\":0,\"follows\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F55:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1141479595279998/",
+      "creative_id": "F55",
+      "schedule_row": "02t row 46",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":147,\"viewers\":135,\"reactions\":5,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F55:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916103077017/",
+      "creative_id": "F55",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 45",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F32:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706826772238634270",
+      "creative_id": "F32",
+      "schedule_row": "02t row 8",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":273,\"likes\":26,\"shares\":0,\"saves\":0,\"comments\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F32:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/DfxVMzJCd4P/",
+      "creative_id": "F32",
+      "schedule_row": "02t row 9",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native detail label: Original audio. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":122,\"viewers\":114,\"likes\":3,\"shares\":0,\"saves\":0,\"comments\":0,\"follows\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F32:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1898261441553746/",
+      "creative_id": "F32",
+      "schedule_row": "02t row 10",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":214,\"viewers\":199,\"reactions\":6,\"comments\":1,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F32:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916103066106/",
+      "creative_id": "F32",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 9",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F57:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706840771042757918",
+      "creative_id": "F57",
+      "schedule_row": "02t row 41",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":266,\"likes\":22,\"shares\":0,\"saves\":0,\"comments\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F57:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/Dfw2UIMFUQX/",
+      "creative_id": "F57",
+      "schedule_row": "02t row 42",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native detail label: Original audio. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":131,\"viewers\":106,\"likes\":10,\"shares\":0,\"saves\":0,\"comments\":0,\"follows\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F57:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/2179766979581027/",
+      "creative_id": "F57",
+      "schedule_row": "02t row 43",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":32,\"viewers\":29,\"reactions\":0,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F57:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916103047740/",
+      "creative_id": "F57",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 42",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F56:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706840395711302942",
+      "creative_id": "F56",
+      "schedule_row": "02t row 38",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":283,\"likes\":27,\"shares\":0,\"saves\":0,\"comments\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F56:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/DfwqS-xCkXJ/",
+      "creative_id": "F56",
+      "schedule_row": "02t row 39",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native detail label: Original audio. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":1619,\"viewers\":1314,\"likes\":93,\"shares\":1,\"saves\":1,\"comments\":0,\"follows\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F56:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/2408256266586839/",
+      "creative_id": "F56",
+      "schedule_row": "02t row 40",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":1200,\"viewers\":1018,\"reactions\":8,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F56:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916103040356/",
+      "creative_id": "F56",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 39",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: pending by source slot; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F59:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706839906508639518",
+      "creative_id": "F59",
+      "schedule_row": "02t row 35",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":270}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F59:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/DfvKItlAFjY/",
+      "creative_id": "F59",
+      "schedule_row": "02t row 36",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F59:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1857587385598808/",
+      "creative_id": "F59",
+      "schedule_row": "02t row 37",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":234,\"viewers\":182,\"reactions\":1,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F59:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916103000204/",
+      "creative_id": "F59",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 36",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F54:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706838762113764638",
+      "creative_id": "F54",
+      "schedule_row": "02t row 32",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":252}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F54:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/Dfu_wr7CWrl/",
+      "creative_id": "F54",
+      "schedule_row": "02t row 33",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F54:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1783633919422271/",
+      "creative_id": "F54",
+      "schedule_row": "02t row 34",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":140,\"viewers\":128,\"reactions\":1,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F54:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916102993858/",
+      "creative_id": "F54",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 33",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F58:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706838622300900638",
+      "creative_id": "F58",
+      "schedule_row": "02t row 29",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":254}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F58:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/Dfug9Y1Dwno/",
+      "creative_id": "F58",
+      "schedule_row": "02t row 30",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F58:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1884517102961835/",
+      "creative_id": "F58",
+      "schedule_row": "02t row 31",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":65,\"viewers\":61,\"reactions\":1,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F58:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916102974471/",
+      "creative_id": "F58",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 30",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F36:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706826555720355102",
+      "creative_id": "F36",
+      "schedule_row": "02t row 5",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":256}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F36:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/DfuRf3YCSkl/",
+      "creative_id": "F36",
+      "schedule_row": "02t row 6",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F36:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1478892934140038/",
+      "creative_id": "F36",
+      "schedule_row": "02t row 7",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":180,\"viewers\":149,\"reactions\":2,\"comments\":1,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F36:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916102965568/",
+      "creative_id": "F36",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 6",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F53:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706833078047493407",
+      "creative_id": "F53",
+      "schedule_row": "02t row 26",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":299}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F53:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/DfvX3s3jzBP/",
+      "creative_id": "F53",
+      "schedule_row": "02t row 27",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F53:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1652591219954604/",
+      "creative_id": "F53",
+      "schedule_row": "02t row 28",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":1742,\"viewers\":1384,\"reactions\":19,\"comments\":0,\"shares\":1}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F53:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916102958078/",
+      "creative_id": "F53",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 27",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F52:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706838580655639839",
+      "creative_id": "F52",
+      "schedule_row": "02t row 23",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":254}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F52:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/DfslYdsiQky/",
+      "creative_id": "F52",
+      "schedule_row": "02t row 24",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F52:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1846309839886912/",
+      "creative_id": "F52",
+      "schedule_row": "02t row 25",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":27,\"viewers\":27,\"reactions\":4,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F52:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916102918163/",
+      "creative_id": "F52",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 24",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F33:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706834570280176927",
+      "creative_id": "F33",
+      "schedule_row": "02t row 20",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":261}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F33:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/Dfsa_JFAIcc/",
+      "creative_id": "F33",
+      "schedule_row": "02t row 21",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F33:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1857656535252370/",
+      "creative_id": "F33",
+      "schedule_row": "02t row 22",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":39,\"viewers\":35,\"reactions\":0,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F33:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916102912088/",
+      "creative_id": "F33",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 21",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F31:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706834214531992863",
+      "creative_id": "F31",
+      "schedule_row": "02t row 17",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":279}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F31:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/Dfr6blHjZPg/",
+      "creative_id": "F31",
+      "schedule_row": "02t row 18",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F31:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/30674070255512979/",
+      "creative_id": "F31",
+      "schedule_row": "02t row 19",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":33,\"viewers\":31,\"reactions\":1,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F31:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916102891136/",
+      "creative_id": "F31",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 18",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F37:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706826160742649119",
+      "creative_id": "F37",
+      "schedule_row": "02t row 2",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":260}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F37:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/Dfrsuhcjecz/",
+      "creative_id": "F37",
+      "schedule_row": "02t row 3",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F37:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1427804062404192/",
+      "creative_id": "F37",
+      "schedule_row": "02t row 4",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":261,\"viewers\":234,\"reactions\":0,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F37:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916102883120/",
+      "creative_id": "F37",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 3",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":0,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F30-pepper:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706834074849004831",
+      "creative_id": "F30-pepper",
+      "schedule_row": "02t row 14",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native profile sound label: original sound - Heartside: Gifts from your dog. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":281}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F30-pepper:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/DfpVp_FCjYE/",
+      "creative_id": "F30-pepper",
+      "schedule_row": "02t row 15",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F30-pepper:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://www.facebook.com/reel/1170940688597938/",
+      "creative_id": "F30-pepper",
+      "schedule_row": "02t row 16",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Published content library and corresponding post insights with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"views\":17,\"viewers\":8,\"reactions\":0,\"comments\":0,\"shares\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:F30-pepper:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "pinterest",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "18 Nov 2026 morning recovery check, Codex in-app browser; current exact Drive README v6.0, 02r, 02t, 04 Phone posts and Markdown guide read fresh. Trigger supplied as 16 Nov; observations are dated by actual 18 Nov runtime, not backdated.",
+      "post_url": "https://uk.pinterest.com/pin/1090011916102814352/",
+      "creative_id": "F30-pepper",
+      "schedule_row": "02r Results placement ledger; approved Instagram caption from 02t row 15",
+      "status": "unavailable",
+      "evidence": "Publication confirmed on native Heartside Created profile with this public permalink and matching post subject/caption opening. This is a partial content check, not a full verified status: exact cover-to-source comparison, byte-for-byte caption formatting, destination readback and end-to-end audible soundtrack verification were not completed. Native sound label not independently checked for this placement. No reupload or correction made. Current native cumulative/visible snapshot, observed 18 Nov, not a fixed-age window and organic/paid split unverified: {\"impressions\":1,\"saves\":0,\"pin_clicks\":0}. Missing metrics are not shown. 24h: not shown; 72h: not shown; 7d: pending by source slot. These are window availability notes, not reconstructed historical totals."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F29:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "Current README v6.0 and source sheets; signed-in Heartside native profiles, TikTok Studio, Facebook content library, Instagram insights and Pinterest profile read 18 Nov 2026, approximately 08:03–08:14 UTC.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706661449401158942",
+      "creative_id": "F29",
+      "schedule_row": "02r row 11",
+      "status": "unavailable",
+      "evidence": "Native publication present.  Native sound label: Dame Hombro - Bulin 47 & Kevin Wai & Breyco En Producidera. Full cover, exact media and end-to-end audible sound verification incomplete. No edits or reposts. Current cumulative views 282; not a fixed-age measurement. Historical measurement windows not shown; no cumulative total backfilled into a historical window."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:F38:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "tiktok",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "Current README v6.0 and source sheets; signed-in Heartside native profiles, TikTok Studio, Facebook content library, Instagram insights and Pinterest profile read 18 Nov 2026, approximately 08:03–08:14 UTC.",
+      "post_url": "https://www.tiktok.com/@yourdoghasnotes/video/7706703056448146719",
+      "creative_id": "F38",
+      "schedule_row": "02r row 8",
+      "status": "mismatch",
+      "caption_ok": false,
+      "cta_ok": false,
+      "evidence": "Native publication present. posted by Krish. This is the earlier F38 publication, not the 18 Nov repost. Native sound label: Epic Inspiration - Kidmada. Caption lacks the approved gift paragraph/Link in bio and uses Instagram hashtags; sound differs from requested Experience. No edits or reposts. Current cumulative views 2314; not a fixed-age measurement. Historical measurement windows not shown; no cumulative total backfilled into a historical window."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:F38:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "Current README v6.0 and source sheets; signed-in Heartside native profiles, TikTok Studio, Facebook content library, Instagram insights and Pinterest profile read 18 Nov 2026, approximately 08:03–08:14 UTC.",
+      "post_url": "https://www.instagram.com/yourdoghasnotes/reel/DflE6VFOC1f/",
+      "creative_id": "F38",
+      "schedule_row": "02r row 9",
+      "status": "unavailable",
+      "evidence": "Native publication present. posted by Krish. This is the earlier F38 publication, not the 18 Nov repost. Native sound label: Experience - Ludovico Einaudi. Full cover, exact media and end-to-end audible sound verification incomplete. No edits or reposts.  Historical measurement windows not shown; no cumulative total backfilled into a historical window."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:F38:native-readback",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "facebook",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "Current README v6.0 and source sheets; signed-in Heartside native profiles, TikTok Studio, Facebook content library, Instagram insights and Pinterest profile read 18 Nov 2026, approximately 08:03–08:14 UTC.",
+      "post_url": "https://www.facebook.com/reel/1112860338187184/",
+      "creative_id": "F38",
+      "schedule_row": "02r row 10",
+      "status": "unavailable",
+      "evidence": "Native publication present. posted by Krish. This is the earlier F38 publication, not the 18 Nov repost. Native sound label: Experience (Reimagined) - Ludovico Einaudi. Sound is the Reimagined version, not the exact requested Experience recording. No edits or reposts.  Historical measurement windows not shown; no cumulative total backfilled into a historical window."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:tiktok:monitor",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "tiktok",
+      "state": "watching",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "Current README v6.0 and source sheets; signed-in Heartside native profiles, TikTok Studio, Facebook content library, Instagram insights and Pinterest profile read 18 Nov 2026, approximately 08:03–08:14 UTC.",
+      "evidence": "15 baked videos and F29 present publicly. Commercial-song phone posts F28, F40, F42, F43, F41 and F44 and the three F34 breed TikToks were not found in the inspected recent profile range. This absence is a publication gap requiring reconciliation, not proof of a failed upload. Do not automatically repost or move expired slots. Original F34 remains held. Earlier F38 is posted by Krish; today's F38 repost is user-owned at 23:00 London (04 line 30). F38 previous sound/caption discrepancy is preserved. No Drive updates: Claude must review/import these records and reconcile Sheets. No platform writes, new schedules, deletions, boost proposals or spend in this run."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:instagram:monitor",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "instagram",
+      "state": "watching",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "Current README v6.0 and source sheets; signed-in Heartside native profiles, TikTok Studio, Facebook content library, Instagram insights and Pinterest profile read 18 Nov 2026, approximately 08:03–08:14 UTC.",
+      "evidence": "15 baked reels publicly present; five Sunday details show Original audio. Sunday cumulative views F56 1619, F57 131, F32 122, F55 113, F35 92; cohort median 122, ages approximately 57 to 69 hours. F56 93 likes, 1 share, 1 save, 0 comments, 1314 viewers and 0 follows. This is only a same-day cohort comparison, not the entire sprint median or a fixed-age result. No organic/paid split verified. Phone reels other than earlier F38 not found in inspected recent profile range. F38 repost remains Krish-owned at 23:05 London (04 line 31). No Drive updates: Claude must review/import these records and reconcile Sheets. No platform writes, new schedules, deletions, boost proposals or spend in this run."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:facebook:monitor",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "facebook",
+      "state": "watching",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "Current README v6.0 and source sheets; signed-in Heartside native profiles, TikTok Studio, Facebook content library, Instagram insights and Pinterest profile read 18 Nov 2026, approximately 08:03–08:14 UTC.",
+      "evidence": "15 baked reels confirmed in Published library and post insights; public URLs captured. Current Sunday views F56 1200, F57 32, F32 214, F55 147, F35 293 (median 214, ages approximately 57 to 69 hours). F56 has 1018 viewers, 8 reactions, 0 shares, 0 comments, 0 clicks and 1 follow; saves and link clicks not shown. F53 has 1742 views, 1384 viewers, 19 reactions and 1 share, but is a different-age post. No scheduled posts in native Scheduled tab. Ads Manager account 669928323670370 returned Invalid request (#1) and Some of your data could not be loaded, including after refresh; do not interpret No results found as zero campaigns or zero spend. Exact unchanged-post eligibility, boost history/spend and qualifying median remain unverified. No qualified boost proposed and no spend placed. F38 repost remains Krish-owned at 23:10 London (04 line 32). No Drive updates: Claude must review/import these records and reconcile Sheets. No platform writes, new schedules, deletions, boost proposals or spend in this run."
+    }
+  },
+  {
+    "event_id": "publishing:2026-11-18:morning:pinterest:monitor",
+    "type": "social",
+    "record": {
+      "kind": "monitor",
+      "channel": "pinterest",
+      "state": "watching",
+      "at": "2026-11-18T08:14:39Z",
+      "at_precision": "minute",
+      "source": "Current README v6.0 and source sheets; signed-in Heartside native profiles, TikTok Studio, Facebook content library, Instagram insights and Pinterest profile read 18 Nov 2026, approximately 08:03–08:14 UTC.",
+      "evidence": "All 15 baked video Pins appear on Heartside Created profile with captured public URLs and approved Instagram caption text. Profile card estimates show zero impressions, saves and pin clicks for 14; F30-pepper shows 1 impression and 0 saves/clicks. F56 detail shows last-30-day dash estimates, not zeros, and no destination link was exposed in the inspected controls; destination verification remains incomplete. Do not convert profile estimates into 24h/72h/7d metrics. Ten commercial-song Pins remain without approved finished soundtracks per Results ledger; none uploaded. No Drive updates: Claude must review/import these records and reconcile Sheets. No platform writes, new schedules, deletions, boost proposals or spend in this run."
+    }
+  }
+]
