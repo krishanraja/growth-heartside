@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- The 02:35Z lessons of the night run are now in the video skills: - the picture must stage the joke, and a 9 on the words is a shortlist, not a forecast; - the end card needs a reason to be there, with no sales-only line; - a look that lands at a clip's end gets the last frame held for 1 s, with labels timed to it; - Kling cannot fake object-on-object physics. They are in `heartside-joke-lab`, `heartside-assembly-panel-board`, `heartside-anchor-stills` and `heartside-higgsfield-ui`. (2026-11-18)
 - The 17 to 18 Nov sprint night made the anchor-still footage bank and cut six films; none reached 9 (best: st-bowl-c18 at 8), so nothing went on the review board. Everything is filed in docs/briefs/2026-11-18-films/README.md: the films, the scores and why, suggested captions and music, every Higgsfield asset id with its verdict, and the credits (25 of a 150 cap through the MCP after Kling 3.0 Unlimited closed). (2026-11-18)
 - Blocked by unchanged native browser availability. Read current README v6.0 and all named schedules; no phone slot due 17 November. Four channel monitor events are recorded for Claude to inspect/import; no live or metric claims. (2026-11-17)
 - Partial. Read current README v6.0 and source schedules. Native browser remains unavailable, so Sunday delivery and boost verification are incomplete. Recorded four channel monitor events for Claude to inspect/import; no Drive or platform mutation. (2026-11-16)
@@ -72,7 +73,7 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-18): Krish decides whether to compile st-bowl-c18 at 8 or brief a round where the picture stages the joke (README, "What to make next").
+- Next (2026-11-18): Make the next films with a planned reaction shot or visible consequence in the picture, and the product placed in the dog's world.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
