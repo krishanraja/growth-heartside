@@ -831,11 +831,12 @@
    "date": "2026-11-18",
    "made": "Across the 17 to 18 Nov sprint, about 150 scripts went through the joke lab and every built film scored 6 to 8 with the model judge, so no footage was produced past the first films while the session waited for a 9",
    "words": [
-    "I am pretty confident that if your videos are already innate and they are realistic dogs doing real dog things (but tailored towards the influencer format or the video I sent you for inspiration or the latest round of ideas), then I'll be able to get them up to higher than that, with captions over the top and good music treatment (which we will do once you have produced all the videos and we are ready for compilation and production once you've finished this round of work and all the inventory is locked, clear, and in one place and ready to pull together)."
+    "I am pretty confident that if your videos are already innate and they are realistic dogs doing real dog things (but tailored towards the influencer format or the video I sent you for inspiration or the latest round of ideas), then I'll be able to get them up to higher than that, with captions over the top and good music treatment (which we will do once you have produced all the videos and we are ready for compilation and production once you've finished this round of work and all the inventory is locked, clear, and in one place and ready to pull together).",
+    "Producing. Just make sure you file everything immaculately so that we can compile properly and caption properly later without needing to watch everything manually to figure out what's what."
    ],
    "category": "process",
    "rule": "Ruling (Krish, 2026-11-18): footage production is not gated on the model judge's 9. Produce every clip the latest round of ideas needs as a realistic dog doing a real dog thing, check each at full size against heartside-dog-realism, and lock the inventory (one folder, one manifest: id, path, what happens, verdict, usable range, caption and music angles) before compiling. Captions and music are added at compilation, where Krish lifts the films. The judge still scores the compiled films before the review board.",
-   "check": "review: a footage round ends with docs/briefs/<date>-footage/INVENTORY.md listing every clip with its verdict and usable range, and no clip was withheld only for a judge score",
+   "check": "review: a footage round ends with a committed docs/briefs/<date>-footage/manifest.json giving every clip a beat timeline in seconds, a payoff second, its fault and usable range, built into local/footage/ready/ (trimmed, 1080x1920) with posters, timestamped sheets, manifest.csv and INDEX.jpg; nobody needs to watch a clip to caption it, and no clip was withheld only for a judge score",
    "applies_to": [
     "reel"
    ]
