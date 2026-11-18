@@ -771,6 +771,55 @@
     "reel",
     "still"
    ]
+  },
+  {
+   "id": "mcp-credit-route-with-cap",
+   "date": "2026-11-18",
+   "made": "Sprint night of 17 to 18 Nov: Kling 3.0 Unlimited had closed and Codex's in-app browser would not attach, so the last shots could not be made in the website",
+   "words": [
+    "I feel like we could just create really good-quality anchor images pretty quickly with that route? Otherwise we could be here for another 6 hours trying to use Codex in Higgsfield browser, which should really be reserved for the actual video production",
+    "why dont you just complete this entire task in higgsfield MCP - how many credits will that take",
+    "go with a cap of 150, but make sure you do a small test to ensure the big run will be successful"
+   ],
+   "category": "process",
+   "rule": "When the Unlimited window has closed or Codex's browser cannot run, the Higgsfield MCP may generate, on credits, inside a cap Krish names for that run. Before the run: quote every job with estimate_video_cost or get_cost and give Krish the total. Then one small test (one still, then one clip), each checked at full size, before the rest. Log every paid job with its credits and keep a running total against the cap. Anchor stills through the MCP are Nano Banana Pro at 2K (2 credits each); a Kling 3.0 pro 1080p 5 s clip with sound off is 8.75 credits.",
+   "check": "review: the log names the cap, each paid job's credits and the running total; the balance after the run matches the balance before minus the logged total",
+   "applies_to": [
+    "reel",
+    "still"
+   ]
+  },
+  {
+   "id": "chrome-or-machine-for-higgsfield",
+   "date": "2026-11-18",
+   "made": "Sprint night of 17 to 18 Nov, Codex's browser stuck",
+   "words": [
+    "you can just use the Chrome browser if its easier, or my whole machine"
+   ],
+   "category": "process",
+   "rule": "When Codex's browser cannot reach Higgsfield, Claude may drive Higgsfield itself in Krish's Chrome (Claude in Chrome), or his machine, for the same Unlimited-only work. Check the Generate button's cost before every click: a credit figure on it means the model is not Unlimited, and the job is not submitted (the MCP credit route applies instead).",
+   "check": "review: no job submitted in Chrome shows a credit cost on its Generate button",
+   "applies_to": [
+    "reel",
+    "still"
+   ]
+  },
+  {
+   "id": "orchestrate-without-babysitting",
+   "date": "2026-11-18",
+   "made": "Sprint night of 17 to 18 Nov: Codex turns stopped on a sticky Computer Use stop and a browser that would not attach, and Claude re-sent orders and sent Krish to look for buttons instead of reading the exact error and routing around it",
+   "words": [
+    "its stopped jut waiting for you because you are doing a fucking poor job of orchestrating codex",
+    "just making sure you havent fucked up again after 2 seconds and gonna start whining?",
+    "ok its back - get going to full autonomous completion, i have babysat you way too much"
+   ],
+   "category": "process",
+   "rule": "Orchestration is Claude's job, not Krish's. On any Codex stop, read the tool output in the session file for the exact error before anything else. Then, in one step: fix it in the order, or route around it (a fresh tab, Chrome, the MCP inside a cap), and never re-send an unchanged order into the same error. Ask Krish only for a physical action only he can take, naming exactly what to click, once. Never leave Codex idle between orders: queue the next order the moment a turn ends.",
+   "check": "review: every Codex stop in the log is followed by its quoted error and a changed order or a different route within 5 minutes; no unchanged order is sent twice into the same error",
+   "applies_to": [
+    "reel",
+    "still"
+   ]
   }
  ],
  "open_conflicts": [],
