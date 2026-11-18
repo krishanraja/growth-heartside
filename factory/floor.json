@@ -854,6 +854,33 @@
    "applies_to": [
     "reel"
    ]
+  },
+  {
+   "id": "labels-on-plain-footage-are-boring",
+   "date": "2026-11-18",
+   "made": "Seven compile films cut from plain real-dog clips (lying down, waiting, sleeping) with deadpan labels and generated music beds, judged 6 to 8 by the panel",
+   "words": [
+    "It's fucking boring.",
+    "No, it's boring as fuck.",
+    "It's passable. It's not enjoyable."
+   ],
+   "category": "humour",
+   "rule": "Ruling (Krish, 2026-11-18): a real dog lying, waiting or sleeping under deadpan labels is boring, whatever the music. A film needs the dog to do something visibly funny on camera; labels and music cannot supply the joke.",
+   "check": "Cover the labels and mute it: if the footage alone does not make a stranger smile, do not cut it.",
+   "applies_to": ["reel"]
+  },
+  {
+   "id": "ai-tells-in-dog-footage",
+   "date": "2026-11-18",
+   "made": "cp-besttrained and cp-walk, cut from Kling footage",
+   "words": [
+    "No, the food disappears like AI and the dog looks aorund like AI.",
+    "That dog wouldn't lay like that. It's not realistic."
+   ],
+   "category": "realism",
+   "rule": "Ruling (Krish, 2026-11-18): any AI tell in motion (food vanishing, aimless AI head-turning, a pose a real dog would not hold) rejects the clip, however the stills look.",
+   "check": "Watch every take at full speed and frame by frame for objects appearing or disappearing, eyes and head drifting without cause, and poses held unnaturally; one tell holds the clip.",
+   "applies_to": ["reel"]
   }
  ],
  "open_conflicts": [],
