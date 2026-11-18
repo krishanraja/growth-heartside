@@ -371,6 +371,31 @@ def _engine_env():
     return token
 
 
+def _normalise_payload(payload):
+    """Format-only fixes to a humour-engine answer before the package validates it (see engine_reader)."""
+    single = {'structure', 'register', 'social_function', 'target'}
+    try:
+        from humour_engine.taxonomy import load_taxonomy
+        tax = load_taxonomy()
+        single = {a for a in tax.axes if not tax.is_multi(a)}
+    except Exception:  # noqa: BLE001  keep the conservative default
+        pass
+    for i in payload.get('interpretations') or []:
+        labels = i.setdefault('labels_by_axis', {}) if isinstance(i.get('labels_by_axis', {}), dict) else {}
+        for axis in ('social_function', 'mechanism', 'rhetorical_mode', 'register', 'structure'):
+            if axis in i:  # a label written beside labels_by_axis instead of inside it
+                v = i.pop(axis)
+                labels.setdefault(axis, v if isinstance(v, list) else [v])
+        for axis in list(labels):
+            if axis in single and isinstance(labels[axis], list) and len(labels[axis]) > 1:
+                labels[axis] = labels[axis][:1]
+        for cc in i.get('context_claims') or []:
+            if cc.get('source_kind') == 'provided_fact':
+                m = re.search(r'\d+', str(cc.get('source_ref') or ''))
+                cc['source_ref'] = m.group(0) if m else '0'
+    return payload
+
+
 def engine_reader(transport=None):
     """The humour engine through Control Center's humour route, on this engine's own bearer. None when unavailable."""
     if not _engine_env():
@@ -381,7 +406,19 @@ def engine_reader(transport=None):
         from humour_engine.models.providers import ControlCenterProvider
     except ImportError:
         return None
-    deps = EngineDeps(providers={'controlcenter': ControlCenterProvider(transport=transport)}, max_calls_per_request=1)
+    provider = ControlCenterProvider(transport=transport)
+    inner = provider._transport
+
+    def normalised(url, body):
+        # 18 Nov: the model's answers (Control Center's and a stand-in's alike) broke two format rules the package's own
+        # validator enforces and its prompt never states, so every reading was rejected. Fix only the format: a
+        # provided_fact reference becomes its bare index, and a single-valued axis keeps its first label.
+        status, data = inner(url, body)
+        if status == 200 and isinstance(data, dict) and isinstance(data.get('payload'), dict):
+            _normalise_payload(data['payload'])
+        return status, data
+    provider._transport = normalised
+    deps = EngineDeps(providers={'controlcenter': provider}, max_calls_per_request=2)  # one repair call on a malformed answer
 
     def read(c):
         res = analyse(AnalysisRequest.model_validate(engine_request(c)), deps)

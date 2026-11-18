@@ -1,0 +1,712 @@
+{
+ "ip-01": {
+  "analysis_id": "an_457a48697799478c",
+  "request_id": "jokelab:ip-01",
+  "input_revision": "rev_3593917ace03fe591759",
+  "schema_version": "1",
+  "versions": {
+   "engine": "0.1.0",
+   "taxonomy": "2026-11-17.1",
+   "prompt": "comprehension-v1:engine",
+   "provider": "controlcenter",
+   "model": "control-center:SYNTHESIS_MODEL",
+   "retrieval_snapshot": "cards@9f70323dcdd2027f"
+  },
+  "analysis_mode": "live",
+  "modalities_actually_processed": [
+   "text"
+  ],
+  "requested_tasks": [
+   "comprehension"
+  ],
+  "task_results": [
+   {
+    "task": "comprehension",
+    "status": "complete",
+    "output_ref": "#/interpretations",
+    "errors": []
+   }
+  ],
+  "status": "complete",
+  "comic_reading": "supported",
+  "humour_attempt": {
+   "status": "supported_inference",
+   "evidence_refs": [
+    "ev5"
+   ],
+   "limitations": [
+    "Intent is inferred from format convention (aspirational lifestyle vlog captions) rather than declared by any creator statement."
+   ]
+  },
+  "interpretations": [
+   {
+    "id": "main",
+    "literal_reading": "A series of on-screen captions mimicking a human lifestyle/productivity 'day in my life' vlog (coffee run, workspace, meal prep, hydration, pilates, steps, feeling drained, needing a reset), paired with footage of a dog doing ordinary dog things.",
+    "supported_reading": "The captions impose the vocabulary and self-care framing of human aspirational lifestyle content onto mundane or unglamorous dog behaviour (sniffing a takeaway bag, face-planting into a sofa, napping, sloppily drinking water, burying a treat badly, running in circles then collapsing), creating a mismatch between the elevated language and the deflating reality shown on screen. The final captions ('honestly so drained', 'need a reset tbh') exaggerate mock-exhaustion after a day of napping and play, completing the parody of self-care/productivity content.",
+    "reported_intent": null,
+    "structure_kind": "distributed_sequence",
+    "expectations": [
+     "Captions alone, without the paired visual/provided_fact context, would read as a sincere human lifestyle post rather than comic incongruity."
+    ],
+    "triggers": [
+     "mismatch between caption register and the provided_facts description of the dog's actual actions"
+    ],
+    "connecting_logic": "Each caption sets up an expectation of a human wellness/productivity activity; the paired dog action (per provided_facts) undercuts or literalises it in an absurd or deflating way, e.g. 'pilates' is actually Gary creeping toward another dog's food bowl, 'stretching it out' is a stretch that ends in going limp.",
+    "labels_by_axis": {
+     "social_function": [
+      "affiliative"
+     ],
+     "mechanism": [
+      "incongruity",
+      "literalisation",
+      "exaggeration"
+     ],
+     "rhetorical_mode": [
+      "parody"
+     ],
+     "register": [
+      "textually_understated"
+     ],
+     "structure": [
+      "distributed_sequence"
+     ],
+     "target": [
+      "convention"
+     ]
+    },
+    "target_and_subject": {
+     "subject": null,
+     "target": "unknown",
+     "perspective": null
+    },
+    "evidence_refs": [
+     "ev1",
+     "ev2",
+     "ev3",
+     "ev4"
+    ],
+    "contextual_claim_refs": [
+     "ctx1",
+     "ctx2"
+    ],
+    "counterevidence": [
+     "The caption text by itself, stripped of the dog footage, is indistinguishable from genuine lifestyle-vlog captions and carries no humour on its own."
+    ],
+    "alternatives": [],
+    "uncertainty": {
+     "score": null,
+     "score_kind": "unknown",
+     "calibration_ref": null,
+     "notes": []
+    },
+    "is_main": true
+   }
+  ],
+  "evidence": [
+   {
+    "evidence_id": "ev1",
+    "segment_id": "w4",
+    "modality": "text",
+    "start": 0,
+    "end": 23,
+    "exact_text": "setting up my workspace"
+   },
+   {
+    "evidence_id": "ev2",
+    "segment_id": "w8",
+    "modality": "text",
+    "start": 0,
+    "end": 7,
+    "exact_text": "pilates"
+   },
+   {
+    "evidence_id": "ev3",
+    "segment_id": "w11",
+    "modality": "text",
+    "start": 0,
+    "end": 19,
+    "exact_text": "honestly so drained"
+   },
+   {
+    "evidence_id": "ev4",
+    "segment_id": "w12",
+    "modality": "text",
+    "start": 0,
+    "end": 16,
+    "exact_text": "need a reset tbh"
+   },
+   {
+    "evidence_id": "ev5",
+    "segment_id": "w1",
+    "modality": "text",
+    "start": 0,
+    "end": 16,
+    "exact_text": "a day in my life"
+   }
+  ],
+  "context_dependencies": [
+   {
+    "id": "ctx1",
+    "claim": "On-screen captions are paired with specific dog actions as described in provided_facts",
+    "source_kind": "provided_fact",
+    "source_ref": "0",
+    "required": true,
+    "verification_status": "supplied"
+   },
+   {
+    "id": "ctx2",
+    "claim": "This format (day-in-my-life captions over pet footage) is a recognizable genre on TikTok/Instagram parodying human lifestyle vlogs",
+    "source_kind": "cultural",
+    "source_ref": null,
+    "required": true,
+    "verification_status": "assumed"
+   }
+  ],
+  "missing_context": [
+   "The actual video footage/timing, which would confirm how strongly each caption is undercut by the visual.",
+   "Any caption text overlay styling (e.g., ironic emphasis) not captured in plain text segments."
+  ],
+  "counterfactual_analysis": null,
+  "audience_assessment": null,
+  "style_prediction": null,
+  "attributions": [],
+  "truncation": {
+   "occurred": false,
+   "omitted_segments": [],
+   "potentially_lost_payoff": false
+  },
+  "usage": {
+   "calls": 1,
+   "input_tokens": 4785,
+   "output_tokens": 1320,
+   "retries": 0,
+   "elapsed_ms": 14686,
+   "measured_cost_usd": null,
+   "cost_status": "unknown"
+  },
+  "limitations": [
+   "Humour depends heavily on provided_facts (the visual descriptions) rather than the focus text segments alone; the captions in isolation are deadpan lifestyle-vlog language with no inherent joke markers.",
+   "No direct creator statement of comic intent is given; genre convention is inferred from cultural knowledge of the format."
+  ],
+  "errors": [
+   {
+    "code": "attempt_not_reported",
+    "message": "humour attempt marked reported but no declaration was supplied; downgraded",
+    "task": "comprehension",
+    "retryable": false
+   }
+  ]
+ },
+ "ip-03": {
+  "analysis_id": "an_efd7f1ce14df4e4b",
+  "request_id": "jokelab:ip-03",
+  "input_revision": "rev_096fe1a6c87f30613432",
+  "schema_version": "1",
+  "versions": {
+   "engine": "0.1.0",
+   "taxonomy": "2026-11-17.1",
+   "prompt": "comprehension-v1:engine",
+   "provider": "controlcenter",
+   "model": "control-center:SYNTHESIS_MODEL",
+   "retrieval_snapshot": "cards@9f70323dcdd2027f"
+  },
+  "analysis_mode": "live",
+  "modalities_actually_processed": [
+   "text"
+  ],
+  "requested_tasks": [
+   "comprehension"
+  ],
+  "task_results": [
+   {
+    "task": "comprehension",
+    "status": "complete",
+    "output_ref": "#/interpretations",
+    "errors": []
+   }
+  ],
+  "status": "complete",
+  "comic_reading": "supported",
+  "humour_attempt": {
+   "status": "supported_inference",
+   "evidence_refs": [
+    "ev4",
+    "ev5"
+   ],
+   "limitations": [
+    "Humour attempt is inferred from the mismatch between on-screen text and provided visual facts, not from any declared intent."
+   ]
+  },
+  "interpretations": [
+   {
+    "id": "main",
+    "literal_reading": "The on-screen captions follow the template of a product-review/haul video (unboxing, texture, fit, life-changing, run don't walk, it is me) praising some item an influencer is promoting.",
+    "supported_reading": "The caption template of a glowing product review (used across TikTok/Instagram for haul and unboxing content) is mapped onto ordinary dog behaviour — a dog destroying a box, kneading and sleeping on a blanket, guarding a treat, and a painted store mascot — so that mundane pet actions are narrated as if they were impressive consumer-product features, producing a mismatch between the hyped language and the banal footage.",
+    "reported_intent": null,
+    "structure_kind": "distributed_sequence",
+    "expectations": [
+     "Haul/unboxing captions normally accompany footage of a product being handled, worn, or demonstrated as impressive.",
+     "Phrases like 'life-changing' and 'run, don't walk' are typically used for consumer goods, not for a pet's own instinctive behaviour."
+    ],
+    "triggers": [
+     "ok I am obsessed",
+     "unboxing",
+     "the texture",
+     "literally life-changing",
+     "run, don't walk",
+     "it is me"
+    ],
+    "connecting_logic": "The provided_facts show each caption is paired with ordinary dog behaviour (digging in a box, circling and lying down, stretching, rolling over, guarding a treat, yawning) rather than any product being reviewed, so the promotional language is applied to something that is not a product at all.",
+    "labels_by_axis": {
+     "social_function": [
+      "affiliative"
+     ],
+     "mechanism": [
+      "incongruity",
+      "literalisation"
+     ],
+     "rhetorical_mode": [
+      "parody"
+     ],
+     "register": [
+      "textually_understated",
+      "conversational"
+     ],
+     "structure": [
+      "distributed_sequence"
+     ],
+     "target": [
+      "convention"
+     ]
+    },
+    "target_and_subject": {
+     "subject": null,
+     "target": "unknown",
+     "perspective": null
+    },
+    "evidence_refs": [
+     "ev1",
+     "ev2",
+     "ev3"
+    ],
+    "contextual_claim_refs": [
+     "ctx1",
+     "ctx2",
+     "ctx3"
+    ],
+    "counterevidence": [
+     "The final caption 'it is me' paired with a painted store blanket of the dog suggests the video is tied to a real place/product, which could support a straightforward promotional reading rather than a parody."
+    ],
+    "alternatives": [
+     "The captions could be read as sincere praise of an actual product (e.g., the blanket itself) that the dog happens to be shown using, with no humorous mismatch intended."
+    ],
+    "uncertainty": {
+     "score": null,
+     "score_kind": "unknown",
+     "calibration_ref": null,
+     "notes": []
+    },
+    "is_main": true
+   }
+  ],
+  "evidence": [
+   {
+    "evidence_id": "ev1",
+    "segment_id": "w2",
+    "modality": "text",
+    "start": 0,
+    "end": 8,
+    "exact_text": "unboxing"
+   },
+   {
+    "evidence_id": "ev2",
+    "segment_id": "w6",
+    "modality": "text",
+    "start": 0,
+    "end": 23,
+    "exact_text": "literally life-changing"
+   },
+   {
+    "evidence_id": "ev3",
+    "segment_id": "w10",
+    "modality": "text",
+    "start": 0,
+    "end": 8,
+    "exact_text": "it is me"
+   },
+   {
+    "evidence_id": "ev4",
+    "segment_id": "w1",
+    "modality": "text",
+    "start": 0,
+    "end": 16,
+    "exact_text": "ok I am obsessed"
+   },
+   {
+    "evidence_id": "ev5",
+    "segment_id": "w9",
+    "modality": "text",
+    "start": 0,
+    "end": 15,
+    "exact_text": "run, don't walk"
+   }
+  ],
+  "context_dependencies": [
+   {
+    "id": "ctx1",
+    "claim": "Under each caption the video shows a dog (Gary) doing ordinary things like tearing a box, kneading a blanket, stretching, and guarding a treat, rather than any product being unboxed or reviewed.",
+    "source_kind": "provided_fact",
+    "source_ref": "0",
+    "required": true,
+    "verification_status": "supplied"
+   },
+   {
+    "id": "ctx2",
+    "claim": "The format is a short vertical social video styled like a haul/unboxing review, a recognisable genre on TikTok and Instagram.",
+    "source_kind": "provided_fact",
+    "source_ref": "0",
+    "required": true,
+    "verification_status": "supplied"
+   },
+   {
+    "id": "ctx3",
+    "claim": "Phrases like 'obsessed', 'unboxing', 'run, don't walk', and 'it is me' are stock phrases from influencer product-review and haul content.",
+    "source_kind": "cultural",
+    "source_ref": null,
+    "required": true,
+    "verification_status": "assumed"
+   }
+  ],
+  "missing_context": [
+   "Whether the creator explicitly frames this as parody/comedy in a video description or hashtag",
+   "Whether 'Gary' and the painted blanket are part of a known recurring bit with an established comedic reputation"
+  ],
+  "counterfactual_analysis": null,
+  "audience_assessment": null,
+  "style_prediction": null,
+  "attributions": [],
+  "truncation": {
+   "occurred": false,
+   "omitted_segments": [],
+   "potentially_lost_payoff": false
+  },
+  "usage": {
+   "calls": 1,
+   "input_tokens": 4494,
+   "output_tokens": 1455,
+   "retries": 0,
+   "elapsed_ms": 18328,
+   "measured_cost_usd": null,
+   "cost_status": "unknown"
+  },
+  "limitations": [
+   "No audio, tone, or creator commentary is available; the reading relies entirely on the provided_facts describing the visuals and the mismatch between caption genre and footage.",
+   "Without confirmation of creator intent, this is an inference from structural incongruity rather than a directly stated joke."
+  ],
+  "errors": [
+   {
+    "code": "attempt_not_reported",
+    "message": "humour attempt marked reported but no declaration was supplied; downgraded",
+    "task": "comprehension",
+    "retryable": false
+   }
+  ]
+ },
+ "ip-04": {
+  "analysis_id": "an_379c0e74f4c847bf",
+  "request_id": "jokelab:ip-04",
+  "input_revision": "rev_2469d7c854127435de83",
+  "schema_version": "1",
+  "versions": {
+   "engine": "0.1.0",
+   "taxonomy": "2026-11-17.1",
+   "prompt": "comprehension-v1:engine",
+   "provider": "controlcenter",
+   "model": "control-center:SYNTHESIS_MODEL",
+   "retrieval_snapshot": "cards@9f70323dcdd2027f"
+  },
+  "analysis_mode": "live",
+  "modalities_actually_processed": [
+   "text"
+  ],
+  "requested_tasks": [
+   "comprehension"
+  ],
+  "task_results": [
+   {
+    "task": "comprehension",
+    "status": "complete",
+    "output_ref": "#/interpretations",
+    "errors": []
+   }
+  ],
+  "status": "complete",
+  "comic_reading": "supported",
+  "humour_attempt": {
+   "status": "supported_inference",
+   "evidence_refs": [
+    "ev4",
+    "ev5"
+   ],
+   "limitations": [
+    "Intent is inferred from text/visual juxtaposition pattern, not declared by a speaker"
+   ]
+  },
+  "interpretations": [
+   {
+    "id": "main",
+    "literal_reading": "On-screen captions describing a romantic couple's relationship milestones (date night, first fight, sharing, communication, couples yoga, a joint podcast), paired with footage of two dogs performing ordinary dog behaviours.",
+    "supported_reading": "The captions use human-relationship romantic-couple tropes as labels for mundane or unflattering dog behaviour (sniffing rear ends, stealing food, growling over a toy, ignoring each other), creating a mismatch between the sentimental human framing and the literal animal actions shown underneath each caption.",
+    "reported_intent": null,
+    "structure_kind": "distributed_sequence",
+    "expectations": [
+     "A caption like 'he's my safe space' or 'our first fight' primes a reading of deep human emotional intimacy or conflict"
+    ],
+    "triggers": [
+     "yes, we're that couple",
+     "he's my safe space",
+     "date night",
+     "we share everything",
+     "our first fight",
+     "communication is key",
+     "space is healthy",
+     "he still surprises me",
+     "couples yoga",
+     "our podcast drops Friday"
+    ],
+    "connecting_logic": "The humour relies on applying romantic-couple vocabulary to two dogs, so that the viewer expects sentimental human closeness but the accompanying action (shown in provided_facts) is plain animal behaviour, producing a gap between the caption's emotional register and the literal content.",
+    "labels_by_axis": {
+     "social_function": [
+      "affiliative"
+     ],
+     "mechanism": [
+      "incongruity",
+      "literalisation"
+     ],
+     "rhetorical_mode": [
+      "parody"
+     ],
+     "register": [
+      "textually_understated",
+      "conversational"
+     ],
+     "target": [
+      "situation"
+     ]
+    },
+    "target_and_subject": {
+     "subject": "the dogs' behaviour reframed as a human romantic relationship",
+     "target": "situation",
+     "perspective": "narrator/owner persona captioning the video"
+    },
+    "evidence_refs": [
+     "ev1",
+     "ev2",
+     "ev3"
+    ],
+    "contextual_claim_refs": [
+     "ctx1",
+     "ctx2",
+     "ctx3"
+    ],
+    "counterevidence": [
+     "Without seeing the video, the incongruity is inferred entirely from the provided_facts description rather than directly observable in the focus segments themselves"
+    ],
+    "alternatives": [
+     "The captions could be read as genuinely affectionate pet-owner sentiment with no parodic intent, treating the dogs sincerely as a 'couple'"
+    ],
+    "uncertainty": {
+     "score": null,
+     "score_kind": "unknown",
+     "calibration_ref": null,
+     "notes": []
+    },
+    "is_main": true
+   }
+  ],
+  "evidence": [
+   {
+    "evidence_id": "ev1",
+    "segment_id": "w2",
+    "modality": "text",
+    "start": 0,
+    "end": 18,
+    "exact_text": "he's my safe space"
+   },
+   {
+    "evidence_id": "ev2",
+    "segment_id": "w5",
+    "modality": "text",
+    "start": 0,
+    "end": 15,
+    "exact_text": "our first fight"
+   },
+   {
+    "evidence_id": "ev3",
+    "segment_id": "w7",
+    "modality": "text",
+    "start": 0,
+    "end": 16,
+    "exact_text": "space is healthy"
+   },
+   {
+    "evidence_id": "ev4",
+    "segment_id": "w1",
+    "modality": "text",
+    "start": 0,
+    "end": 22,
+    "exact_text": "yes, we're that couple"
+   },
+   {
+    "evidence_id": "ev5",
+    "segment_id": "w4",
+    "modality": "text",
+    "start": 0,
+    "end": 19,
+    "exact_text": "we share everything"
+   }
+  ],
+  "context_dependencies": [
+   {
+    "id": "ctx1",
+    "claim": "Each caption is paired with a specific dog action that literalizes or subverts the sentimental phrase, e.g. 'date night' shown as Gary sniffing Doug's rear while he eats",
+    "source_kind": "provided_fact",
+    "source_ref": "0",
+    "required": false,
+    "verification_status": "supplied"
+   },
+   {
+    "id": "ctx2",
+    "claim": "Format is a short vertical social video with on-screen text over real footage, a common TikTok/Instagram relationship-parody template",
+    "source_kind": "provided_fact",
+    "source_ref": "0",
+    "required": false,
+    "verification_status": "supplied"
+   },
+   {
+    "id": "ctx3",
+    "claim": "Audience is US dog owners on TikTok and Instagram, familiar with both 'couple goals' caption conventions and dog behaviour",
+    "source_kind": "provided_fact",
+    "source_ref": "0",
+    "required": false,
+    "verification_status": "supplied"
+   }
+  ],
+  "missing_context": [
+   "Direct viewing of the video to confirm comic timing and visual framing",
+   "Confirmation of whether this follows a known meme template (e.g. 'relationship captions on pets') that the target audience would recognize"
+  ],
+  "counterfactual_analysis": null,
+  "audience_assessment": null,
+  "style_prediction": null,
+  "attributions": [],
+  "truncation": {
+   "occurred": false,
+   "omitted_segments": [],
+   "potentially_lost_payoff": false
+  },
+  "usage": {
+   "calls": 1,
+   "input_tokens": 4468,
+   "output_tokens": 1397,
+   "retries": 0,
+   "elapsed_ms": 15593,
+   "measured_cost_usd": null,
+   "cost_status": "unknown"
+  },
+  "limitations": [
+   "The comic effect depends heavily on the paired visual/behavioural content described only in provided_facts, not directly present in the focus text segments themselves",
+   "No access to actual video, tone, or timing, so the humour judgment rests on the described action-caption pairing rather than observed delivery"
+  ],
+  "errors": [
+   {
+    "code": "attempt_not_reported",
+    "message": "humour attempt marked reported but no declaration was supplied; downgraded",
+    "task": "comprehension",
+    "retryable": false
+   }
+  ]
+ },
+ "ip-02": {
+  "analysis_id": "an_d277b2382f0340a1",
+  "request_id": "jokelab:ip-02",
+  "input_revision": "rev_92006d4673976b987f1a",
+  "schema_version": "1",
+  "versions": {
+   "engine": "0.1.0",
+   "taxonomy": "2026-11-17.1",
+   "prompt": "comprehension-v1:engine",
+   "provider": "controlcenter",
+   "model": "control-center:SYNTHESIS_MODEL",
+   "retrieval_snapshot": "cards@9f70323dcdd2027f"
+  },
+  "analysis_mode": "live",
+  "modalities_actually_processed": [
+   "text"
+  ],
+  "requested_tasks": [
+   "comprehension"
+  ],
+  "task_results": [
+   {
+    "task": "comprehension",
+    "status": "failed",
+    "output_ref": null,
+    "errors": [
+     {
+      "code": "no_valid_interpretation",
+      "message": "every interpretation failed grounding validation",
+      "task": "comprehension",
+      "retryable": false
+     }
+    ]
+   }
+  ],
+  "status": "failed",
+  "comic_reading": null,
+  "humour_attempt": null,
+  "interpretations": [],
+  "evidence": [],
+  "context_dependencies": [],
+  "missing_context": [],
+  "counterfactual_analysis": null,
+  "audience_assessment": null,
+  "style_prediction": null,
+  "attributions": [],
+  "truncation": {
+   "occurred": false,
+   "omitted_segments": [],
+   "potentially_lost_payoff": false
+  },
+  "usage": {
+   "calls": 1,
+   "input_tokens": 4432,
+   "output_tokens": 1502,
+   "retries": 0,
+   "elapsed_ms": 19015,
+   "measured_cost_usd": null,
+   "cost_status": "unknown"
+  },
+  "limitations": [],
+  "errors": [
+   {
+    "code": "interpretation_rejected",
+    "message": "main: labels ['mock_formal'] are not mechanism values",
+    "task": "comprehension",
+    "retryable": false
+   },
+   {
+    "code": "attempt_not_reported",
+    "message": "humour attempt marked reported but no declaration was supplied; downgraded",
+    "task": "comprehension",
+    "retryable": false
+   },
+   {
+    "code": "reading_unsupported",
+    "message": "comic reading 'supported' but no grounded comic interpretation survived validation",
+    "task": "comprehension",
+    "retryable": false
+   }
+  ]
+ }
+}

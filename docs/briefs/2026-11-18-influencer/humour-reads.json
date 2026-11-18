@@ -1,0 +1,155 @@
+{
+ "how": "humour-engine 0.1.0 published comprehension prompt run on a Claude Sonnet sub-agent (Control Center rejected the local engine token), output validated by the package itself (analysis/validate.py) and read against Krish's three-part core by factory/jokelab.py triad(). One fix applied: provided_fact source_ref \"provided_facts[0]\" normalised to \"0\".",
+ "results": [
+  {
+   "id": "ip-01",
+   "title": "A day in my life",
+   "comic_reading": "supported",
+   "reading": "A parody of the influencer 'day in my life' routine video. The captions use the polished, self-optimising wellness vocabulary, while the provided footage shows a dog doing ordinary dog things (napping, burying a treat, drinking from a bowl, chasing nothing). The captions are fitted onto the dog's behaviour as if it were a busy, productive life, and the closing 'honestly so drained' / 'need a reset tbh' lands over a yawning, sleeping dog, so the exhaustion claim is earned by a day of doing almost nothing.",
+   "labels": {
+    "social_function": [
+     "affiliative"
+    ],
+    "mechanism": [
+     "incongruity",
+     "literalisation",
+     "understatement",
+     "personification"
+    ],
+    "rhetorical_mode": [
+     "parody",
+     "observational"
+    ],
+    "register": [
+     "compressed",
+     "conversational"
+    ],
+    "structure": [
+     "distributed_sequence"
+    ],
+    "target": [
+     "convention"
+    ]
+   },
+   "missing_context": [
+    "The actual footage, timing and cuts, which are known only through the provided description.",
+    "Whether the audience reliably recognises the influencer day-in-the-life format."
+   ],
+   "cultural_dependencies": [
+    "'a day in my life', 'iced coffee run', 'meal prep', 'hydration', 'pilates', 'getting my steps in' and 'need a reset tbh' are recognisable conventions of influencer lifestyle videos."
+   ]
+  },
+  {
+   "id": "ip-03",
+   "title": "I am obsessed",
+   "comic_reading": "supported",
+   "reading": "A parody of the influencer unboxing and review video. Each hype line is paired with a dog doing something ordinary (tearing a box, kneading a blanket, sleeping, guarding a treat), so the review is performed by a dog. The last line reveals the product is the blanket painted with Gary himself, so the endorsement turns out to be self-regard: the dog is praising a portrait of himself.",
+   "labels": {
+    "social_function": [
+     "affiliative"
+    ],
+    "mechanism": [
+     "incongruity",
+     "literalisation",
+     "misdirection",
+     "reversal",
+     "exaggeration"
+    ],
+    "rhetorical_mode": [
+     "parody",
+     "observational"
+    ],
+    "register": [
+     "compressed",
+     "conversational"
+    ],
+    "structure": [
+     "distributed_sequence"
+    ],
+    "target": [
+     "convention"
+    ]
+   },
+   "missing_context": [
+    "Audience reaction or comments showing whether viewers read it as parody.",
+    "The video's pacing and any audio or voiceover."
+   ],
+   "cultural_dependencies": [
+    "Phrases like \"obsessed\", \"life-changing\" and \"run, don't walk\" are recognisable influencer review language."
+   ]
+  },
+  {
+   "id": "ip-04",
+   "title": "Yes, we're that couple",
+   "comic_reading": "supported",
+   "reading": "Two dogs are captioned as a self-satisfied influencer couple. Each caption claims intimacy while the on-screen dog behaviour (sniffing a rear during dinner, creeping to the other's bowl, a tug-of-war growl, a yawn in the face, stealing a chew) shows ordinary dog indifference or rivalry. The gap between the polished relationship cliches and the dogs' actual behaviour is the joke, ending on the dogs staring into the lens as if recording a podcast.",
+   "labels": {
+    "social_function": [
+     "affiliative"
+    ],
+    "mechanism": [
+     "incongruity",
+     "personification",
+     "irony",
+     "literalisation"
+    ],
+    "rhetorical_mode": [
+     "parody",
+     "observational"
+    ],
+    "register": [
+     "conversational",
+     "compressed"
+    ],
+    "structure": [
+     "distributed_sequence"
+    ],
+    "target": [
+     "convention"
+    ]
+   },
+   "missing_context": [
+    "The actual footage and its timing; only a written description is provided."
+   ],
+   "cultural_dependencies": [
+    "Phrases like 'communication is key', 'couples yoga' and 'our podcast drops Friday' are recognisable couple-influencer cliches."
+   ]
+  },
+  {
+   "id": "ip-02",
+   "title": "Please respect the set",
+   "comic_reading": "supported",
+   "reading": "Parody of a solemn influencer posting a morning flow: the captions use pompous creator and film-set language, while on screen the dog Gary is repeatedly upstaged by Doug digging, shaking off and finally lying on him. The solemnity of the captions collides with Doug's ordinary dog behaviour, and the last caption treats a dog resting on another dog as a collab forced on the star.",
+   "labels": {
+    "social_function": [
+     "affiliative"
+    ],
+    "mechanism": [
+     "incongruity",
+     "personification",
+     "understatement",
+     "callback"
+    ],
+    "rhetorical_mode": [
+     "parody",
+     "observational"
+    ],
+    "register": [
+     "mock_formal",
+     "compressed",
+     "textually_understated"
+    ],
+    "structure": [
+     "distributed_sequence"
+    ],
+    "target": [
+     "behaviour"
+    ]
+   },
+   "missing_context": [],
+   "cultural_dependencies": [
+    "Phrases such as morning flow, closed set, respect the craft and collab belong to influencer and film-set vocabulary."
+   ]
+  }
+ ]
+}
