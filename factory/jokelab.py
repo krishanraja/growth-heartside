@@ -465,8 +465,37 @@ def doctor(opener=None):
     return ok, lines
 
 
-def screen(candidates, reader=None, now=None):
-    """Gate, read and rank. Returns the run record (never writes)."""
+SCREEN_PROBLEM = ('A short dog video joke for Heartside\'s social accounts (gifts from your dog) that a stranger finds '
+                  'funny: an intelligent observation, an utterly stupid premise and a slightly cruel payoff, with real dog '
+                  'behavior on screen.')
+
+
+def divergent_gate(kept, live, scorer):
+    """After RETREAD and DUPLICATE: divergent-thinker's score, zero model calls, with the live posts and floor lines as
+    the obvious. Returns (kept, rejected, note). Any failure leaves the screen exactly as it was."""
+    if not scorer or not kept:
+        return kept, [], None
+    obvious = [t for _, t in live] + [w for _, w, _ in floor_lines()]
+    try:
+        sys.path.insert(0, ROOT)
+        import growth
+        from engine import divergent
+        results = scorer(SCREEN_PROBLEM, [candidate_text(c) for c in kept], obvious, divergent.banned_words(growth))
+    except Exception as e:  # noqa: BLE001 - not served, capped or cut: the screen runs as before
+        return kept, [], f'divergent-thinker did not score this screen ({getattr(e, "code", type(e).__name__)}); screened as before'
+    survivors, rejected = [], []
+    for c, result in zip(kept, list(results) + [None] * (len(kept) - len(results))):
+        why = divergent.rejection(result)
+        if why:
+            rejected.append({'id': c.get('id'), 'title': c.get('title'), 'family': c.get('family'), 'reasons': [f'divergent: {why}']})
+        else:
+            survivors.append(c)
+    return survivors, rejected, f'divergent-thinker scored {len(kept)} kept candidate(s) and rejected {len(rejected)}'
+
+
+def screen(candidates, reader=None, now=None, divergent=None):
+    """Gate, read and rank. Returns the run record (never writes). divergent: a scorer from engine/divergent.py
+    (screen_scorer), or None when Control Center does not serve it."""
     live = live_posts()
     weights = family_weights()
     fit = taste_fit()
@@ -478,6 +507,8 @@ def screen(candidates, reader=None, now=None):
             continue
         c['_warnings'] = warn
         kept.append(c)
+    kept, dropped, divergent_note = divergent_gate(kept, live, divergent)
+    rejected += dropped
     for c in kept:
         c['_engine'] = None
         if reader:
@@ -511,6 +542,7 @@ def screen(candidates, reader=None, now=None):
     return {
         'at': (now or dt.datetime.now(dt.timezone.utc)).isoformat(timespec='seconds'),
         'engine': 'read' if reader else 'not read (no Control Center token or humour-engine not installed)',
+        'divergent': divergent_note or ('not consulted' if divergent is None else 'nothing to score'),
         'counts': {'candidates': len(candidates), 'rejected': len(rejected), 'shortlist': min(SHORTLIST, len(survivors))},
         'slate_problems': problems,
         'shortlist': [_public(c) for c in survivors[:SHORTLIST]],
@@ -631,6 +663,8 @@ def find(rec, cand):
 
 def show(rec):
     out = [f'Run at {rec["at"]}. Engine: {rec["engine"]}.', json.dumps(rec['counts'])]
+    if rec.get('divergent'):
+        out.append(f'Divergent: {rec["divergent"]}.')
     out += [f'SLATE: {p}' for p in rec.get('slate_problems', [])]
     out.append('Shortlist (these, and only these, go to the tier 2 judge on the words):')
     for c in rec['shortlist']:
@@ -672,7 +706,14 @@ def main(argv=None):
         if a.live and reader is None:
             print('humour engine not available: set CONTROL_CENTER_ENGINE_TOKEN and pip install -r requirements-humour.txt; '
                   'screening with the code gates only', file=sys.stderr)
-        rec = screen(cands, reader)
+        sys.path.insert(0, ROOT)
+        from engine import divergent
+        scorer, note = divergent.screen_scorer()
+        if scorer is None:
+            print(note, file=sys.stderr)
+        rec = screen(cands, reader, divergent=scorer)
+        if scorer is None:
+            rec['divergent'] = note
         run = a.run or dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%S')
         rec['run'] = run
         print(show(rec)); print(f'\nsaved {save_run(run, rec)}'); return 0

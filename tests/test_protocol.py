@@ -85,6 +85,7 @@ class StandIn:
         self.token, self.calls, self.attempts, self.reports = token, [], {}, {}
         self.directive, self.decisions, self.inactive, self.redirect = copy.deepcopy(DIRECTIVE), [], False, False
         self.logs = []
+        self.features, self.divergent = None, None  # capabilities.features and the divergent route, unserved by default
         stand = self
 
         class Handler(BaseHTTPRequestHandler):
@@ -116,6 +117,11 @@ class StandIn:
                     return self.reply(401, {'error': 'unauthorized'})
                 if method == 'GET' and route == 'directive':
                     return self.reply(200, stand.directive)
+                if method == 'GET' and route == 'capabilities' and stand.features is not None:
+                    return self.reply(200, {'ok': True, 'features': stand.features})
+                if method == 'POST' and route == 'divergent' and stand.divergent is not None:
+                    status, answer = stand.divergent(body)
+                    return self.reply(status, answer)
                 if method == 'GET' and route == 'decisions':
                     return self.reply(200, {'ok': True, 'decisions': stand.decisions})
                 if method == 'POST' and route == 'attempts':

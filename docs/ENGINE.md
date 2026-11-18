@@ -384,6 +384,52 @@ before the Wednesday brief (`jobs/answers.md` step 2).
 `python3 -m unittest tests.test_protocol` proves the loop against an in-process
 stand-in; the CLI's default `--mode synthetic` never touches Krish's numbers or list.
 
+### Consulting divergent-thinker (dormant until Control Center serves it)
+
+divergent-thinker is the fleet's divergent thinking engine. Control Center serves it to this engine on one route,
+`POST /api/growth/engines/heartside/divergent`, on the same bearer as the report (control-center PR 963). Every use
+below first reads `GET capabilities` and does nothing until `features.divergent` is `true`: no call, no error, one
+quiet line ("divergent-thinker is not served"). So this ships before Control Center merges the route, and it switches
+itself on when Control Center does. All of it is in `engine/divergent.py`.
+
+| Where | When | What it asks | Cost |
+|---|---|---|---|
+| `growth.py cc run` | Live mode only, the report would carry no proposal, the engine is not held, and its own urgency is U4 or U5 (the directive's `north_star.own`, else NOW.md's state line) | `diverge`: `target: strategy`, three sparks, the problem from live store truth and the North Star line (never a customer's details), the U5 plays of the newest `docs/plans/*order-loop*.md` plus four generic moves as cliches, and `growth.py`'s `BANNED` and `SLOP` as banned words | About 25 model calls, about $1.30, on Control Center's side. Once a day: a marker under `local/control-center/`, Control Center's own cap (429), and none while a spark plan proposed in the last 7 days still waits on Krish |
+| `factory/jokelab.py screen` | After the retread and duplicate gates | `score`: the kept candidates against the live posts and floor lines as the obvious, namespace `growth-heartside:jokes`. `rejected_gravity` and `rejected_archive` are rejected and labelled | Zero model calls |
+| `growth.py events import` | After an import that applied new events | `record`: newly live public brand words (a live engagement's text, a published creative's caption when its pack is on this machine), namespace `growth-heartside:jokes` | Zero model calls |
+
+The walls. A spark is held, with its reason in the report's activity, when it fails this engine's own copy and claims
+checks (`growth.problems`, as for an email draft) or a wall in `WALLS`: other people's photos or dogs without their
+recorded permission and AI-made art taken into a community (the two plays of the 18 Nov live run that read well and
+could not go out), outreach in bulk, a spend, an AI person as a customer, or customers' details. The best spark that
+passes becomes one plan behind `strategy` (`stage: plan`, the plan in `exact_payload`), shaped as
+`recommendations.json`'s plans are, carrying one evidence item `{ "label": "divergent-thinker spark <rank>, run
+<runId>", "url": null }` so Control Center can count his approvals of engine-made ideas. One ask per engine at a time
+holds on his list, so the other sparks stay in the activity, by title, in reserve. A 429, 503 or any other refusal is
+one activity line and never fails the run. Nothing here posts, sends or spends: a plan he approves is built up to
+go-live and goes back to him ("Autonomy" in `AGENTS.md`). `python3 -m unittest tests.test_divergent` proves it
+against stubs and the local stand-in.
+
+**At will.** Any session can consult it directly with `python3 growth.py divergent <op> [options]` (`consult` in
+`engine/divergent.py`), on the same served check and bearer:
+
+| Op | Options | Cost |
+|---|---|---|
+| `map` | `--problem`, `--context` | 1 model call |
+| `provoke` | `--problem`, `--context`, `--count`, `--cliche` (repeatable), `--target`, `--temperament` | 2 calls, about $0.15 |
+| `challenge` | `--problem`, `--idea`, `--context` | 3 calls |
+| `diverge` | as `provoke` | About 25 calls, about $1.30, one a day for this engine (it writes the daily marker, so the report skips that day) |
+| `score` | `--problem`, `--ideas-file` (JSON list or one per line, up to 100), `--obvious-file`, `--judge` | Free with `--obvious-file` |
+| `record` | `--items-file` | Free |
+
+`--lane <name>` sets the namespace to `growth-heartside:<name>` (default `growth-heartside`). `bannedWords` is always
+`growth.py`'s `BANNED` and `SLOP`. It prints Control Center's JSON and exits 0, or 1 when `score` flags any idea
+(status not `accepted`), or 2 when the route is not served, the engine is held (only `score` and `record` run then;
+the directive is read first, and an unread directive never generates), Control Center is unreachable, a cap (429) or
+the embedder (503) refuses, or the command is misused, with the reason on stderr. It never retries and never writes
+to Krish's list: a spark becomes a proposal only through the normal path and its walls. Control Center caps this engine
+at 20 quick calls and $5 a day.
+
 ## Verified conversion media
 
 The renderer also accepts `intent: buy` with one declared unit of a live gift,

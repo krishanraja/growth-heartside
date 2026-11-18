@@ -150,6 +150,12 @@ lab closes each step where that went wrong:
 | Build, cut by cut | `jokelab.py cut RUN CAND --score N --words FILE` | Exits 1 and warns after three cuts with the same words, or when the score rose and the words did not |
 | Learn | `jokelab.py verdict RUN CAND yes\|no "his words"`, `jokelab.py taste` | Forgetting him. Each verdict moves its family's weight in the next brief and ranking. A family or mechanism becomes a rule only on two or more agreeing verdicts, so one no is never a rule. A no still goes to `floor.json` and his taste ledger as before |
 
+**divergent-thinker in the screen.** Once Control Center serves `features.divergent`, `screen` also asks
+divergent-thinker's `score` (zero model calls) after the retread and duplicate gates, with every live post and floor
+line as the obvious, and rejects a candidate it reads as too close to them (`rejected_gravity`) or as a repeat of what
+already shipped (`rejected_archive`), labelled `divergent:`. Until then, or when the call fails, the screen runs
+exactly as before and says why on its `Divergent:` line (`docs/ENGINE.md`, "Consulting divergent-thinker").
+
 Install for `--live`: `pip install -r requirements-humour.txt && pip install --no-deps -r requirements-humour-engine.txt`.
 Without it, or without the token, `screen` runs the code gates and says so. Runs are kept in `local/jokelab/`. His
 verdicts go to `bank/verdicts.jsonl`, from interactive sessions only. The humour engine holds no taste: Krish's taste is

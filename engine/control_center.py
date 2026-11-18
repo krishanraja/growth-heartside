@@ -141,14 +141,14 @@ class Client:
     def __repr__(self):
         return '<control_center.Client>'
 
-    def _call(self, method, path, body=None, headers=None):
+    def _call(self, method, path, body=None, headers=None, timeout=None):
         data = canonical(body).encode('utf-8') if body is not None else None
         req = urllib.request.Request(self._root + path, data=data, method=method, headers={
             'Authorization': 'Bearer ' + self._token, 'Accept': 'application/json',
             'User-Agent': 'growth-heartside engine-protocol',
             **({'Content-Type': 'application/json'} if data is not None else {}), **(headers or {})})
         try:
-            with self._open(req, timeout=self._timeout) as response:
+            with self._open(req, timeout=timeout or self._timeout) as response:
                 status, raw = response.status, response.read(MAX_RESPONSE + 1)
         except urllib.error.HTTPError as e:
             status = e.code
@@ -248,6 +248,18 @@ class Client:
         if isinstance(block, dict) and 'standing' in block and 'product_slug' not in block:
             block = block['standing']  # the directive's own `{ standing, rule }` shape, read the same way
         return block if isinstance(block, dict) else None
+
+    def divergent(self, body, timeout=None):
+        """divergent-thinker through Control Center (POST divergent; engine/divergent.py). Only once capabilities say
+        features.divergent. A refusal keeps Control Center's own lower_snake reason (daily_diverge_cap_reached,
+        embedder_uncalibrated, engine_held) and never its body."""
+        status, parsed = self._call('POST', 'divergent', body, timeout=timeout)
+        if 200 <= status < 300 and parsed.get('ok') is True:
+            return parsed
+        named = (parsed.get('error') or parsed.get('code')) if isinstance(parsed, dict) else None
+        if isinstance(named, str) and CODE.match(named) and status in (400, 403, 409, 429, 503):
+            raise ProtocolError(named, status)
+        raise ProtocolError(_code(status, parsed) if not 200 <= status < 300 else 'divergent_not_ok', status)
 
     def decisions(self, since):
         status, body = self._call('GET', 'decisions?' + urllib.parse.urlencode({'since': since}))
