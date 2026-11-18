@@ -12,15 +12,20 @@ Only a script that scored 9 on its words (`heartside-joke-lab`) is cut.
 
 ## 1. Cut the film
 
-Run it from the studio's `assembly/` folder. It reads `briefs/<id>.md` and `kling3/<id>_s<N>_t<N>.mp4`, and writes to
-`local/media/studio/<id>/` in the growth repository (the mp4 and its contact sheet).
+A runnable copy of `cut.py` is committed at `docs/briefs/2026-11-18-compile/assembly/cut.py`. Run it from the
+repository root, with take paths relative to the repository. Briefs go in `docs/briefs/<round>/briefs/<id>.md`;
+`films.json`, `tools/make_briefs.py` and `cut_cmds.json` in `docs/briefs/2026-11-18-compile/` are the pattern for a
+round. It writes `local/media/studio/<id>/` (the mp4 and its contact sheet).
 
 ```bash
-cd <STUDIO>/assembly
-python cut.py parse <id>                                  # check what it read from the brief first
-python cut.py build <id> --takes s1=t2,s2=t1 --end <render id or painted png> [--ground plain] [--frame s1=1.1:0.5:0.7] [--in s2=0.3]
-python cut.py gate <id>                                   # re-run every gate on the last build
+python docs/briefs/<round>/assembly/cut.py parse <id>     # check what it read from the brief first
+python docs/briefs/<round>/assembly/cut.py build <id> --takes s1=<repo-relative clip>,s2=<clip> --end <render id or painted png> [--ground plain] [--frame s1=1.1:0.5:0.7] [--in s2=0.3]
+python docs/briefs/<round>/assembly/cut.py gate <id>      # re-run every gate on the last build
 ```
+
+- Every film ends on the real product render, held 3 to 4 s. `codex/check_picture.py` holds a film whose last shot is
+  anything else, so a film with no end card cannot pass. Every 18 Nov compile film ended on the painted blanket.
+- The timing gate prefers 8 to 12 s of film before the end card.
 
 - Labels sit at a fixed place: text top y 360, centred x 140 to 820. The safe band is x 120 to 820, y 330 to 1180.
   If a label covers the dog's face, recrop the shot with `--frame` and leave the label where it is.
@@ -35,17 +40,33 @@ python cut.py gate <id>                                   # re-run every gate on
   disconnected from the joke, and a single beat with no escalation is thin. The live posts that land with a product
   (F34, S01) make the dog's own face on the gift part of the story. Before cutting, the script must say why the gift is
   in the film; if it cannot, shelve the script rather than cut it.
-- When a look lands at the very end of a clip, hold the last frame for 1 s before the cut:
-  `ffmpeg -v error -i <clip> -vf tpad=stop_mode=clone:stop_duration=1 <clip-held>.mp4`, then pass the held clip as the
-  take (`s2=<path>`). Time each label against the frame where the look actually lands (read it on the contact sheet),
+- When a look lands at the very end of a clip, hold the last frame for 1 s before the cut. Put `-ss` and `-t` before
+  `-i`: with `-t` after `-vf`, the hold is cut off and `cut.py` refuses the shot as too short.
+  `ffmpeg -v error -ss <in> -t <len> -i <clip> -vf tpad=stop_mode=clone:stop_duration=1 <clip-held>.mp4`, then pass the
+  held clip as the take (`s2=<path>`). Time each label against the frame where the look actually lands (read it on the contact sheet),
   never against the prompt.
+- A label says only what the picture literally shows. "Under himself." was wrong: the treat sat between the paws, not
+  under the dog. It became "He is keeping it company." Check each label against its frame at full size.
 - A label longer than two lines fails the gate. Split it across two beats with the words unchanged, never reword it
   at the cut. The caption comes from the joke lab with the labels; never write one at assembly.
 - Fonts missing (Karla): `python factory/fetch_library.py local/assets/library` from the repository, then rebuild.
 
+### Music (after Krish's yes on it)
+
+1. Keep every film's silent master (`local/media/studio/<film>/<film>.mp4`), so the platforms' in-app trending sound
+   can go on instead (floor `music-defines-humour`).
+2. Show Krish each film's music in one line and wait for his answer. Record it in the round's `music.json` (`status`).
+   The beds come from `heartside-higgsfield-ui`, "Music beds".
+3. Check each bed's length with `ffprobe`: it must cover the whole film, end card included.
+4. Mix: `python -I docs/briefs/2026-11-18-compile/tools/mix_music.py [film ...]` from the repository root. It
+   normalises each bed to -16 LUFS and writes `<film>_music.mp4`. Set `stop_at` in `music.json` to cut the music to
+   silence on the reaction shot, so the payoff lands in silence.
+
 ## 2. The painted end card (heartside.io painter, Claude in Chrome)
 
-Use it only when the end card should show the film's own dog painted on the product. Use at most 2 paints per dog and
+Use it only when the end card should show the film's own dog painted on the product. By 18 Nov the only painted card
+is the hero Gary's blanket, so a film with a different dog (the tan terrier in FG12) still ends on Gary's painting.
+That is a known weak point: paint the film's own dog when a round is built around it. Use at most 2 paints per dog and
 count every paint in `<STUDIO>/log-painter.md`.
 
 1. Open a new tab at
