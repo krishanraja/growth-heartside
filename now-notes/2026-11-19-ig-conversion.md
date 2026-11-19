@@ -1,0 +1,3 @@
+Status: Instagram conversion strategy written (docs/strategy/2026-11-19-ig-conversion.md). The audit's catalog claim (posters, ornaments, pillows) and its "free preview" hook are false against the live store; the bio is right but misses the $12 card. Four yes/no asks added to review/queue.json: Instagram memes to reels, move the 08:00 ET slot to 23:30 UTC, the new bio and pins, a first comment batch. Codex thread "Heartside IG dashboard read, 19 Nov" (01a1f2b8-0c0a-7f03-9185-130297576280) could not reach Krish's Chrome, so the dashboard figures are unverified. Nothing in Buffer or on the profile changed.
+Next: Krish approves Codex's Chrome access and answers the four asks; then re-run the dashboard read and act only on his yeses.
+North Star check (2026-11-19): holds.

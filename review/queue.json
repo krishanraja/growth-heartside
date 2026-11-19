@@ -254,6 +254,58 @@
       "asked_on": "2026-11-14",
       "source": "docs/plans/A1.md \"Every Sunday: plan or target\"",
       "answer": null
+    },
+    {
+      "id": "heartside:ask:ig-memes-to-reels",
+      "priority": 2,
+      "kind": "decision",
+      "title": "Instagram memes become reels",
+      "question": "Convert this week's remaining Instagram single-image memes (about 20, 20 to 25 Nov) into 8 s reels with a push-in, an Epidemic track and the product end card?",
+      "on_yes": "Claude builds them, checks each at full size, and replaces each Instagram image post in Buffer through the connector; Facebook and TikTok images stay.",
+      "on_no": "The Instagram images post as scheduled.",
+      "amount_usd": null,
+      "asked_on": "2026-11-19",
+      "source": "docs/strategy/2026-11-19-ig-conversion.md",
+      "answer": null
+    },
+    {
+      "id": "heartside:ask:buffer-slot-move",
+      "priority": 3,
+      "kind": "decision",
+      "title": "Move the 08:00 ET slot to the US evening",
+      "question": "Move the 13:00 UTC slot to 23:30 UTC for the rest of this week on all three platforms (about 21 posts)?",
+      "on_yes": "Claude reschedules those posts in Buffer through the connector, no other change.",
+      "on_no": "Slots stay as scheduled.",
+      "amount_usd": null,
+      "asked_on": "2026-11-19",
+      "source": "docs/strategy/2026-11-19-ig-conversion.md",
+      "answer": null
+    },
+    {
+      "id": "heartside:ask:ig-profile",
+      "priority": 4,
+      "kind": "decision",
+      "title": "New Instagram bio, link and pins",
+      "question": "Set the bio, tracked link, 3 pinned posts and highlights exactly as drafted in the strategy doc, section 'Profile draft'?",
+      "on_yes": "Codex makes exactly that change in his browser in a visible thread; Claude reads it back. Pins 2 and 3 wait until those reels pass the panel.",
+      "on_no": "The profile stays as it is.",
+      "amount_usd": null,
+      "asked_on": "2026-11-19",
+      "source": "docs/strategy/2026-11-19-ig-conversion.md",
+      "answer": null
+    },
+    {
+      "id": "heartside:ask:ig-comment-batch-1",
+      "priority": 5,
+      "kind": "decision",
+      "title": "First comment batch on dog accounts",
+      "question": "Draft a first batch of 10 comments on breed accounts' public posts for his yes, under rule 7 and the audience-comments skill?",
+      "on_yes": "Claude drafts 10 and puts them on the board; nothing posts until he approves that batch.",
+      "on_no": "No comments are drafted.",
+      "amount_usd": null,
+      "asked_on": "2026-11-19",
+      "source": "docs/strategy/2026-11-19-ig-conversion.md",
+      "answer": null
     }
   ]
 }
