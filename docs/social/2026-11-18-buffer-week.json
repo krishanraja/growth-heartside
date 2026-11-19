@@ -65,7 +65,7 @@
  {
   "asset": "c03",
   "platform": "tiktok",
-  "dueAt": "2026-11-19T13:00:00+00:00",
+  "dueAt": "2026-11-19T23:30:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c03.jpg",
   "text": "Every drop went directly to the people.",
@@ -76,18 +76,19 @@
  {
   "asset": "c03",
   "platform": "instagram",
-  "dueAt": "2026-11-19T13:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c03.jpg",
-  "text": "Every drop went directly to the people.",
+  "dueAt": "2026-11-19T23:35:00+00:00",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c03.mp4",
+  "text": "Every drop went directly to the people.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "buffer_id": "6afe0b1172a787cbb5de3e3f",
-  "altText": "A wet shaggy gray terrier mix mid-shake in a narrow hallway right after a bath, fur flared out in a blur, ears flying, water droplets spraying in an arc; a towel dropped on the floor and a person's jeans at the frame edge speckled with water. Text: Giving back to my community."
+  "altText": "A wet shaggy gray terrier mix mid-shake in a narrow hallway right after a bath, fur flared out in a blur, ears flying, water droplets spraying in an arc; a towel dropped on the floor and a person's jeans at the frame edge speckled with water. Text: Giving back to my community.",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c03",
   "platform": "facebook",
-  "dueAt": "2026-11-19T13:10:00+00:00",
+  "dueAt": "2026-11-19T23:40:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c03.jpg",
   "text": "Every drop went directly to the people.",
@@ -203,12 +204,13 @@
   "asset": "c11",
   "platform": "instagram",
   "dueAt": "2026-11-20T01:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c11.jpg",
-  "text": "Consistency is key.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c11.mp4",
+  "text": "Consistency is key.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy red heeler mix lies on a kitchen floor with a half-eaten loaf of sliced bread between its front paws, the plastic bag torn open, crumbs and a crust around it, a slice hanging from its mouth. Text: Currently carb cycling. Today is the carb part.",
-  "buffer_id": "6afe0b6a750db4a2bff5a8e6"
+  "buffer_id": "6afe0b6a750db4a2bff5a8e6",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c11",
@@ -224,7 +226,7 @@
  {
   "asset": "c05",
   "platform": "tiktok",
-  "dueAt": "2026-11-20T13:00:00+00:00",
+  "dueAt": "2026-11-20T23:30:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c05.jpg",
   "text": "Hydration is a mindset.",
@@ -235,18 +237,19 @@
  {
   "asset": "c05",
   "platform": "instagram",
-  "dueAt": "2026-11-20T13:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c05.jpg",
-  "text": "Hydration is a mindset.",
+  "dueAt": "2026-11-20T23:35:00+00:00",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c05.mp4",
+  "text": "Hydration is a mindset.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A yellow lab, coat a bit uneven and shedding, stands with both front paws inside a steel water bowl on a kitchen floor, water splashed in a wide puddle across the tiles, a paw raised mid-slap, droplets in the air. Text: Three liters a day, mostly on the floor.",
-  "buffer_id": "6afe0b6e37e9f56868be0db2"
+  "buffer_id": "6afe0b6e37e9f56868be0db2",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c05",
   "platform": "facebook",
-  "dueAt": "2026-11-20T13:10:00+00:00",
+  "dueAt": "2026-11-20T23:40:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c05.jpg",
   "text": "Hydration is a mindset.",
@@ -299,12 +302,13 @@
   "asset": "c13",
   "platform": "instagram",
   "dueAt": "2026-11-20T19:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c13.jpg",
-  "text": "Some of the work is private.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c13.mp4",
+  "text": "Some of the work is private.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A slightly overweight corgi with uneven fur stuck halfway under a low bed frame, only the back half visible: hind legs splayed, fluffy rear and stub of a tail poking out from under the bed skirt. Text: Doing the shadow work nobody sees.",
-  "buffer_id": "6afe0b8e750db4a2bff5b8eb"
+  "buffer_id": "6afe0b8e750db4a2bff5b8eb",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c13",
@@ -362,12 +366,13 @@
   "asset": "c12",
   "platform": "instagram",
   "dueAt": "2026-11-21T01:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c12.jpg",
-  "text": "Fewer, better pieces.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c12.mp4",
+  "text": "Fewer, better pieces.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy black lab mix puppy lies on a hallway runner gnawing a white sneaker, the toe chewed open, laces frayed, its matching shoe a few feet away also mangled. Text: Capsule wardrobe update: we're down to one shoe.",
-  "buffer_id": "6afe0ba961c30f01f6d08d89"
+  "buffer_id": "6afe0ba961c30f01f6d08d89",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c12",
@@ -383,7 +388,7 @@
  {
   "asset": "c27",
   "platform": "tiktok",
-  "dueAt": "2026-11-21T13:00:00+00:00",
+  "dueAt": "2026-11-21T23:30:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c27.jpg",
   "text": "He refuses to think smaller.",
@@ -394,18 +399,19 @@
  {
   "asset": "c27",
   "platform": "instagram",
-  "dueAt": "2026-11-21T13:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c27.jpg",
-  "text": "He refuses to think smaller.",
+  "dueAt": "2026-11-21T23:35:00+00:00",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c27.mp4",
+  "text": "He refuses to think smaller.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy Labrador-pointer mix at an open garden gate with a huge branch clamped in its jaws, the branch jammed crosswise against both posts, the dog leaning forward, paws scrabbling on the path. Text: Big goals don't fit through small doors.",
-  "buffer_id": "6afe0bc237e9f56868be2720"
+  "buffer_id": "6afe0bc237e9f56868be2720",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c27",
   "platform": "facebook",
-  "dueAt": "2026-11-21T13:10:00+00:00",
+  "dueAt": "2026-11-21T23:40:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c27.jpg",
   "text": "He refuses to think smaller.",
@@ -458,12 +464,13 @@
   "asset": "c29",
   "platform": "instagram",
   "dueAt": "2026-11-21T19:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c29.jpg",
-  "text": "The old him couldn't come to the phone.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c29.mp4",
+  "text": "The old him couldn't come to the phone.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy Boston terrier mix sitting among a cloud of white polyester stuffing on a living room rug, holding a flat, emptied plush fox skin in its mouth, stuffing stuck to its face and ears. Text: Gutted the old me for the rebrand.",
-  "buffer_id": "6afe0bdf37e9f56868be3105"
+  "buffer_id": "6afe0bdf37e9f56868be3105",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c29",
@@ -521,12 +528,13 @@
   "asset": "c06",
   "platform": "instagram",
   "dueAt": "2026-11-22T01:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c06.jpg",
-  "text": "He has asked the driver to respect his capacity.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c06.mp4",
+  "text": "He has asked the driver to respect his capacity.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy black-and-white border collie mix up on the back of a sofa, front paws on the windowsill, mouth wide open mid-bark, hackles slightly up, nose smudges on the glass. Text: Not everyone deserves access to my energy.",
-  "buffer_id": "6afe0bfc37e9f56868be4113"
+  "buffer_id": "6afe0bfc37e9f56868be4113",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c06",
@@ -542,7 +550,7 @@
  {
   "asset": "c09",
   "platform": "tiktok",
-  "dueAt": "2026-11-22T13:00:00+00:00",
+  "dueAt": "2026-11-22T23:30:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c09.jpg",
   "text": "He hears you. He's choosing growth elsewhere.",
@@ -553,18 +561,19 @@
  {
   "asset": "c09",
   "platform": "instagram",
-  "dueAt": "2026-11-22T13:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c09.jpg",
-  "text": "He hears you. He's choosing growth elsewhere.",
+  "dueAt": "2026-11-22T23:35:00+00:00",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c09.mp4",
+  "text": "He hears you. He's choosing growth elsewhere.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A gray-and-white husky with a slightly scruffy shedding coat mid-enormous yawn on a kitchen floor, jaw fully open, tongue curled, eyes squeezed shut, directly facing the phone. Text: Always open to feedback.",
-  "buffer_id": "6afe0bff72a787cbb5de8a33"
+  "buffer_id": "6afe0bff72a787cbb5de8a33",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c09",
   "platform": "facebook",
-  "dueAt": "2026-11-22T13:10:00+00:00",
+  "dueAt": "2026-11-22T23:40:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c09.jpg",
   "text": "He hears you. He's choosing growth elsewhere.",
@@ -617,12 +626,13 @@
   "asset": "c18",
   "platform": "instagram",
   "dueAt": "2026-11-22T19:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c18.jpg",
-  "text": "Glow comes from within. Mostly the fridge.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c18.mp4",
+  "text": "Glow comes from within. Mostly the fridge.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy white terrier mix with Greek yogurt smeared across her muzzle and whiskers, a tipped yogurt cup on the floor licked clean, tongue mid-lick on her own nose. Text: Step seven of my skincare routine: the overnight mask.",
-  "buffer_id": "6afe0c1d37e9f56868be4c88"
+  "buffer_id": "6afe0c1d37e9f56868be4c88",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c18",
@@ -680,12 +690,13 @@
   "asset": "c26",
   "platform": "instagram",
   "dueAt": "2026-11-23T01:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c26.jpg",
-  "text": "Some of us won't be silenced.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c26.mp4",
+  "text": "Some of us won't be silenced.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy husky-shepherd mix sitting on a porch with head thrown back, muzzle pointed at the sky, mouth in a round O mid-howl, eyes closed. Text: Using my voice to speak my truth.",
-  "buffer_id": "6afe0c3924f63f6d4cb3c6e9"
+  "buffer_id": "6afe0c3924f63f6d4cb3c6e9",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c26",
@@ -701,7 +712,7 @@
  {
   "asset": "F40",
   "platform": "tiktok",
-  "dueAt": "2026-11-23T13:00:00+00:00",
+  "dueAt": "2026-11-23T23:30:00+00:00",
   "kind": "video",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/F40.mp4",
   "text": "Inbox zero by 8. Burnout by 9:05. Boundaries by 9:06 💀\n\nYour dog, painted on a gift from your dog. Link in bio.\n\n#dogsoftiktok #goldenretriever #mondaymood #morningroutine #dogchat",
@@ -711,7 +722,7 @@
  {
   "asset": "F40",
   "platform": "instagram",
-  "dueAt": "2026-11-23T13:05:00+00:00",
+  "dueAt": "2026-11-23T23:35:00+00:00",
   "kind": "video",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/F40.mp4",
   "text": "Inbox zero by 8. Burnout by 9:05. Boundaries by 9:06 💀\n\nYour dog, painted on a gift from your dog. Link in bio.\n\n#dogsofinstagram #goldenretriever #mondaymood #morningroutine #dogchat",
@@ -721,7 +732,7 @@
  {
   "asset": "F40",
   "platform": "facebook",
-  "dueAt": "2026-11-23T13:10:00+00:00",
+  "dueAt": "2026-11-23T23:40:00+00:00",
   "kind": "video",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/F40.mp4",
   "text": "Inbox zero by 8. Burnout by 9:05. Boundaries by 9:06 💀\n\nYour dog, painted on a gift from your dog.\nhttps://heartside.io/?utm_source=facebook&utm_medium=organic_video&utm_campaign=hs_growth_202611&utm_content=FB_ENT_REEL_C152_H01_V1_20261116",
@@ -743,12 +754,13 @@
   "asset": "c04",
   "platform": "instagram",
   "dueAt": "2026-11-23T16:35:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c04.jpg",
-  "text": "It all sparked joy, which was the problem.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c04.mp4",
+  "text": "It all sparked joy, which was the problem.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy tan chihuahua mix sits in the middle of a living room floor blanketed with shredded white tissue, an empty crushed tissue box beside it, a scrap stuck to its nose. Text: Decluttered everything that didn't spark joy.",
-  "buffer_id": "6afe0c5524f63f6d4cb3d3a6"
+  "buffer_id": "6afe0c5524f63f6d4cb3d3a6",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c04",
@@ -776,12 +788,13 @@
   "asset": "c23",
   "platform": "instagram",
   "dueAt": "2026-11-23T19:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c23.jpg",
-  "text": "Failing to prepare is preparing to fail.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c23.mp4",
+  "text": "Failing to prepare is preparing to fail.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy golden retriever mix in a pantry doorway with its head inside a torn kibble bag, kibble spilled across the floor in a wide fan, its belly visibly round, a kibble stuck to its lip as it pulls its head out toward the phone. Text: Meal prepped for the whole week.",
-  "buffer_id": "6afe0c6ff5888642f69cb138"
+  "buffer_id": "6afe0c6ff5888642f69cb138",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c23",
@@ -839,12 +852,13 @@
   "asset": "c19",
   "platform": "instagram",
   "dueAt": "2026-11-24T01:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c19.jpg",
-  "text": "Main road, main character energy.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c19.mp4",
+  "text": "Main road, main character energy.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy hound mix with his head out of a moving car's rear window, jowls and ears blown back, gums flapping, eyes squinting, a trail of drool streaked along his cheek. Text: Romanticizing my commute.",
-  "buffer_id": "6afe0c8b72a787cbb5dec861"
+  "buffer_id": "6afe0c8b72a787cbb5dec861",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c19",
@@ -860,7 +874,7 @@
  {
   "asset": "c02",
   "platform": "tiktok",
-  "dueAt": "2026-11-24T13:00:00+00:00",
+  "dueAt": "2026-11-24T23:30:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c02.jpg",
   "text": "He will be back online when the box lets him.",
@@ -871,18 +885,19 @@
  {
   "asset": "c02",
   "platform": "instagram",
-  "dueAt": "2026-11-24T13:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c02.jpg",
-  "text": "He will be back online when the box lets him.",
+  "dueAt": "2026-11-24T23:35:00+00:00",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c02.mp4",
+  "text": "He will be back online when the box lets him.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A slightly chunky beagle stands in a kitchen with its entire head inside an empty cereal box, the box upright over its face, ears squashed out the sides, tail mid-wag. Text: Taking some time offline to focus on me.",
-  "buffer_id": "6afe0c8e24f63f6d4cb3f723"
+  "buffer_id": "6afe0c8e24f63f6d4cb3f723",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c02",
   "platform": "facebook",
-  "dueAt": "2026-11-24T13:10:00+00:00",
+  "dueAt": "2026-11-24T23:40:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c02.jpg",
   "text": "He will be back online when the box lets him.",
@@ -935,12 +950,13 @@
   "asset": "c37",
   "platform": "instagram",
   "dueAt": "2026-11-24T19:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c37.jpg",
-  "text": "He's not saying the squirrel is involved. He's asking questions.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c37.mp4",
+  "text": "He's not saying the squirrel is involved. He's asking questions.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy medium terrier mix with its head shoved between horizontal window blinds, slats bent around its face, one eye visible staring outside, the rest of the blinds crooked. Text: I've been doing my own research.",
-  "buffer_id": "6afe0d05f5888642f69ceee5"
+  "buffer_id": "6afe0d05f5888642f69ceee5",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c37",
@@ -998,12 +1014,13 @@
   "asset": "c30",
   "platform": "instagram",
   "dueAt": "2026-11-25T01:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c30.jpg",
-  "text": "Beige is a state of mind.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c30.mp4",
+  "text": "Beige is a state of mind.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy Australian shepherd mix standing on a cream shag rug, legs and belly soaked in brown mud up to the chest, a trail of muddy paw prints across the rug behind it, its head and back still clean and fluffy. Text: Effortless clean girl aesthetic.",
-  "buffer_id": "6afe0d08f5888642f69cefcd"
+  "buffer_id": "6afe0d08f5888642f69cefcd",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c30",
@@ -1019,7 +1036,7 @@
  {
   "asset": "c40",
   "platform": "tiktok",
-  "dueAt": "2026-11-25T13:00:00+00:00",
+  "dueAt": "2026-11-25T23:30:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c40.jpg",
   "text": "Small changes, big impact.",
@@ -1030,18 +1047,19 @@
  {
   "asset": "c40",
   "platform": "instagram",
-  "dueAt": "2026-11-25T13:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c40.jpg",
-  "text": "Small changes, big impact.",
+  "dueAt": "2026-11-25T23:35:00+00:00",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c40.mp4",
+  "text": "Small changes, big impact.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy black-and-tan coonhound mix with its head deep inside an open dishwasher, front paws on the open door, licking a dinner plate in the bottom rack, ears hanging into the rack. Text: Doing my part for sustainability by pre-rinsing everything.",
-  "buffer_id": "6afe0d1d23b3a6937eae54b7"
+  "buffer_id": "6afe0d1d23b3a6937eae54b7",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c40",
   "platform": "facebook",
-  "dueAt": "2026-11-25T13:10:00+00:00",
+  "dueAt": "2026-11-25T23:40:00+00:00",
   "kind": "image",
   "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c40.jpg",
   "text": "Small changes, big impact.",
@@ -1094,12 +1112,13 @@
   "asset": "c39",
   "platform": "instagram",
   "dueAt": "2026-11-25T19:05:00+00:00",
-  "kind": "image",
-  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/meme-c39.jpg",
-  "text": "He's going for four.",
+  "kind": "video",
+  "url": "https://github.com/krishanraja/growth-heartside/releases/download/buffer-media-2026-11-18/reel-c39.mp4",
+  "text": "He's going for four.\n\nYour dog, painted on a gift from your dog. Link in bio.",
   "status": "scheduled",
   "altText": "A scruffy golden doodle mix standing on a lawn with three tennis balls crammed into its mouth, jaws stretched wide, cheeks bulging, drool on one ball, eyes wide and proud at the phone. Text: High performers can do three things at once.",
-  "buffer_id": "6afe0d200fd3f6beff50ce82"
+  "buffer_id": "6afe0d200fd3f6beff50ce82",
+  "note": "19 Nov: meme converted to an 8 s reel (push-in, Epidemic track, premium end card), Krish yes"
  },
  {
   "asset": "c39",

@@ -946,6 +946,30 @@
     "meme",
     "still"
    ]
+  },
+  {
+   "id": "ig-reels-only-conversion",
+   "date": "2026-11-19",
+   "made": "Live dashboard (30 days): 5,319 views, 100% non-followers, reels 99.9% of views, single images near zero, 6 profile visits, 1 link tap; the strategy proposed reels-only on Instagram with the product in the last seconds",
+   "words": [
+    "yes to the rest as long as you know from all the previous work what makes a good comment",
+    "Yes, post them"
+   ],
+   "category": "process",
+   "rule": "Ruling (Krish, 2026-11-19): on Instagram, growth posts are reels only. A still meme becomes an 8 s reel: the meme with a slow push-in, a cleared Epidemic track, then the premium end card (docs/briefs/2026-11-18-influencer/endcard.py) on a real painted render, breed-matched where one exists, and the caption ends 'Your dog, painted on a gift from your dog. Link in bio.' Strong reels go in the US evening (22:00 to 01:00 UTC). Comment batches go on the board and post only after his yes on that batch.",
+   "check": "process: no Instagram image post in Buffer from 19 Nov; each converted reel checked at full size (meme frame and end-card frame) before it replaces the image; comments read back in Your activity > Comments and recorded as post_check",
+   "applies_to": [
+    "meme",
+    "reel",
+    "comment"
+   ],
+   "notes": [
+    "Instagram web has no 'Pin to your profile' (Krish pins in the app).",
+    "A page-opened sign-in popup in the browser pane blocks every navigation until he closes that tab.",
+    "Codex could not reach his Chrome on 19 Nov (access not approved); his Chrome was logged out of Instagram, the browser pane was signed in.",
+    "The humour engine was unreachable for the comment batch; that was stated on the board, never treated as a pass.",
+    "Channel screen in practice: skip brand launches, memorial and illness posts, and accounts run by pet-care companies; only 4 of about 15 recent posts passed."
+   ]
   }
  ],
  "open_conflicts": [],

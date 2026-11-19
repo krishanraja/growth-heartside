@@ -1,0 +1,3 @@
+Status: Krish said yes to all four asks (19 Nov). Applied: 19 Instagram memes in Buffer are now 8 s reels with the premium end card (reel-cNN.mp4 in release buffer-media-2026-11-18); 21 posts moved from 13:00 to 23:30 UTC; new bio set and read back live. Dashboard read and audit verified (5,319 views, 100% non-followers, 6 profile visits, 1 link tap). Pinning needs the app: the web menu has no pin. Comment batch: 4 posts passed the screen; Krish approved; all 4 posted and verified live (docs/social/2026-11-19-comments.json). Humour engine was unavailable for them.
+Next: Krish pins the guest-room reel in the app; read the reels and comments at 24 h, 72 h and 7 days; build pins 2 and 3.
+North Star check (2026-11-19): holds.
