@@ -41,6 +41,7 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- Krish said yes to all four asks (19 Nov). Applied: 19 Instagram memes in Buffer are now 8 s reels with the premium end card (reel-cNN.mp4 in release buffer-media-2026-11-18); 21 posts moved from 13:00 to 23:30 UTC; new bio set and read back live. Dashboard read and audit verified (5,319 views, 100% non-followers, 6 profile visits, 1 link tap). Pinning needs the app: the web menu has no pin. Comment batch: 4 posts passed the screen; Krish approved; all 4 posted and verified live (docs/social/2026-11-19-comments.json). Humour engine was unavailable for them. (2026-11-19)
 - 12 new Gary and Doug clips were generated on Kling 3.0 pro, each pinned to a start and an end still of the same dog; 10 pass frame by frame, the rug-flop passes from 2.5 s, and the tug-of-war failed twice (Gary drifts into a groomed schnauzer), so the couple film now ends on the chew theft. The register is docs/briefs/2026-11-18-influencer/new-shots-manifest.csv; 168.5 credits spent against Krish's 200 cap. (2026-11-18)
 - Four 30-second influencer-parody storyboards are in docs/briefs/2026-11-18-influencer/STORYBOARDS-30S.md; Codex's 81-clip catalogue shows only Gary and Doug have natural-looking footage (about nine clean active shots), so the films need 16 new shots, and the humour engine still rejects the token saved on Krish's PC. (2026-11-18)
 - 105 posts scheduled in Buffer for 18 to 25 Nov (15 a day: 5 each on TikTok, Instagram, Facebook). 14 videos: the three influencer-parody films with the new premium end card (endcard.py), Customs, Alarm, and the nine approved reels from 02r with cleared Epidemic tracks baked in (F34 x4, F40 to F44). 21 still memes: Codex built-in image generation (realistic only; c08 and c34 rejected for AI anatomy), joke lab run stills-1118, rendered with factory/meme.py. Media hosted as the public GitHub release buffer-media-2026-11-18 (Krish chose it). Plan with every Buffer id: docs/social/2026-11-18-buffer-week.json. F28 and F29 held (their joke depends on the named song). (2026-11-18)
@@ -91,13 +92,13 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-18): Krish reviews the new-shot preview; then the three films are cut at about 30 s and go on the review board.
+- Next (2026-11-19): Krish pins the guest-room reel in the app; read the reels and comments at 24 h, 72 h and 7 days; build pins 2 and 3.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Step 2 of `docs/GET-GOING.md` (a daily Shopify sales import, so `net_sales_usd` is measured) may need a credential only Krish can add; the step says to report a hold naming the secret.
-- North Star check (2026-11-18): holds.
+- North Star check (2026-11-19): holds.
 
 ## Read next
 
