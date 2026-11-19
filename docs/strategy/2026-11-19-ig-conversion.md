@@ -1,14 +1,14 @@
 # Instagram conversion: from views to followers to sales (19 Nov 2026)
 
-Status: proposal for Krish. Nothing here has changed Buffer, the profile or any account.
+Status: decisions 1 to 3 approved and applied 19 Nov; decision 4 drafted (4 comments) and on the review board.
 North Star part it moves: organic net sales (trailing 4 weeks, $0 now, U5). Views are not the problem; the path from a view to the store is.
 
 ## What was checked, and against what
 
 | Claim (audit Krish pasted, 19 Nov) | Checked against | Result |
 |---|---|---|
-| 5,283 views, all non-followers; 4,462 reached; 6 profile visits; 3 follows (28 days) | Instagram professional dashboard, read by Codex | **Not verified.** Codex thread `Heartside IG dashboard read, 19 Nov` (id `01a1f2b8-0c0a-7f03-9185-130297576280`) could not reach Krish's Chrome (access not approved). Treated as Krish's reading until re-read. |
-| Reels drove 4,402 views; feed 5, carousels 1; single images 0 likes | Same | Not verified, but consistent with our own 17 to 18 Nov publishing records. |
+| 5,283 views, all non-followers; 4,462 reached; 6 profile visits; 3 follows (28 days) | Instagram professional dashboard, read by Codex | **Verified 19 Nov** (30-day view): 5,319 views, 100% non-followers, 4,424 viewers, 6 profile visits, 1 link tap, 3 followers (`docs/social/2026-11-19-ig-dashboard.json`). The Codex read failed (no Chrome access); Claude read it in the browser pane. |
+| Reels drove 4,402 views; feed 5, carousels 1; single images 0 likes | Same | **Verified:** reels 99.9% of views. Top reel 1,620 views (guest room). |
 | Heartside sells posters, ornaments and pillows | `growth.py store`, 19 Nov | **False.** Live catalog: Illustrated Mug $45, Personality Blanket $129, Portrait $59 / $119, Christmas card from your dog $12, Artist's touch add-on $29. Ornament is on hold. The current bio (mugs, blankets, portraits) is right; it misses the $12 card. |
 | A free preview is the hook | heartside.io home page text and heartside canon at `ffc69c1` | **Not found.** The store promises free US shipping, a person checking every order, and a free digital card with the note. No "see it before you pay" claim. The bio must not promise a preview until heartside confirms one exists. |
 | Post in US evenings, 22:00 to 01:00 UK | Buffer plan `docs/social/2026-11-18-buffer-week.json` | UK is on UTC in November. 2 of our 5 daily slots (22:00 and 01:00 UTC = 17:00 and 20:00 ET) are already in that window; 13:00, 16:30 and 19:00 UTC (08:00, 11:30, 14:00 ET) are not. |
