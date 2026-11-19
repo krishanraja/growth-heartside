@@ -41,6 +41,9 @@ Lifecycle: live. The engine is merged and active on `main` (`docs/HANDOFF.md`). 
 
 Live:
 
+- 12 new Gary and Doug clips were generated on Kling 3.0 pro, each pinned to a start and an end still of the same dog; 10 pass frame by frame, the rug-flop passes from 2.5 s, and the tug-of-war failed twice (Gary drifts into a groomed schnauzer), so the couple film now ends on the chew theft. The register is docs/briefs/2026-11-18-influencer/new-shots-manifest.csv; 168.5 credits spent against Krish's 200 cap. (2026-11-18)
+- Four 30-second influencer-parody storyboards are in docs/briefs/2026-11-18-influencer/STORYBOARDS-30S.md; Codex's 81-clip catalogue shows only Gary and Doug have natural-looking footage (about nine clean active shots), so the films need 16 new shots, and the humour engine still rejects the token saved on Krish's PC. (2026-11-18)
+- 105 posts scheduled in Buffer for 18 to 25 Nov (15 a day: 5 each on TikTok, Instagram, Facebook). 14 videos: the three influencer-parody films with the new premium end card (endcard.py), Customs, Alarm, and the nine approved reels from 02r with cleared Epidemic tracks baked in (F34 x4, F40 to F44). 21 still memes: Codex built-in image generation (realistic only; c08 and c34 rejected for AI anatomy), joke lab run stills-1118, rendered with factory/meme.py. Media hosted as the public GitHub release buffer-media-2026-11-18 (Krish chose it). Plan with every Buffer id: docs/social/2026-11-18-buffer-week.json. F28 and F29 held (their joke depends on the named song). (2026-11-18)
 - A full inventory is at docs/inventory/2026-11-18-inventory.html: about 54 posts live, 20,874 views, 12 followers, $0 organic sales, nothing posted since 15 Nov 23:31 UTC, and 11 reels Krish approved in 02r (F28, F34 x4, F40 to F44, F29 on IG and FB) never posted. (2026-11-18)
 - The 8 compile films were judged (best-trained 8, six at 7, copycat 6) and put on Krish's review board at its new link; he said yes to Customs and Alarm and no to the other six. (2026-11-18)
 - The video skills now include what the sprint session learned after PR #126: - Music: ElevenLabs Music v2.5 beds through the MCP, covering the whole film and ending cleanly, Krish's yes before any mix, a silent master kept, and mixing with mix_music.py. - Assembly: the committed cut.py run from the repository root, the end card required by check_picture.py, the tpad argument order, labels that match the picture literally, and Gary's blanket as the only painted card. - Realism: Kling 2.5 Turbo drifts in a clip's last 1 to 2 s, so every take is checked full length on a 0.5 s sheet. - Joke lab: when the humour engine is unavailable on Krish's PC, the board says so, and per-clip captions still pass a check. (2026-11-18)
@@ -68,6 +71,8 @@ Waiting or not measured:
 
 ## What changed recently
 
+- 2026-11-18 Krish ruled every clip is pinned at both ends and tested before a batch (floor pin-both-ends), and the humour engine now runs live from his PC.
+- 2026-11-18 Krish ruled the influencer-parody format the house series; the storyboards follow F38's recipe (one stereotype, about 13 active real-dog shots).
 - 2026-11-18 The only format that broke out is F38's (a real dog under a deadpan routine parody, with a song); a reset (freeze generation, ship the approved backlog, fix attribution) is proposed to Krish.
 - 2026-11-18 The review board moved to https://claude.ai/artifact/6kGmidNyYAnRwiSdzAtcr4, and posts that need a recognisable in-app song go on his phone posts page.
 - 2026-11-18 engine-made recovery plays at U5 for Krish to approve in one press; it moves no sale by itself.
@@ -86,13 +91,13 @@ Waiting or not measured:
 
 ## What is next and what is waiting on Krish
 
-- Next (2026-11-18): Krish decides the proposed reset.
+- Next (2026-11-18): Krish reviews the new-shot preview; then the three films are cut at about 30 s and go on the review board.
 - Earlier next (2026-11-15): Codex reads Ads Manager and every Boost history for 1 Oct to 15 Nov as boost records with objective, destination_url and approval, so the boost audit can judge the F10 pilot and settle the 11 to 13 Nov burst.
 - **Waiting on Krish** (listed 2026-11-13, not re-checked 2026-11-14): set the three Heartside Buffer channels to New York time with US morning, lunch and evening slots (Buffer's tools here cannot change channel settings). a heartside build session for shoppable product tags (`docs/briefs/2026-10-29-heartside-shopping-tags.md`). Rule on the US groomer list. Every post, send and spend still needs his yes at that moment.
 - **Still to rewrite:** `PLAYBOOK.md` and `STRATEGY.md` carry a 29 Oct banner saying heartside's canon wins; their Biscuit-era passages are rewritten in the docs pass.
 - **Rule on the media brief's creative direction before it is proposed.** `docs/briefs/2026-10-22-media-credits.md` asks for "your dog's performance review" stills "in the V2 voice" and a "$12 product" in which "the dog reads your review". Heartside's V3 retired the HR review builder and the poster range (heartside `docs/V3-GIFTS-FROM-YOUR-DOG.md`), and heartside's canon beats this repository (`AGENTS.md`, rule 2).
 - Step 2 of `docs/GET-GOING.md` (a daily Shopify sales import, so `net_sales_usd` is measured) may need a credential only Krish can add; the step says to report a hold naming the secret.
-- North Star check (2026-11-18): recalibration proposed. The $4,862 rung for this week is at $0 with no posts since 15 Nov, so the plan (not the number) needs Krish's reset.
+- North Star check (2026-11-18): holds.
 
 ## Read next
 
