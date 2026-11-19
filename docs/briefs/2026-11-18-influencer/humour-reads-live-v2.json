@@ -1,0 +1,486 @@
+{
+ "ip-01": {
+  "analysis_id": "an_e2bcc8a8a1fa42f0",
+  "request_id": "jokelab:ip-01",
+  "input_revision": "rev_ecd14e460326dfbd8741",
+  "schema_version": "1",
+  "versions": {
+   "engine": "0.1.0",
+   "taxonomy": "2026-11-17.1",
+   "prompt": "comprehension-v1:engine",
+   "provider": "controlcenter",
+   "model": "control-center:SYNTHESIS_MODEL",
+   "retrieval_snapshot": "cards@9f70323dcdd2027f"
+  },
+  "analysis_mode": "live",
+  "modalities_actually_processed": [
+   "text"
+  ],
+  "requested_tasks": [
+   "comprehension"
+  ],
+  "task_results": [
+   {
+    "task": "comprehension",
+    "status": "complete",
+    "output_ref": "#/interpretations",
+    "errors": []
+   }
+  ],
+  "status": "complete",
+  "comic_reading": "supported",
+  "humour_attempt": {
+   "status": "supported_inference",
+   "evidence_refs": [
+    "ev2"
+   ],
+   "limitations": [
+    "Intent is inferred from format (captioned video meme) and provided visual facts, not declared by an identified author."
+   ]
+  },
+  "interpretations": [
+   {
+    "id": "main",
+    "literal_reading": "On-screen captions describe a typical human 'day in my life' productivity/wellness routine (coffee run, workspace, meal prep, hydration, pilates, steps, feeling drained, needing a reset), while the accompanying footage shows a dog, Gary, doing ordinary dog behaviours (waking up, napping, sloppily drinking water, burying a treat in plain sight, trotting aimlessly, falling asleep mid-motion), with a second dog, Doug, repeatedly just staring at the camera, and a final caption noting Gary's only followers are both named Doug.",
+    "supported_reading": "The humour comes from mapping aspirational human lifestyle-vlog captions onto mundane, unglamorous dog actions, so each caption is undercut by the mismatched footage it labels; the closing line about Gary's two followers 'both' being Doug adds a deflating, literal punchline about his tiny, repetitive audience.",
+    "reported_intent": null,
+    "structure_kind": "distributed_sequence",
+    "expectations": [
+     "Captions like 'pilates' or 'meal prep' are expected to show a person doing those activities purposefully."
+    ],
+    "triggers": [
+     "a day in my life",
+     "pilates",
+     "meal prep",
+     "hydration",
+     "honestly so drained",
+     "He has 2 followers. Both are Doug."
+    ],
+    "connecting_logic": "Each caption sets up an expectation of purposeful human activity; the paired dog footage (per provided_facts) literalises or subverts that expectation, building a cumulative incongruity across the sequence, capped by the Doug-follower line.",
+    "labels_by_axis": {
+     "social_function": [
+      "affiliative",
+      "self_enhancing"
+     ],
+     "mechanism": [
+      "incongruity",
+      "literalisation",
+      "exaggeration"
+     ],
+     "rhetorical_mode": [
+      "parody",
+      "observational"
+     ],
+     "register": [
+      "textually_understated",
+      "conversational"
+     ],
+     "structure": [
+      "distributed_sequence"
+     ],
+     "target": [
+      "situation"
+     ]
+    },
+    "target_and_subject": {
+     "subject": null,
+     "target": "unknown",
+     "perspective": null
+    },
+    "evidence_refs": [
+     "ev1",
+     "ev2"
+    ],
+    "contextual_claim_refs": [
+     "ctx1",
+     "ctx2"
+    ],
+    "counterevidence": [],
+    "alternatives": [],
+    "uncertainty": {
+     "score": 0.82,
+     "score_kind": "uncalibrated_model_score",
+     "calibration_ref": null,
+     "notes": []
+    },
+    "is_main": true
+   }
+  ],
+  "evidence": [
+   {
+    "evidence_id": "ev1",
+    "segment_id": "w8",
+    "modality": "text",
+    "start": 0,
+    "end": 7,
+    "exact_text": "pilates"
+   },
+   {
+    "evidence_id": "ev2",
+    "segment_id": "w13",
+    "modality": "text",
+    "start": 0,
+    "end": 34,
+    "exact_text": "He has 2 followers. Both are Doug."
+   }
+  ],
+  "context_dependencies": [
+   {
+    "id": "ctx1",
+    "claim": "Captions are paired with real dog footage that comically mismatches the human activity implied by each label.",
+    "source_kind": "provided_fact",
+    "source_ref": "0",
+    "required": false,
+    "verification_status": "supplied"
+   },
+   {
+    "id": "ctx2",
+    "claim": "Format is a short vertical social video aimed at dog owners on TikTok/Instagram, a genre where 'day in my life' captions are a known lifestyle-content convention.",
+    "source_kind": "topical",
+    "source_ref": null,
+    "required": false,
+    "verification_status": "assumed"
+   }
+  ],
+  "missing_context": [
+   "Confirmation of creator intent",
+   "Whether this follows a known 'day in my life' TikTok trend format being parodied"
+  ],
+  "counterfactual_analysis": null,
+  "audience_assessment": null,
+  "style_prediction": null,
+  "attributions": [],
+  "truncation": {
+   "occurred": false,
+   "omitted_segments": [],
+   "potentially_lost_payoff": false
+  },
+  "usage": {
+   "calls": 1,
+   "input_tokens": 4891,
+   "output_tokens": 1215,
+   "retries": 0,
+   "elapsed_ms": 12796,
+   "measured_cost_usd": null,
+   "cost_status": "unknown"
+  },
+  "limitations": [
+   "Analysis relies on provided_facts describing the video content rather than direct visual access.",
+   "No declared authorial intent is given; humour is inferred from genre convention and caption/footage mismatch."
+  ],
+  "errors": [
+   {
+    "code": "attempt_not_reported",
+    "message": "humour attempt marked reported but no declaration was supplied; downgraded",
+    "task": "comprehension",
+    "retryable": false
+   }
+  ]
+ },
+ "ip-03": {
+  "analysis_id": "an_fafe6a15c57a45c5",
+  "request_id": "jokelab:ip-03",
+  "input_revision": "rev_d13070ac501ac7e669a8",
+  "schema_version": "1",
+  "versions": {
+   "engine": "0.1.0",
+   "taxonomy": "2026-11-17.1",
+   "prompt": "comprehension-v1:engine",
+   "provider": "controlcenter",
+   "model": "control-center:SYNTHESIS_MODEL",
+   "retrieval_snapshot": "cards@9f70323dcdd2027f"
+  },
+  "analysis_mode": "live",
+  "modalities_actually_processed": [
+   "text"
+  ],
+  "requested_tasks": [
+   "comprehension"
+  ],
+  "task_results": [
+   {
+    "task": "comprehension",
+    "status": "complete",
+    "output_ref": "#/interpretations",
+    "errors": []
+   }
+  ],
+  "status": "complete",
+  "comic_reading": "ambiguous",
+  "humour_attempt": {
+   "status": "supported_inference",
+   "evidence_refs": [
+    "ev1",
+    "ev6"
+   ],
+   "limitations": [
+    "Humour is carried mainly by the mismatch between on-screen captions and the provided_facts describing dog footage, which is context rather than focus-segment text itself."
+   ]
+  },
+  "interpretations": [
+   {
+    "id": "main",
+    "literal_reading": "The on-screen text reads like a typical product-review or haul video caption sequence (\"obsessed\", \"unboxing\", \"the texture\", \"literally life-changing\", \"run, don't walk\"), culminating in a reveal that the reviewer 'is' a painted blanket and that a second party, Doug, is excluded from it.",
+    "supported_reading": null,
+    "reported_intent": null,
+    "structure_kind": "distributed_sequence",
+    "expectations": [
+     "A real product review building to a purchase recommendation",
+     "A human reviewer genuinely describing fit, texture, and life-changing qualities of a product"
+    ],
+    "triggers": [
+     "ok I am obsessed",
+     "unboxing",
+     "the texture",
+     "literally life-changing",
+     "run, don't walk",
+     "it is me",
+     "Doug is not on it."
+    ],
+    "connecting_logic": "The humour comes from applying sincere product-review language and structure to a dog's mundane, instinctual behaviours (sniffing, circling, lying on a blanket, guarding a treat), then escalating the mismatch until the 'review' identity collapses into the dog itself ('it is me') and the joke closes on the excluded dog Doug missing out even on a painted replica.",
+    "labels_by_axis": {
+     "social_function": [
+      "affiliative"
+     ],
+     "mechanism": [
+      "incongruity",
+      "literalisation",
+      "exaggeration"
+     ],
+     "rhetorical_mode": [
+      "parody"
+     ],
+     "register": [
+      "textually_understated"
+     ],
+     "structure": [
+      "distributed_sequence"
+     ],
+     "target": [
+      "convention"
+     ]
+    },
+    "target_and_subject": {
+     "subject": "the unboxing/review video format applied to a dog and a blanket",
+     "target": "situation",
+     "perspective": "narrator/creator"
+    },
+    "evidence_refs": [
+     "ev1",
+     "ev2",
+     "ev3",
+     "ev4",
+     "ev5",
+     "ev6"
+    ],
+    "contextual_claim_refs": [
+     "ctx1",
+     "ctx2",
+     "ctx3"
+    ],
+    "counterevidence": [],
+    "alternatives": [],
+    "uncertainty": {
+     "score": null,
+     "score_kind": "unknown",
+     "calibration_ref": null,
+     "notes": []
+    },
+    "is_main": false
+   }
+  ],
+  "evidence": [
+   {
+    "evidence_id": "ev1",
+    "segment_id": "w1",
+    "modality": "text",
+    "start": 0,
+    "end": 16,
+    "exact_text": "ok I am obsessed"
+   },
+   {
+    "evidence_id": "ev2",
+    "segment_id": "w2",
+    "modality": "text",
+    "start": 0,
+    "end": 8,
+    "exact_text": "unboxing"
+   },
+   {
+    "evidence_id": "ev3",
+    "segment_id": "w6",
+    "modality": "text",
+    "start": 0,
+    "end": 23,
+    "exact_text": "literally life-changing"
+   },
+   {
+    "evidence_id": "ev4",
+    "segment_id": "w9",
+    "modality": "text",
+    "start": 0,
+    "end": 15,
+    "exact_text": "run, don't walk"
+   },
+   {
+    "evidence_id": "ev5",
+    "segment_id": "w10",
+    "modality": "text",
+    "start": 0,
+    "end": 8,
+    "exact_text": "it is me"
+   },
+   {
+    "evidence_id": "ev6",
+    "segment_id": "w11",
+    "modality": "text",
+    "start": 0,
+    "end": 18,
+    "exact_text": "Doug is not on it."
+   }
+  ],
+  "context_dependencies": [
+   {
+    "id": "ctx1",
+    "claim": "Captions are overlaid on footage of a real dog named Gary interacting with a blanket and box, while another figure, Doug, is repeatedly denied access to it",
+    "source_kind": "provided_fact",
+    "source_ref": "0",
+    "required": false,
+    "verification_status": "supplied"
+   },
+   {
+    "id": "ctx2",
+    "claim": "This caption style (obsessed, unboxing, texture, life-changing, run don't walk) mimics common product-review/haul social video conventions",
+    "source_kind": "cultural",
+    "source_ref": null,
+    "required": false,
+    "verification_status": "assumed"
+   },
+   {
+    "id": "ctx3",
+    "claim": "The final beat reveals 'it is me' refers to a painted store blanket of Gary, and Doug is shown excluded from even that symbolic version",
+    "source_kind": "provided_fact",
+    "source_ref": "0",
+    "required": false,
+    "verification_status": "supplied"
+   }
+  ],
+  "missing_context": [
+   "Actual video footage to confirm comic timing and framing",
+   "Whether 'Doug' is another dog or a person, which affects the reading of exclusion as a punchline"
+  ],
+  "counterfactual_analysis": null,
+  "audience_assessment": null,
+  "style_prediction": null,
+  "attributions": [],
+  "truncation": {
+   "occurred": false,
+   "omitted_segments": [],
+   "potentially_lost_payoff": false
+  },
+  "usage": {
+   "calls": 1,
+   "input_tokens": 4588,
+   "output_tokens": 1269,
+   "retries": 0,
+   "elapsed_ms": 14375,
+   "measured_cost_usd": null,
+   "cost_status": "unknown"
+  },
+  "limitations": [
+   "comic_reading downgraded because no grounded interpretation survived validation",
+   "Analysis relies heavily on provided_facts describing visuals, since the focus segments alone are just captions without the dog footage context.",
+   "No access to audio, tone, or pacing; humour read purely from caption/visual juxtaposition as described."
+  ],
+  "errors": [
+   {
+    "code": "reading_unsupported",
+    "message": "comic reading 'supported' but no grounded comic interpretation survived validation",
+    "task": "comprehension",
+    "retryable": false
+   },
+   {
+    "code": "ambiguous_with_main",
+    "message": "ambiguous reading declared a main interpretation; main flag removed",
+    "task": "comprehension",
+    "retryable": false
+   }
+  ]
+ },
+ "ip-04": {
+  "analysis_id": "an_18c61885b89b48c0",
+  "request_id": "jokelab:ip-04",
+  "input_revision": "rev_9cabd96d4a26b6dcaa34",
+  "schema_version": "1",
+  "versions": {
+   "engine": "0.1.0",
+   "taxonomy": "2026-11-17.1",
+   "prompt": "comprehension-v1:engine",
+   "provider": "controlcenter",
+   "model": "control-center:SYNTHESIS_MODEL",
+   "retrieval_snapshot": "cards@9f70323dcdd2027f"
+  },
+  "analysis_mode": "live",
+  "modalities_actually_processed": [
+   "text"
+  ],
+  "requested_tasks": [
+   "comprehension"
+  ],
+  "task_results": [
+   {
+    "task": "comprehension",
+    "status": "failed",
+    "output_ref": null,
+    "errors": [
+     {
+      "code": "no_valid_interpretation",
+      "message": "every interpretation failed grounding validation",
+      "task": "comprehension",
+      "retryable": false
+     }
+    ]
+   }
+  ],
+  "status": "failed",
+  "comic_reading": null,
+  "humour_attempt": null,
+  "interpretations": [],
+  "evidence": [],
+  "context_dependencies": [],
+  "missing_context": [],
+  "counterfactual_analysis": null,
+  "audience_assessment": null,
+  "style_prediction": null,
+  "attributions": [],
+  "truncation": {
+   "occurred": false,
+   "omitted_segments": [],
+   "potentially_lost_payoff": false
+  },
+  "usage": {
+   "calls": 1,
+   "input_tokens": 4491,
+   "output_tokens": 1302,
+   "retries": 0,
+   "elapsed_ms": 15390,
+   "measured_cost_usd": null,
+   "cost_status": "unknown"
+  },
+  "limitations": [],
+  "errors": [
+   {
+    "code": "interpretation_rejected",
+    "message": "int1: a comic reading without any evidence span",
+    "task": "comprehension",
+    "retryable": false
+   },
+   {
+    "code": "reading_unsupported",
+    "message": "comic reading 'supported' but no grounded comic interpretation survived validation",
+    "task": "comprehension",
+    "retryable": false
+   }
+  ]
+ }
+}

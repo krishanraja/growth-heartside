@@ -1,0 +1,397 @@
+[
+ {
+  "id": "ip-01",
+  "family": "influencer_parody",
+  "title": "A day in my life",
+  "stereotype": "the 'day in the life' of doing very little: an influencer documents a gruelling day of an iced coffee, one email and a pilates class, then complains about being exhausted",
+  "observation": "Influencers narrate a day of almost nothing as if it were gruelling, and a dog's day is genuinely nothing, so the two match beat for beat",
+  "stupid_premise": "Gary, who has done nothing all day, documents it as a demanding wellness-and-productivity schedule and is visibly drained by it",
+  "cruel_payoff": "Doug, who watched the whole day, stares into the lens on 'honestly so drained' and again as Gary sleep-runs through his 'reset'",
+  "dog_does": "under \"a day in my life\": Gary wakes on an unmade bed, stretches front legs, yawns; under \"iced coffee run\": Gary in the passenger seat, ears blowing, grins at the lens; under \"grabbing my order\": Gary noses into a takeaway paper bag on the kitchen floor; under \"setting up my workspace\": Gary nose-dives into the sofa throw and stays face-down; under \"answered one email\": Gary sitting on the rug nods off and slides flat; under \"meal prep\": Gary buries a treat on bare tile; it stays in plain sight; under \"hydration\": Gary drinks noisily from his water bowl, water slopping onto the floor; under \"pilates\": Gary creeps on his elbows to Doug's bowl; under \"stretching it out\": Gary belly-up against the sofa, one huge stretch, goes limp; under \"getting my steps in\": Gary trots three laps of the rug chasing nothing, then flops; under \"honestly so drained\": Gary yawns hugely while Doug stares into the lens; under \"need a reset tbh\": Gary paddles in his sleep while Doug stares; under \"He has 2 followers. Both are Doug.\": Doug, lying behind the sleeping Gary, keeps staring flatly into the lens",
+  "words": [
+   "a day in my life",
+   "iced coffee run",
+   "grabbing my order",
+   "setting up my workspace",
+   "answered one email",
+   "meal prep",
+   "hydration",
+   "pilates",
+   "stretching it out",
+   "getting my steps in",
+   "honestly so drained",
+   "need a reset tbh",
+   "He has 2 followers. Both are Doug."
+  ],
+  "last_line": "He has 2 followers. Both are Doug.",
+  "caption": "Some days you just have to protect your energy.",
+  "closest_live_post": "F43",
+  "beats_live": "F43 parodies a work-from-home job with a working dog's routine; this parodies the lifestyle influencer whose day has no job in it at all, and its payoff is the second dog's judgement, which F43 never had",
+  "why_new": "the exhausted lifestyle diary, not a work routine or a morning routine",
+  "shots": [
+   {
+    "n": 1,
+    "label": "a day in my life",
+    "shot": "Gary wakes on an unmade bed, stretches front legs, yawns",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 2,
+    "label": "iced coffee run",
+    "shot": "Gary in the passenger seat, ears blowing, grins at the lens",
+    "source": "HAVE (4)",
+    "clip": "FG02"
+   },
+   {
+    "n": 3,
+    "label": "grabbing my order",
+    "shot": "Gary noses into a takeaway paper bag on the kitchen floor",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 4,
+    "label": "setting up my workspace",
+    "shot": "Gary nose-dives into the sofa throw and stays face-down",
+    "source": "HAVE (4)",
+    "clip": "FG10"
+   },
+   {
+    "n": 5,
+    "label": "answered one email",
+    "shot": "Gary sitting on the rug nods off and slides flat",
+    "source": "HAVE (3, motion blur at 2.5 s)",
+    "clip": "FG11"
+   },
+   {
+    "n": 6,
+    "label": "meal prep",
+    "shot": "Gary buries a treat on bare tile; it stays in plain sight",
+    "source": "HAVE (4)",
+    "clip": "FG07"
+   },
+   {
+    "n": 7,
+    "label": "hydration",
+    "shot": "Gary drinks noisily from his water bowl, water slopping onto the floor",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 8,
+    "label": "pilates",
+    "shot": "Gary creeps on his elbows to Doug's bowl",
+    "source": "HAVE (4)",
+    "clip": "FG16"
+   },
+   {
+    "n": 9,
+    "label": "stretching it out",
+    "shot": "Gary belly-up against the sofa, one huge stretch, goes limp",
+    "source": "HAVE (4)",
+    "clip": "FG06"
+   },
+   {
+    "n": 10,
+    "label": "getting my steps in",
+    "shot": "Gary trots three laps of the rug chasing nothing, then flops",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 11,
+    "label": "honestly so drained",
+    "shot": "Gary yawns hugely while Doug stares into the lens",
+    "source": "HAVE (4)",
+    "clip": "FG13"
+   },
+   {
+    "n": 12,
+    "label": "need a reset tbh",
+    "shot": "Gary paddles in his sleep while Doug stares",
+    "source": "HAVE (4)",
+    "clip": "FG04"
+   },
+   {
+    "n": 13,
+    "label": "He has 2 followers. Both are Doug.",
+    "shot": "Doug, lying behind the sleeping Gary, keeps staring flatly into the lens",
+    "source": "HAVE (FG04 end)",
+    "clip": "FG04"
+   }
+  ]
+ },
+ {
+  "id": "ip-03",
+  "family": "influencer_parody",
+  "title": "I am obsessed",
+  "stereotype": "the 'obsessed' product push: an influencer claims months of use of a product that is clearly brand new, with 'literally life-changing' and 'run, don't walk'",
+  "observation": "Sponsored creators rave about a product with buzzwords that would fit any product, and the product always turns out to be about them",
+  "stupid_premise": "Gary raves about a blanket in full influencer voice, burrowing, stretching and dozing on it",
+  "cruel_payoff": "the product he is obsessed with is a blanket covered in paintings of his own face",
+  "dog_does": "under \"ok I am obsessed\": Gary nose-dives into the throw; under \"unboxing\": Gary tears at a delivery box on the hallway floor, cardboard flying; under \"the texture\": Gary circles three times and kneads a blanket before lying down; under \"been using it for months\": Gary belly-up, one huge stretch, limp; under \"obsessed with the fit\": Gary rolls on his back on the blanket, legs wiggling; under \"literally life-changing\": Gary nods off sitting and slides flat; under \"my partner wants one\": Doug tries to step onto the blanket; Gary lifts his lip without moving; under \"not sharing\": Gary lies over his treat, squinting at the lens; under \"run, don't walk\": Gary yawns; Doug stares; under \"it is me\": the store's own painted blanket of Gary, held 3 s",
+  "words": [
+   "ok I am obsessed",
+   "unboxing",
+   "the texture",
+   "been using it for months",
+   "obsessed with the fit",
+   "literally life-changing",
+   "my partner wants one",
+   "not sharing",
+   "run, don't walk",
+   "it is me"
+  ],
+  "last_line": "it is me",
+  "caption": "Not sponsored. He is the product.",
+  "closest_live_post": "F34",
+  "beats_live": "F34 is a group chat roasting a dog who put his face on Mom's gift; this is the dog doing the sponsored rave himself in the influencer format, so the vanity is his own voice, not his friends' roast",
+  "why_new": "the sponsored product push, ending on the real gift",
+  "shots": [
+   {
+    "n": 1,
+    "label": "ok I am obsessed",
+    "shot": "Gary nose-dives into the throw",
+    "source": "HAVE (4)",
+    "clip": "FG10"
+   },
+   {
+    "n": 2,
+    "label": "unboxing",
+    "shot": "Gary tears at a delivery box on the hallway floor, cardboard flying",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 3,
+    "label": "the texture",
+    "shot": "Gary circles three times and kneads a blanket before lying down",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 4,
+    "label": "been using it for months",
+    "shot": "Gary belly-up, one huge stretch, limp",
+    "source": "HAVE (4)",
+    "clip": "FG06"
+   },
+   {
+    "n": 5,
+    "label": "obsessed with the fit",
+    "shot": "Gary rolls on his back on the blanket, legs wiggling",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 6,
+    "label": "literally life-changing",
+    "shot": "Gary nods off sitting and slides flat",
+    "source": "HAVE (3)",
+    "clip": "FG11"
+   },
+   {
+    "n": 7,
+    "label": "my partner wants one",
+    "shot": "Doug tries to step onto the blanket; Gary lifts his lip without moving",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 8,
+    "label": "not sharing",
+    "shot": "Gary lies over his treat, squinting at the lens",
+    "source": "HAVE (4)",
+    "clip": "FG03"
+   },
+   {
+    "n": 9,
+    "label": "run, don't walk",
+    "shot": "Gary yawns; Doug stares",
+    "source": "HAVE (4)",
+    "clip": "FG13"
+   },
+   {
+    "n": 10,
+    "label": "it is me",
+    "shot": "the store's own painted blanket of Gary, held 3 s",
+    "source": "HAVE (product)",
+    "clip": null
+   }
+  ]
+ },
+ {
+  "id": "ip-04",
+  "family": "influencer_parody",
+  "title": "Yes, we're that couple",
+  "stereotype": "the over-performed relationship: a couple films scripted affection, date nights and 'communication is key', then pushes their joint podcast",
+  "observation": "Couple accounts perform closeness so hard it reads as a hostage video",
+  "stupid_premise": "Gary and Doug present themselves as relationship goals while doing what dogs actually do to each other",
+  "cruel_payoff": "date night is Gary sniffing Doug's rear while he eats, 'we share everything' is Gary creeping onto Doug's dinner, and 'communication is key' is a yawn in Doug's face",
+  "dog_does": "under \"yes, we're that couple\": Gary lies down; Doug copies a beat later; under \"he's my safe space\": Doug's chin on Gary's back; Gary stares flatly; under \"date night\": Gary sniffs Doug's rear while he eats; Doug stares; under \"we share everything\": Gary creeps on his elbows to Doug's bowl; under \"communication is key\": Gary yawns in Doug's face; Doug stares; under \"space is healthy\": both lie back to back on the rug, ignoring each other; under \"couples yoga\": Gary lies on the mat; Doug lies half on him; under \"our podcast drops Friday\": both sit side by side on the sofa staring into the lens; under \"he still surprises me\": Doug sneaks Gary's chew while Gary sleeps",
+  "words": [
+   "yes, we're that couple",
+   "he's my safe space",
+   "date night",
+   "we share everything",
+   "communication is key",
+   "space is healthy",
+   "couples yoga",
+   "our podcast drops Friday",
+   "he still surprises me"
+  ],
+  "last_line": "he still surprises me",
+  "caption": "Link to our couples merch is not in bio.",
+  "closest_live_post": "none",
+  "why_new": "no live post parodies couple accounts",
+  "shots": [
+   {
+    "n": 1,
+    "label": "yes, we're that couple",
+    "shot": "Gary lies down; Doug copies a beat later",
+    "source": "HAVE (3, collar faint)",
+    "clip": "FG08"
+   },
+   {
+    "n": 2,
+    "label": "he's my safe space",
+    "shot": "Doug's chin on Gary's back; Gary stares flatly",
+    "source": "HAVE (3, static)",
+    "clip": "FG05"
+   },
+   {
+    "n": 3,
+    "label": "date night",
+    "shot": "Gary sniffs Doug's rear while he eats; Doug stares",
+    "source": "HAVE (4)",
+    "clip": "FG15"
+   },
+   {
+    "n": 4,
+    "label": "we share everything",
+    "shot": "Gary creeps on his elbows to Doug's bowl",
+    "source": "HAVE (4)",
+    "clip": "FG16"
+   },
+   {
+    "n": 6,
+    "label": "communication is key",
+    "shot": "Gary yawns in Doug's face; Doug stares",
+    "source": "HAVE (4)",
+    "clip": "FG13"
+   },
+   {
+    "n": 7,
+    "label": "space is healthy",
+    "shot": "both lie back to back on the rug, ignoring each other",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 9,
+    "label": "couples yoga",
+    "shot": "Gary lies on the mat; Doug lies half on him",
+    "source": "HAVE (3)",
+    "clip": "FG19"
+   },
+   {
+    "n": 10,
+    "label": "our podcast drops Friday",
+    "shot": "both sit side by side on the sofa staring into the lens",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 8,
+    "label": "he still surprises me",
+    "shot": "Doug sneaks Gary's chew while Gary sleeps",
+    "source": "NEED",
+    "clip": null
+   }
+  ]
+ },
+ {
+  "id": "ip-02",
+  "family": "influencer_parody",
+  "title": "Please respect the set",
+  "stereotype": "main character syndrome while filming: a creator sets up a tripod for a wellness flow and gets visibly annoyed when regular people walk through the background of the shot",
+  "observation": "Creators who film in shared spaces treat everyone else as an intrusion into their content",
+  "stupid_premise": "Gary is filming his morning yoga flow on a purple mat in the backyard and Doug keeps wandering into the shot",
+  "cruel_payoff": "Doug does not just walk through: he lies down on the mat, half on Gary, and becomes the content; Gary ends deadpan under Doug's chin",
+  "dog_does": "under \"filming my morning flow\": Gary play-bows on the mat; Doug stands behind, looking at the lens; under \"this is a closed set\": Doug sniffs a hole behind the mat and trots off; under \"please respect the craft\": Doug digs right behind the mat, dirt flying; under \"back in flow\": Gary alone on the mat again; under \"take two\": Doug shakes off water right beside the mat; under \"take five\": Doug zooms through the back of the shot; under \"he is now in the content\": Doug lies down half on Gary; under \"collab I did not approve\": Doug's chin on Gary's back; Gary stares",
+  "words": [
+   "filming my morning flow",
+   "this is a closed set",
+   "please respect the craft",
+   "back in flow",
+   "take two",
+   "take five",
+   "he is now in the content",
+   "collab I did not approve"
+  ],
+  "last_line": "collab I did not approve",
+  "caption": "Some people have no respect for the craft.",
+  "closest_live_post": "V005",
+  "beats_live": "V005 parodies the gym-era self-improvement arc; this parodies the creator who films in public and is annoyed by bystanders, and the joke is the second dog invading the shot, not the workout",
+  "why_new": "the annoyed creator and the bystander who walks into the shot",
+  "shots": [
+   {
+    "n": 1,
+    "label": "filming my morning flow",
+    "shot": "Gary play-bows on the mat; Doug stands behind, looking at the lens",
+    "source": "HAVE (3)",
+    "clip": "FG20"
+   },
+   {
+    "n": 2,
+    "label": "this is a closed set",
+    "shot": "Doug sniffs a hole behind the mat and trots off",
+    "source": "HAVE (3)",
+    "clip": "FG18"
+   },
+   {
+    "n": 3,
+    "label": "please respect the craft",
+    "shot": "Doug digs right behind the mat, dirt flying",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 4,
+    "label": "back in flow",
+    "shot": "Gary alone on the mat again",
+    "source": "HAVE (3)",
+    "clip": "FG19"
+   },
+   {
+    "n": 5,
+    "label": "take two",
+    "shot": "Doug shakes off water right beside the mat",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 6,
+    "label": "take five",
+    "shot": "Doug zooms through the back of the shot",
+    "source": "NEED",
+    "clip": null
+   },
+   {
+    "n": 7,
+    "label": "he is now in the content",
+    "shot": "Doug lies down half on Gary",
+    "source": "HAVE (3)",
+    "clip": "FG19"
+   },
+   {
+    "n": 8,
+    "label": "collab I did not approve",
+    "shot": "Doug's chin on Gary's back; Gary stares",
+    "source": "HAVE (3)",
+    "clip": "FG05"
+   }
+  ]
+ }
+]
