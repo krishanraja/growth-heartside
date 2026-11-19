@@ -1,0 +1,53 @@
+name: Humour engine read
+
+# Runs the joke lab's live screen (factory/jokelab.py screen --live) on a candidates file in the repository, with
+# this engine's Control Center bearer from the repository secret, so a session on any machine can get the humour
+# engine's reads without the token on that machine (Krish, 18 Nov 2026). It reads Control Center's humour route
+# only: it writes no engine state, renders nothing, posts nothing and spends only the humour calls Control Center
+# meters (about half a cent each, capped at 200 a day for this engine).
+#
+#   gh workflow run humour.yml -f candidates=docs/briefs/<dir>/storyboards.json
+#   gh run download <run id> -n humour-read
+on:
+  workflow_dispatch:
+    inputs:
+      candidates:
+        description: 'path in the repository to a JSON list of joke lab candidates'
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: heartside-humour-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  read:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install the humour engine
+        run: python -m pip install --quiet -r requirements-humour-engine.txt
+      - name: Check the route
+        env:
+          CONTROL_CENTER_ENGINE_TOKEN: ${{ secrets.CONTROL_CENTER_ENGINE_TOKEN }}
+        run: python factory/jokelab.py doctor
+      - name: Screen with live humour reads
+        env:
+          CONTROL_CENTER_ENGINE_TOKEN: ${{ secrets.CONTROL_CENTER_ENGINE_TOKEN }}
+          HEARTSIDE_JOKELAB_DIR: ${{ runner.temp }}/humour
+          CANDIDATES: ${{ inputs.candidates }}
+        run: |
+          case "$CANDIDATES" in *..*|/*) echo "candidates must be a relative path inside the repository"; exit 2;; esac
+          python factory/jokelab.py screen "$CANDIDATES" --live --run humour-read
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: humour-read
+          path: ${{ runner.temp }}/humour
+          if-no-files-found: warn
