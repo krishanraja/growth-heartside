@@ -1,0 +1,74 @@
+[
+  {
+    "event_id": "audience:2026-11-19:comment:weratedogs-scooter",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-19T08:40:00Z",
+      "at_precision": "minute",
+      "source": "Claude, Krish's signed-in browser pane; batch decision-comment-batch-1119 approved by Krish in chat ('Yes, post them')",
+      "post_url": "https://www.instagram.com/weratedogs/reel/Df5o-bUvSO2/",
+      "creative_id": "comment-1119-weratedogs-scooter",
+      "status": "verified",
+      "cover_ok": true,
+      "caption_ok": true,
+      "cta_ok": true,
+      "evidence": "Comment posted once as @yourdoghasnotes; read back in Your activity > Comments with the exact approved text: the face of a man who has read the terms and conditions of one (1) popcorn 🍿. No cover or call to action applies to a comment."
+    }
+  },
+  {
+    "event_id": "audience:2026-11-19:comment:weratedogs-hazy",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-19T08:40:00Z",
+      "at_precision": "minute",
+      "source": "Claude, Krish's signed-in browser pane; batch decision-comment-batch-1119 approved by Krish in chat ('Yes, post them')",
+      "post_url": "https://www.instagram.com/weratedogs/reel/Df5AgtBxENo/",
+      "creative_id": "comment-1119-weratedogs-hazy",
+      "status": "verified",
+      "cover_ok": true,
+      "caption_ok": true,
+      "cta_ok": true,
+      "evidence": "Comment posted once as @yourdoghasnotes; read back in Your activity > Comments with the exact approved text: nasa spent ten billion on a telescope and she was just sitting there with these the whole time 📡. No cover or call to action applies to a comment."
+    }
+  },
+  {
+    "event_id": "audience:2026-11-19:comment:dogsofnyc-pink-doodle",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-19T08:40:00Z",
+      "at_precision": "minute",
+      "source": "Claude, Krish's signed-in browser pane; batch decision-comment-batch-1119 approved by Krish in chat ('Yes, post them')",
+      "post_url": "https://www.instagram.com/dogsofnyc/reel/Df2VZ_KxWpl/",
+      "creative_id": "comment-1119-dogsofnyc-pink-doodle",
+      "status": "verified",
+      "cover_ok": true,
+      "caption_ok": true,
+      "cta_ok": true,
+      "evidence": "Comment posted once as @yourdoghasnotes; read back in Your activity > Comments with the exact approved text: valentine's outfit in november and the feet dyed to match. she's not early, she's committed 💅. No cover or call to action applies to a comment."
+    }
+  },
+  {
+    "event_id": "audience:2026-11-19:comment:dogsofnyc-stick-golden",
+    "type": "social",
+    "record": {
+      "kind": "post_check",
+      "channel": "instagram",
+      "at": "2026-11-19T08:40:00Z",
+      "at_precision": "minute",
+      "source": "Claude, Krish's signed-in browser pane; batch decision-comment-batch-1119 approved by Krish in chat ('Yes, post them')",
+      "post_url": "https://www.instagram.com/dogsofnyc/reel/DfzhwTLh9QD/",
+      "creative_id": "comment-1119-dogsofnyc-stick-golden",
+      "status": "verified",
+      "cover_ok": true,
+      "caption_ok": true,
+      "cta_ok": true,
+      "evidence": "Comment posted once as @yourdoghasnotes; read back in Your activity > Comments with the exact approved text: everyone else in the park doing cardio and she's out here moving lumber 🪵. No cover or call to action applies to a comment."
+    }
+  }
+]
