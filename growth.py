@@ -1553,6 +1553,13 @@ def self_test():
         t(f'config/insight-desk.json: {problem}' if problem else 'config/insight-desk.json parses and names only real commands',
           problem is None)
 
+    # The revenue desk adapter (config/revenue-desk.json; AGENTS.md, "Revenue desk"): it parses, and every function,
+    # file and command it names exists here; bands bind nothing, spend authority is none, the store job stays off.
+    from engine import revenue_desk
+    for problem in revenue_desk.adapter_problems(HERE) or [None]:
+        t(f'config/revenue-desk.json: {problem}' if problem else 'config/revenue-desk.json parses and names only real functions',
+          problem is None)
+
     cid = 'IG_EMO_REEL_C01_H03_V1_20261019'
     link = tracked('https://heartside.io/?view=gifts', cid)
     t('a tracked link is built from the creative id', link ==
