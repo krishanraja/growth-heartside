@@ -31,7 +31,7 @@
     },
     {
       "id": "heartside:ask:d1-creators-by-rule",
-      "priority": 3,
+      "priority": 4,
       "kind": "decision",
       "title": "Creators restart by rule",
       "question": "Define the success that restarts creators: the first replicated buy-lane winner plus a T4 interval above a threshold you set?",
@@ -44,7 +44,7 @@
     },
     {
       "id": "heartside:ask:d5-buffer-read-key",
-      "priority": 4,
+      "priority": 6,
       "kind": "decision",
       "title": "A read-only Buffer key for the runner",
       "question": "Add a read-only Buffer key to engine.yml's secrets so the runner reads and ranks posts unattended?",
@@ -57,7 +57,7 @@
     },
     {
       "id": "heartside:ask:d8-caps-after-sprint",
-      "priority": 5,
+      "priority": 8,
       "kind": "decision",
       "title": "Keep 5 posts a day per platform after 20 Nov",
       "question": "Keep 5 posts a day per platform after Sprint 120 closes, including rows you approve one by one?",
@@ -70,7 +70,7 @@
     },
     {
       "id": "heartside:ask:d6-pinterest-lane",
-      "priority": 6,
+      "priority": 10,
       "kind": "decision",
       "title": "Pinterest as a posting channel",
       "question": "Open a zero-credit Pinterest lane of pins from approved buy stills, each with a tracked link, read on 1 December (T10)?",
@@ -83,7 +83,7 @@
     },
     {
       "id": "heartside:ask:d7-three-asks-29-oct",
-      "priority": 7,
+      "priority": 11,
       "kind": "decision",
       "title": "The three asks waiting since 29 October",
       "question": "Start (a) a heartside build session for shoppable product tags, (b) set the three Buffer channels to New York time, and (c) the US groomer list?",
@@ -96,7 +96,7 @@
     },
     {
       "id": "heartside:ask:d11-late-gift",
-      "priority": 8,
+      "priority": 12,
       "kind": "copy",
       "title": "The late gift (A5)",
       "question": "From 5 December, may buy posts sell \"the digital card on Christmas Day, the gift after\", once a heartside session has put that line in the store copy and Printful's 2026 date has been read?",
@@ -109,7 +109,7 @@
     },
     {
       "id": "heartside:ask:d9-ai-label",
-      "priority": 9,
+      "priority": 13,
       "kind": "decision",
       "title": "The AI label",
       "question": "Settle the AI label with TikTok's and Meta's policy text read live and cited, before any photorealistic AI format goes above today's volume?",
@@ -127,7 +127,7 @@
     },
     {
       "id": "heartside:ask:d10-commercial-songs",
-      "priority": 10,
+      "priority": 14,
       "kind": "decision",
       "title": "In-app commercial songs on a business account",
       "question": "Allow in-app commercial songs on the business account, with the policy read live, before T9 scales?",
@@ -140,7 +140,7 @@
     },
     {
       "id": "heartside:ask:d12-real-reveal",
-      "priority": 11,
+      "priority": 15,
       "kind": "decision",
       "title": "A4, the Real Reveal",
       "question": "Film the live store painting your own dog, after a likeness pass on the painting, with every personal field out of frame?",
@@ -153,7 +153,7 @@
     },
     {
       "id": "heartside:ask:d13-warm-post",
-      "priority": 12,
+      "priority": 16,
       "kind": "decision",
       "title": "Your own warm post",
       "question": "Post once, on an account you own, linking heartside.io with an engine-tagged link?",
@@ -166,7 +166,7 @@
     },
     {
       "id": "heartside:ask:d14-board-yes-marks-sheet",
-      "priority": 13,
+      "priority": 17,
       "kind": "decision",
       "title": "Board Yes marks the Sheet, asked again",
       "question": "You answered Yes on 10 November, but a safety check refused the rule change. Should a board Yes mark the Sheet's approved cell, through the Control Center go-live (H7) once it exists?",
@@ -179,7 +179,7 @@
     },
     {
       "id": "heartside:ask:d15-f01-drift",
-      "priority": 14,
+      "priority": 18,
       "kind": "decision",
       "title": "F01 has drifted from its lock",
       "question": "Re-lock F01 at its current edition, or restore it to the locked one?",
@@ -192,7 +192,7 @@
     },
     {
       "id": "heartside:ask:d16-f10-f11-held",
-      "priority": 15,
+      "priority": 19,
       "kind": "decision",
       "title": "F10 and F11, held",
       "question": "Rebuild F10 (opens on bubbles, no-novelty-sfx) and F11 (searches too long for the box)?",
@@ -205,7 +205,7 @@
     },
     {
       "id": "heartside:ask:d17-media-brief-direction",
-      "priority": 16,
+      "priority": 20,
       "kind": "decision",
       "title": "The media brief's creative direction",
       "question": "Approve the creative direction in the media brief named in NOW.md?",
@@ -218,7 +218,7 @@
     },
     {
       "id": "heartside:ask:d18-real-dog-remakes",
-      "priority": 17,
+      "priority": 21,
       "kind": "decision",
       "title": "F39 and F45 real-dog remakes",
       "question": "Remake F39 (needs new clips, held at 7) and F45 (motion needs about 150 Runway credits, once the Control Center Runway share is reconciled)?",
@@ -231,7 +231,7 @@
     },
     {
       "id": "heartside:ask:d19-retire-four-arm-test",
-      "priority": 18,
+      "priority": 22,
       "kind": "decision",
       "title": "Retire the four-arm $250 test",
       "question": "Retire the four-arm $250 test in docs/PAID-BOOSTS.md, superseded by your 10 November ruling (each boost at most $20 a day, proposed one at a time with organic reach as proof)?",
@@ -244,7 +244,7 @@
     },
     {
       "id": "heartside:ask:sunday-plan-or-target",
-      "priority": 19,
+      "priority": 23,
       "kind": "decision",
       "title": "Plan or target, this Sunday",
       "question": "Keep $50,000 at 28 December, or re-base?",
@@ -257,7 +257,7 @@
     },
     {
       "id": "heartside:ask:ig-memes-to-reels",
-      "priority": 2,
+      "priority": 3,
       "kind": "decision",
       "title": "Instagram memes become reels",
       "question": "Convert this week's remaining Instagram single-image memes (about 20, 20 to 25 Nov) into 8 s reels with a push-in, an Epidemic track and the product end card?",
@@ -267,7 +267,7 @@
       "asked_on": "2026-11-19",
       "source": "docs/strategy/2026-11-19-ig-conversion.md",
       "answer": {
-        "decision": "yes",
+        "decision": "approved",
         "decided_at": "2026-11-19",
         "applied_on": "2026-11-19",
         "where": "chat, Krish: \"yes to the rest as long as you know from all the previous work what makes a good comment\"; 19 Instagram posts replaced with reel-cNN.mp4"
@@ -275,7 +275,7 @@
     },
     {
       "id": "heartside:ask:buffer-slot-move",
-      "priority": 3,
+      "priority": 5,
       "kind": "decision",
       "title": "Move the 08:00 ET slot to the US evening",
       "question": "Move the 13:00 UTC slot to 23:30 UTC for the rest of this week on all three platforms (about 21 posts)?",
@@ -285,7 +285,7 @@
       "asked_on": "2026-11-19",
       "source": "docs/strategy/2026-11-19-ig-conversion.md",
       "answer": {
-        "decision": "yes",
+        "decision": "approved",
         "decided_at": "2026-11-19",
         "applied_on": "2026-11-19",
         "where": "chat, Krish: \"yes to the rest as long as you know from all the previous work what makes a good comment\"; 21 Buffer posts moved to 23:30 UTC"
@@ -293,7 +293,7 @@
     },
     {
       "id": "heartside:ask:ig-profile",
-      "priority": 4,
+      "priority": 7,
       "kind": "decision",
       "title": "New Instagram bio, link and pins",
       "question": "Set the bio, tracked link, 3 pinned posts and highlights exactly as drafted in the strategy doc, section 'Profile draft'?",
@@ -303,7 +303,7 @@
       "asked_on": "2026-11-19",
       "source": "docs/strategy/2026-11-19-ig-conversion.md",
       "answer": {
-        "decision": "yes",
+        "decision": "approved",
         "decided_at": "2026-11-19",
         "applied_on": "2026-11-19",
         "where": "chat, Krish: \"yes to the rest as long as you know from all the previous work what makes a good comment\"; bio set and read back live; pin needs the app (web menu has no pin)"
@@ -311,7 +311,7 @@
     },
     {
       "id": "heartside:ask:ig-comment-batch-1",
-      "priority": 5,
+      "priority": 9,
       "kind": "decision",
       "title": "First comment batch on dog accounts",
       "question": "Draft a first batch of 10 comments on breed accounts' public posts for his yes, under rule 7 and the audience-comments skill?",
@@ -321,7 +321,7 @@
       "asked_on": "2026-11-19",
       "source": "docs/strategy/2026-11-19-ig-conversion.md",
       "answer": {
-        "decision": "yes",
+        "decision": "approved",
         "decided_at": "2026-11-19",
         "applied_on": "2026-11-19",
         "where": "chat, Krish: \"yes to the rest as long as you know from all the previous work what makes a good comment\"; 4 drafted, on the review board as decision-comment-batch-1119; Krish: \"Yes, post them\"; 4 posted and verified (docs/social/2026-11-19-comments.json)"

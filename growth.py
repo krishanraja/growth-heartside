@@ -1542,6 +1542,17 @@ def self_test():
               body.startswith('---\n') and f'\nname: {skill}\n' in body.split('\n---', 1)[0] + '\n'
               and '\ndescription: ' in body.split('\n---', 1)[0])
 
+    # The insight desk adapter (config/insight-desk.json; AGENTS.md, "Insight desk"): it parses, and every command,
+    # file and flag it names exists here, so a session that follows it never meets a missing step.
+    sys.path.insert(0, os.path.join(HERE, 'factory'))
+    try:
+        import insight_sheet
+    finally:
+        sys.path.pop(0)
+    for problem in insight_sheet.adapter_problems(HERE) or [None]:
+        t(f'config/insight-desk.json: {problem}' if problem else 'config/insight-desk.json parses and names only real commands',
+          problem is None)
+
     cid = 'IG_EMO_REEL_C01_H03_V1_20261019'
     link = tracked('https://heartside.io/?view=gifts', cid)
     t('a tracked link is built from the creative id', link ==

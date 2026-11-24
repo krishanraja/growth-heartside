@@ -1,0 +1,5 @@
+Status: The insight desk is wired into this engine, additive only. config/insight-desk.json is the adapter to the ai-harness insight-desk skill (still a candidate there, so read it from a local ai-harness checkout until it is admitted). factory/insight_sheet.py checks an insight-sheet/1 sheet with the standard library; factory/jokelab.py brief --insight puts a sheet's chosen insight and lead idea in front of the brief, and without the flag the brief is byte for byte what it was. factory/insight_bench.py runs the two offline checks over the floor's concept and joke declines and the live posts: 59 items, all fail the insight form, 48 fail specificity, none pass both, and the synthetic control passes both, so it reports calibrated. The self-test checks the adapter names only real commands. No sheet has been made yet; no model, divergent or humour call was made.
+
+Next: run the first real sheet for Heartside and put it through the joke lab as two arms, the plain brief as set 1 and brief --insight as set 2, both through screen and the tier 2 judge, on the review board for Krish.
+
+North Star check (2026-11-24): holds.
