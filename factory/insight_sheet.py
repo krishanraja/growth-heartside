@@ -376,14 +376,23 @@ def read_sheet(path):
         return json.load(f)
 
 
-def usable(path, adapter=None, methods_path=None):
-    """(sheet, errors) for a sheet about to feed this engine: valid, for this venture, and with a lead."""
+METHODS_NOT_CHECKED = ('the skill\'s method list is not on this machine, so method names were not checked '
+                       '(set HEARTSIDE_HARNESS_DIR or pass --methods)')
+
+
+def usable(path, adapter=None, methods_path=None, notes=None):
+    """(sheet, errors) for a sheet about to feed this engine: valid, for this venture, and with a lead.
+
+    When the skill's method list is not on this machine the method names go unchecked; that is said, never silent:
+    the note goes on `notes` when the caller passes a list."""
     adapter = adapter if adapter is not None else load_adapter()
     try:
         sheet = read_sheet(path)
     except (OSError, ValueError) as error:
         return None, [f'cannot read the sheet: {error}']
     mpath = methods_file(methods_path)
+    if not mpath and notes is not None:
+        notes.append(METHODS_NOT_CHECKED)
     errors = validate(sheet, known_methods(mpath) if mpath else None)
     if isinstance(sheet, dict):
         errors += for_this_engine(sheet, adapter)
@@ -404,7 +413,8 @@ def preamble(sheet):
         'candidate from this insight and this idea. The idea is the brief\'s direction, not its words; everything below '
         'the line still binds.',
         '',
-        f'The insight: {insight["audience"]} wants {insight["wants"]} but {insight["but"]} because {insight["because"]}.',
+        f'The insight, for {insight["audience"]}: they want {insight["wants"]}, but {insight["but"]}, because '
+        f'{insight["because"]}.',
         f'Where it comes from: {where}{when}.',
         '',
         f'The lead idea ({idea["id"]}, {idea["idea_level"]} level, method {idea["method"]}): {idea["claim"]}',
@@ -541,8 +551,7 @@ def main(argv=None):
     for error in errors:
         print(f'INVALID  {error}')
     if not mpath:
-        print('note: the skill\'s method list is not on this machine, so method names were not checked '
-              '(set HEARTSIDE_HARNESS_DIR or pass --methods)', file=sys.stderr)
+        print(f'note: {METHODS_NOT_CHECKED}', file=sys.stderr)
     if errors:
         return 1
     print(f'VALID {SCHEMA}: {len(sheet["ideas"])} idea(s), lead {sheet["lead"] or "none"}')

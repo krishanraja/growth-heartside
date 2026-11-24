@@ -254,7 +254,10 @@ def insight_brief(sheet_path, topic, n=30, slot=None):
     if HERE not in sys.path:
         sys.path.insert(0, HERE)
     import insight_sheet
-    sheet, errors = insight_sheet.usable(sheet_path)
+    notes = []
+    sheet, errors = insight_sheet.usable(sheet_path, notes=notes)
+    for note in notes:
+        print(f'note: {note}', file=sys.stderr)
     if errors:
         raise SystemExit('the insight sheet cannot feed a brief:\n' + '\n'.join(f'  - {e}' for e in errors))
     return insight_sheet.preamble(sheet) + '\n\n' + brief(topic, n, slot)

@@ -155,9 +155,28 @@ class BriefTest(unittest.TestCase):
         self.assertTrue(out.endswith(plain))
         head = out[:-len(plain)]
         self.assertEqual(head, insight_sheet.preamble(s) + '\n\n')
-        self.assertIn('The insight: people whose dog steals the couch wants to laugh about it', head)
+        self.assertIn('The insight, for people whose dog steals the couch: they want to laugh about it', head)
+        self.assertNotIn('couch wants', head)
         self.assertIn('The lead idea (confession', head)
         self.assertNotIn('name-the-habit', head)
+
+    def test_an_unchecked_method_list_is_said_on_the_brief_path(self):
+        s = sheet()
+        saved = insight_sheet.methods_file
+        try:
+            insight_sheet.methods_file = lambda explicit=None: None
+            notes = []
+            _, errors = insight_sheet.usable(self.write(s), notes=notes)
+            self.assertEqual(errors, [])
+            self.assertEqual(notes, [insight_sheet.METHODS_NOT_CHECKED])
+            err = io.StringIO()
+            with contextlib.redirect_stderr(err):
+                code, out = run_main(jokelab.main, ['brief', 'bath day', '--insight', self.write(s)])
+            self.assertEqual(code, 0)
+            self.assertIn('method names were not checked', err.getvalue())
+            self.assertNotIn('method names were not checked', out)
+        finally:
+            insight_sheet.methods_file = saved
 
     def test_a_bad_sheet_never_feeds_a_brief(self):
         s = sheet(); s['ideas'][0]['claim'] = 'tampered'
@@ -192,6 +211,9 @@ class AdapterAndBenchTest(unittest.TestCase):
         self.assertGreater(report['floor_items'], 0)
         self.assertGreater(report['live_items'], 0)
         self.assertEqual(report['gaps'], [])
+        self.assertEqual(report['floor_pass_specificity'], [])
+        self.assertFalse(report['generic_control']['specificity'])
+        self.assertFalse(report['product_control']['format'])
         self.assertTrue(report['calibrated'])
 
 
