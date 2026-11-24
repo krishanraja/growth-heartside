@@ -1,0 +1,3 @@
+Status: The revenue desk's Heartside adapter is in config/revenue-desk.json: post, session, add to cart, order and net sales, each read from a named engine function, bands as unbound assumptions with no figure, one action per alarm, offer terms from engine/offers.py, no spend authority, the store job still off. growth.py --self-test checks it (engine/revenue_desk.py). Add to cart has no reader in attribution.py or insights.py; it is read store wide from ledger.summary and is blind when no aggregate report covers the window.
+Next: Calibrate the warning and breach bands from this engine's stored attribution readings and imported reports, and put them to Krish for his yes before they bind.
+North Star check (2026-11-24): holds.

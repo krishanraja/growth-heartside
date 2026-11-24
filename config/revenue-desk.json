@@ -1,0 +1,157 @@
+{
+  "schema": "revenue-desk-adapter/1",
+  "_about": "Heartside's adapter for the revenue desk: the method lives once in ai-harness, the deterministic code in strategist, and this file says where each step from post to money is read in this engine. It holds no figures and no customer data: every count is an aggregate this engine already keeps. The desk reads, computes and proposes; it never posts, sends or spends. AGENTS.md, \"Revenue desk\".",
+  "ruling": "Ruling (Krish, 2026-11-24): build the revenue desk as recommended; thresholds from this engine's own history binding only after his yes.",
+  "venture": "heartside",
+  "repo": "krishanraja/growth-heartside",
+  "skill": {
+    "name": "revenue-desk",
+    "home": "krishanraja/ai-harness",
+    "served_path": "skills/revenue-desk/SKILL.md",
+    "candidate_state": "state/candidates/revenue-desk.yaml",
+    "read_with": "Control Center get_skill('revenue-desk'); until it is admitted, a local ai-harness checkout's skills/revenue-desk, else record the desk as unavailable and change nothing"
+  },
+  "north_star": {
+    "doctrine": "docs/NORTH_STAR.md",
+    "state_line": "NOW.md, the north-star-state line under \"Where it is right now\"",
+    "step": "net_sales"
+  },
+  "freshness_days": 7,
+  "blind_rule": "A step that is unreadable, missing or older than freshness_days is blind, recorded with its reason, never as zero. A venture with any blind step never reads on track or clear.",
+  "steps": [
+    {
+      "id": "post",
+      "name": "post",
+      "counts": "posts recorded live in the creative ledger, by creative id",
+      "measure": "count",
+      "better": "up",
+      "read": [
+        {"module": "engine/insights.py", "function": "decisions", "what": "the newest revision of every creative with status published"},
+        {"module": "engine/ledger.py", "function": "mark", "what": "where a live post is recorded as published, with its address"}
+      ],
+      "commands": ["python3 growth.py creatives list", "python3 growth.py creatives mark"],
+      "slices": ["platform", "creative family", "week"]
+    },
+    {
+      "id": "session",
+      "name": "session",
+      "counts": "store sessions, and sessions credited to one exact creative id through its tracked link",
+      "measure": "rate from post",
+      "better": "up",
+      "read": [
+        {"module": "engine/insights.py", "function": "import_observation", "what": "shopify_utm sessions filtered to one exact utm_content creative id"},
+        {"module": "engine/ledger.py", "function": "summary", "what": "store sessions from imported aggregate reports, over nonoverlapping windows"}
+      ],
+      "commands": ["python3 growth.py insights import", "python3 growth.py metrics import", "python3 growth.py metrics report"],
+      "slices": ["source", "creative family", "week"]
+    },
+    {
+      "id": "add_to_cart",
+      "name": "add to cart",
+      "counts": "sessions with a cart addition, store wide",
+      "measure": "rate from session",
+      "better": "up",
+      "read": [
+        {"module": "engine/ledger.py", "function": "summary", "what": "sessions_with_cart_additions from imported aggregate reports"}
+      ],
+      "read_gap": "Neither engine/attribution.py nor engine/insights.py reads cart additions: attribution reads orders only, and insights allows sessions, orders and net sales on a creative but no cart field. So this step is store wide, cannot be sliced by creative, and is blind whenever no aggregate report covers the window.",
+      "commands": ["python3 growth.py metrics import", "python3 growth.py metrics report"],
+      "slices": ["week"]
+    },
+    {
+      "id": "order",
+      "name": "order",
+      "counts": "orders whose journey classifies as organic posts (engine plus organic social), and per creative where the link was tracked",
+      "measure": "rate from add to cart",
+      "better": "up",
+      "read": [
+        {"module": "engine/attribution.py", "function": "aggregate", "what": "orders per tier and per engine family, paid checked first and never counted"},
+        {"module": "engine/attribution.py", "function": "latest", "what": "the newest stored trailing reading"},
+        {"module": "engine/insights.py", "function": "decisions", "what": "attributed orders on one exact creative revision"}
+      ],
+      "commands": ["python3 growth.py attribution", "python3 growth.py insights decisions"],
+      "slices": ["source", "gift", "creative family", "week"]
+    },
+    {
+      "id": "net_sales",
+      "name": "net sales",
+      "counts": "net sales attributed to organic posts, trailing 28 days, the North Star number",
+      "measure": "value per order and the trailing total",
+      "better": "up",
+      "read": [
+        {"module": "engine/attribution.py", "function": "latest", "what": "organic net sales in the newest trailing_28d reading, with observed_at"},
+        {"module": "engine/attribution.py", "function": "aggregate", "what": "net sales per tier and per engine family, under the definition attribution.py states"}
+      ],
+      "commands": ["python3 growth.py attribution"],
+      "slices": ["source", "gift", "creative family", "week"]
+    }
+  ],
+  "bands": {
+    "label": "assumption",
+    "warning": null,
+    "breach": null,
+    "calibrate_from": "this engine's own history only: the stored attribution readings, the imported aggregate reports and the insights observations, back-tested so the bands flag what later stalled and nothing in the control weeks",
+    "binding": false,
+    "binding_after": "Krish's yes on the calibrated bands, recorded as a Ruling in the commit that sets them",
+    "repeat_breach": "two breaches of the same step in a row raise one ask, inside the ask limits",
+    "until_binding": "a crossed band is shown as an observation on the sheet, never as an alarm on his list"
+  },
+  "alarms": {
+    "blind": {
+      "owner": "this engine",
+      "action": "Restore the reading: run the step's read command, or name the access it lacks, before any other step is judged."
+    },
+    "warning": {
+      "owner": "this engine",
+      "action": "Slice the step by source, gift, creative family and week, and name the one slice that carries the drop on the sheet."
+    },
+    "breach": {
+      "owner": "this engine",
+      "action": "Write one 7-day test card for that step (hypothesis, one variable, primary and guardrail metric, floor, expected and stretch, stop and kill rule, review date) and propose it as a plan behind strategy."
+    }
+  },
+  "offer_terms": {
+    "module": "engine/offers.py",
+    "functions": ["canonical_offers", "catalog", "fresh_store", "validate_item", "purchase_campaign"],
+    "rules": [
+      "Gift prices come only from the canon's configured baseline sentences, never a hardcoded list; sources that disagree mark the gift and it is never offered.",
+      "Purchase copy or a public price declares its offers: gift id, quantity from 1 to 20 and unit price.",
+      "Purchase copy needs a public catalog sync less than 26 hours old.",
+      "A discount needs a second distinct gift and bundle evidence verified at the same sync; a canon sentence alone never proves it.",
+      "Every quoted price matches a declared gift price or the basket total.",
+      "Copy that names a gift declares that gift.",
+      "A purchase link leads to its declared gift or to a ready gifts landing page, and is tracked.",
+      "Discount codes count only in a family Krish registered in config/codes.json."
+    ],
+    "never_override": ["price mismatch", "stale catalog", "gift not ready", "unregistered code family"],
+    "rerun": "whenever a go_live payload is built, before its payload_sha256 is computed",
+    "role": "a validator before the existing walls, never a new wall"
+  },
+  "paid_boosts": {
+    "doctrine": "docs/PAID-BOOSTS.md",
+    "change": "none",
+    "note": "Paid never counts toward any step: attribution.py runs its paid checks first. A boost keeps its own proposal and Krish's yes on that exact boost."
+  },
+  "spend_authority": "none",
+  "store_job": {
+    "job": "jobs/store.md",
+    "schedule": "off",
+    "source": "automations.json off_schedule",
+    "rule": "The store job stays off the schedule and runs only when Krish names it; the desk never puts it back."
+  },
+  "asks": {
+    "route": "Control Center's one list, behind strategy, folded into the Sunday board memo",
+    "midweek": "only when a step newly goes blind or newly breaches a binding band",
+    "per_venture_per_week": 1,
+    "fleet_per_week": 3,
+    "while_open": "no new ask while one is open in the protocol journal",
+    "approval": "a yes on a test card is plan approval only; anything it produces keeps its own go_live with a matching payload_sha256"
+  },
+  "sheets_dir": "local/revenue-desk",
+  "validator_exits": {
+    "0": "pass",
+    "1": "held",
+    "2": "unavailable, never a pass"
+  },
+  "privacy": "Aggregates only. No order, customer, dog or typed answer reaches a sheet (AGENTS.md, rule 6)."
+}
