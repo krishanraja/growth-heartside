@@ -8,8 +8,9 @@
     "name": "revenue-desk",
     "home": "krishanraja/ai-harness",
     "served_path": "skills/revenue-desk/SKILL.md",
+    "candidate_path": "candidates/revenue-desk/SKILL.md",
     "candidate_state": "state/candidates/revenue-desk.yaml",
-    "read_with": "Control Center get_skill('revenue-desk'); until it is admitted, a local ai-harness checkout's skills/revenue-desk, else record the desk as unavailable and change nothing"
+    "read_with": "Control Center get_skill('revenue-desk'); until it is admitted, a local ai-harness checkout's candidates/revenue-desk, else record the desk as unavailable and change nothing"
   },
   "north_star": {
     "doctrine": "docs/NORTH_STAR.md",
