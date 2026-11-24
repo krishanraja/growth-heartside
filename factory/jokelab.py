@@ -10,6 +10,7 @@ script (one draft, never challenged), at judging (session notes talked the judge
 changed pictures, never the words). Each command below closes one of those:
 
     python3 factory/jokelab.py brief  TOPIC [--n 30] [--slot ID]   the generator sub-agent's brief: write wide, many families
+                                     [--insight SHEET.json]        with an insight desk sheet's insight and lead idea in front
     python3 factory/jokelab.py screen CANDIDATES.json [--live]     gates before any build: copy rules, retread of a live post,
                                                                      the three-part core, real dog behavior; --live adds the
                                                                      humour engine's reading through Control Center
@@ -245,6 +246,18 @@ def brief(topic, n=30, slot=None):
               'Name closest_live_post honestly. If it is not none, add "beats_live": why this is clearly funnier than that post, '
               'or the candidate is rejected as a retread.']
     return '\n'.join(x for x in lines if x is not None)
+
+
+def insight_brief(sheet_path, topic, n=30, slot=None):
+    """The brief with an insight desk sheet in front: the chosen insight and the lead idea, then the brief exactly as
+    brief() writes it. A sheet that is invalid, for another venture or with no lead stops here (config/insight-desk.json)."""
+    if HERE not in sys.path:
+        sys.path.insert(0, HERE)
+    import insight_sheet
+    sheet, errors = insight_sheet.usable(sheet_path)
+    if errors:
+        raise SystemExit('the insight sheet cannot feed a brief:\n' + '\n'.join(f'  - {e}' for e in errors))
+    return insight_sheet.preamble(sheet) + '\n\n' + brief(topic, n, slot)
 
 
 # ---------------------------------------------------------------- screening
@@ -745,6 +758,7 @@ def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest='cmd', required=True)
     b = sub.add_parser('brief'); b.add_argument('topic'); b.add_argument('--n', type=int, default=30); b.add_argument('--slot')
+    b.add_argument('--insight', help='an insight desk sheet (insight-sheet/1); its chosen insight and lead idea go in front of the brief')
     s = sub.add_parser('screen'); s.add_argument('candidates'); s.add_argument('--live', action='store_true'); s.add_argument('--run')
     sh = sub.add_parser('show'); sh.add_argument('run')
     c = sub.add_parser('cut'); c.add_argument('run'); c.add_argument('cand'); c.add_argument('--score', type=float); c.add_argument('--words', required=True)
@@ -760,6 +774,8 @@ def main(argv=None):
     a = p.parse_args(argv)
 
     if a.cmd == 'brief':
+        if a.insight:
+            print(insight_brief(a.insight, a.topic, a.n, a.slot)); return 0
         print(brief(a.topic, a.n, a.slot)); return 0
     if a.cmd == 'screen':
         cands = _load(a.candidates, None)

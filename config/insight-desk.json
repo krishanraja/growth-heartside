@@ -1,0 +1,78 @@
+{
+  "schema": "insight-desk-adapter/1",
+  "_about": "Heartside's adapter for the ai-harness insight-desk skill: the method lives once in ai-harness, this file says where it plugs into this engine. The desk writes ideas, never copy, and never posts, sends or spends. Sheets are private and are never committed (rule 9). AGENTS.md, \"Insight desk\".",
+  "venture": "heartside",
+  "repo": "krishanraja/growth-heartside",
+  "skill": {
+    "name": "insight-desk",
+    "home": "krishanraja/ai-harness",
+    "served_path": "skills/insight-desk/SKILL.md",
+    "candidate_path": "candidates/insight-desk/SKILL.md",
+    "read_with": "Control Center get_skill('insight-desk'); until it is admitted, a local ai-harness checkout's candidate copy, else record the desk as unavailable and run the plain joke lab"
+  },
+  "sheet_schema": "insight-sheet/1",
+  "sheets_dir": "local/insight-desk",
+  "cadence": "one sheet a week",
+  "max_ideas": 3,
+  "north_star_line": "NOW.md, the north-star-state line under \"Where it is right now\"",
+  "humour": {
+    "allowed": true,
+    "doctrine": "docs/HUMOUR.md",
+    "check": "python3 factory/jokelab.py check"
+  },
+  "divergent": {
+    "namespace": "growth-heartside:ideas",
+    "command": "python3 growth.py divergent",
+    "lane": "ideas"
+  },
+  "floor": "factory/floor.json",
+  "copy_rules": "AGENTS.md, rule 5",
+  "claims": "python3 growth.py claims",
+  "blind_reader": "factory/panel.py, tier 2, on the words of the ideas only",
+  "approval": "the review board (docs/REVIEW-BOARD.md); a yes on an idea is plan approval only",
+  "hook": {
+    "command": "python3 factory/jokelab.py brief",
+    "flag": "--insight",
+    "feeds": "the joke lab's brief, then screen, the tier 2 judge and Krish, unchanged"
+  },
+  "commands": [
+    "python3 factory/insight_sheet.py check",
+    "python3 factory/insight_sheet.py sha",
+    "python3 factory/insight_sheet.py adapter",
+    "python3 factory/insight_bench.py",
+    "python3 factory/jokelab.py brief --insight",
+    "python3 factory/jokelab.py check",
+    "python3 growth.py divergent --lane",
+    "python3 growth.py claims"
+  ],
+  "specificity_anchors": [
+    "painted",
+    "painting",
+    "portrait",
+    "mug",
+    "blanket",
+    "artwork",
+    "note from the dog",
+    "from your dog",
+    "in its own voice",
+    "love, [dog]",
+    "signed by the dog",
+    "the dog's note",
+    "gift from the dog",
+    "gifts from your dog"
+  ],
+  "brand_words": [
+    "heartside",
+    "heartside.io",
+    "yourdoghasnotes"
+  ],
+  "bench": {
+    "floor_categories": [
+      "concept",
+      "joke",
+      "story",
+      "bar"
+    ],
+    "include_live_posts": true
+  }
+}
