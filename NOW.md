@@ -1,7 +1,7 @@
 ---
 repo: krishanraja/growth-heartside
-product: Heartside growth engine
-as_of: 2026-11-24
+as_of: 2026-11-25
+head: 2660d6c
 head: 8c98174
 lifecycle: live
 production_url: none
