@@ -1,8 +1,7 @@
 ---
 repo: krishanraja/growth-heartside
-as_of: 2026-11-25
-head: 2660d6c
-head: 8c98174
+as_of: 2026-11-26
+head: c0707d6
 lifecycle: live
 production_url: none
 state_doc: docs/HANDOFF.md
@@ -31,7 +30,7 @@ What it proves for Mindmake: an AI engine can run a store's acquisition with a p
 
 Objection it answers: "An AI marketing engine will spam and invent." Here it drafts, checks every pack against the store and the canon, and cannot publish without a press bound to the exact payload (`docs/CONTROL-CENTER-BRIEF.md`).
 
-## Where it is right now (as of 2026-11-24)
+## Where it is right now (as of 2026-11-26)
 
 <!-- north-star-state {"week_of": "2026-11-09", "week_target": 1417, "current": 0, "current_as_of": "2026-11-12", "current_source": "Shopify Admin API orders through growth.py attribution (read-only app), organic posts, trailing 28 days", "urgency": 5, "urgency_reason": "under 40% of the week's target two weeks running (0% now)"} --> **North Star number: U5, stalled.** Heartside net sales attributed to organic posts, trailing 4 weeks, with $0 of paid ads behind them: $0 (measured 12 Nov by the engine's own attribution read; the store's one order in the window, $45, came direct), against $1,417 this week, on the way to $50,000 by 28 December 2026. Everything else pauses unless it moves the number.
 
@@ -46,8 +45,6 @@ Live:
 - Partial content verification. Native browser access restored on 18 November. Confirmed 60 baked-music publications (15 on each platform), F29 TikTok and three earlier F38 publications. Captured URLs and native cumulative readings in docs/social/2026-11-18-publishing.json. Full cover/source, caption-formatting, destination and audible soundtrack checks remain incomplete; no fully verified event is claimed. Commercial-song phone posts and three breed TikToks were not found in the inspected recent profiles. Ads Manager errors prevent eligibility and spend verification. No Drive or publishing mutations. (2026-11-18)
 - Krish said yes to all four asks (19 Nov). Applied: 19 Instagram memes in Buffer are now 8 s reels with the premium end card (reel-cNN.mp4 in release buffer-media-2026-11-18); 21 posts moved from 13:00 to 23:30 UTC; new bio set and read back live. Dashboard read and audit verified (5,319 views, 100% non-followers, 6 profile visits, 1 link tap). Pinning needs the app: the web menu has no pin. Comment batch: 4 posts passed the screen; Krish approved; all 4 posted and verified live (docs/social/2026-11-19-comments.json). Humour engine was unavailable for them. (2026-11-19)
 - 12 new Gary and Doug clips were generated on Kling 3.0 pro, each pinned to a start and an end still of the same dog; 10 pass frame by frame, the rug-flop passes from 2.5 s, and the tug-of-war failed twice (Gary drifts into a groomed schnauzer), so the couple film now ends on the chew theft. The register is docs/briefs/2026-11-18-influencer/new-shots-manifest.csv; 168.5 credits spent against Krish's 200 cap. (2026-11-18)
-- 105 posts scheduled in Buffer for 18 to 25 Nov (15 a day: 5 each on TikTok, Instagram, Facebook). 14 videos: the three influencer-parody films with the new premium end card (endcard.py), Customs, Alarm, and the nine approved reels from 02r with cleared Epidemic tracks baked in (F34 x4, F40 to F44). 21 still memes: Codex built-in image generation (realistic only; c08 and c34 rejected for AI anatomy), joke lab run stills-1118, rendered with factory/meme.py. Media hosted as the public GitHub release buffer-media-2026-11-18 (Krish chose it). Plan with every Buffer id: docs/social/2026-11-18-buffer-week.json. F28 and F29 held (their joke depends on the named song). (2026-11-18)
-- A full inventory is at docs/inventory/2026-11-18-inventory.html: about 54 posts live, 20,874 views, 12 followers, $0 organic sales, nothing posted since 15 Nov 23:31 UTC, and 11 reels Krish approved in 02r (F28, F34 x4, F40 to F44, F29 on IG and FB) never posted. (2026-11-18)
 - The engine can consult divergent-thinker through Control Center, dormant until Control Center serves `features.divergent` (control-center PR 963, merged 18 Nov). At U4 or U5 with nothing proposed, the live daily report asks it once a day for three recovery plays, holds any that fail this engine's copy, claims and consent checks (strangers' photos and AI art pitched into communities are walls, from the 18 Nov live run), and proposes the best one as a plan behind `strategy` with a `divergent-thinker spark <rank>, run <runId>` evidence item; the others stay in the activity. The joke lab's screen rejects `rejected_gravity` and `rejected_archive` candidates through its zero-call `score`, and `events import` records what went live. Until the flag is on, nothing is called and each place says so in one line (`engine/divergent.py`, `docs/ENGINE.md`, "Consulting divergent-thinker"). Any session can also consult it at will with `python3 growth.py divergent <op>` (`map`, `provoke`, `challenge`, `diverge`, `score`, `record`): it prints Control Center's JSON, exits 1 when `score` flags an idea and 2 when not served, held, capped or unreachable, and never writes to his list. (2026-11-18)
 
 Waiting or not measured:

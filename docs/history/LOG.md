@@ -4,6 +4,12 @@ Newest first. Entries are written by the docs steward (see the steward link in
 NOW.md) and by humans doing the same job by hand. Nothing in this file
 describes current behaviour; NOW.md and the state doc do.
 
+## 2026-11-26
+
+- reconciled at `c0707d6`: fixed the audit's `too_long` and `where_too_many` findings by rolling the two oldest bullets of "Where it is right now" below into this log; removed a duplicate `head:` line from the frontmatter. The canon sync `c0707d6` is automation and moves no product state.
+- rolled from NOW.md (Where it is right now): 105 posts scheduled in Buffer for 18 to 25 Nov (15 a day: 5 each on TikTok, Instagram, Facebook). 14 videos: the three influencer-parody films with the new premium end card (endcard.py), Customs, Alarm, and the nine approved reels from 02r with cleared Epidemic tracks baked in (F34 x4, F40 to F44). 21 still memes: Codex built-in image generation (realistic only; c08 and c34 rejected for AI anatomy), joke lab run stills-1118, rendered with factory/meme.py. Media hosted as the public GitHub release buffer-media-2026-11-18 (Krish chose it). Plan with every Buffer id: docs/social/2026-11-18-buffer-week.json. F28 and F29 held (their joke depends on the named song). (2026-11-18)
+- rolled from NOW.md (Where it is right now): A full inventory is at docs/inventory/2026-11-18-inventory.html: about 54 posts live, 20,874 views, 12 followers, $0 organic sales, nothing posted since 15 Nov 23:31 UTC, and 11 reels Krish approved in 02r (F28, F34 x4, F40 to F44, F29 on IG and FB) never posted. (2026-11-18)
+
 ## 2026-11-20
 
 - reconciled at `8c98174`: fixed the audit's `too_long`, `recent_too_many` and `where_too_many` findings by rolling older bullets below into this log; added the 19 Nov changes (Instagram conversion strategy, the Buffer-week closeout, the humour-engine workflow).
